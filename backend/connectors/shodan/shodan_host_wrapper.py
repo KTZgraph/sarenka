@@ -2,8 +2,13 @@ from typing import Dict, Tuple, Sequence, List, NoReturn
 
 class ShodanHostWrapper:
     """Easier way to get day from dictionary returned by shodan api"""
-    def __init__(self, shodan_host):
-        self.__data = shodan_host
+    def __init__(self, shodan_host_data, query):
+        self.__data = shodan_host_data
+        self.__query = query
+ 
+    @property
+    def query(self):
+        return self.__query
     
     @property
     def data(self):

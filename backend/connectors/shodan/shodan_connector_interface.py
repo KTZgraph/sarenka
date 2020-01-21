@@ -10,3 +10,7 @@ class ShodanConnectorInterface(ABC):
     def search(self, query:str)->List:
         """Search software by name"""
         pass
+
+    @abstractmethod
+    def host(self, ip, ports=[]):
+        pass
