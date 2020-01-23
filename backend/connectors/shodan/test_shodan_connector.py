@@ -1,7 +1,7 @@
 import unittest
 
 from connectors.credential import Credential 
-from shodan_connector import ShodanConnector
+from connector import Connector
 
 
 class ShodanConnectorTest(unittest.TestCase):
@@ -10,17 +10,17 @@ class ShodanConnectorTest(unittest.TestCase):
         self.api_key_wrong = "wrong api key"
 
     # def test_create(self):
-    #     self.assertIsNotNone(ShodanConnector(self.api_key))
-    #     self.assertIsNotNone(ShodanConnector())
-    #     self.assertIsNotNone(ShodanConnector(self.api_key_wrong))
+    #     self.assertIsNotNone(Connector(self.api_key))
+    #     self.assertIsNotNone(onnector())
+    #     self.assertIsNotNone(Connector(self.api_key_wrong))
 
     # def test_search(self):
-    #     shodan_connector = ShodanConnector()
-    #     shodan_connector.search("apache")
+    #     connector = Connector()
+    #     connector.search("apache")
 
     def test_host(self):
-        shodan_connector = ShodanConnector()
-        shodan_connector.host("my_test_ip")
+        connector = Connector()
+        connector.host("my_test_ip")
 
 if __name__ == '__main__':
     unittest.main()

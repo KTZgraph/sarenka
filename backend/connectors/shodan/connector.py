@@ -6,7 +6,7 @@ from shodan_connector_interface import ShodanConnectorInterface
 from shodan_host_wrapper import ShodanHostWrapper
 from shodan_host_details_wrapper import ShodanHostDetailsWrapper
 
-class ShodanConnector(ShodanConnectorInterface):
+class Connector(ShodanConnectorInterface):
     def __init__(self, api_key=""):
         super().__init__(api_key)
         if api_key:
