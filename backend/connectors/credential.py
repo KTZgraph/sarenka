@@ -4,10 +4,20 @@ import json
 
 class Credential:
     """Credentials for shodan, censys, etc"""
-
+    __instance = None
+    
     def __init__(self, config_file="connectors/credentials.json")->None:
-        with open(config_file) as f:
-            self.__credentials = json.load(f)
+        if not Credential.__instance:
+            with open(config_file) as f:
+                self.__credentials = json.load(f)
+        else:
+            self.getInstance()
+
+    @classmethod
+    def getInstance(cls):
+        if not cls.__instance:
+            cls.__instance = Credential()
+        return cls.__instance
 
     @property
     def shodan(self):
