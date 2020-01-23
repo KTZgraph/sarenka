@@ -1,6 +1,6 @@
 import re
 
-class ShodanHostDetailsWrapper:
+class HostDetailsWrapper:
     """Easier way to get data from dictionary returned by shodan about one host"""
 
     def __init__(self, ip, host_details):

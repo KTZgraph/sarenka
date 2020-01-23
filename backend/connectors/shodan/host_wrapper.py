@@ -1,6 +1,6 @@
 from typing import Dict, Tuple, Sequence, List, NoReturn
 
-class ShodanHostWrapper:
+class HostWrapper:
     """Easier way to get day from dictionary returned by shodan api"""
     def __init__(self, shodan_host_data, query):
         self.__data = shodan_host_data
