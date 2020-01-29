@@ -20,6 +20,30 @@ class CredentialData:
         return self.__user
 
 
+class CensysData:
+    def __init__(self, data):
+        self.__base_url = data["base_url"]
+        self.__api_id = data.get("API_ID")
+        self.__secret = data.get("Secret")
+        self.__api_url= data.get("API_URL")
+
+    @property
+    def base_url(self):
+        return self.__base_url
+    
+    @property
+    def api_id(self):
+        return self.__api_id
+    
+    @property
+    def secret(self):
+        return self.__secret
+
+    @property
+    def api_url(self):
+        return self.__api_url
+
+
 class Credential:
     """Credentials for shodan, censys, etc"""
     __instance = None
@@ -30,7 +54,7 @@ class Credential:
                 data = json.load(f)
             
             self.__binaryedge = CredentialData(data["binaryedge"])
-            self.__censys = CredentialData(data["censys"])
+            self.__censys = CensysData(data["censys"])
             self.__fofa = CredentialData(data["fofa"])
             self.__publicwww = CredentialData(data["publicwww"])
             self.__urlscan = CredentialData(data["urlscan"])
