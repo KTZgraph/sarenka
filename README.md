@@ -5,35 +5,76 @@ Everything I like in one place for passive reconnaissance.
 
 
 # Config
-```json
 example sarenka/backend/connectors/credentials.json
-{
-    "shodan": {
-        "user" : "my_user",
-        "api_key": "my_api_key"
+
+```json
+{   
+    "binaryedge": {
+        "base_url": "https://www.binaryedge.io/",
+        "user": "<my_user>",
+        "api_key": "<my_api_key>"
     },
-    "censys":{}
+    "censys": {
+        "base_url": "https://censys.io/",
+        "API_ID": "<my_user>",
+        "Secret": "<my_api_key>",
+        "API_URL": "https://censys.io/api/v1"
+    },
+    "fofa": {
+        "base_url": "https://fofa.so/",
+        "user": "<my_user>",
+        "api_key": "<my_api_key>"
+    },
+    "publicwww": {
+        "base_url": "https://publicwww.com/",
+        "user": "<my_user>",
+        "api_key": "<my_api_key>"
+    },
+    "shodan": {
+        "base_url": "https://www.shodan.io/",
+        "user": "<my_user>",
+        "api_key": "<my_api_key>"
+    },
+    "urlscan": {
+        "base_url": "https://urlscan.io/"
+    },
+    "whois": {
+        "base_url": "https://who.is/"
+    },
+    "yandex": {
+        "base_url": "https://yandex.com/"
+    },
+    "zoomeye": {
+        "base_url": "https://www.zoomeye.org/",
+        "user": "<my_user>",
+        "api_key": "<my_api_key>"
+    }
 }
 ```
 
 # Used libraries
-  - https://github.com/achillean/shodan-python
-  - https://github.com/censys/censys-python
+  - https://github.com/achillean/shodan-python (Raw Data in future)
 
 # Thir part services
+  - https://censys.io/ (https://censys.io/account/api) (raw data)
   - https://www.shodan.io/
+  - https://www.binaryedge.io/
   - https://censys.io/
   - https://fofa.so/
-  - https://www.binaryedge.io/
   - https://publicwww.com/
   - https://urlscan.io/
   - https://who.is/
-  - https://www.zoomeye.org/
   - https://yandex.com/
+  - https://www.zoomeye.org/
+
   - https://greynoise.io/ (maybe?)
+  - https://www.ebay.com/ (helpful when I totally don't know what it is)
+  - https://www.amazon.com/ (helpful when I totally don't know what it is)
+  - https://allegro.pl/ (helpful when I totally don't know what it is)
+  - https://aliexpress.com/ (helpful when I totally don't know what it is)
 
 # Tools
-  - https://nmap.org/
+  - https://nmap.org/ 
   - https://github.com/scipag/vulscan
   - nslookup (maybe)
   - netcat (maybe)
@@ -51,9 +92,10 @@ example sarenka/backend/connectors/credentials.json
   - https://github.com/scipag/vulscan
   - https://builtwith.com/
 
-# Installation software to test
+# Installation software for testing
   - Docker to temporary installation software on local machine (analyze)
 
 # UI
   - web app with nice interface in Vue.js
   - from command line
+
