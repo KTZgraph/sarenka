@@ -1,15 +1,11 @@
 from typing import Dict, Tuple, Sequence, List, NoReturn
 from abc import ABC, abstractmethod
 
+from connectors.base_connector import BaseConnector
 
-class ConnectorInterface(ABC):
-    def __init__(self, api_key:str)->None:
-        self.api_key = api_key
-    
-    @abstractmethod
-    def search(self, query:str)->List:
-        """Search software by name"""
-        pass
+class ConnectorInterface(BaseConnector):
+    def __init__(self, data):
+        super().__init__(data)
 
     @abstractmethod
     def host(self, ip, ports=[]):

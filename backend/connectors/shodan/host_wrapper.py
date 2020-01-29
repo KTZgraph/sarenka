@@ -5,6 +5,9 @@ class HostWrapper:
     def __init__(self, shodan_host_data, query):
         self.__data = shodan_host_data
         self.__query = query
+    
+    def __str__(self):
+        return f'ip: {self.ip}\tport:{self.port}\n'
  
     @property
     def query(self):

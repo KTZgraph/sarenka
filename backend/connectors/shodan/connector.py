@@ -7,12 +7,9 @@ from host_wrapper import HostWrapper
 from host_details_wrapper import HostDetailsWrapper
 
 class Connector(ConnectorInterface):
-    def __init__(self, api_key=""):
-        super().__init__(api_key)
-        if api_key:
-            self.api_key = api_key
-        else:
-            self.api = shodan.Shodan(Credential().shodan_api_key)
+    def __init__(self, shodan_credentials):
+        super().__init__(shodan_credentials)
+        self.api = shodan.Shodan(self.api_key)
     
     def search(self, query, amount=3)->[HostWrapper]:
         """Return list of hosts finded with software"""

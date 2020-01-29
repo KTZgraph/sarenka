@@ -6,17 +6,19 @@ from connector import Connector
 
 class ConnectorTest(unittest.TestCase):
     def setUp(self):
-        self.api_key = Credential().shodan_api_key
-        self.api_key_wrong = "wrong api key"
+        self.shodan_credentials = Credential().shodan
 
     def test_create(self):
-        self.assertIsNotNone(Connector(self.api_key))
-        self.assertIsNotNone(Connector())
-        self.assertIsNotNone(Connector(self.api_key_wrong))
+        self.assertIsNotNone(Connector(self.shodan_credentials))
+        # self.assertIsNotNone(Connector())
+        # self.assertIsNotNone(Connector(self.api_key_wrong))
 
     def test_search(self):
-        connector = Connector()
-        connector.search("apache")
+        connector = Connector(self.shodan_credentials)
+        result = connector.search("apache")
+        self.assertIsNotNone(result)
+        for i in result:
+            print(i)
 
     # def test_host(self):
     #     connector = Connector()
@@ -24,3 +26,6 @@ class ConnectorTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+# cd sarenka\backend
+# python connectors\shodan\test_connector.py  
