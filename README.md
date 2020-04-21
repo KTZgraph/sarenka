@@ -1,12 +1,19 @@
 # sarenka
-https://sarenka.readthedocs.io/en/latest/
-Everything I like in one place for passive reconnaissance.
+Passive reconnaissance for everyone
+
+# logo
 Logo was generated with https://www.renderforest.com/
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 
+# heroku
+https://sarenka.herokuapp.com/
+
 # doc
+https://sarenka.readthedocs.io/en/latest/
+https://sarenka.readthedocs.io/pl/latest/ (Polish)
 https://app.gitbook.com/@pawlaczyk/s/sarenka/
+
 
 # Config
 example sarenka/backend/connectors/credentials.json
@@ -52,6 +59,13 @@ example sarenka/backend/connectors/credentials.json
         "base_url": "https://www.zoomeye.org/",
         "user": "<my_user>",
         "api_key": "<my_api_key>"
+    },
+    "cve_search":{
+        "base_url": "https://cve.circl.lu/api/",
+        "cve": "https://cve.circl.lu/api/cve/",
+        "vendor": "https://cve.circl.lu/api/browse/",
+        "last": "https://cve.circl.lu/api/last",
+        "db_info": "https://cve.circl.lu/api/dbInfo"
     }
 }
 ```
@@ -70,6 +84,8 @@ example sarenka/backend/connectors/credentials.json
   - https://who.is/
   - https://yandex.com/
   - https://www.zoomeye.org/
+  - https://www.cve-search.org/ https://github.com/cve-search/cve-search
+  - https://developer.github.com/v3/
 
   - https://greynoise.io/ (maybe?)
   - https://www.ebay.com/ (helpful when I totally don't know what it is)
@@ -85,8 +101,8 @@ example sarenka/backend/connectors/credentials.json
   - https://github.com/ElevenPaths/FOCA (maybe)
   - https://github.com/wireshark/wireshark (maybe)
   - https://github.com/VowpalWabbit (maybe)
-  - Docker
-  - Virtualbox
+  - Docker (maybe)
+  - Virtualbox (maybe)
 
 # Chorme extension
     Open question: Can I get data from them?
