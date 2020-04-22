@@ -52,9 +52,6 @@ example sarenka/backend/connectors/credentials.json
     "whois": {
         "base_url": "https://who.is/"
     },
-    "yandex": {
-        "base_url": "https://yandex.com/"
-    },
     "zoomeye": {
         "base_url": "https://www.zoomeye.org/",
         "user": "<my_user>",
@@ -82,7 +79,6 @@ example sarenka/backend/connectors/credentials.json
   - https://publicwww.com/
   - https://urlscan.io/
   - https://who.is/
-  - https://yandex.com/
   - https://www.zoomeye.org/
   - https://www.cve-search.org/ https://github.com/cve-search/cve-search
   - https://developer.github.com/v3/
@@ -103,6 +99,7 @@ example sarenka/backend/connectors/credentials.json
   - https://github.com/VowpalWabbit (maybe)
   - Docker (maybe)
   - Virtualbox (maybe)
+  - Kismet (maybe)
 
 # Chorme extension
     Open question: Can I get data from them?
