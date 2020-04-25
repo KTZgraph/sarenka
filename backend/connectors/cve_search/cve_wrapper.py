@@ -17,7 +17,6 @@ class CveWrapper:
         self.__confidentiality = CVEParser.confidentiality(data)
         self.__integrity = CVEParser.integrity(data)
 
-
     @property
     def cve(self):
         return self.__cve
