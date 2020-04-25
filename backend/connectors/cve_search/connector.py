@@ -50,7 +50,8 @@ if __name__ == "__main__":
     credentials = Credential().cve_search
     connector = Connector(credentials)
     response = connector.search_by_cve_code("CVE-2010-3333")
-    print(response)
+    for p in response.products: 
+        print(p)
     # print(connector.get_last_30_cves())
     # print(connector.get_vendors_list())
     # print(connector.get_vendor_products("microsoft"))

@@ -1,3 +1,6 @@
+from typing import Dict, List
+from product import Product 
+
 class CVEParser:
     """
     Zna wartości pola jsona
@@ -36,7 +39,7 @@ class CVEParser:
         return data["oval"][0]["title"]
 
     @staticmethod
-    def products(data):
+    def products(data)->List[Product]:
         """Parses 
         cpe:/<part>:<vendor>:<product>:<version>:<update>:<edition>:<language>
         <part>
@@ -49,23 +52,22 @@ class CVEParser:
 
 
         vendor_idx = 3
-        prodyct_idx = 4
+        name_idx = 4
         version_idx = 5
         system_idx = 6
 
         products_list =[]
-        for product in data:
-            print(product)
-            p = product.split(":")
+        for product_data in data:
+            p = product_data.split(":")
 
-            tmp_dict={
-                "vendor": p[vendor_idx],
-                "product": p[prodyct_idx],
-                "vesion": p[version_idx],
-                "system": p[system_idx]
-            }
-            
-            products_list.append(tmp_dict)
+            products_list.append(
+                Product(
+                    vendor=p[vendor_idx],
+                    name= p[name_idx],
+                    version=p[version_idx],
+                    system= p[system_idx]
+                )
+            )
         
         return products_list
 
