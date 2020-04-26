@@ -21,6 +21,14 @@ class Product:
     def system(self):
         return self.__system
 
+    def to_dict(self):
+        return {
+            "vendor": self.vendor,
+            "name": self.name,
+            "version": self.version,
+            "system": self.system
+        }
+
     def __str__(self):
         return "vendor: {}\nname: {}\nversion: {}\nsystem: {}\n".format(
             self.vendor,
@@ -28,3 +36,4 @@ class Product:
             self.version,
             self.system
         )
+

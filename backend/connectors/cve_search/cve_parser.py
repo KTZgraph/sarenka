@@ -1,5 +1,5 @@
 from typing import Dict, List
-from product import Product 
+from .product import Product 
 
 class CVEParser:
     """

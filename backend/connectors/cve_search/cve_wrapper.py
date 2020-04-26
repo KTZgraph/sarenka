@@ -1,5 +1,5 @@
 from common.converter import Converter
-from cve_parser import CVEParser
+from .cve_parser import CVEParser
 
 class CveWrapper:
     def __init__(self, data):
@@ -63,3 +63,19 @@ class CveWrapper:
 
     def __str__(self):
         return f'CVE: {self.cve}'
+
+    def to_dict(self):
+        return {
+            "cve" : self.cve,
+            "cvss_vector" : self.cvss_vector,
+            "complexity" : self.complexity,
+            "authentication": self.authentication,
+            "vector": self.vector,
+            "cvss": self.cvss,
+            "cwe": self.cwe,
+            "title": self.title,
+            "availability": self.availability,
+            "confidentiality": self.confidentiality,
+            "products": [p.to_dict() for p in self.products]
+        }
+
