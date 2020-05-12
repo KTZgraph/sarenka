@@ -10,6 +10,7 @@ from common.common import Common
 class ImageMagick:
     def __init__(self, data):
         self.api = "https://cve.circl.lu/api/cve/"
+        self.github = "https://github.com/ImageMagick/ImageMagick/"
         self.__cve_list = self.parse_to_list(data)
         self.__summary = self.get_summary()
 
@@ -40,6 +41,8 @@ class ImageMagick:
         match = Common.list_flattening(matches)
         if one_cve_matches:
             founded = [m for m in match if m]
+        if not founded:
+            return ["null"]
 
         return founded
 
