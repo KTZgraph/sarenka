@@ -20,4 +20,5 @@ from django.conf.urls import url
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('search/', include("searcher.urls")),
+    path('analyzer/', include("analyzer_api.urls")),
 ]

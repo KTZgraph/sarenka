@@ -2,6 +2,10 @@ from typing import Dict, Tuple, Sequence, List, NoReturn
 import sys
 import json
 import requests
+from censys.certificates import CensysCertificates
+from censys.ipv4 import CensysIPv4
+from censys.websites import CensysWebsites
+from censys.base import CensysNotFoundException, CensysRateLimitExceededException, CensysUnauthorizedException
 
 from connectors.credential import Credential 
 from connector_interface import ConnectorInterface
@@ -21,6 +25,12 @@ class Connector(ConnectorInterface):
         return 0
 
 
-    def host(self, ip, ports=[]):
-        pass
+    def host(self, ip):
+        c = CensysIPv4(api_id=self.api_id, api_secret=self.secret)
+        return c.view(ip)
         
+
+if __name__ == "__main__":
+    censys_credentials = Credential().censys
+    connector = Connector(censys_credentials)
+    print(connector.host("8.8.8.8"))

@@ -3,7 +3,7 @@ from operator import itemgetter
 import re
 import json
 
-from analyzer_interface import AnalyzerInterface
+from .analyzer_interface import AnalyzerInterface
 from common.text_parser import TextParser
 from common.common import Common
 
@@ -63,7 +63,7 @@ class ImageMagick:
         for cve in self.cve_list:
             response = self.get_url_data(cve)
 
-            summary = response.get("summary")
+            summary = response.get("summary") #TODO: wrapper
             result.append({
                 "cve": cve,
                 "summary": summary,
@@ -115,24 +115,25 @@ class ImageMagickFacade:
             result[k] = [i["code"] for i in sorted_by_version[k]]
 
         Common.save_dict_to_file(fileoutput, result)
-
+    
     @staticmethod
-    def version_data_from_file(filename, files_save=True, fileoutput="sorted.json"):
-        """
-        Na podstawie komenatrzy z jiry zapisanych do pliku zapisuje dane posortowane wersjami o cve do plików
-        :param filename: plik wejściowy z komenatrzy jiry
-        :return:
-        """
-        cve_list_from_file = TextParser().get_cve_list_from_file(filename)
-        print("List from file: ", cve_list_from_file)
-        image_magick_cve = ImageMagick(cve_list_from_file)
+    def version_data_from_list(list_cves):
+        image_magick_cve = ImageMagick(list_cves)
         summary = image_magick_cve.summary
         dict_list_sorted = ImageMagick.sort_by_version(summary)
         sorted_by_version = ImageMagick.convert_to_version_cve_dict(dict_list_sorted)
+        return sorted_by_version
+
+    @staticmethod
+    def version_data_from_file(filename, files_save=True, fileoutput="sorted.json"):
+        list_cves = TextParser().get_cve_list_from_file(filename)
+        sorted_by_version = ImageMagickFacade.version_data_from_list(list_cves)
 
         if files_save:
             ImageMagickFacade.__save_files(fileoutput, sorted_by_version)
 
+        return sorted_by_version
+
 if __name__ == "__main__":
     file_with_cves = "imagemagic_cve.txt"
-    ImageMagickFacade.version_data_from_file(filename=file_with_cves)
+    sorted_by_version = ImageMagickFacade.version_data_from_file(filename=file_with_cves)
