@@ -2,7 +2,6 @@ from typing import Dict, Tuple, Sequence
 import requests
 from requests.exceptions import HTTPError
 
-
 from connectors.credential import Credential 
 from .connector_interface import ConnectorInterface
 from .cve_wrapper import CveWrapper
@@ -15,10 +14,19 @@ class Connector(ConnectorInterface):
     def __init__(self, credentials):
         super().__init__(credentials)
 
+    @staticmethod
+    def connect_until_200(url):
+        status = 0
+        while status != 200:
+            response = requests.get(url)
+            status = response.status_code
+
+        return response.json()
+
     def search_by_cve_code(self, cve_code:str):
         url = f'{self.cve}{cve_code}'
-        response = requests.get(url)
-        cve_wrapper = CveWrapper(response.json())
+        response = Connector.connect_until_200(url)
+        cve_wrapper = CveWrapper(response)
         return cve_wrapper
 
     def get_last_30_cves(self):

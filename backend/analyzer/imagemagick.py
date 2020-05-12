@@ -6,21 +6,12 @@ import json
 from .analyzer_interface import AnalyzerInterface
 from common.text_parser import TextParser
 from common.common import Common
+from connectors.credential import Credential
+from connectors.cve_search.connector import Connector as CVESearchApi
 
 class ImageMagick:
-    def __init__(self, data):
-        self.api = "https://cve.circl.lu/api/cve/"
-        self.github = "https://github.com/ImageMagick/ImageMagick/"
-        self.__cve_list = self.parse_to_list(data)
-        self.__summary = self.get_summary()
-
-    @property
-    def cve_list(self):
-        return self.__cve_list
-
-    @property
-    def summary(self):
-        return self.__summary
+    __github = "https://github.com/ImageMagick/ImageMagick/"
+    connector = CVESearchApi(Credential().cve_search)
 
     @staticmethod
     def parse_to_list(data):
@@ -35,7 +26,8 @@ class ImageMagick:
 
         return output
 
-    def __clean_match(self, one_cve_matches):
+    @staticmethod
+    def __clean_match(one_cve_matches):
         founded = [None]
         matches = [list(i) for i in one_cve_matches]
         match = Common.list_flattening(matches)
@@ -46,31 +38,29 @@ class ImageMagick:
 
         return founded
 
-    def __find_version(self, summary):
+    @staticmethod
+    def __find_version(summary):
         if summary:
             match = re.findall(r"(before\s+and\s+\d+\.\d+\.\d+\-\d+( Q16)?)|(before\s+\d+\.\d+\.\d+\-\d+( Q16)?)|(\d+\.\d+\.\d+\-\d+( Q16)?\s+and\s+earlier)|(\d+\.\d+\.\d+\-\d+( Q16)?)|(before\s+\d+\.\d+\.\d+( Q16)?)|(\d+\.\d+\.\d+( Q16)?\s+and\s+earlier)|(\d+\.\d+\.\d+( Q16)?)", summary)
-            return self.__clean_match(match)
+            return ImageMagick.__clean_match(match)
         return [None]
 
-    def get_url_data(self, cve):
-        url = f'{self.api}{cve}'
-        status = 0
-        while status != 200:
-            response = requests.get(url)
-            status = response.status_code
+    @classmethod
+    def get_url_data(cls, cve):
+        cve_wrapper = cls.connector.search_by_cve_code(cve)
+        return cve_wrapper
 
-        return response.json()
-
-    def get_summary(self):
+    @staticmethod
+    def get_summary(data):
         result = []
-        for cve in self.cve_list:
-            response = self.get_url_data(cve)
+        cve_list = ImageMagick.parse_to_list(data)
+        for cve in cve_list:
+            cve_wrapper = ImageMagick.get_url_data(cve)
 
-            summary = response.get("summary") #TODO: wrapper
             result.append({
                 "cve": cve,
-                "summary": summary,
-                "match": self.__find_version(summary)
+                "summary": cve_wrapper.summary,
+                "match": ImageMagick.__find_version(cve_wrapper.summary)
             })
 
         return result
@@ -87,7 +77,6 @@ class ImageMagick:
         all_version_unique.sort()
         return all_version_unique
 
-    @staticmethod
     def convert_to_version_cve_dict(dict_list):
         all_versions = ImageMagick.get_versions_from_dict(dict_list)
         result = {version: [] for version in all_versions}
@@ -121,8 +110,7 @@ class ImageMagickFacade:
     
     @staticmethod
     def version_data_from_list(list_cves):
-        image_magick_cve = ImageMagick(list_cves)
-        summary = image_magick_cve.summary
+        summary = ImageMagick.get_summary(list_cves)
         dict_list_sorted = ImageMagick.sort_by_version(summary)
         sorted_by_version = ImageMagick.convert_to_version_cve_dict(dict_list_sorted)
         return sorted_by_version

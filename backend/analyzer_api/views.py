@@ -15,7 +15,7 @@ from .serializers import ImageMagickSerializer
 class ImageMagickFileView(views.APIView):
 
     def get(self, request):
-        file_with_cves = "imagemagic_cve.txt"
+        file_with_cves = "C:\\Users\\dp\\Desktop\\sarenka\\backend\\analyzer\\imagemagic_cve.txt"
         sorted_by_version = ImageMagickFacade.version_data_from_file(filename=file_with_cves, files_save=False)
         return Response(sorted_by_version)
 
