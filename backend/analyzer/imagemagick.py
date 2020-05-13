@@ -85,7 +85,8 @@ class ImageMagick:
         all_version_unique.sort()
         return all_version_unique
 
-    def convert_to_version_cve_dict(dict_list):
+    def convert_to_version_cve_dict(data):
+        dict_list = ImageMagick.__sort_by_version(data)
         all_versions = ImageMagick.get_versions_from_dict(dict_list)
         result = {version: [] for version in all_versions}
         for d in dict_list:
@@ -94,10 +95,10 @@ class ImageMagick:
         return result
 
     @staticmethod
-    def sort_by_version(data):
+    def __sort_by_version(data):
         dict_list_sorted = []
         for d in data:
-            version = [i for i in d.match if i != " Q16"]
+            version = [i for i in d.match if i != " Q16"] #specific for imageMagic
             dict_list_sorted.append(
                 CVEVersion(
                     d.cve, 
@@ -124,8 +125,7 @@ class ImageMagickFacade:
     @staticmethod
     def version_data_from_list(list_cves):
         summary = ImageMagick.get_summary(list_cves)
-        dict_list_sorted = ImageMagick.sort_by_version(summary)
-        sorted_by_version = ImageMagick.convert_to_version_cve_dict(dict_list_sorted)
+        sorted_by_version = ImageMagick.convert_to_version_cve_dict(summary)
         return sorted_by_version
 
     @staticmethod
