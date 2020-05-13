@@ -48,7 +48,7 @@ class CVEParser:
         o for operating systems.
         TODO: jakies reguły na OS  żeby dobrze wyciągało poprawnie"""
         data = data["vulnerable_product"]
-        print(data)
+        # print(data)
 
 
         vendor_idx = 3

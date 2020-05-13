@@ -2,12 +2,18 @@ import requests
 from operator import itemgetter
 import re
 import json
+from collections import namedtuple
 
 from .analyzer_interface import AnalyzerInterface
 from common.text_parser import TextParser
 from common.common import Common
 from connectors.credential import Credential
 from connectors.cve_search.connector import Connector as CVESearchApi
+
+
+ImageMagickCVE = namedtuple('ImageMagickCVE', 'cve summary match')
+CVEVersion = namedtuple("CVEVersion", "code summary version")
+
 
 class ImageMagick:
     __github = "https://github.com/ImageMagick/ImageMagick/"
@@ -57,11 +63,13 @@ class ImageMagick:
         for cve in cve_list:
             cve_wrapper = ImageMagick.get_url_data(cve)
 
-            result.append({
-                "cve": cve,
-                "summary": cve_wrapper.summary,
-                "match": ImageMagick.__find_version(cve_wrapper.summary)
-            })
+            result.append(
+                ImageMagickCVE(
+                    cve, 
+                    cve_wrapper.summary, 
+                    ImageMagick.__find_version(cve_wrapper.summary)
+                )
+            )
 
         return result
 
@@ -72,7 +80,7 @@ class ImageMagick:
 
     @staticmethod
     def get_versions_from_dict(dict_list):
-        all_version = Common.list_flattening([d["version"] for d in dict_list])
+        all_version = Common.list_flattening([d.version for d in dict_list])
         all_version_unique = list(set(all_version))
         all_version_unique.sort()
         return all_version_unique
@@ -81,17 +89,22 @@ class ImageMagick:
         all_versions = ImageMagick.get_versions_from_dict(dict_list)
         result = {version: [] for version in all_versions}
         for d in dict_list:
-            for version in d["version"]:
-                result[version].append(d["cve"])
+            for version in d.version:
+                result[version].append({d.code: d.summary})
         return result
 
     @staticmethod
     def sort_by_version(data):
         dict_list_sorted = []
         for d in data:
-            version = [i for i in d["match"] if i != " Q16"]
-            minimal_data = {"cve": {"code": d["cve"], "summary": d["summary"]}, "version": version, }
-            dict_list_sorted.append(minimal_data)
+            version = [i for i in d.match if i != " Q16"]
+            dict_list_sorted.append(
+                CVEVersion(
+                    d.cve, 
+                    d.summary,
+                    version
+                )
+            )
 
         return dict_list_sorted
 
