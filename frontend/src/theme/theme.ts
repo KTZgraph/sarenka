@@ -1,7 +1,11 @@
 const theme: Record<string, any> = {
   colors: {},
   font: {
-    weight: {},
+    weight: {
+      small: 300,
+      regular: 400,
+      bold: 700,
+    },
     size: {},
   },
 };
