@@ -93,7 +93,6 @@ class Credential:
             self.__urlscan = CredentialData(data["urlscan"])
             self.__whois = CredentialData(data["whois"])
             self.__shodan = CredentialData(data["shodan"])
-            self.__yandex = CredentialData(data["yandex"])
             self.__zoomeye = CredentialData(data["zoomeye"])
             self.__cve_search = CVESEarchData(data["cve_search"])
         else:
@@ -132,10 +131,6 @@ class Credential:
     @property
     def shodan(self):
         return self.__shodan
-
-    @property
-    def yandex(self):
-        return self.__yandex
 
     @property
     def zoomeye(self):

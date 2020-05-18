@@ -53,7 +53,7 @@ example sarenka/backend/connectors/credentials.json
         "base_url": "https://urlscan.io/"
     },
     "whois": {
-        "base_url": "https://who.is/"
+        "base_url": "https://www.whoisxmlapi.com/"
     },
     "zoomeye": {
         "base_url": "https://www.zoomeye.org/",
