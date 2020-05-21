@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import magnifierIcon from 'static/magnifierIcon.svg';
+import magnifierIcon from 'static/magnifierIconInput.svg';
 
 type Props = {
   search?: boolean;
@@ -15,7 +15,7 @@ const Input = styled.input<Props>`
   font-size: 1.8rem;
   transition: 0.3s;
   border: 1px solid #c10c27;
-  font-weight: ${({ theme }: Record<string, any>) => theme.font.weight.medium};
+  font-weight: ${({ theme }: Record<string, any>) => theme.font.weight.regular};
 
   ${({ search }) =>
     search &&
