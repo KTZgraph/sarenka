@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 type Props = {
   icon?: any;
-  iconActive?: any;
+  iconactive?: any;
 };
 
 const NavButton = styled.button<Props>`
@@ -25,7 +25,7 @@ const NavButton = styled.button<Props>`
   transition: 0.3s;
 
   &.active {
-    background-image: url(${({ iconActive }) => iconActive});
+    background-image: url(${({ iconactive }) => iconactive});
     background-color: rgba(193, 12, 39, 0.52);
     border-radius: 4px;
     color: #ffffff;

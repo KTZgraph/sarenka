@@ -12,6 +12,9 @@ import magnifierIconActive from 'static/magnifierIconActive.svg';
 import magnifierIcon from 'static/magnifierIcon.svg';
 
 const StyledWrapper = styled.nav`
+  position: fixed;
+  top: 0;
+  left: 0;
   background: #252525;
   max-width: 315px;
   height: 100vh;
@@ -42,7 +45,7 @@ const NavBar = () => (
       to="/frontend"
       activeClassName="active"
       icon={magnifierIcon}
-      iconActive={magnifierIconActive}
+      iconactive={magnifierIconActive}
     >
       Frontend vulnarbility
     </NavButton>
@@ -51,7 +54,7 @@ const NavBar = () => (
       to="/backend"
       activeClassName="active"
       icon={magnifierIcon}
-      iconActive={magnifierIconActive}
+      iconactive={magnifierIconActive}
     >
       Backend vulnarbility
     </NavButton>
@@ -60,7 +63,7 @@ const NavBar = () => (
       to="/exploits"
       activeClassName="active"
       icon={exploitsIcon}
-      iconActive={exploitsIconActive}
+      iconactive={exploitsIconActive}
     >
       Exploits
     </NavButton>
@@ -72,7 +75,7 @@ const NavBar = () => (
       to="/docs"
       activeClassName="active"
       icon={docsIcon}
-      iconActive={docsIconActive}
+      iconactive={docsIconActive}
     >
       Documentation
     </NavButton>
@@ -82,7 +85,7 @@ const NavBar = () => (
       to="/settings"
       activeClassName="active"
       icon={settingsIcon}
-      iconActive={settingsIconActive}
+      iconactive={settingsIconActive}
     >
       Main Settings
     </NavButton>
