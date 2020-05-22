@@ -1,28 +1,51 @@
 import React from 'react';
-import logo from 'static/logo.svg';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import routes from 'routes';
+import theme from 'theme/theme';
 import GlobalStyle from 'theme/GlobalStyle';
+import MainTemplate from 'templates/MainTemplate';
+import FrontendVulnerabilitySearch from 'views/FrontendVulnerabilitySearch';
+import FrontendVulnerabilityResult from 'views/FrontendVulnerabilityResult';
+import BackendVulnerabilitySearch from 'views/BackendVulnerabilitySearch';
+import BackendVulnerabilityResult from 'views/BackendVulnerabilityResult';
 
 function Root() {
   return (
-    <div className="App">
-      <GlobalStyle />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          <code>src/App.tsx</code>
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <MainTemplate>
+          <Switch>
+            <Route
+              exact
+              path={routes.home}
+              render={() => <Redirect to={routes.frontend} />}
+            />
+            <Route
+              exact
+              path={routes.frontend}
+              component={FrontendVulnerabilitySearch}
+            />
+            <Route
+              exact
+              path={routes.frontendResults}
+              component={FrontendVulnerabilityResult}
+            />
+            <Route
+              exact
+              path={routes.backend}
+              component={BackendVulnerabilitySearch}
+            />
+            <Route
+              exact
+              path={routes.backendResults}
+              component={BackendVulnerabilityResult}
+            />
+          </Switch>
+        </MainTemplate>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 
