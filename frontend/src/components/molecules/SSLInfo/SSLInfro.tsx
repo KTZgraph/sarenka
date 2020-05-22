@@ -15,6 +15,7 @@ const StyledWrapper = styled.div`
   display: grid;
   grid-gap: 40px;
   grid-template-columns: 1fr 1fr;
+  margin-bottom: 40px;
 `;
 
 const StyledParagraphWrapper = styled.div`
