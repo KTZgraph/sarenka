@@ -20,4 +20,7 @@ from django.conf.urls import url
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('search/', include("searcher.urls")),
+    path('base_MongoDB/', include("Test_MongoDB.urls")),
+
+    
 ]
