@@ -36,4 +36,3 @@ if __name__ == "__main__":
     image_magick = ImageMagick()
     analyzer_facade = AnalyzerFacade(image_magick)
     sorted_by_version = analyzer_facade.version_data_from_file(filename=file_with_cves)
-    print(sorted_by_version)

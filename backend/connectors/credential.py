@@ -138,5 +138,4 @@ class Credential:
 
     @property
     def cve_search(self):
-        print(self.__cve_search.base_url )
         return self.__cve_search

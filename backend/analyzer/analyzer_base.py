@@ -99,12 +99,10 @@ class AnalyzerBase(AnalyzerInterface):
         return [None]
 
     @staticmethod
-    def save_to_file(fileoutput, sorted_by_version):
-        print(sorted_by_version)
+    def save_to_file(fileoutput, sorted_by_version): #TODO mniej pozszywane/zagnieżdzoen te obiekty wersji
         result = {}
         for version_no in sorted_by_version.keys():
             for cve_data in sorted_by_version[version_no]:
-                print("cve_data: ", type(cve_data), "\n\n\n\n\n")
                 for cve_keys in cve_data:
                     cve_key = list(cve_data.keys())[0]
                     result[version_no] = {cve_key : cve_data[cve_key]} 

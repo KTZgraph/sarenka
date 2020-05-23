@@ -34,4 +34,3 @@ class ImageMagick(SoftwareInfoInterface):
 
 if __name__ == "__main__":
     image_magick = ImageMagick()
-    print(image_magick)

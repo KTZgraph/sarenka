@@ -24,7 +24,6 @@ class TextParser:
     @staticmethod
     def __find_cve_code(line):
         match = re.findall(r"CVE\-\d{4}\-\d+", line)
-        print("m: ", match)
         return match
 
     @staticmethod
