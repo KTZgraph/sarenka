@@ -27,3 +27,18 @@ class Common:
     @staticmethod
     def list_flattening(l):
         return sum(l, [])
+
+    @staticmethod
+    def parse_to_list(data):
+        """
+        Parsuje plik do listy
+        """
+        if isinstance(data, list):
+            output = data
+
+        if isinstance(data, str):
+            with open(data, "r") as f:
+                output = f.readlines()
+            output = [i.rstrip() for i in output]
+
+        return output
