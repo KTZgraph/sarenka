@@ -5,6 +5,9 @@ Passive reconnaissance for everyone
 Logo was generated with https://www.renderforest.com/
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
+# architecture 
+![Alt text](architecture.png?raw=true "architecture")
+
 
 # heroku
 https://sarenka.herokuapp.com/

@@ -23,4 +23,5 @@ urlpatterns = [
     path('base_MongoDB/', include("Test_MongoDB.urls")),
 
     
+    path('analyzer/', include("analyzer_api.urls")),
 ]

@@ -35,8 +35,8 @@ class CVEParser:
         return data["cwe"]
 
     @staticmethod
-    def title(data):
-        return data["oval"][0]["title"]
+    def title(data): #TODO struktura
+        return data.get("oval") #[0]["title"]
 
     @staticmethod
     def products(data)->List[Product]:
@@ -48,7 +48,7 @@ class CVEParser:
         o for operating systems.
         TODO: jakies reguły na OS  żeby dobrze wyciągało poprawnie"""
         data = data["vulnerable_product"]
-        print(data)
+        # print(data)
 
 
         vendor_idx = 3
@@ -82,3 +82,7 @@ class CVEParser:
     @staticmethod
     def integrity(data):
         return data["impact"]["integrity"]
+
+    @staticmethod
+    def summary(data):
+        return data["summary"]

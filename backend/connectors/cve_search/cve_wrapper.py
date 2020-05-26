@@ -16,6 +16,7 @@ class CveWrapper:
         self.__availability = CVEParser.availability(data)
         self.__confidentiality = CVEParser.confidentiality(data)
         self.__integrity = CVEParser.integrity(data)
+        self.__summary = CVEParser.summary(data)
 
     @property
     def cve(self):
@@ -61,6 +62,10 @@ class CveWrapper:
     def confidentiality(self):
         return self.__confidentiality
 
+    @property
+    def summary(self):
+        return self.__summary 
+
     def __str__(self):
         return f'CVE: {self.cve}'
 
@@ -76,6 +81,7 @@ class CveWrapper:
             "title": self.title,
             "availability": self.availability,
             "confidentiality": self.confidentiality,
-            "products": [p.to_dict() for p in self.products]
+            "products": [p.to_dict() for p in self.products],
+            "summary": self.summary
         }
 
