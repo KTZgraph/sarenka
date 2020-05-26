@@ -10,11 +10,11 @@ class SoftwareInfoInterface(ABC):
     Odpowiedzialnością klasy jest przechowywanie informacji o specyfinym sofcie
     """
 
-    def __init__(self, vendor, name, repository, software_website=""):
+    def __init__(self, vendor, name, repository, website=""):
         self.__vendor = vendor
         self.__name = name
         self.__repository = repository 
-        self.__software_website = software_website
+        self.__website = website
         self.__pattern = self.get_pattern()
         self.__released_version = self.get_released_versions()
 
@@ -25,6 +25,10 @@ class SoftwareInfoInterface(ABC):
     @property
     def name(self):
         return self.__name
+    
+    @property
+    def website(self):
+        return self.__website
 
     @property
     def repository(self):
@@ -50,3 +54,6 @@ class SoftwareInfoInterface(ABC):
         Przykład informacji o wersji: https://github.com/ImageMagick/ImageMagick/releases
         """
         pass
+
+    def __str__(self):
+        return f'Vendor: {self.vendor}\nName: {self.name}\n Website: {self.website}'
