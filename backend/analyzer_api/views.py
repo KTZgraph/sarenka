@@ -10,6 +10,7 @@ from connectors.credential import Credential
 from connectors.cve_search.connector import Connector
 from .serializers import ImageMagickSerializer
 
+from local_installed.windows.registry import WindowsRegistry
 
 class ImageMagickFileView(views.APIView):
 
@@ -38,4 +39,14 @@ class ImageMagickUrlView(views.APIView):
     """
     def get(self, request):
         response = {"TODO: ": "z urla"}
+        return Response(response)
+
+
+class LocalWindows(views.APIView):
+    def get(self, request):
+        """
+        Zainstalwoane lokalnie oprogramowania
+        """
+        windows_registry = WindowsRegistry()
+        response = windows_registry.get_all_software()
         return Response(response)
