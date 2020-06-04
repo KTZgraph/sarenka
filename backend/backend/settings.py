@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'searcher',
     'Test_MongoDB',
     'analyzer_api',
+    'knowledge_base',
+
 ]
 
 MIDDLEWARE = [
@@ -112,26 +114,19 @@ REST_FRAMEWORK = {
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # },
     'default': {
-        'NAME': 'testowa_baza',
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'USER': 'postgres',
-        'PASSWORD': 'MN4j3PWW2f',
-        # 'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     },
-    'MongoDB': {  
-        'ENGINE': 'djongo',
-        'NAME': 'sarenka_MongoDB',
-        # 'CLIENT': {
-        #    'HOST': 'localhost',
-        # }      
+
+    # 'MongoDB': {  
+    #     'ENGINE': 'djongo',
+    #     'NAME': 'sarenka_MongoDB',
+    #     # 'CLIENT': {
+    #     #    'HOST': 'localhost',
+    #     # }      
        
-    },
+    # },
     
 
 }

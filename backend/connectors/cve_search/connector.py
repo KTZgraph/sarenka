@@ -32,7 +32,7 @@ class Connector(ConnectorInterface):
     def get_last_30_cves(self):
         response = requests.get(self.last)
         return response
-
+    #TO DO
     def get_vendors_list(self):
         response = requests.get(self.vendor)
         return response
