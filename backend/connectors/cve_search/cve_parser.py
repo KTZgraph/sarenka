@@ -36,7 +36,7 @@ class CVEParser:
 
     @staticmethod
     def title(data): #TODO struktura
-        return data.get("oval") #[0]["title"]
+        return data.get("oval")[0]["title"]
 
     @staticmethod
     def products(data)->List[Product]:

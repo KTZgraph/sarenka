@@ -5,8 +5,8 @@ from analyzer.softwares.software_info_interface import SoftwareInfoInterface
 
 class ImageMagick(SoftwareInfoInterface):
     """
-    Klasa mająca informacje o konkentym sofcie
-    docelowo dane będą z bazy
+    Klasa mająca informacje o konkentym sofcie ale NIE o konkrentej zainstalowanej werji -> patrz analyzer\softwares\software_type.py
+    docelowo dane będą z bazy które ktoś wczęsniej ręcznie przenalizuje
     tymczasowo na sztywno podaję dane
     """
     def __init__(self):
@@ -14,7 +14,7 @@ class ImageMagick(SoftwareInfoInterface):
             vendor="ImageMagick",
             name="ImageMagick",
             repository="https://github.com/ImageMagick/ImageMagick/",
-            software_website="https://imagemagick.org/",
+            website="https://imagemagick.org/",
         )
 
     def get_pattern(self):
