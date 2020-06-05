@@ -37,6 +37,8 @@ const VulnerabilityResultTemplate = () => {
             handleSubmit={handleSubmit}
             searchWord={searchCve}
             setSearchWord={setSearchCve}
+            title="Search infromation about specific CVE"
+            placeholder="Type CVE number"
           />
         }
         result={
