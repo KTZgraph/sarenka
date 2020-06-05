@@ -32,7 +32,7 @@ const StyledSettingsParagraph = styled.p`
     display: block;
     width: 315px;
     height: 1px;
-    background: #bdbdbd;
+    background: ${({ theme }) => theme.colors.grey};
     margin-bottom: 15px;
     margin-left: -20px;
   }
@@ -66,6 +66,15 @@ const NavBar = () => (
       iconactive={exploitsIconActive}
     >
       Exploits
+    </NavButton>
+    <NavButton
+      as={NavLink}
+      to="/cvesearch"
+      activeClassName="active"
+      icon={exploitsIcon}
+      iconactive={exploitsIconActive}
+    >
+      Search CVE
     </NavButton>
     <NavButton as={NavLink} to="/registry" activeClassName="active">
       Windows registry
