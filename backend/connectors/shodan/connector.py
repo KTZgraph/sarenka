@@ -30,4 +30,11 @@ class Connector(ConnectorInterface):
         result = self.api.host(ip)
         host_details = HostDetailsWrapper(ip, result)
         return host_details
-        
+    
+    def search_by_asn(self, asn):
+        """
+        https://www.shodan.io/search?query=asn%3AAS6846
+        w censysie numer asn jest widoczny - punkt spięcia wyszukiwań
+        z censysa "autonomous_system": {"description": "GOOGLE", "rir": "unknown", "routed_prefix": "8.8.8.0/24", "country_code": "US", "path": [15169], "asn": 15169, "name": "GOOGLE"}, 
+        """
+        pass
