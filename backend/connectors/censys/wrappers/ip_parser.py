@@ -1,6 +1,6 @@
 from common.dict_x import DictX
-from dns_wrapper import DNSWrapper
-from https_wrapper import HTTPSWrapper
+from wrappers.dns_wrapper import DNSWrapper
+from wrappers.https_wrapper import HTTPSWrapper
 
 class IPParser:
     # TODO zabezpieczenia na brak danych 
@@ -100,3 +100,4 @@ class IPParser:
     @property
     def updated_at(self):
         self.data.get("updated_at")
+

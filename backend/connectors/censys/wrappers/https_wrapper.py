@@ -1,5 +1,5 @@
 from common.dict_x import DictX
-from tls_wrapper import TLSWrapper
+from wrappers.tls_wrapper import TLSWrapper
 
 class HTTPSWrapper:
     def __init__(self, data):
@@ -39,7 +39,7 @@ class HTTPSWrapper:
         """
         https://weakdh.org/
         """
-        pass
+        return "Not implemented"
 
     def get_tls(self):
         return TLSWrapper(self.data.tls)

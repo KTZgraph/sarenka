@@ -1,10 +1,9 @@
 from common.common import Common
-from ip_parser import IPParser
+from wrappers.ip_parser import IPParser
 
 
 class IPWrapper:
-    def __init__(self, filename="C:\\Users\\dp\\Desktop\\sarenka\\backend\\connectors\\censys\\censys_ip.json"):
-        data = Common.file_to_dict(filename)
+    def __init__(self, data):
         ip_parser = IPParser(data)
         protocols_port, used_protocols = ip_parser.get_protocols()
 
@@ -96,7 +95,7 @@ class IPWrapper:
 
     @property
     def name(self):
-        return self.autonomous_system.name
+        return self.autonomous_system.name if self.autonomous_system else None
 
     # -------------------------- PROTOKOŁY --------------------------
     # -------------------------- DNS
@@ -106,49 +105,66 @@ class IPWrapper:
 
     @property
     def dns_names(self):
-        return self.dns.names
+        return self.dns.names if self.dns else None
 
     @property
     def dns_erros(self):
-        errors = []
-        if not self.dns.is_resolves_correctly:
-            errors.append("resolves uncorrectly")
+        if self.dns:
+            errors = []
+            
+            if not self.dns.is_resolves_correctly:
+                errors.append("resolves uncorrectly")
 
-        if not self.dns.is_support:
-            errors.append("not supported")
+            if not self.dns.is_support:
+                errors.append("not supported")
 
-        if not self.dns.is_open_resolver:
-            errors.append("no open resolver")
+            if not self.dns.is_open_resolver:
+                errors.append("no open resolver")
 
-        if not self.dns.is_erros:
-            errors.append(self.dns.is_erros)
+            if not self.dns.is_erros:
+                errors.append(self.dns.is_erros)
 
-        return errors
+            return errors
+        
+        return None
 
     # -------------------------- HTTPS
     @property
     def https(self):
         return self.__https
 
+    @property
+    def to_json(self):
+        response = {}
+        response.update({"protocols_port": self.protocols_port})
+        response.update({"protocols_port" :self.protocols_port})
+        response.update({"protocols" :self.protocols})
+        response.update({"ports" :self.ports})
+        response.update({"longitude" :self.longitude})
+        response.update({"latitude" :self.latitude})
+        response.update({"timezone" :self.timezone})
+        response.update({"continent" :self.continent})
+        response.update({"registered_country" :self.registered_country})
+        response.update({"description" :self.description})
+        response.update({"rir" :self.rir})
+        response.update({"routed_prefix" :self.routed_prefix})
+        response.update({"path" :self.path})
+        response.update({"asn" :self.asn})
+        response.update({"name" :self.name})
+        response.update({"dns_names" :self.dns_names})
+        response.update({"dns_erros" :self.dns_erros})
+        response.update({"https" :self.https})
+        return response
+
+    def __str__(self):
+        result = ""
+        for item in self.to_json.items():
+            result += str(item[0]) + ": " + str(item[1]) + "\n"
+
+        return result
+
 
 
 if __name__ == "__main__":
     ip_wrapper = IPWrapper()
-    # print(ip_wrapper.protocols_port)
-    # print(ip_wrapper.protocols)
-    # print(ip_wrapper.ports)
-    # print(ip_wrapper.location)
-    # print(ip_wrapper.longitude)
-    # print(ip_wrapper.latitude)
-    # print(ip_wrapper.timezone)
-    # print(ip_wrapper.continent)
-    # print(ip_wrapper.registered_country)
-    # print(ip_wrapper.description)
-    # print(ip_wrapper.rir)
-    # print(ip_wrapper.routed_prefix)
-    # print(ip_wrapper.path)
-    # print(ip_wrapper.asn)
-    # print(ip_wrapper.name)
-
-    print(ip_wrapper.dns_names)
-    print(ip_wrapper.https)
+    print(ip_wrapper)
