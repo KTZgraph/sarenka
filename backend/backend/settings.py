@@ -9,11 +9,11 @@ https://docs.djangoproject.com/en/3.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
-import psycopg2.extensions
+# import psycopg2.extensions
 # import mongoenigme
 
 import os
-DATABASE_ROUTERS = ['Test_MongoDB.routers.Test_MongoDBRouter',]
+# DATABASE_ROUTERS = ['Test_MongoDB.routers.Test_MongoDBRouter',]
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SESSION_ENIGME='mongoenigme.djongo.sessions'
@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'searcher',
-    'Test_MongoDB',
     'analyzer_api',
     'knowledge_base',
 
@@ -118,15 +117,6 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     },
-
-    # 'MongoDB': {  
-    #     'ENGINE': 'djongo',
-    #     'NAME': 'sarenka_MongoDB',
-    #     # 'CLIENT': {
-    #     #    'HOST': 'localhost',
-    #     # }      
-       
-    # },
     
 
 }

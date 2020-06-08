@@ -5,6 +5,7 @@ from requests.exceptions import HTTPError
 from connectors.credential import Credential 
 from .connector_interface import ConnectorInterface
 from .cve_wrapper import CveWrapper
+import urllib.request, json 
 
 
 class Connector(ConnectorInterface):
@@ -34,8 +35,10 @@ class Connector(ConnectorInterface):
         return response
     #TO DO
     def get_vendors_list(self):
-        response = requests.get(self.vendor)
-        return response
+        # response = requests.get(self.vendor)
+        with urllib.request.urlopen("https://cve.circl.lu/api/browse") as url:
+            data = json.loads(url.read().decode())
+        return data['vendor']
 
     def get_vendor_products(self, vendor:str):
         url = f'{self.vendor}{vendor}/'
