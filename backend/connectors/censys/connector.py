@@ -21,7 +21,9 @@ class Connector(ConnectorInterface):
         https://censys.io/ipv4/8.8.8.8
         """
         response = self.ipv4.view(ip)
-        return IPWrapper(response)
+        # return IPWrapper(response)
+        Common.save_dict_to_file("50_56_73_47.json", response)
+        return response
 
     def search_by_fingerprint(self, certificate_hash):
         return self.certificate.view(certificate_hash)
@@ -33,7 +35,8 @@ if __name__ == "__main__":
     censys_credentials = Credential().censys
     connector = Connector(censys_credentials)
     # response = connector.search_by_ip("8.8.8.8") # 
-    response = connector.search_by_ip("212.77.98.9") # dziala
+    # response = connector.search_by_ip("212.77.98.9") # dziala
+    response = connector.search_by_ip("50.56.73.47") # dziala
 
     print(response)
     # Common.save_dict_to_file("C:\\Users\\dp\\Desktop\\sarenka\\backend\\connectors\\censys\\censys_ip.json", response)

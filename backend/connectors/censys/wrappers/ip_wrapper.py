@@ -1,9 +1,10 @@
 from common.common import Common
-from wrappers.ip_parser import IPParser
+from ip_parser import IPParser
 
 
 class IPWrapper:
-    def __init__(self, data):
+    def __init__(self, filename="C:\\Users\\dp\\Desktop\\sarenka\\backend\\connectors\\censys\\50_56_73_47.json"):
+        data = Common.file_to_dict(filename)
         ip_parser = IPParser(data)
         protocols_port, used_protocols = ip_parser.get_protocols()
 
@@ -14,6 +15,8 @@ class IPWrapper:
         self.__autonomous_system = ip_parser.get_autonomous_system()
         self.__dns = ip_parser.get_dns()
         self.__https = ip_parser.get_https()
+        self.__os = ip_parser.get_os()
+        self.__updated_at = ip_parser.updated_at
 
 
     @property
@@ -31,6 +34,14 @@ class IPWrapper:
     @property
     def ports(self):
         return self.__ports
+
+    @property
+    def os(self):
+        return self.__os
+
+    @property
+    def updated_at(self):
+        return self.__updated_at
 
     # ---------------------- location ----------------------
     @property
@@ -154,6 +165,8 @@ class IPWrapper:
         response.update({"dns_names" :self.dns_names})
         response.update({"dns_erros" :self.dns_erros})
         response.update({"https" :self.https})
+        response.update({"os" :self.os})
+        response.update({"updated_at" :self.updated_at})
         return response
 
     def __str__(self):

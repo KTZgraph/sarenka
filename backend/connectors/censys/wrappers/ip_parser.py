@@ -1,6 +1,6 @@
 from common.dict_x import DictX
-from wrappers.dns_wrapper import DNSWrapper
-from wrappers.https_wrapper import HTTPSWrapper
+from dns_wrapper import DNSWrapper
+from https_wrapper import HTTPSWrapper
 
 class IPParser:
     # TODO zabezpieczenia na brak danych 
@@ -46,6 +46,19 @@ class IPParser:
 
             if data_https:
                 return HTTPSWrapper(data_https)
+
+    def get_os(self):
+        """
+        W metadata są os i os_description
+        """
+        response = None
+        metadata = self.data.get("metadata")
+        if metadata:
+            os = metadata.get("os")
+            os_description = metadata.get("os_description")
+            response = list(set([os, os_description]))
+        
+        return response
 
     def get_protocols(self):
         """
@@ -99,5 +112,5 @@ class IPParser:
     
     @property
     def updated_at(self):
-        self.data.get("updated_at")
+        return self.data.get("updated_at") if self.data.get("updated_at") else None
 

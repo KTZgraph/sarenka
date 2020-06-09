@@ -1,5 +1,5 @@
 from common.dict_x import DictX
-from wrappers.tls_wrapper import TLSWrapper
+from tls_wrapper import TLSWrapper
 
 class HTTPSWrapper:
     def __init__(self, data):
@@ -12,8 +12,26 @@ class HTTPSWrapper:
         return get_data.get("status_code")
 
     @property
+    def get_metadata(self):
+        """
+        Data from https://censys.io/ipv4/50.56.73.47
+        dla Apache httpd 2.2.17 https://www.cvedetails.com/vulnerability-list/vendor_id-45/product_id-66/version_id-109443/Apache-Http-Server-2.2.17.html
+        https://www.netcompliancesolutions.com/.htaccess  - sprawdizć czy jest ta ściezka - jeśli tak tomamy apache 
+        """
+        get_data = self.data.get("get", {})
+        metadata = get_data.get("metadata")
+        response = {"product": None, "version" : None, "description": None, "manufacturer": None }
+        if metadata:
+            response["product"] = metadata.get("product")
+            response["version"] = metadata.get("version")
+            response["description"] = metadata.get("description")
+            response["manufacturer"] = metadata.get("manufacturer")
+
+        return response
+
+    @property
     def heartbleed(self):
-        info = self.data.heartbleed
+        info = self.data.get("heartbleed", {})
         if info.get("heartbeat_enabled") or info.get("heartbleed_vulnerable"):
             return True
         
@@ -24,6 +42,22 @@ class HTTPSWrapper:
         return self.data.rsa_export.get("support")
 
     @property
+    def rsa_params(self):
+        rsa_params = self.data.rsa_export.get("rsa_params")
+
+        response = {"lenght" : None, "modulus": None, "exponent": None}
+        if rsa_params:
+            response["lenght"] = rsa_params.get("lenght")
+            response["modulus"] = rsa_params.get("modulus")
+            response["exponent"] = rsa_params.get("exponent")
+
+        return response
+
+    @property
+    def ssl_3_support(self):
+        return self.data.ssl_3.get("support")
+
+    @property
     def dhe_export(self):
         """
         https://crypto.stackexchange.com/questions/33859/what-is-dhe-export-cipher-suite
@@ -31,19 +65,69 @@ class HTTPSWrapper:
         return self.data.dhe_export.get("support")
 
     @property
+    def dh_params(self):
+        dh = self.data.dhe_export.get("dh_params")
+        response = {"prime_length": None, "prime_value": None, "generator_length": None, "generator_value": None}
+        if dh:
+            response["prime_length"] = dh.get("prime", {}).get("lenght")
+            response["prime_value"] = dh.get("prime", {}).get("value")
+            response["generator_length"] = dh.get("generator", {}).get("lenght")
+            response["generator_value"] = dh.get("generator", {}).get("value")
+
+        return response
+
+    @property
     def dhe_support(self):
         return self.data.dhe.get("support")
 
     @property
-    def logjam(self):
+    def logjam_attack(self):
         """
         https://weakdh.org/
+        Export DHE True -> This host is vulnerable to the Logjam attack.
         """
         return "Not implemented"
+
+    @property
+    def freak_attack(self):
+        """
+        Export RSA True  -> This host is vulnerable to the FREAK attack.
+        """
+        return "Not implemented"
+
+    @property
+    def poodle_attack(self):
+        """
+        SSLv3 Support True -> This host is vulnerable to the POODLE attack.
+        """
+        return "Not implemented"
+
 
     def get_tls(self):
         return TLSWrapper(self.data.tls)
 
+    @property
+    def to_json(self):
+        result = {}
+        result.update({"status_code":self.status_code})
+        result.update({"get_metadata":self.get_metadata})
+        result.update({"heartbleed":self.heartbleed})
+        result.update({"rsa_export":self.rsa_export})
+        result.update({"rsa_params":self.rsa_params})
+        result.update({"dhe_export":self.dhe_export})
+        result.update({"dh_params":self.dh_params})
+        result.update({"dhe_support":self.dhe_support})
+        result.update({"logjam_attack":self.logjam_attack})
+        result.update({"freak_attack":self.freak_attack})
+        result.update({"poodle_attack":self.poodle_attack})
+
+        return result
+
+
     def __str__(self):
-        return f"Status:{self.status_code}\nHeartbleed:{self.heartbleed}\nRSA export:{self.rsa_export}\nDHE export:{self.dhe_export}\nDHE support:{self.dhe_support}"
+        result = ""
+        for item in self.to_json.items():
+            result += str(item[0]) + ": " + str(item[1]) + "\n"
+
+        return result
     
