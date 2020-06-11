@@ -1,10 +1,12 @@
 from common.dict_x import DictX
-from tls_wrapper import TLSWrapper
+from wrappers.tls_wrapper import TLSWrapper
+# from tls_wrapper import TLSWrapper
+from common.common import Common
 
 class HTTPSWrapper:
     def __init__(self, data):
         self.data = DictX(data)
-        self.tls = self.get_tls()
+        self.__tls = self.get_tls()
 
     @property
     def status_code(self):
@@ -28,6 +30,24 @@ class HTTPSWrapper:
             response["manufacturer"] = metadata.get("manufacturer")
 
         return response
+
+    @property
+    def webpage_title(self):
+        """
+        Webpage title
+        """
+        get_data = self.data.get("get", {})
+        title = get_data.get("title")
+        return title
+
+    @property
+    def webpage_body_sha256(self):
+        """
+        Webpage body_sha256
+        """
+        get_data = self.data.get("get", {})
+        body_sha256 = get_data.get("body_sha256")
+        return body_sha256
 
     @property
     def heartbleed(self):
@@ -54,8 +74,21 @@ class HTTPSWrapper:
         return response
 
     @property
+    def rsa_length(self):
+        return self.rsa_params.get("length")
+    
+    @property
+    def rsa_modulus(self):
+        return self.rsa_params.get("modulus")
+
+    @property
+    def rsa_exponent(self):
+        return self.rsa_params.get("exponent")
+
+
+    @property
     def ssl_3_support(self):
-        return self.data.ssl_3.get("support")
+        return self.data.get("ssl_3", {}).get("support")
 
     @property
     def dhe_export(self):
@@ -86,25 +119,29 @@ class HTTPSWrapper:
         https://weakdh.org/
         Export DHE True -> This host is vulnerable to the Logjam attack.
         """
-        return "Not implemented"
+        return self.rsa_export
 
     @property
     def freak_attack(self):
         """
         Export RSA True  -> This host is vulnerable to the FREAK attack.
         """
-        return "Not implemented"
+        return self.dhe_export
 
     @property
     def poodle_attack(self):
         """
         SSLv3 Support True -> This host is vulnerable to the POODLE attack.
         """
-        return "Not implemented"
+        return self.ssl_3_support
 
 
     def get_tls(self):
         return TLSWrapper(self.data.tls)
+
+    @property
+    def tls(self):
+        return self.__tls
 
     @property
     def to_json(self):
@@ -113,21 +150,24 @@ class HTTPSWrapper:
         result.update({"get_metadata":self.get_metadata})
         result.update({"heartbleed":self.heartbleed})
         result.update({"rsa_export":self.rsa_export})
-        result.update({"rsa_params":self.rsa_params})
+        result.update({"rsa_length":self.rsa_length})
+        result.update({"rsa_modulus":self.rsa_modulus})
+        result.update({"rsa_exponent":self.rsa_exponent})
         result.update({"dhe_export":self.dhe_export})
         result.update({"dh_params":self.dh_params})
         result.update({"dhe_support":self.dhe_support})
         result.update({"logjam_attack":self.logjam_attack})
         result.update({"freak_attack":self.freak_attack})
         result.update({"poodle_attack":self.poodle_attack})
+        result.update({"poodle_attack":self.poodle_attack})
+        result.update({"webpage_title":self.webpage_title})
+        result.update({"webpage_body_sha256":self.webpage_body_sha256})
+        result.update({"tls":self.tls})
 
         return result
 
 
     def __str__(self):
-        result = ""
-        for item in self.to_json.items():
-            result += str(item[0]) + ": " + str(item[1]) + "\n"
+        return Common.dict_to_string(self.to_json)
 
-        return result
     

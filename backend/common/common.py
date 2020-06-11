@@ -42,3 +42,13 @@ class Common:
             output = [i.rstrip() for i in output]
 
         return output
+
+
+    @staticmethod
+    def dict_to_string(json_dict):
+        result = ""
+        for item in json_dict.items():
+            result += str(item[0]) + ": " + str(item[1]) + "\n"
+
+        return result
+    

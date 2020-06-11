@@ -1,5 +1,6 @@
 from common.common import Common
-from ip_parser import IPParser
+from wrappers.ip_parser import IPParser
+# from ip_parser import IPParser
 
 
 class IPWrapper:
@@ -180,4 +181,4 @@ class IPWrapper:
 
 if __name__ == "__main__":
     ip_wrapper = IPWrapper()
-    print(ip_wrapper)
+    print(ip_wrapper.https)
