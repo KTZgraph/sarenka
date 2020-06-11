@@ -1,51 +1,71 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
+import { Provider } from 'react-redux';
+import store from 'store';
 import routes from 'routes';
 import theme from 'theme/theme';
 import GlobalStyle from 'theme/GlobalStyle';
 import MainTemplate from 'templates/MainTemplate';
 import FrontendVulnerabilitySearch from 'views/FrontendVulnerabilitySearch';
-import FrontendVulnerabilityResult from 'views/FrontendVulnerabilityResult';
 import BackendVulnerabilitySearch from 'views/BackendVulnerabilitySearch';
-import BackendVulnerabilityResult from 'views/BackendVulnerabilityResult';
+import CveSearch from 'views/CveSearch';
+import Loading from 'components/atoms/LoadingAnimation/LoadingAnimation';
+
+const FrontendVulnerabilityResult = lazy(() =>
+  import('views/FrontendVulnerabilityResult'),
+);
+const BackendVulnerabilityResult = lazy(() =>
+  import('views/BackendVulnerabilityResult'),
+);
+const CveSearchResult = lazy(() => import('views/CveSearchResult'));
 
 function Root() {
   return (
-    <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <MainTemplate>
-          <Switch>
-            <Route
-              exact
-              path={routes.home}
-              render={() => <Redirect to={routes.frontend} />}
-            />
-            <Route
-              exact
-              path={routes.frontend}
-              component={FrontendVulnerabilitySearch}
-            />
-            <Route
-              exact
-              path={routes.frontendResults}
-              component={FrontendVulnerabilityResult}
-            />
-            <Route
-              exact
-              path={routes.backend}
-              component={BackendVulnerabilitySearch}
-            />
-            <Route
-              exact
-              path={routes.backendResults}
-              component={BackendVulnerabilityResult}
-            />
-          </Switch>
-        </MainTemplate>
-      </ThemeProvider>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <MainTemplate>
+            <Suspense fallback={<Loading bigView />}>
+              <Switch>
+                <Route
+                  exact
+                  path={routes.home}
+                  render={() => <Redirect to={routes.frontend} />}
+                />
+                <Route
+                  exact
+                  path={routes.frontend}
+                  component={FrontendVulnerabilitySearch}
+                />
+                <Route
+                  exact
+                  path={routes.frontendResults}
+                  component={FrontendVulnerabilityResult}
+                />
+                <Route
+                  exact
+                  path={routes.backend}
+                  component={BackendVulnerabilitySearch}
+                />
+                <Route
+                  exact
+                  path={routes.backendResults}
+                  component={BackendVulnerabilityResult}
+                />
+                <Route exact path={routes.cveSearch} component={CveSearch} />
+                <Route
+                  exact
+                  path={routes.cveSearchResults}
+                  component={CveSearchResult}
+                />
+              </Switch>
+            </Suspense>
+          </MainTemplate>
+        </ThemeProvider>
+      </BrowserRouter>
+    </Provider>
   );
 }
 

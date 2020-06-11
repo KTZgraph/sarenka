@@ -8,6 +8,8 @@ const routes: Record<string, string> = {
   registry: '/registry',
   documentation: '/docs',
   settings: '/settings',
+  cveSearch: '/cvesearch',
+  cveSearchResults: '/cvesearch/results',
 };
 
 export default routes;
