@@ -35,10 +35,8 @@ class Connector(ConnectorInterface):
         return response
     #TO DO
     def get_vendors_list(self):
-        # response = requests.get(self.vendor)
-        with urllib.request.urlopen("https://cve.circl.lu/api/browse") as url:
-            data = json.loads(url.read().decode())
-        return data['vendor']
+        response = Connector.connect_until_200(self.vendor)
+        return response['vendor']
 
     def get_vendor_products(self, vendor:str):
         url = f'{self.vendor}{vendor}/'
