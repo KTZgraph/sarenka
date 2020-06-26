@@ -10,6 +10,7 @@ import MainTemplate from 'templates/MainTemplate';
 import FrontendVulnerabilitySearch from 'views/FrontendVulnerabilitySearch';
 import BackendVulnerabilitySearch from 'views/BackendVulnerabilitySearch';
 import CveSearch from 'views/CveSearch';
+import RegistryScan from 'views/RegistryScan/RegistryScan';
 import Loading from 'components/atoms/LoadingAnimation/LoadingAnimation';
 
 const FrontendVulnerabilityResult = lazy(() =>
@@ -19,6 +20,9 @@ const BackendVulnerabilityResult = lazy(() =>
   import('views/BackendVulnerabilityResult'),
 );
 const CveSearchResult = lazy(() => import('views/CveSearchResult'));
+const RegistryScanResult = lazy(() =>
+  import('views/RegistryScan/RegistryScanResults'),
+);
 
 function Root() {
   return (
@@ -59,6 +63,12 @@ function Root() {
                   exact
                   path={routes.cveSearchResults}
                   component={CveSearchResult}
+                />
+                <Route exact path={routes.registry} component={RegistryScan} />
+                <Route
+                  exact
+                  path={routes.registryResults}
+                  component={RegistryScanResult}
                 />
               </Switch>
             </Suspense>

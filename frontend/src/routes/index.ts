@@ -6,6 +6,7 @@ const routes: Record<string, string> = {
   backendResults: '/backend/results',
   exploits: '/exploits',
   registry: '/registry',
+  registryResults: '/registry/results',
   documentation: '/docs',
   settings: '/settings',
   cveSearch: '/cvesearch',
