@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import CardWrapper from 'components/atoms/CardWrapper/CardWrapper';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
-import ListItem from 'components/molecules/CveSearchListItem/CveSearchListItem';
+import ListItem from 'components/molecules/TableItem/TableItem';
 
 const StyledParagraphRedBorder = styled(Paragraph)`
   max-width: 110px;
@@ -111,13 +111,7 @@ const CveSearchResult: React.FC<Props> = ({
         </thead>
         <tbody>
           {products?.map(({ vendor, name, version, system }, index) => (
-            <ListItem
-              key={index}
-              vendor={vendor}
-              name={name}
-              version={version}
-              system={system}
-            />
+            <ListItem key={index} columns={[vendor, name, version, system]} />
           ))}
         </tbody>
       </StyledTable>

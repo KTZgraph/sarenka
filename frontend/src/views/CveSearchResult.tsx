@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
 import { useHistory } from 'react-router-dom';
 import routes from 'routes';
 import { fetchData } from 'actions/cveSearchActions';
@@ -10,7 +9,7 @@ import Loading from 'components/atoms/LoadingAnimation/LoadingAnimation';
 import Search from 'components/molecules/Search/Search';
 import Heading from 'components/atoms/Heading/Heading';
 
-const VulnerabilityResultTemplate = () => {
+const CveSearchResult = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -70,4 +69,4 @@ const VulnerabilityResultTemplate = () => {
   );
 };
 
-export default VulnerabilityResultTemplate;
+export default CveSearchResult;
