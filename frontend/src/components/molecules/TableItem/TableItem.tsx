@@ -8,20 +8,32 @@ const StyledWrapper = styled.tr`
   width: 90%;
 
   & > td {
-    border-bottom: 1px solid ${({ theme }) => theme.colors.grey};
+    padding-right: 15px;
   }
+  & > td:nth-last-child(1) {
+    padding-left: 0;
+  }
+`;
+
+const StyledParagraph = styled(Paragraph)`
+  word-break: break-all;
 `;
 
 type Props = {
   columns: Array<string>;
+  wordBreak?: number;
 };
 
-const CveSearchListItem: React.FC<Props> = ({ columns }: Props) => (
+const CveSearchListItem: React.FC<Props> = ({ columns, wordBreak }: Props) => (
   <StyledWrapper>
     {columns.map((column, index) => (
       // eslint-disable-next-line react/no-array-index-key
       <td key={index}>
-        <Paragraph>{column}</Paragraph>
+        {index === wordBreak ? (
+          <StyledParagraph>{column}</StyledParagraph>
+        ) : (
+          <Paragraph>{column}</Paragraph>
+        )}
       </td>
     ))}
   </StyledWrapper>

@@ -3,6 +3,7 @@ const theme: Record<string, any> = {
     red: '#c10c27',
     redTransparent: '#c10c274f',
     grey: '#bdbdbd',
+    darkGrey: '#2525254f',
     font: '#e0e0e0',
   },
   font: {

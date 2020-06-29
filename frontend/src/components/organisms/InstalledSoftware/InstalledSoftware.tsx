@@ -1,18 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import CardWrapper from 'components/atoms/CardWrapper/CardWrapper';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 import TableItem from 'components/molecules/TableItem/TableItem';
+import arrowSvg from 'static/arrow-right.svg';
 
-const StyledTable = styled.table`
+const StyledTable = styled.table<{ visible: boolean }>`
   width: 100%;
   text-align: left;
-  padding: 0 30px;
   border-spacing: 0;
+  display: ${({ visible }) => (visible ? 'block' : 'none')};
+`;
 
-  & > tbody {
-    border: 1px solid ${({ theme }) => theme.colors.grey};
-    border-radius: 20px;
+const StyledTableHeader = styled.tr`
+  & > th {
+    padding: 10px;
+    background-color: ${({ theme }) => theme.colors.redTransparent};
+  }
+  & > th:nth-child(1) {
+    border-radius: 10px 0 0 0;
+  }
+  & > th:nth-last-child(1) {
+    border-radius: 0 10px 0 0;
+  }
+`;
+
+const StyledTableBody = styled.tbody`
+  border-radius: 10px;
+  & > tr:nth-child(even) {
+    background: ${({ theme }) => theme.colors.darkGrey};
+  }
+`;
+
+const StyledParagraph = styled(Paragraph)`
+  word-break: break-all;
+`;
+
+const StyledShowResultButton = styled.button<{ rotate?: boolean }>`
+  border: none;
+  color: ${({ theme }) => theme.colors.font};
+  cursor: pointer;
+  margin-bottom: 15px;
+  background: transparent;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    margin-right: 5px;
+    background: transparent url(${arrowSvg}) no-repeat 0 0;
+    background-size: 15px 15px;
+    transition: 0.3s;
+    transform: ${({ rotate }) => (rotate ? 'rotateZ(90deg)' : 'rotateZ(0)')};
   }
 `;
 
@@ -24,34 +64,42 @@ type Props = {
 const InstalledSoftware: React.FC<Props> = ({
   searchLocation,
   softwares,
-}: Props) => (
-  <CardWrapper>
-    <StyledTable>
-      <thead>
-        <tr>
-          <Paragraph>
-            Search location:
-            {searchLocation}
-          </Paragraph>
-        </tr>
-        <tr>
-          <Paragraph as="th">Name</Paragraph>
-          <Paragraph as="th">Location</Paragraph>
-          <Paragraph as="th">Version</Paragraph>
-          <Paragraph as="th">Date</Paragraph>
-          <Paragraph as="th">Vendor</Paragraph>
-        </tr>
-      </thead>
-      <tbody>
-        {softwares?.map(({ name, location, version, date, vendor }) => (
-          <TableItem
-            key={name}
-            columns={[name, location, version, date, vendor]}
-          />
-        ))}
-      </tbody>
-    </StyledTable>
-  </CardWrapper>
-);
+}: Props) => {
+  const [showResults, setShowResults] = useState(false);
+  return (
+    <CardWrapper>
+      <StyledParagraph>
+        {`Search location: `}
+        {searchLocation}
+      </StyledParagraph>
+      <StyledShowResultButton
+        rotate={showResults}
+        onClick={() => setShowResults(!showResults)}
+      >
+        Show search results
+      </StyledShowResultButton>
+      <StyledTable visible={showResults}>
+        <thead>
+          <StyledTableHeader>
+            <Paragraph as="th">Name</Paragraph>
+            <Paragraph as="th">Location</Paragraph>
+            <Paragraph as="th">Version</Paragraph>
+            <Paragraph as="th">Date</Paragraph>
+            <Paragraph as="th">Vendor</Paragraph>
+          </StyledTableHeader>
+        </thead>
+        <StyledTableBody>
+          {softwares?.map(({ name, location, version, date, vendor }) => (
+            <TableItem
+              key={name}
+              columns={[name, location, version, date, vendor]}
+              wordBreak={1}
+            />
+          ))}
+        </StyledTableBody>
+      </StyledTable>
+    </CardWrapper>
+  );
+};
 
 export default InstalledSoftware;
