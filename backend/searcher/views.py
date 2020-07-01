@@ -1,3 +1,7 @@
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404
+from django.db import models
+from django.http import JsonResponse
 import json
 from rest_framework import views
 from rest_framework.response import Response
@@ -7,10 +11,7 @@ from connectors.credential import Credential
 from connectors.cve_search.connector import Connector as CVEConnector
 from connectors.censys.connector import Connector as CensysConnector
 from .serializers import CveWrapperSerializer
-from django.http import HttpResponse
-from django.shortcuts import get_object_or_404
-from django.db import models
-from django.http import JsonResponse
+
 
 
 class CVESearchView(views.APIView):
@@ -43,6 +44,6 @@ class CensysHostSearchView(views.APIView):
 class ListVendors(views.APIView):
     def get(self, request):
         credentials = Credential().cve_search
-        connector = Connector(credentials)
+        connector = CVEConnector(credentials)
         listVendors = connector.get_vendors_list()
         return Response(listVendors)
