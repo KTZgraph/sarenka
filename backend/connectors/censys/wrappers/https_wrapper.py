@@ -1,5 +1,5 @@
 from common.dict_x import DictX
-from wrappers.tls_wrapper import TLSWrapper
+from .tls_wrapper import TLSWrapper
 # from tls_wrapper import TLSWrapper
 from common.common import Common
 
@@ -137,7 +137,7 @@ class HTTPSWrapper:
 
 
     def get_tls(self):
-        return TLSWrapper(self.data.tls)
+        return TLSWrapper(self.data.tls).to_json
 
     @property
     def tls(self):

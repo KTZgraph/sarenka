@@ -1,7 +1,7 @@
 from common.dict_x import DictX
-from wrappers.dns_wrapper import DNSWrapper
+from .dns_wrapper import DNSWrapper
 # from dns_wrapper import DNSWrapper
-from wrappers.https_wrapper import HTTPSWrapper
+from .https_wrapper import HTTPSWrapper
 # from https_wrapper import HTTPSWrapper
 
 class IPParser:
@@ -47,7 +47,7 @@ class IPParser:
             data_https = self.data[port].get("https")
 
             if data_https:
-                return HTTPSWrapper(data_https)
+                return HTTPSWrapper(data_https).to_json
 
     def get_os(self):
         """

@@ -114,7 +114,7 @@ class TLSCertificateWrapper:
 
     @property
     def extensions(self):
-        return self.__extensions
+        return self.__extensions.to_json
     
     @property
     def tbs_noct_fingerprint(self):
@@ -168,7 +168,7 @@ class TLSCertificateWrapper:
             "dv": "domain",
             "ov": "organization",
             "ev": "extended",
-            "unknown": "no data"
+            "unknown": "no data",
             "": None
         }
 
@@ -359,7 +359,7 @@ class TLSWrapper:
         result = []
         for chain in self.data.get("chain"):
             result.append(
-                TLSCertificateWrapper(chain)
+                TLSCertificateWrapper(chain).to_json
             )
 
         return result

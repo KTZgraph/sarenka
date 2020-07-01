@@ -1,5 +1,5 @@
 from common.common import Common
-from wrappers.ip_parser import IPParser
+from .ip_parser import IPParser
 # from ip_parser import IPParser
 
 
@@ -19,10 +19,6 @@ class IPWrapper:
         self.__os = ip_parser.get_os()
         self.__updated_at = ip_parser.updated_at
 
-
-    @property
-    def to_json(self):
-        pass
 
     @property
     def protocols_port(self):

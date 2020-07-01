@@ -8,9 +8,9 @@ from censys.websites import CensysWebsites
 from censys.base import CensysNotFoundException, CensysRateLimitExceededException, CensysUnauthorizedException
 
 from connectors.credential import Credential 
-from connector_interface import ConnectorInterface
+from .connector_interface import ConnectorInterface
 from common.common import Common
-from wrappers.ip_wrapper import IPWrapper
+from .wrappers.ip_wrapper import IPWrapper
 
 class Connector(ConnectorInterface):
     def __init__(self, censys_credentials):
@@ -34,11 +34,12 @@ class Connector(ConnectorInterface):
 if __name__ == "__main__":
     censys_credentials = Credential().censys
     connector = Connector(censys_credentials)
-    # response = connector.search_by_ip("8.8.8.8") # 
+    response = connector.search_by_ip("8.8.8.8") # 
     # response = connector.search_by_ip("212.77.98.9") # dziala
-    response = connector.search_by_ip("50.56.73.47") # dziala
+    # response = connector.search_by_ip("50.56.73.47") # dziala
+    Common.save_dict_to_file("8_8_8_8.json", response.to_json)
 
-    print(response)
+    # print(response)
     # Common.save_dict_to_file("C:\\Users\\dp\\Desktop\\sarenka\\backend\\connectors\\censys\\censys_ip.json", response)
     # print(connector.search_by_fingerprint("48177e03b47bdcb3b6ab28a92f8005b95302418cd5b9ede77a97eb918e4a2da2"))
     # print(connector.search_by_fingerprint("48177e03b47bdcb3b6ab28a92f8005b95302418cd5b9ede77a97eb918e4a2da2"))
