@@ -8,10 +8,7 @@ const StyledWrapper = styled.tr`
   width: 90%;
 
   & > td {
-    padding-right: 15px;
-  }
-  & > td:nth-last-child(1) {
-    padding-left: 0;
+    padding: 0 10px;
   }
 `;
 

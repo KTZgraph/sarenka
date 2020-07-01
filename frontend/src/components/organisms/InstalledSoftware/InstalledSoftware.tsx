@@ -1,42 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import CardWrapper from 'components/atoms/CardWrapper/CardWrapper';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
-import TableItem from 'components/molecules/TableItem/TableItem';
 import arrowSvg from 'static/arrow-right.svg';
-
-const StyledTable = styled.table<{ visible: boolean }>`
-  width: 100%;
-  text-align: left;
-  border-spacing: 0;
-  display: ${({ visible }) => (visible ? 'block' : 'none')};
-`;
-
-const StyledTableHeader = styled.tr`
-  & > th {
-    padding: 10px;
-    background-color: ${({ theme }) => theme.colors.redTransparent};
-  }
-  & > th:nth-child(1) {
-    border-radius: 10px 0 0 0;
-  }
-  & > th:nth-last-child(1) {
-    border-radius: 0 10px 0 0;
-  }
-`;
-
-const StyledTableBody = styled.tbody`
-  border-radius: 10px;
-  & > tr:nth-child(even) {
-    background: ${({ theme }) => theme.colors.darkGrey};
-  }
-`;
+import {
+  Table,
+  TableBody,
+  TableHeaderRow,
+  TableItem,
+} from 'components/molecules/Table';
+import gsap from 'gsap';
 
 const StyledParagraph = styled(Paragraph)`
   word-break: break-all;
 `;
 
-const StyledShowResultButton = styled.button<{ rotate?: boolean }>`
+const StyledShowResultButton = styled.button<{ shouldRotate?: boolean }>`
   border: none;
   color: ${({ theme }) => theme.colors.font};
   cursor: pointer;
@@ -52,7 +31,8 @@ const StyledShowResultButton = styled.button<{ rotate?: boolean }>`
     background: transparent url(${arrowSvg}) no-repeat 0 0;
     background-size: 15px 15px;
     transition: 0.3s;
-    transform: ${({ rotate }) => (rotate ? 'rotateZ(90deg)' : 'rotateZ(0)')};
+    transform: ${({ shouldRotate }) =>
+      shouldRotate ? 'rotateZ(90deg)' : 'rotateZ(0)'};
   }
 `;
 
@@ -66,6 +46,29 @@ const InstalledSoftware: React.FC<Props> = ({
   softwares,
 }: Props) => {
   const [showResults, setShowResults] = useState(false);
+
+  const tableBodyRef = useRef<HTMLTableSectionElement>(null);
+  const tableHeaderRef = useRef<HTMLTableRowElement>(null);
+
+  useEffect(() => {
+    if (tableBodyRef.current !== null && tableHeaderRef.current !== null) {
+      gsap.set([tableHeaderRef.current, ...tableBodyRef.current.children], {
+        autoAlpha: 0,
+      });
+      const tableAnimation = gsap
+        .fromTo(
+          [tableHeaderRef.current, ...tableBodyRef.current.children],
+          { y: '-50', autoAlpha: 0 },
+          { duration: 0.2, y: '0', autoAlpha: 1, delay: 0.2, stagger: 0.1 },
+        )
+        .pause();
+      if (showResults) {
+        tableAnimation.play();
+      } else if (!showResults) {
+        tableAnimation.reverse();
+      }
+    }
+  }, [tableBodyRef, showResults]);
   return (
     <CardWrapper>
       <StyledParagraph>
@@ -73,22 +76,22 @@ const InstalledSoftware: React.FC<Props> = ({
         {searchLocation}
       </StyledParagraph>
       <StyledShowResultButton
-        rotate={showResults}
+        shouldRotate={showResults}
         onClick={() => setShowResults(!showResults)}
       >
         Show search results
       </StyledShowResultButton>
-      <StyledTable visible={showResults}>
+      <Table visible={showResults}>
         <thead>
-          <StyledTableHeader>
+          <TableHeaderRow ref={tableHeaderRef}>
             <Paragraph as="th">Name</Paragraph>
             <Paragraph as="th">Location</Paragraph>
             <Paragraph as="th">Version</Paragraph>
             <Paragraph as="th">Date</Paragraph>
             <Paragraph as="th">Vendor</Paragraph>
-          </StyledTableHeader>
+          </TableHeaderRow>
         </thead>
-        <StyledTableBody>
+        <TableBody ref={tableBodyRef}>
           {softwares?.map(({ name, location, version, date, vendor }) => (
             <TableItem
               key={name}
@@ -96,8 +99,8 @@ const InstalledSoftware: React.FC<Props> = ({
               wordBreak={1}
             />
           ))}
-        </StyledTableBody>
-      </StyledTable>
+        </TableBody>
+      </Table>
     </CardWrapper>
   );
 };
