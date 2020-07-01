@@ -20,5 +20,6 @@ from django.conf.urls import url
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('search/', include("searcher.urls")),
+    path('knowledge_base/', include("knowledge_base.urls")),
     path('analyzer/', include("analyzer_api.urls")),
 ]

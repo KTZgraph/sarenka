@@ -1,5 +1,10 @@
 const theme: Record<string, any> = {
-  colors: {},
+  colors: {
+    red: '#c10c27',
+    redTransparent: '#c10c274f',
+    grey: '#bdbdbd',
+    font: '#e0e0e0',
+  },
   font: {
     weight: {
       small: 300,
