@@ -20,6 +20,12 @@ const StyledParagraphRedBorder = styled(Paragraph)`
 const StyledInnerWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  @media (max-width: 930px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 540px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 type Props = {
@@ -104,7 +110,11 @@ const CveSearchResult: React.FC<Props> = ({
         </thead>
         <TableBody>
           {products?.map(({ vendor, name, version, system }, index) => (
-            <TableItem key={index} columns={[vendor, name, version, system]} />
+            <TableItem
+              key={index}
+              columns={[vendor, name, version, system]}
+              wordBreak={1}
+            />
           ))}
         </TableBody>
       </Table>
