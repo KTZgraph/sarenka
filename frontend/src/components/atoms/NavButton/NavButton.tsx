@@ -8,13 +8,10 @@ type Props = {
 const NavButton = styled.button<Props>`
   display: block;
   text-decoration: none;
-  background: transparent;
   border: none;
   padding: 0 0 0 64px;
-  background-image: url(${({ icon }) => icon});
+  background: transparent url(${({ icon }) => icon}) no-repeat 15px 50%;
   background-size: 21px;
-  background-position: 15px 50%;
-  background-repeat: no-repeat;
   width: 100%;
   height: 40px;
   line-height: 40px;
