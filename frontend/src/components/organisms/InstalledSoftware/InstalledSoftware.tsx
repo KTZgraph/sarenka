@@ -1,18 +1,37 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import CardWrapper from 'components/atoms/CardWrapper/CardWrapper';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
-import TableItem from 'components/molecules/TableItem/TableItem';
+import arrowSvg from 'static/arrow-right.svg';
+import {
+  Table,
+  TableBody,
+  TableHeaderRow,
+  TableItem,
+} from 'components/molecules/Table';
 
-const StyledTable = styled.table`
-  width: 100%;
-  text-align: left;
-  padding: 0 30px;
-  border-spacing: 0;
+const StyledParagraph = styled(Paragraph)`
+  word-break: break-all;
+`;
 
-  & > tbody {
-    border: 1px solid ${({ theme }) => theme.colors.grey};
-    border-radius: 20px;
+const StyledShowResultButton = styled.button<{ shouldRotate?: boolean }>`
+  border: none;
+  color: ${({ theme }) => theme.colors.font};
+  cursor: pointer;
+  margin-bottom: 15px;
+  background: transparent;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    margin-right: 5px;
+    background: transparent url(${arrowSvg}) no-repeat 0 0;
+    background-size: 15px 15px;
+    transition: 0.3s;
+    transform: ${({ shouldRotate }) =>
+      shouldRotate ? 'rotateZ(90deg)' : 'rotateZ(0)'};
   }
 `;
 
@@ -24,34 +43,49 @@ type Props = {
 const InstalledSoftware: React.FC<Props> = ({
   searchLocation,
   softwares,
-}: Props) => (
-  <CardWrapper>
-    <StyledTable>
-      <thead>
-        <tr>
-          <Paragraph>
-            Search location:
-            {searchLocation}
-          </Paragraph>
-        </tr>
-        <tr>
-          <Paragraph as="th">Name</Paragraph>
-          <Paragraph as="th">Location</Paragraph>
-          <Paragraph as="th">Version</Paragraph>
-          <Paragraph as="th">Date</Paragraph>
-          <Paragraph as="th">Vendor</Paragraph>
-        </tr>
-      </thead>
-      <tbody>
-        {softwares?.map(({ name, location, version, date, vendor }) => (
-          <TableItem
-            key={name}
-            columns={[name, location, version, date, vendor]}
-          />
-        ))}
-      </tbody>
-    </StyledTable>
-  </CardWrapper>
-);
+}: Props) => {
+  const [showResults, setShowResults] = useState(false);
+
+  const tableBodyRef = useRef<HTMLTableSectionElement>(null);
+  const tableHeaderRef = useRef<HTMLTableRowElement>(null);
+
+  return (
+    <CardWrapper>
+      <StyledParagraph>
+        {`Search location: `}
+        {searchLocation}
+      </StyledParagraph>
+      <StyledShowResultButton
+        shouldRotate={showResults}
+        onClick={() => setShowResults(!showResults)}
+      >
+        Show search results
+      </StyledShowResultButton>
+      <Table visible={showResults}>
+        <thead>
+          <TableHeaderRow ref={tableHeaderRef} sticky animate>
+            <Paragraph as="th">Name</Paragraph>
+            <Paragraph as="th">Location</Paragraph>
+            <Paragraph as="th">Version</Paragraph>
+            <Paragraph as="th">Date</Paragraph>
+            <Paragraph as="th">Vendor</Paragraph>
+          </TableHeaderRow>
+        </thead>
+        <TableBody ref={tableBodyRef}>
+          {softwares?.map(
+            ({ name, location, version, date, vendor }, index) => (
+              <TableItem
+                key={name}
+                columns={[name, location, version, date, vendor]}
+                wordBreak={1}
+                delay={(index + 1) / 10}
+              />
+            ),
+          )}
+        </TableBody>
+      </Table>
+    </CardWrapper>
+  );
+};
 
 export default InstalledSoftware;

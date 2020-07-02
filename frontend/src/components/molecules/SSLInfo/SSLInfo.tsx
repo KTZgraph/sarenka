@@ -14,8 +14,12 @@ const StyledCardWrapper = styled.section`
 const StyledWrapper = styled.div`
   display: grid;
   grid-gap: 40px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.6fr 0.4fr;
   margin-bottom: 40px;
+
+  @media (max-width: 1100px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 const StyledParagraphWrapper = styled.div`
@@ -25,6 +29,10 @@ const StyledParagraphWrapper = styled.div`
 const StyledWarningIcon = styled(WarningIcon)`
   margin-left: 10px;
   transform: translateY(25%);
+`;
+
+const StyledParagraphWithBreak = styled(Paragraph)`
+  word-break: break-all;
 `;
 
 type Props = {
@@ -68,10 +76,10 @@ const SSLInfo: React.FC<Props> = ({
           <strong>Issuer DN:</strong>
           {issuerDN}
         </Paragraph>
-        <Paragraph>
+        <StyledParagraphWithBreak>
           <strong>Serial:</strong>
           {serial}
-        </Paragraph>
+        </StyledParagraphWithBreak>
         <Paragraph>
           <strong>Validity:</strong>
           {validity}

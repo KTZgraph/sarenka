@@ -23,6 +23,14 @@ const CveSearchResult = lazy(() => import('views/CveSearchResult'));
 const RegistryScanResult = lazy(() =>
   import('views/RegistryScan/RegistryScanResults'),
 );
+const ExploitsSearchView = lazy(() =>
+  import('views/ExploitSearch/ExploitSearchView'),
+);
+const ExploitsResultView = lazy(() =>
+  import('views/ExploitSearch/ExploitResultView'),
+);
+const SettingsView = lazy(() => import('views/Settings/SettingsView'));
+const DocsView = lazy(() => import('views/DocsView/DocsView'));
 
 function Root() {
   return (
@@ -70,6 +78,18 @@ function Root() {
                   path={routes.registryResults}
                   component={RegistryScanResult}
                 />
+                <Route
+                  exact
+                  path={routes.exploits}
+                  component={ExploitsSearchView}
+                />
+                <Route
+                  exact
+                  path={routes.exploitResults}
+                  component={ExploitsResultView}
+                />
+                <Route exact path={routes.documentation} component={DocsView} />
+                <Route exact path={routes.settings} component={SettingsView} />
               </Switch>
             </Suspense>
           </MainTemplate>

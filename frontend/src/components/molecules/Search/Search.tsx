@@ -9,6 +9,7 @@ type Props = {
   setSearchWord: Function;
   placeholder: string;
   title: string;
+  pattern?: string;
 };
 
 const Search: React.FC<Props> = ({
@@ -17,6 +18,7 @@ const Search: React.FC<Props> = ({
   setSearchWord,
   placeholder,
   title,
+  pattern,
 }: Props) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchWord(event.target.value);
@@ -35,6 +37,7 @@ const Search: React.FC<Props> = ({
           onBlur={(event) => handleChange(event)}
           search
           required
+          pattern={pattern}
         />
       </form>
     </>

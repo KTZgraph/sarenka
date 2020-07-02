@@ -36,7 +36,8 @@ const CveSearch = () => {
         searchWord={searchCve}
         setSearchWord={setSearchCve}
         title="Search infromation about specific CVE"
-        placeholder="Type CVE number"
+        placeholder="Type CVE number e.g CVE-2010-3333"
+        pattern="(CVE|cve)-\d{4}-\d+"
       />
     </VulnerabilityTemplate>
   );
