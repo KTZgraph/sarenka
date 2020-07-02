@@ -2,7 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import CardWrapper from 'components/atoms/CardWrapper/CardWrapper';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
-import ListItem from 'components/molecules/TableItem/TableItem';
+import {
+  Table,
+  TableBody,
+  TableHeaderRow,
+  TableItem,
+} from 'components/molecules/Table';
 
 const StyledParagraphRedBorder = styled(Paragraph)`
   max-width: 110px;
@@ -15,17 +20,11 @@ const StyledParagraphRedBorder = styled(Paragraph)`
 const StyledInnerWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-`;
-
-const StyledTable = styled.table`
-  width: 100%;
-  text-align: left;
-  padding: 0 30px;
-  border-spacing: 0;
-
-  & > tbody {
-    border: 1px solid ${({ theme }) => theme.colors.grey};
-    border-radius: 20px;
+  @media (max-width: 930px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 540px) {
+    grid-template-columns: repeat(1, 1fr);
   }
 `;
 
@@ -100,21 +99,25 @@ const CveSearchResult: React.FC<Props> = ({
         </StyledParagraphRedBorder>
       </StyledInnerWrapper>
       <Paragraph>Products</Paragraph>
-      <StyledTable>
+      <Table>
         <thead>
-          <tr>
+          <TableHeaderRow>
             <Paragraph as="th">Vendor</Paragraph>
             <Paragraph as="th">Name</Paragraph>
             <Paragraph as="th">Version</Paragraph>
             <Paragraph as="th">System</Paragraph>
-          </tr>
+          </TableHeaderRow>
         </thead>
-        <tbody>
+        <TableBody>
           {products?.map(({ vendor, name, version, system }, index) => (
-            <ListItem key={index} columns={[vendor, name, version, system]} />
+            <TableItem
+              key={index}
+              columns={[vendor, name, version, system]}
+              wordBreak={1}
+            />
           ))}
-        </tbody>
-      </StyledTable>
+        </TableBody>
+      </Table>
     </CardWrapper>
   );
 };

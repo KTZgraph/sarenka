@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { storiesOf } from '@storybook/react';
-import SSLInfo from './SSLInfro';
+import SSLInfo from './SSLInfo';
 
 const StyledWrapper = styled.div`
   padding: 30px;
