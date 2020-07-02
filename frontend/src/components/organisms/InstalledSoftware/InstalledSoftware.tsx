@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import CardWrapper from 'components/atoms/CardWrapper/CardWrapper';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
@@ -9,7 +9,6 @@ import {
   TableHeaderRow,
   TableItem,
 } from 'components/molecules/Table';
-import gsap from 'gsap';
 
 const StyledParagraph = styled(Paragraph)`
   word-break: break-all;
@@ -50,25 +49,6 @@ const InstalledSoftware: React.FC<Props> = ({
   const tableBodyRef = useRef<HTMLTableSectionElement>(null);
   const tableHeaderRef = useRef<HTMLTableRowElement>(null);
 
-  useEffect(() => {
-    if (tableBodyRef.current !== null && tableHeaderRef.current !== null) {
-      gsap.set([tableHeaderRef.current, ...tableBodyRef.current.children], {
-        autoAlpha: 0,
-      });
-      const tableAnimation = gsap
-        .fromTo(
-          [tableHeaderRef.current, ...tableBodyRef.current.children],
-          { y: '-50', autoAlpha: 0 },
-          { duration: 0.2, y: '0', autoAlpha: 1, delay: 0.2, stagger: 0.1 },
-        )
-        .pause();
-      if (showResults) {
-        tableAnimation.play();
-      } else if (!showResults) {
-        tableAnimation.reverse();
-      }
-    }
-  }, [tableBodyRef, showResults]);
   return (
     <CardWrapper>
       <StyledParagraph>
@@ -83,7 +63,7 @@ const InstalledSoftware: React.FC<Props> = ({
       </StyledShowResultButton>
       <Table visible={showResults}>
         <thead>
-          <TableHeaderRow ref={tableHeaderRef}>
+          <TableHeaderRow ref={tableHeaderRef} sticky animate>
             <Paragraph as="th">Name</Paragraph>
             <Paragraph as="th">Location</Paragraph>
             <Paragraph as="th">Version</Paragraph>
@@ -92,13 +72,16 @@ const InstalledSoftware: React.FC<Props> = ({
           </TableHeaderRow>
         </thead>
         <TableBody ref={tableBodyRef}>
-          {softwares?.map(({ name, location, version, date, vendor }) => (
-            <TableItem
-              key={name}
-              columns={[name, location, version, date, vendor]}
-              wordBreak={1}
-            />
-          ))}
+          {softwares?.map(
+            ({ name, location, version, date, vendor }, index) => (
+              <TableItem
+                key={name}
+                columns={[name, location, version, date, vendor]}
+                wordBreak={1}
+                delay={(index + 1) / 10}
+              />
+            ),
+          )}
         </TableBody>
       </Table>
     </CardWrapper>

@@ -1,11 +1,19 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
+import FromTop from 'components/animations/FromTop';
 
-const StyledWrapper = styled.tr`
+const StyledWrapper = styled.tr<{ delay?: number }>`
   list-style: none;
   padding: 10px 0;
   width: 90%;
+  ${({ delay }) =>
+    delay &&
+    css`
+      opacity: 0;
+      animation: ${FromTop} 0.2s ease-out forwards;
+      animation-delay: ${delay}s;
+    `};
 
   & > td {
     padding: 0 10px;
@@ -19,10 +27,11 @@ const StyledParagraph = styled(Paragraph)`
 type Props = {
   columns: Array<string>;
   wordBreak?: number;
+  delay?: number;
 };
 
-const CveSearchListItem: React.FC<Props> = ({ columns, wordBreak }: Props) => (
-  <StyledWrapper>
+const TableItem: React.FC<Props> = ({ columns, wordBreak, delay }: Props) => (
+  <StyledWrapper delay={delay}>
     {columns.map((column, index) => (
       // eslint-disable-next-line react/no-array-index-key
       <td key={index}>
@@ -36,4 +45,4 @@ const CveSearchListItem: React.FC<Props> = ({ columns, wordBreak }: Props) => (
   </StyledWrapper>
 );
 
-export default CveSearchListItem;
+export default TableItem;
