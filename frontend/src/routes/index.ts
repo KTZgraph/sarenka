@@ -12,6 +12,8 @@ const routes: Record<string, string> = {
   settings: '/settings',
   cveSearch: '/cvesearch',
   cveSearchResults: '/cvesearch/results',
+  remoteHostInfo: '/remotehostinfo',
+  remoteHostInfoResult: '/remotehostinfo/results',
 };
 
 export default routes;

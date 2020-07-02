@@ -61,23 +61,13 @@ const NavBar = () => {
       <StyledWrapper isVisible={isVisible}>
         <NavButton
           as={NavLink}
-          to={routes.frontend}
+          to={routes.remoteHostInfo}
           activeClassName="active"
           icon={magnifierIcon}
           iconactive={magnifierIconActive}
           onClick={handleButtonClick}
         >
-          Frontend vulnerability
-        </NavButton>
-        <NavButton
-          as={NavLink}
-          to={routes.backend}
-          activeClassName="active"
-          icon={magnifierIcon}
-          iconactive={magnifierIconActive}
-          onClick={handleButtonClick}
-        >
-          Backend vulnerability
+          Remote host info
         </NavButton>
         <NavButton
           as={NavLink}
