@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'searcher',
     'analyzer_api',
     'knowledge_base',
+    'shell_commands',
 
 ]
 
