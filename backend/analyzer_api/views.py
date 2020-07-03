@@ -11,6 +11,7 @@ from connectors.cve_search.connector import Connector
 from .serializers import ImageMagickSerializer
 
 from local_installed.windows.registry import WindowsRegistry
+from local_installed.windows.hardware import Hardware
 
 class ImageMagickFileView(views.APIView):
 
@@ -49,4 +50,10 @@ class LocalWindows(views.APIView):
         """
         windows_registry = WindowsRegistry()
         response = windows_registry.get_all_software()
+        return Response(response)
+
+class CommandsWindows(views.APIView):
+    def get(self, request):
+        hardware = Hardware()
+        response = hardware.to_json()
         return Response(response)
