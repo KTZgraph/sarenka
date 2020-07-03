@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import SSLInfo from 'components/molecules/SSLInfo/SSLInfo';
+import HTTPSInfo from 'components/molecules/HTTPSInfo/HTTPSInfo';
 import ResultTemplate from 'templates/VulnerabilityResultTemplate';
 import Search from 'components/molecules/Search/Search';
 import { fetchData } from 'actions/remoteHostActions';
@@ -33,7 +33,7 @@ const RemoteHostInfoResult = () => {
           <LoadingAnimation />
         ) : (
           <>
-            <SSLInfo httpsData={data.https} />
+            <HTTPSInfo httpsData={data.https} />
           </>
         )
       }

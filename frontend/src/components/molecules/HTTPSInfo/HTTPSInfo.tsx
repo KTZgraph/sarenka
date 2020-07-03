@@ -39,7 +39,7 @@ type Props = {
   httpsData: Record<string, any>;
 };
 
-const SSLInfo: React.FC<Props> = ({ httpsData }: Props) => {
+const HTTPSInfo: React.FC<Props> = ({ httpsData }: Props) => {
   const NoData = 'No data available';
   return (
     <StyledCardWrapper>
@@ -141,4 +141,4 @@ const SSLInfo: React.FC<Props> = ({ httpsData }: Props) => {
   );
 };
 
-export default SSLInfo;
+export default HTTPSInfo;

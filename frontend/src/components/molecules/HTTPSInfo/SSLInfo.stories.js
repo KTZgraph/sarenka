@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import { storiesOf } from '@storybook/react';
-import SSLInfo from './SSLInfo';
+import HTTPSInfo from './HTTPSInfo';
 
 const StyledWrapper = styled.div`
   padding: 30px;
   background: #000000;
 `;
 
-storiesOf('Molecules/SSLInfo', module).add('Normal', () => (
+storiesOf('Molecules/HTTPSInfo', module).add('Normal', () => (
   <StyledWrapper>
-    <SSLInfo
+    <HTTPSInfo
       host=" 267.102.41.2"
       subjectDN=" CN=en.slovakiatatry.sk"
       issuerDN=" C=US, O=Let’s Encrypt. CN=Let’s Encrypt Authority X3"
