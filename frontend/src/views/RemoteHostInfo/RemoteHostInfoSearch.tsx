@@ -1,24 +1,34 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import VulnerabilityTemplate from 'templates/VulnerabilityTemplate';
 import Search from 'components/molecules/Search/Search';
 import { useHistory } from 'react-router-dom';
 import routes from 'routes';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchData } from 'actions/remoteHostActions';
 
 const RemoteHostInfoSearch = () => {
   const [searchHost, setSearchHost] = useState('');
   const history = useHistory();
-  const handleSubmit = (
-    event: React.FormEvent<HTMLFormElement>,
-    searchWord: string,
-  ) => {
+  const dispatch = useDispatch();
+  const { data } = useSelector(
+    ({ remoteHost }: Record<string, any>) => remoteHost,
+  );
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    history.push(routes.frontendResults);
-    console.log(event, searchWord);
+    dispatch(fetchData(searchHost));
+    history.push(routes.remoteHostInfoResult);
   };
+
+  useEffect(() => {
+    if (JSON.stringify(data) !== '{}') {
+      history.push(routes.remoteHostInfoResult);
+    }
+  }, [history, data]);
 
   return (
     <VulnerabilityTemplate>
       <Search
+        name="searchHostInfo"
         handleSubmit={handleSubmit}
         searchWord={searchHost}
         setSearchWord={setSearchHost}

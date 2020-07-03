@@ -2,28 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 import { ReactComponent as WarningIcon } from 'static/warningIcon.svg';
+import CardWrapper from 'components/atoms/CardWrapper/CardWrapper';
 
-const StyledCardWrapper = styled.section`
-  background: #070809;
-  border: 1px solid #333333;
-  box-sizing: border-box;
-  border-radius: 4px;
-  padding: 30px;
-`;
-
-const StyledWrapper = styled.div`
-  display: grid;
-  grid-gap: 40px;
-  grid-template-columns: 0.6fr 0.4fr;
+const StyledCardWrapper = styled(CardWrapper)`
   margin-bottom: 40px;
-
-  @media (max-width: 1100px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
-`;
-
-const StyledParagraphWrapper = styled.div`
-  margin-left: 15px;
 `;
 
 const StyledWarningIcon = styled(WarningIcon)`
@@ -31,87 +13,132 @@ const StyledWarningIcon = styled(WarningIcon)`
   transform: translateY(25%);
 `;
 
+const StyledListItem = styled.li`
+  word-break: break-all;
+  font-size: 1.7rem;
+  color: #e0e0e0;
+  font-weight: ${({ theme }) => theme.font.weight.regular};
+  list-style: none;
+  line-height: 2.3rem;
+`;
+
+const StyledListWrapper = styled.ul`
+  margin: 0 0 0 15px;
+  padding: 0;
+`;
+
+const StyledListTitle = styled(Paragraph)`
+  margin-bottom: 5px;
+`;
+
 const StyledParagraphWithBreak = styled(Paragraph)`
   word-break: break-all;
 `;
 
 type Props = {
-  host: string;
-  subjectDN?: string;
-  issuerDN?: string;
-  serial?: string;
-  validity?: string;
-  names?: string;
-  sslv3?: boolean;
-  exportDhe?: boolean;
-  exportRsa?: boolean;
-  dheSupport?: boolean;
+  httpsData: Record<string, any>;
 };
 
-const SSLInfo: React.FC<Props> = ({
-  host,
-  subjectDN,
-  issuerDN,
-  serial,
-  validity,
-  names,
-  sslv3,
-  exportDhe,
-  exportRsa,
-  dheSupport,
-}: Props) => (
-  <StyledWrapper>
+const SSLInfo: React.FC<Props> = ({ httpsData }: Props) => {
+  const NoData = 'No data available';
+  return (
     <StyledCardWrapper>
       <Paragraph>
-        Host:
-        {host}
+        {`Web page title: `}
+        {httpsData?.webpage_title || NoData}
       </Paragraph>
-      <Paragraph>SSL Certificate</Paragraph>
-      <StyledParagraphWrapper>
-        <Paragraph>
-          <strong>Subject DN: </strong>
-          {subjectDN}
-        </Paragraph>
-        <Paragraph>
-          <strong>Issuer DN:</strong>
-          {issuerDN}
-        </Paragraph>
-        <StyledParagraphWithBreak>
-          <strong>Serial:</strong>
-          {serial}
-        </StyledParagraphWithBreak>
-        <Paragraph>
-          <strong>Validity:</strong>
-          {validity}
-        </Paragraph>
-        <Paragraph>
-          <strong>Names:</strong>
-          {names}
-        </Paragraph>
-      </StyledParagraphWrapper>
+      <StyledParagraphWithBreak>
+        {`Web page body SHA256: `}
+        {httpsData?.webpage_body_sha256 || NoData}
+      </StyledParagraphWithBreak>
+      <Paragraph>
+        {`Status code: `}
+        {httpsData?.status_code || NoData}
+      </Paragraph>
+      <StyledListTitle>Metadata</StyledListTitle>
+      <StyledListWrapper>
+        <StyledListItem>
+          {`Product: `}
+          {httpsData?.get_metadata.product || NoData}
+        </StyledListItem>
+        <StyledListItem>
+          {`Version: `}
+          {httpsData?.get_metadata.version || NoData}
+        </StyledListItem>
+        <StyledListItem>
+          {`Description: `}
+          {httpsData?.get_metadata.description || NoData}
+        </StyledListItem>
+        <StyledListItem>
+          {`Manufacturer: `}
+          {httpsData?.get_metadata.manufacturer || NoData}
+        </StyledListItem>
+      </StyledListWrapper>
+      <Paragraph>
+        {`RSA export: `}
+        {httpsData?.rsa_export.toString() || NoData}
+      </Paragraph>
+      <Paragraph>
+        {`RSA length: `}
+        {httpsData?.rsa_length || NoData}
+      </Paragraph>
+      <StyledParagraphWithBreak>
+        {`RSA modulus: `}
+        {httpsData?.rsa_modulus || NoData}
+      </StyledParagraphWithBreak>
+      <Paragraph>
+        {`RSA exponent: `}
+        {httpsData?.rsa_exponent || NoData}
+      </Paragraph>
+      <Paragraph>
+        {`DHE export: `}
+        {httpsData?.dhe_export?.toString() || NoData}
+      </Paragraph>
+      <StyledListTitle>DH params</StyledListTitle>
+      <StyledListWrapper>
+        <StyledListItem>
+          {`Prime length: `}
+          {httpsData?.dh_params.prime_length || NoData}
+        </StyledListItem>
+        <StyledListItem>
+          {`Prime value: `}
+          {httpsData?.dh_params.prime_value || NoData}
+        </StyledListItem>
+        <StyledListItem>
+          {`Generator length: `}
+          {httpsData?.dh_params.generator_length || NoData}
+        </StyledListItem>
+        <StyledListItem>
+          {`Generator value: `}
+          {httpsData?.dh_params.generator_value || NoData}
+        </StyledListItem>
+      </StyledListWrapper>
+      <Paragraph>
+        {`DHE support: `}
+        {httpsData?.dhe_support?.toString() || NoData}
+      </Paragraph>
+      <Paragraph>
+        {`Heartbleed: `}
+        {httpsData?.heartbleed?.toString() || NoData}
+        {httpsData?.heartbleed && <StyledWarningIcon />}
+      </Paragraph>
+      <Paragraph>
+        {`Logjam attack: `}
+        {httpsData?.logjam_attack?.toString() || NoData}
+        {httpsData?.logjam_attack && <StyledWarningIcon />}
+      </Paragraph>
+      <Paragraph>
+        {`Freak attack: `}
+        {httpsData?.freak_attack?.toString() || NoData}
+        {httpsData?.freak_attack && <StyledWarningIcon />}
+      </Paragraph>
+      <Paragraph>
+        {`Poodle attack: `}
+        {httpsData?.poodle_attack?.toString() || NoData}
+        {httpsData?.poodle_attack && <StyledWarningIcon />}
+      </Paragraph>
     </StyledCardWrapper>
-    <StyledCardWrapper>
-      <div>
-        <Paragraph>
-          <strong>SSLv3 Support:</strong>
-          {` ${sslv3}`}
-          {sslv3 && <StyledWarningIcon />}
-        </Paragraph>
-        <Paragraph>
-          <strong>Export DHE:</strong>
-          {` ${exportDhe}`}
-        </Paragraph>
-        <Paragraph>
-          <strong>Export RSA:</strong>
-          {` ${exportRsa}`}
-        </Paragraph>
-        <Paragraph>
-          <strong>DHE Support:</strong>
-          {` ${dheSupport}`}
-        </Paragraph>
-      </div>
-    </StyledCardWrapper>
-  </StyledWrapper>
-);
+  );
+};
 
 export default SSLInfo;
