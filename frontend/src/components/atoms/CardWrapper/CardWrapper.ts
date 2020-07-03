@@ -8,6 +8,7 @@ const CardWrapper = styled.section`
   border-radius: 4px;
   padding: 30px;
   animation: 0.5s ${FadeIn} ease-out forwards;
+  margin-bottom: 40px;
 `;
 
 export default CardWrapper;

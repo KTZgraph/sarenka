@@ -5,6 +5,7 @@ import ResultTemplate from 'templates/VulnerabilityResultTemplate';
 import Search from 'components/molecules/Search/Search';
 import { fetchData } from 'actions/remoteHostActions';
 import LoadingAnimation from 'components/atoms/LoadingAnimation/LoadingAnimation';
+import GeneralHostInfo from '../../components/molecules/GeneralHostInfo/GeneralHostInfo';
 
 const RemoteHostInfoResult = () => {
   const [searchHost, setSearchHost] = useState('');
@@ -33,6 +34,24 @@ const RemoteHostInfoResult = () => {
           <LoadingAnimation />
         ) : (
           <>
+            <GeneralHostInfo
+              protocolsPort={data.protocols_port}
+              longitude={data.longitude}
+              latitude={data.latitude}
+              timezone={data.timezone}
+              continent={data.continent}
+              registeredCountry={data.registered_country}
+              description={data.description}
+              rir={data.rir}
+              routedPrefix={data.routed_prefix}
+              path={data.path}
+              asn={data.asn}
+              name={data.name}
+              dnsNames={data.dns_names}
+              dnsErrors={data.dns_errors}
+              os={data.os}
+              updatedAt={data.updated_at}
+            />
             <HTTPSInfo httpsData={data.https} />
           </>
         )

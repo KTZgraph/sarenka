@@ -1,39 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
-import { ReactComponent as WarningIcon } from 'static/warningIcon.svg';
 import CardWrapper from 'components/atoms/CardWrapper/CardWrapper';
-
-const StyledCardWrapper = styled(CardWrapper)`
-  margin-bottom: 40px;
-`;
-
-const StyledWarningIcon = styled(WarningIcon)`
-  margin-left: 10px;
-  transform: translateY(25%);
-`;
-
-const StyledListItem = styled.li`
-  word-break: break-all;
-  font-size: 1.7rem;
-  color: #e0e0e0;
-  font-weight: ${({ theme }) => theme.font.weight.regular};
-  list-style: none;
-  line-height: 2.3rem;
-`;
-
-const StyledListWrapper = styled.ul`
-  margin: 0 0 0 15px;
-  padding: 0;
-`;
-
-const StyledListTitle = styled(Paragraph)`
-  margin-bottom: 5px;
-`;
-
-const StyledParagraphWithBreak = styled(Paragraph)`
-  word-break: break-all;
-`;
+import ListItem from 'components/atoms/List/ListItem';
+import ListWrapper from 'components/atoms/List/ListWrapper';
+import WarningIcon from 'components/atoms/WarningIcon/WarningIcon';
 
 type Props = {
   httpsData: Record<string, any>;
@@ -42,38 +12,40 @@ type Props = {
 const HTTPSInfo: React.FC<Props> = ({ httpsData }: Props) => {
   const NoData = 'No data available';
   return (
-    <StyledCardWrapper>
+    <CardWrapper>
       <Paragraph>
         {`Web page title: `}
         {httpsData?.webpage_title || NoData}
       </Paragraph>
-      <StyledParagraphWithBreak>
+      <Paragraph wordBreak>
         {`Web page body SHA256: `}
         {httpsData?.webpage_body_sha256 || NoData}
-      </StyledParagraphWithBreak>
+      </Paragraph>
       <Paragraph>
         {`Status code: `}
         {httpsData?.status_code || NoData}
       </Paragraph>
-      <StyledListTitle>Metadata</StyledListTitle>
-      <StyledListWrapper>
-        <StyledListItem>
-          {`Product: `}
-          {httpsData?.get_metadata.product || NoData}
-        </StyledListItem>
-        <StyledListItem>
-          {`Version: `}
-          {httpsData?.get_metadata.version || NoData}
-        </StyledListItem>
-        <StyledListItem>
-          {`Description: `}
-          {httpsData?.get_metadata.description || NoData}
-        </StyledListItem>
-        <StyledListItem>
-          {`Manufacturer: `}
-          {httpsData?.get_metadata.manufacturer || NoData}
-        </StyledListItem>
-      </StyledListWrapper>
+      <div>
+        <Paragraph listTitle>Metadata</Paragraph>
+        <ListWrapper>
+          <ListItem>
+            {`Product: `}
+            {httpsData?.get_metadata.product || NoData}
+          </ListItem>
+          <ListItem>
+            {`Version: `}
+            {httpsData?.get_metadata.version || NoData}
+          </ListItem>
+          <ListItem>
+            {`Description: `}
+            {httpsData?.get_metadata.description || NoData}
+          </ListItem>
+          <ListItem>
+            {`Manufacturer: `}
+            {httpsData?.get_metadata.manufacturer || NoData}
+          </ListItem>
+        </ListWrapper>
+      </div>
       <Paragraph>
         {`RSA export: `}
         {httpsData?.rsa_export.toString() || NoData}
@@ -82,10 +54,10 @@ const HTTPSInfo: React.FC<Props> = ({ httpsData }: Props) => {
         {`RSA length: `}
         {httpsData?.rsa_length || NoData}
       </Paragraph>
-      <StyledParagraphWithBreak>
+      <Paragraph wordBreak>
         {`RSA modulus: `}
         {httpsData?.rsa_modulus || NoData}
-      </StyledParagraphWithBreak>
+      </Paragraph>
       <Paragraph>
         {`RSA exponent: `}
         {httpsData?.rsa_exponent || NoData}
@@ -94,25 +66,27 @@ const HTTPSInfo: React.FC<Props> = ({ httpsData }: Props) => {
         {`DHE export: `}
         {httpsData?.dhe_export?.toString() || NoData}
       </Paragraph>
-      <StyledListTitle>DH params</StyledListTitle>
-      <StyledListWrapper>
-        <StyledListItem>
-          {`Prime length: `}
-          {httpsData?.dh_params.prime_length || NoData}
-        </StyledListItem>
-        <StyledListItem>
-          {`Prime value: `}
-          {httpsData?.dh_params.prime_value || NoData}
-        </StyledListItem>
-        <StyledListItem>
-          {`Generator length: `}
-          {httpsData?.dh_params.generator_length || NoData}
-        </StyledListItem>
-        <StyledListItem>
-          {`Generator value: `}
-          {httpsData?.dh_params.generator_value || NoData}
-        </StyledListItem>
-      </StyledListWrapper>
+      <div>
+        <Paragraph listTitle>DH params</Paragraph>
+        <ListWrapper>
+          <ListItem>
+            {`Prime length: `}
+            {httpsData?.dh_params.prime_length || NoData}
+          </ListItem>
+          <ListItem>
+            {`Prime value: `}
+            {httpsData?.dh_params.prime_value || NoData}
+          </ListItem>
+          <ListItem>
+            {`Generator length: `}
+            {httpsData?.dh_params.generator_length || NoData}
+          </ListItem>
+          <ListItem>
+            {`Generator value: `}
+            {httpsData?.dh_params.generator_value || NoData}
+          </ListItem>
+        </ListWrapper>
+      </div>
       <Paragraph>
         {`DHE support: `}
         {httpsData?.dhe_support?.toString() || NoData}
@@ -120,24 +94,24 @@ const HTTPSInfo: React.FC<Props> = ({ httpsData }: Props) => {
       <Paragraph>
         {`Heartbleed: `}
         {httpsData?.heartbleed?.toString() || NoData}
-        {httpsData?.heartbleed && <StyledWarningIcon />}
+        {httpsData?.heartbleed && <WarningIcon />}
       </Paragraph>
       <Paragraph>
         {`Logjam attack: `}
         {httpsData?.logjam_attack?.toString() || NoData}
-        {httpsData?.logjam_attack && <StyledWarningIcon />}
+        {httpsData?.logjam_attack && <WarningIcon />}
       </Paragraph>
       <Paragraph>
         {`Freak attack: `}
         {httpsData?.freak_attack?.toString() || NoData}
-        {httpsData?.freak_attack && <StyledWarningIcon />}
+        {httpsData?.freak_attack && <WarningIcon />}
       </Paragraph>
       <Paragraph>
         {`Poodle attack: `}
         {httpsData?.poodle_attack?.toString() || NoData}
-        {httpsData?.poodle_attack && <StyledWarningIcon />}
+        {httpsData?.poodle_attack && <WarningIcon />}
       </Paragraph>
-    </StyledCardWrapper>
+    </CardWrapper>
   );
 };
 
