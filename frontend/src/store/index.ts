@@ -2,6 +2,7 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import cveSearchReducer from 'reducers/cveSearchReducer';
 import registryScanReducer from 'reducers/registryScanReducer';
+import remoteHostReducer from 'reducers/remoteHostReducer';
 
 declare global {
   interface Window {
@@ -12,6 +13,7 @@ declare global {
 const rootReducer = combineReducers({
   cveSearch: cveSearchReducer,
   registryScan: registryScanReducer,
+  remoteHost: remoteHostReducer,
 });
 
 /* eslint-disable no-underscore-dangle */

@@ -7,19 +7,17 @@ import routes from 'routes';
 import theme from 'theme/theme';
 import GlobalStyle from 'theme/GlobalStyle';
 import MainTemplate from 'templates/MainTemplate';
-import FrontendVulnerabilitySearch from 'views/FrontendVulnerabilitySearch';
-import BackendVulnerabilitySearch from 'views/BackendVulnerabilitySearch';
-import CveSearch from 'views/CveSearch';
+import CveSearch from 'views/CveSearch/CveSearch';
 import RegistryScan from 'views/RegistryScan/RegistryScan';
 import Loading from 'components/atoms/LoadingAnimation/LoadingAnimation';
 
-const FrontendVulnerabilityResult = lazy(() =>
-  import('views/FrontendVulnerabilityResult'),
+const RemoteHostInfoSearch = lazy(() =>
+  import('views/RemoteHostInfo/RemoteHostInfoSearch'),
 );
-const BackendVulnerabilityResult = lazy(() =>
-  import('views/BackendVulnerabilityResult'),
+const RemoteHostInfoResult = lazy(() =>
+  import('views/RemoteHostInfo/RemoteHostInfoResult'),
 );
-const CveSearchResult = lazy(() => import('views/CveSearchResult'));
+const CveSearchResult = lazy(() => import('views/CveSearch/CveSearchResult'));
 const RegistryScanResult = lazy(() =>
   import('views/RegistryScan/RegistryScanResults'),
 );
@@ -44,27 +42,17 @@ function Root() {
                 <Route
                   exact
                   path={routes.home}
-                  render={() => <Redirect to={routes.frontend} />}
+                  render={() => <Redirect to={routes.remoteHostInfo} />}
                 />
                 <Route
                   exact
-                  path={routes.frontend}
-                  component={FrontendVulnerabilitySearch}
+                  path={routes.remoteHostInfo}
+                  component={RemoteHostInfoSearch}
                 />
                 <Route
                   exact
-                  path={routes.frontendResults}
-                  component={FrontendVulnerabilityResult}
-                />
-                <Route
-                  exact
-                  path={routes.backend}
-                  component={BackendVulnerabilitySearch}
-                />
-                <Route
-                  exact
-                  path={routes.backendResults}
-                  component={BackendVulnerabilityResult}
+                  path={routes.remoteHostInfoResult}
+                  component={RemoteHostInfoResult}
                 />
                 <Route exact path={routes.cveSearch} component={CveSearch} />
                 <Route

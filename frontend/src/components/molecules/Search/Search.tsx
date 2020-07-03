@@ -10,6 +10,7 @@ type Props = {
   placeholder: string;
   title: string;
   pattern?: string;
+  name?: string;
 };
 
 const Search: React.FC<Props> = ({
@@ -19,6 +20,7 @@ const Search: React.FC<Props> = ({
   placeholder,
   title,
   pattern,
+  name = 'search',
 }: Props) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchWord(event.target.value);
@@ -29,8 +31,8 @@ const Search: React.FC<Props> = ({
       <Heading regularfont>{title}</Heading>
       <form onSubmit={(event) => handleSubmit(event, searchWord)}>
         <Input
-          id="search"
-          name="search"
+          id={name}
+          name={name}
           type="text"
           placeholder={placeholder}
           onChange={(event) => handleChange(event)}
