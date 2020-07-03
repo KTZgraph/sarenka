@@ -10,7 +10,7 @@ export const fetchData = (searchHost: string) => (dispatch: Function) => {
   dispatch({ type: actions.FETCH_DATA_REQUEST });
 
   return axios
-    .get(`http://localhost:3004/${searchHost}`)
+    .get(`http://localhost:8000/search/censys/${searchHost}`)
     .then(({ data }) => {
       dispatch({
         type: actions.FETCH_DATA_SUCCESS,

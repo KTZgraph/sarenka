@@ -4,6 +4,7 @@ import Paragraph from 'components/atoms/Paragraph/Paragraph';
 import CardWrapper from 'components/atoms/CardWrapper/CardWrapper';
 import ListWrapper from 'components/atoms/List/ListWrapper';
 import ListItem from 'components/atoms/List/ListItem';
+import NoData from 'components/atoms/NoDataText/NoDataText';
 
 const StyledCardWrapper = styled(CardWrapper)`
   column-count: 3;
@@ -52,7 +53,6 @@ const GeneralHostInfo: React.FC<Props> = ({
   os,
   updatedAt,
 }: Props) => {
-  const NoData = 'No data available';
   return (
     <StyledCardWrapper>
       <div>
@@ -67,71 +67,73 @@ const GeneralHostInfo: React.FC<Props> = ({
       </div>
       <Paragraph>
         {`Longitude: `}
-        {longitude || NoData}
+        {longitude || <NoData />}
       </Paragraph>
       <Paragraph>
         {`Latitude: `}
-        {latitude || NoData}
+        {latitude || <NoData />}
       </Paragraph>
       <Paragraph>
         {`Longitude: `}
-        {longitude || NoData}
+        {longitude || <NoData />}
       </Paragraph>
       <Paragraph>
         {`Timezone: `}
-        {timezone || NoData}
+        {timezone || <NoData />}
       </Paragraph>
       <Paragraph>
         {`Continent: `}
-        {continent || NoData}
+        {continent || <NoData />}
       </Paragraph>
       <Paragraph>
         {`Registered country: `}
-        {registeredCountry
-          ? Object.keys(registeredCountry).map(
-              (key) => `${registeredCountry[key].toString()}, `,
-            )
-          : NoData}
+        {registeredCountry ? (
+          Object.keys(registeredCountry).map(
+            (key) => `${registeredCountry[key].toString()}, `,
+          )
+        ) : (
+          <NoData />
+        )}
       </Paragraph>
       <Paragraph>
         {`Description: `}
-        {description || NoData}
+        {description || <NoData />}
       </Paragraph>
       <Paragraph>
         {`RIR: `}
-        {rir || NoData}
+        {rir || <NoData />}
       </Paragraph>
       <Paragraph>
         {`Routed prefix: `}
-        {routedPrefix || NoData}
+        {routedPrefix || <NoData />}
       </Paragraph>
       <Paragraph>
         {`Path: `}
-        {path?.toString() || NoData}
+        {path?.toString() || <NoData />}
       </Paragraph>
       <Paragraph>
         {`ASN: `}
-        {asn || NoData}
+        {asn || <NoData />}
       </Paragraph>
       <Paragraph>
         {`Name: `}
-        {name || NoData}
+        {name || <NoData />}
       </Paragraph>
       <Paragraph>
         {`DNS names: `}
-        {dnsNames?.toString() || NoData}
+        {dnsNames?.toString() || <NoData />}
       </Paragraph>
       <Paragraph>
         {`DNS errors: `}
-        {dnsErrors?.toString() || NoData}
+        {dnsErrors?.toString() || <NoData />}
       </Paragraph>
       <Paragraph>
         {`OS: `}
-        {os?.toString() || NoData}
+        {os?.toString() || <NoData />}
       </Paragraph>
       <Paragraph>
         {`Updated at: `}
-        {updatedAt || NoData}
+        {updatedAt || <NoData />}
       </Paragraph>
     </StyledCardWrapper>
   );
