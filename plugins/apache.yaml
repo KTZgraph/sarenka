@@ -1,0 +1,62 @@
+software: apache
+name:
+  - apache
+  - Apache HTTP Server
+  - Apache Web server
+  - httpd
+cve_details: https://www.cvedetails.com/vulnerability-list/vendor_id-45/product_id-14271/Apache-Apache-Webserver.html
+description: 
+formely_name:
+vendor_name: The Apache Software Foundation
+vendor_url: https://www.apache.org/
+repository: https://github.com/apache/httpd
+releases: https://github.com/apache/httpd/releases
+text_title:
+text_404:
+text_characteristic:
+regex_patterns: '\d\.\d(\.\d{1,2}([a-z]|)|)'
+search_shodan:
+  - 'Server: Apache'
+  - 'Server: Apache/2.4.29 (Ubuntu)'
+  - 'Server:Apache-Coyote/1.1'
+  - 'Server:Apache 1.3.9'
+  - 'Server:Apache/2'
+  - 'Server:Apache/2.4.23 (Win32) OpenSSL/1.0.2j mod_fcgid/2.3.9'
+google_dorks: 
+  - '"powered by openbsd" +"powered by apache"'
+  - 'allintitle:.."Test page for Apache Installation.."'
+  - 'intitle:"Apache Tomcat" "Error Report"'
+  - 'intitle:"Apache::Status" (inurl:server-status | inurl:status.html | inurl:apache.html)'
+  - 'intitle:"Index of" ".htpasswd" "htgroup" -intitle:"dist" -apache -htpasswd.c'
+  - 'intitle:index.of "Apache" "server at"'
+  - 'inurl:server-info "Apache Server Information"'
+  - 'inurl:server-status "apache"'
+  - 'site:netcraft.com intitle:That.Site.Running Apache'
+  - 'intitle:"Apache2 Ubuntu Default Page: It works"'
+favicon_url: null
+protocols:
+  - http
+  - https
+  - tcp
+ports:
+  80
+  443
+files: 
+  - .htcaccess
+available_os: 
+  - windows
+  - macos
+  - linux
+type: 
+  http_server
+download_link:
+exploits:
+docker_image: 
+  - https://hub.docker.com/_/httpd
+related_softwares: 
+  - nginx
+fingerprint:
+banner_example:
+windows_registry_path:
+linux_package:
+dependencies:
