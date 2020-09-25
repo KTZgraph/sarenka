@@ -26,6 +26,8 @@ class Detector:
     """
     Klasa przechowująca dane o detekcji konkretnego softu na podstawie plików yaml
     """
+    folder_name = "detectors"
+
     obligatory_keys = [
         
     ]
@@ -47,7 +49,7 @@ class Detector:
         dir_path = os.path.dirname(os.path.realpath(__file__))
         path = Path(dir_path)
         project_path = path.parent.parent
-        filepath = os.path.join(project_path, "detectors", self.name + ".yaml")
+        filepath = os.path.join(project_path, self.folder_name, self.name + ".yaml")
         return filepath
 
     @property
@@ -208,10 +210,3 @@ class Detector:
         problem - brak API
         """
         pass
-
-if __name__ == "__main__":
-    software_detector = SoftwareDetector("apache")
-    print(software_detector.search_shodan)
-    print("TUUUUUUUUUUUUUUUUUUUUUUUUU")
-    # print(software_detector.to_json)
-    print(software_detector)
