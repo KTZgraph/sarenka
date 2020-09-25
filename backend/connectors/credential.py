@@ -1,6 +1,14 @@
 from typing import Dict, Tuple, Sequence
 import json
 
+class CredentialsNotFoundError(Exception):
+    """
+    Zgłoszenie wyjąktu gdy plik z ustawieniami użytkownika credentials.json nie istnieje
+    """
+    def __init__(self, message=None, errors=None):
+        super().__init__(message)
+        self.errors = errors
+
 class CredentialData:
     def __init__(self, data):
         self.__base_url = data["base_url"]
@@ -83,8 +91,12 @@ class Credential:
     
     def __init__(self, config_file="connectors/credentials.json")->None:
         if not Credential.__instance:
-            with open(config_file) as f:
-                data = json.load(f)
+            try:
+                with open(config_file) as f:
+                    data = json.load(f)
+            except FileNotFoundError:
+                raise CredentialsNotFoundError(f"User credentials file {config_file} does not exists.")
+            
             
             self.__binaryedge = CredentialData(data["binaryedge"])
             self.__censys = CensysData(data["censys"])

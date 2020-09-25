@@ -3,8 +3,8 @@ import requests
 from requests.exceptions import HTTPError
 
 from connectors.credential import Credential 
-from connector_interface import ConnectorInterface
-from cve_wrapper import CveWrapper
+from .connector_interface import ConnectorInterface
+from .cve_wrapper import CveWrapper
 import urllib.request, json 
 
 class CVESearchConnectioError(Exception):

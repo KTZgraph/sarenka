@@ -4,7 +4,7 @@ from connectors.credential import Credential
 from connector import Connector
 
 
-class ConnectorTest(unittest.TestCase):
+class TestConnector(unittest.TestCase):
     def setUp(self):
         self.censys_credentials = Credential().censys
 

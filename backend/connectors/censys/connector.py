@@ -1,7 +1,6 @@
 from typing import Dict, Tuple, Sequence, List, NoReturn
 import sys
 import json
-import requests
 from censys.certificates import CensysCertificates
 from censys.ipv4 import CensysIPv4
 from censys.websites import CensysWebsites
