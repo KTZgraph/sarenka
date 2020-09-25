@@ -7,9 +7,9 @@ from censys.websites import CensysWebsites
 from censys.base import CensysNotFoundException, CensysRateLimitExceededException, CensysUnauthorizedException
 
 from connectors.credential import Credential 
-from .connector_interface import ConnectorInterface
+from connectors.censys.connector_interface import ConnectorInterface
 from common.common import Common
-from .wrappers.ip_wrapper import IPWrapper
+from connectors.censys.wrappers.ip_wrapper import IPWrapper
 
 class Connector(ConnectorInterface):
     def __init__(self, censys_credentials):

@@ -4,7 +4,7 @@ import requests
 import os
 from pathlib import Path
 
-import connector
+from connectors.cve_search import connector
 from connectors.credential import Credential 
 
 def mocked_requests_get(*args, **kwargs):
@@ -28,7 +28,8 @@ def mocked_requests_get(*args, **kwargs):
     return MockResponse(None, 404, False)
 
 
-class TestConnector(unittest.TestCase):
+class TestConnectorCVESearch(unittest.TestCase):
+
     @classmethod
     def setUpClass(cls):
         """
@@ -36,7 +37,7 @@ class TestConnector(unittest.TestCase):
         """
         dir_path = os.path.dirname(os.path.realpath(__file__))
         path = Path(dir_path)
-        connectors_path = path.parent
+        connectors_path = path.parent.parent
         cls.credentials_file_path = os.path.join(connectors_path, "credentials.json")
 
     @classmethod
@@ -44,12 +45,12 @@ class TestConnector(unittest.TestCase):
         print("tearDownClass")
 
     def setUp(self):
-        self.connector = connector.Connector(Credential(TestConnector.credentials_file_path).cve_search)
+        self.connector = connector.Connector(Credential(self.credentials_file_path).cve_search)
         self.existing_cve_code = "CVE-2019-1010298"
         self.not_existing_cve_code = "CVE-2012-0000000"
 
     def test_connect_status(self):
-        with patch('connector.requests.get') as mocked_get:
+        with patch('connectors.cve_search.connector.requests.get') as mocked_get:
             mocked_get.return_value.ok = True 
             mocked_get.return_value.text ="Success" 
             response = self.connector.connect(self.existing_cve_code)
@@ -60,7 +61,7 @@ class TestConnector(unittest.TestCase):
                 response = self.connector.connect(self.existing_cve_code)
                 mocked_get.assert_called_with("CVE-2019-1010298")
 
-    @patch('connector.requests.get', side_effect=mocked_requests_get)
+    @patch('connectors.cve_search.connector.requests.get', side_effect=mocked_requests_get)
     def test_connect_response(self, mock_get):
         response = self.connector.connect("http://cve-search.org/api/existing_cve_code_1")
         self.assertEqual(response, {"key1": "value1"})

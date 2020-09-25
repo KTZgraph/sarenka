@@ -1,12 +1,25 @@
 import unittest
+import os
+from pathlib import Path
 
 from connectors.credential import Credential 
-from connector import Connector
+from connectors.shodan.connector import Connector
 
 
-class ConnectorTest(unittest.TestCase):
+class TestConnectorShodan(unittest.TestCase):
+    
+    @classmethod
+    def setUpClass(cls):
+        """
+        Ścieżka do pliku z credentialami użytkownika do serwisów trzecich
+        """
+        dir_path = os.path.dirname(os.path.realpath(__file__))
+        path = Path(dir_path)
+        connectors_path = path.parent.parent
+        cls.credentials_file_path = os.path.join(connectors_path, "credentials.json")
+
     def setUp(self):
-        self.shodan_credentials = Credential().shodan
+        self.shodan_credentials = Credential(self.credentials_file_path).shodan
 
     def test_create(self):
         self.assertIsNotNone(Connector(self.shodan_credentials))

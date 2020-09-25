@@ -1,10 +1,14 @@
 import unittest
 
 from connectors.credential import Credential 
-from connector import Connector
+from connectors.censys.connector import Connector
 
 
-class TestConnector(unittest.TestCase):
+class TestConnectorCensys(unittest.TestCase):
+    """
+    cd sarenka\backend
+    py.test
+    """
     def setUp(self):
         self.censys_credentials = Credential().censys
 
@@ -13,13 +17,11 @@ class TestConnector(unittest.TestCase):
         # self.assertIsNotNone(Connector())
         # self.assertIsNotNone(Connector(self.api_key_wrong))
 
-    def test_search(self):
+    def test_search_by_ip(self):
         connector = Connector(self.censys_credentials)
-        result = connector.search("22-ssh-banner-full_ipv4")
+        result = connector.search_by_ip("8.8.8.8")
         self.assertIsNotNone(result)
 
 if __name__ == '__main__':
     unittest.main()
 
-# cd sarenka\backend
-# python connectors\censys\test_connector.py  

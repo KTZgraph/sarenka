@@ -1,5 +1,5 @@
 import unittest
-import detector
+from detector import detector
 
 class TestDetector(unittest.TestCase):
     # TODO: zmockować plik detectora
