@@ -1,5 +1,5 @@
 from common.converter import Converter
-from .cve_parser import CVEParser
+from cve_parser import CVEParser
 
 class CveWrapper:
     def __init__(self, data):
