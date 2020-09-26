@@ -41,9 +41,9 @@ class TestViews(TestCase):
     
 
 
-# ucie fixtures
+# uzcie fixtures
 
-@pytest.fixture()
+@pytest.fixture(scope='module') #zeby tylko raz dla testow utworzyl ten obiekt
 def factory():
     return RequestFactory()
 
