@@ -3,7 +3,7 @@ from rest_framework import views
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 from django.http import HttpResponse
-from .models import Knowledge_base
+from .models import CWEModel
 from django.http import JsonResponse
 from urllib.request  import HTTPError
 from django.db import IntegrityError
@@ -25,7 +25,7 @@ class Dowload_data(views.APIView):
                 for element in definition_section:
                     definition=element.get_text()
 
-                write_to_database = Knowledge_base.objects.create(number_cwe=cwe_number,definition=definition)
+                write_to_database = KnowledgeBase.objects.create(number_cwe=cwe_number,definition=definition)
 
             except HTTPError as err:
                 if err.code == 404:
@@ -40,8 +40,8 @@ class Dowload_data(views.APIView):
 class Written_from_database(views.APIView):
     def data_to_json(request, cwe_number):
         try:
-            objects_database = Knowledge_base.objects.get(number_cwe=cwe_number)
-        except Knowledge_base.DoesNotExist:
+            objects_database = KnowledgeBase.objects.get(number_cwe=cwe_number)
+        except KnowledgeBase.DoesNotExist:
             raise Http404("Invalid number")
         return JsonResponse({'number_cwe':cwe_number,
         'definition':objects_database.definition})
