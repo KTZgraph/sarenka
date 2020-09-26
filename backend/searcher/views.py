@@ -1,11 +1,9 @@
-from django.http import HttpResponse
-from django.shortcuts import get_object_or_404
-from django.db import models
-from django.http import JsonResponse
-import json
 from rest_framework import views
 from rest_framework.response import Response
-from rest_framework.generics import ListAPIView
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, get_object_or_404
+from django.http import JsonResponse
+
 
 from connectors.credential import Credential
 from connectors.cve_search.connector import Connector as CVEConnector
@@ -47,3 +45,10 @@ class ListVendors(views.APIView):
         connector = CVEConnector(credentials)
         listVendors = connector.get_vendors_list()
         return Response(listVendors)
+
+
+@login_required
+def login_required_view(request, cve_code):
+    # cve = get_object_or_404() #jakby testowac z bazy
+    cve = {"key": cve_code, "value": "test value"}
+    return JsonResponse(cve)
