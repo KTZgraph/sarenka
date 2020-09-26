@@ -9,6 +9,7 @@ class ARecordWrongFQDNError(Exception):
         super().__init__(message)
         self.errors= errors
 
+
 class ARecord:
     """
     pip install git+https://github.com/rthalley/dnspython
