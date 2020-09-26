@@ -30,7 +30,7 @@ class ARecord:
         FQDN - Fully Qualified Domain Name example www.wikipedia.org
         """
         try:
-            result = dns.resolver.query(fqdn, 'A')
+            result = dns.resolver.resolve(fqdn, 'A')
         except dns.resolver.NXDOMAIN:
             raise ARecordWrongFQDNError(f"Unable to resolve ip address for: {fqdn}")
 
@@ -43,7 +43,7 @@ class ARecord:
         CNAME - Canonical Name record
         """
         try:
-            result = dns.resolver.query(fqdn, 'CNAME')
+            result = dns.resolver.resolve(fqdn, 'CNAME')
         except dns.resolver.NXDOMAIN:
             raise ARecordWrongFQDNError(f"Unable to resolve CNAME for: {fqdn}")
 
