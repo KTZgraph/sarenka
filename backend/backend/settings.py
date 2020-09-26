@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'api_analyzer',
     'api_cheat_sheet',
     'api_dns',
+    'api_detector',
+    'api_scrapper',
 ]
 
 MIDDLEWARE = [

@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class AnalyzerApiConfig(AppConfig):
+class ApiAnalyzerConfig(AppConfig):
     name = 'analyzer_api'

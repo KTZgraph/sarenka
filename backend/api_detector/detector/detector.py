@@ -40,8 +40,6 @@ class Detector:
         self._data = self.data
     
     def _get_value(self, key):
-        if key not in self.data:
-            raise SoftwareDetectorKeyNotFoundError(f'"{key}" is obligatory')
         return self._data[key]
 
     @property

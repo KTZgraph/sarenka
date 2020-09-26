@@ -1,7 +1,6 @@
-from software_detector import SoftwareDetector
-
 class DetectorFactory:
     def __init__(self):
+        pass
     
     def _softwares_file_path(self):
         """
@@ -9,3 +8,4 @@ class DetectorFactory:
         .yaml zawierającymi informacje 
 
         """
+        pass
