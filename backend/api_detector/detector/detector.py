@@ -26,7 +26,7 @@ class Detector:
     """
     Klasa przechowująca dane o detekcji konkretnego softu na podstawie plików yaml
     """
-    folder_name = "detectors"
+    folder_name = "plugins"
 
     obligatory_keys = [
         
