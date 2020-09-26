@@ -1,6 +1,6 @@
 from django.urls import path
-from api_dns.views import ARecordAPIView
+from api_dns.views import ARecordView
 
 urlpatterns = [
-    path("<str:fqdn>/", ARecordAPIView.as_view(), name="dns_record")
+    path("<str:fqdn>", ARecordView.as_view(), name="dns_record")
 ]

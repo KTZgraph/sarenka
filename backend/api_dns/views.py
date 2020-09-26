@@ -7,7 +7,7 @@ from api_dns.serializers import ARecordDict, ARecordSerializer
 from common.contact import Contact
 
 
-class ARecordAPIView(APIView):
+class ARecordView(APIView):
 
     def get(self, request, fqdn):
         """
