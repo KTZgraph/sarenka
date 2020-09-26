@@ -23,7 +23,7 @@ class CWEModel(models.Model):
     cve_example = models.CharField(max_length=20, null=True, default=None)
     tutorial_example = models.CharField(max_length=200, null=True, default=None)
     top_25 = models.BooleanField(default=False)# https://cwe.mitre.org/top25/archive/2020/2020_cwe_top25.html
-    rank = models.PositiveSmallIntegerField(
+    rank = models.CharField(
         max_length=2,
         null=True,
         default=NoDataChoice.NOT_SET,

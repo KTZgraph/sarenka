@@ -15,7 +15,7 @@ class TestCWEModel:
         assert cwe.has_example == False
         assert cwe.has_tutorial == False
         assert cwe.has_attack == False
-        assert cwe.rank == 12
+        assert cwe.rank == '12'
 
 
 # testy z fixture

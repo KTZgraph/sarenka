@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'searcher',
     'analyzer_api',
     'knowledge_base',
-
+    'api_dns',
 ]
 
 MIDDLEWARE = [
