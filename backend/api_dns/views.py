@@ -1,6 +1,9 @@
 from django.http import JsonResponse
 from rest_framework.views import APIView
+from rest_framework.response import Response
+
 from api_dns.a_record import ARecord, ARecordWrongFQDNError
+from api_dns.serializers import ARecordDict, ARecordSerializer
 from common.contact import Contact
 
 
@@ -19,15 +22,16 @@ class ARecordAPIView(APIView):
             'aname': ARecord.get_aname
         }
 
-        response = []
+        dns_data = {}
         for record_name in dns_func.keys():
             try:
-                response.append(dns_func.get(record_name)(fqdn))
+                dns_data.update({record_name : dns_func.get(record_name)(fqdn)})
             except ARecordWrongFQDNError as err:
-                response.append({record_name: str(err)})
+                dns_data.update({record_name: str(err)})
             except NotImplementedError:
-                response.append(Contact.get_contact(record_name.upper() + ' Record'))
+                dns_data.update({record_name: Contact.get_contact(record_name.upper() + ' Record')})
             except KeyError:
-                response.append({"ARecord": f"record '{record_name}' is not supported"})
+                dns_data.update({"ARecord": f"record '{record_name}' is not supported"})
 
-        return JsonResponse({"DNS": response})
+        obj = ARecordDict(dns_data)
+        return Response(ARecordSerializer(obj).data)
