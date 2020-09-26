@@ -4,7 +4,7 @@ class Contact:
     """
     @staticmethod
     def get_contact(name, code="Not implemented feature", ):
-        return {"feature": name,
-                "code": code,
-                "message": "Don't hesitate to contact panisarenka@protonmail.com"
+        return {"feature": f"♥{name}♥",
+                "code": f"♡{code}♡",
+                "message": "♥❤♥ Don't hesitate to contact panisarenka@protonmail.com ♥❤♥"
         }
