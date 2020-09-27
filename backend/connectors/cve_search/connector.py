@@ -7,6 +7,14 @@ from .connector_interface import ConnectorInterface
 from .cve_wrapper import CveWrapper
 import urllib.request, json 
 
+class CVESearchConnectioError(Exception):
+    """
+    Zgłasza wyjątek gdy nie można połaczyć się z serwisem https://cve.circl.lu/api/cve/{cve_code}
+    """
+    def __init__(self, message=None, errors=None):
+        super().__init__(message)
+        self.errors = errors
+
 
 class Connector(ConnectorInterface):
     """
@@ -16,17 +24,17 @@ class Connector(ConnectorInterface):
         super().__init__(credentials)
 
     @staticmethod
-    def connect_until_200(url):
-        status = 0
-        while status != 200:
-            response = requests.get(url)
-            status = response.status_code
-
-        return response.json()
+    def connect(url):
+        # TODO: poprawić SPAWANIE
+        response = requests.get(url)
+        if response.ok:
+            return response.json()
+        else:
+            raise CVESearchConnectioError(f"Can't get data from {url}")
 
     def search_by_cve_code(self, cve_code:str):
         url = f'{self.cve}{cve_code}'
-        response = Connector.connect_until_200(url)
+        response = Connector.connect(url)
         cve_wrapper = CveWrapper(response)
         return cve_wrapper
 
@@ -35,7 +43,7 @@ class Connector(ConnectorInterface):
         return response
     #TO DO
     def get_vendors_list(self):
-        response = Connector.connect_until_200(self.vendor)
+        response = Connector.connect(self.vendor)
         return response['vendor']
 
     def get_vendor_products(self, vendor:str):
