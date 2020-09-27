@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'api_cheat_sheet',
     'api_dns',
     'api_detector',
-    'api_scrapper',
+    'api_scraper',
     'api_hash_calculator',
 ]
 
