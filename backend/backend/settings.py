@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'drf_yasg',
     'corsheaders',
     'api_searcher',
     'api_analyzer',
@@ -52,6 +53,7 @@ INSTALLED_APPS = [
     'api_dns',
     'api_detector',
     'api_scrapper',
+    'api_hash_calculator',
 ]
 
 MIDDLEWARE = [
