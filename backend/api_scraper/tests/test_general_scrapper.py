@@ -40,7 +40,7 @@ class TestARecord(unittest.TestCase):
         gs = GeneralScraper("http://www.github.com")
         self.assertIsNone(gs.get_keywords())
 
-    def get_image_exists(self):
+    def test_get_image_exists(self):
         gs = GeneralScraper("http://www.yahoo.com")
         self.assertIsNotNone(gs.get_image())
         self.assertIsInstance(gs.get_image(), str)

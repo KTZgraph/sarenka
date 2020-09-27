@@ -1,7 +1,18 @@
 from typing import Dict, Optional, Union
 import requests
-from requests.exceptions import InvalidSchema, MissingSchema
+from requests.exceptions import InvalidSchema, MissingSchema, ConnectionError
+from urllib3.exceptions import NewConnectionError
 from bs4 import BeautifulSoup
+import traceback
+from django.conf import settings
+import logging.config
+
+print(settings.BASE_DIR)
+
+logging.config.fileConfig('C:\\Users\\dp\\Desktop\\sarenka\\backend\\logging.conf')
+
+logger = logging.getLogger(__name__)
+logger.debug("this is a debug message")
 
 
 class GeneralScraperError(Exception):
@@ -18,8 +29,16 @@ class GeneralScraper:
     def __init__(self, url:str):
         try:
             page = requests.get(url)
-        except (InvalidSchema, MissingSchema):
+        except (InvalidSchema, MissingSchema, ) as err:
+            # logging.error(err, exc_info=True)
+            logging.error(err)
             raise GeneralScraperError(f'Invalid url "{url}"')
+        except (ConnectionError, NewConnectionError) as err:
+            # logging.error(err, exc_info=True)
+            logging.error(err)
+            raise GeneralScraperError(f'Connection error for url "{url}"')
+        except:
+            logging.error("The error is %s", traceback.format_exc())
 
         self.soup = BeautifulSoup(page.text, 'html.parser')
 
@@ -60,3 +79,10 @@ class GeneralScraper:
     def get_image(self):
         og_image = self.soup.find("meta", property="og:image")
         return og_image.get('content') if og_image else None
+
+
+if __name__ == "__main__":
+    try:
+        GeneralScraper("https://www.yaheeeeeeeeeeeeeeeeeeeeeeoo.com")
+    except:
+        print("obsluzone elo")

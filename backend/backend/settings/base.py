@@ -14,11 +14,14 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from decouple import config
-from dj_database_url import parse as dburl
+from django.conf import settings
+
 
 # DATABASE_ROUTERS = ['Test_MongoDB.routers.Test_MongoDBRouter',]
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(
+    os.path.dirname(os.path.abspath(__file__))
+)
 # SESSION_ENIGME='mongoenigme.djongo.sessions'
 # AUTHENTICATION_BACKENDS=(
 #     'mongoenigme.djongo.auth.MongoEnigmeBackend'
@@ -29,6 +32,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
 
+# DJANGO_SETTINGS_MODULE = config('DJANGO_SETTINGS_MODULE')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
