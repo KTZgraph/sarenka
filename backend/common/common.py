@@ -1,7 +1,7 @@
 import json
 
+
 class Common:
-    
     @staticmethod
     def save_dict_to_file(filename, data_dict):
         data = json.dumps(data_dict)
