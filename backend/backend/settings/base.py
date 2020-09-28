@@ -1,14 +1,17 @@
 import os
-from decouple import config
+from decouple import config # circleCI
 
 
 BASE_DIR = os.path.dirname(
     os.path.dirname(os.path.abspath(__file__))
 )
 
-SECRET_KEY = config('SECRET_KEY')
+# SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = "^oa#2a*y#rr-vhoi0m&s4+ph&m5^=iq-7wdiitm1@12p15z151"
 
-DEBUG = config('DEBUG', default=False, cast=bool)
+
+# DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
