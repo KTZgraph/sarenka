@@ -4,12 +4,8 @@ from requests.exceptions import InvalidSchema, MissingSchema, ConnectionError
 from urllib3.exceptions import NewConnectionError
 from bs4 import BeautifulSoup
 import traceback
-from django.conf import settings
 import logging.config
 
-print(settings.BASE_DIR)
-
-logging.config.fileConfig('C:\\Users\\dp\\Desktop\\sarenka\\backend\\logging.conf')
 
 logger = logging.getLogger(__name__)
 logger.debug("this is a debug message")

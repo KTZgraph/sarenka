@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
-
+import logging, traceback
 
 from connectors.credential import Credential
 from connectors.cve_search.connector import Connector as CVEConnector
@@ -11,10 +11,18 @@ from connectors.censys.connector import Connector as CensysConnector
 from .serializers import CveWrapperSerializer
 
 
+logger = logging.getLogger('django')
 
 class CVESearchView(views.APIView):
-
     def get(self, request, code):
+        """
+
+        """
+        print("CVESearchView")
+        logger.debug("Logger at CVESearchView test message")
+        logger.warning("Logger at CVESearchView test message")
+        logger.info("Logger at CVESearchView test message")
+        logger.error("Logger at CVESearchView test message")
         credentials = Credential().cve_search
         connector = CVEConnector(credentials)
         cve = connector.search_by_cve_code(code)
