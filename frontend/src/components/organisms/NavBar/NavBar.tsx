@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import NavButton from 'components/atoms/NavButton/NavButton';
@@ -10,16 +10,28 @@ import exploitsIconActive from 'static/exploitsIconActive.svg';
 import exploitsIcon from 'static/exploitsIcon.svg';
 import magnifierIconActive from 'static/magnifierIconActive.svg';
 import magnifierIcon from 'static/magnifierIcon.svg';
+import regeditIconActive from 'static/regeditIconActive.svg';
+import regeditIcon from 'static/regeditIcon.svg';
+import HamburgerButton from 'components/atoms/NavButton/HamburgerButton';
+import routes from '../../../routes';
 
-const StyledWrapper = styled.nav`
+const StyledWrapper = styled.nav<{ isVisible: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
   background: #252525;
   max-width: 315px;
+  width: 100%;
   height: 100vh;
   padding: 160px 0 0;
   overflow: hidden;
+  z-index: 3;
+  transition: 0.3s;
+  transform: translateX(0);
+  @media (max-width: 1100px) {
+    transform: ${({ isVisible }) =>
+      isVisible ? 'translateX(0%)' : 'translateX(-100%)'};
+  }
 `;
 
 const StyledSettingsParagraph = styled.p`
@@ -32,64 +44,85 @@ const StyledSettingsParagraph = styled.p`
     display: block;
     width: 315px;
     height: 1px;
-    background: #bdbdbd;
+    background: ${({ theme }) => theme.colors.grey};
     margin-bottom: 15px;
     margin-left: -20px;
   }
+  }
 `;
 
-const NavBar = () => (
-  <StyledWrapper>
-    <NavButton
-      as={NavLink}
-      to="/frontend"
-      activeClassName="active"
-      icon={magnifierIcon}
-      iconactive={magnifierIconActive}
-    >
-      Frontend vulnarbility
-    </NavButton>
-    <NavButton
-      as={NavLink}
-      to="/backend"
-      activeClassName="active"
-      icon={magnifierIcon}
-      iconactive={magnifierIconActive}
-    >
-      Backend vulnarbility
-    </NavButton>
-    <NavButton
-      as={NavLink}
-      to="/exploits"
-      activeClassName="active"
-      icon={exploitsIcon}
-      iconactive={exploitsIconActive}
-    >
-      Exploits
-    </NavButton>
-    <NavButton as={NavLink} to="/registry" activeClassName="active">
-      Windows registry
-    </NavButton>
-    <NavButton
-      as={NavLink}
-      to="/docs"
-      activeClassName="active"
-      icon={docsIcon}
-      iconactive={docsIconActive}
-    >
-      Documentation
-    </NavButton>
-    <StyledSettingsParagraph>Settings</StyledSettingsParagraph>
-    <NavButton
-      as={NavLink}
-      to="/settings"
-      activeClassName="active"
-      icon={settingsIcon}
-      iconactive={settingsIconActive}
-    >
-      Main Settings
-    </NavButton>
-  </StyledWrapper>
-);
+const NavBar = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleButtonClick = () => setIsVisible(!isVisible);
+  return (
+    <>
+      <HamburgerButton isOpen={isVisible} onClick={handleButtonClick} />
+      <StyledWrapper isVisible={isVisible}>
+        <NavButton
+          as={NavLink}
+          to={routes.remoteHostInfo}
+          activeClassName="active"
+          icon={magnifierIcon}
+          iconactive={magnifierIconActive}
+          onClick={handleButtonClick}
+        >
+          Remote host info
+        </NavButton>
+        <NavButton
+          as={NavLink}
+          to={routes.exploits}
+          activeClassName="active"
+          icon={exploitsIcon}
+          iconactive={exploitsIconActive}
+          onClick={handleButtonClick}
+        >
+          Exploits
+        </NavButton>
+        <NavButton
+          as={NavLink}
+          to={routes.cveSearch}
+          activeClassName="active"
+          icon={exploitsIcon}
+          iconactive={exploitsIconActive}
+          onClick={handleButtonClick}
+        >
+          Search CVE
+        </NavButton>
+        <NavButton
+          as={NavLink}
+          to={routes.registry}
+          activeClassName="active"
+          onClick={handleButtonClick}
+          icon={regeditIcon}
+          iconactive={regeditIconActive}
+        >
+          Windows registry
+        </NavButton>
+        <NavButton
+          as={NavLink}
+          to={routes.documentation}
+          activeClassName="active"
+          icon={docsIcon}
+          iconactive={docsIconActive}
+          onClick={handleButtonClick}
+        >
+          Documentation
+        </NavButton>
+        <StyledSettingsParagraph>Settings</StyledSettingsParagraph>
+        <NavButton
+          as={NavLink}
+          to={routes.settings}
+          activeClassName="active"
+          icon={settingsIcon}
+          iconactive={settingsIconActive}
+          onClick={handleButtonClick}
+        >
+          Settings
+        </NavButton>
+      </StyledWrapper>
+    </>
+  );
+};
 
 export default NavBar;

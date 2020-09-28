@@ -1,30 +1,37 @@
 from typing import Dict, Tuple, Sequence, List, NoReturn
 from abc import ABC, abstractmethod
+from censys.ipv4 import CensysIPv4
+from censys.certificates import CensysCertificates
+from censys.websites import CensysWebsites
+from censys.base import CensysNotFoundException, CensysRateLimitExceededException, CensysUnauthorizedException
 
 
 class ConnectorInterface(ABC):
     def __init__(self, data):
-        self.__base_url = data.base_url
-        self.__api_id = data.api_id
-        self.__secret = data.secret
-        self.__api_url = data.api_url
+        self.__ipv4 = CensysIPv4(api_id=data.api_id, api_secret=data.secret)
+        self.__certificate = CensysCertificates(api_id=data.api_id, api_secret=data.secret)
+        self.__websites = CensysWebsites(api_id=data.api_id, api_secret=data.secret)
 
     @property
-    def base_url(self):
-        return self.__base_url
+    def ipv4(self):
+        return self.__ipv4
     
     @property
-    def api_id(self):
-        return self.__api_id
+    def certificate(self):
+        return self.__certificate
     
     @property
-    def secret(self):
-        return self.__secret
-
-    @property
-    def api_url(self):
-        return self.__api_url
+    def website(self):
+        return self.__websites
 
     @abstractmethod
-    def host(self, ip, ports=[]):
+    def search_by_ip(self, ip):
+        pass
+
+    @abstractmethod
+    def search_by_fingerprint(self, certificate_hash):
+        pass
+
+    @abstractmethod
+    def search_by_website(self, domain):
         pass

@@ -17,6 +17,15 @@ const StyledWrapper = styled.li`
 const StyledParagraphWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  @media (max-width: 1330px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 830px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 560px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 const ParagraphRedBorder = styled(Paragraph)`

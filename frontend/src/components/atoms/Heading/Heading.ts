@@ -5,7 +5,7 @@ type Props = {
 };
 
 const Heading = styled.h1<Props>`
-  font-size: 3rem;
+  font-size: 2.6rem;
   color: #e0e0e0;
   font-weight: ${({ theme, regularfont }) =>
     regularfont ? theme.font.weight.regular : theme.font.weight.bold};

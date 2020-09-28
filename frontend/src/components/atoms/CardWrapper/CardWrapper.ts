@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import FadeIn from 'components/animations/FadeIn';
 
 const CardWrapper = styled.section`
   background: #070809;
@@ -6,6 +7,8 @@ const CardWrapper = styled.section`
   box-sizing: border-box;
   border-radius: 4px;
   padding: 30px;
+  animation: 0.5s ${FadeIn} ease-out forwards;
+  margin-bottom: 40px;
 `;
 
 export default CardWrapper;
