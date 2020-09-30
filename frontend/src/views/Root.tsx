@@ -29,6 +29,12 @@ const ExploitsResultView = lazy(() =>
 );
 const SettingsView = lazy(() => import('views/Settings/SettingsView'));
 const DocsView = lazy(() => import('views/DocsView/DocsView'));
+const HardwareInfoScan = lazy(() =>
+  import('views/HardwareInfo/HardwareInfoScan'),
+);
+const HardwareInfoResult = lazy(() =>
+  import('views/HardwareInfo/HardwareInfoResult'),
+);
 
 function Root() {
   return (
@@ -75,6 +81,16 @@ function Root() {
                   exact
                   path={routes.exploitResults}
                   component={ExploitsResultView}
+                />
+                <Route
+                  exact
+                  path={routes.hardwareInfo}
+                  component={HardwareInfoScan}
+                />
+                <Route
+                  exact
+                  path={routes.hardwareInfoResults}
+                  component={HardwareInfoResult}
                 />
                 <Route exact path={routes.documentation} component={DocsView} />
                 <Route exact path={routes.settings} component={SettingsView} />

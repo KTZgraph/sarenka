@@ -12,14 +12,17 @@ import magnifierIconActive from 'static/magnifierIconActive.svg';
 import magnifierIcon from 'static/magnifierIcon.svg';
 import regeditIconActive from 'static/regeditIconActive.svg';
 import regeditIcon from 'static/regeditIcon.svg';
+import hardwareIcon from 'static/hardwareIcon.svg';
+import hardwareIconActive from 'static/hardwareIconActive.svg';
 import HamburgerButton from 'components/atoms/NavButton/HamburgerButton';
-import routes from '../../../routes';
+import routes from 'routes';
+import theme from 'theme/theme';
 
 const StyledWrapper = styled.nav<{ isVisible: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
-  background: #252525;
+  background: ${theme.colors.darkGrey};
   max-width: 315px;
   width: 100%;
   height: 100vh;
@@ -98,6 +101,16 @@ const NavBar = () => {
           iconactive={regeditIconActive}
         >
           Windows registry
+        </NavButton>
+        <NavButton
+          as={NavLink}
+          to={routes.hardwareInfo}
+          activeClassName="active"
+          onClick={handleButtonClick}
+          icon={hardwareIcon}
+          iconactive={hardwareIconActive}
+        >
+          Hardware info
         </NavButton>
         <NavButton
           as={NavLink}
