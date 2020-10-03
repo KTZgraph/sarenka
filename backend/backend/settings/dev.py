@@ -34,7 +34,3 @@ LOGGING = {
     }
 }
 
-try:
-    from backend.settings.local import *
-except:
-    print("Please create file 'local.py' in folder backed/backend/settings")

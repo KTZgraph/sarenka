@@ -8,7 +8,7 @@ class TestARecord(unittest.TestCase):
 
     def test_get_ip(self):
         ip_val = ARecord.get_ip('tutorialspoint.com')
-        self.assertEqual(ip_val, ['94.130.82.52'])
+        self.assertEqual(ip_val, ['95.217.74.146'])
 
         ip_val = ARecord.get_ip('renmich.faculty.wmi.amu.edu.pl')
         self.assertEqual(ip_val, ['150.254.78.21'])

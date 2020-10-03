@@ -9,9 +9,14 @@ from common.contact import Contact
 
 class ARecordView(APIView):
 
-    def get(self, request, fqdn):
+    def get(self, request, fqdn='renmich.faculty.wmi.amu.edu.pl'):
         """
         DNS A Record Data
+
+        :param fqdn: fully qualified domain name
+
+        :Example:
+        fqdn='renmich.faculty.wmi.amu.edu.pl'
         """
         dns_func = {
             'ip': ARecord.get_ip,
