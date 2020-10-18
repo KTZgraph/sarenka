@@ -5,19 +5,25 @@ import ResultTemplate from 'templates/VulnerabilityResultTemplate';
 import Search from 'components/molecules/Search/Search';
 import { fetchData } from 'actions/remoteHostActions';
 import LoadingAnimation from 'components/atoms/LoadingAnimation/LoadingAnimation';
-import GeneralHostInfo from '../../components/molecules/GeneralHostInfo/GeneralHostInfo';
-import TLSInfo from '../../components/molecules/TLSInfo/TLSInfo';
+import { useParams } from 'react-router';
+import GeneralHostInfo from 'components/molecules/GeneralHostInfo/GeneralHostInfo';
+import TLSInfo from 'components/molecules/TLSInfo/TLSInfo';
 
 const RemoteHostInfoResult = () => {
   const [searchHost, setSearchHost] = useState('');
+  const { page } = useParams();
   const dispatch = useDispatch();
-  const { isLoading, data } = useSelector(
-    ({ remoteHost }: Record<string, any>) => remoteHost,
+  const {
+    isLoading,
+    data,
+  } = useSelector(({ remoteHost }: Record<string, any>) =>
+    remoteHost[page] ? remoteHost[page] : { isLoading: true, data: {} },
   );
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    dispatch(fetchData(searchHost));
+    dispatch(fetchData(searchHost, page));
   };
+
   return (
     <ResultTemplate
       search={
@@ -26,7 +32,7 @@ const RemoteHostInfoResult = () => {
           handleSubmit={handleSubmit}
           searchWord={searchHost}
           setSearchWord={setSearchHost}
-          title="Search for errors on your domain"
+          title="Passive reconnaissance data from your's host"
           placeholder="Type host address e.g. 8.8.8.8"
         />
       }

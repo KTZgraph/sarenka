@@ -6,8 +6,8 @@ export const actions: Record<string, string> = {
   FETCH_FAILURE: 'FETCH_HARDWARE_INFO_FAILURE',
 };
 
-export const fetchHardwareInfo = () => (dispatch: Function) => {
-  dispatch({ type: actions.FETCH_REQUEST });
+export const fetchHardwareInfo = (tabIndex: number) => (dispatch: Function) => {
+  dispatch({ type: actions.FETCH_REQUEST, payload: { tabIndex } });
 
   return axios
     .get(`http://127.0.0.1:8000/analyzer/local/windows/hardware`)
@@ -15,6 +15,7 @@ export const fetchHardwareInfo = () => (dispatch: Function) => {
       dispatch({
         type: actions.FETCH_SUCCESS,
         payload: {
+          tabIndex,
           data,
         },
       });
@@ -23,6 +24,7 @@ export const fetchHardwareInfo = () => (dispatch: Function) => {
       dispatch({
         type: actions.FETCH_FAILURE,
         payload: {
+          tabIndex,
           error: err.message,
         },
       });

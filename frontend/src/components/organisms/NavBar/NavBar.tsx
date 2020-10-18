@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
 import NavButton from 'components/atoms/NavButton/NavButton';
 import settingsIcon from 'static/settingsIcon.svg';
 import settingsIconActive from 'static/settingsIconActive.svg';
@@ -15,8 +14,11 @@ import regeditIcon from 'static/regeditIcon.svg';
 import hardwareIcon from 'static/hardwareIcon.svg';
 import hardwareIconActive from 'static/hardwareIconActive.svg';
 import HamburgerButton from 'components/atoms/NavButton/HamburgerButton';
-import routes from 'routes';
 import theme from 'theme/theme';
+import { useDispatch } from 'react-redux';
+import { routesWithoutTab } from 'routes';
+import ScrollableTabButtons from 'views/TabsView/TabsView';
+import { createNewTab } from 'actions/TabsActions';
 
 const StyledWrapper = styled.nav<{ isVisible: boolean }>`
   position: fixed;
@@ -26,7 +28,7 @@ const StyledWrapper = styled.nav<{ isVisible: boolean }>`
   max-width: 315px;
   width: 100%;
   height: 100vh;
-  padding: 160px 0 0;
+  padding: 50px 0 0;
   overflow: hidden;
   z-index: 3;
   transition: 0.3s;
@@ -56,83 +58,72 @@ const StyledSettingsParagraph = styled.p`
 
 const NavBar = () => {
   const [isVisible, setIsVisible] = useState(false);
-
+  const dispatch = useDispatch();
   const handleButtonClick = () => setIsVisible(!isVisible);
+
+  const handleClick = (route: string, label: string) => {
+    dispatch(createNewTab(route, label));
+    setIsVisible(!isVisible);
+  };
   return (
     <>
       <HamburgerButton isOpen={isVisible} onClick={handleButtonClick} />
       <StyledWrapper isVisible={isVisible}>
         <NavButton
-          as={NavLink}
-          to={routes.remoteHostInfo}
-          activeClassName="active"
           icon={magnifierIcon}
           iconactive={magnifierIconActive}
-          onClick={handleButtonClick}
+          onClick={() =>
+            handleClick(routesWithoutTab.remoteHostInfo, 'Remote host info')}
         >
           Remote host info
         </NavButton>
         <NavButton
-          as={NavLink}
-          to={routes.exploits}
-          activeClassName="active"
           icon={exploitsIcon}
           iconactive={exploitsIconActive}
-          onClick={handleButtonClick}
+          onClick={() => handleClick(routesWithoutTab.exploits, 'Exploits')}
         >
           Exploits
         </NavButton>
         <NavButton
-          as={NavLink}
-          to={routes.cveSearch}
-          activeClassName="active"
           icon={exploitsIcon}
           iconactive={exploitsIconActive}
-          onClick={handleButtonClick}
+          onClick={() => handleClick(routesWithoutTab.cveSearch, 'Search CVE')}
         >
           Search CVE
         </NavButton>
         <NavButton
-          as={NavLink}
-          to={routes.registry}
-          activeClassName="active"
-          onClick={handleButtonClick}
           icon={regeditIcon}
           iconactive={regeditIconActive}
+          onClick={() => handleClick(routesWithoutTab.registry, 'Registry')}
         >
           Windows registry
         </NavButton>
         <NavButton
-          as={NavLink}
-          to={routes.hardwareInfo}
-          activeClassName="active"
-          onClick={handleButtonClick}
           icon={hardwareIcon}
           iconactive={hardwareIconActive}
+          onClick={() =>
+            handleClick(routesWithoutTab.hardwareInfo, 'Hardware info')}
         >
           Hardware info
         </NavButton>
         <NavButton
-          as={NavLink}
-          to={routes.documentation}
-          activeClassName="active"
           icon={docsIcon}
           iconactive={docsIconActive}
-          onClick={handleButtonClick}
+          onClick={() =>
+            handleClick(routesWithoutTab.documentation, 'Documentation')}
         >
           Documentation
         </NavButton>
         <StyledSettingsParagraph>Settings</StyledSettingsParagraph>
         <NavButton
-          as={NavLink}
-          to={routes.settings}
-          activeClassName="active"
           icon={settingsIcon}
           iconactive={settingsIconActive}
-          onClick={handleButtonClick}
+          onClick={() => handleClick(routesWithoutTab.settings, 'Settings')}
         >
           Settings
         </NavButton>
+        <StyledSettingsParagraph>Tabs</StyledSettingsParagraph>
+        <ScrollableTabButtons />
       </StyledWrapper>
     </>
   );

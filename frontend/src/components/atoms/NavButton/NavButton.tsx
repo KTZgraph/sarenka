@@ -1,8 +1,9 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 type Props = {
   icon?: any;
   iconactive?: any;
+  noHover?: boolean;
 };
 
 const NavButton = styled.button<Props>`
@@ -20,13 +21,17 @@ const NavButton = styled.button<Props>`
   letter-spacing: 0.3px;
   color: #e0e0e0;
   transition: 0.3s;
+  cursor: pointer;
 
-  &.active {
-    background-image: url(${({ iconactive }) => iconactive});
-    background-color: rgba(193, 12, 39, 0.52);
-    border-radius: 4px;
-    color: #ffffff;
-  }
+  ${({ noHover }) =>
+    !noHover &&
+    css`
+      &:hover {
+        background-color: rgba(193, 12, 39, 0.52);
+        border-radius: 4px;
+        color: #ffffff;
+      }
+    `}
 `;
 
 export default NavButton;

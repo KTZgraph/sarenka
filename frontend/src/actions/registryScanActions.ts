@@ -6,8 +6,10 @@ export const actions: Record<string, string> = {
   FETCH_FAILURE: 'FETCH_FAILURE',
 };
 
-export const fetchInstalledPrograms = () => (dispatch: Function) => {
-  dispatch({ type: actions.FETCH_REQUEST });
+export const fetchInstalledPrograms = (tabIndex: number) => (
+  dispatch: Function,
+) => {
+  dispatch({ type: actions.FETCH_REQUEST, payload: { tabIndex } });
 
   return axios
     .get(`http://127.0.0.1:8000/analyzer/local/windows/`)
@@ -15,6 +17,7 @@ export const fetchInstalledPrograms = () => (dispatch: Function) => {
       dispatch({
         type: actions.FETCH_SUCCESS,
         payload: {
+          tabIndex,
           data,
         },
       });
@@ -23,6 +26,7 @@ export const fetchInstalledPrograms = () => (dispatch: Function) => {
       dispatch({
         type: actions.FETCH_FAILURE,
         payload: {
+          tabIndex,
           error: err.message,
         },
       });
