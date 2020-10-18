@@ -20,7 +20,7 @@ const CveSearch = () => {
   ) => {
     event.preventDefault();
     dispatch(fetchData(searchWord, page));
-    dispatch(updateTabUrl(routesWithoutTab.cveSearchResults, page));
+    dispatch(updateTabUrl(routesWithoutTab.cveSearchResults, page, searchCve));
     history.push(
       `${routes.tabsWOpage}${page}${routesWithoutTab.cveSearchResults}`,
     );

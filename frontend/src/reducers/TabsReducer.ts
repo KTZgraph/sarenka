@@ -31,6 +31,19 @@ const updateUrl = (state: any, action: any) => {
     [action.payload.index]: {
       ...state[action.payload.index],
       link: action.payload.tabUrl,
+      label: action.payload.label
+        ? action.payload.label
+        : state[action.payload.index].label,
+    },
+  };
+};
+
+const updateLabel = (state: any, action: any) => {
+  return {
+    ...state,
+    [action.payload.index]: {
+      ...state[action.payload.index],
+      label: action.payload.label,
     },
   };
 };
@@ -43,6 +56,8 @@ const tabsReducer = (state = initialState, action: Record<string, any>) => {
       return removeTab(state, action);
     case actions.UPDATE_TAB_URL:
       return updateUrl(state, action);
+    case actions.UPDATE_TAB_LABEL:
+      return updateLabel(state, action);
     default:
       return state;
   }

@@ -17,7 +17,9 @@ const RemoteHostInfoSearch = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     dispatch(fetchData(searchHost, page));
-    dispatch(updateTabUrl(routesWithoutTab.remoteHostInfoResult, page));
+    dispatch(
+      updateTabUrl(routesWithoutTab.remoteHostInfoResult, page, searchHost),
+    );
     history.push(
       `${routes.tabsWOpage}${page}${routesWithoutTab.remoteHostInfoResult}`,
     );
