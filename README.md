@@ -6,9 +6,8 @@ https://sarenka.herokuapp.com/
 
 # doc
 https://pawlaczyk.github.io/sarenka/
-https://sarenka.readthedocs.io/en/latest/
-https://sarenka.readthedocs.io/pl/latest/ (Polish)
-https://app.gitbook.com/@pawlaczyk/s/sarenka/
+
+
 
 # logo
 Logo was generated with https://www.renderforest.com/
@@ -117,3 +116,8 @@ example sarenka/backend/connectors/credentials.json
   - web app with nice interface in Vue.js
   - from command line
 
+
+
+- https://app.gitbook.com/@pawlaczyk/s/sarenka/
+- https://sarenka.readthedocs.io/en/latest/
+- https://sarenka.readthedocs.io/pl/latest/ (Polish)
