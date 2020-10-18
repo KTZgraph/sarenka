@@ -7,6 +7,7 @@ import Loading from 'components/atoms/LoadingAnimation/LoadingAnimation';
 import Search from 'components/molecules/Search/Search';
 import Heading from 'components/atoms/Heading/Heading';
 import { useParams } from 'react-router';
+import { updateTabLabel } from '../../actions/TabsActions';
 
 const CveSearchResult = () => {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ const CveSearchResult = () => {
   ) => {
     event.preventDefault();
     dispatch(fetchData(searchWord, page));
+    dispatch(updateTabLabel(searchCve, page));
   };
 
   return (

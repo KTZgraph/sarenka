@@ -8,6 +8,7 @@ import LoadingAnimation from 'components/atoms/LoadingAnimation/LoadingAnimation
 import { useParams } from 'react-router';
 import GeneralHostInfo from 'components/molecules/GeneralHostInfo/GeneralHostInfo';
 import TLSInfo from 'components/molecules/TLSInfo/TLSInfo';
+import { updateTabLabel } from '../../actions/TabsActions';
 
 const RemoteHostInfoResult = () => {
   const [searchHost, setSearchHost] = useState('');
@@ -22,6 +23,7 @@ const RemoteHostInfoResult = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     dispatch(fetchData(searchHost, page));
+    dispatch(updateTabLabel(searchHost, page));
   };
 
   return (
