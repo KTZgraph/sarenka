@@ -11,12 +11,12 @@ class ARecordView(APIView):
 
     def get(self, request, fqdn='renmich.faculty.wmi.amu.edu.pl'):
         """
-        DNS A Record Data
+        Gets DNS A Record Data
 
+        :param request: django request object
         :param fqdn: fully qualified domain name
-
-        :Example:
-        fqdn='renmich.faculty.wmi.amu.edu.pl'
+        :return: dns data
+        :example: fqdn='renmich.faculty.wmi.amu.edu.pl'
         """
         dns_func = {
             'ip': ARecord.get_ip,

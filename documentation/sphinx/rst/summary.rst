@@ -9,6 +9,9 @@ Stuff of section
 
 Section 1.1
 ~~~~~~~~~~~
+List of third part services
 
-Stuff in subsection
 
+Section 2
+---------
+List of included useful scripts
