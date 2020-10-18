@@ -6,8 +6,15 @@ export const actions: Record<string, string> = {
   FETCH_DATA_FAILURE: 'FETCH_HOST_INFO_FAILURE',
 };
 
-export const fetchData = (searchHost: string) => (dispatch: Function) => {
-  dispatch({ type: actions.FETCH_DATA_REQUEST });
+export const fetchData = (searchHost: string, tabIndex: number) => (
+  dispatch: Function,
+) => {
+  dispatch({
+    type: actions.FETCH_DATA_REQUEST,
+    payload: {
+      tabIndex,
+    },
+  });
 
   return axios
     .get(`http://localhost:8000/search/censys/${searchHost}`)
@@ -15,6 +22,7 @@ export const fetchData = (searchHost: string) => (dispatch: Function) => {
       dispatch({
         type: actions.FETCH_DATA_SUCCESS,
         payload: {
+          tabIndex,
           data,
         },
       });
@@ -23,6 +31,7 @@ export const fetchData = (searchHost: string) => (dispatch: Function) => {
       dispatch({
         type: actions.FETCH_DATA_FAILURE,
         payload: {
+          tabIndex,
           error: err.message,
         },
       });

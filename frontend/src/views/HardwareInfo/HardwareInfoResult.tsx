@@ -8,10 +8,12 @@ import ListWrapper from 'components/atoms/List/ListWrapper';
 import ListItem from 'components/atoms/List/ListItem';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 import NoData from 'components/atoms/NoDataText/NoDataText';
+import { useParams } from 'react-router';
 
 const HardwareInfoResults = () => {
+  const { page } = useParams();
   const { isLoading, data } = useSelector(
-    ({ hardwareInfo }: Record<string, any>) => hardwareInfo,
+    ({ hardwareInfo }: Record<string, any>) => hardwareInfo[page],
   );
 
   return (

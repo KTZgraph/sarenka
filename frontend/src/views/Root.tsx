@@ -11,29 +11,29 @@ import CveSearch from 'views/CveSearch/CveSearch';
 import RegistryScan from 'views/RegistryScan/RegistryScan';
 import Loading from 'components/atoms/LoadingAnimation/LoadingAnimation';
 
-const RemoteHostInfoSearch = lazy(() =>
-  import('views/RemoteHostInfo/RemoteHostInfoSearch'),
+const RemoteHostInfoSearch = lazy(
+  () => import('views/RemoteHostInfo/RemoteHostInfoSearch'),
 );
-const RemoteHostInfoResult = lazy(() =>
-  import('views/RemoteHostInfo/RemoteHostInfoResult'),
+const RemoteHostInfoResult = lazy(
+  () => import('views/RemoteHostInfo/RemoteHostInfoResult'),
 );
 const CveSearchResult = lazy(() => import('views/CveSearch/CveSearchResult'));
-const RegistryScanResult = lazy(() =>
-  import('views/RegistryScan/RegistryScanResults'),
+const RegistryScanResult = lazy(
+  () => import('views/RegistryScan/RegistryScanResults'),
 );
-const ExploitsSearchView = lazy(() =>
-  import('views/ExploitSearch/ExploitSearchView'),
+const ExploitsSearchView = lazy(
+  () => import('views/ExploitSearch/ExploitSearchView'),
 );
-const ExploitsResultView = lazy(() =>
-  import('views/ExploitSearch/ExploitResultView'),
+const ExploitsResultView = lazy(
+  () => import('views/ExploitSearch/ExploitResultView'),
 );
 const SettingsView = lazy(() => import('views/Settings/SettingsView'));
 const DocsView = lazy(() => import('views/DocsView/DocsView'));
-const HardwareInfoScan = lazy(() =>
-  import('views/HardwareInfo/HardwareInfoScan'),
+const HardwareInfoScan = lazy(
+  () => import('views/HardwareInfo/HardwareInfoScan'),
 );
-const HardwareInfoResult = lazy(() =>
-  import('views/HardwareInfo/HardwareInfoResult'),
+const HardwareInfoResult = lazy(
+  () => import('views/HardwareInfo/HardwareInfoResult'),
 );
 
 function Root() {
@@ -48,7 +48,7 @@ function Root() {
                 <Route
                   exact
                   path={routes.home}
-                  render={() => <Redirect to={routes.remoteHostInfo} />}
+                  render={() => <Redirect to={routes.homeRedirect} />}
                 />
                 <Route
                   exact

@@ -4,6 +4,7 @@ import cveSearchReducer from 'reducers/cveSearchReducer';
 import registryScanReducer from 'reducers/registryScanReducer';
 import remoteHostReducer from 'reducers/remoteHostReducer';
 import hardwareInfoReducer from 'reducers/hardwareInfoReducer';
+import tabsReducer from 'reducers/TabsReducer';
 
 declare global {
   interface Window {
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   registryScan: registryScanReducer,
   remoteHost: remoteHostReducer,
   hardwareInfo: hardwareInfoReducer,
+  tabs: tabsReducer,
 });
 
 /* eslint-disable no-underscore-dangle */
