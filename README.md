@@ -1,21 +1,19 @@
-# sarenkaa
-Passive reconnaissance for everyone
+# sarenka
+OSINT (Open Source Intelligence) tool
+
+# demo
+https://sarenka.herokuapp.com/
+
+# doc
+https://pawlaczyk.github.io/sarenka/
+https://sarenka.readthedocs.io/en/latest/
+https://sarenka.readthedocs.io/pl/latest/ (Polish)
+https://app.gitbook.com/@pawlaczyk/s/sarenka/
 
 # logo
 Logo was generated with https://www.renderforest.com/
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-# architecture 
-![Alt text](architecture.png?raw=true "architecture")
-
-
-# heroku
-https://sarenka.herokuapp.com/
-
-# doc
-https://sarenka.readthedocs.io/en/latest/
-https://sarenka.readthedocs.io/pl/latest/ (Polish)
-https://app.gitbook.com/@pawlaczyk/s/sarenka/
 
 
 # Config
