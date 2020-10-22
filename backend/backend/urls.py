@@ -42,6 +42,8 @@ urlpatterns = [
     path('api_cheat_sheet/', include("api_cheat_sheet.urls")),
     path('analyzer/', include("api_analyzer.urls")),
     path('dns/', include("api_dns.urls")),
+    path('reports/', include("reports.urls")),
+
     path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]

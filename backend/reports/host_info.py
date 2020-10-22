@@ -1,23 +1,36 @@
 from fpdf import FPDF, HTMLMixin
 import json
 import requests
+
+# from connectors.credential import Credential
+# from connectors.cve_search.connector import Connector as CVEConnector
+# from connectors.censys.connector import Connector as CensysConnector
 class PDF(FPDF, HTMLMixin):
+
+    # def get(self, request, ip_address):
+    #     credentials = Credential().censys
+    #     connector = CensysConnector(credentials)
+    #     response = connector.search_by_ip(ip_address) 
+
+
     def header(self):
         self.set_font('Arial', 'B', 16)
 
-    def headerOnlyFirstSide(self):
-        self.image('../../logo.png',90,15, 30)
-        self.cell(0, 100, 'Host adress: 46.29.18.78', 0, 0, 'C')
+    def headerOnlyFirstSide(self,ipAdress):
+        self.image('../logo.png',90,15, 30)
+        self.cell(0, 100, 'Host adress: '+ipAdress, 0, 0, 'C')
         self.ln(60)
 
-    def chapter(self):
-        response = requests.get("http://127.0.0.1:8000/search/censys/46.29.18.78")
+    def chapter(self, ipAdress,link):
+        # self.cell(0, 100, 'Host adress: ', 0, 0, 'C')
+
+        response = requests.get(link+ipAdress)
         searchDomainInfo = json.loads(response.text)
-        epw = pdf.w - 2*pdf.l_margin
+        epw = self.w - 2*self.l_margin
         col_width = epw/3
         firstColumnTable = [['Protocols port',
                 'host: '+str(searchDomainInfo["protocols_port"]["http"][0]),
-                'imaps: '+str(searchDomainInfo["protocols_port"]["imaps"][0]),
+                # 'imaps: '+str(searchDomainInfo["protocols_port"]["imaps"][0]),
                 'smtp: '+str(searchDomainInfo["protocols_port"]["smtp"][0])+", "+str(searchDomainInfo["protocols_port"]["smtp"][1])+", " +str(searchDomainInfo["protocols_port"]["smtp"][2]),
                 'pop3s: '+str(searchDomainInfo["protocols_port"]["pop3s"][0]),
                 'pop3: '+str(searchDomainInfo["protocols_port"]["pop3"][0]),
@@ -28,12 +41,12 @@ class PDF(FPDF, HTMLMixin):
                 'Longitude: '+str(searchDomainInfo["longitude"])]]
         self.set_font('Times','',12.0) 
         self.ln(0.5)
-        th = pdf.font_size
+        th = self.font_size
 
         for row in firstColumnTable:
-            top = pdf.y
+            top = self.y
             for datum in row:
-                offset = pdf.x + col_width
+                offset = self.x + col_width
                 self.multi_cell(col_width, 1.6*th, str(datum),0,0,'L')
             self.ln(2*th)
 
@@ -47,12 +60,12 @@ class PDF(FPDF, HTMLMixin):
                 'Routed prefix: '+str(searchDomainInfo["routed_prefix"])]]
         self.set_font('Times','',12.0) 
         self.ln(0.5)
-        th2 = pdf.font_size
+        th2 = self.font_size
        
         for row in SecondColumnTable:
-            pdf.y = top
+            self.y = top
             for datum in row:
-                pdf.x = offset               
+                self.x = offset               
                 self.multi_cell(col_width, 1.6*th, str(datum),0,0,'L')
             self.ln(2*th2)
 
@@ -67,9 +80,9 @@ class PDF(FPDF, HTMLMixin):
         self.ln(0.5)
         self.set_font('Times','',12.0) 
         for row in ThirdColumnTable:
-            pdf.y = top
+            self.y = top
             for datum in row:
-                pdf.x = offset+col_width               
+                self.x = offset+col_width               
                 self.multi_cell(col_width, 1.6*th, str(datum),0,0,'L')
             self.ln(2*th2)
         self.ln(20)
@@ -88,12 +101,12 @@ class PDF(FPDF, HTMLMixin):
         self.set_font('Times','',12.0) 
 
         self.ln(0.5)
-        th = pdf.font_size
+        th = self.font_size
 
         for row in FirstColumnTable2:
-            top = pdf.y
+            top = self.y
             for datum in row:
-                offset = pdf.x + col_width
+                offset = self.x + col_width
                 self.multi_cell(col_width, 1.6*th, str(datum),0,0,'L')
             self.ln(2*th)
 
@@ -111,12 +124,12 @@ class PDF(FPDF, HTMLMixin):
         self.set_font('Times','',12.0) 
 
         self.ln(0.5)
-        th2 = pdf.font_size
+        th2 = self.font_size
        
         for row in SecondColumnTable2:
-            pdf.y = top
+            self.y = top
             for datum in row:
-                pdf.x = offset               
+                self.x = offset               
                 self.multi_cell(col_width, 1.6*th, str(datum),0,0,'L')
             self.ln(2*th2)
 
@@ -130,11 +143,11 @@ class PDF(FPDF, HTMLMixin):
                 ]]
         self.set_font('Times','',12.0) 
         self.ln(0.5)
-        th2 = pdf.font_size      
+        th2 = self.font_size      
         for row in ThirdColumnTable2:
-            pdf.y = top
+            self.y = top
             for datum in row:
-                pdf.x = offset+col_width               
+                self.x = offset+col_width               
                 self.multi_cell(col_width, 1.6*th, str(datum),0,0,'L')
             self.ln(2*th2)
 
@@ -191,10 +204,10 @@ class PDF(FPDF, HTMLMixin):
                 'Subject key ID: '+str(searchDomainInfo["https"]["tls"]["chain"][0]["extensions"]["subject_key_id"])]]
         self.set_font('Times','',12.0) 
         self.ln(0.5)
-        th = pdf.font_size
+        th = self.font_size
 
         for row in Table3:
-            top = pdf.y
+            top = self.y
             for datum in row:
                 self.multi_cell(epw, 1.6*th, str(datum),0,0,'L')
                 
@@ -205,12 +218,13 @@ class PDF(FPDF, HTMLMixin):
         self.rect(7, 7, 196, 283)
         self.rect(5, 5, 200, 287)
         
-
-
-pdf = PDF()
-pdf.alias_nb_pages()
-pdf.add_page()
-pdf.headerOnlyFirstSide()
-pdf.chapter()
-pdf.set_font('Times', '', 12)
-pdf.output('report_host_info.pdf', 'F')
+# def generate():
+#     pdf = PDF()
+#     pdf.alias_nb_pages()
+#     pdf.add_page()
+#     ipAdress="46.29.18.78"
+#     # link="http://127.0.0.1:8000/search/censys/"
+#     pdf.headerOnlyFirstSide(ipAdress)
+#     # pdf.chapter(ipAdress,link)
+#     pdf.set_font('Times', '', 12)
+#     return pdf.output('report_host_info.pdf', 'D')
