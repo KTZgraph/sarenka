@@ -218,13 +218,4 @@ class PDF(FPDF, HTMLMixin):
         self.rect(7, 7, 196, 283)
         self.rect(5, 5, 200, 287)
         
-# def generate():
-#     pdf = PDF()
-#     pdf.alias_nb_pages()
-#     pdf.add_page()
-#     ipAdress="46.29.18.78"
-#     # link="http://127.0.0.1:8000/search/censys/"
-#     pdf.headerOnlyFirstSide(ipAdress)
-#     # pdf.chapter(ipAdress,link)
-#     pdf.set_font('Times', '', 12)
-#     return pdf.output('report_host_info.pdf', 'D')
+
