@@ -3,6 +3,7 @@ from reports.views import GeneratePdf
 
 
 urlpatterns = [
-    path('<str:ip_address>', GeneratePdf.as_view(), name="get_censys_host_data"),
+
+    path('host_info/<str:ip_address>', GeneratePdf.as_view(), name="get_censys_host_data"),
     
 ]
