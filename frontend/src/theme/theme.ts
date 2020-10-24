@@ -5,6 +5,7 @@ const theme: Record<string, any> = {
     redDarker: '#771826',
     grey: '#bdbdbd',
     darkGrey: '#2525254f',
+    darkGreyNoTransparency: '#252525',
     font: '#e0e0e0',
   },
   font: {
