@@ -20,7 +20,7 @@ const StyledRemoveButton = styled.button<{ icon: any }>`
   height: 20px;
   display: inline-block;
   cursor: pointer;
-  transform: translateY(20%);
+  transform: translateY(50%);
 
   &:focus {
     outline: 0;
@@ -28,6 +28,7 @@ const StyledRemoveButton = styled.button<{ icon: any }>`
 `;
 
 const StyledWrapper = styled.div<{ isActive: boolean }>`
+  display: flex;
   transition: 0.3s;
   ${({ isActive }) =>
     isActive &&

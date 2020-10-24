@@ -24,7 +24,7 @@ const StyledWrapper = styled.nav<{ isVisible: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
-  background: ${theme.colors.darkGrey};
+  background: ${theme.colors.darkGreyNoTransparency};
   max-width: 315px;
   width: 100%;
   height: 100vh;
@@ -49,7 +49,7 @@ const StyledSettingsParagraph = styled.p`
     display: block;
     width: 315px;
     height: 1px;
-    background: ${({ theme }) => theme.colors.grey};
+    background: ${theme.colors.grey};
     margin-bottom: 15px;
     margin-left: -20px;
   }

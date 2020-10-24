@@ -1,9 +1,20 @@
 import React from 'react';
-import Tabs from '@material-ui/core/Tabs';
 import Tab from 'components/atoms/Tab/Tab';
 import { useHistory } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeTab } from 'actions/TabsActions';
+import styled from 'styled-components';
+
+const StyledTabs = styled.div`
+  overflow-y: scroll;
+  width: 100%;
+  height: calc(100vh - 450px);
+
+  ::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+`;
 
 const ScrollableTabButtons = () => {
   const [newTabIndex, setNewTabIndex] = React.useState(0);
@@ -35,7 +46,7 @@ const ScrollableTabButtons = () => {
   };
 
   return (
-    <Tabs variant="scrollable" scrollButtons="auto" orientation="vertical">
+    <StyledTabs>
       {Object.keys(allTabs).map((element) => {
         const tab = allTabs[element];
         return (
@@ -52,7 +63,7 @@ const ScrollableTabButtons = () => {
           />
         );
       })}
-    </Tabs>
+    </StyledTabs>
   );
 };
 
