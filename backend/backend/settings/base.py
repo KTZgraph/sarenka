@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'graphene_django',
     'rest_framework',
     'drf_yasg',
     'corsheaders',
@@ -33,6 +34,10 @@ INSTALLED_APPS = [
     'api_scraper',
     'api_hash_calculator',
 ]
+
+GRAPHENE = {
+    "SCHEMA": 'backend.settings.schema.schema'
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
