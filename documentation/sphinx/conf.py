@@ -43,7 +43,7 @@ extensions = ['sphinx.ext.autodoc',
               'sphinxcontrib_django',
               'sphinx.ext.graphviz',  # Support creating charts!
               # 'celery.contrib.sphinx',  # Celery improvements!
-              # 'sphinx_autodoc_annotation',  # Parses Python 3 annotations
+              'sphinx_autodoc_annotation',  # Parses Python 3 annotations
               ]
 
 # Add any paths that contain templates here, relative to this directory.
