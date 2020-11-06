@@ -45,11 +45,7 @@ function Root() {
           <MainTemplate>
             <Suspense fallback={<Loading bigView />}>
               <Switch>
-                <Route
-                  exact
-                  path={routes.home}
-                  render={() => <Redirect to={routes.homeRedirect} />}
-                />
+                <Redirect exact from={routes.home} to={routes.homeRedirect} />
                 <Route
                   exact
                   path={routes.remoteHostInfo}

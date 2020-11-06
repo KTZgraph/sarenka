@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { serverRoutes } from 'routes';
 
 export const actions: Record<string, string> = {
   FETCH_REQUEST: 'FETCH_REQUEST',
@@ -12,7 +13,7 @@ export const fetchInstalledPrograms = (tabIndex: number) => (
   dispatch({ type: actions.FETCH_REQUEST, payload: { tabIndex } });
 
   return axios
-    .get(`http://127.0.0.1:8000/analyzer/local/windows/`)
+    .get(serverRoutes.registryScanData)
     .then(({ data }) => {
       dispatch({
         type: actions.FETCH_SUCCESS,
