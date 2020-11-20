@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import HTTPSInfo from 'components/molecules/HTTPSInfo/HTTPSInfo';
 import ResultTemplate from 'templates/VulnerabilityResultTemplate';
 import Search from 'components/molecules/Search/Search';
-import { fetchData } from 'actions/remoteHostActions';
+import { fetchData, fetchReport } from 'actions/remoteHostActions';
 import LoadingAnimation from 'components/atoms/LoadingAnimation/LoadingAnimation';
 import { useParams } from 'react-router';
 import GeneralHostInfo from 'components/molecules/GeneralHostInfo/GeneralHostInfo';
 import TLSInfo from 'components/molecules/TLSInfo/TLSInfo';
-import { updateTabLabel } from '../../actions/TabsActions';
+import Button, { ButtonAlignToRight } from 'components/atoms/Button/Button';
+import { updateTabLabel } from 'actions/TabsActions';
 
 const RemoteHostInfoResult = () => {
   const [searchHost, setSearchHost] = useState('');
@@ -17,14 +18,25 @@ const RemoteHostInfoResult = () => {
   const {
     isLoading,
     data,
+    searchedHost,
   } = useSelector(({ remoteHost }: Record<string, any>) =>
-    remoteHost[page] ? remoteHost[page] : { isLoading: true, data: {} },
+    remoteHost[page]
+      ? remoteHost[page]
+      : { isLoading: true, data: {}, searchedHost: '' },
   );
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     dispatch(fetchData(searchHost, page));
     dispatch(updateTabLabel(searchHost, page));
   };
+
+  const handleReportGenerate = () => {
+    return fetchReport(searchHost);
+  };
+
+  useEffect(() => {
+    setSearchHost(searchedHost);
+  }, [searchedHost]);
 
   return (
     <ResultTemplate
@@ -43,6 +55,11 @@ const RemoteHostInfoResult = () => {
           <LoadingAnimation />
         ) : (
           <>
+            <ButtonAlignToRight>
+              <Button onClick={handleReportGenerate} small>
+                Generate report
+              </Button>
+            </ButtonAlignToRight>
             <GeneralHostInfo
               protocolsPort={data.protocols_port}
               longitude={data.longitude}

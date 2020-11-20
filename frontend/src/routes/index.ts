@@ -1,6 +1,7 @@
 const tabRoute = '/tabs/:page';
+const serverIp = `http://localhost:8000`;
 
-export const routesWithoutTab = {
+export const routesWithoutTab: Record<string, string> = {
   frontend: '/frontend',
   frontendResults: '/frontend/results',
   backend: '/backend',
@@ -40,6 +41,14 @@ const routes: Record<string, string> = {
   remoteHostInfoResult: `${tabRoute}${routesWithoutTab.remoteHostInfoResult}`,
   hardwareInfo: `${tabRoute}${routesWithoutTab.hardwareInfo}`,
   hardwareInfoResults: `${tabRoute}${routesWithoutTab.hardwareInfoResults}`,
+};
+
+export const serverRoutes: Record<string, string> = {
+  remoteHostData: `${serverIp}/search/censys/`,
+  remoteHostReport: `${serverIp}/reports/host_info/`,
+  registryScanData: `${serverIp}/analyzer/local/windows/`,
+  hardwareInfoData: `${serverIp}/analyzer/local/windows/hardware/`,
+  cveSearchData: `${serverIp}/search/cve/`,
 };
 
 export default routes;

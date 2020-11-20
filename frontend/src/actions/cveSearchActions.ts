@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { serverRoutes } from 'routes';
 
 export const actions: Record<string, string> = {
   FETCH_DATA_REQUEST: 'FETCH_DATA_REQUEST',
@@ -12,7 +13,7 @@ export const fetchData = (searchCve: string, tabIndex: number) => (
   dispatch({ type: actions.FETCH_DATA_REQUEST, payload: { tabIndex } });
 
   return axios
-    .get(`http://localhost:8000/search/cve/${searchCve}`)
+    .get(`${serverRoutes.cveSearchData}${searchCve}`)
     .then(({ data }) => {
       dispatch({
         type: actions.FETCH_DATA_SUCCESS,
