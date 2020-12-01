@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Tab from 'components/atoms/Tab/Tab';
-import { useHistory } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeTab } from 'actions/TabsActions';
 import styled from 'styled-components';
@@ -17,10 +17,11 @@ const StyledTabs = styled.div`
 `;
 
 const ScrollableTabButtons = () => {
-  const [newTabIndex, setNewTabIndex] = React.useState(0);
   const history = useHistory();
   const allTabs = useSelector(({ tabs }: Record<string, any>) => tabs);
   const dispatch = useDispatch();
+  const page = window.location.href.split('/')[4];
+  const [newTabIndex, setNewTabIndex] = React.useState(Number(0));
 
   const handleChange = (
     event: React.ChangeEvent<{}>,
@@ -38,12 +39,18 @@ const ScrollableTabButtons = () => {
         const lastTab = Object.keys(allTabs).pop();
         if (lastTab) {
           const redirectTab = allTabs[lastTab];
-          setNewTabIndex(redirectTab.index);
           history.push(`/tabs/${redirectTab.index}${redirectTab.link}`);
         }
       }
     }
   };
+
+  useEffect(() => {
+    const currentTabIndex = allTabs[page]
+      ? allTabs[page].index
+      : allTabs[Object.keys(allTabs)[0]].index;
+    setNewTabIndex(currentTabIndex);
+  }, [allTabs, page]);
 
   return (
     <StyledTabs>

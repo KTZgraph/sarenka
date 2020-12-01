@@ -10,6 +10,7 @@ import MainTemplate from 'templates/MainTemplate';
 import CveSearch from 'views/CveSearch/CveSearch';
 import RegistryScan from 'views/RegistryScan/RegistryScan';
 import Loading from 'components/atoms/LoadingAnimation/LoadingAnimation';
+import HomeView from './HomeView/HomeView';
 
 const RemoteHostInfoSearch = lazy(
   () => import('views/RemoteHostInfo/RemoteHostInfoSearch'),
@@ -43,6 +44,7 @@ function Root() {
         <ThemeProvider theme={theme}>
           <GlobalStyle />
           <MainTemplate>
+            <HomeView />
             <Suspense fallback={<Loading bigView />}>
               <Switch>
                 <Redirect exact from={routes.home} to={routes.homeRedirect} />
