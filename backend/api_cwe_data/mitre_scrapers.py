@@ -58,7 +58,8 @@ class CWETableTop25Scraper:
 class CWEDataScraper:
     cwe_mitre_url = "https://cwe.mitre.org/data/definitions/"
 
-    def __init__(self, id_cwe:str):
+    def __init__(self, host_address, id_cwe:str):
+        self.host_address = host_address
         if "-" in id_cwe:
             id_cwe = id_cwe.split("-")[1] # dla postaci CWE-79
         self.id_cwe = id_cwe
@@ -154,7 +155,8 @@ class CWEDataScraper:
             result.append({
                 "id_CVE": id_CVE,
                 "description": description,
-                "mitre_url": mitre_url # https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3568
+                "mitre_url": mitre_url, # https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3568
+                "sarenka_url": self.host_address + reverse('get_by_cve', kwargs={"code": id_CVE}),
             })
 
         return result
@@ -178,8 +180,10 @@ class CWEDataScraper:
 
         return result
 
+
+
 #
 # if __name__ == "__main__":
-#     cwe_data_scraper = CWEDataScraper("79")
+#     # cwe_data_scraper = CWEDataScraper("79")
 #     # print(cwe_data_scraper.generate_definition_url())
-#     print(cwe_data_scraper.get_data())
+#     # print(cwe_data_scraper.get_data())
