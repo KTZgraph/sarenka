@@ -65,39 +65,42 @@ class CWEDataScraper:
         self.id_cwe = id_cwe
         self.cwe_url = self.generate_definition_url()
 
+        source = requests.get(self.cwe_url).text
+        self.soup = BeautifulSoup(source, 'lxml')
+
     def generate_definition_url(self)->str:
         return self.cwe_mitre_url + self.id_cwe + ".html"
 
-    def get_title(self, soup):
+    def get_title(self):
         """Zwraca tytuł slabości."""
         try:
-            title = soup.find("h2").string
+            title = self.soup.find("h2").string
             title = title.split(":")[1]
         except AttributeError:
-            title = soup.find("h2")
+            title = self.soup.find("h2")
         return title.strip()
 
-    def get_description(self, soup)->str:
-        description = soup.find("div", {"id": "oc_" + self.id_cwe + "_Description" })
+    def get_description(self)->str:
+        description = self.soup.find("div", {"id": "oc_" + self.id_cwe + "_Description" })
         return description.string
 
-    def get_likelihood(self, soup)->str:
+    def get_likelihood(self)->str:
         """Poziom prawdopodobieństwa istnienia exploitów i samej exploitacji słabości."""
-        likehood = soup.find("div", {"id": "oc_"+ self.id_cwe + "_Likelihood_Of_Exploit" })
+        likehood = self.soup.find("div", {"id": "oc_"+ self.id_cwe + "_Likelihood_Of_Exploit" })
         return likehood.string
 
-    def get_likelihood(self, soup)->str:
+    def get_likelihood(self)->str:
         """Poziom prawdopodobieństwa istnienia exploitów i samej exploitacji słabości."""
-        likehood = soup.find("div", {"id": "oc_"+ self.id_cwe + "_Likelihood_Of_Exploit" })
+        likehood = self.soup.find("div", {"id": "oc_"+ self.id_cwe + "_Likelihood_Of_Exploit" })
         if likehood:
             return likehood.string
         return "No information about exploitation likehood"
 
-    def get_technical_impact(self, soup)->List[str]:
+    def get_technical_impact(self)->List[str]:
         """Częsre konswekwencje exploitacji słabości."""
         result = []
 
-        div = soup.find("div", {"id": "oc_" + self.id_cwe + "_Common_Consequences" })
+        div = self.soup.find("div", {"id": "oc_" + self.id_cwe + "_Common_Consequences" })
         table = div.find("table")
         tr = table.findAll("tr")
         for i in tr[1:]: # be zpierwszego wiersza bo tam nie ma danych
@@ -111,11 +114,11 @@ class CWEDataScraper:
         # bez duplikatow - wydajniej zamienic na slwonik
         return list(set(result))
 
-    def get_caused_by(self, soup):
+    def get_caused_by(self):
         """
         Etap podczas którego powstaje podatność. Np. podczas implementacji.
         """
-        div_main = soup.find("div", {"id": "oc_" + self.id_cwe +"_Modes_Of_Introduction"})
+        div_main = self.soup.find("div", {"id": "oc_" + self.id_cwe +"_Modes_Of_Introduction"})
         table = div_main.find("table")
         tr = table.findAll("tr")
 
@@ -132,12 +135,12 @@ class CWEDataScraper:
             "description": description
         }
 
-    def get_cve_examples(self, soup)->List[Dict]:
+    def get_cve_examples(self)->List[Dict]:
         """
         Przykładowe podatności bezpieczeństwa w konkretnych oprogramowanaich dla tego typu słabości oprogramowania.
         """
         result = []
-        div_main = soup.find("div", {"id": "oc_" + self.id_cwe +"_Observed_Examples"})
+        div_main = self.soup.find("div", {"id": "oc_" + self.id_cwe +"_Observed_Examples"})
         table = div_main.find("table", {"class": "Detail"})
         tr_list = table.findAll("tr")
 
@@ -170,12 +173,12 @@ class CWEDataScraper:
 
         result= {
             "ID_CWE" : "CWE-"+self.id_cwe,
-            "title": self.get_title(soup),
-            "description": self.get_description(soup),
-            "likehood": self.get_likelihood(soup),
-            "technical_impact": self.get_technical_impact(soup),
-            "caused_by": self.get_caused_by(soup),
-            "cve_examples": self.get_cve_examples(soup)
+            "title": self.get_title(),
+            "description": self.get_description(),
+            "likehood": self.get_likelihood(),
+            "technical_impact": self.get_technical_impact(),
+            "caused_by": self.get_caused_by(),
+            "cve_examples": self.get_cve_examples()
         }
 
         return result
