@@ -10,10 +10,25 @@ from connectors.credential import Credential
 from connectors.cve_search.connector import Connector as CVEConnector
 from connectors.censys.connector import Connector as CensysConnector
 from .serializers import CveWrapperSerializer
-from .scrapers import CWETableTop25Scraper, CWEDataScraper
+from .scrapers import CWETableTop25Scraper, CWEDataScraper, NISTCVEScraper
 
 
 logger = logging.getLogger('django')
+
+class CVESearchView(views.APIView):
+    def get_server_address(self, request):
+        """
+        Zwraca adres do serwera aplikacji z uwzglednieniem protokołu np: http://127.0.0.1:8000/.
+        Użycie - generpowanie urli do wewnątrz aplikacji.
+        """
+        host_address = request.get_host()
+        # TODO: refaktor
+        if request.is_secure():
+            address = "https://" + host_address
+        else:
+            address = "http://"+ host_address
+        return address
+
 
 
 class CVESearchView(views.APIView):
@@ -27,11 +42,17 @@ class CVESearchView(views.APIView):
         logger.warning("Logger at CVESearchView test message")
         logger.info("Logger at CVESearchView test message")
         logger.error("Logger at CVESearchView test message")
+        """
         credentials = Credential().cve_search
         connector = CVEConnector(credentials)
         cve = connector.search_by_cve_code(code)
         response = CveWrapperSerializer(instance=cve).data
         return Response(response)
+        """
+        server_address = self.get_server_address(request)
+        nist_cve_scraper = NISTCVEScraper(code, server_address)
+        return Response(nist_cve_scraper.get_data())
+
 
 
 class CWETop25(APIView):
@@ -131,6 +152,9 @@ class CWEData(APIView):
     def get(self, request, id_cwe):
         server_address = self.get_server_address(request)
         return Response(CWEDataScraper(server_address, id_cwe).get_data())
+
+
+
 
 
 class CensysHostSearchView(views.APIView):
