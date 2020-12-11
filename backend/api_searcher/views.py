@@ -1,5 +1,6 @@
 from rest_framework import views
 from rest_framework.response import Response
+from rest_framework.views import APIView
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
@@ -9,6 +10,7 @@ from connectors.credential import Credential
 from connectors.cve_search.connector import Connector as CVEConnector
 from connectors.censys.connector import Connector as CensysConnector
 from .serializers import CveWrapperSerializer
+from .mitre_scrapers import CWETableTop25Scraper, CWEDataScraper
 
 
 logger = logging.getLogger('django')
@@ -16,6 +18,7 @@ logger = logging.getLogger('django')
 class CVESearchView(views.APIView):
     def get(self, request, code):
         """
+        Zwraca infromacje o konkrentje podatności po id CVE
 
         """
         print("CVESearchView")
@@ -28,6 +31,57 @@ class CVESearchView(views.APIView):
         cve = connector.search_by_cve_code(code)
         response = CveWrapperSerializer(instance=cve).data
         return Response(response)
+
+
+class CWETop25(APIView):
+    def get_server_address(self, request):
+        """
+        Zwraca adres do serwera aplikacji z uwzglednieniem protokołu np: http://127.0.0.1:8000/.
+        Użycie - generpowanie urli do wewnątrz aplikacji.
+        """
+        host_address = request.get_host()
+        # TODO: refaktor
+        if request.is_secure():
+            address = "https://" + host_address
+        else:
+            address = "http://"+ host_address
+        return address
+
+    def get(self, request):
+        """
+        Widok - zwraca informacje o TOP 25 najgroźniejszych słabościach oprogramowania
+        """
+        server_address = self.get_server_address(request)
+        return Response({"response": CWETableTop25Scraper(server_address).get_top_25()})
+
+
+class CWEData(APIView):
+    """
+    Zwraca infromacje o Common Weakness Enumeration na podstawie podane numeru CWE ID.
+    http://127.0.0.1:8000/cwe/79
+    http://127.0.0.1:8000/cwe/CWE-79
+    http://127.0.0.1:8000/cwe/cwe-79
+
+    """
+    def get_server_address(self, request):
+        """
+        Zwraca adres do serwera aplikacji z uwzglednieniem protokołu np: http://127.0.0.1:8000/.
+        Użycie - generpowanie urli do wewnątrz aplikacji.
+        """
+        host_address = request.get_host()
+        # TODO: refaktor
+        if request.is_secure():
+            address = "https://" + host_address
+        else:
+            address = "http://"+ host_address
+        return address
+
+    def get(self, request, id_cwe):
+        server_address = self.get_server_address(request)
+        return Response(CWEDataScraper(server_address, id_cwe).get_data())
+
+
+
 
 
 class CensysHostSearchView(views.APIView):
