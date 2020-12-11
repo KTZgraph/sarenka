@@ -9,7 +9,27 @@ from urllib.request import HTTPError
 from django.db import IntegrityError
 from django.http import HttpResponse, Http404
 
+class CWEData(views.APIView):
+    def get(self):
+        pass
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+############# Karoliny niżej #############
 class Dowload_data(views.APIView):
     def data_url_database(request):
         for cwe_number in range(1,1253):

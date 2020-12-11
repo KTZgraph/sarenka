@@ -3,13 +3,15 @@ OSINT tools
 Subjective Choices of interesting tools
 
 
-Section 1
----------
+Czym jest OSINT (open-source intelligence) Biały wywiad
+--------------------------------------------------------
 
 Stuff of section
+https://www.otwartezrodla.pl/
 
-Section 1.1
-~~~~~~~~~~~
 
-Stuff in subsection
+Lista narzędzi
+~~~~~~~~~~~~~~~~~
+https://github.com/jivoi/awesome-osint
+
 
