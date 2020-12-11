@@ -10,7 +10,7 @@ from connectors.credential import Credential
 from connectors.cve_search.connector import Connector as CVEConnector
 from connectors.censys.connector import Connector as CensysConnector
 from .serializers import CveWrapperSerializer
-from .mitre_scrapers import CWETableTop25Scraper, CWEDataScraper
+from .scrapers import CWETableTop25Scraper, CWEDataScraper
 
 
 logger = logging.getLogger('django')
