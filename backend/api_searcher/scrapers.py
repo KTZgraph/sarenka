@@ -10,7 +10,7 @@ from typing import List, Dict
 from bs4 import BeautifulSoup
 import requests
 import re
-
+import pprint
 
 class CWETableTop25Scraper:
     """
@@ -298,12 +298,23 @@ class NISTCVEScraper:
         """
         result =[]
         main_div = soup.findAll("div", {"class": "vuln-change-history-container"})
+
         for div in main_div:
             pre = div.find("pre")
             if pre:
                 if pre.text.startswith("OR"):
                     cpe = pre.text.split("OR")[1]
                     result.append(cpe.strip())
+
+        main_div = soup.findAll("div", {"class": "vuln-change-history-container"})
+        for div in main_div:
+            table = div.find("table", {"data-testid": "vuln-change-history-table" })
+            for pre in table.findAll("pre"):
+                if "cpe:" in pre.text:
+                    cpe_text = pre.text.split("OR")[-1].strip()
+                    # na koncu zostawiaja syf samao cpe *cpe:2.3:
+                    cpe_list =[cpe for cpe in  cpe_text.split() if len(cpe) > 9]
+                    result.extend(cpe_list)
 
         return result
 
@@ -341,7 +352,8 @@ class NISTCVEScraper:
 
 
 if __name__ == "__main__":
-    nist_cve_scraper = NISTCVEScraper("CVE-2019-4570")
-    # nist_cve_scraper = NISTCVEScraper("CVE-2009-1532")
-    print(nist_cve_scraper.get_data())
+    # nist_cve_scraper = NISTCVEScraper("CVE-2019-4570")
+    # nist_cve_scraper = NISTCVEScraper("CVE-2014-8958")
+    nist_cve_scraper = NISTCVEScraper("CVE-2009-1532")
+    pprint.pprint(nist_cve_scraper.get_data())
     # nist_cve_scraper.get_data()
