@@ -1,0 +1,48 @@
+# from django.http import JsonResponse
+# from rest_framework.views import APIView
+# from rest_framework.response import Response
+
+from bs4 import BeautifulSoup
+import requests
+
+
+# class CWETop25(APIView):
+#
+#     def get(self, request):
+#         """
+#         Zwraca informacje o TOP 25 najgroźniejszych słabościach oprogramowania
+#         """
+#         return JsonResponse({"response":"TOP 25 CWE"})
+
+
+class CWEScrapper:
+    top_25_url = "https://cwe.mitre.org/top25/archive/2020/2020_cwe_top25.html"
+
+    def get_top_25(self):
+        """
+        SCRAPER - Pobiera dane ze strony
+        :return:
+        """
+        source = requests.get(self.top_25_url).text
+        soup = BeautifulSoup(source, 'lxml')
+        # pobranie tabelki ze szczególami top 25 cwe
+        detail_table = soup.find("table", {"id": "Detail"})
+
+        # wszystkie wiersze tabeli
+        rows = detail_table.findAll("tr")
+        for r in rows[1:]:
+            # bez pierwszego, bo pierwszy wiersz nie zawiera danych
+            # print(r)
+            href = r.find("a")
+            definition_url = href["href"]
+            print(definition_url)
+            cwe_ID = href.string
+            print(cwe_ID)
+
+            print("\n\n\n")
+
+
+
+if __name__ == "__main__":
+    cwe_scrapper = CWEScrapper()
+    cwe_scrapper.get_top_25()
