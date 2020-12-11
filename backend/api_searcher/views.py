@@ -15,6 +15,7 @@ from .scrapers import CWETableTop25Scraper, CWEDataScraper, NISTCVEScraper
 
 logger = logging.getLogger('django')
 
+
 class CVESearchView(views.APIView):
     def get_server_address(self, request):
         """
@@ -29,9 +30,6 @@ class CVESearchView(views.APIView):
             address = "http://"+ host_address
         return address
 
-
-
-class CVESearchView(views.APIView):
     def get(self, request, code):
         """
         Zwraca infromacje o konkrentje podatności po id CVE
@@ -152,9 +150,6 @@ class CWEData(APIView):
     def get(self, request, id_cwe):
         server_address = self.get_server_address(request)
         return Response(CWEDataScraper(server_address, id_cwe).get_data())
-
-
-
 
 
 class CensysHostSearchView(views.APIView):
