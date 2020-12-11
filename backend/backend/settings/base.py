@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'api_searcher',
     'api_analyzer',
     'api_cheat_sheet',
+    'api_cwe_data',
     'api_dns',
     'api_detector',
     'api_scraper',

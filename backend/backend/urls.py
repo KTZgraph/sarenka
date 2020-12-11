@@ -25,11 +25,12 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('search/', include("api_searcher.urls")),
-    path('api_cheat_sheet/', include("api_cheat_sheet.urls")),
+    path('cheat_sheet/', include("api_cheat_sheet.urls")),
     path('analyzer/', include("api_analyzer.urls")),
     path('dns/', include("api_dns.urls")),
     path('reports/', include("reports.urls")),
     path('graphql/', GraphQLView.as_view(graphiql=True)),
+    path('cwe/', include("api_cwe_data.urls")),
 
     path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
