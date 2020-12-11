@@ -32,14 +32,17 @@ class CWEScrapper:
         rows = detail_table.findAll("tr")
         for r in rows[1:]:
             # bez pierwszego, bo pierwszy wiersz nie zawiera danych
-            # print(r)
+            row_td = r.findAll("td")
+            description= row_td[2].string
+            score = row_td[3].string
+            rank = r.b.string[1:-1]
+
             href = r.find("a")
             definition_url = href["href"]
-            print(definition_url)
             cwe_ID = href.string
-            print(cwe_ID)
 
-            print("\n\n\n")
+            print(rank, description, score, definition_url, cwe_ID)
+
 
 
 
