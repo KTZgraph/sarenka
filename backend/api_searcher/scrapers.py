@@ -214,7 +214,15 @@ class NISTCVEScraper:
 
     def get_base_score_v3(self, soup):
         base_score = soup.find("a", {"id" : "Cvss3NistCalculatorAnchor"})
-        return base_score.text
+        if base_score:
+            return base_score.text
+
+    def get_base_score_v2(self, soup):
+        base_score = soup.find("a", {"id" : "Cvss2CalculatorAnchor"})
+        if base_score:
+            return base_score.text
+
+
 
     def get_vector_calculator_url(self, vector:str):
         # TODO: sprawdzic dla podatnosci w wersji 2.0 i 3.0
@@ -227,7 +235,7 @@ class NISTCVEScraper:
         if vector.startswith("CVSS:3.0"):
             return self.nist_vector_v3_url + vector
         if vector.startswith("(") and vector.endswith(")"):
-            return self.nist_vector_v2_url + vector
+            return f"{self.nist_vector_v2_url}{vector}"
         return f"No Common Vulnerability Scoring System Version for CVE={self.id_cve}"
 
     def get_cvss3_vector(self, soup):
@@ -244,8 +252,7 @@ class NISTCVEScraper:
 
     def get_cvss2_vector(self, soup):
         """Zwraca Common Vulnerability Scoring System Version 2.0."""
-        cvss2 = soup.find("span", {"class" : "Vuln2CvssPanel"})
-        print(cvss2)
+        cvss2 = soup.find("span", {"data-testid" : "vuln-cvss2-panel-vector"})
 
         if cvss2:
             cvss2 = cvss2.text
@@ -253,7 +260,7 @@ class NISTCVEScraper:
             cvss2 = ""
         return {
             "cvss2" : cvss2,
-            "cvss3_url" : self.get_vector_calculator_url(cvss2)
+            "cvss2_url" : self.get_vector_calculator_url(cvss2)
         }
 
     def get_hyperlinks(self, soup):
@@ -300,37 +307,41 @@ class NISTCVEScraper:
 
         return result
 
+    def get_published_date(self, soup):
+        """Data publikacji publiczenj podatnosci."""
+        published = soup.find("span", {"data-testid": "vuln-published-on"})
+        return published.text
+
+    def get_last_modified(self, soup):
+        modified = soup.find("span", {"data-testid": "vuln-last-modified-on"})
+        return modified.text
+
+    def get_vuln_source(self, soup):
+        modified = soup.find("span", {"data-testid": "vuln-current-description-source"})
+        return modified.text
+
     def get_data(self):
-        result = []
-        cve = self.id_cve
         source = requests.get(self.cve_url).text
         soup = BeautifulSoup(source, 'lxml')
-        description = self.get_description(soup)
-        cvss3 = self.get_cvss3_vector(soup)
-        cvss2 = self.get_cvss2_vector(soup)
-        print(cvss3)
-        base_score = self.get_base_score_v3
-        hyperlinks = self.get_hyperlinks(soup)
-        cwe = self.get_cwe(soup)
-        cpe = self.get_cpe(soup)
-        cvss2 = self.get_cvss2_vector(soup)
-        print(cvss2)
-        print(cpe)
 
         return {
-            "cve": cve,
-            "description": description,
-            "cvss3": cvss3,
-            "cvss2": cvss2,
-            "base_score": base_score,
-            "hyperlinks": hyperlinks,
-            "cwe": cwe,
-            "cpe":cpe,
+            "cve": self.id_cve,
+            "description": self.get_description(soup),
+            "cvss3": self.get_cvss3_vector(soup),
+            "cvss2": self.get_cvss2_vector(soup),
+            "base_score_v3": self.get_base_score_v3(soup),
+            "base_score_v2": self.get_base_score_v2(soup),
+            "hyperlinks": self.get_hyperlinks(soup),
+            "cwe": self.get_cwe(soup),
+            "cpe": self.get_cpe(soup),
+            "published_date" : self.get_published_date(soup),
+            "modified_date" : self.get_last_modified(soup),
+            "vulnerability_source" : self.get_vuln_source(soup)
         }
 
 
 if __name__ == "__main__":
-    # nist_cve_scraper = NISTCVEScraper("CVE-2019-4570")
-    nist_cve_scraper = NISTCVEScraper("CVE-2009-1532")
-    # print(nist_cve_scraper.get_data())
-    nist_cve_scraper.get_data()
+    nist_cve_scraper = NISTCVEScraper("CVE-2019-4570")
+    # nist_cve_scraper = NISTCVEScraper("CVE-2009-1532")
+    print(nist_cve_scraper.get_data())
+    # nist_cve_scraper.get_data()
