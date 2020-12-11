@@ -40,6 +40,7 @@ const Search: React.FC<Props> = ({
           search
           required
           pattern={pattern}
+          defaultValue={searchWord}
         />
       </form>
     </>

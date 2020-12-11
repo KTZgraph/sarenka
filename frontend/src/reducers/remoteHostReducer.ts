@@ -9,7 +9,10 @@ const initialState = {
   },
 };
 
-const rootReducer = (state = initialState, action: Record<string, any>) => {
+const remoteHostReducer = (
+  state = initialState,
+  action: Record<string, any>,
+) => {
   switch (action.type) {
     case actions.FETCH_DATA_REQUEST:
       return {
@@ -41,4 +44,4 @@ const rootReducer = (state = initialState, action: Record<string, any>) => {
   }
 };
 
-export default rootReducer;
+export default remoteHostReducer;

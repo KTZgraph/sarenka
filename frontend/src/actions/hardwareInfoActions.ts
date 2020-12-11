@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { serverRoutes } from 'routes';
 
 export const actions: Record<string, string> = {
   FETCH_REQUEST: 'FETCH_HARDWARE_INFO_REQUEST',
@@ -10,7 +11,7 @@ export const fetchHardwareInfo = (tabIndex: number) => (dispatch: Function) => {
   dispatch({ type: actions.FETCH_REQUEST, payload: { tabIndex } });
 
   return axios
-    .get(`http://127.0.0.1:8000/analyzer/local/windows/hardware`)
+    .get(serverRoutes.hardwareInfoData)
     .then(({ data }) => {
       dispatch({
         type: actions.FETCH_SUCCESS,

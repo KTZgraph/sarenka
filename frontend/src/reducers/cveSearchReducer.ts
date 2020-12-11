@@ -1,12 +1,6 @@
 import { actions } from 'actions/cveSearchActions';
 
-const initialState = {
-  isLoading: false,
-  data: {},
-  error: '',
-};
-
-const rootReducer = (state = initialState, action: Record<string, any>) => {
+const cveSearchReducer = (state = {}, action: Record<string, any>) => {
   switch (action.type) {
     case actions.FETCH_DATA_REQUEST:
       return {
@@ -38,4 +32,4 @@ const rootReducer = (state = initialState, action: Record<string, any>) => {
   }
 };
 
-export default rootReducer;
+export default cveSearchReducer;
