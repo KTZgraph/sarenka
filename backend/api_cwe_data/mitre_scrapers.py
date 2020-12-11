@@ -1,6 +1,7 @@
 """
 Scrapery do danych ze strony https://cwe.mitre.org/
 """
+from rest_framework.reverse import reverse
 from typing import List, Dict
 from bs4 import BeautifulSoup
 import requests
@@ -14,8 +15,10 @@ class CWETableTop25Scraper:
     top_25_url = "https://cwe.mitre.org/top25/archive/2020/2020_cwe_top25.html"
     cwe_mitre_url = "https://cwe.mitre.org"
 
-    @staticmethod
-    def get_top_25():
+    def __init__(self, host_address):
+        self.host_address = host_address
+
+    def get_top_25(self):
         """
         SCRAPER - Pobiera dane ze strony - zwraca top 25 najpopularniejszych słabości.
         :return:
@@ -45,6 +48,8 @@ class CWETableTop25Scraper:
                 "description": description,
                 "score": score,
                 "definition_url" : definition_url,
+                # adres do wnętrza apliakcji
+                "sarenka_url": self.host_address + reverse('cwe_data', kwargs={"id_cwe": ID_CWE}),
             })
 
         return result

@@ -4,11 +4,25 @@ from .mitre_scrapers import CWETableTop25Scraper, CWEDataScraper
 
 
 class CWETop25(APIView):
+    def get_server_address(self, request):
+        """
+        Zwraca adres do serwera aplikacji z uwzglednieniem protokołu np: http://127.0.0.1:8000/.
+        Użycie - generpowanie urli do wewnątrz aplikacji.
+        """
+        host_address = request.get_host()
+        # TODO: refaktor
+        if request.is_secure():
+            address = "https://" + host_address
+        else:
+            address = "http://"+ host_address
+        return address
+
     def get(self, request):
         """
         Widok - zwraca informacje o TOP 25 najgroźniejszych słabościach oprogramowania
         """
-        return Response({"response": CWETableTop25Scraper.get_top_25()})
+        server_address = self.get_server_address(request)
+        return Response({"response": CWETableTop25Scraper(server_address).get_top_25()})
 
 
 class CWEData(APIView):
