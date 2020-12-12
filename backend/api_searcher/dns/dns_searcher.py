@@ -156,7 +156,9 @@ class DNSSearcher:
 
     @property
     def values(self)->List[Dict]:
-        return self.get_data()
+        print(type(self.get_data()))
+        # zwrotka lepiej jak jest listą
+        return {"dns_data" : self.get_data()}
 
 
 if __name__ == "__main__":

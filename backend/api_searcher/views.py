@@ -186,8 +186,10 @@ class DNSSearcherView(APIView):
         :return: dns data
         :example: fqdn='renmich.faculty.wmi.amu.edu.pl'
         """
-
-        return JsonResponse(DNSSearcher(host).values)
+        print("TUUUUUUUUUUUUUUUUUUUUUUU")
+        data = DNSSearcher(host).values
+        print(type(data))
+        return Response(data)
 
 
 class CrtShView(APIView):
