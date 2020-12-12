@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-from backend.api_searcher.scrapers.mitre_cwe_scrapers import CWEDataScraper
+from .mitre_cwe_scrapers import CWEDataScraper
 
 
 class NISTCVEScraper:

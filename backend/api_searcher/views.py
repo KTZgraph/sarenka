@@ -8,7 +8,8 @@ import logging
 from connectors.credential import Credential
 from connectors.cve_search.connector import Connector as CVEConnector
 from connectors.censys.connector import Connector as CensysConnector
-from .scrapers import CWETableTop25Scraper, CWEDataScraper, NISTCVEScraper
+from .scrapers.mitre_cwe_scrapers import CWETableTop25Scraper, CWEDataScraper
+from .scrapers.nist_cve_scrapers import  NISTCVEScraper
 from .dns.a_record import ARecord, ARecordWrongFQDNError
 from .serializers import ARecordDict, ARecordSerializer
 from common.contact import Contact
