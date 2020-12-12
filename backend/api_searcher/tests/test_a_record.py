@@ -1,6 +1,6 @@
 import unittest
 
-from api_dns.a_record import ARecord, ARecordWrongFQDNError
+from api_searcher.a_record import ARecord, ARecordWrongFQDNError
 
 
 class TestARecord(unittest.TestCase):
