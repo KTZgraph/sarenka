@@ -154,7 +154,7 @@ class CWEData(APIView):
 class CensysHostSearchView(views.APIView):
     # TODO refaktor !
     """
-    Wyszukiwanie danych po IP w censysie
+    Wyszukiwanie danych po IP
     opakowane protokoyły:
         - DNS
         - HTTPS

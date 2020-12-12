@@ -1,3 +1,6 @@
+"""
+Moduł do obliczania entropii - rozbudowanie w przyszłosci
+"""
 import collections
 from scipy.stats import entropy
 
