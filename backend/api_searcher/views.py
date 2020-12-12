@@ -14,7 +14,8 @@ from .scrapers import CWETableTop25Scraper, CWEDataScraper, NISTCVEScraper
 from .a_record import ARecord, ARecordWrongFQDNError
 from .serializers import ARecordDict, ARecordSerializer
 from common.contact import Contact
-
+from .windows.registry import WindowsRegistry
+from .windows.hardware import Hardware
 
 logger = logging.getLogger('django')
 
@@ -272,6 +273,35 @@ class CrtShView(APIView):
         url = f"{CrtShView.service}/?q={identity}"
         # https://crt.sh/?q=google.pl
         return JsonResponse({"CrtSh" : "Returns data from crt_sh_s"})
+
+
+
+class LocalWindows(views.APIView):
+    def get(self, request):
+        """
+        Zainstalwoane lokalnie oprogramowania
+        """
+        windows_registry = WindowsRegistry()
+        response = windows_registry.get_all_software()
+        return Response(response)
+
+class CommandsWindows(views.APIView):
+    def get(self, request):
+        hardware = Hardware()
+        response = hardware.to_json()
+        return Response(response)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @login_required

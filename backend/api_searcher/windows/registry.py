@@ -1,9 +1,9 @@
-from winreg import ConnectRegistry, OpenKey, QueryInfoKey, QueryValueEx, EnumKey, HKEY_CLASSES_ROOT, HKEY_CURRENT_USER, HKEY_LOCAL_MACHINE, HKEY_USERS, HKEY_PERFORMANCE_DATA, HKEY_CURRENT_CONFIG, HKEY_DYN_DATA
+from winreg import ConnectRegistry, OpenKey, QueryInfoKey, QueryValueEx, EnumKey, HKEY_CLASSES_ROOT, HKEY_CURRENT_USER, \
+    HKEY_LOCAL_MACHINE, HKEY_USERS, HKEY_PERFORMANCE_DATA, HKEY_CURRENT_CONFIG, HKEY_DYN_DATA
 import os
 import enum
 
-from api_analyzer.analyzer.local_installed.windows.installed_software import InstalledSoftware
-
+from .installed_software import InstalledSoftware
 
 ROOTS_HIVES = {
     "hkey_classes_root": HKEY_CLASSES_ROOT,
@@ -14,6 +14,7 @@ ROOTS_HIVES = {
     "hkey_current_config": HKEY_CURRENT_CONFIG,
     "hkey_dyn_data": HKEY_DYN_DATA
 }
+
 
 class WindowsPath(enum.Enum):
     """
@@ -27,6 +28,7 @@ class WindowsRegistry:
     """
     Wybiera dane które są dostępne w rejestrze Windows
     """
+
     def __init__(self):
         self.__paths = [path for path in WindowsPath]
 
@@ -54,7 +56,7 @@ class WindowsRegistry:
                         yield sub_key_name
                 except WindowsError:
                     pass
-    
+
     def __get_values(self, key, fields):
         partial_key, root_hive = self.__parse_key(key)
 
@@ -82,8 +84,9 @@ class WindowsRegistry:
         all_key_softwares = []
         for sub_key in self.__get_sub_keys(key):
             path = self.__join_keys(key, sub_key)
-            value = self.__get_values(path, ['DisplayName', 'DisplayVersion', 'InstallDate', 'InstallLocation', 'Publisher'])
-            
+            value = self.__get_values(path,
+                                      ['DisplayName', 'DisplayVersion', 'InstallDate', 'InstallLocation', 'Publisher'])
+
             if value:
                 software = InstalledSoftware(value)
                 all_key_softwares.append(software.to_dict)

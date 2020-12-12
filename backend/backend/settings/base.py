@@ -27,11 +27,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'corsheaders',
     'api_searcher',
-    'api_analyzer',
-    'api_cheat_sheet',
-    'api_detector',
     'api_scraper',
-    'api_hash_calculator',
 ]
 
 GRAPHENE = {
