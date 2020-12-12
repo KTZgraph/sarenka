@@ -1,6 +1,9 @@
 from typing import Dict, Tuple, Sequence, List, NoReturn
 import sys
 import json
+import mmh3
+import requests
+import codecs
 from censys.certificates import CensysCertificates
 from censys.ipv4 import CensysIPv4
 from censys.websites import CensysWebsites
@@ -10,6 +13,7 @@ from connectors.credential import Credential
 from connectors.censys.connector_interface import ConnectorInterface
 from common.common import Common
 from connectors.censys.wrappers.ip_wrapper import IPWrapper
+
 
 class Connector(ConnectorInterface):
     def __init__(self, censys_credentials):
@@ -29,6 +33,19 @@ class Connector(ConnectorInterface):
 
     def search_by_website(self, domain):
         return self.website.view(domain)
+
+    def search_favicon_murmur3(self, ip): #TODO spiąc z głównym jsonem odpowiedzi
+        """ Wartośc niekryptogrficznego hasha dla faviconki strony"""
+        favicon_hash = None
+        try:
+            response = requests.get('https://cybersecurity.wtf/favicon.ico')
+            favicon = codecs.encode(response.content, "base64")
+            favicon_hash = mmh3.hash(favicon)
+        except BaseException as ex:
+            # nie każda strona webowa ma favikonki
+            pass
+
+        return {"favicon_hash": favicon_hash}
 
 if __name__ == "__main__":
     censys_credentials = Credential().censys
