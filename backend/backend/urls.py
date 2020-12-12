@@ -27,7 +27,6 @@ urlpatterns = [
     path('search/', include("api_searcher.urls")),
     path('cheat_sheet/', include("api_cheat_sheet.urls")),
     path('analyzer/', include("api_analyzer.urls")),
-    path('dns/', include("api_dns.urls")),
     path('reports/', include("reports.urls")),
     path('graphql/', GraphQLView.as_view(graphiql=True)),
 
