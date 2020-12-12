@@ -143,7 +143,7 @@ class CryptographicHashCalcualator:
         return mac.digest(), mac.hexdigest()
 
 
-class CryptographicHashValues: #TODO: refaktor
+class CryptographicHashWrapper: #TODO: refaktor - powtarzanie kodu
     """Wrapper na dane z CryptographicHashCalcualator ponieważ wystepują problemy z kodowaniem.
     Pomocnicza klasa zamiast serializera dla widoku"""
     def __init__(self, value:str):
@@ -265,7 +265,8 @@ class CryptographicHashValues: #TODO: refaktor
     def blake2s_256_bits_hexdigets(self):
         return self.crypto_hash_calc.get_blake2s_256_bits()["hexdigets"]
 
-    def get_data(self)->Dict:
+    @property
+    def values(self)->Dict:
         """Zwraca jsona który może być zwrócocny bezpoeśrednio przez widok Django."""
         return {
             # sha224
