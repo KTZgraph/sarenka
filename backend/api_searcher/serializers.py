@@ -22,15 +22,3 @@ class CveWrapperSerializer(serializers.Serializer):
     products = ProductSerializer(many=True)
 
 
-class ARecordDict(object):
-    """Serializer dla danych DNS."""
-    def __init__(self, dns):
-        self.dns = dns
-
-
-# create a serializer
-class ARecordSerializer(serializers.Serializer):
-    """Serializer dla danych DNS z A rekordu."""
-    # intialize fields
-    dns = serializers.DictField(
-        child=serializers.CharField())
