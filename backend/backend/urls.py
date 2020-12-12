@@ -25,6 +25,7 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include("api_searcher.urls")),
+    path('tools/', include("api_tools.urls")),
     path('reports/', include("reports.urls")),
     path('graphql/', GraphQLView.as_view(graphiql=True)),
     path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
