@@ -2,16 +2,14 @@ from rest_framework import views
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
-import logging, traceback
+import logging
 
 from connectors.credential import Credential
 from connectors.cve_search.connector import Connector as CVEConnector
 from connectors.censys.connector import Connector as CensysConnector
-from .serializers import CveWrapperSerializer
 from .scrapers import CWETableTop25Scraper, CWEDataScraper, NISTCVEScraper
-from .a_record import ARecord, ARecordWrongFQDNError
+from .dns.a_record import ARecord, ARecordWrongFQDNError
 from .serializers import ARecordDict, ARecordSerializer
 from common.contact import Contact
 from .windows.registry import WindowsRegistry
