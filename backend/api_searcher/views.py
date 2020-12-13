@@ -176,9 +176,7 @@ class SearcherView(views.APIView):
         :param host: string mający adres ip lub domenę np.: python.org
         :return:
         """
-        print("TUUUUUUUUUUUUUUUUUUUUUUUUU")
         ip_address = self.change_to_domain_addres(host)
-        print("IP ADRESS: ", ip_address)
         return Response(Searcher(ip_address).values)
 
 
