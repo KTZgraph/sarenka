@@ -14,6 +14,9 @@ from .dns.dns_searcher import DNSSearcher, DNSSearcherFQDNError
 from common.contact import Contact
 from .windows.registry import WindowsRegistry
 from .windows.hardware import Hardware
+from .searcher import Searcher
+import ipaddress
+import socket
 
 logger = logging.getLogger('django')
 
@@ -150,6 +153,36 @@ class CWEData(APIView):
         return Response(CWEDataScraper(server_address, id_cwe).get_data())
 
 
+class SearcherView(views.APIView):
+    """
+    Klasa zwrcająca dane o szukanym hoście.
+    """
+    def is_ipv4(self, host):
+        try:
+            ipaddress.IPv4Network(host)
+            return True
+        except ValueError:
+            return False
+
+    def change_to_domain_addres(self, host):
+        if self.is_ipv4(host):
+            return socket.gethostbyname(host)
+        return host
+
+    def get(self, request, host):
+        """
+
+        :param request:
+        :param host: string mający adres ip lub domenę np.: python.org
+        :return:
+        """
+        print("TUUUUUUUUUUUUUUUUUUUUUUUUUUUU")
+        ip_address = self.change_to_domain_addres(host)
+        print("IP ADRESS: ", ip_address)
+        return Response(Searcher(ip_address).values)
+
+
+
 class CensysHostSearchView(views.APIView):
     # TODO refaktor !
     """
@@ -163,7 +196,7 @@ class CensysHostSearchView(views.APIView):
     def get(self, request, ip_address):
         credentials = Credential().censys
         connector = CensysConnector(credentials)
-        response = connector.search_by_ip(ip_address) # 
+        response = connector.search_by_ip(ip_address) #
         return Response(response.to_json)
 
 
@@ -186,9 +219,7 @@ class DNSSearcherView(APIView):
         :return: dns data
         :example: fqdn='renmich.faculty.wmi.amu.edu.pl'
         """
-        print("TUUUUUUUUUUUUUUUUUUUUUUU")
         data = DNSSearcher(host).values
-        print(type(data))
         return Response(data)
 
 
@@ -206,41 +237,6 @@ class CrtShView(APIView):
         return JsonResponse({"CrtSh" : "Returns data from crt_sh_s"})
 
 
-class ARecordView(APIView):
-
-    def get(self, request, fqdn='renmich.faculty.wmi.amu.edu.pl'):
-        """
-        Zwraca dane z rekordu A DNS
-
-        :param request: django request object
-        :param fqdn: fully qualified domain name
-        :return: dns data
-        :example: fqdn='renmich.faculty.wmi.amu.edu.pl'
-        """
-        dns_func = {
-            'ip': DNSSearcher.get_ip,
-            'cname': DNSSearcher.get_cname,
-            'mx': DNSSearcher.get_mx,
-            'ns': DNSSearcher.get_ns,
-            'dname': DNSSearcher.get_dname,
-            'aname': DNSSearcher.get_aname
-        }
-
-        dns_data = {}
-        for record_name in dns_func.keys():
-            try:
-                dns_data.update({record_name : dns_func.get(record_name)(fqdn)})
-            except DNSSearcherFQDNError as err:
-                dns_data.update({record_name: str(err)})
-            except NotImplementedError:
-                dns_data.update({record_name: Contact.get_contact(record_name.upper() + ' Record')})
-            except KeyError:
-                dns_data.update({"ARecord": f"record '{record_name}' is not supported"})
-
-        obj = ARecordDict(dns_data)
-        return Response(ARecordSerializer(obj).data)
-
-
 class CrtShView(APIView):
     service = "https://crt.sh"
     repository = "https://github.com/crtsh/certwatch_db"
@@ -255,7 +251,6 @@ class CrtShView(APIView):
         return JsonResponse({"CrtSh" : "Returns data from crt_sh_s"})
 
 
-
 class LocalWindows(views.APIView):
     def get(self, request):
         """
@@ -264,6 +259,7 @@ class LocalWindows(views.APIView):
         windows_registry = WindowsRegistry()
         response = windows_registry.get_all_software()
         return Response(response)
+
 
 class CommandsWindows(views.APIView):
     def get(self, request):
