@@ -4,12 +4,13 @@ from .views import (DNSSearcherView,
                     CVESearchView,
                     CensysHostSearchView,
                     ListVendors,
+                    LocalView,
                     login_required_view,
                     CWETop25,
                     CWEData,
-                    CommandsWindows,
-                    LocalWindows,
-                    NetworkLocal,
+                    WindowsHardwareView,
+                    WindowsRegistryView,
+                    NetworkLocalView,
                     SearcherView)
 
 urlpatterns = [
@@ -22,7 +23,8 @@ urlpatterns = [
     path('search/<str:host>', SearcherView.as_view(), name="search"),
     path('login_required_view/<str:cve_code>', login_required_view, name="login_required_view"),
     path("dns/<str:host>", DNSSearcherView.as_view(), name="dns_record"),
-    path('local/registry', LocalWindows.as_view(), name="windows"),
-    path('local/hardware', CommandsWindows.as_view(), name="hardware_windows"),
-    path('local/network', NetworkLocal.as_view(), name="network_windows"),
+    path('local', LocalView.as_view(), name="local_windows"),
+    path('local/registry', WindowsRegistryView.as_view(), name="registry_windows"),
+    path('local/hardware', WindowsHardwareView.as_view(), name="hardware_windows"),
+    path('local/network', NetworkLocalView.as_view(), name="network_windows"),
 ]

@@ -2,6 +2,64 @@ import socket
 import ipaddress
 from pyroute2 import IPRoute
 
+class NetworkCommand:
+    @staticmethod
+    def get_arp():
+        """arp -a"""
+        pass
+
+    @staticmethod
+    def nbtstat():
+        """
+        nbtstat -c
+        nbtstat -n
+        nbtstat -r
+
+        :return:
+        """
+        pass
+
+    @staticmethod
+    def get_hostname():
+        """
+        hostname
+        """
+        pass
+
+    @staticmethod
+    def ipconfig_all():
+        """
+        ipconfig /all
+        """
+        pass
+
+    @staticmethod
+    def get_nslookup():
+        """
+        nslookup
+        :return:
+        """
+        pass
+
+
+    @staticmethod
+    def get_getmac():
+        """
+        getmac
+        :return:
+        """
+        pass
+
+
+    @staticmethod
+    def get_netstat_an():
+        """
+        netstat -an
+        :return:
+        """
+        pass
+
+
 
 class LocalNetworkData:
     """Klasa zwracajaca informacje o lokalnej sieci."""

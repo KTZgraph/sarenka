@@ -17,6 +17,7 @@ from common.contact import Contact
 from .windows.registry import WindowsRegistry
 from .windows.hardware import Hardware
 from .windows.network import LocalNetworkData
+from .windows.local import LocalInfo
 from .searcher import Searcher
 
 
@@ -253,7 +254,7 @@ class CrtShView(APIView):
         return JsonResponse({"CrtSh" : "Returns data from crt_sh_s"})
 
 
-class LocalWindows(views.APIView):
+class WindowsRegistryView(views.APIView):
     def get(self, request):
         """
         Zainstalwoane lokalnie oprogramowania
@@ -263,25 +264,24 @@ class LocalWindows(views.APIView):
         return Response(response)
 
 
-class CommandsWindows(views.APIView):
+class WindowsHardwareView(views.APIView):
     def get(self, request):
         hardware = Hardware()
         response = hardware.to_json()
         return Response(response)
 
 
-class NetworkLocal(views.APIView):
+class NetworkLocalView(views.APIView):
     """Zwraca informacje o lokalnej sieci."""
     def get(self, request):
         return Response(LocalNetworkData().values)
 
 
 
-
-
-
-
-
+class LocalView(views.APIView):
+    """Zwraca informacje o lokalnej maszynie Windows"""
+    def get(self, request):
+        return Response(LocalInfo().values)
 
 
 
