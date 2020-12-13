@@ -54,9 +54,12 @@ class CVESearchView(views.APIView):
         response = CveWrapperSerializer(instance=cve).data
         return Response(response)
         """
-        server_address = self.get_server_address(request)
-        nist_cve_scraper = NISTCVEScraper(code, server_address)
-        return Response(nist_cve_scraper.get_data())
+        try:
+            server_address = self.get_server_address(request)
+            nist_cve_scraper = NISTCVEScraper(code, server_address)
+            return Response(nist_cve_scraper.get_data())
+        except Exception:
+            return Response({code: "Unable to get information - probably this CVE doesn't exists."})
 
 
 class CWETop25(APIView):
