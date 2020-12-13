@@ -155,7 +155,7 @@ class CWEData(APIView):
 
 class SearcherView(views.APIView):
     """
-    Klasa zwrcająca dane o szukanym hoście.
+    Klasa zwrcająca dane o szukanym hoście po podanej domenie lub adresie ip.
     """
     def is_ipv4(self, host):
         try:
@@ -166,8 +166,8 @@ class SearcherView(views.APIView):
 
     def change_to_domain_addres(self, host):
         if self.is_ipv4(host):
-            return socket.gethostbyname(host)
-        return host
+            return host
+        return socket.gethostbyname(host)
 
     def get(self, request, host):
         """
@@ -176,11 +176,10 @@ class SearcherView(views.APIView):
         :param host: string mający adres ip lub domenę np.: python.org
         :return:
         """
-        print("TUUUUUUUUUUUUUUUUUUUUUUUUUUUU")
+        print("TUUUUUUUUUUUUUUUUUUUUUUUUU")
         ip_address = self.change_to_domain_addres(host)
         print("IP ADRESS: ", ip_address)
         return Response(Searcher(ip_address).values)
-
 
 
 class CensysHostSearchView(views.APIView):
@@ -198,7 +197,6 @@ class CensysHostSearchView(views.APIView):
         connector = CensysConnector(credentials)
         response = connector.search_by_ip(ip_address) #
         return Response(response.to_json)
-
 
 class ListVendors(views.APIView):
     def get(self, request):
