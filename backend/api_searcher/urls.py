@@ -1,6 +1,16 @@
 
 from django.urls import path
-from .views import DNSSearcherView, CVESearchView, CensysHostSearchView, ListVendors, login_required_view, CWETop25, CWEData, CommandsWindows, LocalWindows, SearcherView
+from .views import (DNSSearcherView,
+                    CVESearchView,
+                    CensysHostSearchView,
+                    ListVendors,
+                    login_required_view,
+                    CWETop25,
+                    CWEData,
+                    CommandsWindows,
+                    LocalWindows,
+                    NetworkLocal,
+                    SearcherView)
 
 urlpatterns = [
     path('cve/<str:code>', CVESearchView.as_view(), name="get_by_cve"),
@@ -14,4 +24,5 @@ urlpatterns = [
     path("dns/<str:host>", DNSSearcherView.as_view(), name="dns_record"),
     path('local/registry', LocalWindows.as_view(), name="windows"),
     path('local/hardware', CommandsWindows.as_view(), name="hardware_windows"),
+    path('local/network', NetworkLocal.as_view(), name="network_windows"),
 ]

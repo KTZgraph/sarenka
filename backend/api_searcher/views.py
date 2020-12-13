@@ -14,6 +14,7 @@ from .dns.dns_searcher import DNSSearcher, DNSSearcherFQDNError
 from common.contact import Contact
 from .windows.registry import WindowsRegistry
 from .windows.hardware import Hardware
+from .windows.network import LocalNetworkData
 from .searcher import Searcher
 import ipaddress
 import socket
@@ -264,7 +265,10 @@ class CommandsWindows(views.APIView):
         return Response(response)
 
 
-
+class NetworkLocal(views.APIView):
+    """Zwraca informacje o lokalnej sieci."""
+    def get(self, request):
+        return Response(LocalNetworkData().values)
 
 
 
