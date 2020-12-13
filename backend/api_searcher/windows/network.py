@@ -44,11 +44,6 @@ class LocalNetworkData:
 
     @staticmethod
     def get_local_netmask():
-        """
-        192.168.0.36
-        192.168.0.36/32
-        255.255.255.255
-        """
         ip_addr = socket.gethostbyname(socket.gethostname())
         network_adress = ipaddress.IPv4Network(ip_addr)
         netmask = ipaddress.IPv4Network(ip_addr).netmask
@@ -56,13 +51,8 @@ class LocalNetworkData:
 
     @staticmethod
     def get_local_network_interfaces():
-        """
-        [{'iface': 11, 'addr': '192.168.0.36', 'mask': 24}]
-        :return:
-        """
         ip = IPRoute()
         # print([x.get_attr('IFLA_IFNAME') for x in ip.get_links()])
         info = [{'iface': x['index'], 'addr': x.get_attr('IFA_ADDRESS'), 'mask': x['prefixlen']} for x in ip.get_addr()]
-
         return {"iface": [i['iface'] for i in info]}
 

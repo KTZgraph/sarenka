@@ -4,6 +4,8 @@ from rest_framework.views import APIView
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 import logging
+import ipaddress
+import socket
 
 from connectors.credential import Credential
 from connectors.cve_search.connector import Connector as CVEConnector
@@ -16,8 +18,7 @@ from .windows.registry import WindowsRegistry
 from .windows.hardware import Hardware
 from .windows.network import LocalNetworkData
 from .searcher import Searcher
-import ipaddress
-import socket
+
 
 logger = logging.getLogger('django')
 
@@ -196,6 +197,7 @@ class CensysHostSearchView(views.APIView):
         connector = CensysConnector(credentials)
         response = connector.search_by_ip(ip_address) #
         return Response(response.to_json)
+
 
 class ListVendors(views.APIView):
     def get(self, request):
