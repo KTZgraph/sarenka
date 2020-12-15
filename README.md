@@ -6,9 +6,11 @@
 
 **♥ Free Software, requires only free accounts to third part services ♥**
 
-> Lack of knowledge ...
-> that is the problem.
-[William Edwards Deming]
+> Lack of knowledge ... that is the problem.
+>
+>
+>[William Edwards Deming]
+
 
 **SARENKA** is Open Source Intelligence (**OSINT**) tool which helps you obtaining and understanding **Attack Surface**.
 
