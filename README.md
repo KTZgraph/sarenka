@@ -30,53 +30,21 @@ Description in progress
 Sarenka is local web application for Windows.
 
 #### Config
-example sarenka/backend/connectors/credentials.json
+Rirst release gathers data from two search engines.
+example sarenka/backend/connectors/credentials.json  
 
 ```json
 {   
-    "binaryedge": {
-        "base_url": "https://www.binaryedge.io/",
-        "user": "<my_user>",
-        "api_key": "<my_api_key>"
-    },
     "censys": {
         "base_url": "https://censys.io/",
         "API_ID": "<my_user>",
         "Secret": "<my_api_key>",
         "API_URL": "https://censys.io/api/v1"
     },
-    "fofa": {
-        "base_url": "https://fofa.so/",
-        "user": "<my_user>",
-        "api_key": "<my_api_key>"
-    },
-    "publicwww": {
-        "base_url": "https://publicwww.com/",
-        "user": "<my_user>",
-        "api_key": "<my_api_key>"
-    },
     "shodan": {
         "base_url": "https://www.shodan.io/",
         "user": "<my_user>",
         "api_key": "<my_api_key>"
-    },
-    "urlscan": {
-        "base_url": "https://urlscan.io/"
-    },
-    "whois": {
-        "base_url": "https://www.whoisxmlapi.com/"
-    },
-    "zoomeye": {
-        "base_url": "https://www.zoomeye.org/",
-        "user": "<my_user>",
-        "api_key": "<my_api_key>"
-    },
-    "cve_search":{
-        "base_url": "https://cve.circl.lu/api/",
-        "cve": "https://cve.circl.lu/api/cve/",
-        "vendor": "https://cve.circl.lu/api/browse/",
-        "last": "https://cve.circl.lu/api/last",
-        "db_info": "https://cve.circl.lu/api/dbInfo"
     }
 }
 ```
@@ -100,19 +68,26 @@ Whant some feature, other tool, library functionality?
 Have any idea or question?  
 Don't hesitate to contact  [![Author](https://img.shields.io/badge/pawlaczyk-black.svg)](https://github.com/pawlaczyk/)
 
-#### Tech
+## Tech
+Description in progress.
 
 SARENKA uses a number of open source projects to work properly on:
 * [Renderforest](https://www.renderforest.com/) - logo generator
-* [AngularJS] - HTML enhanced for web apps!
-* [Ace Editor] - awesome web-based text editor
-* [markdown-it] - Markdown parser done right. Fast and easy to extend.
-* [Twitter Bootstrap] - great UI boilerplate for modern web apps
-* [node.js] - evented I/O for the backend
-* [Express] - fast node.js network app framework [@tjholowaychuk]
-* [Gulp] - the streaming build system
-* [Breakdance](https://breakdance.github.io/breakdance/) - HTML to Markdown converter
-* [jQuery] - duh
+* [Technology](url_address) - description
+* [Technology](url_address) - description
+* [Technology](url_address) - description
+* [Technology](url_address) - description
+* [Technology](url_address) - description
+* [Technology](url_address) - description
+* [Technology](url_address) - description
+* [Technology](url_address) - description
+* [Technology](url_address) - description
+* [Technology](url_address) - description
+* [Technology](url_address) - description
+* [Technology](url_address) - description
+* [Technology](url_address) - description
+
+
 
 And of course SARENKA itself is open source with a [public repository][sarenka]
  on GitHub.
@@ -120,7 +95,7 @@ And of course SARENKA itself is open source with a [public repository][sarenka]
 #### Planned features
 
  - Rewrite documentation in English (end of 2021)
- - trello/ github insead Jira
+ - trello/ github instead of Jira
  - Cover 100% code by tests
  - typing backend
  - document all functions and class
