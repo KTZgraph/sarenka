@@ -10,25 +10,32 @@ import MainTemplate from 'templates/MainTemplate';
 import CveSearch from 'views/CveSearch/CveSearch';
 import RegistryScan from 'views/RegistryScan/RegistryScan';
 import Loading from 'components/atoms/LoadingAnimation/LoadingAnimation';
+import HomeView from './HomeView/HomeView';
 
-const RemoteHostInfoSearch = lazy(() =>
-  import('views/RemoteHostInfo/RemoteHostInfoSearch'),
+const RemoteHostInfoSearch = lazy(
+  () => import('views/RemoteHostInfo/RemoteHostInfoSearch'),
 );
-const RemoteHostInfoResult = lazy(() =>
-  import('views/RemoteHostInfo/RemoteHostInfoResult'),
+const RemoteHostInfoResult = lazy(
+  () => import('views/RemoteHostInfo/RemoteHostInfoResult'),
 );
 const CveSearchResult = lazy(() => import('views/CveSearch/CveSearchResult'));
-const RegistryScanResult = lazy(() =>
-  import('views/RegistryScan/RegistryScanResults'),
+const RegistryScanResult = lazy(
+  () => import('views/RegistryScan/RegistryScanResults'),
 );
-const ExploitsSearchView = lazy(() =>
-  import('views/ExploitSearch/ExploitSearchView'),
+const ExploitsSearchView = lazy(
+  () => import('views/ExploitSearch/ExploitSearchView'),
 );
-const ExploitsResultView = lazy(() =>
-  import('views/ExploitSearch/ExploitResultView'),
+const ExploitsResultView = lazy(
+  () => import('views/ExploitSearch/ExploitResultView'),
 );
 const SettingsView = lazy(() => import('views/Settings/SettingsView'));
 const DocsView = lazy(() => import('views/DocsView/DocsView'));
+const HardwareInfoScan = lazy(
+  () => import('views/HardwareInfo/HardwareInfoScan'),
+);
+const HardwareInfoResult = lazy(
+  () => import('views/HardwareInfo/HardwareInfoResult'),
+);
 
 function Root() {
   return (
@@ -37,13 +44,10 @@ function Root() {
         <ThemeProvider theme={theme}>
           <GlobalStyle />
           <MainTemplate>
+            <HomeView />
             <Suspense fallback={<Loading bigView />}>
               <Switch>
-                <Route
-                  exact
-                  path={routes.home}
-                  render={() => <Redirect to={routes.remoteHostInfo} />}
-                />
+                <Redirect exact from={routes.home} to={routes.homeRedirect} />
                 <Route
                   exact
                   path={routes.remoteHostInfo}
@@ -75,6 +79,16 @@ function Root() {
                   exact
                   path={routes.exploitResults}
                   component={ExploitsResultView}
+                />
+                <Route
+                  exact
+                  path={routes.hardwareInfo}
+                  component={HardwareInfoScan}
+                />
+                <Route
+                  exact
+                  path={routes.hardwareInfoResults}
+                  component={HardwareInfoResult}
                 />
                 <Route exact path={routes.documentation} component={DocsView} />
                 <Route exact path={routes.settings} component={SettingsView} />

@@ -75,7 +75,7 @@ const InstalledSoftware: React.FC<Props> = ({
           {softwares?.map(
             ({ name, location, version, date, vendor }, index) => (
               <TableItem
-                key={name}
+                key={index}
                 columns={[name, location, version, date, vendor]}
                 wordBreak={1}
                 delay={(index + 1) / 10}

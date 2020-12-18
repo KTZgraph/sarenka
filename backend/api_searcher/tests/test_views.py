@@ -5,7 +5,7 @@ import pytest
 from django.contrib.auth.models import User, AnonymousUser
 from django.test import TestCase
 
-from searcher.views import login_required_view
+from api_searcher.views import ARecordView, login_required_view
 
 
 @pytest.mark.django_db

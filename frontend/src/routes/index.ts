@@ -1,10 +1,12 @@
-const routes: Record<string, string> = {
-  home: '/',
+const tabRoute = '/tabs/:page';
+const serverIp = `http://localhost:8000`;
+
+export const routesWithoutTab: Record<string, string> = {
   frontend: '/frontend',
   frontendResults: '/frontend/results',
   backend: '/backend',
   backendResults: '/backend/results',
-  exploits: '/exploits',
+  exploits: `/exploits`,
   exploitResults: '/exploits/results',
   registry: '/registry',
   registryResults: '/registry/results',
@@ -14,6 +16,39 @@ const routes: Record<string, string> = {
   cveSearchResults: '/cvesearch/results',
   remoteHostInfo: '/remotehostinfo',
   remoteHostInfoResult: '/remotehostinfo/results',
+  hardwareInfo: '/hardwareinfo',
+  hardwareInfoResults: '/hardwareinfo/results',
+};
+
+const routes: Record<string, string> = {
+  home: '/',
+  homeRedirect: `/tabs/0${routesWithoutTab.remoteHostInfo}`,
+  tabsWOpage: '/tabs/',
+  tab: `${tabRoute}`,
+  frontend: `${tabRoute}${routesWithoutTab.frontend}`,
+  frontendResults: `${tabRoute}${routesWithoutTab.frontendResults}`,
+  backend: `${tabRoute}${routesWithoutTab.backend}`,
+  backendResults: `${tabRoute}${routesWithoutTab.backendResults}`,
+  exploits: `${tabRoute}${routesWithoutTab.exploits}`,
+  exploitResults: `${tabRoute}${routesWithoutTab.exploitResults}`,
+  registry: `${tabRoute}${routesWithoutTab.registry}`,
+  registryResults: `${tabRoute}${routesWithoutTab.registryResults}`,
+  documentation: `${tabRoute}${routesWithoutTab.documentation}`,
+  settings: `${tabRoute}${routesWithoutTab.settings}`,
+  cveSearch: `${tabRoute}${routesWithoutTab.cveSearch}`,
+  cveSearchResults: `${tabRoute}${routesWithoutTab.cveSearchResults}`,
+  remoteHostInfo: `${tabRoute}${routesWithoutTab.remoteHostInfo}`,
+  remoteHostInfoResult: `${tabRoute}${routesWithoutTab.remoteHostInfoResult}`,
+  hardwareInfo: `${tabRoute}${routesWithoutTab.hardwareInfo}`,
+  hardwareInfoResults: `${tabRoute}${routesWithoutTab.hardwareInfoResults}`,
+};
+
+export const serverRoutes: Record<string, string> = {
+  remoteHostData: `${serverIp}/search/censys/`,
+  remoteHostReport: `${serverIp}/reports/host_info/`,
+  registryScanData: `${serverIp}/analyzer/local/windows/`,
+  hardwareInfoData: `${serverIp}/analyzer/local/windows/hardware/`,
+  cveSearchData: `${serverIp}/search/cve/`,
 };
 
 export default routes;

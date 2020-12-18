@@ -1,31 +1,30 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import routes from 'routes';
 import { fetchData } from 'actions/cveSearchActions';
 import ResultTemplate from 'templates/VulnerabilityResultTemplate';
 import SearchResult from 'components/organisms/CveSearchResult/CveSearchResult';
 import Loading from 'components/atoms/LoadingAnimation/LoadingAnimation';
 import Search from 'components/molecules/Search/Search';
 import Heading from 'components/atoms/Heading/Heading';
+import { useParams } from 'react-router';
+import { updateTabLabel } from '../../actions/TabsActions';
 
 const CveSearchResult = () => {
   const dispatch = useDispatch();
-  const history = useHistory();
-
+  const { page } = useParams();
   const { isLoading, data } = useSelector(
-    ({ cveSearch }: Record<string, any>) => cveSearch,
+    ({ cveSearch }: Record<string, any>) => cveSearch[page],
   );
 
-  const [searchCve, setSearchCve] = useState(data.cve || '');
+  const [searchCve, setSearchCve] = useState(data?.cve || '');
 
   const handleSubmit = (
     event: React.FormEvent<HTMLFormElement>,
     searchWord: string,
   ) => {
     event.preventDefault();
-    dispatch(fetchData(searchWord));
-    history.push(routes.cveSearchResults);
+    dispatch(fetchData(searchWord, page));
+    dispatch(updateTabLabel(searchCve, page));
   };
 
   return (

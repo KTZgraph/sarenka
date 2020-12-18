@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { serverRoutes } from 'routes';
 
 export const actions: Record<string, string> = {
   FETCH_DATA_REQUEST: 'FETCH_HOST_INFO_REQUEST',
@@ -6,15 +7,25 @@ export const actions: Record<string, string> = {
   FETCH_DATA_FAILURE: 'FETCH_HOST_INFO_FAILURE',
 };
 
-export const fetchData = (searchHost: string) => (dispatch: Function) => {
-  dispatch({ type: actions.FETCH_DATA_REQUEST });
+export const fetchData = (searchHost: string, tabIndex: number) => (
+  dispatch: Function,
+) => {
+  dispatch({
+    type: actions.FETCH_DATA_REQUEST,
+    payload: {
+      searchedHost: searchHost,
+      tabIndex,
+    },
+  });
 
   return axios
-    .get(`http://localhost:8000/search/censys/${searchHost}`)
+    .get(`${serverRoutes.remoteHostData}${searchHost}`)
     .then(({ data }) => {
       dispatch({
         type: actions.FETCH_DATA_SUCCESS,
         payload: {
+          searchedHost: searchHost,
+          tabIndex,
           data,
         },
       });
@@ -23,8 +34,15 @@ export const fetchData = (searchHost: string) => (dispatch: Function) => {
       dispatch({
         type: actions.FETCH_DATA_FAILURE,
         payload: {
+          searchedHost: searchHost,
+          tabIndex,
           error: err.message,
         },
       });
     });
+};
+
+export const fetchReport = (reportForIp: string) => {
+  const URL = `${serverRoutes.remoteHostReport}${reportForIp}`;
+  window.open(URL);
 };

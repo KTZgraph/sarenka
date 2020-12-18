@@ -1,10 +1,12 @@
 from rest_framework import serializers
 
+
 class ProductSerializer(serializers.Serializer):
     vendor = serializers.CharField()
     name = serializers.CharField()
     version = serializers.CharField()
     system = serializers.CharField()
+
 
 class CveWrapperSerializer(serializers.Serializer):
     cve = serializers.CharField()
@@ -18,3 +20,5 @@ class CveWrapperSerializer(serializers.Serializer):
     availability = serializers.CharField()
     confidentiality = serializers.CharField()
     products = ProductSerializer(many=True)
+
+

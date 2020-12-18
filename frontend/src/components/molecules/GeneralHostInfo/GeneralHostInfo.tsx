@@ -74,10 +74,6 @@ const GeneralHostInfo: React.FC<Props> = ({
         {latitude || <NoData />}
       </Paragraph>
       <Paragraph>
-        {`Longitude: `}
-        {longitude || <NoData />}
-      </Paragraph>
-      <Paragraph>
         {`Timezone: `}
         {timezone || <NoData />}
       </Paragraph>

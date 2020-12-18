@@ -5,6 +5,7 @@ import Loading from 'components/atoms/LoadingAnimation/LoadingAnimation';
 import Heading from 'components/atoms/Heading/Heading';
 import logo from 'static/logo.svg';
 import InstalledSoftware from 'components/organisms/InstalledSoftware/InstalledSoftware';
+import { useParams } from 'react-router';
 
 type scanResult = {
   key: string;
@@ -12,8 +13,9 @@ type scanResult = {
 };
 
 const RegistryScanResults = () => {
+  const { page } = useParams();
   const { isLoading, data } = useSelector(
-    ({ registryScan }: Record<string, any>) => registryScan,
+    ({ registryScan }: Record<string, any>) => registryScan[page],
   );
 
   return (
