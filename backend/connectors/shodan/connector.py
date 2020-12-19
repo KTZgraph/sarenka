@@ -6,6 +6,7 @@ from connectors.shodan.connector_interface import ConnectorInterface
 from connectors.shodan.host_wrapper import HostWrapper
 from connectors.shodan.host_details_wrapper import HostDetailsWrapper
 
+
 class Connector(ConnectorInterface):
     def __init__(self, shodan_credentials):
         super().__init__(shodan_credentials)

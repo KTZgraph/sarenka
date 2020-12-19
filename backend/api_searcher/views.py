@@ -287,10 +287,25 @@ class LocalView(views.APIView):
 
 class CWEAllView(views.APIView):
     """Zwraca wszystkei kody CWE na podstawie pliku który został wygenerowany przez nas w innym narzędziu"""
+
+    @staticmethod
+    def get_server_address(request):
+        """
+        Zwraca adres do serwera aplikacji z uwzglednieniem protokołu np: http://127.0.0.1:8000/.
+        Użycie - generpowanie urli do wewnątrz aplikacji.
+        """
+        host_address = request.get_host()
+        # TODO: refaktor - milion kopii jes ttej funkcji
+        if request.is_secure():
+            address = "https://" + host_address
+        else:
+            address = "http://"+ host_address
+        return address
+
     def get(self, request):
-        result = {"source": "https://cwe.mitre.org/data/published/cwe_latest.pdf"}
-        result.update(CWEAll().values)
-        return Response(result)
+        server_address = self.get_server_address(request)
+        response = CWEAll().render_output(server_address)
+        return Response(response)
 
 @login_required
 def login_required_view(request, cve_code):
