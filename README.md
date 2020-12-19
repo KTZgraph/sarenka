@@ -22,6 +22,17 @@ It returns data about local machine - local installed softwares (from Windows Re
 For now application has also simple tools like hash calcualtor, shannon entropy calculator and very simple port scanner. 
 More cryptography-math tools and reconnaissance scripts are planned.
 
+# Realtion beetwen CWE and CVE - sarenka data feeder
+Generating this file takes a long time e.g: 702.5641514
+#### all CWE Ids with description
+https://raw.githubusercontent.com/pawlaczyk/sarenka_tools/master/cwe_all.json
+
+#### all CVE Ids with description
+In progress
+
+#### get all CVE Ids by CWE Id
+In progress
+
 # Installation
 Description in progress
 
