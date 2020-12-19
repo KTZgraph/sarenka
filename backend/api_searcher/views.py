@@ -13,7 +13,7 @@ from connectors.censys.connector import Connector as CensysConnector
 from .cve_and_cwe.mitre_cwe_scrapers import CWETableTop25Scraper, CWEDataScraper
 from .cve_and_cwe.nist_cve_scrapers import  NISTCVEScraper
 from .cve_and_cwe.cwe_all import CWEAll
-from .cve_and_cwe.cve_all import CVEAll
+from .cve_and_cwe.cve_details_all import CVEDetailsAll
 
 from .dns.dns_searcher import DNSSearcher, DNSSearcherFQDNError
 from .windows.registry import WindowsRegistry
@@ -309,7 +309,7 @@ class CWEAllView(views.APIView):
         return Response(response)
 
 
-class CVEAllView(views.APIView):
+class CVEDetailsAllView(views.APIView):
     """Zwraca wszystkei kody CWE na podstawie pliku który został wygenerowany przez nas w innym narzędziu"""
 
     @staticmethod
@@ -326,9 +326,9 @@ class CVEAllView(views.APIView):
             address = "http://"+ host_address
         return address
 
-    def get(self, request):
+    def get(self, request, page):
         server_address = self.get_server_address(request)
-        response = CVEAll().render_output(server_address)
+        response = CVEDetailsAll(page).render_output(server_address) #render_output(server_address)
         return Response(response)
 
 
