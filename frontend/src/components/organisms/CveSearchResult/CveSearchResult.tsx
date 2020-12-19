@@ -2,19 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import CardWrapper from 'components/atoms/CardWrapper/CardWrapper';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
-import {
-  Table,
-  TableBody,
-  TableHeaderRow,
-  TableItem,
-} from 'components/molecules/Table';
+import LinkButton from 'components/atoms/LinkButton/LinkButton';
+import NoData from 'components/atoms/NoDataText/NoDataText';
 
 const StyledParagraphRedBorder = styled(Paragraph)`
-  max-width: 110px;
+  max-width: 180px;
   padding: 10px;
   background: #c10c274f;
   transform: translate(-10px, -10px);
   border-radius: 4px;
+  white-space: nowrap;
+  display: inline-block;
 `;
 
 const StyledInnerWrapper = styled.div`
@@ -28,35 +26,46 @@ const StyledInnerWrapper = styled.div`
   }
 `;
 
+const StyledParagraph = styled(Paragraph)`
+  white-space: nowrap;
+  margin-right: 10px;
+`;
+
+const StyledLink = styled(Paragraph)`
+  display: block;
+  margin-top: 5px;
+`;
+
 type Props = {
   title: string;
   cve: string;
   cwe: string;
-  cvssvector: string;
-  complexity: string;
-  auth: string;
+  cvss2: string;
+  cvss2link: string;
+  cvss3: string;
+  cvss3link: string;
   score: string;
-  availability: string;
-  confidentiality: string;
-  products: {
-    vendor: string;
-    name: string;
-    version: string;
-    system: string;
-  }[];
+  publishedDate: string;
+  modificationDate: string;
+  source: string;
+  hyperlinks: string[];
+  cweLink: string;
 };
 
 const CveSearchResult: React.FC<Props> = ({
   title,
   cve,
   cwe,
-  cvssvector,
-  complexity,
-  auth,
+  cvss2,
+  cvss2link,
+  cvss3,
+  cvss3link,
   score,
-  availability,
-  confidentiality,
-  products,
+  publishedDate,
+  modificationDate,
+  source,
+  hyperlinks,
+  cweLink,
 }: Props) => {
   return (
     <CardWrapper>
@@ -72,52 +81,57 @@ const CveSearchResult: React.FC<Props> = ({
         <Paragraph>
           <strong>CWE: </strong>
           {cwe}
+          {cweLink && <LinkButton url={cweLink} />}
+        </Paragraph>
+        <StyledParagraph>
+          <strong>CVSS 2.0: </strong>
+          {cvss2 || <NoData />}
+          {cvss2link?.includes('http') && <LinkButton url={cvss2link} />}
+        </StyledParagraph>
+        <StyledParagraph>
+          <strong>CVSS 3.0: </strong>
+          {cvss3 || <NoData />}
+          {cvss3link?.includes('http') && <LinkButton url={cvss3link} />}
+        </StyledParagraph>
+        <div>
+          <StyledParagraphRedBorder>
+            <strong>Score: </strong>
+            {score}
+          </StyledParagraphRedBorder>
+        </div>
+        <Paragraph>
+          <strong>Published date: </strong>
+          {publishedDate}
         </Paragraph>
         <Paragraph>
-          <strong>CVSS Vector: </strong>
-          {cvssvector}
+          <strong>Modification date: </strong>
+          {modificationDate}
         </Paragraph>
         <Paragraph>
-          <strong>Complexity: </strong>
-          {complexity}
+          <strong>Source: </strong>
+          {source}
         </Paragraph>
-        <Paragraph>
-          <strong>Authentication: </strong>
-          {auth}
-        </Paragraph>
-        <Paragraph>
-          <strong>Availability: </strong>
-          {availability}
-        </Paragraph>
-        <Paragraph>
-          <strong>Confidentiality: </strong>
-          {confidentiality}
-        </Paragraph>
-        <StyledParagraphRedBorder>
-          <strong>Score: </strong>
-          {score}
-        </StyledParagraphRedBorder>
       </StyledInnerWrapper>
-      <Paragraph>Products</Paragraph>
-      <Table>
-        <thead>
-          <TableHeaderRow>
-            <Paragraph as="th">Vendor</Paragraph>
-            <Paragraph as="th">Name</Paragraph>
-            <Paragraph as="th">Version</Paragraph>
-            <Paragraph as="th">System</Paragraph>
-          </TableHeaderRow>
-        </thead>
-        <TableBody>
-          {products?.map(({ vendor, name, version, system }, index) => (
-            <TableItem
+      <Paragraph>
+        <strong>Description: </strong>
+        {title}
+      </Paragraph>
+      <Paragraph>
+        <strong>Useful links: </strong>
+        {hyperlinks.map((link, index) => {
+          return (
+            <StyledLink
               key={index}
-              columns={[vendor, name, version, system]}
-              wordBreak={1}
-            />
-          ))}
-        </TableBody>
-      </Table>
+              as="a"
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {link}
+            </StyledLink>
+          );
+        })}
+      </Paragraph>
     </CardWrapper>
   );
 };
