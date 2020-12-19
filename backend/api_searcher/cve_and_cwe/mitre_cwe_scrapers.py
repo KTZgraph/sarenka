@@ -104,66 +104,89 @@ class CWEDataScraper:
         """Częsre konswekwencje exploitacji słabości."""
         result = []
 
-        div = self.soup.find("div", {"id": "oc_" + self.id_cwe + "_Common_Consequences" })
-        table = div.find("table")
-        tr = table.findAll("tr")
-        for i in tr[1:]: # be zpierwszego wiersza bo tam nie ma danych
-            row = i.find("p", {"class": "smaller"})
-            # tylko jeden wynik - re.findall zwraca listę
-            impact = re.findall("<i>(.*?)</i>", str(row))[0]
-            impact = impact.split(";")
-            impact = [i.strip() for i in impact]
-            result.extend(impact)
+        try:
+            div = self.soup.find("div", {"id": "oc_" + self.id_cwe + "_Common_Consequences" })
+            table = div.find("table")
+            tr = table.findAll("tr")
+            for i in tr[1:]: # be zpierwszego wiersza bo tam nie ma danych
+                row = i.find("p", {"class": "smaller"})
+                # tylko jeden wynik - re.findall zwraca listę
+                impact = re.findall("<i>(.*?)</i>", str(row))[0]
+                impact = impact.split(";")
+                impact = [i.strip() for i in impact]
+                result.extend(impact)
 
-        # bez duplikatow - wydajniej zamienic na slwonik
-        return list(set(result))
+            # bez duplikatow - wydajniej zamienic na slwonik
+            return list(set(result))
+
+        #TODO refaktor
+        except Exception:
+            return list["No information"]
 
     def get_caused_by(self):
         """
         Etap podczas którego powstaje podatność. Np. podczas implementacji.
         """
-        div_main = self.soup.find("div", {"id": "oc_" + self.id_cwe +"_Modes_Of_Introduction"})
-        table = div_main.find("table")
-        tr = table.findAll("tr")
+        try:
+            div_main = self.soup.find("div", {"id": "oc_" + self.id_cwe +"_Modes_Of_Introduction"})
+            table = div_main.find("table")
+            tr = table.findAll("tr")
 
-        field = tr[1].text # np.: Architecture and Design
-        all_td = tr[-1].findAll("td")
+            field = tr[1].text # np.: Architecture and Design
+            all_td = tr[-1].findAll("td")
 
-        process = all_td[0].text # np.: Implementation
-        description = all_td[1].text # This weakness is caused during implementation of an architectural security tactic.
-        description = description.split(":")[-1].strip()
+            process = all_td[0].text # np.: Implementation
+            description = all_td[1].text # This weakness is caused during implementation of an architectural security tactic.
+            description = description.split(":")[-1].strip()
 
-        return {
-            "field": field,
-            "process": process,
-            "description": description
-        }
+            return {
+                "field": field,
+                "process": process,
+                "description": description
+            }
+
+        # TODO: refaktor
+        except AttributeError:
+            return {
+                "field": "No information",
+                "process": "No information",
+                "description": "No information"
+            }
 
     def get_cve_examples(self)->List[Dict]:
         """
         Przykładowe podatności bezpieczeństwa w konkretnych oprogramowanaich dla tego typu słabości oprogramowania.
         """
         result = []
-        div_main = self.soup.find("div", {"id": "oc_" + self.id_cwe +"_Observed_Examples"})
-        table = div_main.find("table", {"class": "Detail"})
-        tr_list = table.findAll("tr")
+        try:
+            div_main = self.soup.find("div", {"id": "oc_" + self.id_cwe +"_Observed_Examples"})
+            table = div_main.find("table", {"class": "Detail"})
+            tr_list = table.findAll("tr")
 
-        for tr in tr_list[1:]: # w pierwszym wierszu nie ma danych
-            id_CVE = None
-            description = None
+            for tr in tr_list[1:]: # w pierwszym wierszu nie ma danych
+                id_CVE = None
+                description = None
 
-            if tr.find("div", {"class": "indent"}):
-                description = tr.find("div", {"class": "indent"}).text
+                if tr.find("div", {"class": "indent"}):
+                    description = tr.find("div", {"class": "indent"}).text
 
-            if tr.find("a"):
-                id_CVE = tr.find("a").text
-                mitre_url = tr.find("a")["href"]
+                if tr.find("a"):
+                    id_CVE = tr.find("a").text
+                    mitre_url = tr.find("a")["href"]
 
+                result.append({
+                    "id_CVE": id_CVE,
+                    "description": description,
+                    "mitre_url": mitre_url, # https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3568
+                    "sarenka_url": self.host_address + reverse('get_by_cve', kwargs={"code": id_CVE}),
+                })
+        # TODO: refaktor
+        except Exception:
             result.append({
-                "id_CVE": id_CVE,
-                "description": description,
-                "mitre_url": mitre_url, # https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3568
-                "sarenka_url": self.host_address + reverse('get_by_cve', kwargs={"code": id_CVE}),
+                "id_CVE": "No inforamtion",
+                "description": "No inforamtion",
+                "mitre_url": "No inforamtion",  # https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3568
+                "sarenka_url": "No inforamtion",
             })
 
         return result
