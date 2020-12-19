@@ -62,7 +62,7 @@ class CWETableTop25Scraper:
 class CWEDataScraper:
     cwe_mitre_url = "https://cwe.mitre.org/data/definitions/"
 
-    def __init__(self, host_address, id_cwe:str):
+    def __init__(self, id_cwe: str, host_address=None):
         self.host_address = host_address
         if "-" in id_cwe:
             id_cwe = id_cwe.split("-")[1] # dla postaci CWE-79

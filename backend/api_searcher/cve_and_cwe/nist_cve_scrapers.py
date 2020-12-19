@@ -99,7 +99,7 @@ class NISTCVEScraper:
                 result.append({
                     "ID_CWE": ID_CWE,
                     "cwe_mitre_url" : mitre_url,
-                    "cwe_title": CWEDataScraper(self.host_address, td.find("a").text).get_title(),
+                    "cwe_title": CWEDataScraper(td.find("a").text, self.host_address).get_title(),
                     # "sarenka_cwe_url":  self.host_address + reverse('get_by_cwe', kwargs={"id_cwe": ID_CWE}),
                 })
 
