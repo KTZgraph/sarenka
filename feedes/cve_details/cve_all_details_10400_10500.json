@@ -1,0 +1,3271 @@
+[
+    {
+        "cve_id": "CVE-2020-15523",
+        "cwe_id": "CWE-427",
+        "description": "In Python 3.6 through 3.6.10, 3.7 through 3.7.8, 3.8 through 3.8.4rc1, and 3.9 through 3.9.0b4 on Windows, a Trojan horse python3.dll might be used in cases where CPython is embedded in a native application. This occurs because python3X.dll may use an invalid search path for python3.dll loading (after Py_SetPath has been used). NOTE: this issue CANNOT occur when using python.exe from a standard (non-embedded) Python installation on Windows.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.9 MEDIUM",
+        "hyperlinks": [
+            "https://bugs.python.org/issue29778",
+            "https://github.com/python/cpython/pull/21297"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:python:python:*:*:*:*:*:*:*:* versions from (including) 3.6.0 up to (including) 3.6.10\n     *cpe:2.3:a:python:python:*:*:*:*:*:*:*:* versions from (including) 3.7.0 up to (including) 3.7.8\n     *cpe:2.3:a:python:python:*:*:*:*:*:*:*:* versions from (including) 3.8.0 up to (including) 3.8.3\n     *cpe:2.3:a:python:python:3.8.4:rc1:*:*:*:*:*:*\n     *cpe:2.3:a:python:python:3.9.0:alpha1:*:*:*:*:*:*\n     *cpe:2.3:a:python:python:3.9.0:alpha2:*:*:*:*:*:*\n     *cpe:2.3:a:python:pytho",
+            "*cpe:2.3:a:python:python:*:*:*:*:*:*:*:* versions from (including) 3.6.0 up to (including) 3.6.10\n     *cpe:2.3:a:python:python:*:*:*:*:*:*:*:* versions from (including) 3.7.0 up to (including) 3.7.8\n     *cpe:2.3:a:python:python:*:*:*:*:*:*:*:* versions from (including) 3.8.0 up to (including) 3.8.3\n     *cpe:2.3:a:python:python:3.8.4:rc1:*:*:*:*:*:*\n     *cpe:2.3:a:python:python:3.9.0:alpha1:*:*:*:*:*:*\n     *cpe:2.3:a:python:python:3.9.0:alpha2:*:*:*:*:*:*\n     *cpe:2.3:a:python:pytho",
+            "*cpe:2.3:a:python:python:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:python:python:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:python:python:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:python:python:3.8.4:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:3.9.0:alpha1:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:3.9.0:alpha2:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:pytho",
+            "*cpe:2.3:a:python:python:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:python:python:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:python:python:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:python:python:3.8.4:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:3.9.0:alpha1:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:3.9.0:alpha2:*",
+            "*cpe:2.3:a:python:python:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:python:python:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:python:python:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:python:python:3.8.4:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:3.9.0:alpha1:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:3.9.0:alpha2:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:pytho"
+        ],
+        "published_date": "07/04/2020",
+        "modified_date": "10/21/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15528",
+        "cwe_id": "CWE-269",
+        "description": "An issue was discovered in GOG Galaxy Client 2.0.17. Local escalation of privileges is possible when a user starts or uninstalls a game because of weak file permissions and missing file integrity checks.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://daniels-it-blog.blogspot.com/2020/07/gog-galaxy-escalation-of-privileges.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gog:galaxy:2.0.17:*:*:*:*:windows:*:*",
+            "*cpe:2.3:a:gog:galaxy:2.0.17:*:*:*:*:windows:*:*"
+        ],
+        "published_date": "07/04/2020",
+        "modified_date": "07/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15529",
+        "cwe_id": "CWE-269",
+        "description": "An issue was discovered in GOG Galaxy Client 2.0.17. Local escalation of privileges is possible when a user installs a game or performs a verify/repair operation. The issue exists because of weak file permissions and can be exploited by using opportunistic locks.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://daniels-it-blog.blogspot.com/2020/07/gog-galaxy-escalation-of-privileges.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gog:galaxy:2.0.17:*:*:*:*:windows:*:*",
+            "*cpe:2.3:a:gog:galaxy:2.0.17:*:*:*:*:windows:*:*"
+        ],
+        "published_date": "07/04/2020",
+        "modified_date": "07/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15530",
+        "cwe_id": "CWE-269",
+        "description": "An issue was discovered in Valve Steam Client 2.10.91.91. The installer allows local users to gain NT AUTHORITY\\SYSTEM privileges because some parts of %PROGRAMFILES(X86)%\\Steam and/or %COMMONPROGRAMFILES(X86)%\\Steam have weak permissions during a critical time window. An attacker can make this time window arbitrarily long by using opportunistic locks.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://daniels-it-blog.blogspot.com/2020/07/steam-arbitrary-code-execution-part-2.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:valvesoftware:steam_client:2.10.91.91:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:valvesoftware:steam_client:2.10.91.91:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/04/2020",
+        "modified_date": "07/15/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15466",
+        "cwe_id": "CWE-835",
+        "description": "In Wireshark 3.2.0 to 3.2.4, the GVCP dissector could go into an infinite loop. This was addressed in epan/dissectors/packet-gvcp.c by ensuring that an offset increases in all situations.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-08/msg00026.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-08/msg00038.html",
+            "https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=16029",
+            "https://code.wireshark.org/review/gitweb?p=wireshark.git;a=commit;h=11f40896b696e4e8c7f8b2ad96028404a83a51a4",
+            "https://security.gentoo.org/glsa/202007-13",
+            "https://www.wireshark.org/security/wnpa-sec-2020-09.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:wireshark:wireshark:*:*:*:*:*:*:*:* versions from (including) 3.2.0 up to (including) 3.2.4",
+            "*cpe:2.3:a:wireshark:wireshark:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "07/05/2020",
+        "modified_date": "08/14/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15535",
+        "cwe_id": "CWE-79",
+        "description": "An issue was discovered in the bestsoftinc Car Rental System plugin through 1.3 for WordPress. Persistent XSS can occur via any of the registration fields.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/157118/WordPress-Car-Rental-System-1.3-Cross-Site-Scripting.html",
+            "https://wpvulndb.com/vulnerabilities/10172"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:bestsoftinc:car_rental_system:*:*:*:*:*:wordpress:*:* versions up to (including) 1.3",
+            "*cpe:2.3:a:bestsoftinc:car_rental_system:*:*:*:*:*:wordpress:*:*",
+            "(including)"
+        ],
+        "published_date": "07/05/2020",
+        "modified_date": "07/08/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15536",
+        "cwe_id": "CWE-79",
+        "description": "An issue was discovered in the bestsoftinc Hotel Booking System Pro plugin through 1.1 for WordPress. Persistent XSS can occur via any of the registration fields.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/157116/WordPress-Hotel-Booking-System-Pro-1.1-Cross-Site-Scripting.html",
+            "https://wpvulndb.com/vulnerabilities/10171"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:online_hotel_booking_system_project:online_hotel_booking_system:*:*:*:*:pro:wordpress:*:* versions up to (including) 1.1",
+            "*cpe:2.3:a:online_hotel_booking_system_project:online_hotel_booking_system:*:*:*:*:pro:wordpress:*:*",
+            "(including)"
+        ],
+        "published_date": "07/05/2020",
+        "modified_date": "07/13/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15537",
+        "cwe_id": "CWE-79",
+        "description": "An issue was discovered in the Vanguard plugin 2.1 for WordPress. XSS can occur via the mails/new title field, a product field to the p/ URI, or the Products Search box.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://cxsecurity.com/issue/WLB-2020040032",
+            "https://packetstormsecurity.com/files/157099/Vanguard-2.1-Cross-Site-Scripting.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:vanguard_project:vanguard:2.1:*:*:*:*:wordpress:*:*",
+            "*cpe:2.3:a:vanguard_project:vanguard:2.1:*:*:*:*:wordpress:*:*"
+        ],
+        "published_date": "07/05/2020",
+        "modified_date": "07/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15538",
+        "cwe_id": "CWE-79",
+        "description": "XSS can occur in We-com Municipality portal CMS 2.1.x via the cerca/ search bar.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://cxsecurity.com/issue/WLB-2020060011",
+            "https://packetstormsecurity.com/files/157886/We-Com-Municipality-Portal-CMS-2.1.x-Cross-Site-Scripting-SQL-Injection.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:we-com:municipality_portal_cms:2.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:we-com:municipality_portal_cms:2.1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/05/2020",
+        "modified_date": "07/13/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15539",
+        "cwe_id": "CWE-89",
+        "description": "SQL injection can occur in We-com Municipality portal CMS 2.1.x via the cerca/ keywords field.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://cxsecurity.com/issue/WLB-2020060011",
+            "https://packetstormsecurity.com/files/157886/We-Com-Municipality-Portal-CMS-2.1.x-Cross-Site-Scripting-SQL-Injection.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:we-com:municipality_portal_cms:2.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:we-com:municipality_portal_cms:2.1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/05/2020",
+        "modified_date": "07/13/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15540",
+        "cwe_id": "CWE-89",
+        "description": "We-com OpenData CMS 2.0 allows SQL Injection via the username field on the administrator login page.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://cxsecurity.com/issue/WLB-2020060010",
+            "https://packetstormsecurity.com/files/157887/We-Com-OpenData-CMS-2.0-SQL-Injection.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:we-com:opendata_cms:2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:we-com:opendata_cms:2.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/05/2020",
+        "modified_date": "07/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15541",
+        "cwe_id": "CWE-94",
+        "description": "SolarWinds Serv-U FTP server before 15.2.1 allows remote command execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://documentation.solarwinds.com/en/success_center/servu/Content/Release_Notes/Servu_15-2-1_release_notes.htm"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:solarwinds:serv-u_ftp_server:*:*:*:*:*:*:*:* versions up to (excluding) 15.2.1",
+            "*cpe:2.3:a:solarwinds:serv-u_ftp_server:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/05/2020",
+        "modified_date": "07/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15542",
+        "cwe_id": null,
+        "description": "SolarWinds Serv-U FTP server before 15.2.1 mishandles the CHMOD command.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://documentation.solarwinds.com/en/success_center/servu/Content/Release_Notes/Servu_15-2-1_release_notes.htm"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:solarwinds:serv-u_ftp_server:*:*:*:*:*:*:*:* versions up to (excluding) 15.2.1",
+            "*cpe:2.3:a:solarwinds:serv-u_ftp_server:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/05/2020",
+        "modified_date": "07/15/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15543",
+        "cwe_id": "CWE-20",
+        "description": "SolarWinds Serv-U FTP server before 15.2.1 does not validate an argument path.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://documentation.solarwinds.com/en/success_center/servu/Content/Release_Notes/Servu_15-2-1_release_notes.htm"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:solarwinds:serv-u_ftp_server:*:*:*:*:*:*:*:* versions up to (excluding) 15.2.1",
+            "*cpe:2.3:a:solarwinds:serv-u_ftp_server:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/05/2020",
+        "modified_date": "07/15/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15562",
+        "cwe_id": "CWE-79",
+        "description": "An issue was discovered in Roundcube Webmail before 1.2.11, 1.3.x before 1.3.14, and 1.4.x before 1.4.7. It allows XSS via a crafted HTML e-mail message, as demonstrated by a JavaScript payload in the xmlns (aka XML namespace) attribute of a HEAD element when an SVG element exists.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-09/msg00083.html",
+            "https://github.com/roundcube/roundcubemail/commit/3e8832d029b035e3fcfb4c75839567a9580b4f82",
+            "https://github.com/roundcube/roundcubemail/releases/tag/1.2.11",
+            "https://github.com/roundcube/roundcubemail/releases/tag/1.3.14",
+            "https://github.com/roundcube/roundcubemail/releases/tag/1.4.7",
+            "https://www.debian.org/security/2020/dsa-4720"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:roundcube:webmail:*:*:*:*:*:*:*:* versions up to (excluding) 1.2.11\n     *cpe:2.3:a:roundcube:webmail:*:*:*:*:*:*:*:* versions from (including) 1.3.0 up to (excluding) 1.3.14\n     *cpe:2.3:a:roundcube:webmail:*:*:*:*:*:*:*:* versions from (including) 1.4.0 up to (excluding) 1.4.7",
+            "*cpe:2.3:o:debian:debian_linux:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:roundcube:webmail:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:roundcube:webmail:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:roundcube:webmail:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:o:debian:debian_linux:10:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "09/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-7690",
+        "cwe_id": "CWE-79",
+        "description": "All affected versions <2.0.0 of package jspdf are vulnerable to Cross-site Scripting (XSS). It is possible to inject JavaScript code via the html method.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/MrRio/jsPDF/issues/2795",
+            "https://snyk.io/vuln/SNYK-JS-JSPDF-575256"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:parall:jspdf:*:*:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:parall:jspdf:*:*:*:*:*:node.js:*:*"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "Snyk",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-7691",
+        "cwe_id": "CWE-79",
+        "description": "In all versions of the package jspdf, it is possible to use <<script>script> in order to go over the filtering regex.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARS-575255",
+            "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-575253",
+            "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBMRRIO-575254",
+            "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-575252",
+            "https://snyk.io/vuln/SNYK-JS-JSPDF-568273"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:parall:jspdf:*:*:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:parall:jspdf:*:*:*:*:*:node.js:*:*"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/10/2020",
+        "vulnerability_source": "Snyk",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15569",
+        "cwe_id": "CWE-416",
+        "description": "PlayerGeneric.cpp in MilkyTracker through 1.02.00 has a use-after-free in the PlayerGeneric destructor.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/milkytracker/MilkyTracker/commit/7afd55c42ad80d01a339197a2d8b5461d214edaf",
+            "https://lists.debian.org/debian-lts-announce/2020/07/msg00023.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:milkytracker_project:milkytracker:*:*:*:*:*:*:*:* versions up to (including) 1.02.00",
+            "*cpe:2.3:a:milkytracker_project:milkytracker:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/27/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15570",
+        "cwe_id": "CWE-770",
+        "description": "The parse_report() function in whoopsie.c in Whoopsie through 0.2.69 mishandles memory allocation failures, which allows an attacker to cause a denial of service via a malformed crash file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/sungjungk/whoopsie_killer2/blob/master/README.md",
+            "https://github.com/sungjungk/whoopsie_killer2/blob/master/whoopsie_killer2.py",
+            "https://launchpad.net/ubuntu/+source/whoopsie",
+            "https://usn.ubuntu.com/4450-1/",
+            "https://www.youtube.com/watch?v=oZXGwC7PWYE"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:whoopsie_project:whoopsie:*:*:*:*:*:*:*:* versions up to (including) 0.2.69",
+            "*cpe:2.3:a:whoopsie_project:whoopsie:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "08/12/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2019-8066",
+        "cwe_id": "CWE-787",
+        "description": "Adobe Acrobat and Reader versions 2019.012.20035 and earlier, 2019.012.20035 and earlier, 2017.011.30142 and earlier, 2017.011.30143 and earlier, 2015.006.30497 and earlier, and 2015.006.30498 and earlier have a heap overflow vulnerability. Successful exploitation could lead to arbitrary code execution .",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://helpx.adobe.com/security/products/acrobat/apsb19-41.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:classic:*:*:*",
+            "(including)",
+            "15.006.30060",
+            "(including)",
+            "15.006.30497",
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:continuous:*:*:*",
+            "(including)",
+            "15.008.20082",
+            "(including)",
+            "19.012.20034",
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:classic:*:*:*",
+            "(including)",
+            "17.011.30059",
+            "(including)",
+            "17.011.30142",
+            "*cpe:2.3:a:adobe:acrobat_reader_dc:*:*:*:*:classic:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:classic:*:*:*",
+            "(including)",
+            "15.006.30060",
+            "(including)",
+            "15.006.30498",
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:continuous:*:*:*",
+            "(including)",
+            "15.008.20082",
+            "(including)",
+            "19.012.20035",
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:classic:*:*:*",
+            "(including)",
+            "17.011.30059",
+            "(including)",
+            "17.011.30143",
+            "*cpe:2.3:a:adobe:acrobat_reader_dc:*:*:*:*:classic:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/13/2020",
+        "vulnerability_source": "Adobe Systems Incorporated",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2019-8249",
+        "cwe_id": "CWE-843",
+        "description": "Adobe Acrobat and Reader versions 2019.012.20035 and earlier, 2019.012.20035 and earlier, 2017.011.30142 and earlier, 2017.011.30143 and earlier, 2015.006.30497 and earlier, and 2015.006.30498 and earlier have a type confusion vulnerability. Successful exploitation could lead to arbitrary code execution .",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://helpx.adobe.com/security/products/acrobat/apsb19-41.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:classic:*:*:*",
+            "(including)",
+            "15.006.30060",
+            "(including)",
+            "15.006.30497",
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:continuous:*:*:*",
+            "(including)",
+            "15.008.20082",
+            "(including)",
+            "19.012.20034",
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:classic:*:*:*",
+            "(including)",
+            "17.011.30059",
+            "(including)",
+            "17.011.30142",
+            "*cpe:2.3:a:adobe:acrobat_reader_dc:*:*:*:*:classic:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:classic:*:*:*",
+            "(including)",
+            "15.006.30060",
+            "(including)",
+            "15.006.30498",
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:continuous:*:*:*",
+            "(including)",
+            "15.008.20082",
+            "(including)",
+            "19.012.20035",
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:classic:*:*:*",
+            "(including)",
+            "17.011.30059",
+            "(including)",
+            "17.011.30143",
+            "*cpe:2.3:a:adobe:acrobat_reader_dc:*:*:*:*:classic:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/10/2020",
+        "vulnerability_source": "Adobe Systems Incorporated",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2019-8250",
+        "cwe_id": "CWE-843",
+        "description": "Adobe Acrobat and Reader versions 2019.012.20035 and earlier, 2019.012.20035 and earlier, 2017.011.30142 and earlier, 2017.011.30143 and earlier, 2015.006.30497 and earlier, and 2015.006.30498 and earlier have a type confusion vulnerability. Successful exploitation could lead to arbitrary code execution .",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://helpx.adobe.com/security/products/acrobat/apsb19-41.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:classic:*:*:*",
+            "(including)",
+            "15.006.30060",
+            "(including)",
+            "15.006.30497",
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:continuous:*:*:*",
+            "(including)",
+            "15.008.20082",
+            "(including)",
+            "19.012.20034",
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:classic:*:*:*",
+            "(including)",
+            "17.011.30059",
+            "(including)",
+            "17.011.30142",
+            "*cpe:2.3:a:adobe:acrobat_reader_dc:*:*:*:*:classic:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:classic:*:*:*",
+            "(including)",
+            "15.006.30060",
+            "(including)",
+            "15.006.30498",
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:continuous:*:*:*",
+            "(including)",
+            "15.008.20082",
+            "(including)",
+            "19.012.20035",
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:classic:*:*:*",
+            "(including)",
+            "17.011.30059",
+            "(including)",
+            "17.011.30143",
+            "*cpe:2.3:a:adobe:acrobat_reader_dc:*:*:*:*:classic:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/10/2020",
+        "vulnerability_source": "Adobe Systems Incorporated",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2019-8251",
+        "cwe_id": "CWE-843",
+        "description": "Adobe Acrobat and Reader versions 2019.012.20035 and earlier, 2019.012.20035 and earlier, 2017.011.30142 and earlier, 2017.011.30143 and earlier, 2015.006.30497 and earlier, and 2015.006.30498 and earlier have a type confusion vulnerability. Successful exploitation could lead to information disclosure.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://helpx.adobe.com/security/products/acrobat/apsb19-41.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:classic:*:*:*",
+            "(including)",
+            "15.006.30060",
+            "(including)",
+            "15.006.30497",
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:continuous:*:*:*",
+            "(including)",
+            "15.008.20082",
+            "(including)",
+            "19.012.20034",
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:classic:*:*:*",
+            "(including)",
+            "17.011.30059",
+            "(including)",
+            "17.011.30142",
+            "*cpe:2.3:a:adobe:acrobat_reader_dc:*:*:*:*:classic:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:classic:*:*:*",
+            "(including)",
+            "15.006.30060",
+            "(including)",
+            "15.006.30498",
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:continuous:*:*:*",
+            "(including)",
+            "15.008.20082",
+            "(including)",
+            "19.012.20035",
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:classic:*:*:*",
+            "(including)",
+            "17.011.30059",
+            "(including)",
+            "17.011.30143",
+            "*cpe:2.3:a:adobe:acrobat_reader_dc:*:*:*:*:classic:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/10/2020",
+        "vulnerability_source": "Adobe Systems Incorporated",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2019-8252",
+        "cwe_id": "CWE-843",
+        "description": "Adobe Acrobat and Reader versions 2019.012.20035 and earlier, 2019.012.20035 and earlier, 2017.011.30142 and earlier, 2017.011.30143 and earlier, 2015.006.30497 and earlier, and 2015.006.30498 and earlier have a type confusion vulnerability. Successful exploitation could lead to information disclosure.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://helpx.adobe.com/security/products/acrobat/apsb19-41.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:classic:*:*:*",
+            "(including)",
+            "15.006.30060",
+            "(including)",
+            "15.006.30497",
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:continuous:*:*:*",
+            "(including)",
+            "15.008.20082",
+            "(including)",
+            "19.012.20034",
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:classic:*:*:*",
+            "(including)",
+            "17.011.30059",
+            "(including)",
+            "17.011.30142",
+            "*cpe:2.3:a:adobe:acrobat_reader_dc:*:*:*:*:classic:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:classic:*:*:*",
+            "(including)",
+            "15.006.30060",
+            "(including)",
+            "15.006.30498",
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:continuous:*:*:*",
+            "(including)",
+            "15.008.20082",
+            "(including)",
+            "19.012.20035",
+            "*cpe:2.3:a:adobe:acrobat_dc:*:*:*:*:classic:*:*:*",
+            "(including)",
+            "17.011.30059",
+            "(including)",
+            "17.011.30143",
+            "*cpe:2.3:a:adobe:acrobat_reader_dc:*:*:*:*:classic:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/13/2020",
+        "vulnerability_source": "Adobe Systems Incorporated",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-14303",
+        "cwe_id": "CWE-20",
+        "description": "A flaw was found in the AD DC NBT server in all Samba versions before 4.10.17, before 4.11.11 and before 4.12.4. A samba user could send an empty UDP packet to cause the samba server to crash.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00030.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00054.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-09/msg00002.html",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1851298;",
+            "https://lists.debian.org/debian-lts-announce/2020/11/msg00041.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6YLNQ5GRXUKYRUAOFZ4DUBVN4SMTL6Q2/",
+            "https://security.gentoo.org/glsa/202007-15",
+            "https://security.netapp.com/advisory/ntap-20200709-0003/",
+            "https://usn.ubuntu.com/4454-1/",
+            "https://usn.ubuntu.com/4454-2/",
+            "https://www.samba.org/samba/security/CVE-2020-14303.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:* versions from (including) 4.10.0 up to (excluding) 4.10.17\n     *cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:* versions from (including) 4.11.0 up to (excluding) 4.11.11\n     *cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:* versions from (including) 4.12.0 up to (excluding) 4.12.4",
+            "*cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:leap:15.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "11/23/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-1837",
+        "cwe_id": "CWE-20",
+        "description": "ChangXiang 8 Plus with versions earlier than 9.1.0.136(C00E121R1P6T8) have a denial of service vulnerability. The device does not properly handle certain message from base station, the attacker could craft a fake base station to launch the attack. Successful exploit could cause a denial of signal service condition.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "2.9 LOW",
+        "hyperlinks": [
+            "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200624-01-dos-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:changxiang_8_plus:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/13/2020",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-5352",
+        "cwe_id": "CWE-78",
+        "description": "Dell EMC Data Protection Advisor 6.4, 6.5 and 18.1 contain an OS command injection vulnerability. A remote authenticated malicious user may exploit this vulnerability to execute arbitrary commands on the affected system.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-5352"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "https://www.dell.com/support/security/en-us/details/542719/DSA-2020-081-Dell-EMC-Data-Protection-Advisor-OS-Command-Injection-Vulnerability"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:dell:emc_data_protection_advisor:6.4:*:*:*:*:*:*:*\n     *cpe:2.3:a:dell:emc_data_protection_advisor:6.5:*:*:*:*:*:*:*\n     *cpe:2.3:a:dell:emc_data_protection_advisor:18.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:dell:emc_data_protection_advisor:6.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:dell:emc_data_protection_advisor:6.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:dell:emc_data_protection_advisor:18.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/13/2020",
+        "vulnerability_source": "Dell",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-5356",
+        "cwe_id": "CWE-552",
+        "description": "Dell PowerProtect Data Manager (PPDM) versions prior to 19.4 and Dell PowerProtect X400 versions prior to 3.2 contain an improper authorization vulnerability. A remote authenticated malicious user may download any file from the affected PowerProtect virtual machines.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://www.dell.com/support/security/en-us/details/544733/DSA-2020-099-Dell-PowerProtect-Data-Manager-Improper-Authorization-Vulnerability"
+        ],
+        "cpe": [
+            "cpe:2.3:h:dell:powerprotect_x400:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:dell:powerprotect_data_manager:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/20/2020",
+        "vulnerability_source": "Dell",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-5368",
+        "cwe_id": "CWE-862",
+        "description": "Dell EMC VxRail versions 4.7.410 and 4.7.411 contain an improper authentication vulnerability. A remote unauthenticated attacker may exploit this vulnerability to obtain sensitive information in an encrypted form.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://www.dell.com/support/security/en-us/details/544058/DSA-2020-136-Dell-EMC-VxRail-Appliance-Improper-Authentication-Vulnerability"
+        ],
+        "cpe": [
+            "cpe:2.3:h:dell:vxrail_d560:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:dell:vxrail_d560f:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/13/2020",
+        "vulnerability_source": "Dell",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-5371",
+        "cwe_id": "CWE-732",
+        "description": "Dell EMC Isilon OneFS versions 8.2.2 and earlier and Dell EMC PowerScale version 9.0.0 contain a file permissions vulnerability. An attacker, with network or local file access, could take advantage of insufficiently applied file permissions or gain unauthorized access to files.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://www.dell.com/support/security/en-us/details/544593/DSA-2020-155-Dell-EMC-Isilon-OneFS-and-Dell-EMC-PowerScale-Security-Update-for-a-Permissions-Vuln"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:dell:emc_isilon_onefs:*:*:*:*:*:*:*:* versions up to (including) 8.2.2\n     *cpe:2.3:o:dell:emc_powerscale_onefs:9.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:dell:emc_isilon_onefs:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:dell:emc_powerscale_onefs:9.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/14/2020",
+        "vulnerability_source": "Dell",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-5372",
+        "cwe_id": "CWE-863",
+        "description": "Dell EMC PowerStore versions prior to 1.0.1.0.5.002 contain a vulnerability that exposes test interface ports to external network. A remote unauthenticated attacker could potentially cause Denial of Service via test interface ports which are not used during run time environment.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://www.dell.com/support/security/en-us/details/544738/DSA-2020-159-Dell-EMC-PowerStore-Family-Improper-Authorization-Vulnerability"
+        ],
+        "cpe": [
+            "cpe:2.3:h:dell:emc_powerstore_1000:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:dell:emc_powerstore_3000:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:dell:emc_powerstore_5000:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:dell:emc_powerstore_7000:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:dell:emc_powerstore_9000:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/13/2020",
+        "vulnerability_source": "Dell",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-6013",
+        "cwe_id": "CWE-269",
+        "description": "ZoneAlarm Firewall and Antivirus products before version 15.8.109.18436 allow an attacker who already has access to the system to execute code at elevated privileges through a combination of file permission manipulation and exploitation of Windows CVE-2020-00896 on unpatched systems.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://www.zonealarm.com/software/extreme-security/release-history"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:checkpoint:zonealarm_extreme_security:*:*:*:*:*:*:*:* versions up to (excluding) 15.8.109.18436",
+            "*cpe:2.3:a:checkpoint:zonealarm_extreme_security:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "15.8.109.18436"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/13/2020",
+        "vulnerability_source": "Check Point Software Technologies Ltd.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-9100",
+        "cwe_id": "CWE-426",
+        "description": "Earlier than HiSuite 10.1.0.500 have a DLL hijacking vulnerability. This vulnerability exists due to some DLL file is loaded by HiSuite improperly. And it allows an attacker to load this DLL file of the attacker's choosing.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.4 MEDIUM",
+        "hyperlinks": [
+            "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200701-01-dllhijacking-en"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:huawei:hisuite:*:*:*:*:*:*:*:* versions up to (excluding) 10.1.0.500",
+            "*cpe:2.3:a:huawei:hisuite:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "10.1.0.500"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/10/2020",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2019-14900",
+        "cwe_id": "CWE-89",
+        "description": "A flaw was found in Hibernate ORM in versions before 5.3.18, 5.4.18 and 5.5.0.Beta1. A SQL injection in the implementation of the JPA Criteria API can permit unsanitized literals when a literal is used in the SELECT or GROUP BY parts of the query. This flaw could allow an attacker to access unauthorized information or possibly conduct further attacks.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1666499"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hibernate:hibernate_orm:*:*:*:*:*:*:*:* versions up to (excluding) 5.3.18\n     *cpe:2.3:a:hibernate:hibernate_orm:*:*:*:*:*:*:*:* versions from (including) 5.4.0 up to (excluding) 5.4.18",
+            "*cpe:2.3:a:hibernate:hibernate_orm:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:hibernate:hibernate_orm:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:redhat:decision_manager:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:jboss_data_grid:7.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:13.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:14.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/14/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-10760",
+        "cwe_id": "CWE-416",
+        "description": "A use-after-free flaw was found in all samba LDAP server versions before 4.10.17, before 4.11.11, before 4.12.4 used in a AC DC configuration. A Samba LDAP user could use this flaw to crash samba.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00030.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00054.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-09/msg00002.html",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1849509;",
+            "https://lists.debian.org/debian-lts-announce/2020/11/msg00041.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6YLNQ5GRXUKYRUAOFZ4DUBVN4SMTL6Q2/",
+            "https://security.gentoo.org/glsa/202007-15",
+            "https://usn.ubuntu.com/4409-1/",
+            "https://www.samba.org/samba/security/CVE-2020-10760.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:* versions from (including) 4.5.0 up to (excluding) 4.10.17\n     *cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:* versions from (including) 4.11.0 up to (excluding) 4.11.11\n     *cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:* versions from (including) 4.12.0 up to (excluding) 4.12.4",
+            "*cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:leap:15.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:19.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "11/23/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-1836",
+        "cwe_id": "CWE-200",
+        "description": "HUAWEI P30 with versions earlier than 10.1.0.160(C00E160R2P11) and HUAWEI P30 Pro with versions earlier than 10.1.0.160(C00E160R2P8) have an information disclosure vulnerability. Certain function's default configuration in the system seems insecure, an attacker should craft a WI-FI hotspot to launch the attack. Successful exploit could cause information disclosure.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "2.9 LOW",
+        "hyperlinks": [
+            "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200624-01-smartphone-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:p30:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:p30_pro:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/09/2020",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-1838",
+        "cwe_id": "CWE-287",
+        "description": "HUAWEI Mate 30 Pro with versions earlier than 10.1.0.150(C00E136R5P3) have is an improper authentication vulnerability. The device does not sufficiently validate certain credential of user's face, an attacker could craft the credential of the user, successful exploit could allow the attacker to pass the authentication with the crafted credential.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "1.9 LOW",
+        "hyperlinks": [
+            "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200701-03-smartphone-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:mate_30_pro:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/09/2020",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-1839",
+        "cwe_id": "CWE-362",
+        "description": "HUAWEI Mate 30 with versions earlier than 10.1.0.150(C00E136R5P3) have a race condition vulnerability. There is a timing window exists in which certain pointer members can be modified by another process that is operating concurrently, an attacker should trick the user into running a crafted application with high privilege, successful exploit could cause code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:H/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:H/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "6.3 MEDIUM",
+        "base_score_v2": "3.7 LOW",
+        "hyperlinks": [
+            "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200701-04-smartphone-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:mate_30:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/09/2020",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-9226",
+        "cwe_id": "CWE-347",
+        "description": "HUAWEI P30 with versions earlier than 10.1.0.135(C00E135R2P11) have an improper signature verification vulnerability. The system does not improper check signature of specific software package, an attacker may exploit this vulnerability to load a crafted software package to the device.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200701-02-smartphone-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:p30:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/09/2020",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-9261",
+        "cwe_id": "CWE-843",
+        "description": "HUAWEI Mate 30 with versions earlier than 10.1.0.150(C00E136R5P3) have a type confusion vulnerability. The system does not properly check and transform the type of certain variable, the attacker tricks the user into installing then running a crafted application, successful exploit could cause code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200701-05-smartphone-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:mate_30:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/09/2020",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-9262",
+        "cwe_id": "CWE-416",
+        "description": "HUAWEI Mate 30 with versions earlier than 10.1.0.150(C00E136R5P3) have a use after free vulnerability. There is a condition exists that the system would reference memory after it has been freed, the attacker should trick the user into running a crafted application with high privilege, successful exploit could cause code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200701-06-smartphone-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:mate_30:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/09/2020",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-9395",
+        "cwe_id": "CWE-120",
+        "description": "An issue was discovered on Realtek RTL8195AM, RTL8711AM, RTL8711AF, and RTL8710AF devices before 2.0.6. A stack-based buffer overflow exists in the client code that takes care of WPA2's 4-way-handshake via a malformed EAPOL-Key packet with a long keydata buffer.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:A/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:M/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:M/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.0 HIGH",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/ambiot/amb1_arduino/commit/dcea55cf9775a0166805b3db845b237ecd5e74ea#diff-d06e7a87f34cc464a56799a419033014",
+            "https://github.com/ambiot/amb1_sdk/commit/bc5173d5d4faf6829074b0f1e1b242c12b7777a3#diff-700c216fb376666eaeda0c892e8bdc09",
+            "https://www.amebaiot.com/en/security_bulletin/"
+        ],
+        "cpe": [
+            "cpe:2.3:h:realtek:rtl8195am:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:realtek:rtl8710af:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:realtek:rtl8711af:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:realtek:rtl8711am:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/17/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15096",
+        "cwe_id": "CWE-501",
+        "description": "In Electron before versions 6.1.1, 7.2.4, 8.2.4, and 9.0.0-beta21, there is a context isolation bypass, meaning that code running in the main world context in the renderer can reach into the isolated Electron context and perform privileged actions. Apps using \"contextIsolation\" are affected. There are no app-side workarounds, you must update your Electron version to be protected. This is fixed in versions 6.1.1, 7.2.4, 8.2.4, and 9.0.0-beta21.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-15096"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/electron/electron/security/advisories/GHSA-6vrv-94jv-crrg",
+            "https://www.electronjs.org/releases/stable?page=3#release-notes-for-v824"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:electronjs:electron:*:*:*:*:*:*:*:* versions up to (excluding) 6.1.1\n     *cpe:2.3:a:electronjs:electron:*:*:*:*:*:*:*:* versions from (including) 7.0.0 up to (excluding) 7.2.4\n     *cpe:2.3:a:electronjs:electron:*:*:*:*:*:*:*:* versions from (including) 8.0.0 up to (excluding) 8.2.4\n     *cpe:2.3:a:electronjs:electron:9.0.0:-:*:*:*:*:*:*\n     *cpe:2.3:a:electronjs:electron:9.0.0:beta1:*:*:*:*:*:*\n     *cpe:2.3:a:electronjs:electron:9.0.0:beta10:*:*:*:*:*:*\n     *cpe:2.3:a:ele",
+            "*cpe:2.3:a:electronjs:electron:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:electronjs:electron:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:electronjs:electron:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:electronjs:electron:9.0.0:-:*:*:*:*:*:*",
+            "*cpe:2.3:a:electronjs:electron:9.0.0:beta1:*:*:*:*:*:*",
+            "*cpe:2.3:a:electronjs:electron:9.0.0:beta10:*:*:*:*:*:*",
+            "*cpe:2.3:a:ele"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/10/2020",
+        "vulnerability_source": "GitHub, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-4075",
+        "cwe_id": "CWE-552",
+        "description": "In Electron before versions 7.2.4, 8.2.4, and 9.0.0-beta21, arbitrary local file read is possible by defining unsafe window options on a child window opened via window.open. As a workaround, ensure you are calling `event.preventDefault()` on all new-window events where the `url` or `options` is not something you expect. This is fixed in versions 9.0.0-beta.21, 8.2.4 and 7.2.4.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://github.com/electron/electron/security/advisories/GHSA-f9mq-jph6-9mhm",
+            "https://www.electronjs.org/releases/stable?page=3#release-notes-for-v824"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:electronjs:electron:*:*:*:*:*:*:*:* versions from (including) 7.0.0 up to (excluding) 7.2.4\n     *cpe:2.3:a:electronjs:electron:*:*:*:*:*:*:*:* versions from (including) 8.0.0 up to (excluding) 8.2.4\n     *cpe:2.3:a:electronjs:electron:9.0.0:-:*:*:*:*:*:*\n     *cpe:2.3:a:electronjs:electron:9.0.0:beta1:*:*:*:*:*:*\n     *cpe:2.3:a:electronjs:electron:9.0.0:beta10:*:*:*:*:*:*\n     *cpe:2.3:a:electronjs:electron:9.0.0:beta11:*:*:*:*:*:*\n     *cpe:2.3:a:electronjs:electron:9.0.0:b",
+            "*cpe:2.3:a:electronjs:electron:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:electronjs:electron:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:electronjs:electron:9.0.0:-:*:*:*:*:*:*",
+            "*cpe:2.3:a:electronjs:electron:9.0.0:beta1:*:*:*:*:*:*",
+            "*cpe:2.3:a:electronjs:electron:9.0.0:beta10:*:*:*:*:*:*",
+            "*cpe:2.3:a:electronjs:electron:9.0.0:beta11:*:*:*:*:*:*",
+            "*cpe:2.3:a:electronjs:electron:9.0.0:b"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/13/2020",
+        "vulnerability_source": "GitHub, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-4076",
+        "cwe_id": "CWE-501",
+        "description": "In Electron before versions 7.2.4, 8.2.4, and 9.0.0-beta21, there is a context isolation bypass. Code running in the main world context in the renderer can reach into the isolated Electron context and perform privileged actions. Apps using contextIsolation are affected. This is fixed in versions 9.0.0-beta.21, 8.2.4 and 7.2.4.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "9.0 CRITICAL",
+        "base_score_v2": "3.6 LOW",
+        "hyperlinks": [
+            "https://github.com/electron/electron/security/advisories/GHSA-m93v-9qjc-3g79",
+            "https://www.electronjs.org/releases/stable?page=3#release-notes-for-v824"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:electronjs:electron:*:*:*:*:*:*:*:* versions from (including) 7.0.0 up to (excluding) 7.2.4\n     *cpe:2.3:a:electronjs:electron:*:*:*:*:*:*:*:* versions from (including) 8.0.0 up to (excluding) 8.2.4\n     *cpe:2.3:a:electronjs:electron:9.0.0:-:*:*:*:*:*:*\n     *cpe:2.3:a:electronjs:electron:9.0.0:beta1:*:*:*:*:*:*\n     *cpe:2.3:a:electronjs:electron:9.0.0:beta10:*:*:*:*:*:*\n     *cpe:2.3:a:electronjs:electron:9.0.0:beta11:*:*:*:*:*:*\n     *cpe:2.3:a:electronjs:electron:9.0.0:b",
+            "*cpe:2.3:a:electronjs:electron:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:electronjs:electron:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:electronjs:electron:9.0.0:-:*:*:*:*:*:*",
+            "*cpe:2.3:a:electronjs:electron:9.0.0:beta1:*:*:*:*:*:*",
+            "*cpe:2.3:a:electronjs:electron:9.0.0:beta10:*:*:*:*:*:*",
+            "*cpe:2.3:a:electronjs:electron:9.0.0:beta11:*:*:*:*:*:*",
+            "*cpe:2.3:a:electronjs:electron:9.0.0:b"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/13/2020",
+        "vulnerability_source": "GitHub, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-4077",
+        "cwe_id": "CWE-501",
+        "description": "In Electron before versions 7.2.4, 8.2.4, and 9.0.0-beta21, there is a context isolation bypass. Code running in the main world context in the renderer can reach into the isolated Electron context and perform privileged actions. Apps using both `contextIsolation` and `contextBridge` are affected. This is fixed in versions 9.0.0-beta.21, 8.2.4 and 7.2.4.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.9 CRITICAL",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/electron/electron/security/advisories/GHSA-h9jc-284h-533g",
+            "https://www.electronjs.org/releases/stable?page=3#release-notes-for-v824"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:electronjs:electron:*:*:*:*:*:*:*:* versions from (including) 7.0.0 up to (excluding) 7.2.4\n     *cpe:2.3:a:electronjs:electron:*:*:*:*:*:*:*:* versions from (including) 8.0.0 up to (excluding) 8.2.4\n     *cpe:2.3:a:electronjs:electron:9.0.0:-:*:*:*:*:*:*\n     *cpe:2.3:a:electronjs:electron:9.0.0:beta1:*:*:*:*:*:*\n     *cpe:2.3:a:electronjs:electron:9.0.0:beta10:*:*:*:*:*:*\n     *cpe:2.3:a:electronjs:electron:9.0.0:beta11:*:*:*:*:*:*\n     *cpe:2.3:a:electronjs:electron:9.0.0:b",
+            "*cpe:2.3:a:electronjs:electron:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:electronjs:electron:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:electronjs:electron:9.0.0:-:*:*:*:*:*:*",
+            "*cpe:2.3:a:electronjs:electron:9.0.0:beta1:*:*:*:*:*:*",
+            "*cpe:2.3:a:electronjs:electron:9.0.0:beta10:*:*:*:*:*:*",
+            "*cpe:2.3:a:electronjs:electron:9.0.0:beta11:*:*:*:*:*:*",
+            "*cpe:2.3:a:electronjs:electron:9.0.0:b"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "07/13/2020",
+        "vulnerability_source": "GitHub, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15505",
+        "cwe_id": null,
+        "description": "A remote code execution vulnerability in MobileIron Core & Connector versions 10.3.0.3 and earlier, 10.4.0.0, 10.4.0.1, 10.4.0.2, 10.4.0.3, 10.5.1.0, 10.5.2.0 and 10.6.0.0; and Sentry versions 9.7.2 and earlier, and 9.8.0; and Monitor and Reporting Database (RDB) version 2.0.0.1 and earlier that allows remote attackers to execute arbitrary code via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://perchsecurity.com/perch-news/cve-spotlight-mobileiron-rce-cve-2020-15505/",
+            "https://www.mobileiron.com/en/blog/mobileiron-security-updates-available"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mobileiron:cloud:*:*:*:*:*:*:*:* versions up to (including) 10.6\n     *cpe:2.3:a:mobileiron:core:*:*:*:*:*:*:*:* versions up to (including) 10.6\n     *cpe:2.3:a:mobileiron:enterprise_connector:*:*:*:*:*:*:*:* versions up to (including) 10.6\n     *cpe:2.3:a:mobileiron:reporting_database:*:*:*:*:*:*:*:* versions up to (including) 10.6\n     *cpe:2.3:a:mobileiron:sentry:*:*:*:*:*:*:*:* versions up to (including) 9.8",
+            "*cpe:2.3:a:mobileiron:cloud:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:mobileiron:core:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:mobileiron:enterprise_connector:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:mobileiron:reporting_database:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:mobileiron:sentry:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "11/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15506",
+        "cwe_id": "CWE-287",
+        "description": "An authentication bypass vulnerability in MobileIron Core & Connector versions 10.3.0.3 and earlier, 10.4.0.0, 10.4.0.1, 10.4.0.2, 10.4.0.3, 10.5.1.0, 10.5.2.0 and 10.6.0.0 that allows remote attackers to bypass authentication mechanisms via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://www.mobileiron.com/en/blog/mobileiron-security-updates-available"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mobileiron:cloud:*:*:*:*:*:*:*:* versions up to (including) 10.6\n     *cpe:2.3:a:mobileiron:core:*:*:*:*:*:*:*:* versions up to (including) 10.6\n     *cpe:2.3:a:mobileiron:enterprise_connector:*:*:*:*:*:*:*:* versions up to (including) 10.6\n     *cpe:2.3:a:mobileiron:reporting_database:*:*:*:*:*:*:*:* versions up to (including) 10.6\n     *cpe:2.3:a:mobileiron:sentry:*:*:*:*:*:*:*:* versions up to (including) 10.6",
+            "*cpe:2.3:a:mobileiron:cloud:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:mobileiron:core:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:mobileiron:enterprise_connector:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:mobileiron:reporting_database:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:mobileiron:sentry:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "09/18/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15507",
+        "cwe_id": "CWE-200",
+        "description": "An arbitrary file reading vulnerability in MobileIron Core versions 10.3.0.3 and earlier, 10.4.0.0, 10.4.0.1, 10.4.0.2, 10.4.0.3, 10.5.1.0, 10.5.2.0 and 10.6.0.0 that allows remote attackers to read files on the system via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://www.mobileiron.com/en/blog/mobileiron-security-updates-available"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mobileiron:cloud:*:*:*:*:*:*:*:* versions up to (including) 10.6\n     *cpe:2.3:a:mobileiron:core:*:*:*:*:*:*:*:* versions up to (including) 10.6\n     *cpe:2.3:a:mobileiron:enterprise_connector:*:*:*:*:*:*:*:* versions up to (including) 10.6\n     *cpe:2.3:a:mobileiron:reporting_database:*:*:*:*:*:*:*:* versions up to (including) 10.6\n     *cpe:2.3:a:mobileiron:sentry:*:*:*:*:*:*:*:* versions up to (including) 10.6",
+            "*cpe:2.3:a:mobileiron:cloud:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:mobileiron:core:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:mobileiron:enterprise_connector:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:mobileiron:reporting_database:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:mobileiron:sentry:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/06/2020",
+        "modified_date": "09/18/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-5595",
+        "cwe_id": "CWE-120",
+        "description": "TCP/IP function included in the firmware of Mitsubishi Electric GOT2000 series (CoreOS with version -Y and earlier installed in GT27 Model, GT25 Model, and GT23 Model) contains a buffer overflow vulnerability, which may allow a remote attacker to stop the network functions of the products or execute a malicious program via a specially crafted packet.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://jvn.jp/en/vu/JVNVU95413676/index.html",
+            "https://www.mitsubishielectric.com/en/psirt/vulnerability/pdf/2020-005_en.pdf"
+        ],
+        "cpe": [
+            "cpe:2.3:h:mitsubishielectric:got2000_gt23:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:mitsubishielectric:got2000_gt25:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:mitsubishielectric:got2000_gt27:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/14/2020",
+        "vulnerability_source": "JPCERT/CC",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-5596",
+        "cwe_id": "CWE-384",
+        "description": "TCP/IP function included in the firmware of Mitsubishi Electric GOT2000 series (CoreOS with version -Y and earlier installed in GT27 Model, GT25 Model, and GT23 Model) does not properly manage sessions, which may allow a remote attacker to stop the network functions of the products or execute a malicious program via a specially crafted packet.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://jvn.jp/en/vu/JVNVU95413676/index.html",
+            "https://www.mitsubishielectric.com/en/psirt/vulnerability/pdf/2020-005_en.pdf"
+        ],
+        "cpe": [
+            "cpe:2.3:h:mitsubishielectric:got2000_gt23:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:mitsubishielectric:got2000_gt25:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:mitsubishielectric:got2000_gt27:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/14/2020",
+        "vulnerability_source": "JPCERT/CC",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-5597",
+        "cwe_id": "CWE-476",
+        "description": "TCP/IP function included in the firmware of Mitsubishi Electric GOT2000 series (CoreOS with version -Y and earlier installed in GT27 Model, GT25 Model, and GT23 Model) contains a null pointer dereference vulnerability, which may allow a remote attacker to stop the network functions of the products or execute a malicious program via a specially crafted packet.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://jvn.jp/en/vu/JVNVU95413676/index.html",
+            "https://www.mitsubishielectric.com/en/psirt/vulnerability/pdf/2020-005_en.pdf"
+        ],
+        "cpe": [
+            "cpe:2.3:h:mitsubishielectric:got2000_gt23:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:mitsubishielectric:got2000_gt25:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:mitsubishielectric:got2000_gt27:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/14/2020",
+        "vulnerability_source": "JPCERT/CC",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-5598",
+        "cwe_id": "CWE-863",
+        "description": "TCP/IP function included in the firmware of Mitsubishi Electric GOT2000 series (CoreOS with version -Y and earlier installed in GT27 Model, GT25 Model, and GT23 Model) contains an improper access control vulnerability, which may which may allow a remote attacker tobypass access restriction and stop the network functions of the products or execute a malicious program via a specially crafted packet.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://jvn.jp/en/vu/JVNVU95413676/index.html",
+            "https://www.mitsubishielectric.com/en/psirt/vulnerability/pdf/2020-005_en.pdf"
+        ],
+        "cpe": [
+            "cpe:2.3:h:mitsubishielectric:got2000_gt23:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:mitsubishielectric:got2000_gt25:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:mitsubishielectric:got2000_gt27:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/14/2020",
+        "vulnerability_source": "JPCERT/CC",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-5599",
+        "cwe_id": "CWE-74",
+        "description": "TCP/IP function included in the firmware of Mitsubishi Electric GOT2000 series (CoreOS with version -Y and earlier installed in GT27 Model, GT25 Model, and GT23 Model) contains an improper neutralization of argument delimiters in a command ('Argument Injection') vulnerability, which may allow a remote attacker to stop the network functions of the products or execute a malicious program via a specially crafted packet.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://jvn.jp/en/vu/JVNVU95413676/index.html",
+            "https://www.mitsubishielectric.com/en/psirt/vulnerability/pdf/2020-005_en.pdf"
+        ],
+        "cpe": [
+            "cpe:2.3:h:mitsubishielectric:got2000_gt23:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:mitsubishielectric:got2000_gt25:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:mitsubishielectric:got2000_gt27:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/14/2020",
+        "vulnerability_source": "JPCERT/CC",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-5600",
+        "cwe_id": "CWE-400",
+        "description": "TCP/IP function included in the firmware of Mitsubishi Electric GOT2000 series (CoreOS with version -Y and earlier installed in GT27 Model, GT25 Model, and GT23 Model) contains a resource management error vulnerability, which may allow a remote attacker to stop the network functions of the products or execute a malicious program via a specially crafted packet.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://jvn.jp/en/vu/JVNVU95413676/index.html",
+            "https://www.mitsubishielectric.com/en/psirt/vulnerability/pdf/2020-005_en.pdf"
+        ],
+        "cpe": [
+            "cpe:2.3:h:mitsubishielectric:got2000_gt23:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:mitsubishielectric:got2000_gt25:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:mitsubishielectric:got2000_gt27:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/14/2020",
+        "vulnerability_source": "JPCERT/CC",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15563",
+        "cwe_id": "CWE-20",
+        "description": "An issue was discovered in Xen through 4.13.x, allowing x86 HVM guest OS users to cause a hypervisor crash. An inverted conditional in x86 HVM guests' dirty video RAM tracking code allows such guests to make Xen de-reference a pointer guaranteed to point at unmapped space. A malicious or buggy HVM guest may cause the hypervisor to crash, resulting in Denial of Service (DoS) affecting the entire host. Xen versions from 4.8 onwards are affected. Xen versions 4.7 and earlier are not affected. Only x86 systems are affected. Arm systems are not affected. Only x86 HVM guests using shadow paging can leverage the vulnerability. In addition, there needs to be an entity actively monitoring a guest's video frame buffer (typically for display purposes) in order for such a guest to be able to leverage the vulnerability. x86 PV guests, as well as x86 HVM guests using hardware assisted paging (HAP), cannot leverage the vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.7 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00024.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00031.html",
+            "http://www.openwall.com/lists/oss-security/2020/07/07/3",
+            "http://xenbits.xen.org/xsa/advisory-319.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MXESCOVI7AVRNC7HEAMFM7PMEO6D3AUH/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VB3QJJZV23Z2IDYEMIHELWYSQBUEW6JP/",
+            "https://security.gentoo.org/glsa/202007-02",
+            "https://www.debian.org/security/2020/dsa-4723"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:*:*:*:*:*:*:x86:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/26/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15564",
+        "cwe_id": "CWE-20",
+        "description": "An issue was discovered in Xen through 4.13.x, allowing Arm guest OS users to cause a hypervisor crash because of a missing alignment check in VCPUOP_register_vcpu_info. The hypercall VCPUOP_register_vcpu_info is used by a guest to register a shared region with the hypervisor. The region will be mapped into Xen address space so it can be directly accessed. On Arm, the region is accessed with instructions that require a specific alignment. Unfortunately, there is no check that the address provided by the guest will be correctly aligned. As a result, a malicious guest could cause a hypervisor crash by passing a misaligned address. A malicious guest administrator may cause a hypervisor crash, resulting in a Denial of Service (DoS). All Xen versions are vulnerable. Only Arm systems are vulnerable. x86 systems are not affected.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2020/07/07/5",
+            "http://xenbits.xen.org/xsa/advisory-327.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MXESCOVI7AVRNC7HEAMFM7PMEO6D3AUH/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VB3QJJZV23Z2IDYEMIHELWYSQBUEW6JP/",
+            "https://security.gentoo.org/glsa/202007-02",
+            "https://www.debian.org/security/2020/dsa-4723"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:*:*:*:*:*:*:arm:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/26/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15565",
+        "cwe_id": "CWE-400",
+        "description": "An issue was discovered in Xen through 4.13.x, allowing x86 Intel HVM guest OS users to cause a host OS denial of service or possibly gain privileges because of insufficient cache write-back under VT-d. When page tables are shared between IOMMU and CPU, changes to them require flushing of both TLBs. Furthermore, IOMMUs may be non-coherent, and hence prior to flushing IOMMU TLBs, a CPU cache also needs writing back to memory after changes were made. Such writing back of cached data was missing in particular when splitting large page mappings into smaller granularity ones. A malicious guest may be able to retain read/write DMA access to frames returned to Xen's free pool, and later reused for another purpose. Host crashes (leading to a Denial of Service) and privilege escalation cannot be ruled out. Xen versions from at least 3.2 onwards are affected. Only x86 Intel systems are affected. x86 AMD as well as Arm systems are not affected. Only x86 HVM guests using hardware assisted paging (HAP), having a passed through PCI device assigned, and having page table sharing enabled can leverage the vulnerability. Note that page table sharing will be enabled (by default) only if Xen considers IOMMU and CPU large page size support compatible.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.1 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00024.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00031.html",
+            "http://www.openwall.com/lists/oss-security/2020/07/07/4",
+            "http://xenbits.xen.org/xsa/advisory-321.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MXESCOVI7AVRNC7HEAMFM7PMEO6D3AUH/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VB3QJJZV23Z2IDYEMIHELWYSQBUEW6JP/",
+            "https://security.gentoo.org/glsa/202007-02",
+            "https://www.debian.org/security/2020/dsa-4723"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:*:*:*:*:*:*:x86:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/26/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15566",
+        "cwe_id": "CWE-755",
+        "description": "An issue was discovered in Xen through 4.13.x, allowing guest OS users to cause a host OS crash because of incorrect error handling in event-channel port allocation. The allocation of an event-channel port may fail for multiple reasons: (1) port is already in use, (2) the memory allocation failed, or (3) the port we try to allocate is higher than what is supported by the ABI (e.g., 2L or FIFO) used by the guest or the limit set by an administrator (max_event_channels in xl cfg). Due to the missing error checks, only (1) will be considered an error. All the other cases will provide a valid port and will result in a crash when trying to access the event channel. When the administrator configured a guest to allow more than 1023 event channels, that guest may be able to crash the host. When Xen is out-of-memory, allocation of new event channels will result in crashing the host rather than reporting an error. Xen versions 4.10 and later are affected. All architectures are affected. The default configuration, when guests are created with xl/libxl, is not vulnerable, because of the default event-channel limit.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.7 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00024.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00031.html",
+            "http://www.openwall.com/lists/oss-security/2020/07/07/2",
+            "http://xenbits.xen.org/xsa/advisory-317.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MXESCOVI7AVRNC7HEAMFM7PMEO6D3AUH/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VB3QJJZV23Z2IDYEMIHELWYSQBUEW6JP/",
+            "https://security.gentoo.org/glsa/202007-02",
+            "https://www.debian.org/security/2020/dsa-4723"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/26/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15567",
+        "cwe_id": "CWE-362",
+        "description": "An issue was discovered in Xen through 4.13.x, allowing Intel guest OS users to gain privileges or cause a denial of service because of non-atomic modification of a live EPT PTE. When mapping guest EPT (nested paging) tables, Xen would in some circumstances use a series of non-atomic bitfield writes. Depending on the compiler version and optimisation flags, Xen might expose a dangerous partially written PTE to the hardware, which an attacker might be able to race to exploit. A guest administrator or perhaps even an unprivileged guest user might be able to cause denial of service, data corruption, or privilege escalation. Only systems using Intel CPUs are vulnerable. Systems using AMD CPUs, and Arm systems, are not vulnerable. Only systems using nested paging (hap, aka nested paging, aka in this case Intel EPT) are vulnerable. Only HVM and PVH guests can exploit the vulnerability. The presence and scope of the vulnerability depends on the precise optimisations performed by the compiler used to build Xen. If the compiler generates (a) a single 64-bit write, or (b) a series of read-modify-write operations in the same order as the source code, the hypervisor is not vulnerable. For example, in one test build using GCC 8.3 with normal settings, the compiler generated multiple (unlocked) read-modify-write operations in source-code order, which did not constitute a vulnerability. We have not been able to survey compilers; consequently we cannot say which compiler(s) might produce vulnerable code (with which code-generation options). The source code clearly violates the C rules, and thus should be considered vulnerable.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.4 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00024.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00031.html",
+            "http://www.openwall.com/lists/oss-security/2020/07/07/6",
+            "http://xenbits.xen.org/xsa/advisory-328.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MXESCOVI7AVRNC7HEAMFM7PMEO6D3AUH/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VB3QJJZV23Z2IDYEMIHELWYSQBUEW6JP/",
+            "https://security.gentoo.org/glsa/202007-02",
+            "https://www.debian.org/security/2020/dsa-4723"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/26/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-10730",
+        "cwe_id": "CWE-476",
+        "description": "A NULL pointer dereference, or possible use-after-free flaw was found in Samba AD LDAP server in versions before 4.10.17, before 4.11.11 and before 4.12.4. Although some versions of Samba shipped with Red Hat Enterprise Linux do not support Samba in AD mode, the affected code is shipped with the libldb package. This flaw allows an authenticated user to possibly trigger a use-after-free or NULL pointer dereference. The highest threat from this vulnerability is to system availability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00030.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00054.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-08/msg00000.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-09/msg00002.html",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1849489;",
+            "https://lists.debian.org/debian-lts-announce/2020/11/msg00041.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6YLNQ5GRXUKYRUAOFZ4DUBVN4SMTL6Q2/",
+            "https://security.gentoo.org/glsa/202007-15",
+            "https://www.samba.org/samba/security/CVE-2020-10730.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:storage:3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:leap:15.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:storage:3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "11/23/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-10745",
+        "cwe_id": "CWE-400",
+        "description": "A flaw was found in all Samba versions before 4.10.17, before 4.11.11 and before 4.12.4 in the way it processed NetBios over TCP/IP. This flaw allows a remote attacker could to cause the Samba server to consume excessive CPU use, resulting in a denial of service. This highest threat from this vulnerability is to system availability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00030.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00054.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-09/msg00002.html",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1849491;",
+            "https://lists.debian.org/debian-lts-announce/2020/11/msg00041.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6YLNQ5GRXUKYRUAOFZ4DUBVN4SMTL6Q2/",
+            "https://security.gentoo.org/glsa/202007-15",
+            "https://www.samba.org/samba/security/CVE-2020-10745.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:* versions from (including) 4.0.0 up to (excluding) 4.10.17\n     *cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:* versions from (including) 4.11.0 up to (excluding) 4.11.11\n     *cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:* versions from (including) 4.12.0 up to (excluding) 4.12.4",
+            "*cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:leap:15.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "11/23/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15367",
+        "cwe_id": "CWE-307",
+        "description": "Venki Supravizio BPM 10.1.2 does not limit the number of authentication attempts. An unauthenticated user may exploit this vulnerability to launch a brute-force authentication attack against the Login page.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/inflixim4be/CVE-2020-15367",
+            "https://www.venki.com.br/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:venki:supravizio_bpm:10.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:venki:supravizio_bpm:10.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/15/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15392",
+        "cwe_id": "CWE-200",
+        "description": "A user enumeration vulnerability flaw was found in Venki Supravizio BPM 10.1.2. This issue occurs during password recovery, where a difference in error messages could allow an attacker to determine if a username is valid or not, enabling a brute-force attack with valid usernames.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/inflixim4be/CVE-2020-15392",
+            "https://www.venki.com.br/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:venki:supravizio_bpm:10.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:venki:supravizio_bpm:10.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/15/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15509",
+        "cwe_id": "CWE-311",
+        "description": "Nordic Semiconductor Android BLE Library through 2.2.1 and DFU Library through 1.10.4 for Android (as used by nRF Connect and other applications) can engage in unencrypted communication while showing the user that the communication is purportedly encrypted. The problem is in bond creation (e.g., internalCreateBond in BleManagerHandler).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "3.3 LOW",
+        "hyperlinks": [
+            "https://github.com/NordicSemiconductor/Android-BLE-Library/commits/master",
+            "https://github.com/NordicSemiconductor/Android-DFU-Library/commits/release",
+            "https://secretdiary.ninja/index.php/2020/07/03/norec-attack-stripping-ble-encryption-from-nordicsemis-android-library-cve-2020-15509/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nordicsemi:android_ble_library:*:*:*:*:*:*:*:* versions up to (including) 2.2.1\n     *cpe:2.3:a:nordicsemi:dfu_library:*:*:*:*:*:*:*:* versions up to (including) 1.10.4",
+            "*cpe:2.3:a:nordicsemi:android_ble_library:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:nordicsemi:dfu_library:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/15/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15513",
+        "cwe_id": "CWE-863",
+        "description": "The typo3_forum extension before 1.2.1 for TYPO3 has Incorrect Access Control.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://typo3.org/help/security-advisories",
+            "https://typo3.org/security/advisory/typo3-ext-sa-2020-010"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mittwald:typo3_forum:*:*:*:*:*:typo3:*:* versions up to (excluding) 1.2.1",
+            "*cpe:2.3:a:mittwald:typo3_forum:*:*:*:*:*:typo3:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/14/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15514",
+        "cwe_id": "CWE-79",
+        "description": "The jh_captcha extension through 2.1.3, and 3.x through 3.0.2, for TYPO3 allows XSS.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://typo3.org/help/security-advisories",
+            "https://typo3.org/security/advisory/typo3-ext-sa-2020-012"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jh_captcha_project:jh_captcha:*:*:*:*:*:typo3:*:* versions up to (including) 2.1.3\n     *cpe:2.3:a:jh_captcha_project:jh_captcha:*:*:*:*:*:typo3:*:* versions from (including) 3.0.0 up to (including) 3.0.2",
+            "*cpe:2.3:a:jh_captcha_project:jh_captcha:*:*:*:*:*:typo3:*:*",
+            "(including)",
+            "*cpe:2.3:a:jh_captcha_project:jh_captcha:*:*:*:*:*:typo3:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/13/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15516",
+        "cwe_id": "CWE-352",
+        "description": "The mm_forum extension through 1.9.5 for TYPO3 allows XSS that can be exploited via CSRF.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "https://typo3.org/help/security-advisories",
+            "https://typo3.org/security/advisory/typo3-ext-sa-2020-013"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mm_forum_project:mm_forum:*:*:*:*:*:typo3:*:* versions up to (including) 1.9.5",
+            "*cpe:2.3:a:mm_forum_project:mm_forum:*:*:*:*:*:typo3:*:*",
+            "(including)"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/14/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15517",
+        "cwe_id": "CWE-79",
+        "description": "The ke_search (aka Faceted Search) extension through 2.8.2, and 3.x through 3.1.3, for TYPO3 allows XSS.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://typo3.org/help/security-advisories",
+            "https://typo3.org/security/advisory/typo3-ext-sa-2020-009"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:faceted_search_project:faceted_search:*:*:*:*:*:typo3:*:* versions up to (including) 2.8.2\n     *cpe:2.3:a:faceted_search_project:faceted_search:*:*:*:*:*:typo3:*:* versions from (including) 3.0.0 up to (including) 3.1.3",
+            "*cpe:2.3:a:faceted_search_project:faceted_search:*:*:*:*:*:typo3:*:*",
+            "(including)",
+            "*cpe:2.3:a:faceted_search_project:faceted_search:*:*:*:*:*:typo3:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/13/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15525",
+        "cwe_id": "CWE-269",
+        "description": "GitLab EE 11.3 through 13.1.2 has Incorrect Access Control because of the Maven package upload endpoint.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://about.gitlab.com/releases/2020/07/06/critical-security-release-gitlab-13-1-3-released/",
+            "https://about.gitlab.com/releases/categories/releases/",
+            "https://gitlab.com/gitlab-org/gitlab/-/issues/225259"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 11.3.0 up to (including) 13.1.2",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/15/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15573",
+        "cwe_id": "CWE-79",
+        "description": "SolarWinds Serv-U File Server before 15.2.1 has a \"Cross-script vulnerability,\" aka Case Numbers 00041778 and 00306421.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://documentation.solarwinds.com/en/success_center/servu/Content/Release_Notes/Servu_15-2-1_release_notes.htm"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:solarwinds:serv-u:*:*:*:*:*:*:*:* versions up to (excluding) 15.2.1",
+            "*cpe:2.3:a:solarwinds:serv-u:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/13/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15574",
+        "cwe_id": "CWE-311",
+        "description": "SolarWinds Serv-U File Server before 15.2.1 mishandles the Same-Site cookie attribute, aka Case Number 00331893.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://documentation.solarwinds.com/en/success_center/servu/Content/Release_Notes/Servu_15-2-1_release_notes.htm"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:solarwinds:serv-u:*:*:*:*:*:*:*:* versions up to (excluding) 15.2.1",
+            "*cpe:2.3:a:solarwinds:serv-u:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/15/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15575",
+        "cwe_id": "CWE-79",
+        "description": "SolarWinds Serv-U File Server before 15.2.1 allows XSS as demonstrated by Tenable Scan, aka Case Number 00484194.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://documentation.solarwinds.com/en/success_center/servu/Content/Release_Notes/Servu_15-2-1_release_notes.htm"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:solarwinds:serv-u:*:*:*:*:*:*:*:* versions up to (excluding) 15.2.1",
+            "*cpe:2.3:a:solarwinds:serv-u:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/13/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15576",
+        "cwe_id": "CWE-200",
+        "description": "SolarWinds Serv-U File Server before 15.2.1 allows information disclosure via an HTTP response.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://documentation.solarwinds.com/en/success_center/servu/Content/Release_Notes/Servu_15-2-1_release_notes.htm"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:solarwinds:serv-u:*:*:*:*:*:*:*:* versions up to (excluding) 15.2.1",
+            "*cpe:2.3:a:solarwinds:serv-u:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/13/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15577",
+        "cwe_id": null,
+        "description": "An issue was discovered on Samsung mobile devices with P(9.0) and Q(10.0) software. Cameralyzer allows attackers to write files to the SD card. The Samsung ID is SVE-2020-16830 (July 2020).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://security.samsungmobile.com/securityUpdate.smsb"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15578",
+        "cwe_id": "CWE-276",
+        "description": "An issue was discovered on Samsung mobile devices with O(8.x) software. FactoryCamera does not properly restrict runtime permissions. The Samsung ID is SVE-2020-17270 (July 2020).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://security.samsungmobile.com/securityUpdate.smsb"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15579",
+        "cwe_id": null,
+        "description": "An issue was discovered on Samsung mobile devices with O(8.x), P(9.0), and Q(10.0) software. Attackers can bypass Factory Reset Protection (FRP) via the KNOX API. The Samsung ID is SVE-2020-17318 (July 2020).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://security.samsungmobile.com/securityUpdate.smsb"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15580",
+        "cwe_id": null,
+        "description": "An issue was discovered on Samsung mobile devices with O(8.x), P(9.0), and Q(10.0) software. Attackers can bypass Factory Reset Protection (FRP) by enrolling a new lock password. The Samsung ID is SVE-2020-17328 (July 2020).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://security.samsungmobile.com/securityUpdate.smsb"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15581",
+        "cwe_id": "CWE-200",
+        "description": "An issue was discovered on Samsung mobile devices with O(8.x), P(9.0), and Q(10.0) software. The kernel logging feature allows attackers to discover virtual addresses via vectors involving shared memory. The Samsung ID is SVE-2020-17605 (July 2020).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://security.samsungmobile.com/securityUpdate.smsb"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15582",
+        "cwe_id": "CWE-120",
+        "description": "An issue was discovered on Samsung mobile devices with P(9.0) and Q(10.0) (Exynos 7885 chipsets) software. The Bluetooth Low Energy (BLE) component has a buffer overflow with a resultant deadlock or crash. The Samsung ID is SVE-2020-16870 (July 2020).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://security.samsungmobile.com/securityUpdate.smsb"
+        ],
+        "cpe": [
+            "cpe:2.3:h:samsung:exynos_7885:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15583",
+        "cwe_id": "CWE-22",
+        "description": "An issue was discovered on Samsung mobile devices with O(8.x), P(9.0), and Q(10.0) software. StickerProvider allows directory traversal for access to system files. The Samsung ID is SVE-2020-17665 (July 2020).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://security.samsungmobile.com/securityUpdate.smsb"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15584",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered on Samsung mobile devices with Q(10.0) software. Attackers can trigger an out-of-bounds access and device reset via a 4K wallpaper image because ImageProcessHelper mishandles boundary checks. The Samsung ID is SVE-2020-18056 (July 2020).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "7.1 HIGH",
+        "hyperlinks": [
+            "https://security.samsungmobile.com/securityUpdate.smsb"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2019-4323",
+        "cwe_id": "CWE-1021",
+        "description": "\"HCL AppScan Enterprise advisory API documentation is susceptible to clickjacking, which could allow an attacker to embed the contents of untrusted web pages in a frame.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://support.hcltechsw.com/csm?id=kb_article&sysparm_article=KB0080572",
+            "https://support.hcltechsw.com/csm?id=kb_article&sysparm_article=KB0080572&sys_kb_id=3668a078dbb9101855f38d6d13961955"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hcltech:appscan:*:*:*:*:enterprise:*:*:* versions up to (including) 10.0.0",
+            "*cpe:2.3:a:hcltech:appscan:*:*:*:*:enterprise:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/15/2020",
+        "vulnerability_source": "psirt@hcl.com",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2019-4324",
+        "cwe_id": "CWE-79",
+        "description": "\"HCL AppScan Enterprise is susceptible to Cross-Site Scripting while importing a specially crafted test policy.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://support.hcltechsw.com/csm?id=kb_article&sys_id=cd5030b4dbbd101855f38d6d13961958",
+            "https://support.hcltechsw.com/csm?id=kb_article&sysparm_article=KB0080574"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hcltech:appscan:*:*:*:*:enterprise:*:*:* versions up to (including) 10.0.0",
+            "*cpe:2.3:a:hcltech:appscan:*:*:*:*:enterprise:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/15/2020",
+        "vulnerability_source": "psirt@hcl.com",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15036",
+        "cwe_id": "CWE-79",
+        "description": "NeDi 1.9C is vulnerable to cross-site scripting (XSS) attack. The application allows an attacker to execute arbitrary JavaScript code via the Topology-Linked.php dv parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://gist.github.com/sudoninja-noob/c1722c118abc7a562a9a0de726266a19",
+            "https://www.nedi.ch/download/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nedi:nedi:1.9c:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:nedi:nedi:1.9c:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15037",
+        "cwe_id": "CWE-79",
+        "description": "NeDi 1.9C is vulnerable to cross-site scripting (XSS) attack. The application allows an attacker to execute arbitrary JavaScript code via the Reports-Devices.php page st[] parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://gist.github.com/sudoninja-noob/c1722c118abc7a562a9a0de726266a19",
+            "https://www.nedi.ch/download/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nedi:nedi:1.9c:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:nedi:nedi:1.9c:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2019-19935",
+        "cwe_id": "CWE-79",
+        "description": "Froala Editor before 3.2.2 allows XSS.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/158300/Froala-WYSIWYG-HTML-Editor-3.1.1-Cross-Site-Scripting.html",
+            "https://github.com/froala/wysiwyg-editor/compare/v3.0.5...v3.0.6",
+            "https://snyk.io/vuln/npm:froala-editor"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:froala:froala_editor:*:*:*:*:*:*:*:* versions up to (excluding) 3.0.6",
+            "*cpe:2.3:a:froala:froala_editor:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "10/07/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-11882",
+        "cwe_id": "CWE-601",
+        "description": "The O2 Business application 1.2.0 for Android exposes the canvasm.myo2.SplashActivity activity to other applications. The purpose of this activity is to handle deeplinks that can be delivered either via links or by directly calling the activity. However, the deeplink format is not properly validated. This can be abused by an attacker to redirect a user to any page and deliver any content to the user.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/158302/Android-o2-Business-1.2.0-Open-Redirect.html",
+            "https://rcesecurity.com/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:telefonica:o2_business:1.2.0:*:*:*:*:android:*:*",
+            "*cpe:2.3:a:telefonica:o2_business:1.2.0:*:*:*:*:android:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/15/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15028",
+        "cwe_id": "CWE-79",
+        "description": "NeDi 1.9C is vulnerable to a cross-site scripting (XSS) attack. The application allows an attacker to execute arbitrary JavaScript code via the Topology-Map.php xo parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://gist.github.com/p4nk4jv/68ae8b773dbea6d8769295ba96d9f1e3",
+            "https://www.nedi.ch/download/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nedi:nedi:1.9c:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:nedi:nedi:1.9c:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15029",
+        "cwe_id": "CWE-79",
+        "description": "NeDi 1.9C is vulnerable to cross-site scripting (XSS) attack. The application allows an attacker to execute arbitrary JavaScript code via the Assets-Management.php sn parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://gist.github.com/p4nk4jv/68ae8b773dbea6d8769295ba96d9f1e3",
+            "https://www.nedi.ch/download/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nedi:nedi:1.9c:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:nedi:nedi:1.9c:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15030",
+        "cwe_id": "CWE-79",
+        "description": "NeDi 1.9C is vulnerable to cross-site scripting (XSS) attack. The application allows an attacker to execute arbitrary JavaScript code via the Topology-Routes.php rtr parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://gist.github.com/p4nk4jv/68ae8b773dbea6d8769295ba96d9f1e3",
+            "https://www.nedi.ch/download/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nedi:nedi:1.9c:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:nedi:nedi:1.9c:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15031",
+        "cwe_id": "CWE-79",
+        "description": "NeDi 1.9C is vulnerable to cross-site scripting (XSS) attack. The application allows an attacker to execute arbitrary JavaScript code via the Assets-Management.php chg parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://gist.github.com/p4nk4jv/68ae8b773dbea6d8769295ba96d9f1e3",
+            "https://www.nedi.ch/download/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nedi:nedi:1.9c:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:nedi:nedi:1.9c:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15032",
+        "cwe_id": "CWE-79",
+        "description": "NeDi 1.9C is vulnerable to cross-site scripting (XSS) attack. The application allows an attacker to execute arbitrary JavaScript code via the Monitoring-Incidents.php id parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://gist.github.com/p4nk4jv/68ae8b773dbea6d8769295ba96d9f1e3",
+            "https://www.nedi.ch/download/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nedi:nedi:1.9c:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:nedi:nedi:1.9c:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15033",
+        "cwe_id": "CWE-79",
+        "description": "NeDi 1.9C is vulnerable to cross-site scripting (XSS) attack. The application allows an attacker to execute arbitrary JavaScript code via the snmpget.php ip parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://gist.github.com/p4nk4jv/68ae8b773dbea6d8769295ba96d9f1e3",
+            "https://www.nedi.ch/download/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nedi:nedi:1.9c:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:nedi:nedi:1.9c:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15034",
+        "cwe_id": "CWE-79",
+        "description": "NeDi 1.9C is vulnerable to cross-site scripting (XSS) attack. The application allows an attacker to execute arbitrary JavaScript code via the Monitoring-Setup.php tet parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://gist.github.com/p4nk4jv/68ae8b773dbea6d8769295ba96d9f1e3",
+            "https://www.nedi.ch/download/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nedi:nedi:1.9c:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:nedi:nedi:1.9c:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15035",
+        "cwe_id": "CWE-79",
+        "description": "NeDi 1.9C is vulnerable to cross-site scripting (XSS) attack. The application allows an attacker to execute arbitrary JavaScript code via the Monitoring-Map.php hde parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://gist.github.com/sudoninja-noob/c1722c118abc7a562a9a0de726266a19",
+            "https://www.nedi.ch/download/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nedi:nedi:1.9c:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:nedi:nedi:1.9c:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15515",
+        "cwe_id": "CWE-74",
+        "description": "The turn extension through 0.3.2 for TYPO3 allows Remote Code Execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://typo3.org/help/security-advisories",
+            "https://typo3.org/security/advisory/typo3-ext-sa-2020-011"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:turn\\!_project:turn\\!:*:*:*:*:*:typo3:*:* versions up to (including) 0.3.2",
+            "*cpe:2.3:a:turn\\!_project:turn\\!:*:*:*:*:*:typo3:*:*",
+            "(including)"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/13/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15350",
+        "cwe_id": "CWE-120",
+        "description": "RIOT 2020.04 has a buffer overflow in the base64 decoder. The decoding function base64_decode() uses an output buffer estimation function to compute the required buffer capacity and validate against the provided buffer size. The base64_estimate_decode_size() function calculates the expected decoded size with an arithmetic round-off error and does not take into account possible padding bytes. Due to this underestimation, it may be possible to craft base64 input that causes a buffer overflow.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://drive.google.com/file/d/1jMCAi8uawV1-an5uCghIxT2TEdxCE1Lk/view?usp=sharing",
+            "https://github.com/RIOT-OS/RIOT/pull/14400"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:riot-os:riot:2020.04:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:riot-os:riot:2020.04:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/15/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2019-20896",
+        "cwe_id": "CWE-89",
+        "description": "WebChess 1.0 allows SQL injection via the messageFrom, gameID, opponent, messageID, or to parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://sourceforge.net/p/webchess/bugs/81/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:webchess_project:webchess:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:webchess_project:webchess:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "07/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15095",
+        "cwe_id": "CWE-532",
+        "description": "Versions of the npm CLI prior to 6.14.6 are vulnerable to an information exposure vulnerability through log files. The CLI supports URLs like \"<protocol>://[<user>[:<password>]@]<hostname>[:<port>][:][/]<path>\". The password value is not redacted and is printed to stdout and also to any generated log files.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-15095"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "1.9 LOW",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-10/msg00011.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-10/msg00015.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-10/msg00023.html",
+            "https://github.com/npm/cli/blob/66aab417f836a901f8afb265251f761bb0422463/CHANGELOG.md#6146-2020-07-07",
+            "https://github.com/npm/cli/commit/a9857b8f6869451ff058789c4631fadfde5bbcbc",
+            "https://github.com/npm/cli/security/advisories/GHSA-93f3-23rq-pjfp",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4OOYAMJVLLCLXDTHW3V5UXNULZBBK4O6/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:opensuse:leap:15.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cli_project:cli:*:*:*:*:*:node.js:*:* versions up to (excluding) 6.14.6",
+            "*cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:leap:15.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cli_project:cli:*:*:*:*:*:node.js:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/07/2020",
+        "modified_date": "12/12/2020",
+        "vulnerability_source": "GitHub, Inc.",
+        "year": "2020",
+        "month": "7"
+    }
+]

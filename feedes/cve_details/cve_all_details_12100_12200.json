@@ -1,0 +1,3715 @@
+[
+    {
+        "cve_id": "CVE-2020-8722",
+        "cwe_id": "CWE-120",
+        "description": "Buffer overflow in a subsystem for some Intel(R) Server Boards, Server Systems and Compute Modules before version 1.59 may allow a privileged user to potentially enable escalation of privilege via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.2 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://security.netapp.com/advisory/ntap-20200814-0002/",
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00384.html"
+        ],
+        "cpe": [
+            "cpe:2.3:h:intel:compute_module_hns2600bpb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpb24:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpb24r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpblc:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpblc24:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:",
+            "cpe:2.3:h:intel:compute_module_hns2600kp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600kpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600kpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600kpr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tp24r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tp24sr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:",
+            "cpe:2.3:h:intel:server_board_s2600tp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600tpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600tpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600tpr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spl:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200splr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spo:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spor:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200sps:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spsr:-:*:",
+            "cpe:2.3:h:intel:server_board_s2600bpb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpbr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpq:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bps:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpsr:-:*:",
+            "cpe:2.3:a:intel:server_board_s2600cw2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cw2r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cw2s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cw2sr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cwt:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cwtr:-:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kpr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kptr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stbr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stq:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wf0:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wf0r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wfq:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wfqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wft:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wftr:-:*:",
+            "cpe:2.3:h:intel:server_board_s2600wt2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wt2r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wtt:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wttr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lr1304spcfg1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lr1304spcfg1r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lr1304spcfsgx1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lsvrp4304es6xx1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lsvrp4304es6xxr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208sposhor:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208sposhorr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1304sposhbn:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1304sposhbnr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1304sposhor:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s",
+            "cpe:2.3:h:intel:server_system_lnetcnt3y:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfaf4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfaf5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfaf6:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfhy2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server",
+            "cpe:2.3:h:intel:server_system_r1208wt2gs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wt2gsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wttgs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wttgsbpp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wttgsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_s",
+            "cpe:2.3:h:intel:server_system_r2208wf0zs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wf0zsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wfqzs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wfqzsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wftzs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_syst",
+            "cpe:2.3:h:intel:server_system_r2208wt2ys:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wt2ysr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wttyc1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wttyc1r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wttys:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_sy"
+        ],
+        "published_date": "08/12/2020",
+        "modified_date": "08/17/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-8723",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting for some Intel(R) Server Boards, Server Systems and Compute Modules before version 1.59 may allow an unauthenticated user to potentially enable escalation of privilege via adjacent access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "6.3 MEDIUM",
+        "base_score_v2": "5.4 MEDIUM",
+        "hyperlinks": [
+            "https://security.netapp.com/advisory/ntap-20200814-0002/",
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00384.html"
+        ],
+        "cpe": [
+            "cpe:2.3:h:intel:compute_module_hns2600bpb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpb24:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpb24r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpblc:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpblc24:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:",
+            "cpe:2.3:h:intel:compute_module_hns2600kp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600kpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600kpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600kpr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tp24r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tp24sr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:",
+            "cpe:2.3:h:intel:server_board_s2600tp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600tpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600tpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600tpr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spl:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200splr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spo:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spor:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200sps:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spsr:-:*:",
+            "cpe:2.3:h:intel:server_board_s2600bpb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpbr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpq:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bps:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpsr:-:*:",
+            "cpe:2.3:a:intel:server_board_s2600cw2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cw2r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cw2s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cw2sr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cwt:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cwtr:-:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kpr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kptr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stbr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stq:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wf0:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wf0r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wfq:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wfqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wft:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wftr:-:*:",
+            "cpe:2.3:h:intel:server_board_s2600wt2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wt2r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wtt:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wttr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lr1304spcfg1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lr1304spcfg1r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lr1304spcfsgx1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lsvrp4304es6xx1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lsvrp4304es6xxr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208sposhor:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208sposhorr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1304sposhbn:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1304sposhbnr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1304sposhor:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s",
+            "cpe:2.3:h:intel:server_system_lnetcnt3y:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfaf4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfaf5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfaf6:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfhy2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server",
+            "cpe:2.3:h:intel:server_system_r1208wt2gs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wt2gsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wttgs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wttgsbpp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wttgsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_s",
+            "cpe:2.3:h:intel:server_system_r2208wf0zs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wf0zsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wfqzs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wfqzsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wftzs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_syst",
+            "cpe:2.3:h:intel:server_system_r2208wt2ys:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wt2ysr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wttyc1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wttyc1r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wttys:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_sy"
+        ],
+        "published_date": "08/12/2020",
+        "modified_date": "08/17/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-8729",
+        "cwe_id": "CWE-120",
+        "description": "Buffer copy without checking size of input for some Intel(R) Server Boards, Server Systems and Compute Modules before version 1.59 may allow an authenticated user to potentially enable escalation of privilege via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://security.netapp.com/advisory/ntap-20200814-0002/",
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00384.html"
+        ],
+        "cpe": [
+            "cpe:2.3:h:intel:compute_module_hns2600bpb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpb24:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpb24r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpblc:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpblc24:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:",
+            "cpe:2.3:h:intel:compute_module_hns2600kp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600kpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600kpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600kpr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tp24r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tp24sr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:",
+            "cpe:2.3:h:intel:server_board_s2600tp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600tpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600tpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600tpr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spl:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200splr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spo:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spor:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200sps:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spsr:-:*:",
+            "cpe:2.3:h:intel:server_board_s2600bpb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpbr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpq:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bps:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpsr:-:*:",
+            "cpe:2.3:a:intel:server_board_s2600cw2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cw2r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cw2s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cw2sr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cwt:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cwtr:-:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kpr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kptr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stbr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stq:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wf0:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wf0r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wfq:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wfqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wft:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wftr:-:*:",
+            "cpe:2.3:h:intel:server_board_s2600wt2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wt2r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wtt:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wttr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lr1304spcfg1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lr1304spcfg1r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lr1304spcfsgx1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lsvrp4304es6xx1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lsvrp4304es6xxr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208sposhor:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208sposhorr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1304sposhbn:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1304sposhbnr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1304sposhor:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s",
+            "cpe:2.3:h:intel:server_system_lnetcnt3y:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfaf4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfaf5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfaf6:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfhy2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server",
+            "cpe:2.3:h:intel:server_system_r1208wt2gs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wt2gsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wttgs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wttgsbpp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wttgsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_s",
+            "cpe:2.3:h:intel:server_system_r2208wf0zs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wf0zsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wfqzs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wfqzsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wftzs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_syst",
+            "cpe:2.3:h:intel:server_system_r2208wt2ys:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wt2ysr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wttyc1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wttyc1r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wttys:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_sy"
+        ],
+        "published_date": "08/12/2020",
+        "modified_date": "08/17/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-8730",
+        "cwe_id": "CWE-787",
+        "description": "Heap-based overflow for some Intel(R) Server Boards, Server Systems and Compute Modules before version 1.59 may allow an authenticated user to potentially enable escalation of privilege via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://security.netapp.com/advisory/ntap-20200814-0002/",
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00384.html"
+        ],
+        "cpe": [
+            "cpe:2.3:h:intel:compute_module_hns2600bpb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpb24:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpb24r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpblc:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpblc24:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:",
+            "cpe:2.3:h:intel:compute_module_hns2600kp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600kpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600kpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600kpr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tp24r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tp24sr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:",
+            "cpe:2.3:h:intel:server_board_s2600tp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600tpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600tpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600tpr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spl:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200splr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spo:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spor:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200sps:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spsr:-:*:",
+            "cpe:2.3:h:intel:server_board_s2600bpb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpbr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpq:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bps:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpsr:-:*:",
+            "cpe:2.3:a:intel:server_board_s2600cw2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cw2r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cw2s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cw2sr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cwt:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cwtr:-:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kpr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kptr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stbr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stq:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wf0:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wf0r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wfq:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wfqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wft:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wftr:-:*:",
+            "cpe:2.3:h:intel:server_board_s2600wt2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wt2r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wtt:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wttr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lr1304spcfg1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lr1304spcfg1r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lr1304spcfsgx1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lsvrp4304es6xx1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lsvrp4304es6xxr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208sposhor:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208sposhorr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1304sposhbn:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1304sposhbnr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1304sposhor:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s",
+            "cpe:2.3:h:intel:server_system_lnetcnt3y:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfaf4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfaf5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfaf6:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfhy2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server",
+            "cpe:2.3:h:intel:server_system_r1208wt2gs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wt2gsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wttgs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wttgsbpp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wttgsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_s",
+            "cpe:2.3:h:intel:server_system_r2208wf0zs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wf0zsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wfqzs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wfqzsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wftzs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_syst",
+            "cpe:2.3:h:intel:server_system_r2208wt2ys:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wt2ysr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wttyc1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wttyc1r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wttys:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_sy"
+        ],
+        "published_date": "08/12/2020",
+        "modified_date": "08/17/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-8731",
+        "cwe_id": "CWE-732",
+        "description": "Incorrect execution-assigned permissions in the file system for some Intel(R) Server Boards, Server Systems and Compute Modules before version 1.59 may allow an authenticated user to potentially enable escalation of privilege via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://security.netapp.com/advisory/ntap-20200814-0002/",
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00384.html"
+        ],
+        "cpe": [
+            "cpe:2.3:h:intel:compute_module_hns2600bpb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpb24:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpb24r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpblc:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpblc24:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:",
+            "cpe:2.3:h:intel:compute_module_hns2600kp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600kpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600kpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600kpr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tp24r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tp24sr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:",
+            "cpe:2.3:h:intel:server_board_s2600tp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600tpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600tpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600tpr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spl:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200splr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spo:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spor:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200sps:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spsr:-:*:",
+            "cpe:2.3:h:intel:server_board_s2600bpb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpbr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpq:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bps:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpsr:-:*:",
+            "cpe:2.3:a:intel:server_board_s2600cw2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cw2r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cw2s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cw2sr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cwt:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cwtr:-:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kpr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kptr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stbr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stq:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wf0:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wf0r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wfq:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wfqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wft:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wftr:-:*:",
+            "cpe:2.3:h:intel:server_board_s2600wt2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wt2r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wtt:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wttr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lr1304spcfg1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lr1304spcfg1r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lr1304spcfsgx1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lsvrp4304es6xx1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lsvrp4304es6xxr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208sposhor:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208sposhorr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1304sposhbn:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1304sposhbnr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1304sposhor:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s",
+            "cpe:2.3:h:intel:server_system_lnetcnt3y:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfaf4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfaf5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfaf6:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfhy2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server",
+            "cpe:2.3:h:intel:server_system_r1208wt2gs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wt2gsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wttgs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wttgsbpp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wttgsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_s",
+            "cpe:2.3:h:intel:server_system_r2208wf0zs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wf0zsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wfqzs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wfqzsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wftzs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_syst",
+            "cpe:2.3:h:intel:server_system_r2208wt2ys:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wt2ysr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wttyc1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wttyc1r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wttys:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_sy"
+        ],
+        "published_date": "08/12/2020",
+        "modified_date": "08/17/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-8732",
+        "cwe_id": "CWE-787",
+        "description": "Heap-based buffer overflow in the firmware for some Intel(R) Server Boards, Server Systems and Compute Modules before version 1.59 may allow an unauthenticated user to potentially enable escalation of privilege via adjacent access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "https://security.netapp.com/advisory/ntap-20200814-0002/",
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00384.html"
+        ],
+        "cpe": [
+            "cpe:2.3:h:intel:compute_module_hns2600bpb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpb24:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpb24r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpblc:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpblc24:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:",
+            "cpe:2.3:h:intel:compute_module_hns2600kp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600kpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600kpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600kpr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tp24r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tp24sr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:",
+            "cpe:2.3:h:intel:server_board_s2600tp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600tpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600tpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600tpr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spl:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200splr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spo:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spor:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200sps:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spsr:-:*:",
+            "cpe:2.3:h:intel:server_board_s2600bpb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpbr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpq:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bps:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpsr:-:*:",
+            "cpe:2.3:a:intel:server_board_s2600cw2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cw2r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cw2s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cw2sr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cwt:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cwtr:-:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kpr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kptr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stbr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stq:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wf0:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wf0r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wfq:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wfqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wft:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wftr:-:*:",
+            "cpe:2.3:h:intel:server_board_s2600wt2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wt2r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wtt:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wttr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lr1304spcfg1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lr1304spcfg1r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lr1304spcfsgx1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lsvrp4304es6xx1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lsvrp4304es6xxr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208sposhor:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208sposhorr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1304sposhbn:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1304sposhbnr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1304sposhor:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s",
+            "cpe:2.3:h:intel:server_system_lnetcnt3y:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfaf4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfaf5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfaf6:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfhy2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server",
+            "cpe:2.3:h:intel:server_system_r1208wt2gs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wt2gsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wttgs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wttgsbpp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wttgsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_s",
+            "cpe:2.3:h:intel:server_system_r2208wf0zs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wf0zsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wfqzs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wfqzsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wftzs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_syst",
+            "cpe:2.3:h:intel:server_system_r2208wt2ys:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wt2ysr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wttyc1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wttyc1r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wttys:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_sy"
+        ],
+        "published_date": "08/12/2020",
+        "modified_date": "08/17/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-8733",
+        "cwe_id": "CWE-119",
+        "description": "Improper buffer restrictions in the firmware for Intel(R) Server Board M10JNP2SB before version 7.210 may allow a privileged user to potentially enable escalation of privilege via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "6.7 MEDIUM",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://security.netapp.com/advisory/ntap-20200814-0003/",
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00386.html"
+        ],
+        "cpe": [
+            "cpe:2.3:h:intel:m10jnp2sb:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/12/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-8736",
+        "cwe_id": "CWE-269",
+        "description": "Improper access control in subsystem for the Intel(R) Computing Improvement Program before version 2.4.5718 may allow an authenticated user to potentially enable escalation of privilege via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00387.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:intel:computing_improvement_program:*:*:*:*:*:*:*:* versions up to (excluding) 2.4.5718",
+            "*cpe:2.3:a:intel:computing_improvement_program:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "08/12/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-8742",
+        "cwe_id": "CWE-20",
+        "description": "Improper input validation in the firmware for Intel(R) NUCs may allow a privileged user to potentially enable escalation of privilege via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "6.7 MEDIUM",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00392.html"
+        ],
+        "cpe": [
+            "cpe:2.3:h:intel:cd1c32gk:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:cd1c64gk:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:cd1p64gk:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:de3815tybe:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:de3815tybe:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:de3815tykhe:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:de3815tykhe:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc5cpyh:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc5i3mybe:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc5i3myhe:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc5i3ryh:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc5i3ryhs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc5i3ryhsn:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc5i3ryk:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc5i5mybe:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc5i5myhe:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc5i5ryh:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc5i5ryhs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc5i5ryk:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc5i7ryh:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc5pgyh:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc5ppyh:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc6cayh:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc6cays:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc6i7kyk:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7cjyh:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7cjysal:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i3bnb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i3bnh:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i3bnhx1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i3bnhxf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i3bnk:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i3dnbe:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i3dnhe:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i3dnhnc:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i3dnke:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i3dnktc:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i5bnb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i5bnh:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i5bnhx1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i5bnhxf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i5bnk:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i5bnkp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i5dnbe:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i5dnhe:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i5dnke:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i5dnkpc:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i7bnb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i7bnh:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i7bnhx1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i7bnhxg:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i7bnkq:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i7dnbe:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i7dnhe:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7i7dnke:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc7pjyh:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc8i3beh:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc8i3behfa:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc8i3behs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc8i3bek:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc8i5beh:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc8i5behfa:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc8i5behs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc8i5bek:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc8i5bekpa:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc8i7beh:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc8i7behga:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc8i7bek:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc8i7bekqa:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc8i7hnk:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc8i7hnkqc:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc8i7hvk:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc8i7hvkva:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:nuc8i7hvkvaw:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:stk2mv64cc:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/12/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-8743",
+        "cwe_id": "CWE-276",
+        "description": "Improper permissions in the installer for the Intel(R) Mailbox Interface driver, all versions, may allow an authenticated user to potentially enable escalation of privilege via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00394.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:intel:mailbox_interface_driver:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:intel:mailbox_interface_driver:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/12/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-8759",
+        "cwe_id": null,
+        "description": "Improper access control in the installer for Intel(R) SSD DCT versions before 3.0.23 may allow a privileged user to potentially enable escalation of privilege via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "6.7 MEDIUM",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00406.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:intel:ssd_data_center_tool:*:*:*:*:*:*:*:* versions up to (excluding) 3.0.23",
+            "*cpe:2.3:a:intel:ssd_data_center_tool:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "08/12/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-8763",
+        "cwe_id": "CWE-276",
+        "description": "Improper permissions in the installer for the Intel(R) RealSense(TM) D400 Series UWP driver for Windows* 10 may allow an authenticated user to potentially enable escalation of privilege via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00396.html"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows_10:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/12/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2019-14620",
+        "cwe_id": null,
+        "description": "Insufficient control flow management for some Intel(R) Wireless Bluetooth(R) products may allow an unprivileged user to potentially enable denial of service via adjacent access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "3.3 LOW",
+        "hyperlinks": [
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00337.html"
+        ],
+        "cpe": [
+            "cpe:2.3:h:intel:ac_3165:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:ac_3168:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:ac_7265:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:ac_8260:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:ac_8265:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:ac_9260:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:ac_9461:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:ac_9462:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:ac_9560:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:ax200:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:ax201:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-0510",
+        "cwe_id": "CWE-125",
+        "description": "Out of bounds read in some Intel(R) Graphics Drivers before versions 15.45.31.5127 and 15.40.45.5126 may allow an authenticated user to potentially enable escalation of privilege via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00369.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:intel:graphics_drivers:*:*:*:*:*:*:*:* versions from (including) 15.40.0.0 up to (excluding) 15.40.45.5126",
+            "*cpe:2.3:a:intel:graphics_drivers:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "15.40.45.5126",
+            "*cpe:2.3:a:intel:graphics_drivers:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "15.45.31.5127"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-0512",
+        "cwe_id": "CWE-755",
+        "description": "Uncaught exception in the system driver for some Intel(R) Graphics Drivers before version 15.33.50.5129 may allow an authenticated user to potentially enable denial of service via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00369.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:intel:graphics_drivers:*:*:*:*:*:*:*:* versions up to (excluding) 15.33.50.5129",
+            "*cpe:2.3:a:intel:graphics_drivers:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "15.33.50.5129"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-0513",
+        "cwe_id": "CWE-787",
+        "description": "Out of bounds write for some Intel(R) Graphics Drivers before version 15.33.50.5129 may allow an authenticated user to potentially enable escalation of privilege via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00369.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:intel:graphics_drivers:*:*:*:*:*:*:*:* versions up to (excluding) 15.33.50.5129",
+            "*cpe:2.3:a:intel:graphics_drivers:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "15.33.50.5129"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-0553",
+        "cwe_id": "CWE-125",
+        "description": "Out-of-bounds read in kernel mode driver for some Intel(R) Wireless Bluetooth(R) products on Windows* 10, may allow a privileged user to potentially enable information disclosure via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.4 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00337.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:intel:ac_3165_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:intel:ac_3168_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:intel:ac_7265_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:intel:ac_8260_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:intel:ac_8265_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:in"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-0554",
+        "cwe_id": "CWE-362",
+        "description": "Race condition in software installer for some Intel(R) Wireless Bluetooth(R) products on Windows* 7, 8.1 and 10 may allow an unprivileged user to potentially enable escalation of privilege via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:H/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:H/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.0 HIGH",
+        "base_score_v2": "3.7 LOW",
+        "hyperlinks": [
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00337.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:intel:ac_3165_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:intel:ac_3168_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:intel:ac_7265_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:intel:ac_8260_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:intel:ac_8265_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:in",
+            "*cpe:2.3:o:intel:ac_3165_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:intel:ac_3168_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:intel:ac_7265_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:intel:ac_8260_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:intel:ac_8265_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:in"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-0555",
+        "cwe_id": "CWE-20",
+        "description": "Improper input validation for some Intel(R) Wireless Bluetooth(R) products may allow an authenticated user to potentially enable escalation of privilege via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00337.html"
+        ],
+        "cpe": [
+            "cpe:2.3:h:intel:ac_3165:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:ac_3168:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:ac_7265:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:ac_8260:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:ac_8265:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:ac_9260:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:ac_9461:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:ac_9462:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:ac_9560:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:ax200:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:ax201:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-0559",
+        "cwe_id": "CWE-276",
+        "description": "Insecure inherited permissions in some Intel(R) PROSet/Wireless WiFi products on Windows* 7 and 8.1 before version 21.40.5.1 may allow an authenticated user to potentially enable escalation of privilege via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00355.html",
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00360.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:intel:ac_3165_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:intel:ac_3168_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:intel:ac_7265_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:intel:ac_8260_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:intel:ac_8265_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "11/10/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-12299",
+        "cwe_id": "CWE-20",
+        "description": "Improper input validation in BIOS firmware for Intel(R) Server Board Families S2600ST, S2600BP and S2600WF may allow a privileged user to potentially enable escalation of privilege via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.2 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://security.netapp.com/advisory/ntap-20200814-0001/",
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00367.html"
+        ],
+        "cpe": [
+            "cpe:2.3:h:intel:s2600bpbr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600bpqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600bpsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600stbr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600stqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600wf0r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600wfqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600wftr:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-12300",
+        "cwe_id": "CWE-824",
+        "description": "Uninitialized pointer in BIOS firmware for Intel(R) Server Board Families S2600CW, S2600KP, S2600TP, and S2600WT may allow a privileged user to potentially enable escalation of privilege via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.2 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://security.netapp.com/advisory/ntap-20200814-0001/",
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00367.html"
+        ],
+        "cpe": [
+            "cpe:2.3:h:intel:s2600cw2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600cw2r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600cw2s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600cw2sr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600cwt:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600cwtr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600cwts:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600cwtsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600kp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600kpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600kpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600kpr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600kptr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600tp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600tpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600tpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600tpnr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600tpr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600wt2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600wt2r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600wtt:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600wttr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600wtts1r:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-12301",
+        "cwe_id": "CWE-665",
+        "description": "Improper initialization in BIOS firmware for Intel(R) Server Board Families S2600ST, S2600BP and S2600WF may allow a privileged user to potentially enable escalation of privilege via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.2 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://security.netapp.com/advisory/ntap-20200814-0001/",
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00367.html"
+        ],
+        "cpe": [
+            "cpe:2.3:h:intel:s2600bpbr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600bpqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600bpsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600stbr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600stqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600wf0r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600wfqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s2600wftr:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-7307",
+        "cwe_id": "CWE-522",
+        "description": "Unprotected Storage of Credentials vulnerability in McAfee Data Loss Prevention (DLP) for Mac prior to 11.5.2 allows local users to gain access to the RiskDB username and password via unprotected log files containing plain text credentials.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-7307"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://kc.mcafee.com/corporate/index?page=content&id=SB10326"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mcafee:data_loss_prevention:*:*:*:*:*:*:*:* versions from (including) 11.3.0 up to (excluding) 11.3.28\n     *cpe:2.3:a:mcafee:data_loss_prevention:*:*:*:*:*:*:*:* versions from (including) 11.4.0 up to (excluding) 11.4.200\n     *cpe:2.3:a:mcafee:data_loss_prevention:*:*:*:*:*:*:*:* versions from (including) 11.5.0 up to (excluding) 11.5.3",
+            "*cpe:2.3:a:mcafee:data_loss_prevention:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:mcafee:data_loss_prevention:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:mcafee:data_loss_prevention:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "10/19/2020",
+        "vulnerability_source": "McAfee",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-8679",
+        "cwe_id": "CWE-787",
+        "description": "Out-of-bounds write in Kernel Mode Driver for some Intel(R) Graphics Drivers before version 26.20.100.7755 may allow an authenticated user to potentially enable denial of service via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00369.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:intel:graphics_drivers:*:*:*:*:*:*:*:* versions up to (excluding) 26.20.100.7755",
+            "*cpe:2.3:a:intel:graphics_drivers:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "26.20.100.7755"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-8680",
+        "cwe_id": "CWE-362",
+        "description": "Race condition in some Intel(R) Graphics Drivers before version 15.40.45.5126 may allow an authenticated user to potentially enable escalation of privilege via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.0 HIGH",
+        "base_score_v2": "4.4 MEDIUM",
+        "hyperlinks": [
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00369.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:intel:graphics_drivers:*:*:*:*:*:*:*:* versions up to (excluding) 15.40.45.5126",
+            "*cpe:2.3:a:intel:graphics_drivers:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "15.40.45.5126"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-8681",
+        "cwe_id": "CWE-787",
+        "description": "Out of bounds write in system driver for some Intel(R) Graphics Drivers before version 15.33.50.5129 may allow an authenticated user to potentially enable escalation of privilege via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00369.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:intel:graphics_drivers:*:*:*:*:*:*:*:* versions up to (excluding) 15.33.50.5129",
+            "*cpe:2.3:a:intel:graphics_drivers:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "15.33.50.5129"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-8682",
+        "cwe_id": "CWE-125",
+        "description": "Out of bounds read in system driver for some Intel(R) Graphics Drivers before version 15.33.50.5129 may allow an authenticated user to potentially enable denial of service via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00369.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:intel:graphics_drivers:*:*:*:*:*:*:*:* versions up to (excluding) 15.33.50.5129",
+            "*cpe:2.3:a:intel:graphics_drivers:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "15.33.50.5129"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-8683",
+        "cwe_id": "CWE-119",
+        "description": "Improper buffer restrictions in system driver for some Intel(R) Graphics Drivers before version 15.33.50.5129 may allow an authenticated user to potentially enable denial of service via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00369.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:intel:graphics_drivers:*:*:*:*:*:*:*:* versions up to (excluding) 15.33.50.5129",
+            "*cpe:2.3:a:intel:graphics_drivers:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "15.33.50.5129"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-8684",
+        "cwe_id": "CWE-269",
+        "description": "Improper access control in firmware for Intel(R) PAC with Arria(R) 10 GX FPGA before Intel Acceleration Stack version 1.2.1 may allow a privileged user to potentially enable escalation of privilege via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "6.7 MEDIUM",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00375.html"
+        ],
+        "cpe": [
+            "cpe:2.3:h:intel:programmable_acceleration_card_with_arria_10_gx_fpga:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-8685",
+        "cwe_id": "CWE-287",
+        "description": "Improper authentication in subsystem for Intel (R) LED Manager for NUC before version 1.2.3 may allow privileged user to potentially enable denial of service via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "4.4 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00376.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:intel:led_manager_for_nuc:*:*:*:*:*:*:*:* versions up to (excluding) 1.2.3",
+            "*cpe:2.3:a:intel:led_manager_for_nuc:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-8687",
+        "cwe_id": "CWE-427",
+        "description": "Uncontrolled search path in the installer for Intel(R) RSTe Software RAID Driver for the Intel(R) Server Board M10JNP2SB before version 4.7.0.1119 may allow an authenticated user to potentially enable escalation of privilege via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00377.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:intel:rste_software_raid:*:*:*:*:*:*:intel_server_board_m10jnp2sb:* versions up to (excluding) 4.7.0.1119",
+            "*cpe:2.3:a:intel:rste_software_raid:*:*:*:*:*:*:intel_server_board_m10jnp2sb:*",
+            "(excluding)",
+            "4.7.0.1119"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-8688",
+        "cwe_id": "CWE-20",
+        "description": "Improper input validation in the Intel(R) RAID Web Console 3 for Windows* may allow an unauthenticated user to potentially enable denial of service via network access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00378.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:intel:raid_web_console_3:*:*:*:*:*:windows:*:* versions up to (excluding) 7.012.016.000",
+            "*cpe:2.3:a:intel:raid_web_console_3:*:*:*:*:*:windows:*:*",
+            "(excluding)",
+            "7.012.016.000"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-8689",
+        "cwe_id": "CWE-119",
+        "description": "Improper buffer restrictions in the Intel(R) Wireless for Open Source before version 1.5 may allow an unauthenticated user to potentially enable denial of service via adjacent access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "3.3 LOW",
+        "hyperlinks": [
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00379.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:intel:inet_wireless_daemon:*:*:*:*:*:*:*:* versions up to (excluding) 1.5",
+            "*cpe:2.3:a:intel:inet_wireless_daemon:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-8720",
+        "cwe_id": "CWE-120",
+        "description": "Buffer overflow in a subsystem for some Intel(R) Server Boards, Server Systems and Compute Modules before version 1.59 may allow a privileged user to potentially enable denial of service via local access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://security.netapp.com/advisory/ntap-20200814-0002/",
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00384.html"
+        ],
+        "cpe": [
+            "cpe:2.3:h:intel:compute_module_hns2600bpb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpb24:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpb24r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpblc:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600bpblc24:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:",
+            "cpe:2.3:h:intel:compute_module_hns2600kp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600kpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600kpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600kpr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tp24r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tp24sr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:compute_module_hns2600tpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:",
+            "cpe:2.3:h:intel:server_board_s2600tp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600tpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600tpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600tpr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spl:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200splr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spo:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spor:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200sps:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s1200spsr:-:*:",
+            "cpe:2.3:h:intel:server_board_s2600bpb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpbr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpq:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bps:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600bpsr:-:*:",
+            "cpe:2.3:a:intel:server_board_s2600cw2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cw2r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cw2s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cw2sr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cwt:-:*:*:*:*:*:*:*",
+            "cpe:2.3:a:intel:server_board_s2600cwtr:-:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kpf:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kpfr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kpr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600kptr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stbr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stq:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600stqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wf0:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wf0r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wfq:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wfqr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wft:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wftr:-:*:",
+            "cpe:2.3:h:intel:server_board_s2600wt2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wt2r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wtt:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_board_s2600wttr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lr1304spcfg1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lr1304spcfg1r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lr1304spcfsgx1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lsvrp4304es6xx1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_lsvrp4304es6xxr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208sposhor:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208sposhorr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1304sposhbn:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1304sposhbnr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1304sposhor:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:s",
+            "cpe:2.3:h:intel:server_system_lnetcnt3y:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfaf4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfaf5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfaf6:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_mcb2208wfhy2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server",
+            "cpe:2.3:h:intel:server_system_r1208wt2gs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wt2gsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wttgs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wttgsbpp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r1208wttgsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_s",
+            "cpe:2.3:h:intel:server_system_r2208wf0zs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wf0zsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wfqzs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wfqzsr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wftzs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_syst",
+            "cpe:2.3:h:intel:server_system_r2208wt2ys:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wt2ysr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wttyc1:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wttyc1r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_system_r2208wttys:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:server_sy"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/17/2020",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2019-4582",
+        "cwe_id": "CWE-22",
+        "description": "IBM Maximo Asset Management 7.6.0 and 7.6.1 could allow a remote attacker to traverse directories on the system. An attacker could send a specially-crafted URL request containing \"dot dot\" sequences (/../) to view arbitrary files on the system. IBM X-Force ID: 167288.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/167288",
+            "https://www.ibm.com/support/pages/node/6258321"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:maximo_asset_management:7.6.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:maximo_asset_management:7.6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:maximo_asset_management:7.6.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:maximo_asset_management:7.6.0.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/13/2020",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-4589",
+        "cwe_id": "CWE-74",
+        "description": "IBM WebSphere Application Server 7.0, 8.0, 8.5, and 9.0 could allow a remote attacker to execute arbitrary code on the system with a specially-crafted sequence of serialized objects from untrusted sources. IBM X-Force ID: 184585.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/184585",
+            "https://www.ibm.com/support/pages/node/6258333"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:websphere_application_server:*:*:*:*:*:*:*:* versions from (including) 7.0.0.0 up to (including) 7.0.0.45\n     *cpe:2.3:a:ibm:websphere_application_server:*:*:*:*:*:*:*:* versions from (including) 8.0.0.0 up to (including) 8.0.0.15\n     *cpe:2.3:a:ibm:websphere_application_server:*:*:*:*:*:*:*:* versions from (including) 8.5.0.0 up to (including) 8.5.5.17\n     *cpe:2.3:a:ibm:websphere_application_server:*:*:*:*:*:*:*:* versions from (including) 9.0.0.0 up to (including) 9.",
+            "*cpe:2.3:a:ibm:websphere_application_server:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:ibm:websphere_application_server:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:ibm:websphere_application_server:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:ibm:websphere_application_server:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/21/2020",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2019-16374",
+        "cwe_id": null,
+        "description": "Pega Platform 8.2.1 allows LDAP injection because a username can contain a * character and can be of unlimited length. An attacker can specify four characters of a username, followed by the * character, to bypass access control.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://community.pega.com/upgrade",
+            "https://gist.github.com/IAG0110/0205823570ba04ec12e656f7f4602877"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:pega:platform:*:*:*:*:*:*:*:* versions up to (including) 8.2.1",
+            "*cpe:2.3:a:pega:platform:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-13280",
+        "cwe_id": "CWE-400",
+        "description": "For GitLab before 13.0.12, 13.1.6, 13.2.3 a memory exhaustion flaw exists due to excessive logging of an invite email error message.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-13280"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://gitlab.com/gitlab-org/cves/-/blob/master/2020/CVE-2020-13280.json"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions up to (excluding) 13.0.12\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions up to (excluding) 13.0.12\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 13.1.0 up to (excluding) 13.1.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 13.1.0 up to (excluding) 13.1.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 13.2.0 up to",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "GitLab Inc.",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-13282",
+        "cwe_id": "CWE-281",
+        "description": "For GitLab before 13.0.12, 13.1.6, 13.2.3 after a group transfer occurs, members from a parent group keep their access level on the subgroup leading to improper access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:U/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:U/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "3.5 LOW",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "https://gitlab.com/gitlab-org/cves/-/blob/master/2020/CVE-2020-13282.json",
+            "https://hackerone.com/reports/790786"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 10.5.0 up to (excluding) 13.0.12\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 10.5.0 up to (excluding) 13.0.12\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 13.1.0 up to (excluding) 13.1.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 13.1.0 up to (excluding) 13.1.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:communi",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:communi"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "GitLab Inc.",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-13283",
+        "cwe_id": "CWE-79",
+        "description": "For GitLab before 13.0.12, 13.1.6, 13.2.3 a cross-site scripting vulnerability exists in the issues list via milestone title.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://gitlab.com/gitlab-org/cves/-/blob/master/2020/CVE-2020-13283.json",
+            "https://hackerone.com/reports/877065"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 10.8.0 up to (excluding) 13.0.12\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 10.8.0 up to (excluding) 13.0.12\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 13.1.0 up to (excluding) 13.1.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 13.1.0 up to (excluding) 13.1.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:communi",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:communi"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/14/2020",
+        "vulnerability_source": "GitLab Inc.",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-13285",
+        "cwe_id": "CWE-79",
+        "description": "For GitLab before 13.0.12, 13.1.6, 13.2.3 a cross-site scripting vulnerability exists in the issue reference number tooltip.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://gitlab.com/gitlab-org/cves/-/blob/master/2020/CVE-2020-13285.json",
+            "https://hackerone.com/reports/831962"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 12.9.0 up to (excluding) 13.0.12\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.9.0 up to (excluding) 13.0.12\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 13.1.0 up to (excluding) 13.1.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 13.1.0 up to (excluding) 13.1.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:communi",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:communi"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/14/2020",
+        "vulnerability_source": "GitLab Inc.",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-16087",
+        "cwe_id": "CWE-74",
+        "description": "An issue was discovered in Zalo.exe in VNG Zalo Desktop 19.8.1.0. An attacker can run arbitrary commands on a remote Windows machine running the Zalo client by sending the user of the device a crafted file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.6 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "https://github.com/VNG-Zalo",
+            "https://threatspike.com",
+            "https://www.threatspike.com/blog/cve-2020-16087.html"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-17463",
+        "cwe_id": "CWE-89",
+        "description": "FUEL CMS 1.4.7 allows SQL Injection via the col parameter to /pages/items, /permissions/items, or /navigation/items.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/158840/Fuel-CMS-1.4.7-SQL-Injection.html",
+            "https://getfuelcms.com",
+            "https://github.com/daylightstudio/FUEL-CMS/archive/master.zip",
+            "https://github.com/daylightstudio/FUEL-CMS/releases/tag/1.4.8"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:thedaylightstudio:fuel_cms:1.4.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:thedaylightstudio:fuel_cms:1.4.7:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/13/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-11733",
+        "cwe_id": "CWE-74",
+        "description": "An issue was discovered on Spirent TestCenter and Avalanche appliance admin interface firmware. An attacker, who already has access to an SSH restricted shell, can achieve root access via shell metacharacters. The attacker can then, for example, read sensitive files such as appliance admin configuration source code. This affects Spirent TestCenter and Avalanche products which chassis version <= 5.08. The SSH restricted shell is available with default credentials.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "6.7 MEDIUM",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "https://gist.github.com/a05110511t/65d07bc776d7c11b4ccf112a09cca4ab",
+            "https://github.com/a05110511t/CVE/blob/master/CVE-2020-11733.md"
+        ],
+        "cpe": [
+            "cpe:2.3:h:spirent:c100-mp:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-13281",
+        "cwe_id": "CWE-20",
+        "description": "For GitLab before 13.0.12, 13.1.6, 13.2.3 a denial of service exists in the project import feature",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-13281"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://gitlab.com/gitlab-org/cves/-/blob/master/2020/CVE-2020-13281.json",
+            "https://hackerone.com/reports/687730"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 8.9.0 up to (excluding) 13.0.12\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 8.9.0 up to (excluding) 13.0.12\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 13.1.0 up to (excluding) 13.1.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 13.1.0 up to (excluding) 13.1.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:community",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/14/2020",
+        "vulnerability_source": "GitLab Inc.",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-13286",
+        "cwe_id": "CWE-918",
+        "description": "For GitLab before 13.0.12, 13.1.6, 13.2.3 user controlled git configuration settings can be modified to result in Server Side Request Forgery.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://gitlab.com/gitlab-org/cves/-/blob/master/2020/CVE-2020-13286.json",
+            "https://hackerone.com/reports/855276"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 12.7.0 up to (excluding) 13.0.12\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.7.0 up to (excluding) 13.0.12\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 13.1.0 up to (excluding) 13.1.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 13.1.0 up to (excluding) 13.1.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:communi",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:communi"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/14/2020",
+        "vulnerability_source": "GitLab Inc.",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-15925",
+        "cwe_id": "CWE-89",
+        "description": "A SQL injection vulnerability at a tpf URI in Loway QueueMetrics before 19.10.21 allows remote authenticated attackers to execute arbitrary SQL commands via the TPF_XPAR1 parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://blog.divisionzero.co/2020/08/12/cve-2020-15925/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:loway:queuemetrics:*:*:*:*:*:*:*:* versions up to (excluding) 19.10.21",
+            "*cpe:2.3:a:loway:queuemetrics:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-15947",
+        "cwe_id": "CWE-89",
+        "description": "A SQL injection vulnerability in the qm_adm/qm_export_stats_run.do endpoint of Loway QueueMetrics before 19.10.21 allows remote authenticated users to execute arbitrary SQL commands via the exportId parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://blog.divisionzero.co/2020/08/12/cve-2020-15947/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:loway:queuemetrics:*:*:*:*:*:*:*:* versions up to (excluding) 19.10.21",
+            "*cpe:2.3:a:loway:queuemetrics:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-14483",
+        "cwe_id": "CWE-1088",
+        "description": "A timeout during a TLS handshake can result in the connection failing to terminate. This can result in a Niagara thread hanging and requires a manual restart of Niagara (Versions 4.6.96.28, 4.7.109.20, 4.7.110.32, 4.8.0.110) and Niagara Enterprise Security (Versions 2.4.31, 2.4.45, 4.8.0.35) to correct.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "3.3 LOW",
+        "hyperlinks": [
+            "https://us-cert.cisa.gov/ics/advisories/icsa-20-224-03"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:tridium:niagara:4.6.96.28:*:*:*:*:*:*:*\n     *cpe:2.3:a:tridium:niagara:4.7.109.20:*:*:*:*:*:*:*\n     *cpe:2.3:a:tridium:niagara:4.7.110.32:*:*:*:*:*:*:*\n     *cpe:2.3:a:tridium:niagara:4.8.0.110:*:*:*:*:*:*:*\n     *cpe:2.3:a:tridium:niagara_enterprise_security:2.4.31:*:*:*:*:*:*:*\n     *cpe:2.3:a:tridium:niagara_enterprise_security:2.4.45:*:*:*:*:*:*:*\n     *cpe:2.3:a:tridium:niagara_enterprise_security:4.8.0.35:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:tridium:niagara:4.6.96.28:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:tridium:niagara:4.7.109.20:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:tridium:niagara:4.7.110.32:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:tridium:niagara:4.8.0.110:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:tridium:niagara_enterprise_security:2.4.31:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:tridium:niagara_enterprise_security:2.4.45:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:tridium:niagara_enterprise_security:4.8.0.35:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-0261",
+        "cwe_id": "CWE-269",
+        "description": "In C2 flame devices, there is a possible bypass of seccomp due to a missing configuration file. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-146059841",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2020-08-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-17498",
+        "cwe_id": "CWE-415",
+        "description": "In Wireshark 3.2.0 to 3.2.5, the Kafka protocol dissector could crash. This was addressed in epan/dissectors/packet-kafka.c by avoiding a double free during LZ4 decompression.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-11/msg00035.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-11/msg00038.html",
+            "https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=16672",
+            "https://code.wireshark.org/review/gitweb?p=wireshark.git;a=commit;h=76afda963de4f0b9be24f2d8e873990a5cbf221b",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/AII7UYDPNKYE75AZL45M6HAV2COP7F6S/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/G7LO7DAPN33FL4JQ7DDPB76SIEFGMZSQ/",
+            "https://security.gentoo.org/glsa/202008-14",
+            "https://www.wireshark.org/security/wnpa-sec-2020-10.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:wireshark:wireshark:*:*:*:*:*:*:*:* versions from (including) 3.2.0 up to (excluding) 3.2.6",
+            "*cpe:2.3:a:wireshark:wireshark:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "11/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-24330",
+        "cwe_id": "CWE-732",
+        "description": "An issue was discovered in TrouSerS through 0.3.14. If the tcsd daemon is started with root privileges instead of by the tss user, it fails to drop the root gid privilege when no longer needed.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2020/08/14/1",
+            "https://bugzilla.suse.com/show_bug.cgi?id=1164472",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/SSDL7COIFCZQMUBNAASNMKMX7W5JUHRD/",
+            "https://seclists.org/oss-sec/2020/q2/att-135/tcsd_fixes.patch",
+            "https://sourceforge.net/p/trousers/mailman/message/37015817/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:trousers_project:trousers:*:*:*:*:*:*:*:* versions up to (including) 0.3.14",
+            "*cpe:2.3:a:trousers_project:trousers:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "11/04/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-24331",
+        "cwe_id": "CWE-732",
+        "description": "An issue was discovered in TrouSerS through 0.3.14. If the tcsd daemon is started with root privileges, the tss user still has read and write access to the /etc/tcsd.conf file (which contains various settings related to this daemon).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2020/08/14/1",
+            "https://bugzilla.suse.com/show_bug.cgi?id=1164472",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/SSDL7COIFCZQMUBNAASNMKMX7W5JUHRD/",
+            "https://seclists.org/oss-sec/2020/q2/att-135/tcsd_fixes.patch",
+            "https://sourceforge.net/p/trousers/mailman/message/37015817/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:trousers_project:trousers:*:*:*:*:*:*:*:* versions up to (including) 0.3.14",
+            "*cpe:2.3:a:trousers_project:trousers:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "11/04/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-24332",
+        "cwe_id": "CWE-59",
+        "description": "An issue was discovered in TrouSerS through 0.3.14. If the tcsd daemon is started with root privileges, the creation of the system.data file is prone to symlink attacks. The tss user can be used to create or corrupt existing files, which could possibly lead to a DoS attack.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2020/08/14/1",
+            "https://bugzilla.suse.com/show_bug.cgi?id=1164472",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/SSDL7COIFCZQMUBNAASNMKMX7W5JUHRD/",
+            "https://seclists.org/oss-sec/2020/q2/att-135/tcsd_fixes.patch",
+            "https://sourceforge.net/p/trousers/mailman/message/37015817/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:trustedcomputinggroup:trousers:*:*:*:*:*:*:*:* versions up to (including) 0.3.14",
+            "*cpe:2.3:a:trustedcomputinggroup:trousers:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "11/04/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-24342",
+        "cwe_id": "CWE-119",
+        "description": "Lua through 5.4.0 allows a stack redzone cross in luaO_pushvfstring because a protection mechanism wrongly calls luaD_callnoyield twice in a row.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://lua-users.org/lists/lua-l/2020-07/msg00052.html",
+            "https://github.com/lua/lua/commit/34affe7a63fc5d842580a9f23616d057e17dfe27",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QA5Q5MDQMTGXRQO3PAQ4EZFTYWJXZM5N/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:lua:lua:*:*:*:*:*:*:*:* versions up to (including) 5.4.0",
+            "*cpe:2.3:a:lua:lua:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "09/25/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-24343",
+        "cwe_id": "CWE-416",
+        "description": "Artifex MuJS through 1.0.7 has a use-after-free in jsrun.c because of unconditional marking in jsgc.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/ccxvii/mujs/issues/136"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:artifex:mujs:*:*:*:*:*:*:*:* versions up to (including) 1.0.7",
+            "*cpe:2.3:a:artifex:mujs:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-24344",
+        "cwe_id": "CWE-125",
+        "description": "JerryScript through 2.3.0 has a (function({a=arguments}){const arguments}) buffer over-read.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:P)"
+        },
+        "base_score_v3": "7.1 HIGH",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/jerryscript-project/jerryscript/issues/3976"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jerryscript:jerryscript:*:*:*:*:*:*:*:* versions up to (including) 2.3.0",
+            "*cpe:2.3:a:jerryscript:jerryscript:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-24345",
+        "cwe_id": "CWE-787",
+        "description": "** DISPUTED ** JerryScript through 2.3.0 allows stack consumption via function a(){new new Proxy(a,{})}JSON.parse(\"[]\",a). NOTE: the vendor states that the problem is the lack of the --stack-limit option.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/jerryscript-project/jerryscript/issues/3977"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jerryscript:jerryscript:*:*:*:*:*:*:*:* versions up to (including) 2.3.0",
+            "*cpe:2.3:a:jerryscript:jerryscript:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/14/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-24346",
+        "cwe_id": "CWE-416",
+        "description": "njs through 0.4.3, used in NGINX, has a use-after-free in njs_json_parse_iterator_call in njs_json.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/nginx/njs/issues/325",
+            "https://security.netapp.com/advisory/ntap-20200918-0001/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nginx:njs:*:*:*:*:*:*:*:* versions up to (including) 0.4.3",
+            "*cpe:2.3:a:nginx:njs:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "09/18/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-24347",
+        "cwe_id": "CWE-125",
+        "description": "njs through 0.4.3, used in NGINX, has an out-of-bounds read in njs_lvlhsh_level_find in njs_lvlhsh.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://github.com/nginx/njs/issues/323",
+            "https://security.netapp.com/advisory/ntap-20200918-0001/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nginx:njs:*:*:*:*:*:*:*:* versions up to (including) 0.4.3",
+            "*cpe:2.3:a:nginx:njs:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "09/18/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-24348",
+        "cwe_id": "CWE-125",
+        "description": "njs through 0.4.3, used in NGINX, has an out-of-bounds read in njs_json_stringify_iterator in njs_json.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://github.com/nginx/njs/issues/322",
+            "https://security.netapp.com/advisory/ntap-20200918-0001/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nginx:njs:*:*:*:*:*:*:*:* versions up to (including) 0.4.3",
+            "*cpe:2.3:a:nginx:njs:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "09/18/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-24349",
+        "cwe_id": "CWE-20",
+        "description": "njs through 0.4.3, used in NGINX, allows control-flow hijack in njs_value_property in njs_value.c. NOTE: the vendor considers the issue to be \"fluff\" in the NGINX use case because there is no remote attack surface.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://github.com/nginx/njs/issues/324",
+            "https://security.netapp.com/advisory/ntap-20200918-0001/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nginx:njs:*:*:*:*:*:*:*:* versions up to (including) 0.4.3",
+            "*cpe:2.3:a:nginx:njs:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "09/18/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-7360",
+        "cwe_id": "CWE-427",
+        "description": "An Uncontrolled Search Path Element (CWE-427) vulnerability in SmartControl version 4.3.15 and versions released before April 15, 2020 may allow an authenticated user to escalate privileges by placing a specially crafted DLL file in the search path. This issue was fixed in version 1.0.7, which was released after April 15, 2020. (Note, the version numbering system changed significantly between version 4.3.15 and version 1.0.7.)",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.3 HIGH",
+        "base_score_v2": "6.9 MEDIUM",
+        "hyperlinks": [
+            "https://blog.vonahi.io/when-the-path-to-system-is-wide-open/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:philips:smartcontrol:*:*:*:*:*:*:*:* versions up to (including) 4.3.15",
+            "*cpe:2.3:a:philips:smartcontrol:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Rapid7, Inc.",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2019-20383",
+        "cwe_id": "CWE-59",
+        "description": "ABBYY network license server in ABBYY FineReader 15 before Release 4 (aka 15.0.112.2130) allows escalation of privileges by local users via manipulations involving files and using symbolic links.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://www.abbyydownloads.com/fc12/r3/ReleaseNotes_FC12_R3_U1_1299.39_build_12.0.3.2634.pdf",
+            "https://amonitoring.ru/article/abbyy-lpe/",
+            "https://support.abbyy.com/hc/en-us/articles/360008536920-FineReader-15-Change-Log"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:abbyy:finereader:*:*:*:*:*:*:*:* versions up to (excluding) 15.0.112.2130",
+            "*cpe:2.3:a:abbyy:finereader:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "15.0.112.2130"
+        ],
+        "published_date": "08/13/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-4662",
+        "cwe_id": "CWE-287",
+        "description": "IBM Event Streams 10.0.0 could allow an authenticated user to perform tasks to a schema due to improper authentication validation. IBM X-Force ID: 186233.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/186233",
+            "https://www.ibm.com/support/pages/node/6259393"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:event_streams:10.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:event_streams:10.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/14/2020",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2019-6112",
+        "cwe_id": "CWE-79",
+        "description": "A Cross-site scripting (XSS) vulnerability in /inc/class-search.php in the Sell Media plugin v2.4.1 for WordPress allows remote attackers to inject arbitrary web script or HTML via the keyword parameter (aka $search_term or the Search field).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/graphpaperpress/Sell-Media/commit/8ac8cebf332e0885863d0a25e16b4b180abedc47#diff-f16fea0a0c8cc36031ec339d02a4fb3b",
+            "https://metamorfosec.com/Files/Advisories/METS-2020-001-A_XSS_Vulnerability_in_Sell_Media_Plugin_v2.4.1_for_WordPress.txt"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:graphpaperpress:sell_media:*:*:*:*:*:wordpress:*:* versions up to (including) 2.4.1",
+            "*cpe:2.3:a:graphpaperpress:sell_media:*:*:*:*:*:wordpress:*:*",
+            "(including)"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2019-7410",
+        "cwe_id": "CWE-79",
+        "description": "There is stored cross site scripting (XSS) in Galileo CMS v0.042. Remote authenticated users could inject arbitrary web script or HTML via $page_title in /lib/Galileo/files/templates/page/show.html.ep (aka the PAGE TITLE Field).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/jberger/Galileo/pull/55/files",
+            "https://metacpan.org/changes/distribution/Galileo",
+            "https://metamorfosec.com/Files/Advisories/METS-2020-002-A_Stored_XSS_Vulnerability_in_Galileo_CMS_v0.042.txt",
+            "https://metamorfosec.com/Files/Commits/METC-2020-002-Escape_banner_in_Galileo_CMS_v0.042.txt"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:galileo_cms_project:galileo_cms:0.042:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:galileo_cms_project:galileo_cms:0.042:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-12648",
+        "cwe_id": "CWE-79",
+        "description": "A cross-site scripting (XSS) vulnerability in TinyMCE 5.2.1 and earlier allows remote attackers to inject arbitrary web script when configured in classic editing mode.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://labs.bishopfox.com/advisories/tinymce-version-5.2.1"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:tiny:tinymce:*:*:*:*:*:*:*:* versions up to (including) 5.2.1",
+            "*cpe:2.3:a:tiny:tinymce:*:*:*:*:*:*:*:* versions up to (including) 5.2.1",
+            "*cpe:2.3:a:tiny:tinymce:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:tiny:tinymce:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:tiny:tinymce:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:tiny:tinymce:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/17/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-16205",
+        "cwe_id": "CWE-78",
+        "description": "Using a specially crafted URL command, a remote authenticated user can execute commands as root on the G-Cam and G-Code (Firmware Versions 1.12.0.25 and prior as well as the limited Versions 1.12.13.2 and 1.12.14.5).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.2 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/158888/Geutebruck-testaction.cgi-Remote-Command-Execution.html",
+            "https://us-cert.cisa.gov/ics/advisories/icsa-20-219-03"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:geutebrueck:g-cam_ebc-2110_firmware:1.12.0.25:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:geutebrueck:g-cam_ebc-2110_firmware:1.12.13.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:geutebrueck:g-cam_ebc-2110_firmware:1.12.14.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:geutebrueck:g-cam_ebc-2111_firmware:1.12.0.25:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:geutebrueck:g-cam_ebc-2111_firmware:1.12.13.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:geutebrueck:g-cam_ebc-2111_firmware:1.12.14.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2019-19643",
+        "cwe_id": "CWE-400",
+        "description": "ise smart connect KNX Vaillant 1.2.839 contain a Denial of Service.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://psytester.github.io/CVE-2019-19643/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ise:smart_connect_knx_vaillant:1.2.839:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ise:smart_connect_knx_vaillant:1.2.839:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-17462",
+        "cwe_id": "CWE-434",
+        "description": "CMS Made Simple 2.2.14 allows Authenticated Arbitrary File Upload because the File Manager does not block .ptar files, a related issue to CVE-2017-16798.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://www.exploit-db.com/exploits/48742"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:cmsmadesimple:cms_made_simple:2.2.14:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cmsmadesimple:cms_made_simple:2.2.14:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-7700",
+        "cwe_id": "CWE-400",
+        "description": "All versions of phpjs are vulnerable to Prototype Pollution via parse_str.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-7700"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://snyk.io/vuln/SNYK-JS-PHPJS-598681"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:php.js_project:php.js:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:php.js_project:php.js:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/21/2020",
+        "vulnerability_source": "Snyk",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-7701",
+        "cwe_id": "CWE-400",
+        "description": "madlib-object-utils before 0.1.7 is vulnerable to Prototype Pollution via setValue.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-7701"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://snyk.io/vuln/SNYK-JS-MADLIBOBJECTUTILS-598676"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:springtree:madlib-object-utils:*:*:*:*:*:*:*:* versions up to (excluding) 0.1.7",
+            "*cpe:2.3:a:springtree:madlib-object-utils:*:*:*:*:*:*:*:* versions up to (excluding) 0.1.7",
+            "*cpe:2.3:a:springtree:madlib-object-utils:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:springtree:madlib-object-utils:*:*:*:*:*:node.js:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:springtree:madlib-object-utils:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/26/2020",
+        "vulnerability_source": "Snyk",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-9228",
+        "cwe_id": "CWE-200",
+        "description": "FusionCompute 8.0.0 has an information disclosure vulnerability. Due to the properly protection of certain information, attackers may exploit this vulnerability to obtain certain information.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200805-01-fc-en"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:huawei:fusioncompute:8.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:huawei:fusioncompute:8.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-9229",
+        "cwe_id": "CWE-200",
+        "description": "FusionCompute 8.0.0 has an information disclosure vulnerability. Due to the properly protection of certain information, attackers may exploit this vulnerability to obtain certain information.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.4 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200805-01-fc-en"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:huawei:fusioncompute:8.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:huawei:fusioncompute:8.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2019-5591",
+        "cwe_id": "CWE-200",
+        "description": "A Default Configuration vulnerability in FortiOS may allow an unauthenticated attacker on the same subnet to intercept sensitive information by impersonating the LDAP server.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://fortiguard.com/advisory/FG-IR-19-037"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:fortinet:fortios:*:*:*:*:*:*:*:* versions up to (including) 6.2.0",
+            "*cpe:2.3:o:fortinet:fortios:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/20/2020",
+        "vulnerability_source": "Fortinet, Inc.",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-10055",
+        "cwe_id": "CWE-94",
+        "description": "A vulnerability has been identified in Desigo CC (V4.x), Desigo CC (V3.x), Desigo CC Compact (V4.x), Desigo CC Compact (V3.x). Affected applications are delivered with a 3rd party component (BIRT) that contains a remote code execution vulnerability if the Advanced Reporting Engine is enabled. The vulnerability could allow a remote unauthenticated attacker to execute arbitrary commands on the server with SYSTEM privileges.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "https://cert-portal.siemens.com/productcert/pdf/ssa-786743.pdf",
+            "https://us-cert.cisa.gov/ics/advisories/icsa-20-224-06"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:siemens:desigo_consumption_control:3.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:siemens:desigo_consumption_control:4.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:siemens:desigo_consumption_control_compact:3.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:siemens:desigo_consumption_control_compact:4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:siemens:desigo_consumption_control:3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:siemens:desigo_consumption_control:4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:siemens:desigo_consumption_control_compact:3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:siemens:desigo_consumption_control_compact:4.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/21/2020",
+        "vulnerability_source": "Siemens AG",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-15781",
+        "cwe_id": "CWE-79",
+        "description": "A vulnerability has been identified in SICAM WEB firmware for SICAM A8000 RTUs (All versions < V05.30). The login screen does not sufficiently sanitize input, which enables an attacker to generate specially crafted log messages. If an unsuspecting victim views the log messages via the web browser, these log messages might be interpreted and executed as code by the web application. This Cross-Site-Scripting (XSS) vulnerability might compromize the confidentiality, integrity and availability of the web application.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.6 CRITICAL",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://cert-portal.siemens.com/productcert/pdf/ssa-370042.pdf"
+        ],
+        "cpe": [
+            "cpe:2.3:h:siemens:sicam_a8000:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/21/2020",
+        "vulnerability_source": "Siemens AG",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-22720",
+        "cwe_id": null,
+        "description": "** REJECT ** DO NOT USE THIS CANDIDATE NUMBER. ConsultIDs: none. Reason: This candidate was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-22720"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-22720"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "08/14/2020",
+        "modified_date": "08/17/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-22721",
+        "cwe_id": "CWE-434",
+        "description": "A File Upload Vulnerability in PNotes - Andrey Gruber PNotes.NET v3.8.1.2 allows a local attacker to execute arbitrary code via the Miscellaneous \" External Programs by uploading the malicious .exe file to the external program.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://syhack.wordpress.com/2020/04/18/pnotes-insecure-file-upload-vulnerability-code-execution/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:pnotes.net_project:pnotes.net:3.8.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:pnotes.net_project:pnotes.net:3.8.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/21/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-22722",
+        "cwe_id": "CWE-434",
+        "description": "Rapid Software LLC Rapid SCADA 5.8.0 is affected by a local privilege escalation vulnerability in the ScadaAgentSvc.exe executable file. An attacker can obtain admin privileges by placing a malicious .exe file in the application and renaming it ScadaAgentSvc.exe, which would result in executing the binary as NT AUTHORITY\\SYSTEM in a Windows operating system. For example, an attacker can plant a reverse shell from a low privileged user account and by restarting the computer, the malicious service will be started as NT AUTHORITY\\SYSTEM by giving the attacker full system access to the remote PC.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://syhack.wordpress.com/2020/04/21/rapid-scada-local-privilege-escalation-vulnerability/"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/21/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-7583",
+        "cwe_id": "CWE-863",
+        "description": "A vulnerability has been identified in Automation License Manager 5 (All versions), Automation License Manager 6 (All versions < V6.0.8). The application does not properly validate the users' privileges when executing some operations, which could allow a user with low permissions to arbitrary modify files that should be protected against writing.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://cert-portal.siemens.com/productcert/pdf/ssa-388646.pdf"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:siemens:automation_license_manager:*:*:*:*:*:*:*:* versions from (including) 5.0.0 up to (excluding) 6.0.8",
+            "*cpe:2.3:a:siemens:automation_license_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/21/2020",
+        "vulnerability_source": "Siemens AG",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-15141",
+        "cwe_id": "CWE-22",
+        "description": "In openapi-python-client before version 0.5.3, there is a path traversal vulnerability. If a user generated a client using a maliciously crafted OpenAPI document, it is possible for generated files to be placed in arbitrary locations on disk.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.1 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/triaxtec/openapi-python-client/blob/main/CHANGELOG.md#053---2020-08-13",
+            "https://github.com/triaxtec/openapi-python-client/commit/3e7dfae5d0b3685abf1ede1bc6c086a116ac4746",
+            "https://github.com/triaxtec/openapi-python-client/security/advisories/GHSA-7wgr-7666-7pwj",
+            "https://pypi.org/project/openapi-python-client"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:openapi-python-client_project:openapi-python-client:*:*:*:*:*:*:*:* versions up to (excluding) 0.5.3",
+            "*cpe:2.3:a:openapi-python-client_project:openapi-python-client:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/20/2020",
+        "vulnerability_source": "GitHub, Inc.",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-15142",
+        "cwe_id": "CWE-94",
+        "description": "In openapi-python-client before version 0.5.3, clients generated with a maliciously crafted OpenAPI Document can generate arbitrary Python code. Subsequent execution of this malicious client is arbitrary code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.0 CRITICAL",
+        "base_score_v2": "6.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/triaxtec/openapi-python-client/blob/main/CHANGELOG.md#053---2020-08-13",
+            "https://github.com/triaxtec/openapi-python-client/commit/f7a56aae32cba823a77a84a1f10400799b19c19a",
+            "https://github.com/triaxtec/openapi-python-client/security/advisories/GHSA-9x4c-63pf-525f",
+            "https://pypi.org/project/openapi-python-client/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:openapi-python-client_project:openapi-python-client:*:*:*:*:*:*:*:* versions up to (excluding) 0.5.3",
+            "*cpe:2.3:a:openapi-python-client_project:openapi-python-client:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/20/2020",
+        "vulnerability_source": "GitHub, Inc.",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-15145",
+        "cwe_id": "CWE-276",
+        "description": "In Composer-Setup for Windows before version 6.0.0, if the developer's computer is shared with other users, a local attacker may be able to exploit the following scenarios. 1. A local regular user may modify the existing `C:\\ProgramData\\ComposerSetup\\bin\\composer.bat` in order to get elevated command execution when composer is run by an administrator. 2. A local regular user may create a specially crafted dll in the `C:\\ProgramData\\ComposerSetup\\bin` folder in order to get Local System privileges. See: https://itm4n.github.io/windows-server-netman-dll-hijacking. 3. If the directory of the php.exe selected by the user is not in the system path, it is added without checking that it is admin secured, as per Microsoft guidelines. See: https://msrc-blog.microsoft.com/2018/04/04/triaging-a-dll-planting-vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.2 HIGH",
+        "base_score_v2": "4.4 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/composer/windows-setup/commit/ca9f1435d368e3377e82d60ef0c7b795afa9f804",
+            "https://github.com/composer/windows-setup/security/advisories/GHSA-wgrx-r3qv-332c"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:getcomposer:composer-setup:*:*:*:*:*:windows:*:* versions up to (excluding) 6.0.0",
+            "*cpe:2.3:a:getcomposer:composer-setup:*:*:*:*:*:windows:*:*",
+            "(excluding)"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/21/2020",
+        "vulnerability_source": "GitHub, Inc.",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-9708",
+        "cwe_id": "CWE-22",
+        "description": "The resolveRepositoryPath function doesn't properly validate user input and a malicious user may traverse to any valid Git repository outside the repoRoot. This issue may lead to unauthorized access of private Git repositories as long as the malicious user knows or brute-forces the location of the repository.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/adobe/git-server/security/advisories/GHSA-cgj4-x2hh-2x93"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:adobe:git-server:*:*:*:*:*:*:*:* versions up to (excluding) 1.3.1",
+            "*cpe:2.3:a:adobe:git-server:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/21/2020",
+        "vulnerability_source": "Adobe Systems Incorporated",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-9767",
+        "cwe_id": "CWE-427",
+        "description": "A vulnerability related to Dynamic-link Library (\u201cDLL\u201d) loading in the Zoom Sharing Service would allow an attacker who had local access to a machine on which the service was running with elevated privileges to elevate their system privileges as well through use of a malicious DLL. Zoom addressed this issue, which only applies to Windows users, in the 5.0.4 client release.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://support.zoom.us/hc/en-us/articles/360044350792-Security-CVE-2020-9767"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:zoom:sharing_service:5.0.4:*:*:*:*:windows:*:*",
+            "*cpe:2.3:a:zoom:sharing_service:5.0.4:*:*:*:*:windows:*:*"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/21/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2015-8032",
+        "cwe_id": "CWE-269",
+        "description": "In Textpattern 4.5.7, an unprivileged author can change an article's markup setting.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/textpattern/textpattern/blob/f94c3fb9916ee0c7fa4a52025fa4e8c3273e355b/HISTORY.txt",
+            "https://github.com/textpattern/textpattern/commit/950d9e0e4ee46efa41e791eac6cd55d2f558c3c9"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:textpattern:textpattern:4.5.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:textpattern:textpattern:4.5.7:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/20/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2015-8033",
+        "cwe_id": "CWE-521",
+        "description": "In Textpattern 4.5.7, the password-reset feature does not securely tether a hash to a user account.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/textpattern/textpattern/blob/f94c3fb9916ee0c7fa4a52025fa4e8c3273e355b/HISTORY.txt",
+            "https://github.com/textpattern/textpattern/commit/1c09094187b9aeb18f09697bc7d1db12d078ae10"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:textpattern:textpattern:4.5.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:textpattern:textpattern:4.5.7:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/20/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-15692",
+        "cwe_id": "CWE-88",
+        "description": "In Nim 1.2.4, the standard library browsers mishandles the URL argument to browsers.openDefaultBrowser. This argument can be a local file path that will be opened in the default explorer. An attacker can pass one argument to the underlying open command to execute arbitrary registered system commands.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://github.com/nim-lang/Nim/blob/dc5a40f3f39c6ea672e6dc6aca7f8118a69dda99/lib/pure/browsers.nim#L48",
+            "https://nim-lang.org/blog/2020/07/30/versions-126-and-108-released.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nim-lang:nim:1.2.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:nim-lang:nim:1.2.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/20/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-15693",
+        "cwe_id": "CWE-74",
+        "description": "In Nim 1.2.4, the standard library httpClient is vulnerable to a CR-LF injection in the target URL. An injection is possible if the attacker controls any part of the URL provided in a call (such as httpClient.get or httpClient.post), the User-Agent header value, or custom HTTP header names or values.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "6.4 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/nim-lang/Nim/blob/dc5a40f3f39c6ea672e6dc6aca7f8118a69dda99/lib/pure/httpclient.nim#L1023",
+            "https://nim-lang.org/blog/2020/07/30/versions-126-and-108-released.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nim-lang:nim:1.2.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:nim-lang:nim:1.2.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/20/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-15694",
+        "cwe_id": "CWE-20",
+        "description": "In Nim 1.2.4, the standard library httpClient fails to properly validate the server response. For example, httpClient.get().contentLength() does not raise any error if a malicious server provides a negative Content-Length.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/nim-lang/Nim/blob/dc5a40f3f39c6ea672e6dc6aca7f8118a69dda99/lib/pure/httpclient.nim#L241",
+            "https://nim-lang.org/blog/2020/07/30/versions-126-and-108-released.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nim-lang:nim:1.2.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:nim-lang:nim:1.2.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/20/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-0255",
+        "cwe_id": null,
+        "description": "** REJECT ** DO NOT USE THIS CANDIDATE NUMBER. ConsultIDs: CVE-2020-10751. Reason: This candidate is a duplicate of CVE-2020-10751. Notes: All CVE users should reference CVE-2020-10751 instead of this candidate. All references and descriptions in this candidate have been removed to prevent accidental usage.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-0255"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-0255"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "08/14/2020",
+        "modified_date": "08/14/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-14353",
+        "cwe_id": null,
+        "description": "** REJECT ** DO NOT USE THIS CANDIDATE NUMBER. ConsultIDs: CVE-2017-18270. Reason: This candidate is a duplicate of CVE-2017-18270. Notes: All CVE users should reference CVE-2017-18270 instead of this candidate. All references and descriptions in this candidate have been removed to prevent accidental usage.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-14353"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-14353"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "08/14/2020",
+        "modified_date": "08/14/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-17464",
+        "cwe_id": null,
+        "description": "** REJECT ** DO NOT USE THIS CANDIDATE NUMBER. ConsultIDs: none. Reason: This candidate was withdrawn by its CNA. Further investigation showed that it was not a security issue. Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-17464"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-17464"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "08/14/2020",
+        "modified_date": "08/14/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-17473",
+        "cwe_id": "CWE-613",
+        "description": "Lack of mutual authentication in ZKTeco FaceDepot 7B 1.0.213 and ZKBiosecurity Server 1.0.0_20190723 allows an attacker to obtain a long-lasting token by impersonating the server.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://www.trendmicro.com/vinfo/us/threat-encyclopedia/vulnerability/8131/zkteco-facedepot-7b-10213-and-zkbiosecurity-server-10020190723-long-lasting-token-vulnerability"
+        ],
+        "cpe": [
+            "cpe:2.3:h:zkteco:facedepot_7b:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:zkteco:zkbiosecurity_server:1.0.0_20190723:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/21/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-17474",
+        "cwe_id": "CWE-613",
+        "description": "A token-reuse vulnerability in ZKTeco FaceDepot 7B 1.0.213 and ZKBiosecurity Server 1.0.0_20190723 allows an attacker to create arbitrary new users, elevate users to administrators, delete users, and download user faces from the database.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://www.trendmicro.com/vinfo/us/threat-encyclopedia/vulnerability/8134/zkteco-facedepot-7b-10213-and-zkbiosecurity-server-10020190723-improper-privilege-vulnerability"
+        ],
+        "cpe": [
+            "cpe:2.3:h:zkteco:facedepot_7b:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:zkteco:zkbiosecurity_server:1.0.0_20190723:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/21/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-17475",
+        "cwe_id": "CWE-306",
+        "description": "Lack of authentication in the network relays used in MEGVII Koala 2.9.1-c3s allows attackers to grant physical access to anyone by sending packet data to UDP port 5000.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://www.trendmicro.com/vinfo/us/threat-encyclopedia/vulnerability/8137/megvii-koala-291c3s-architectural-vulnerability-on-network-relays"
+        ],
+        "cpe": [
+            "cpe:2.3:h:megvii:koala:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "08/14/2020",
+        "modified_date": "08/21/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    },
+    {
+        "cve_id": "CVE-2020-24361",
+        "cwe_id": "CWE-273",
+        "description": "SNMPTT before 1.4.2 allows attackers to execute shell code via EXEC, PREXEC, or unknown_trap_exec.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.snmptt.org/changelog.shtml",
+            "https://lists.debian.org/debian-lts-announce/2020/10/msg00006.html",
+            "https://security.gentoo.org/glsa/202007-63"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:snmptt:snmptt:*:*:*:*:*:*:*:* versions up to (excluding) 1.4.2",
+            "*cpe:2.3:a:snmptt:snmptt:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "08/16/2020",
+        "modified_date": "10/02/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "8"
+    }
+]

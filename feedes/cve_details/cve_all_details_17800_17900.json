@@ -1,0 +1,3329 @@
+[
+    {
+        "cve_id": "CVE-2020-27771",
+        "cwe_id": "CWE-190",
+        "description": "In RestoreMSCWarning() of /coders/pdf.c there are several areas where calls to GetPixelIndex() could result in values outside the range of representable for the unsigned char type. The patch casts the return value of GetPixelIndex() to ssize_t type to avoid this bug. This undefined behavior could be triggered when ImageMagick processes a crafted pdf file. Red Hat Product Security marked this as Low severity because although it could potentially lead to an impact to application availability, no specific impact was demonstrated in this case. This flaw affects ImageMagick versions prior to 7.0.9-0.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "3.3 LOW",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1898290"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:* versions up to (excluding) 7.0.9",
+            "*cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:redhat:enterprise_linux:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/04/2020",
+        "modified_date": "12/07/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-27408",
+        "cwe_id": "CWE-326",
+        "description": "OpenSIS Community Edition through 7.6 is affected by incorrect access controls for the file ResetUserInfo.php that allow an unauthenticated attacker to change the password of arbitrary users.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/OS4ED/openSIS-Responsive-Design/releases",
+            "https://insinuator.net/2020/10/opensis-vulnerabilities/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:os4ed:opensis:*:*:*:*:community:*:*:* versions up to (including) 7.6",
+            "*cpe:2.3:a:os4ed:opensis:*:*:*:*:community:*:*:*",
+            "(including)"
+        ],
+        "published_date": "12/04/2020",
+        "modified_date": "12/08/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-27409",
+        "cwe_id": "CWE-79",
+        "description": "OpenSIS Community Edition before 7.5 is affected by a cross-site scripting (XSS) vulnerability in SideForStudent.php via the modname parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/OS4ED/openSIS-Responsive-Design/commit/edca0855e7bc27d5b28dcb2d16f057ada865e282#diff-5f88e2ce4cd96451df7580911120b4b2",
+            "https://github.com/OS4ED/openSIS-Responsive-Design/compare/ver7.4...V7.5",
+            "https://insinuator.net/2020/10/opensis-vulnerabilities/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:os4ed:opensis:*:*:*:*:community:*:*:* versions up to (excluding) 7.5",
+            "*cpe:2.3:a:os4ed:opensis:*:*:*:*:community:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/04/2020",
+        "modified_date": "12/07/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-25461",
+        "cwe_id": null,
+        "description": "Invalid Memory Access in the fxProxyGetter function in moddable/xs/sources/xsProxy.c in Moddable SDK before OS200908 causes a denial of service (SEGV).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/Moddable-OpenSource/moddable/issues/441",
+            "https://github.com/Moddable-OpenSource/moddable/releases/tag/OS200908"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:moddable:moddable:*:*:*:*:*:*:*:* versions up to (excluding) os200908",
+            "*cpe:2.3:a:moddable:moddable:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/04/2020",
+        "modified_date": "12/04/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-25462",
+        "cwe_id": "CWE-787",
+        "description": "Heap buffer overflow in the fxCheckArrowFunction function at moddable/xs/sources/xsSyntaxical.c:3562 in Moddable SDK before OS200903.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/Moddable-OpenSource/moddable/issues/432",
+            "https://github.com/Moddable-OpenSource/moddable/releases/tag/OS200903"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:moddable:moddable:*:*:*:*:*:*:*:* versions up to (excluding) os200908",
+            "*cpe:2.3:a:moddable:moddable:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/04/2020",
+        "modified_date": "12/04/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-25463",
+        "cwe_id": null,
+        "description": "Invalid Memory Access in fxUTF8Decode at moddable/xs/sources/xsCommon.c:916 in Moddable SDK before OS200908 causes a denial of service (SEGV).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/Moddable-OpenSource/moddable/issues/440",
+            "https://github.com/Moddable-OpenSource/moddable/releases/tag/OS200908"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:moddable:moddable:*:*:*:*:*:*:*:* versions up to (excluding) os200908",
+            "*cpe:2.3:a:moddable:moddable:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/04/2020",
+        "modified_date": "12/04/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-25464",
+        "cwe_id": "CWE-787",
+        "description": "Heap buffer overflow at moddable/xs/sources/xsDebug.c in Moddable SDK before before 20200903. The top stack frame is only partially initialized because the stack overflowed while creating the frame. This leads to a crash in the code sending the stack frame to the debugger.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/Moddable-OpenSource/moddable/issues/431"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:moddable:moddable:*:*:*:*:*:*:*:* versions up to (excluding) os200903",
+            "*cpe:2.3:a:moddable:moddable:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/04/2020",
+        "modified_date": "12/04/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-25465",
+        "cwe_id": "CWE-476",
+        "description": "Null Pointer Dereference. in xObjectBindingFromExpression at moddable/xs/sources/xsSyntaxical.c:3419 in Moddable SDK before OS200908 causes a denial of service (SEGV).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/Moddable-OpenSource/moddable/issues/442",
+            "https://github.com/Moddable-OpenSource/moddable/releases/tag/OS200908"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:moddable:moddable:*:*:*:*:*:*:*:* versions up to (excluding) os200908",
+            "*cpe:2.3:a:moddable:moddable:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/04/2020",
+        "modified_date": "12/04/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-25449",
+        "cwe_id": "CWE-79",
+        "description": "Cross Site Scripting (XSS) vulnerability in Arachnys Cabot 0.11.12 can be exploited via the Address column.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.8 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://itsmeanonartist.tech/blogs/blog2.html",
+            "https://packetstormsecurity.com/files/159070/Cabot-0.11.12-Cross-Site-Scripting.html",
+            "https://www.exploit-db.com/exploits/48791",
+            "https://www.exploitalert.com/view-details.html?id=36106"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:arachnys:cabot:0.11.12:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:arachnys:cabot:0.11.12:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/04/2020",
+        "modified_date": "12/07/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-27774",
+        "cwe_id": "CWE-190",
+        "description": "A flaw was found in ImageMagick in MagickCore/statistic.c. An attacker who submits a crafted file that is processed by ImageMagick could trigger undefined behavior in the form of a too large shift for 64-bit type `ssize_t`. This would most likely lead to an impact to application availability, but could potentially cause other problems related to undefined behavior. This flaw affects ImageMagick versions prior to 7.0.9-0.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "3.3 LOW",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1898296"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:* versions up to (excluding) 7.0.9",
+            "*cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:redhat:enterprise_linux:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/04/2020",
+        "modified_date": "12/07/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-27775",
+        "cwe_id": "CWE-190",
+        "description": "A flaw was found in ImageMagick in MagickCore/quantum.h. An attacker who submits a crafted file that is processed by ImageMagick could trigger undefined behavior in the form of values outside the range of type unsigned char. This would most likely lead to an impact to application availability, but could potentially cause other problems related to undefined behavior. This flaw affects ImageMagick versions prior to 7.0.9-0.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "3.3 LOW",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1898300"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:* versions up to (excluding) 7.0.9",
+            "*cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:redhat:enterprise_linux:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/04/2020",
+        "modified_date": "12/07/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-27776",
+        "cwe_id": "CWE-190",
+        "description": "A flaw was found in ImageMagick in MagickCore/statistic.c. An attacker who submits a crafted file that is processed by ImageMagick could trigger undefined behavior in the form of values outside the range of type unsigned long. This would most likely lead to an impact to application availability, but could potentially cause other problems related to undefined behavior. This flaw affects ImageMagick versions prior to 7.0.9-0.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "3.3 LOW",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1898304"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:* versions up to (excluding) 7.0.9",
+            "*cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:redhat:enterprise_linux:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/04/2020",
+        "modified_date": "12/07/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-27772",
+        "cwe_id": "CWE-190",
+        "description": "A flaw was found in ImageMagick in coders/bmp.c. An attacker who submits a crafted file that is processed by ImageMagick could trigger undefined behavior in the form of values outside the range of type `unsigned int`. This would most likely lead to an impact to application availability, but could potentially cause other problems related to undefined behavior. This flaw affects ImageMagick versions prior to 7.0.9-0.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "3.3 LOW",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1898291"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:* versions up to (excluding) 7.0.9",
+            "*cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:redhat:enterprise_linux:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/04/2020",
+        "modified_date": "12/07/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-27773",
+        "cwe_id": "CWE-369",
+        "description": "A flaw was found in ImageMagick in MagickCore/gem-private.h. An attacker who submits a crafted file that is processed by ImageMagick could trigger undefined behavior in the form of values outside the range of type `unsigned char` or division by zero. This would most likely lead to an impact to application availability, but could potentially cause other problems related to undefined behavior. This flaw affects ImageMagick versions prior to 7.0.9-0.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "3.3 LOW",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1898295"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:* versions up to (excluding) 7.0.9",
+            "*cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:redhat:enterprise_linux:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/04/2020",
+        "modified_date": "12/07/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-28950",
+        "cwe_id": "CWE-427",
+        "description": "The installer of Kaspersky Anti-Ransomware Tool (KART) prior to KART 4.0 Patch C was vulnerable to a DLL hijacking attack that allowed an attacker to elevate privileges during installation process.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.9 MEDIUM",
+        "hyperlinks": [
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/192653",
+            "https://support.kaspersky.com/general/vulnerability.aspx?el=12430#290720"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:kaspersky:anti-ransomware_tool:*:*:*:*:*:*:*:* versions up to (excluding) 4.0\n     *cpe:2.3:a:kaspersky:anti-ransomware_tool:4.0:patch_c:*:*:*:*:*:*",
+            "*cpe:2.3:a:kaspersky:anti-ransomware_tool:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:kaspersky:anti-ransomware_tool:4.0:patch_c:*:*:*:*:*:*"
+        ],
+        "published_date": "12/04/2020",
+        "modified_date": "12/08/2020",
+        "vulnerability_source": "Kaspersky Labs",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-29572",
+        "cwe_id": "CWE-79",
+        "description": "app/View/Elements/genericElements/SingleViews/Fields/genericField.ctp in MISP 2.4.135 has XSS via the authkey comment field.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/MISP/MISP/commit/0bfc0bf38a7758b27c5c446fec5e3b905e5a54ab"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:misp:misp:2.4.135:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:misp:misp:2.4.135:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/05/2020",
+        "modified_date": "12/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-29573",
+        "cwe_id": "CWE-787",
+        "description": "sysdeps/i386/ldbl2mpn.c in the GNU C Library (aka glibc or libc6) before 2.23 on x86 targets has a stack-based buffer overflow if the input to any of the printf family of functions is an 80-bit long double with a non-canonical bit pattern, as seen when passing a \\x00\\x04\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x04 value to sprintf. NOTE: the issue does not affect glibc by default in 2016 or later (i.e., 2.23 or later) because of commits made in 2015 for inlining of C99 math functions through use of GCC built-ins. In other words, the reference to 2.23 is intentional despite the mention of \"Fixed for glibc 2.33\" in the 26649 reference.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=26649",
+            "https://sourceware.org/pipermail/libc-alpha/2020-September/117779.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gnu:glibc:*:*:*:*:*:*:x86:* versions up to (excluding) 2.23",
+            "*cpe:2.3:a:gnu:glibc:*:*:*:*:*:*:x86:*",
+            "(excluding)",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/05/2020",
+        "modified_date": "12/14/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-28727",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) exists in SeedDMS 6.0.13 via the folderid parameter to views/bootstrap/class.DropFolderChooser.php.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://seeddms.com",
+            "https://sourceforge.net/p/seeddms/code/ci/32b03b1e5880e2f38cecf4ac7743f8f62f33043f/",
+            "https://sourceforge.net/projects/seeddms/files/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:seeddms:seeddms:6.0.13:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:seeddms:seeddms:6.0.13:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/07/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-5798",
+        "cwe_id": "CWE-276",
+        "description": "inSync Client installer for macOS versions v6.8.0 and prior could allow an attacker to gain privileges of a root user from a lower privileged user due to improper integrity checks and directory permissions.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://www.tenable.com/security/research/tra-2020-67",
+            "https://www.tenable.com/security/research/tra-2020-67,https://docs.druva.com/001_inSync_Cloud/Cloud/010_Release_Details/010_inSync_Cloud_Updates"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:druva:insync:6.8.0:*:*:*:*:macos:*:*",
+            "*cpe:2.3:a:druva:insync:6.8.0:*:*:*:*:macos:*:*"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/08/2020",
+        "vulnerability_source": "Tenable Network Security, Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-5799",
+        "cwe_id": null,
+        "description": "The Eat Spray Love mobile app for both iOS and Android contains a backdoor account that, when modified, allowed privileged access to restricted functionality and to other users' data.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://www.tenable.com/security/research/tra-2020-65"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:eat_spray_love_project:eat_spray_love:2.0.20:*:*:*:*:android:*:*\n     *cpe:2.3:a:eat_spray_love_project:eat_spray_love:2.0.20:*:*:*:*:iphone_os:*:*",
+            "*cpe:2.3:a:eat_spray_love_project:eat_spray_love:2.0.20:*:*:*:*:android:*:*",
+            "*cpe:2.3:a:eat_spray_love_project:eat_spray_love:2.0.20:*:*:*:*:iphone_os:*:*"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/08/2020",
+        "vulnerability_source": "Tenable Network Security, Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-5800",
+        "cwe_id": "CWE-287",
+        "description": "The Eat Spray Love mobile app for both iOS and Android contains logic that allows users to bypass authentication and retrieve or modify information that they would not normally have access to.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://www.tenable.com/security/research/tra-2020-65"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:eat_spray_love_project:eat_spray_love:2.0.20:*:*:*:*:android:*:*\n     *cpe:2.3:a:eat_spray_love_project:eat_spray_love:2.0.20:*:*:*:*:iphone_os:*:*",
+            "*cpe:2.3:a:eat_spray_love_project:eat_spray_love:2.0.20:*:*:*:*:android:*:*",
+            "*cpe:2.3:a:eat_spray_love_project:eat_spray_love:2.0.20:*:*:*:*:iphone_os:*:*"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/08/2020",
+        "vulnerability_source": "Tenable Network Security, Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-9247",
+        "cwe_id": "CWE-120",
+        "description": "There is a buffer overflow vulnerability in several Huawei products. The system does not sufficiently validate certain configuration parameter which is passed from user that would cause buffer overflow. The attacker should trick the user into installing and running a malicious application with a high privilege, successful exploit may cause code execution. Affected product include Huawei HONOR 20 PRO, Mate 20, Mate 20 Pro, Mate 20 X, P30, P30 Pro, Hima-L29C, Laya-AL00EP, Princeton-AL10B, Tony-AL00B, Yale-L61A, Yale-TL00B and YaleP-AL10B.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200729-03-smartphone-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:hima-l29c:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:hima-l29c:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:hima-l29c:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:honor_20_pro:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:honor_20_pro:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:laya-al00ep:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:mate_20:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:mate_20_pro:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:mate_20_pro:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:mate_20_pro:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:mate_20_pro:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:mate_20_pro:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:mate_20_pro:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:mate_20_x:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:p30:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:p30:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:p30:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:p30:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:p30:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:p30:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:p30:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:p30_pro:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:princeton-al10b:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:tony-al00b:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:yale-l61a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:yale-l61a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:yale-tl00b:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:yalep-al10b:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/08/2020",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-27151",
+        "cwe_id": null,
+        "description": "An issue was discovered in Kata Containers through 1.11.3 and 2.x through 2.0-rc1. The runtime will execute binaries given using annotations without any kind of validation. Someone who is granted access rights to a cluster will be able to have kata-runtime execute arbitrary binaries as root on the worker nodes.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "https://bugs.launchpad.net/katacontainers.io/+bug/1878234",
+            "https://github.com/kata-containers/kata-containers/releases/tag/2.0.0",
+            "https://github.com/kata-containers/runtime/releases/tag/1.11.5",
+            "https://github.com/kata-containers/runtime/releases/tag/1.12.0"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:katacontainers:kata_containers:*:*:*:*:*:*:*:* versions up to (including) 1.11.3\n     *cpe:2.3:a:katacontainers:kata_containers:2.0.0:alpha1:*:*:*:*:*:*\n     *cpe:2.3:a:katacontainers:kata_containers:2.0.0:alpha2:*:*:*:*:*:*\n     *cpe:2.3:a:katacontainers:kata_containers:2.0.0:alpha3:*:*:*:*:*:*\n     *cpe:2.3:a:katacontainers:kata_containers:2.0.0:rc0:*:*:*:*:*:*\n     *cpe:2.3:a:katacontainers:kata_containers:2.0.0:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:a:katacontainers:kata_containers:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:katacontainers:kata_containers:2.0.0:alpha1:*:*:*:*:*:*",
+            "*cpe:2.3:a:katacontainers:kata_containers:2.0.0:alpha2:*:*:*:*:*:*",
+            "*cpe:2.3:a:katacontainers:kata_containers:2.0.0:alpha3:*:*:*:*:*:*",
+            "*cpe:2.3:a:katacontainers:kata_containers:2.0.0:rc0:*:*:*:*:*:*",
+            "*cpe:2.3:a:katacontainers:kata_containers:2.0.0:rc1:*:*:*:*:*:*"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/08/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-26122",
+        "cwe_id": "CWE-347",
+        "description": "Inspur NF5266M5 through 3.21.2 and other server M5 devices allow remote code execution via administrator privileges. The Baseboard Management Controller (BMC) program of INSPUR server is weak in checking the firmware and lacks the signature verification mechanism, the attacker who obtains the administrator's rights can control the BMC by inserting malicious code into the firmware program and bypassing the current verification mechanism to upgrade the BMC.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.2 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://en.inspur.com/en/2487134/index.html",
+            "https://en.inspur.com/en/security_bulletins/security_advisory2/2543921/index.html"
+        ],
+        "cpe": [
+            "cpe:2.3:h:inspur:nf5180m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:inspur:nf5260m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:inspur:nf5266m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:inspur:nf5270m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:inspur:nf5280m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:inspur:nf5466m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:inspur:nf5468m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:inspur:nf5486m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:inspur:nf5488m5-d:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:inspur:nf8260m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:inspur:nf8480m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:inspur:ns5162m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:inspur:ns5482m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:inspur:ns5484m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:inspur:ns5488m5:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/08/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-26513",
+        "cwe_id": "CWE-611",
+        "description": "An issue was discovered in Intland codeBeamer ALM 10.x through 10.1.SP4. The ReqIF XML data, used by the codebeamer ALM application to import projects, is parsed by insecurely configured software components, which can be abused for XML External Entity Attacks.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://compass-security.com/fileadmin/Research/Advisories/2020-09_CSNC-2020-008_Intland_codeBeamer_ALM_XXE.txt",
+            "https://intland.com/codebeamer/application-lifecycle-management/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:intland:codebeamer_application_lifecycle_management:*:*:*:*:*:*:*:* versions from (including) 10.0.0 up to (excluding) 10.1.0\n     *cpe:2.3:a:intland:codebeamer_application_lifecycle_management:10.1.0:-:*:*:*:*:*:*\n     *cpe:2.3:a:intland:codebeamer_application_lifecycle_management:10.1.0:sp1:*:*:*:*:*:*\n     *cpe:2.3:a:intland:codebeamer_application_lifecycle_management:10.1.0:sp2:*:*:*:*:*:*\n     *cpe:2.3:a:intland:codebeamer_application_lifecycle_management:10.1.0:sp3:*:*:*",
+            "*cpe:2.3:a:intland:codebeamer_application_lifecycle_management:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:intland:codebeamer_application_lifecycle_management:10.1.0:-:*:*:*:*:*:*",
+            "*cpe:2.3:a:intland:codebeamer_application_lifecycle_management:10.1.0:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:a:intland:codebeamer_application_lifecycle_management:10.1.0:sp2:*:*:*:*:*:*",
+            "*cpe:2.3:a:intland:codebeamer_application_lifecycle_management:10.1.0:sp3:*:*:*"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/08/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-29595",
+        "cwe_id": null,
+        "description": "PlugIns\\IDE_ACDStd.apl in ACDSee Photo Studio Studio Professional 2021 14.0 Build 1705 has a User Mode Write AV starting at IDE_ACDStd!JPEGTransW+0x00000000000031aa.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/secluck/pentest/blob/main/000078.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:acdsee:photo_studio_2021:14.0:build_1705:*:*:professional:*:*:*",
+            "*cpe:2.3:a:acdsee:photo_studio_2021:14.0:build_1705:*:*:professional:*:*:*"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-13945",
+        "cwe_id": null,
+        "description": "In Apache APISIX, the user enabled the Admin API and deleted the Admin API access IP restriction rules. Eventually, the default token is allowed to access APISIX management data. This affects versions 1.2, 1.3, 1.4, 1.5.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://lists.apache.org/thread.html/r792feb29964067a4108f53e8579a1e9bd1c8b5b9bc95618c814faf2f%40%3Cdev.apisix.apache.org%3E"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apache:apisix:*:*:*:*:*:*:*:* versions from (including) 1.2 up to (including) 1.5",
+            "*cpe:2.3:a:apache:apisix:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/08/2020",
+        "vulnerability_source": "Apache Software Foundation",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-17521",
+        "cwe_id": null,
+        "description": "Apache Groovy provides extension methods to aid with creating temporary directories. Prior to this fix, Groovy's implementation of those extension methods was using a now superseded Java JDK method call that is potentially not secure on some operating systems in some contexts. Users not using the extension methods mentioned in the advisory are not affected, but may wish to read the advisory for further details. Versions Affected: 2.0 to 2.4.20, 2.5.0 to 2.5.13, 3.0.0 to 3.0.6, and 4.0.0-alpha-1. Fixed in versions 2.4.21, 2.5.14, 3.0.7, 4.0.0-alpha-2.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://groovy-lang.org/security.html#CVE-2020-17521",
+            "https://lists.apache.org/thread.html/ra9dab34bf8625511f23692ad0fcee2725f782e9aad6c5cdff6cf4465@%3Cnotifications.groovy.apache.org%3E",
+            "https://security.netapp.com/advisory/ntap-20201218-0006/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apache:groovy:*:*:*:*:*:*:*:* versions from (including) 2.0.0 up to (including) 2.4.20\n     *cpe:2.3:a:apache:groovy:*:*:*:*:*:*:*:* versions from (including) 2.5.0 up to (including) 2.5.13\n     *cpe:2.3:a:apache:groovy:*:*:*:*:*:*:*:* versions from (including) 3.0.0 up to (including) 3.0.6\n     *cpe:2.3:a:apache:groovy:4.0.0:alpha1:*:*:*:*:*:*",
+            "*cpe:2.3:a:apache:groovy:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:apache:groovy:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:apache:groovy:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:apache:groovy:4.0.0:alpha1:*:*:*:*:*:*"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/18/2020",
+        "vulnerability_source": "Apache Software Foundation",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-29597",
+        "cwe_id": "CWE-434",
+        "description": "IncomCMS 2.0 has a modules/uploader/showcase/script.php insecure file upload vulnerability. This vulnerability allows unauthenticated attackers to upload files into the server.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/M4DM0e/m4dm0e.github.io/blob/gh-pages/_posts/2020-12-07-incom-insecure-up.md",
+            "https://m4dm0e.github.io/2020/12/07/incom-insecure-up.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:incomcms_project:incomcms:2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:incomcms_project:incomcms:2.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-29599",
+        "cwe_id": "CWE-91",
+        "description": "ImageMagick before 6.9.11-40 and 7.x before 7.0.10-40 mishandles the -authenticate option, which allows setting a password for password-protected PDF files. The user-controlled password was not properly escaped/sanitized and it was therefore possible to inject additional shell commands via coders/pdf.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/ImageMagick/ImageMagick/discussions/2851",
+            "https://insert-script.blogspot.com/2020/11/imagemagick-shell-injection-via-pdf.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:* versions from (including) 6.9.8-1 up to (excluding) 6.9.11-40\n     *cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:* versions from (including) 7.0.5-3 up to (excluding) 7.0.10-40",
+            "*cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/08/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-29600",
+        "cwe_id": "CWE-22",
+        "description": "In AWStats through 7.7, cgi-bin/awstats.pl?config= accepts an absolute pathname, even though it was intended to only read a file in the /etc/awstats/awstats.conf format. NOTE: this issue exists because of an incomplete fix for CVE-2017-1000501.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=891469",
+            "https://github.com/eldy/awstats/issues/90"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:awstats:awstats:*:*:*:*:*:*:*:* versions up to (including) 7.7",
+            "*cpe:2.3:a:awstats:awstats:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/08/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-27641",
+        "cwe_id": null,
+        "description": "** REJECT ** DO NOT USE THIS CANDIDATE NUMBER. ConsultIDs: CVE-2020-29136. Reason: This candidate is a reservation duplicate of CVE-2020-29136. Notes: All CVE users should reference CVE-2020-29136 instead of this candidate. All references and descriptions in this candidate have been removed to prevent accidental usage.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-27641"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-27641"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "12/07/2020",
+        "modified_date": "12/07/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-28935",
+        "cwe_id": "CWE-59",
+        "description": "NLnet Labs Unbound, up to and including version 1.12.0, and NLnet Labs NSD, up to and including version 4.3.3, contain a local vulnerability that would allow for a local symlink attack. When writing the PID file, Unbound and NSD create the file if it is not there, or open an existing file for writing. In case the file was already present, they would follow symlinks if the file happened to be a symlink instead of a regular file. An additional chown of the file would then take place after it was written, making the user Unbound/NSD is supposed to run as the new owner of the file. If an attacker has local access to the user Unbound/NSD runs as, she could create a symlink in place of the PID file pointing to a file that she would like to erase. If then Unbound/NSD is killed and the PID file is not cleared, upon restarting with root privileges, Unbound/NSD will rewrite any file pointed at by the symlink. This is a local vulnerability that could create a Denial of Service of the system Unbound/NSD is running on. It requires an attacker having access to the limited permission user Unbound/NSD runs as and point through the symlink to a critical file on the system.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://www.nlnetlabs.nl/downloads/nsd/CVE-2020-28935.txt",
+            "https://www.nlnetlabs.nl/downloads/unbound/CVE-2020-28935.txt"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nlnetlabs:name_server_daemon:*:*:*:*:*:*:*:* versions up to (excluding) 4.3.4\n     *cpe:2.3:a:nlnetlabs:unbound:*:*:*:*:*:*:*:* versions up to (excluding) 1.13.0",
+            "*cpe:2.3:a:nlnetlabs:name_server_daemon:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:nlnetlabs:unbound:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/08/2020",
+        "vulnerability_source": "sep@nlnetlabs.nl",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-8563",
+        "cwe_id": "CWE-532",
+        "description": "In Kubernetes clusters using VSphere as a cloud provider, with a logging level set to 4 or above, VSphere cloud credentials will be leaked in the cloud controller manager's log. This affects < v1.19.3.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://github.com/kubernetes/kubernetes/issues/95621",
+            "https://groups.google.com/g/kubernetes-security-discuss/c/vm-HcrFUOCs/m/36utxAM5CwAJ"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:* versions up to (excluding) 1.19.3",
+            "*cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/08/2020",
+        "vulnerability_source": "Kubernetes",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-8564",
+        "cwe_id": "CWE-532",
+        "description": "In Kubernetes clusters using a logging level of at least 4, processing a malformed docker config file will result in the contents of the docker config file being leaked, which can include pull secrets or other registry credentials. This affects < v1.19.3, < v1.18.10, < v1.17.13.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://github.com/kubernetes/kubernetes/issues/95622",
+            "https://groups.google.com/g/kubernetes-security-discuss/c/vm-HcrFUOCs/m/36utxAM5CwAJ"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:* versions from (including) 1.17.0 up to (excluding) 1.17.13\n     *cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:* versions from (including) 1.18.0 up to (excluding) 1.18.10\n     *cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:* versions from (including) 1.19.0 up to (excluding) 1.19.3",
+            "*cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/08/2020",
+        "vulnerability_source": "Kubernetes",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-8565",
+        "cwe_id": "CWE-532",
+        "description": "In Kubernetes, if the logging level is set to at least 9, authorization and bearer tokens will be written to log files. This can occur both in API server logs and client tool output like kubectl. This affects <= v1.19.3, <= v1.18.10, <= v1.17.13, < v1.20.0-alpha2.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://github.com/kubernetes/kubernetes/issues/95623",
+            "https://groups.google.com/g/kubernetes-security-discuss/c/vm-HcrFUOCs/m/36utxAM5CwAJ"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:* versions from (including) 1.17.0 up to (including) 1.17.13\n     *cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:* versions from (including) 1.18.0 up to (including) 1.18.10\n     *cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:* versions from (including) 1.19.0 up to (including) 1.19.3",
+            "*cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/08/2020",
+        "vulnerability_source": "Kubernetes",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-8566",
+        "cwe_id": "CWE-532",
+        "description": "In Kubernetes clusters using Ceph RBD as a storage provisioner, with logging level of at least 4, Ceph RBD admin secrets can be written to logs. This occurs in kube-controller-manager's logs during provisioning of Ceph RBD persistent claims. This affects < v1.19.3, < v1.18.10, < v1.17.13.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://github.com/kubernetes/kubernetes/issues/95624",
+            "https://groups.google.com/g/kubernetes-security-discuss/c/vm-HcrFUOCs/m/36utxAM5CwAJ"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:* versions from (including) 1.17.0 up to (excluding) 1.17.13\n     *cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:* versions from (including) 1.18.0 up to (excluding) 1.18.10\n     *cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:* versions from (including) 1.19.0 up to (excluding) 1.19.3",
+            "*cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/09/2020",
+        "vulnerability_source": "Kubernetes",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-25628",
+        "cwe_id": "CWE-79",
+        "description": "The filter in the tag manager required extra sanitizing to prevent a reflected XSS risk. This affects 3.9 to 3.9.1, 3.8 to 3.8.4, 3.7 to 3.7.7, 3.5 to 3.5.13 and earlier unsupported versions. Fixed in 3.9.2, 3.8.5, 3.7.8 and 3.5.14.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://git.moodle.org/gw?p=moodle.git&a=search&h=HEAD&st=commit&s=MDL-69340",
+            "https://moodle.org/mod/forum/discuss.php?d=410840"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:* versions from (including) 3.5.0 up to (excluding) 3.5.14\n     *cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:* versions from (including) 3.7.0 up to (excluding) 3.7.8\n     *cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:* versions from (including) 3.8.0 up to (excluding) 3.8.5\n     *cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:* versions from (including) 3.9.0 up to (excluding) 3.9.2",
+            "*cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/08/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-25629",
+        "cwe_id": "CWE-284",
+        "description": "A vulnerability was found in Moodle where users with \"Log in as\" capability in a course context (typically, course managers) may gain access to some site administration capabilities by \"logging in as\" a System manager. This affects 3.9 to 3.9.1, 3.8 to 3.8.4, 3.7 to 3.7.7, 3.5 to 3.5.13 and earlier unsupported versions. This is fixed in 3.9.2, 3.8.5, 3.7.8 and 3.5.14.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://moodle.org/mod/forum/discuss.php?d=410841"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:* versions from (including) 3.5.0 up to (excluding) 3.5.14\n     *cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:* versions from (including) 3.7.0 up to (excluding) 3.7.8\n     *cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:* versions from (including) 3.8.0 up to (excluding) 3.8.5\n     *cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:* versions from (including) 3.9.0 up to (excluding) 3.9.2",
+            "*cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/08/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-25630",
+        "cwe_id": "CWE-400",
+        "description": "A vulnerability was found in Moodle where the decompressed size of zip files was not checked against available user quota before unzipping them, which could lead to a denial of service risk. This affects versions 3.9 to 3.9.1, 3.8 to 3.8.4, 3.7 to 3.7.7, 3.5 to 3.5.13 and earlier unsupported versions. Fixed in 3.9.2, 3.8.5, 3.7.8 and 3.5.14.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://moodle.org/mod/forum/discuss.php?d=410842"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:* versions from (including) 3.5.0 up to (excluding) 3.5.14\n     *cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:* versions from (including) 3.7.0 up to (excluding) 3.7.8\n     *cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:* versions from (including) 3.8.0 up to (excluding) 3.8.5\n     *cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:* versions from (including) 3.9.0 up to (excluding) 3.9.2",
+            "*cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/08/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-25631",
+        "cwe_id": "CWE-79",
+        "description": "A vulnerability was found in Moodle 3.9 to 3.9.1, 3.8 to 3.8.4 and 3.7 to 3.7.7 where it was possible to include JavaScript in a book's chapter title, which was not escaped on the \"Add new chapter\" page. This is fixed in 3.9.2, 3.8.5 and 3.7.8.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://moodle.org/mod/forum/discuss.php?d=410843"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:* versions from (including) 3.7.0 up to (excluding) 3.7.8\n     *cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:* versions from (including) 3.8.0 up to (excluding) 3.8.5\n     *cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:* versions from (including) 3.9.0 up to (excluding) 3.9.2",
+            "*cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:moodle:moodle:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/08/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-25677",
+        "cwe_id": "CWE-312",
+        "description": "Ceph-ansible 4.0.34.1 creates /etc/ceph/iscsi-gateway.conf with insecure default permissions, allowing any user to read the sensitive information within.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1892108",
+            "https://github.com/ceph/ceph-ansible/pull/5964"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ceph:ceph-ansible:4.0.34.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ceph:ceph-ansible:4.0.34.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:ceph_storage:3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:ceph_storage:4.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/08/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-25692",
+        "cwe_id": "CWE-476",
+        "description": "A NULL pointer dereference was found in OpenLDAP server and was fixed in openldap 2.4.55, during a request for renaming RDNs. An unauthenticated attacker could remotely crash the slapd process by sending a specially crafted request, causing a Denial of Service.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1894567"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:openldap:openldap:*:*:*:*:*:*:*:* versions up to (excluding) 2.4.55",
+            "*cpe:2.3:a:openldap:openldap:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/08/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-27818",
+        "cwe_id": "CWE-120",
+        "description": "A flaw was found in the check_chunk_name() function of pngcheck-2.4.0. An attacker able to pass a malicious file to be processed by pngcheck could cause a temporary denial of service, posing a low risk to application availability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "3.3 LOW",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://bodhi.fedoraproject.org/updates/FEDORA-2020-04d5e1ce26",
+            "https://bodhi.fedoraproject.org/updates/FEDORA-2020-23432b7b72",
+            "https://bodhi.fedoraproject.org/updates/FEDORA-2020-27b168926a",
+            "https://bodhi.fedoraproject.org/updates/FEDORA-2020-4349e95c4f",
+            "https://bodhi.fedoraproject.org/updates/FEDORA-EPEL-2020-339db397ad",
+            "https://bodhi.fedoraproject.org/updates/FEDORA-EPEL-2020-6c93c61069",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1902011"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fedoraproject:fedora_extra_packages_for_enterprise_linux:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:fedoraproject:fedora_extra_packages_for_enterprise_linux:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*\n     *cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*\n     *cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*\n     *cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fedoraproject:fedora_extra_packages_for_enterprise_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fedoraproject:fedora_extra_packages_for_enterprise_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:fedoraproject:fedora:33:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:fedoraproject:fedora:34:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:libpng:pngcheck:2.4.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/08/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-27822",
+        "cwe_id": "CWE-401",
+        "description": "A flaw was found in Wildfly affecting versions 19.0.0.Final, 19.1.0.Final, 20.0.0.Final, 20.0.1.Final, and 21.0.0.Final. When an application uses the OpenTracing API's java-interceptors, there is a possibility of a memory leak. This flaw allows an attacker to impact the availability of the server. The highest threat from this vulnerability is to system availability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "7.1 HIGH",
+        "hyperlinks": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1904060"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:wildfly:19.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:redhat:wildfly:19.1.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:redhat:wildfly:20.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:redhat:wildfly:20.0.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:redhat:wildfly:21.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:wildfly:19.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:wildfly:19.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:wildfly:20.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:wildfly:20.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:wildfly:21.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/14/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-26253",
+        "cwe_id": "CWE-346",
+        "description": "Kirby is a CMS. In Kirby CMS (getkirby/cms) before version 3.3.6, and Kirby Panel before version 2.5.14 there is a vulnerability in which the admin panel may be accessed if hosted on a .dev domain. In order to protect new installations on public servers that don't have an admin account for the Panel yet, we block account registration there by default. This is a security feature, which we implemented years ago in Kirby 2. It helps to avoid that you forget registering your first admin account on a public server. In this case \u2013 without our security block \u2013 someone else might theoretically be able to find your site, find out it's running on Kirby, find the Panel and then register the account first. It's an unlikely situation, but it's still a certain risk. To be able to register the first Panel account on a public server, you have to enforce the installer via a config setting. This helps to push all users to the best practice of registering your first Panel account on your local machine and upload it together with the rest of the site. This installation block implementation in Kirby versions before 3.3.6 still assumed that .dev domains are local domains, which is no longer true. In the meantime, those domains became publicly available. This means that our installation block is no longer working as expected if you use a .dev domain for your Kirby site. Additionally the local installation check may also fail if your site is behind a reverse proxy. You are only affected if you use a .dev domain or your site is behind a reverse proxy and you have not yet registered your first Panel account on the public server and someone finds your site and tries to login at `yourdomain.dev/panel` before you register your first account. You are not affected if you have already created one or multiple Panel accounts (no matter if on a .dev domain or behind a reverse proxy). The problem has been patched in Kirby 3.3.6. Please upgrade to this or a later version to fix the vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/getkirby-v2/panel/commit/7f9ac1876bacb89fd8f142f5e561a02ebb725baa",
+            "https://github.com/getkirby/kirby/releases/tag/3.3.6",
+            "https://github.com/getkirby/kirby/security/advisories/GHSA-2ccx-2gf3-8xvv",
+            "https://packagist.org/packages/getkirby/cms",
+            "https://packagist.org/packages/getkirby/panel"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:getkirby:kirby:*:*:*:*:*:*:*:* versions up to (excluding) 3.3.6\n     *cpe:2.3:a:getkirby:panel:*:*:*:*:*:*:*:* versions up to (excluding) 2.5.14",
+            "*cpe:2.3:a:getkirby:kirby:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:getkirby:panel:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/07/2020",
+        "modified_date": "12/08/2020",
+        "vulnerability_source": "GitHub, Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-17531",
+        "cwe_id": "CWE-502",
+        "description": "A Java Serialization vulnerability was found in Apache Tapestry 4. Apache Tapestry 4 will attempt to deserialize the \"sp\" parameter even before invoking the page's validate method, leading to deserialization without authentication. Apache Tapestry 4 reached end of life in 2008 and no update to address this issue will be released. Apache Tapestry 5 versions are not vulnerable to this issue. Users of Apache Tapestry 4 should upgrade to the latest Apache Tapestry 5 version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://lists.apache.org/thread.html/r700a6aa234dbff0555d4187bdc8274d7e4c0afbf35b9a3457f09ee76%40%3Cusers.tapestry.apache.org%3E",
+            "https://lists.apache.org/thread.html/r700a6aa234dbff0555d4187bdc8274d7e4c0afbf35b9a3457f09ee76@%3Cusers.tapestry.apache.org%3E"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apache:tapestry:*:*:*:*:*:*:*:* versions from (including) 4.0.0 up to (excluding) 5.6.1",
+            "*cpe:2.3:a:apache:tapestry:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/09/2020",
+        "vulnerability_source": "Apache Software Foundation",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-25889",
+        "cwe_id": "CWE-89",
+        "description": "Online Bus Booking System Project Using PHP/MySQL version 1.0 has SQL injection via the login page. By placing SQL injection payload on the login page attackers can bypass the authentication and can gain the admin privilege.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/160397/Online-Bus-Booking-System-Project-Using-PHP-MySQL-1.0-SQL-Injection.html",
+            "http://seclists.org/fulldisclosure/2020/Dec/4",
+            "https://seclists.org/fulldisclosure/2020/Dec/4",
+            "https://www.sourcecodester.com/php/14438/online-bus-booking-system-project-using-phpmysql.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:online_bus_booking_system_project_using_php\\/mysql_project:online_bus_booking_system_project_using_php\\/mysql:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:online_bus_booking_system_project_using_php\\/mysql_project:online_bus_booking_system_project_using_php\\/mysql:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:online_bus_booking_system_project_using_php\\/mysql_project:online_bus_booking_system_project_using_php\\/mysql:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:online_bus_booking_system_project:online_bus_booking_system:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:online_bus_booking_system_project_using_php\\/mysql_project:online_bus_booking_system_project_using_php\\/mysql:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/15/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-29539",
+        "cwe_id": "CWE-79",
+        "description": "A Cross-Site Scripting (XSS) issue in WebUI Translation in Systran Pure Neural Server before 9.7.0 allows a threat actor to have a remote authenticated user run JavaScript from a malicious site.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://grave-rose.medium.com/two-systran-vulnerabilities-and-their-exploits-8bc83ba29e14",
+            "https://www.systransoft.com/translation-products/systran-pure-neural-server/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:systransoft:pure_neural_server:*:*:*:*:*:*:*:* versions up to (excluding) 9.7.0",
+            "*cpe:2.3:a:systransoft:pure_neural_server:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-29540",
+        "cwe_id": "CWE-400",
+        "description": "API calls in the Translation API feature in Systran Pure Neural Server before 9.7.0 allow a threat actor to use the Systran Pure Neural Server as a Denial-of-Service proxy by sending a large amount of translation requests to a destination host on any given TCP port regardless of whether a web service is running on the destination port.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://grave-rose.medium.com/two-systran-vulnerabilities-and-their-exploits-8bc83ba29e14",
+            "https://www.systransoft.com/translation-products/systran-pure-neural-server/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:systransoft:pure_neural_server:*:*:*:*:*:*:*:* versions up to (excluding) 9.7.0",
+            "*cpe:2.3:a:systransoft:pure_neural_server:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-25955",
+        "cwe_id": "CWE-79",
+        "description": "SourceCodester Student Management System Project in PHP version 1.0 is vulnerable to stored a cross-site scripting (XSS) via the 'add subject' tab.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/160398/Student-Management-System-Project-PHP-1.0-Cross-Site-Scripting.html",
+            "http://seclists.org/fulldisclosure/2020/Dec/4",
+            "https://seclists.org/fulldisclosure/2020/Dec/4",
+            "https://www.sourcecodester.com/php/14443/student-management-system-project-php.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:student_management_system_project_in_php_project:student_management_system_project_in_php:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:student_management_system_project_in_php_project:student_management_system_project_in_php:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-26254",
+        "cwe_id": "CWE-290",
+        "description": "omniauth-apple is the OmniAuth strategy for \"Sign In with Apple\" (RubyGem omniauth-apple). In omniauth-apple before version 1.0.1 attackers can fake their email address during authentication. This vulnerability impacts applications using the omniauth-apple strategy of OmniAuth and using the info.email field of OmniAuth's Auth Hash Schema for any kind of identification. The value of this field may be set to any value of the attacker's choice including email addresses of other users. Applications not using info.email for identification but are instead using the uid field are not impacted in the same manner. Note, these applications may still be negatively affected if the value of info.email is being used for other purposes. Applications using affected versions of omniauth-apple are advised to upgrade to omniauth-apple version 1.0.1 or later.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-26254"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/nhosoya/omniauth-apple/blob/master/CHANGELOG.md#101---2020-12-03",
+            "https://github.com/nhosoya/omniauth-apple/commit/b37d5409213adae2ca06a67fec14c8d3d07d9016",
+            "https://github.com/nhosoya/omniauth-apple/security/advisories/GHSA-49r3-2549-3633"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:omniauth-apple_project:omniauth-apple:*:*:*:*:*:ruby:*:* versions up to (excluding) 1.0.1",
+            "*cpe:2.3:a:omniauth-apple_project:omniauth-apple:*:*:*:*:*:ruby:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/10/2020",
+        "vulnerability_source": "GitHub, Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-26255",
+        "cwe_id": "CWE-434",
+        "description": "Kirby is a CMS. In Kirby CMS (getkirby/cms) before version 3.4.5, and Kirby Panel before version 2.5.14 , an editor with full access to the Kirby Panel can upload a PHP .phar file and execute it on the server. This vulnerability is critical if you might have potential attackers in your group of authenticated Panel users, as they can gain access to the server with such a Phar file. Visitors without Panel access *cannot* use this attack vector. The problem has been patched in Kirby 2.5.14 and Kirby 3.4.5. Please update to one of these or a later version to fix the vulnerability. Note: Kirby 2 reaches end of life on December 31, 2020. We therefore recommend to upgrade your Kirby 2 sites to Kirby 3. If you cannot upgrade, we still recommend to update to Kirby 2.5.14.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.1 CRITICAL",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/getkirby-v2/panel/commit/5a569d4e3ddaea2b6628d7ec1472a3e8bc410881",
+            "https://github.com/getkirby/kirby/commit/db8f371b13036861c9cc5ba3e85e27f73fce5e09",
+            "https://github.com/getkirby/kirby/releases/tag/3.4.5",
+            "https://github.com/getkirby/kirby/security/advisories/GHSA-g3h8-cg9x-47qw",
+            "https://packagist.org/packages/getkirby/cms",
+            "https://packagist.org/packages/getkirby/panel"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:getkirby:kirby:*:*:*:*:*:*:*:* versions up to (excluding) 3.4.5\n     *cpe:2.3:a:getkirby:panel:*:*:*:*:*:*:*:* versions up to (excluding) 2.5.14",
+            "*cpe:2.3:a:getkirby:kirby:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:getkirby:panel:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/10/2020",
+        "vulnerability_source": "GitHub, Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-29578",
+        "cwe_id": null,
+        "description": "The official piwik Docker images before fpm-alpine (Alpine specific) contain a blank password for a root user. Systems using the Piwik Docker container deployed by affected versions of the Docker image may allow an remote attacker to achieve root access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://github.com/koharin/koharin2/blob/main/CVE-2020-29578"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:matomo:docker:3-fpm-alpine:*:*:*:*:*:*:*\n     *cpe:2.3:a:matomo:docker:3.5-fpm-alpine:*:*:*:*:*:*:*\n     *cpe:2.3:a:matomo:docker:3.5.1-fpm-alpine:*:*:*:*:*:*:*\n     *cpe:2.3:a:matomo:docker:3.6-fpm-alpine:*:*:*:*:*:*:*\n     *cpe:2.3:a:matomo:docker:3.6.0-fpm-alpine:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:matomo:docker:3-fpm-alpine:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:matomo:docker:3.5-fpm-alpine:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:matomo:docker:3.5.1-fpm-alpine:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:matomo:docker:3.6-fpm-alpine:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:matomo:docker:3.6.0-fpm-alpine:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-1971",
+        "cwe_id": "CWE-476",
+        "description": "The X.509 GeneralName type is a generic type for representing different types of names. One of those name types is known as EDIPartyName. OpenSSL provides a function GENERAL_NAME_cmp which compares different instances of a GENERAL_NAME to see if they are equal or not. This function behaves incorrectly when both GENERAL_NAMEs contain an EDIPARTYNAME. A NULL pointer dereference and a crash may occur leading to a possible denial of service attack. OpenSSL itself uses the GENERAL_NAME_cmp function for two purposes: 1) Comparing CRL distribution point names between an available CRL and a CRL distribution point embedded in an X509 certificate 2) When verifying that a timestamp response token signer matches the timestamp authority name (exposed via the API functions TS_RESP_verify_response and TS_RESP_verify_token) If an attacker can control both items being compared then that attacker could trigger a crash. For example if the attacker can trick a client or server into checking a malicious certificate against a malicious CRL then this may occur. Note that some applications automatically download CRLs based on a URL embedded in a certificate. This checking happens prior to the signatures on the certificate and CRL being verified. OpenSSL's s_server, s_client and verify tools have support for the \"-crl_download\" option which implements automatic CRL downloading and this attack has been demonstrated to work against those tools. Note that an unrelated bug means that affected versions of OpenSSL cannot parse or construct correct encodings of EDIPARTYNAME. However it is possible to construct a malformed EDIPARTYNAME that OpenSSL's parser will accept and hence trigger this attack. All OpenSSL 1.1.1 and 1.0.2 versions are affected by this issue. Other OpenSSL releases are out of support and have not been checked. Fixed in OpenSSL 1.1.1i (Affected 1.1.1-1.1.1h). Fixed in OpenSSL 1.0.2x (Affected 1.0.2-1.0.2w).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2154ab83e14ede338d2ede9bbe5cdfce5d5a6c9e",
+            "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=f960d81215ebf3f65e03d4d5d857fb9b666d6920",
+            "https://lists.apache.org/thread.html/rbb769f771711fb274e0a4acb1b5911c8aab544a6ac5e8c12d40c5143@%3Ccommits.pulsar.apache.org%3E",
+            "https://lists.debian.org/debian-lts-announce/2020/12/msg00020.html",
+            "https://lists.debian.org/debian-lts-announce/2020/12/msg00021.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/DGSI34Y5LQ5RYXN4M2I5ZQT65LFVDOUU/",
+            "https://security.FreeBSD.org/advisories/FreeBSD-SA-20:33.openssl.asc",
+            "https://security.netapp.com/advisory/ntap-20201218-0005/",
+            "https://www.debian.org/security/2020/dsa-4807",
+            "https://www.openssl.org/news/secadv/20201208.txt"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* versions from (including) 1.0.2 up to (including) 1.0.2w\n     *cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* versions from (including) 1.1.1 up to (including) 1.1.1h",
+            "*cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/18/2020",
+        "vulnerability_source": "OpenSSL Software Foundation",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-29564",
+        "cwe_id": null,
+        "description": "The official Consul Docker images 0.7.1 through 1.4.2 contain a blank password for a root user. System using the Consul Docker container deployed by affected versions of the Docker image may allow a remote attacker to achieve root access with a blank password.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://github.com/koharin/koharin2/blob/main/CVE-2020-29564"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hashicorp:consul:*:*:*:*:*:*:*:* versions from (including) 0.7.1 up to (including) 1.4.2",
+            "*cpe:2.3:a:hashicorp:consul:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/08/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-29575",
+        "cwe_id": null,
+        "description": "The official elixir Docker images before 1.8.0-alpine (Alpine specific) contain a blank password for a root user. Systems using the elixir Linux Docker container deployed by affected versions of the Docker image may allow a remote attacker to achieve root access with a blank password.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://github.com/koharin/koharin2/blob/main/CVE-2020-29575"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:elixir-lang:docker_image:1.5.0-alpine:*:*:*:*:*:*:*\n     *cpe:2.3:a:elixir-lang:docker_image:1.5.1-alpine:*:*:*:*:*:*:*\n     *cpe:2.3:a:elixir-lang:docker_image:1.5.2-alpine:*:*:*:*:*:*:*\n     *cpe:2.3:a:elixir-lang:docker_image:1.6.0-alpine:*:*:*:*:*:*:*\n     *cpe:2.3:a:elixir-lang:docker_image:1.6.1-alpine:*:*:*:*:*:*:*\n     *cpe:2.3:a:elixir-lang:docker_image:1.6.2-alpine:*:*:*:*:*:*:*\n     *cpe:2.3:a:elixir-lang:docker_image:1.6.3-alpine:*:*:*:*:*:*:*\n     *cpe:2.3:a:elixi",
+            "*cpe:2.3:a:elixir-lang:docker_image:1.5.0-alpine:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:elixir-lang:docker_image:1.5.1-alpine:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:elixir-lang:docker_image:1.5.2-alpine:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:elixir-lang:docker_image:1.6.0-alpine:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:elixir-lang:docker_image:1.6.1-alpine:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:elixir-lang:docker_image:1.6.2-alpine:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:elixir-lang:docker_image:1.6.3-alpine:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:elixi"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-29576",
+        "cwe_id": null,
+        "description": "The official eggdrop Docker images before 1.8.4rc2 contain a blank password for a root user. Systems using the Eggdrop Docker container deployed by affected versions of the Docker image may allow an remote attacker to achieve root access with a blank password.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://github.com/koharin/koharin2/blob/main/CVE-2020-29576"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:eggheads:eggdrop_docker:1.6:*:*:*:*:*:*:*\n     *cpe:2.3:a:eggheads:eggdrop_docker:1.6.21:*:*:*:*:*:*:*\n     *cpe:2.3:a:eggheads:eggdrop_docker:1.8.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:eggheads:eggdrop_docker:1.8.0:rc1:*:*:*:*:*:*\n     *cpe:2.3:a:eggheads:eggdrop_docker:1.8.0:rc2:*:*:*:*:*:*\n     *cpe:2.3:a:eggheads:eggdrop_docker:1.8.0:rc3:*:*:*:*:*:*\n     *cpe:2.3:a:eggheads:eggdrop_docker:1.8.0:rc4:*:*:*:*:*:*\n     *cpe:2.3:a:eggheads:eggdrop_docker:1.8.1:*:*:*:*:*:*:*\n     *cpe:",
+            "*cpe:2.3:a:eggheads:eggdrop_docker:1.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:eggheads:eggdrop_docker:1.6.21:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:eggheads:eggdrop_docker:1.8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:eggheads:eggdrop_docker:1.8.0:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:a:eggheads:eggdrop_docker:1.8.0:rc2:*:*:*:*:*:*",
+            "*cpe:2.3:a:eggheads:eggdrop_docker:1.8.0:rc3:*:*:*:*:*:*",
+            "*cpe:2.3:a:eggheads:eggdrop_docker:1.8.0:rc4:*:*:*:*:*:*",
+            "*cpe:2.3:a:eggheads:eggdrop_docker:1.8.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-29577",
+        "cwe_id": null,
+        "description": "The official znc docker images before 1.7.1-slim contain a blank password for a root user. Systems using the znc docker container deployed by affected versions of the Docker image may allow an remote attacker to achieve root access with a blank password.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://github.com/koharin/koharin2/blob/main/CVE-2020-29577"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:znc:znc_docker:1.6:*:*:*:*:*:*:*\n     *cpe:2.3:a:znc:znc_docker:1.6-slim:*:*:*:*:*:*:*\n     *cpe:2.3:a:znc:znc_docker:1.6.4:*:*:*:*:*:*:*\n     *cpe:2.3:a:znc:znc_docker:1.6.4-slim:*:*:*:*:*:*:*\n     *cpe:2.3:a:znc:znc_docker:1.6.5:*:*:*:*:*:*:*\n     *cpe:2.3:a:znc:znc_docker:1.6.5-slim:*:*:*:*:*:*:*\n     *cpe:2.3:a:znc:znc_docker:1.6.6:*:*:*:*:*:*:*\n     *cpe:2.3:a:znc:znc_docker:1.6.6-slim:*:*:*:*:*:*:*\n     *cpe:2.3:a:znc:znc_docker:1.7.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:znc:zn",
+            "*cpe:2.3:a:znc:znc_docker:1.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:znc:znc_docker:1.6-slim:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:znc:znc_docker:1.6.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:znc:znc_docker:1.6.4-slim:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:znc:znc_docker:1.6.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:znc:znc_docker:1.6.5-slim:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:znc:znc_docker:1.6.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:znc:znc_docker:1.6.6-slim:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:znc:znc_docker:1.7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:znc:zn"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-29579",
+        "cwe_id": null,
+        "description": "The official Express Gateway Docker images before 1.14.0 contain a blank password for a root user. Systems using the Express Gateway Docker container deployed by affected versions of the Docker image may allow an remote attacker to achieve root access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://github.com/koharin/koharin2/blob/main/CVE-2020-29579"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:express-gateway:express-gateway_docker:*:*:*:*:*:*:*:* versions up to (excluding) 1.14.0",
+            "*cpe:2.3:a:express-gateway:express-gateway_docker:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-29580",
+        "cwe_id": null,
+        "description": "The official storm Docker images before 1.2.1 contain a blank password for a root user. Systems using the Storm Docker container deployed by affected versions of the Docker image may allow an remote attacker to achieve root access with a blank password.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://github.com/koharin/koharin2/blob/main/CVE-2020-29580"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apache:storm_docker:*:*:*:*:*:*:*:* versions up to (excluding) 1.2.1",
+            "*cpe:2.3:a:apache:storm_docker:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-29581",
+        "cwe_id": null,
+        "description": "The official spiped docker images before 1.5-alpine contain a blank password for a root user. Systems using the spiped docker container deployed by affected versions of the docker image may allow an remote attacker to achieve root access with a blank password.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://github.com/koharin/koharin2/blob/main/CVE-2020-29581"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:tarsnap:spiped_docker:1.5-alpine:*:*:*:*:*:*:*\n     *cpe:2.3:a:tarsnap:spiped_docker:1.5.0-alpine:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:tarsnap:spiped_docker:1.5-alpine:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:tarsnap:spiped_docker:1.5.0-alpine:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-29601",
+        "cwe_id": null,
+        "description": "The official notary docker images before signer-0.6.1-1 contain a blank password for a root user. System using the notary docker container deployed by affected versions of the docker image may allow an remote attacker to achieve root access with a blank password.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://github.com/koharin/koharin2/blob/main/CVE-2020-29601"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:docker:notary_docker_image:*:*:*:*:*:*:*:* versions up to (excluding) signer-0.6.1-1",
+            "*cpe:2.3:a:docker:notary_docker_image:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "signer-0.6.1-1"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-29602",
+        "cwe_id": null,
+        "description": "The official irssi docker images before 1.1-alpine (Alpine specific) contain a blank password for a root user. System using the irssi docker container deployed by affected versions of the Docker image may allow an remote attacker to achieve root access with a blank password.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://github.com/koharin/koharin2/blob/main/CVE-2020-29602"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:irssi:docker_image:*:*:*:*:*:*:*:* versions up to (excluding) 1.1-alpine",
+            "*cpe:2.3:a:irssi:docker_image:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "1.1-alpine"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-10002",
+        "cwe_id": null,
+        "description": "A logic issue was addressed with improved state management. This issue is fixed in macOS Big Sur 11.0.1, watchOS 7.1, iOS 14.2 and iPadOS 14.2, iCloud for Windows 11.5, tvOS 14.2, iTunes 12.11 for Windows. A local user may be able to read arbitrary files.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2020/Dec/26",
+            "http://seclists.org/fulldisclosure/2020/Dec/32",
+            "https://support.apple.com/en-us/HT211928",
+            "https://support.apple.com/en-us/HT211929",
+            "https://support.apple.com/en-us/HT211930",
+            "https://support.apple.com/en-us/HT211931",
+            "https://support.apple.com/en-us/HT211933",
+            "https://support.apple.com/en-us/HT211935",
+            "https://support.apple.com/kb/HT212011"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apple:icloud:*:*:*:*:*:windows:*:* versions up to (excluding) 11.5\n     *cpe:2.3:a:apple:itunes:*:*:*:*:*:windows:*:* versions up to (excluding) 12.11\n     *cpe:2.3:o:apple:ipad_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.2\n     *cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.2\n     *cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 11.0.1\n     *cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:* versions up to (excluding) 14.2\n     *cpe:2.3:o:",
+            "*cpe:2.3:a:apple:icloud:*:*:*:*:*:windows:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:apple:itunes:*:*:*:*:*:windows:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:ipad_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/15/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-10003",
+        "cwe_id": "CWE-59",
+        "description": "An issue existed within the path validation logic for symlinks. This issue was addressed with improved path sanitization. This issue is fixed in macOS Big Sur 11.0.1, iOS 14.2 and iPadOS 14.2, tvOS 14.2, watchOS 7.1. A local attacker may be able to elevate their privileges.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2020/Dec/32",
+            "https://support.apple.com/en-us/HT211928",
+            "https://support.apple.com/en-us/HT211929",
+            "https://support.apple.com/en-us/HT211930",
+            "https://support.apple.com/en-us/HT211931"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:ipad_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.2\n     *cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.2\n     *cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 11.0.1\n     *cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:* versions up to (excluding) 14.2\n     *cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:* versions up to (excluding) 7.1",
+            "*cpe:2.3:o:apple:ipad_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/15/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-10004",
+        "cwe_id": null,
+        "description": "A logic issue was addressed with improved state management. This issue is fixed in macOS Big Sur 11.0.1, iOS 14.2 and iPadOS 14.2. Opening a maliciously crafted file may lead to unexpected application termination or arbitrary code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2020/Dec/26",
+            "http://seclists.org/fulldisclosure/2020/Dec/32",
+            "https://support.apple.com/en-us/HT211929",
+            "https://support.apple.com/en-us/HT211931",
+            "https://support.apple.com/kb/HT212011"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:ipad_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.2\n     *cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.2\n     *cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 11.0.1",
+            "*cpe:2.3:o:apple:ipad_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/15/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-10006",
+        "cwe_id": null,
+        "description": "This issue was addressed with improved entitlements. This issue is fixed in macOS Big Sur 11.0.1. A malicious application may be able to access restricted files.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2020/Dec/32",
+            "https://support.apple.com/en-us/HT211931"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 11.0.1",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/15/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-10007",
+        "cwe_id": null,
+        "description": "A logic issue was addressed with improved state management. This issue is fixed in macOS Big Sur 11.0.1. A malicious application may be able to determine kernel memory layout.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2020/Dec/26",
+            "http://seclists.org/fulldisclosure/2020/Dec/32",
+            "https://support.apple.com/en-us/HT211931",
+            "https://support.apple.com/kb/HT212011"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 11.0.1",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/15/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-10009",
+        "cwe_id": null,
+        "description": "A logic issue was addressed with improved state management. This issue is fixed in macOS Big Sur 11.0.1. A sandboxed process may be able to circumvent sandbox restrictions.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2020/Dec/26",
+            "http://seclists.org/fulldisclosure/2020/Dec/32",
+            "https://support.apple.com/en-us/HT211931",
+            "https://support.apple.com/kb/HT212011"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 11.0.1",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/15/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-10010",
+        "cwe_id": "CWE-22",
+        "description": "A path handling issue was addressed with improved validation. This issue is fixed in macOS Big Sur 11.0.1, iOS 14.2 and iPadOS 14.2, tvOS 14.2, watchOS 7.1. A local attacker may be able to elevate their privileges.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2020/Dec/26",
+            "http://seclists.org/fulldisclosure/2020/Dec/32",
+            "https://support.apple.com/en-us/HT211928",
+            "https://support.apple.com/en-us/HT211929",
+            "https://support.apple.com/en-us/HT211930",
+            "https://support.apple.com/en-us/HT211931",
+            "https://support.apple.com/kb/HT212011"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:* versions up to (excluding) 14.2\n     *cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.2\n     *cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 11.0.1\n     *cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:* versions up to (excluding) 14.2\n     *cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:* versions up to (excluding) 7.1",
+            "*cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/15/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-10011",
+        "cwe_id": "CWE-125",
+        "description": "An out-of-bounds read was addressed with improved bounds checking. This issue is fixed in iOS 14.2 and iPadOS 14.2, macOS Catalina 10.15.7, Security Update 2020-005 High Sierra, Security Update 2020-005 Mojave. Processing a maliciously crafted USD file may lead to unexpected application termination or arbitrary code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2020/Dec/32",
+            "https://support.apple.com/en-us/HT211849",
+            "https://support.apple.com/en-us/HT211929",
+            "https://support.apple.com/kb/HT211930",
+            "https://support.apple.com/kb/HT211931"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:* versions up to (excluding) 14.2\n     *cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.2\n     *cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 10.15.7",
+            "*cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/16/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-10012",
+        "cwe_id": "CWE-79",
+        "description": "An access issue was addressed with improved access restrictions. This issue is fixed in macOS Big Sur 11.0.1. Processing a maliciously crafted document may lead to a cross site scripting attack.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2020/Dec/26",
+            "http://seclists.org/fulldisclosure/2020/Dec/32",
+            "https://support.apple.com/en-us/HT211931",
+            "https://support.apple.com/kb/HT212011"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:macos:*:*:*:*:*:*:*:* versions up to (excluding) 11.0.1",
+            "*cpe:2.3:o:apple:macos:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/15/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-10013",
+        "cwe_id": null,
+        "description": "A logic issue was addressed with improved state management. This issue is fixed in tvOS 14.0, iOS 14.0 and iPadOS 14.0. An application may be able to execute arbitrary code with kernel privileges.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "https://support.apple.com/en-us/HT211843",
+            "https://support.apple.com/en-us/HT211850"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:* versions up to (excluding) 14.0",
+            "*cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/09/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-10014",
+        "cwe_id": "CWE-22",
+        "description": "A parsing issue in the handling of directory paths was addressed with improved path validation. This issue is fixed in macOS Big Sur 11.0.1. A malicious application may be able to break out of its sandbox.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.3 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2020/Dec/26",
+            "http://seclists.org/fulldisclosure/2020/Dec/32",
+            "https://support.apple.com/en-us/HT211931",
+            "https://support.apple.com/kb/HT212011"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:macos:*:*:*:*:*:*:*:* versions up to (excluding) 11.0.1",
+            "*cpe:2.3:o:apple:macos:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/15/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-10016",
+        "cwe_id": null,
+        "description": "A memory corruption issue was addressed with improved state management. This issue is fixed in macOS Big Sur 11.0.1, iOS 14.2 and iPadOS 14.2, tvOS 14.2, watchOS 7.1. An application may be able to execute arbitrary code with kernel privileges.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2020/Dec/26",
+            "http://seclists.org/fulldisclosure/2020/Dec/32",
+            "https://support.apple.com/en-us/HT211928",
+            "https://support.apple.com/en-us/HT211929",
+            "https://support.apple.com/en-us/HT211930",
+            "https://support.apple.com/en-us/HT211931",
+            "https://support.apple.com/kb/HT212011"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:* versions up to (excluding) 14.2\n     *cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.2\n     *cpe:2.3:o:apple:macos:*:*:*:*:*:*:*:* versions up to (excluding) 11.0.1\n     *cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:* versions up to (excluding) 14.2\n     *cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:* versions up to (excluding) 7.1",
+            "*cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:macos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/15/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-14205",
+        "cwe_id": "CWE-862",
+        "description": "The DiveBook plugin 1.1.4 for WordPress is prone to improper access control in the Log Dive form because it fails to perform authorization checks. An attacker may leverage this issue to manipulate the integrity of dive logs.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://wordpress.org/plugins/divebook/#developers",
+            "https://www.hooperlabs.xyz/disclosures/divebook.php"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:divebook_project:divebook:1.1.4:*:*:*:*:wordpress:*:*",
+            "*cpe:2.3:a:divebook_project:divebook:1.1.4:*:*:*:*:wordpress:*:*"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-14206",
+        "cwe_id": "CWE-79",
+        "description": "The DiveBook plugin 1.1.4 for WordPress is prone to unauthenticated XSS within the filter function (via an arbitrary parameter).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://wordpress.org/plugins/divebook/#developers",
+            "https://www.hooperlabs.xyz/disclosures/divebook.php"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:divebook_project:divebook:1.1.4:*:*:*:*:wordpress:*:*",
+            "*cpe:2.3:a:divebook_project:divebook:1.1.4:*:*:*:*:wordpress:*:*"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-14207",
+        "cwe_id": "CWE-89",
+        "description": "The DiveBook plugin 1.1.4 for WordPress was prone to a SQL injection within divelog.php, allowing unauthenticated users to retrieve data from the database via the divelog.php filter_diver parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://wordpress.org/plugins/divebook/#developers",
+            "https://www.hooperlabs.xyz/disclosures/divebook.php"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:divebook_project:divebook:1.1.4:*:*:*:*:wordpress:*:*",
+            "*cpe:2.3:a:divebook_project:divebook:1.1.4:*:*:*:*:wordpress:*:*"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-26233",
+        "cwe_id": "CWE-706",
+        "description": "Git Credential Manager Core (GCM Core) is a secure Git credential helper built on .NET Core that runs on Windows and macOS. In Git Credential Manager Core before version 2.0.289, when recursively cloning a Git repository on Windows with submodules, Git will first clone the top-level repository and then recursively clone all submodules by starting new Git processes from the top-level working directory. If a malicious git.exe executable is present in the top-level repository then this binary will be started by Git Credential Manager Core when attempting to read configuration, and not git.exe as found on the %PATH%. This only affects GCM Core on Windows, not macOS or Linux-based distributions. GCM Core version 2.0.289 contains the fix for this vulnerability, and is available from the project's GitHub releases page. GCM Core 2.0.289 is also bundled in the latest Git for Windows release; version 2.29.2(3). As a workaround, users should avoid recursively cloning untrusted repositories with the --recurse-submodules option.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-26233"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:H/Au:S/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:H/Au:S/C:P/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.6 LOW",
+        "hyperlinks": [
+            "https://git-scm.com/docs/git-clone#Documentation/git-clone.txt---recurse-submodulesltpathspecgt",
+            "https://github.com/microsoft/Git-Credential-Manager-Core/commit/61c0388e064babb3b4e60d3ec269e8a07ab3bc76",
+            "https://github.com/microsoft/Git-Credential-Manager-Core/releases/tag/v2.0.289-beta",
+            "https://github.com/microsoft/Git-Credential-Manager-Core/security/advisories/GHSA-2gq7-ww4j-3m76"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:microsoft:git_credential_manager_core:*:*:*:*:*:windows:*:* versions up to (excluding) 2.0.289",
+            "*cpe:2.3:a:microsoft:git_credential_manager_core:*:*:*:*:*:windows:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/11/2020",
+        "vulnerability_source": "GitHub, Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-27894",
+        "cwe_id": null,
+        "description": "The issue was addressed with additional user controls. This issue is fixed in macOS Big Sur 11.0.1. Users may be unable to remove metadata indicating where files were downloaded from.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2020/Dec/32",
+            "https://support.apple.com/en-us/HT211931"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:mac_os:*:*:*:*:*:*:*:* versions up to (excluding) 11.0.1",
+            "*cpe:2.3:o:apple:mac_os:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/15/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-28946",
+        "cwe_id": "CWE-522",
+        "description": "An improper webserver configuration on Plum IK-401 devices with firmware before 1.02 allows an attacker (with network access to the device) to obtain the configuration file, including hashed credential data. Successful exploitation could allow access to hashed credential data with a single unauthenticated GET request.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://plummac.com/project/ik-401/",
+            "https://www.cert.pl/news/single/coraz-wiecej-urzadzen-przemyslowych-podlaczonych-do-internetu/"
+        ],
+        "cpe": [
+            "cpe:2.3:h:plummac:ik-401:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-9849",
+        "cwe_id": "CWE-200",
+        "description": "An information disclosure issue was addressed with improved state management. This issue is fixed in macOS Big Sur 11.0.1, watchOS 7.0, iOS 14.0 and iPadOS 14.0, iTunes for Windows 12.10.9, iCloud for Windows 11.5, tvOS 14.0. A remote attacker may be able to leak memory.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2020/Dec/32",
+            "https://support.apple.com/en-us/HT211843",
+            "https://support.apple.com/en-us/HT211844",
+            "https://support.apple.com/en-us/HT211850",
+            "https://support.apple.com/en-us/HT211931",
+            "https://support.apple.com/en-us/HT211935",
+            "https://support.apple.com/en-us/HT211952"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apple:itunes:*:*:*:*:*:windows:*:* versions up to (excluding) 11.5.0\n     *cpe:2.3:a:apple:itunes:*:*:*:*:*:windows:*:* versions from (including) 12.0.0 up to (excluding) 12.10.9\n     *cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:macos:*:*:*:*:*:*:*:* versions up to (excluding) 11.0.1\n     *cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:* versions up to (excluding)",
+            "*cpe:2.3:a:apple:itunes:*:*:*:*:*:windows:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:apple:itunes:*:*:*:*:*:windows:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:macos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/15/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-9922",
+        "cwe_id": null,
+        "description": "A logic issue was addressed with improved state management. This issue is fixed in macOS Catalina 10.15.6, Security Update 2020-004 Mojave, Security Update 2020-004 High Sierra. Processing a maliciously crafted email may lead to writing arbitrary files.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://support.apple.com/en-us/HT211289"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 10.15.6",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/09/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-9942",
+        "cwe_id": "CWE-1021",
+        "description": "An inconsistent user interface issue was addressed with improved state management. This issue is fixed in macOS Big Sur 11.0.1, Safari 13.1.2. Visiting a malicious website may lead to address bar spoofing.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2020/Dec/32",
+            "https://support.apple.com/en-us/HT211292",
+            "https://support.apple.com/en-us/HT211931"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apple:safari:*:*:*:*:*:*:*:* versions up to (excluding) 13.1.2\n     *cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 11.0.1",
+            "*cpe:2.3:a:apple:safari:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/15/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-9943",
+        "cwe_id": "CWE-125",
+        "description": "An out-of-bounds read was addressed with improved bounds checking. This issue is fixed in macOS Big Sur 11.0.1, watchOS 7.0, tvOS 14.0, iOS 14.0 and iPadOS 14.0. A malicious application may be able to read restricted memory.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2020/Dec/26",
+            "http://seclists.org/fulldisclosure/2020/Dec/32",
+            "https://support.apple.com/en-us/HT211843",
+            "https://support.apple.com/en-us/HT211844",
+            "https://support.apple.com/en-us/HT211850",
+            "https://support.apple.com/en-us/HT211931",
+            "https://support.apple.com/kb/HT212011"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 11.0.1\n     *cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:* versions up to (excluding) 7.0",
+            "*cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/15/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-9944",
+        "cwe_id": "CWE-125",
+        "description": "An out-of-bounds read was addressed with improved bounds checking. This issue is fixed in macOS Big Sur 11.0.1, watchOS 7.0, tvOS 14.0, iOS 14.0 and iPadOS 14.0. An application may be able to read restricted memory.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2020/Dec/26",
+            "http://seclists.org/fulldisclosure/2020/Dec/32",
+            "https://support.apple.com/en-us/HT211843",
+            "https://support.apple.com/en-us/HT211844",
+            "https://support.apple.com/en-us/HT211850",
+            "https://support.apple.com/en-us/HT211931",
+            "https://support.apple.com/kb/HT212011"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 11.0.1\n     *cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:* versions up to (excluding) 7.0",
+            "*cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/15/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-9945",
+        "cwe_id": "CWE-1021",
+        "description": "A spoofing issue existed in the handling of URLs. This issue was addressed with improved input validation. This issue is fixed in macOS Big Sur 11.0.1, Safari 14.0.1. Visiting a malicious website may lead to address bar spoofing.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2020/Dec/32",
+            "https://support.apple.com/en-us/HT211931",
+            "https://support.apple.com/en-us/HT211934"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apple:safari:*:*:*:*:*:*:*:* versions up to (excluding) 14.0.1\n     *cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 11.0.1",
+            "*cpe:2.3:a:apple:safari:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/15/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-9947",
+        "cwe_id": "CWE-416",
+        "description": "A use after free issue was addressed with improved memory management. This issue is fixed in watchOS 7.0, iOS 14.0 and iPadOS 14.0, iTunes for Windows 12.10.9, iCloud for Windows 11.5, tvOS 14.0, Safari 14.0. Processing maliciously crafted web content may lead to arbitrary code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://support.apple.com/en-us/HT211843",
+            "https://support.apple.com/en-us/HT211844",
+            "https://support.apple.com/en-us/HT211845",
+            "https://support.apple.com/en-us/HT211850",
+            "https://support.apple.com/en-us/HT211935",
+            "https://support.apple.com/en-us/HT211952"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apple:icloud:*:*:*:*:*:windows:*:* versions up to (excluding) 11.5.0\n     *cpe:2.3:a:apple:icloud:*:*:*:*:*:windows:*:* versions from (including) 12.0.0 up to (excluding) 12.10.9\n     *cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:* versions up to (excludin",
+            "*cpe:2.3:a:apple:icloud:*:*:*:*:*:windows:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:apple:icloud:*:*:*:*:*:windows:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/09/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-9949",
+        "cwe_id": "CWE-416",
+        "description": "A use after free issue was addressed with improved memory management. This issue is fixed in macOS Big Sur 11.0.1, watchOS 7.0, iOS 14.0 and iPadOS 14.0, macOS Catalina 10.15.6, Security Update 2020-004 Mojave, Security Update 2020-004 High Sierra, tvOS 14.0. An application may be able to execute arbitrary code with kernel privileges.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2020/Dec/32",
+            "https://support.apple.com/en-us/HT211289",
+            "https://support.apple.com/en-us/HT211843",
+            "https://support.apple.com/en-us/HT211844",
+            "https://support.apple.com/en-us/HT211850",
+            "https://support.apple.com/en-us/HT211931"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 10.15.6\n     *cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions from (including) 11.0.0 up to (excluding) 11.0.1\n     *cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:* versions up to (excluding) 7.0",
+            "*cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/15/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-9950",
+        "cwe_id": "CWE-416",
+        "description": "A use after free issue was addressed with improved memory management. This issue is fixed in watchOS 7.0, tvOS 14.0, Safari 14.0, iOS 14.0 and iPadOS 14.0. Processing maliciously crafted web content may lead to arbitrary code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://support.apple.com/en-us/HT211843",
+            "https://support.apple.com/en-us/HT211844",
+            "https://support.apple.com/en-us/HT211845",
+            "https://support.apple.com/en-us/HT211850"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apple:safari:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:* versions up to (excluding) 7.0",
+            "*cpe:2.3:a:apple:safari:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/09/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-9954",
+        "cwe_id": "CWE-120",
+        "description": "A buffer overflow issue was addressed with improved memory handling. This issue is fixed in watchOS 7.0, tvOS 14.0, macOS Catalina 10.15.7, Security Update 2020-005 High Sierra, Security Update 2020-005 Mojave, iOS 14.0 and iPadOS 14.0. Playing a malicious audio file may lead to arbitrary code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://support.apple.com/en-us/HT211843",
+            "https://support.apple.com/en-us/HT211844",
+            "https://support.apple.com/en-us/HT211849",
+            "https://support.apple.com/en-us/HT211850"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 10.15.7\n     *cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:* versions up to (excluding) 7.0",
+            "*cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/09/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-9963",
+        "cwe_id": null,
+        "description": "The issue was addressed with improved handling of icon caches. This issue is fixed in macOS Big Sur 11.0.1, iOS 14.0 and iPadOS 14.0. A malicious app may be able to determine the existence of files on the computer.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2020/Dec/32",
+            "https://support.apple.com/en-us/HT211850",
+            "https://support.apple.com/en-us/HT211931"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 11.0.1",
+            "*cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/15/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-9965",
+        "cwe_id": "CWE-125",
+        "description": "An out-of-bounds read was addressed with improved input validation. This issue is fixed in macOS Big Sur 11.0.1, watchOS 7.0, tvOS 14.0, iOS 14.0 and iPadOS 14.0. An application may be able to execute arbitrary code with kernel privileges.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2020/Dec/32",
+            "https://support.apple.com/en-us/HT211843",
+            "https://support.apple.com/en-us/HT211844",
+            "https://support.apple.com/en-us/HT211850",
+            "https://support.apple.com/en-us/HT211931"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:macos:*:*:*:*:*:*:*:* versions up to (excluding) 11.0.1\n     *cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:* versions up to (excluding) 7.0",
+            "*cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:macos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/15/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-9966",
+        "cwe_id": "CWE-125",
+        "description": "An out-of-bounds read was addressed with improved input validation. This issue is fixed in macOS Big Sur 11.0.1, watchOS 7.0, tvOS 14.0, iOS 14.0 and iPadOS 14.0. An application may be able to execute arbitrary code with kernel privileges.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2020/Dec/32",
+            "https://support.apple.com/en-us/HT211843",
+            "https://support.apple.com/en-us/HT211844",
+            "https://support.apple.com/en-us/HT211850",
+            "https://support.apple.com/en-us/HT211931"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:ipad_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 11.0.1\n     *cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:* versions up to (excluding) 7.0",
+            "*cpe:2.3:o:apple:ipad_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/15/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-9969",
+        "cwe_id": null,
+        "description": "An access issue was addressed with additional sandbox restrictions. This issue is fixed in macOS Big Sur 11.0.1, watchOS 7.0, tvOS 14.0, iOS 14.0 and iPadOS 14.0. A local user may be able to view senstive user information.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "1.9 LOW",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2020/Dec/32",
+            "https://support.apple.com/en-us/HT211843",
+            "https://support.apple.com/en-us/HT211844",
+            "https://support.apple.com/en-us/HT211850",
+            "https://support.apple.com/en-us/HT211931"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:ipad_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 11.0.1\n     *cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:* versions up to (excluding) 7.0",
+            "*cpe:2.3:o:apple:ipad_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/15/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-9972",
+        "cwe_id": "CWE-120",
+        "description": "A buffer overflow issue was addressed with improved memory handling. This issue is fixed in iOS 14.0 and iPadOS 14.0. Processing a maliciously crafted USD file may lead to unexpected application termination or arbitrary code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://support.apple.com/en-us/HT211850"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:ipad_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.0",
+            "*cpe:2.3:o:apple:ipad_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/09/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-9974",
+        "cwe_id": null,
+        "description": "A logic issue was addressed with improved state management. This issue is fixed in macOS Big Sur 11.0.1, iOS 14.2 and iPadOS 14.2, tvOS 14.2, watchOS 7.1. A malicious application may be able to determine kernel memory layout.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2020/Dec/26",
+            "http://seclists.org/fulldisclosure/2020/Dec/32",
+            "https://support.apple.com/en-us/HT211928",
+            "https://support.apple.com/en-us/HT211929",
+            "https://support.apple.com/en-us/HT211930",
+            "https://support.apple.com/en-us/HT211931",
+            "https://support.apple.com/kb/HT212011"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:ipad_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.2\n     *cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.2\n     *cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 11.0.1\n     *cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:* versions up to (excluding) 14.2\n     *cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:* versions up to (excluding) 7.1",
+            "*cpe:2.3:o:apple:ipad_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/15/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-9977",
+        "cwe_id": "CWE-20",
+        "description": "A validation issue existed in the entitlement verification. This issue was addressed with improved validation of the process entitlement. This issue is fixed in macOS Big Sur 11.0.1, iOS 14.0 and iPadOS 14.0. A malicious application may be able to determine a user's open tabs in Safari.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2020/Dec/32",
+            "https://support.apple.com/en-us/HT211850",
+            "https://support.apple.com/en-us/HT211931"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:ipad_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.2\n     *cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.2\n     *cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 11.0.1",
+            "*cpe:2.3:o:apple:ipad_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/15/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2020-9981",
+        "cwe_id": "CWE-416",
+        "description": "A use after free issue was addressed with improved memory management. This issue is fixed in watchOS 7.0, iOS 14.0 and iPadOS 14.0, iTunes for Windows 12.10.9, iCloud for Windows 11.5, tvOS 14.0, macOS Catalina 10.15.7, Security Update 2020-005 High Sierra, Security Update 2020-005 Mojave. Processing a maliciously crafted file may lead to arbitrary code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "https://support.apple.com/en-us/HT211843",
+            "https://support.apple.com/en-us/HT211844",
+            "https://support.apple.com/en-us/HT211849",
+            "https://support.apple.com/en-us/HT211850",
+            "https://support.apple.com/en-us/HT211935",
+            "https://support.apple.com/en-us/HT211952"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apple:icloud:*:*:*:*:*:windows:*:* versions up to (excluding) 11.5\n     *cpe:2.3:a:apple:itunes:*:*:*:*:*:windows:*:* versions up to (excluding) 12.10.9\n     *cpe:2.3:o:apple:ipad_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 10.15.7\n     *cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:* versions up to (excluding) 14.0\n     *cpe:2.3",
+            "*cpe:2.3:a:apple:icloud:*:*:*:*:*:windows:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:apple:itunes:*:*:*:*:*:windows:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:ipad_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/08/2020",
+        "modified_date": "12/09/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "12"
+    }
+]

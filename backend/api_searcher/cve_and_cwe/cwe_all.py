@@ -14,6 +14,11 @@ class CWEAll:
     def __init__(self):
         self.__data = self.get_data()
 
+    @property
+    @lru_cache
+    def values(self):
+        return self.__data
+
     @staticmethod
     def feed():
         """Gdy nie ma pliku zapisuje go lokalnie"""
@@ -27,7 +32,7 @@ class CWEAll:
             # jak nie ma pliku lokalnie to go zapisuje
             CWEAll.feed()
 
-        with open("cwe_all.json") as json_file:
+        with open(CWEAll.file_name) as json_file:
             data = json.load(json_file)
 
         return data # zwraca w postaci jsona
@@ -48,9 +53,3 @@ class CWEAll:
         result.update({"cwe_all": all_cwes})
 
         return result
-
-
-    @property
-    @lru_cache
-    def values(self):
-        return self.__data

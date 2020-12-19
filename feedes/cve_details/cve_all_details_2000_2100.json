@@ -1,0 +1,3489 @@
+[
+    {
+        "cve_id": "CVE-2020-5208",
+        "cwe_id": "CWE-120",
+        "description": "It's been found that multiple functions in ipmitool before 1.8.19 neglect proper checking of the data received from a remote LAN party, which may lead to buffer overflows and potentially to remote code execution on the ipmitool side. This is especially dangerous if ipmitool is run as a privileged user. This problem is fixed in version 1.8.19.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-02/msg00031.html",
+            "https://github.com/ipmitool/ipmitool/commit/e824c23316ae50beb7f7488f2055ac65e8b341f2",
+            "https://github.com/ipmitool/ipmitool/security/advisories/GHSA-g659-9qxw-p7cp",
+            "https://lists.debian.org/debian-lts-announce/2020/02/msg00006.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/K2BPW66KDP4H36AGZXLED57A3O2Y6EQW/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/RYYEKUAUTCWICM77HOEGZDVVEUJLP4BP/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ipmitool_project:ipmitool:1.8.18:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ipmitool_project:ipmitool:1.8.18:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/09/2020",
+        "vulnerability_source": "GitHub, Inc.",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-5237",
+        "cwe_id": "CWE-22",
+        "description": "Multiple relative path traversal vulnerabilities in the oneup/uploader-bundle before 1.9.3 and 2.1.5 allow remote attackers to upload, copy, and modify files on the filesystem (potentially leading to arbitrary code execution) via the (1) filename parameter to BlueimpController.php; the (2) dzchunkindex, (3) dzuuid, or (4) filename parameter to DropzoneController.php; the (5) qqpartindex, (6) qqfilename, or (7) qquuid parameter to FineUploaderController.php; the (8) x-file-id or (9) x-file-name parameter to MooUploadController.php; or the (10) name or (11) chunk parameter to PluploadController.php. This is fixed in versions 1.9.3 and 2.1.5.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-5237"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/1up-lab/OneupUploaderBundle/commit/a6011449b716f163fe1ae323053077e59212350c",
+            "https://github.com/1up-lab/OneupUploaderBundle/security/advisories/GHSA-x8wj-6m73-gfqp",
+            "https://www.syss.de/fileadmin/dokumente/Publikationen/Advisories/SYSS-2020-003.txt"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:1up:oneupuploaderbundle:*:*:*:*:*:*:*:* versions up to (excluding) 1.9.3\n     *cpe:2.3:a:1up:oneupuploaderbundle:*:*:*:*:*:*:*:* versions from (including) 1.9.4 up to (excluding) 2.1.5",
+            "*cpe:2.3:a:1up:oneupuploaderbundle:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:1up:oneupuploaderbundle:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "04/30/2020",
+        "vulnerability_source": "GitHub, Inc.",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-8631",
+        "cwe_id": "CWE-330",
+        "description": "cloud-init through 19.4 relies on Mersenne Twister for a random password, which makes it easier for attackers to predict passwords, because rand_str in cloudinit/util.py calls the random.choice function.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-03/msg00042.html",
+            "https://bugs.launchpad.net/ubuntu/+source/cloud-init/+bug/1860795",
+            "https://github.com/canonical/cloud-init/pull/204",
+            "https://lists.debian.org/debian-lts-announce/2020/02/msg00021.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:canonical:cloud-init:*:*:*:*:*:*:*:* versions up to (including) 19.4",
+            "*cpe:2.3:a:canonical:cloud-init:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/21/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-8632",
+        "cwe_id": "CWE-522",
+        "description": "In cloud-init through 19.4, rand_user_password in cloudinit/config/cc_set_passwords.py has a small default pwlen value, which makes it easier for attackers to guess passwords.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-03/msg00042.html",
+            "https://bugs.launchpad.net/ubuntu/+source/cloud-init/+bug/1860795",
+            "https://github.com/canonical/cloud-init/pull/189",
+            "https://lists.debian.org/debian-lts-announce/2020/02/msg00021.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:canonical:cloud-init:*:*:*:*:*:*:*:* versions up to (including) 19.4",
+            "*cpe:2.3:a:canonical:cloud-init:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/21/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-7216",
+        "cwe_id": "CWE-772",
+        "description": "An ni_dhcp4_parse_response memory leak in openSUSE wicked 0.6.55 and earlier allows network attackers to cause a denial of service by sending DHCP4 packets without a message type option.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-02/msg00005.html",
+            "https://bugzilla.suse.com/show_bug.cgi?id=1160905"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:opensuse:wicked:*:*:*:*:*:*:*:* versions up to (including) 0.6.55",
+            "*cpe:2.3:a:opensuse:wicked:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-7979",
+        "cwe_id": "CWE-276",
+        "description": "GitLab EE 8.9 and later through 12.7.2 has Insecure Permission",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://about.gitlab.com/blog/categories/releases/",
+            "https://about.gitlab.com/releases/2020/01/30/security-release-gitlab-12-7-4-released/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 8.9.0 up to (excluding) 12.5.9\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.6.0 up to (excluding) 12.6.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.7.0 up to (including) 12.7.2",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-8114",
+        "cwe_id": "CWE-276",
+        "description": "GitLab EE 8.9 and later through 12.7.2 has Insecure Permission",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://about.gitlab.com/releases/2020/01/30/security-release-gitlab-12-7-4-released/",
+            "https://about.gitlab.com/releases/categories/releases/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 8.9.0 up to (excluding) 12.5.9\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.6.0 up to (excluding) 12.6.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.7.0 up to (including) 12.7.2",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2013-0507",
+        "cwe_id": "CWE-384",
+        "description": "IBM InfoSphere Information Server 8.1, 8.5, 8.7, 9.1 has a Session Fixation Vulnerability",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/59815"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:infosphere_information_server:8.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:infosphere_information_server:8.5:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:infosphere_information_server:8.7:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:infosphere_information_server:9.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:infosphere_information_server:8.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:infosphere_information_server:8.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:infosphere_information_server:8.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:infosphere_information_server:9.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2019-16203",
+        "cwe_id": "CWE-532",
+        "description": "Brocade Fabric OS Versions before v8.2.2a and v8.2.1d could expose the credentials of the remote ESRS server when these credentials are given as a command line option when configuring the ESRS client.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://security.netapp.com/advisory/ntap-20200511-0008/",
+            "https://www.broadcom.com/support/fibre-channel-networking/security-advisories/brocade-security-advisory-2020-906"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:brocade:fabric_os:*:*:*:*:*:*:*:* versions from (including) 8.2.1 up to (excluding) 8.2.1d\n     *cpe:2.3:o:brocade:fabric_os:*:*:*:*:*:*:*:* versions from (including) 8.2.2 up to (excluding) 8.2.2a",
+            "*cpe:2.3:o:brocade:fabric_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:o:brocade:fabric_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "Brocade Communications Systems, LLC",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2019-16204",
+        "cwe_id": "CWE-532",
+        "description": "Brocade Fabric OS Versions before v7.4.2f, v8.2.2a, v8.1.2j and v8.2.1d could expose external passwords, common secrets or authentication keys used between the switch and an external server.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://security.netapp.com/advisory/ntap-20200511-0007/",
+            "https://www.broadcom.com/support/fibre-channel-networking/security-advisories/brocade-security-advisory-2020-905"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:brocade:fabric_os:*:*:*:*:*:*:*:* versions up to (excluding) 7.4.2f\n     *cpe:2.3:o:brocade:fabric_os:*:*:*:*:*:*:*:* versions from (including) 8.1.2 up to (excluding) 8.1.2j\n     *cpe:2.3:o:brocade:fabric_os:*:*:*:*:*:*:*:* versions from (including) 8.2.1 up to (excluding) 8.2.1d\n     *cpe:2.3:o:brocade:fabric_os:*:*:*:*:*:*:*:* versions from (including) 8.2.2 up to (excluding) 8.2.2a",
+            "*cpe:2.3:o:brocade:fabric_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:brocade:fabric_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:o:brocade:fabric_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:o:brocade:fabric_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "Brocade Communications Systems, LLC",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2019-4613",
+        "cwe_id": "CWE-352",
+        "description": "IBM Planning Analytics 2.0 is vulnerable to cross-site request forgery which could allow an attacker to execute malicious and unauthorized actions transmitted from a user that the website trusts. IBM X-Force ID: 168524.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/168524",
+            "https://www.ibm.com/support/pages/node/1172860"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:planning_analytics:2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:planning_analytics:2.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/06/2020",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2019-4616",
+        "cwe_id": "CWE-311",
+        "description": "IBM Cloud Automation Manager 3.2.1.0 does not set the secure attribute on authorization tokens or session cookies. Attackers may be able to get the cookie values by sending a http:// link to a user or by planting this link in a site the user goes to. The cookie will be sent to the insecure link and the attacker can then obtain the cookie value by snooping the traffic. IBM X-Force ID: 168644.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "3.5 LOW",
+        "base_score_v2": "2.9 LOW",
+        "hyperlinks": [
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/168644",
+            "https://www.ibm.com/support/pages/node/1289188"
+        ],
+        "cpe": [
+            "cpe:2.3:o:linux:linux_kernel:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2019-4670",
+        "cwe_id": null,
+        "description": "IBM WebSphere Application Server 7.0, 8.0, 8.5, and 9.0 could allow a remote attacker to obtain sensitive information caused by improper data representation. IBM X-Force ID: 171319.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/171319",
+            "https://www.ibm.com/support/pages/node/1289152"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:websphere_application_server:*:*:*:*:*:*:*:* versions from (including) 7.0.0.0 up to (including) 7.0.0.45\n     *cpe:2.3:a:ibm:websphere_application_server:*:*:*:*:*:*:*:* versions from (including) 8.0.0.0 up to (including) 8.0.0.15\n     *cpe:2.3:a:ibm:websphere_application_server:*:*:*:*:*:*:*:* versions from (including) 8.5.0.0 up to (including) 8.5.5.16\n     *cpe:2.3:a:ibm:websphere_application_server:*:*:*:*:*:*:*:* versions from (including) 9.0.0.0 up to (including) 9.",
+            "*cpe:2.3:a:ibm:websphere_application_server:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:ibm:websphere_application_server:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:ibm:websphere_application_server:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:ibm:websphere_application_server:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-6174",
+        "cwe_id": "CWE-347",
+        "description": "TUF (aka The Update Framework) through 0.12.1 has Improper Verification of a Cryptographic Signature.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/theupdateframework/tuf/pull/974"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:linuxfoundation:the_update_framework:*:*:*:*:*:*:*:* versions up to (including) 0.12.1",
+            "*cpe:2.3:a:linuxfoundation:the_update_framework:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-6969",
+        "cwe_id": "CWE-522",
+        "description": "It is possible to unmask credentials and other sensitive information on \u201cunprotected\u201d project files, which may allow an attacker to remotely access the C-More Touch Panels EA9 series: firmware versions prior to 6.53 and manipulate system configurations.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://www.us-cert.gov/ics/advisories/icsa-20-035-01"
+        ],
+        "cpe": [
+            "cpe:2.3:h:automationdirect:c-more_ea9-rhi:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:automationdirect:c-more_ea9-t10cl:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:automationdirect:c-more_ea9-t10wcl:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:automationdirect:c-more_ea9-t12cl:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:automationdirect:c-more_ea9-t15cl-r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:automationdirect:c-more_ea9-t15cl:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:automationdirect:c-more_ea9-t6cl-r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:automationdirect:c-more_ea9-t6cl:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:automationdirect:c-more_ea9-t7cl-r:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:automationdirect:c-more_ea9-t7cl:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:automationdirect:c-more_ea9-t8cl:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/14/2020",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-7966",
+        "cwe_id": "CWE-22",
+        "description": "GitLab EE 11.11 and later through 12.7.2 allows Directory Traversal.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://about.gitlab.com/blog/categories/releases/",
+            "https://about.gitlab.com/releases/2020/01/30/security-release-gitlab-12-7-4-released/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 11.11.0 up to (excluding) 12.5.9\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.6.0 up to (excluding) 12.6.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.7.0 up to (including) 12.7.2",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-7967",
+        "cwe_id": "CWE-276",
+        "description": "GitLab EE 8.0 through 12.7.2 has Insecure Permissions (issue 1 of 2).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://about.gitlab.com/blog/categories/releases/",
+            "https://about.gitlab.com/releases/2020/01/30/security-release-gitlab-12-7-4-released/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.0.0 up to (including) 12.7.2",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/06/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-7968",
+        "cwe_id": "CWE-287",
+        "description": "GitLab EE 8.0 through 12.7.2 has Incorrect Access Control.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://about.gitlab.com/blog/categories/releases/",
+            "https://about.gitlab.com/releases/2020/01/30/security-release-gitlab-12-7-4-released/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions up to (excluding) 12.5.9\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions up to (excluding) 12.5.9\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 12.6.0 up to (excluding) 12.6.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.6.0 up to (excluding) 12.6.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 12.7.0 up to (e",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/06/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-7969",
+        "cwe_id": "CWE-200",
+        "description": "GitLab EE 8.0 and later through 12.7.2 allows Information Disclosure.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://about.gitlab.com/blog/categories/releases/",
+            "https://about.gitlab.com/releases/2020/01/30/security-release-gitlab-12-7-4-released/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 8.0.0 up to (excluding) 12.5.9\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.6.0 up to (excluding) 12.6.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.7.0 up to (including) 12.7.2",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/06/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-7971",
+        "cwe_id": "CWE-79",
+        "description": "GitLab EE 11.0 and later through 12.7.2 allows XSS.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://about.gitlab.com/blog/categories/releases/",
+            "https://about.gitlab.com/releases/2020/01/30/security-release-gitlab-12-7-4-released/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 11.0.0 up to (excluding) 12.5.9\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.6.0 up to (excluding) 12.6.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.7.0 up to (including) 12.7.2",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/06/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-7972",
+        "cwe_id": "CWE-276",
+        "description": "GitLab EE 12.2 has Insecure Permissions (issue 2 of 2).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://about.gitlab.com/blog/categories/releases/",
+            "https://about.gitlab.com/releases/2020/01/30/security-release-gitlab-12-7-4-released/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.0 up to (excluding) 12.5.9\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.6.0 up to (excluding) 12.6.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.7.0 up to (excluding) 12.7.4",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/06/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-7973",
+        "cwe_id": "CWE-79",
+        "description": "GitLab through 12.7.2 allows XSS.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://about.gitlab.com/blog/categories/releases/",
+            "https://about.gitlab.com/releases/2020/01/30/security-release-gitlab-12-7-4-released/",
+            "https://gitlab.com/gitlab-org/security/gitlab/issues/14"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions up to (excluding) 12.5.9\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions up to (excluding) 12.5.9\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 12.6.0 up to (excluding) 12.6.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.6.0 up to (excluding) 12.6.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 12.7.0 up to (i",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/06/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-7974",
+        "cwe_id": "CWE-200",
+        "description": "GitLab EE 10.1 through 12.7.2 allows Information Disclosure.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://about.gitlab.com/blog/categories/releases/",
+            "https://about.gitlab.com/releases/2020/01/30/security-release-gitlab-12-7-4-released/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 10.1.0 up to (excluding) 12.5.9\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.6.0 up to (excluding) 12.6.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.7.0 up to (including) 12.7.2",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/06/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-7976",
+        "cwe_id": "CWE-200",
+        "description": "GitLab EE 12.4 and later through 12.7.2 has Incorrect Access Control.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://about.gitlab.com/blog/categories/releases/",
+            "https://about.gitlab.com/releases/2020/01/30/security-release-gitlab-12-7-4-released/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.4.0 up to (excluding) 12.5.9\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.6.0 up to (excluding) 12.6.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.7.0 up to (including) 12.7.2",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/06/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-7977",
+        "cwe_id": "CWE-276",
+        "description": "GitLab EE 8.8 and later through 12.7.2 has Insecure Permissions.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://about.gitlab.com/blog/categories/releases/",
+            "https://about.gitlab.com/releases/2020/01/30/security-release-gitlab-12-7-4-released/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 8.8.0 up to (excluding) 12.5.9\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.6.0 up to (excluding) 12.6.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.7.0 up to (including) 12.7.2",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/06/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-7978",
+        "cwe_id": null,
+        "description": "GitLab EE 12.6 and later through 12.7.2 allows Denial of Service.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://about.gitlab.com/blog/categories/releases/",
+            "https://about.gitlab.com/releases/2020/01/30/security-release-gitlab-12-7-4-released/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.6.0 up to (excluding) 12.6.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.7.0 up to (including) 12.7.2",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/06/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-8506",
+        "cwe_id": "CWE-200",
+        "description": "The Global TV application 2.3.2 for Android and 4.7.5 for iOS sends Unencrypted Analytics.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/156425/Global-TV-Unencrypted-Analytics.html",
+            "https://www.info-sec.ca/advisories.html",
+            "https://www.info-sec.ca/advisories/Global-TV.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:corusent:global_tv:*:*:*:*:*:android:*:* versions up to (including) 2.3.2\n     *cpe:2.3:a:corusent:global_tv:*:*:*:*:*:iphone_os:*:* versions up to (including) 4.7.5",
+            "*cpe:2.3:a:corusent:global_tv:*:*:*:*:*:android:*:*",
+            "(including)",
+            "*cpe:2.3:a:corusent:global_tv:*:*:*:*:*:iphone_os:*:*",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/19/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-8507",
+        "cwe_id": "CWE-200",
+        "description": "The Citytv Video application 4.08.0 for Android and 3.35 for iOS sends Unencrypted Analytics.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/156426/Citytv-Video-Unencrypted-Analytics.html",
+            "https://www.info-sec.ca/advisories.html",
+            "https://www.info-sec.ca/advisories/Citytv-Video.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:rogersmedia:citytv_video:*:*:*:*:*:iphone_os:*:* versions up to (including) 3.36\n     *cpe:2.3:a:rogersmedia:citytv_video:*:*:*:*:*:android:*:* versions up to (including) 4.08.0",
+            "*cpe:2.3:a:rogersmedia:citytv_video:*:*:*:*:*:iphone_os:*:*",
+            "(including)",
+            "*cpe:2.3:a:rogersmedia:citytv_video:*:*:*:*:*:android:*:*",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/19/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2019-11516",
+        "cwe_id": "CWE-787",
+        "description": "An issue was discovered in the Bluetooth component of the Cypress (formerly owned by Broadcom) Wireless IoT codebase. Extended Inquiry Responses (EIRs) are improperly handled, which causes a heap-based buffer overflow during device inquiry. This overflow can be used to overwrite existing functions with arbitrary code. The Reserved for Future Use (RFU) bits are not discarded by eir_handleRx(), and are included in an EIR's length. Therefore, one can exceed the expected 240 bytes, which leads to a heap-based buffer overflow in eir_getReceivedEIR() called by bthci_event_SendInquiryResultEvent(). In order to exploit this bug, an attacker must repeatedly connect to the victim's device in a short amount of time from different source addresses. This will cause the victim's Bluetooth stack to resolve the device names and therefore allocate buffers with attacker-controlled data. Due to the heap corruption, the name will be eventually written to an attacker-controlled location, leading to a write-what-where condition.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://community.cypress.com/thread/53681",
+            "https://source.android.com/security/bulletin/2019-08-01",
+            "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-google-android-os-could-allow-for-arbitrary-code-execution_2019-078/",
+            "https://www.techrepublic.com/article/android-security-bulletin-august-2019-what-you-need-to-know/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "04/13/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2019-12180",
+        "cwe_id": null,
+        "description": "An issue was discovered in SmartBear ReadyAPI through 2.8.2 and 3.0.0 and SoapUI through 5.5. When opening a project, the Groovy \"Load Script\" is automatically executed. This allows an attacker to execute arbitrary Groovy Language code (Java scripting language) on the victim machine by inducing it to open a malicious Project. The same issue is present in the \"Save Script\" function, which is executed automatically when saving a project.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "https://lab.mediaservice.net/advisory/2020-04-readyapi-soapui.txt"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:smartbear:readyapi:*:*:*:*:*:*:*:* versions from (including) 2.8.2 up to (including) 3.0.0\n     *cpe:2.3:a:smartbear:soapui:*:*:*:*:*:*:*:* versions up to (including) 5.5",
+            "*cpe:2.3:a:smartbear:readyapi:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:smartbear:soapui:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2019-15126",
+        "cwe_id": "CWE-367",
+        "description": "An issue was discovered on Broadcom Wi-Fi client devices. Specifically timed and handcrafted traffic can cause internal errors (related to state transitions) in a WLAN device that lead to improper layer 2 Wi-Fi encryption with a consequent possibility of information disclosure over the air for a discrete set of traffic, a different vulnerability than CVE-2019-9500, CVE-2019-9501, CVE-2019-9502, and CVE-2019-9503.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "3.1 LOW",
+        "base_score_v2": "2.9 LOW",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/156809/Broadcom-Wi-Fi-KR00K-Proof-Of-Concept.html",
+            "http://www.arubanetworks.com/assets/alert/ARUBA-PSA-2020-003.txt",
+            "http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200527-01-wifi-en",
+            "http://www.huawei.com/en/psirt/security-notices/huawei-sn-20200228-01-kr00k-en",
+            "https://cert-portal.siemens.com/productcert/pdf/ssa-712518.pdf",
+            "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0001",
+            "https://support.apple.com/kb/HT210721",
+            "https://support.apple.com/kb/HT210722",
+            "https://support.apple.com/kb/HT210788",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20200226-wi-fi-info-disclosure",
+            "https://us-cert.cisa.gov/ics/advisories/icsa-20-224-05",
+            "https://www.mist.com/documentation/mist-security-advisory-kr00k-attack-faq/",
+            "https://www.synology.com/security/advisory/Synology_SA_20_03"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:ipad_os:*:*:*:*:*:*:*:* versions from (excluding) 13.2",
+            "*cpe:2.3:o:apple:ipad_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:ipados:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "cpe:2.3:h:broadcom:bcm43012:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:broadcom:bcm43013:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:broadcom:bcm4356:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:broadcom:bcm43752:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:broadcom:bcm4375:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:broadcom:bcm4389:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:ipad_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "08/11/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-6754",
+        "cwe_id": "CWE-22",
+        "description": "dotCMS before 5.2.4 is vulnerable to directory traversal, leading to incorrect access control. It allows an attacker to read or execute files under $TOMCAT_HOME/webapps/ROOT/assets (which should be a protected directory). Additionally, attackers can upload temporary files (e.g., .jsp files) into /webapps/ROOT/assets/tmp_upload, which can lead to remote command execution (with the permissions of the user running the dotCMS application).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://dotcms.com/security/SI-54",
+            "https://github.com/dotCMS/core/issues/17796"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:dotcms:dotcms:*:*:*:*:*:*:*:* versions up to (excluding) 5.2.4",
+            "*cpe:2.3:a:dotcms:dotcms:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-6833",
+        "cwe_id": "CWE-200",
+        "description": "An issue was discovered in GitLab EE 11.3 and later. A GitLab Workhorse bypass could lead to package and file disclosure via request smuggling.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://about.gitlab.com/blog/categories/releases/",
+            "https://about.gitlab.com/releases/2020/01/30/security-release-gitlab-12-7-4-released/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 11.3.0 up to (excluding) 12.5.9\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.6.0 up to (excluding) 12.6.6\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 12.7.2 up to (excluding) 12.7.4",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2013-2675",
+        "cwe_id": "CWE-1021",
+        "description": "Brother MFC-9970CDW 1.10 devices with Firmware L contain a Frameable response (Clickjacking) vulnerability which could allow remote attackers to obtain sensitive information.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/121553/Brother-MFC-9970CDW-Firmware-0D-Cross-Site-Scripting.html",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/84092",
+            "https://www.securityfocus.com/bid/59724"
+        ],
+        "cpe": [
+            "cpe:2.3:h:brother:mfc-9970cdw:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/11/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2015-0102",
+        "cwe_id": "CWE-287",
+        "description": "IBM Workflow for Bluemix does not set the secure flag for the session cookie in an https session, which makes it easier for remote attackers to capture this cookie by intercepting its transmission within an http session.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/74220",
+            "https://www.ibm.com/blogs/psirt/ibm-security-bulletin-authentication-session-cookie-in-ibm-workflow-for-bluemix-was-missing-secure-flag-cve-2015-0102/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:workflow:-:*:*:*:*:bluemix:*:*",
+            "*cpe:2.3:a:ibm:workflow:-:*:*:*:*:bluemix:*:*"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2019-15253",
+        "cwe_id": "CWE-79",
+        "description": "A vulnerability in the web-based management interface of Cisco Digital Network Architecture (DNA) Center could allow an authenticated, remote attacker to conduct a stored cross-site scripting (XSS) attack against a user of the web-based management interface of an affected device. The vulnerability is due to insufficient validation of user-supplied input by the web-based management interface of an affected device. An attacker could exploit this vulnerability by persuading a user to click a crafted link. A successful exploit could allow the attacker to execute arbitrary script code in the context of the affected interface or access sensitive, browser-based information. To exploit this vulnerability, the attacker needs administrator credentials. This vulnerability affects Cisco DNA Center Software releases earlier than 1.3.0.6 and 1.3.1.4.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.8 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/157668/Cisco-Digital-Network-Architecture-Center-1.3.1.4-Cross-Site-Scripting.html",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20190205-dnac-xss"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:cisco:dna_center:*:*:*:*:*:*:*:* versions up to (excluding) 1.3.0.6\n     *cpe:2.3:a:cisco:dna_center:*:*:*:*:*:*:*:* versions from (including) 1.3.1.0 up to (excluding) 1.3.1.4",
+            "*cpe:2.3:a:cisco:dna_center:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:cisco:dna_center:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "05/12/2020",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-3110",
+        "cwe_id": "CWE-20",
+        "description": "A vulnerability in the Cisco Discovery Protocol implementation for the Cisco Video Surveillance 8000 Series IP Cameras could allow an unauthenticated, adjacent attacker to execute code remotely or cause a reload of an affected IP Camera. The vulnerability is due to missing checks when processing Cisco Discovery Protocol messages. An attacker could exploit this vulnerability by sending a malicious Cisco Discovery Protocol packet to the targeted IP Camera. A successful exploit could allow the attacker to expose the affected IP Camera for remote code execution or cause it to reload unexpectedly, resulting in a denial of service (DoS) condition. Cisco Discovery Protocol is a Layer 2 protocol. To exploit this vulnerability, an attacker must be in the same broadcast domain as the affected device (Layer 2 adjacent). This vulnerability is fixed in Video Surveillance 8000 Series IP Camera Firmware Release 1.0.7 and later.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "8.3 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/156203/Cisco-Discovery-Protocol-CDP-Remote-Device-Takeover.html",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20200205-ipcameras-rce-dos"
+        ],
+        "cpe": [
+            "cpe:2.3:h:cisco:video_surveillance_8000p_ip_camera:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:video_surveillance_8020_ip_camera:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:video_surveillance_8030_ip_camera:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:video_surveillance_8030_ip_camera:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:video_surveillance_8070_ip_camera:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:video_surveillance_8400_ip_camera:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:video_surveillance_8400_ip_camera:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:video_surveillance_8400_ip_camera:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:video_surveillance_8620_ip_camera:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:video_surveillance_8630_ip_camera:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:video_surveillance_8930_speed_dome_ip_camera:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-3111",
+        "cwe_id": "CWE-20",
+        "description": "A vulnerability in the Cisco Discovery Protocol implementation for the Cisco IP Phone could allow an unauthenticated, adjacent attacker to remotely execute code with root privileges or cause a reload of an affected IP phone. The vulnerability is due to missing checks when processing Cisco Discovery Protocol messages. An attacker could exploit this vulnerability by sending a crafted Cisco Discovery Protocol packet to the targeted IP phone. A successful exploit could allow the attacker to remotely execute code with root privileges or cause a reload of an affected IP phone, resulting in a denial of service (DoS) condition. Cisco Discovery Protocol is a Layer 2 protocol. To exploit this vulnerability, an attacker must be in the same broadcast domain as the affected device (Layer 2 adjacent).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "8.3 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/156203/Cisco-Discovery-Protocol-CDP-Remote-Device-Takeover.html",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20200205-voip-phones-rce-dos"
+        ],
+        "cpe": [
+            "cpe:2.3:h:cisco:ip_conference_phone_7832:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ip_conference_phone_8832:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ip_phone_6821:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ip_phone_6841:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ip_phone_6851:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ip_phone_6861:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ip_phone_6871:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ip_phone_7811:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ip_phone_7821:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ip_phone_7841:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ip_phone_7861:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ip_phone_8811:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ip_phone_8841:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ip_phone_8845:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ip_phone_8851:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ip_phone_8861:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ip_phone_8865:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:unified_ip_conference_phone_8831:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:unified_ip_conference_phone_8831_for_third-party_call_control:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:wireless_ip_phone_8821-ex:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:wireless_ip_phone_8821:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-3118",
+        "cwe_id": "CWE-134",
+        "description": "A vulnerability in the Cisco Discovery Protocol implementation for Cisco IOS XR Software could allow an unauthenticated, adjacent attacker to execute arbitrary code or cause a reload on an affected device. The vulnerability is due to improper validation of string input from certain fields in Cisco Discovery Protocol messages. An attacker could exploit this vulnerability by sending a malicious Cisco Discovery Protocol packet to an affected device. A successful exploit could allow the attacker to cause a stack overflow, which could allow the attacker to execute arbitrary code with administrative privileges on an affected device. Cisco Discovery Protocol is a Layer 2 protocol. To exploit this vulnerability, an attacker must be in the same broadcast domain as the affected device (Layer 2 adjacent).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "8.3 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/156203/Cisco-Discovery-Protocol-CDP-Remote-Device-Takeover.html",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20200205-iosxr-cdp-rce"
+        ],
+        "cpe": [
+            "cpe:2.3:h:cisco:ncs_6000:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9000v:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9001:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9006:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9010:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9901:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9904:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9906:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9910:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ncs_5001:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ncs_5002:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ncs_5011:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ncs_540:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:xrv_9000:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ncs_560:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ncs_540l:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xr:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:o:cisco:ios_xr:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/10/2020",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-3119",
+        "cwe_id": "CWE-787",
+        "description": "A vulnerability in the Cisco Discovery Protocol implementation for Cisco NX-OS Software could allow an unauthenticated, adjacent attacker to execute arbitrary code or cause a reload on an affected device. The vulnerability exists because the Cisco Discovery Protocol parser does not properly validate input for certain fields in a Cisco Discovery Protocol message. An attacker could exploit this vulnerability by sending a malicious Cisco Discovery Protocol packet to an affected device. An successful exploit could allow the attacker to cause a stack overflow, which could allow the attacker to execute arbitrary code with administrative privileges on an affected device. Cisco Discovery Protocol is a Layer 2 protocol. To exploit this vulnerability, an attacker must be in the same broadcast domain as the affected device (Layer 2 adjacent).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "8.3 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/156203/Cisco-Discovery-Protocol-CDP-Remote-Device-Takeover.html",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20200205-nxos-cdp-rce"
+        ],
+        "cpe": [
+            "cpe:2.3:h:cisco:ucs_6248up:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ucs_6296up:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ucs_6300:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ucs_6324:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ucs_64108:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_3016:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_3048:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_3064:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_3064-t:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_31",
+            "cpe:2.3:h:cisco:nexus_5548p:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_5548up:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_5596t:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_5596up:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_56128p:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_5624q:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_5648q:-:",
+            "cpe:2.3:h:cisco:nexus_9000v:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_92160yc-x:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_92300yc:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_92304qc:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_92348gc-x:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/12/2020",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-3120",
+        "cwe_id": "CWE-190",
+        "description": "A vulnerability in the Cisco Discovery Protocol implementation for Cisco FXOS Software, Cisco IOS XR Software, and Cisco NX-OS Software could allow an unauthenticated, adjacent attacker to cause a reload of an affected device, resulting in a denial of service (DoS) condition. The vulnerability is due to a missing check when the affected software processes Cisco Discovery Protocol messages. An attacker could exploit this vulnerability by sending a malicious Cisco Discovery Protocol packet to an affected device. A successful exploit could allow the attacker to exhaust system memory, causing the device to reload. Cisco Discovery Protocol is a Layer 2 protocol. To exploit this vulnerability, an attacker must be in the same broadcast domain as the affected device (Layer 2 adjacent).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "6.1 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/156203/Cisco-Discovery-Protocol-CDP-Remote-Device-Takeover.html",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20200205-fxnxos-iosxr-cdp-dos"
+        ],
+        "cpe": [
+            "cpe:2.3:h:cisco:ucs_6248up:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ucs_6296up:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ucs_6300:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ucs_6324:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ucs_64108:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:firepower_4110:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:firepower_4115:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ncs_6000:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9000v:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9001:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9006:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9010:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9901:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9904:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9906:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9910:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9000v:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9001:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9006:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9010:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9901:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9904:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9906:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9910:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ncs_560:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:ncs_540l:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_1000ve:-:*:*:*:*:vsphere:*:*",
+            "cpe:2.3:h:cisco:mds_9132t:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:mds_9148s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:mds_9148t:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:mds_9216:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:mds_9216a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_3016:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_3048:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_3064:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_3064-t:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_31",
+            "cpe:2.3:h:cisco:nexus_9000v:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_92160yc-x:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_92300yc:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_92304qc:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_92348gc-x:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_1000v:-:*:*:*:*:vsphere:*:*",
+            "cpe:2.3:h:cisco:nexus_7000:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_5548p:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_5548up:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_5596t:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_5596up:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_56128p:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_5624q:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_5648q:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:nexus_1000v:-:*:*:*:*:hyper-v:*:*"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/11/2020",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-3123",
+        "cwe_id": "CWE-125",
+        "description": "A vulnerability in the Data-Loss-Prevention (DLP) module in Clam AntiVirus (ClamAV) Software versions 0.102.1 and 0.102.0 could allow an unauthenticated, remote attacker to cause a denial of service condition on an affected device. The vulnerability is due to an out-of-bounds read affecting users that have enabled the optional DLP feature. An attacker could exploit this vulnerability by sending a crafted email file to an affected device. An exploit could allow the attacker to cause the ClamAV scanning process crash, resulting in a denial of service condition.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-3123"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://blog.clamav.net/2020/02/clamav-01022-security-patch-released.html",
+            "https://quickview.cloudapps.cisco.com/quickview/bug/CSCvs59062",
+            "https://security.gentoo.org/glsa/202003-46",
+            "https://usn.ubuntu.com/4280-1/",
+            "https://usn.ubuntu.com/4280-2/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:clamav:clamav:0.102.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:clamav:clamav:0.102.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:clamav:clamav:0.102.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:clamav:clamav:0.102.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "03/19/2020",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-3149",
+        "cwe_id": "CWE-79",
+        "description": "A vulnerability in the web-based management interface of Cisco Identity Services Engine (ISE) Software could allow an authenticated, remote attacker to perform a stored cross-site scripting (XSS) attack on an affected device. The vulnerability is due to insufficient input validation by the web-based management interface. An attacker could exploit this vulnerability by providing malicious data to a specific field within the interface. A successful exploit could allow the attacker to execute arbitrary script code in the context of the affected interface or access sensitive, browser-based information. Cisco ISE Software releases 2.7.0 and later contains the fix for this vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.8 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ise-xss-DxJsRWRx"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:cisco:identity_services_engine:*:*:*:*:*:*:*:* versions up to (excluding) 2.7",
+            "*cpe:2.3:a:cisco:identity_services_engine:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2010-4662",
+        "cwe_id": "CWE-79",
+        "description": "PmWiki before 2.2.21 has XSS.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://www.openwall.com/lists/oss-security/2011/02/23/23"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:pmwiki:pmwiki:*:*:*:*:*:*:*:* versions up to (excluding) 2.2.21",
+            "*cpe:2.3:a:pmwiki:pmwiki:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/06/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2010-4815",
+        "cwe_id": "CWE-20",
+        "description": "Coppermine gallery before 1.4.26 has an input validation vulnerability that allows for code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://forum.coppermine-gallery.net/index.php/topic,63510.0.html",
+            "https://seclists.org/oss-sec/2010/q1/121",
+            "https://www.openwall.com/lists/oss-security/2011/08/19/7"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:coppermine-gallery:coppermine_gallery:*:*:*:*:*:*:*:* versions up to (excluding) 1.4.26",
+            "*cpe:2.3:a:coppermine-gallery:coppermine_gallery:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2013-5989",
+        "cwe_id": null,
+        "description": "** REJECT ** DO NOT USE THIS CANDIDATE NUMBER. ConsultIDs: CVE-2011-4969. Reason: This candidate is a duplicate of CVE-2011-4969. Notes: All CVE users should reference CVE-2011-4969 instead of this candidate. All references and descriptions in this candidate have been removed to prevent accidental usage.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2013-5989"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2013-5989"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "02/05/2020",
+        "modified_date": "02/05/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2014-3893",
+        "cwe_id": null,
+        "description": "** REJECT ** DO NOT USE THIS CANDIDATE NUMBER. ConsultIDs: CVE-2014-0114. Reason: This candidate is a duplicate of CVE-2014-0114. Notes: All CVE users should reference CVE-2014-0114 instead of this candidate. All references and descriptions in this candidate have been removed to prevent accidental usage.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-3893"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-3893"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "02/05/2020",
+        "modified_date": "02/05/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2015-5626",
+        "cwe_id": "CWE-787",
+        "description": "Stack-based buffer overflow in Yokogawa CENTUM CS 1000 R3.08.70 and earlier, CENTUM CS 3000 R3.09.50 and earlier, CENTUM CS 3000 Entry R3.09.50 and earlier, CENTUM VP R5.04.20 and earlier, CENTUM VP Entry R5.04.20 and earlier, ProSafe-RS R3.02.10 and earlier, Exaopc R3.72.00 and earlier, Exaquantum R2.85.00 and earlier, Exaquantum/Batch R2.50.30 and earlier, Exapilot R3.96.10 and earlier, Exaplog R3.40.00 and earlier, Exasmoc R4.03.20 and earlier, Exarqe R4.03.20 and earlier, Field Wireless Device OPC Server R2.01.02 and earlier, PRM R3.12.00 and earlier, STARDOM VDS R7.30.01 and earlier, STARDOM OPC Server for Windows R3.40 and earlier, FAST/TOOLS R10.01 and earlier, B/M9000CS R5.05.01 and earlier, B/M9000 VP R7.03.04 and earlier, and FieldMate R1.01 or R1.02 allows remote attackers to cause a denial of service (network-communications outage) via a crafted packet.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.yokogawa.com/dcs/security/ysar/YSAR-15-0003E.pdf",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-15-253-01"
+        ],
+        "cpe": [
+            "cpe:2.3:h:yokogawa:b\\/m9000_vp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:b\\/m9000cs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:centum_cs_1000:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:centum_cs_3000_entry:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:centum_cs_3000:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:centum_vp_entry:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:centum_vp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:field_wireless_device_opc_server:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:prosafe-rs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:stardom_opc_server:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:yokogawa:exaopc:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:yokogawa:exapilot:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:yokogawa:exaplog:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:yokogawa:exaquantum:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:yokogawa:exaquantum\\/batch:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:yokogawa:exarqe:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:yokogawa:fieldmate:r1.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:yokogawa:fieldmate:r1.02:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:yokogawa:plant_resource_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:yokogawa:scada_software_\\(fast\\/tools\\):*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:yokogawa:versatile_data_server_software:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/12/2020",
+        "vulnerability_source": "JPCERT/CC",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2015-5627",
+        "cwe_id": "CWE-787",
+        "description": "Stack-based buffer overflow in Yokogawa CENTUM CS 1000 R3.08.70 and earlier, CENTUM CS 3000 R3.09.50 and earlier, CENTUM CS 3000 Entry R3.09.50 and earlier, CENTUM VP R5.04.20 and earlier, CENTUM VP Entry R5.04.20 and earlier, ProSafe-RS R3.02.10 and earlier, Exaopc R3.72.00 and earlier, Exaquantum R2.85.00 and earlier, Exaquantum/Batch R2.50.30 and earlier, Exapilot R3.96.10 and earlier, Exaplog R3.40.00 and earlier, Exasmoc R4.03.20 and earlier, Exarqe R4.03.20 and earlier, Field Wireless Device OPC Server R2.01.02 and earlier, PRM R3.12.00 and earlier, STARDOM VDS R7.30.01 and earlier, STARDOM OPC Server for Windows R3.40 and earlier, FAST/TOOLS R10.01 and earlier, B/M9000CS R5.05.01 and earlier, B/M9000 VP R7.03.04 and earlier, and FieldMate R1.01 or R1.02 allows remote attackers to cause a denial of service (process outage) via a crafted packet.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.yokogawa.com/dcs/security/ysar/YSAR-15-0003E.pdf",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-15-253-01"
+        ],
+        "cpe": [
+            "cpe:2.3:h:yokogawa:b\\/m9000_vp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:b\\/m9000cs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:centum_cs_1000:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:centum_cs_3000_entry:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:centum_cs_3000:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:centum_vp_entry:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:centum_vp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:field_wireless_device_opc_server:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:prosafe-rs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:stardom_opc_server:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:yokogawa:exaopc:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:yokogawa:exapilot:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:yokogawa:exaplog:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:yokogawa:exaquantum:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:yokogawa:exaquantum\\/batch:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:yokogawa:exarqe:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:yokogawa:fieldmate:r1.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:yokogawa:fieldmate:r1.02:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:yokogawa:plant_resource_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:yokogawa:scada_software_\\(fast\\/tools\\):*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:yokogawa:versatile_data_server_software:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/12/2020",
+        "vulnerability_source": "JPCERT/CC",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2015-5628",
+        "cwe_id": "CWE-787",
+        "description": "Stack-based buffer overflow in Yokogawa CENTUM CS 1000 R3.08.70 and earlier, CENTUM CS 3000 R3.09.50 and earlier, CENTUM CS 3000 Entry R3.09.50 and earlier, CENTUM VP R5.04.20 and earlier, CENTUM VP Entry R5.04.20 and earlier, ProSafe-RS R3.02.10 and earlier, Exaopc R3.72.00 and earlier, Exaquantum R2.85.00 and earlier, Exaquantum/Batch R2.50.30 and earlier, Exapilot R3.96.10 and earlier, Exaplog R3.40.00 and earlier, Exasmoc R4.03.20 and earlier, Exarqe R4.03.20 and earlier, Field Wireless Device OPC Server R2.01.02 and earlier, PRM R3.12.00 and earlier, STARDOM VDS R7.30.01 and earlier, STARDOM OPC Server for Windows R3.40 and earlier, FAST/TOOLS R10.01 and earlier, B/M9000CS R5.05.01 and earlier, B/M9000 VP R7.03.04 and earlier, and FieldMate R1.01 or R1.02 allows remote attackers to execute arbitrary code via a crafted packet.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.yokogawa.com/dcs/security/ysar/YSAR-15-0003E.pdf",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-15-253-01"
+        ],
+        "cpe": [
+            "cpe:2.3:h:yokogawa:b\\/m9000_vp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:b\\/m9000cs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:centum_cs_1000:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:centum_cs_3000_entry:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:centum_cs_3000:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:centum_vp_entry:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:centum_vp:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:field_wireless_device_opc_server:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:prosafe-rs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:stardom_opc_server:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:yokogawa:exaopc:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:yokogawa:exapilot:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:yokogawa:exaplog:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:yokogawa:exaquantum:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:yokogawa:exaquantum\\/batch:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:yokogawa:exarqe:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:yokogawa:fieldmate:r1.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:yokogawa:fieldmate:r1.02:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:yokogawa:plant_resource_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:yokogawa:scada_software_\\(fast\\/tools\\):*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:yokogawa:versatile_data_server_software:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/12/2020",
+        "vulnerability_source": "JPCERT/CC",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2010-5304",
+        "cwe_id": "CWE-476",
+        "description": "A NULL pointer dereference flaw was found in the way LibVNCServer before 0.9.9 handled certain ClientCutText message. A remote attacker could use this flaw to crash the VNC server by sending a specially crafted ClientCutText message from a VNC client.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://lists.fedoraproject.org/pipermail/package-announce/2014-October/139654.html",
+            "http://lists.fedoraproject.org/pipermail/package-announce/2014-October/139814.html",
+            "http://lists.fedoraproject.org/pipermail/package-announce/2014-October/140219.html",
+            "http://lists.fedoraproject.org/pipermail/package-announce/2014-September/139445.html",
+            "http://seclists.org/oss-sec/2014/q3/639",
+            "http://www.openwall.com/lists/oss-security/2014/09/23/6"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libvncserver_project:libvncserver:*:*:*:*:*:*:*:* versions up to (excluding) 0.9.9",
+            "*cpe:2.3:a:libvncserver_project:libvncserver:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:fedoraproject:fedora:19:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:fedoraproject:fedora:20:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:fedoraproject:fedora:21:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2011-0220",
+        "cwe_id": "CWE-20",
+        "description": "Apple Bonjour before 2011 allows a crash via a crafted multicast DNS packet.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "https://opensource.apple.com/source/mDNSResponder/mDNSResponder-541/mDNSPosix/ReadMe.txt"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apple:bonjour:*:*:*:*:*:*:*:* versions up to (excluding) 2011",
+            "*cpe:2.3:a:apple:bonjour:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2019-20173",
+        "cwe_id": "CWE-79",
+        "description": "The Auth0 wp-auth0 plugin 3.11.x before 3.11.3 for WordPress allows XSS via a wle parameter associated with wp-login.php.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://auth0.com/docs/security/bulletins/cve-2019-20173",
+            "https://github.com/auth0/wp-auth0/releases/tag/3.11.3",
+            "https://wpvulndb.com/vulnerabilities/10059"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:auth0:login_by_auth0:*:*:*:*:*:wordpress:*:* versions from (including) 3.11.0 up to (excluding) 3.11.3",
+            "*cpe:2.3:a:auth0:login_by_auth0:*:*:*:*:*:wordpress:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2019-20447",
+        "cwe_id": "CWE-89",
+        "description": "Jobberbase 2.0 has SQL injection via the PATH_INFO to the jobs-in endpoint.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/152503/Jobberbase-CMS-2.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/47311"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jobberbase:jobberbase:2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:jobberbase:jobberbase:2.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2011-0525",
+        "cwe_id": "CWE-352",
+        "description": "Batavi before 1.0 has CSRF.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.openwall.com/lists/oss-security/2011/01/27/3"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:batavi:batavi:*:*:*:*:*:*:*:* versions up to (excluding) 1.0",
+            "*cpe:2.3:a:batavi:batavi:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2011-1009",
+        "cwe_id": "CWE-79",
+        "description": "Vanilla Forums 2.0.17.1 through 2.0.17.5 has XSS in /vanilla/index.php via the p parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://www.openwall.com/lists/oss-security/2011/02/22/14"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:vanillaforums:vanilla_forums:*:*:*:*:*:*:*:* versions from (including) 2.0.17.1 from (including) 2.0.17.5",
+            "*cpe:2.3:a:vanillaforums:vanilla_forums:*:*:*:*:*:*:*:* versions from (including) 2.0.17.1 up to (including) 2.0.17.5",
+            "*cpe:2.3:a:vanillaforums:vanilla_forums:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:vanillaforums:vanilla:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:vanillaforums:vanilla_forums:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/06/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2011-1069",
+        "cwe_id": "CWE-79",
+        "description": "PHPShop through 0.8.1 has XSS.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://www.openwall.com/lists/oss-security/2011/02/28/9"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:phpshop:phpshop:*:*:*:*:*:*:*:* versions up to (including) 0.8.1",
+            "*cpe:2.3:a:phpshop:phpshop:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/06/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2013-2680",
+        "cwe_id": "CWE-312",
+        "description": "Cisco Linksys E4200 1.0.05 Build 7 devices store passwords in cleartext allowing remote attackers to obtain sensitive information.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/121551/Cisco-Linksys-E4200-Cross-Site-Scripting-Local-File-Inclusion.html",
+            "http://www.securityfocus.com/bid/59712",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/84073"
+        ],
+        "cpe": [
+            "cpe:2.3:h:cisco:linksys_e4200:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2013-2681",
+        "cwe_id": "CWE-287",
+        "description": "Cisco Linksys E4200 1.0.05 Build 7 devices contain a Security Bypass Vulnerability which could allow remote attackers to gain unauthorized access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/121551/Cisco-Linksys-E4200-Cross-Site-Scripting-Local-File-Inclusion.html",
+            "http://www.securityfocus.com/bid/59714",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/84068"
+        ],
+        "cpe": [
+            "cpe:2.3:h:cisco:linksys_e4200:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2013-2682",
+        "cwe_id": "CWE-1021",
+        "description": "Cisco Linksys E4200 1.0.05 Build 7 devices contain a Clickjacking Vulnerability which allows remote attackers to obtain sensitive information.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/121551/Cisco-Linksys-E4200-Cross-Site-Scripting-Local-File-Inclusion.html",
+            "http://www.securityfocus.com/bid/59717",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/84071"
+        ],
+        "cpe": [
+            "cpe:2.3:h:cisco:linksys_e4200:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-6854",
+        "cwe_id": "CWE-79",
+        "description": "A cross-site scripting (XSS) vulnerability in the JOC Cockpit component of SOS JobScheduler 1.11 and 1.13.2 allows attackers to inject arbitrary web script or HTML via JSON properties available from the REST API.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://change.sos-berlin.com/browse/JOC-854"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:sos-berlin:jobscheduler:1.11:*:*:*:*:*:*:*\n     *cpe:2.3:a:sos-berlin:jobscheduler:1.13.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:sos-berlin:jobscheduler:1.11:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:sos-berlin:jobscheduler:1.13.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-8641",
+        "cwe_id": "CWE-22",
+        "description": "Lotus Core CMS 1.0.1 allows authenticated Local File Inclusion of .php files via directory traversal in the index.php page_slug parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://www.exploit-db.com/exploits/47985"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:lotus_core_cms_project:lotus_core_cms:1.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:lotus_core_cms_project:lotus_core_cms:1.0.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2011-1150",
+        "cwe_id": "CWE-79",
+        "description": "bbPress through 1.0.2 has XSS in /bb-login.php url via the re parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://www.openwall.com/lists/oss-security/2011/03/14/20"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:bbpress:bbpress:*:*:*:*:*:*:*:* versions up to (including) 1.0.2",
+            "*cpe:2.3:a:bbpress:bbpress:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/06/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2011-1151",
+        "cwe_id": "CWE-89",
+        "description": "Joomla! 1.6.0 is vulnerable to SQL Injection via the filter_order and filer_order_Dir parameters.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "9.1 CRITICAL",
+        "base_score_v2": "6.4 MEDIUM",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/101835/Joomla-1.6.0-SQL-Injection.html",
+            "https://www.openwall.com/lists/oss-security/2011/03/14/21"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:joomla:joomla\\!:1.6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:joomla:joomla\\!:1.6.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-8644",
+        "cwe_id": "CWE-20",
+        "description": "PlaySMS before 1.4.3 does not sanitize inputs from a malicious string.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/157106/PlaySMS-index.php-Unauthenticated-Template-Injection-Code-Execution.html",
+            "https://forum.playsms.org/t/playsms-1-4-3-has-been-released/2704",
+            "https://playsms.org/2020/02/05/playsms-1-4-3-has-been-released/",
+            "https://research.nccgroup.com/2020/02/11/technical-advisory-playsms-pre-authentication-remote-code-execution-cve-2020-8644/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:playsms:playsms:*:*:*:*:*:*:*:* versions up to (excluding) 1.4.3",
+            "*cpe:2.3:a:playsms:playsms:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/18/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2011-1517",
+        "cwe_id": null,
+        "description": "SAP NetWeaver 7.0 allows Remote Code Execution and Denial of Service caused by an error in the DiagTraceHex() function. By sending a specially-crafted packet, an attacker could exploit this vulnerability to cause the application to crash.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://archives.neohapsis.com/archives/bugtraq/2012-05/0061.html",
+            "http://www.securityfocus.com/bid/53424",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/75452"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:sap:netweaver:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:sap:netweaver:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2011-1597",
+        "cwe_id": "CWE-434",
+        "description": "OpenVAS Manager v2.0.3 allows plugin remote code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://www.openwall.com/lists/oss-security/2011/04/20/5"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:openvas:openvas_manager:2.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:2.0.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/10/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-8647",
+        "cwe_id": "CWE-416",
+        "description": "There is a use-after-free vulnerability in the Linux kernel through 5.5.2 in the vc_do_resize function in drivers/tty/vt/vt.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:P)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "3.6 LOW",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-03/msg00039.html",
+            "https://bugzilla.kernel.org/show_bug.cgi?id=206359",
+            "https://lists.debian.org/debian-lts-announce/2020/06/msg00011.html",
+            "https://lists.debian.org/debian-lts-announce/2020/06/msg00012.html",
+            "https://lists.debian.org/debian-lts-announce/2020/06/msg00013.html",
+            "https://www.debian.org/security/2020/dsa-4698"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:* versions up to (including) 5.5.2",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "06/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-8648",
+        "cwe_id": "CWE-416",
+        "description": "There is a use-after-free vulnerability in the Linux kernel through 5.5.2 in the n_tty_receive_buf_common function in drivers/tty/n_tty.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:P)"
+        },
+        "base_score_v3": "7.1 HIGH",
+        "base_score_v2": "3.6 LOW",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-03/msg00021.html",
+            "https://bugzilla.kernel.org/show_bug.cgi?id=206361",
+            "https://lists.debian.org/debian-lts-announce/2020/06/msg00011.html",
+            "https://lists.debian.org/debian-lts-announce/2020/06/msg00012.html",
+            "https://lists.debian.org/debian-lts-announce/2020/06/msg00013.html",
+            "https://security.netapp.com/advisory/ntap-20200924-0004/",
+            "https://usn.ubuntu.com/4342-1/",
+            "https://usn.ubuntu.com/4344-1/",
+            "https://usn.ubuntu.com/4345-1/",
+            "https://usn.ubuntu.com/4346-1/",
+            "https://www.debian.org/security/2020/dsa-4698"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:* versions up to (including) 5.5.2",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "09/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-8649",
+        "cwe_id": "CWE-416",
+        "description": "There is a use-after-free vulnerability in the Linux kernel through 5.5.2 in the vgacon_invert_region function in drivers/video/console/vgacon.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:P/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:P/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:P)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "3.6 LOW",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-03/msg00039.html",
+            "https://bugzilla.kernel.org/show_bug.cgi?id=206357",
+            "https://lists.debian.org/debian-lts-announce/2020/06/msg00011.html",
+            "https://lists.debian.org/debian-lts-announce/2020/06/msg00012.html",
+            "https://lists.debian.org/debian-lts-announce/2020/06/msg00013.html",
+            "https://www.debian.org/security/2020/dsa-4698"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:* versions up to (including) 5.5.2",
+            "*cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "06/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2019-20104",
+        "cwe_id": "CWE-776",
+        "description": "The OpenID client application in Atlassian Crowd before version 3.6.2, and from version 3.7.0 before 3.7.1 allows remote attackers to perform a Denial of Service attack via an XML Entity Expansion vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://jira.atlassian.com/browse/CWD-5526",
+            "https://zeroauth.ltd/blog/2020/02/07/cve-2019-20104-atlassian-crowd-openid-client-vulnerable-to-remote-dos-via-xml-entity-expansion/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:atlassian:crowd:*:*:*:*:*:*:*:* versions up to (excluding) 3.6.2\n     *cpe:2.3:a:atlassian:crowd:*:*:*:*:*:*:*:* versions from (including) 3.6.3 up to (excluding) 3.7.1\n     *cpe:2.3:a:atlassian:crowd:*:*:*:*:*:*:*:* versions from (including) 3.7.2 up to (excluding) 4.0.0",
+            "*cpe:2.3:a:atlassian:crowd:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:crowd:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:crowd:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/10/2020",
+        "vulnerability_source": "Atlassian",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2019-20106",
+        "cwe_id": "CWE-276",
+        "description": "Comment properties in Atlassian Jira Server and Data Center before version 7.13.12, from 8.0.0 before version 8.5.4, and 8.6.0 before version 8.6.1 allows remote attackers to make comments on a ticket to which they do not have commenting permissions via a broken access control bug.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://jira.atlassian.com/browse/JRASERVER-70543"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:* versions up to (excluding) 7.13.12\n     *cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:* versions from (including) 7.13.13 up to (excluding) 8.5.4\n     *cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:* versions from (including) 8.6.0 up to (excluding) 8.6.1\n     *cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:* versions from (including) 8.6.2 up to (excluding) 8.7.0",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:* versions up to (excluding) 7.13.12\n     *cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:* versions from (including) 7.13.13 up to (excluding) 8.5.4\n     *cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:* versions from (including) 8.6.0 up to (excluding) 8.6.1\n     *cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:* versions from (including) 8.6.2 up to (excluding) 8.7.0",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira:8.6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:atlassian:jira_software_data_center:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira_software_data_center:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira_sof",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "07/13/2020",
+        "vulnerability_source": "Atlassian",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2019-20400",
+        "cwe_id": "CWE-426",
+        "description": "The usage of Tomcat in Jira before version 8.5.2 allows local attackers with permission to write a dll file to a directory in the global path environmental variable can inject code into via a DLL hijacking vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.4 MEDIUM",
+        "hyperlinks": [
+            "https://jira.atlassian.com/browse/JRASERVER-70407"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:* versions from (including) 8.3.2 up to (excluding) 8.5.2\n     *cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:* versions from (including) 8.5.3 up to (excluding) 8.6.0",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "Atlassian",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2019-20401",
+        "cwe_id": "CWE-352",
+        "description": "Various installation setup resources in Jira before version 8.5.2 allow remote attackers to configure a Jira instance, which has not yet finished being installed, via Cross-site request forgery (CSRF) vulnerabilities.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://jira.atlassian.com/browse/JRASERVER-70406"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:* versions from (including) 7.6.15 up to (excluding) 8.5.2\n     *cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:* versions from (including) 8.5.3 up to (excluding) 8.6.0",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "Atlassian",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2019-20402",
+        "cwe_id": null,
+        "description": "Support zip files in Atlassian Jira Server and Data Center before version 8.6.0 could be downloaded by a System Administrator user without requiring the user to re-enter their password via an improper authorization vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.9 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://jira.atlassian.com/browse/JRASERVER-70564"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:* versions from (including) 8.2.3 up to (excluding) 8.6.0",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:* versions from (including) 8.2.3 up to (excluding) 8.6.0",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira_software_data_center:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "Atlassian",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2019-20403",
+        "cwe_id": "CWE-200",
+        "description": "The API in Atlassian Jira Server and Data Center before version 8.6.0 allows remote attackers to determine if a Jira project key exists or not via an information disclosure vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://jira.atlassian.com/browse/JRASERVER-70565"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:* versions from (including) 7.13.0 up to (excluding) 8.2.4\n     *cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:* versions from (including) 8.2.5 up to (excluding) 8.6.0",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:* versions from (including) 7.13.0 up to (excluding) 8.2.4\n     *cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:* versions from (including) 8.2.5 up to (excluding) 8.6.0",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira_software_data_center:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "07/13/2020",
+        "vulnerability_source": "Atlassian",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2019-20404",
+        "cwe_id": null,
+        "description": "The API in Atlassian Jira Server and Data Center before version 8.6.0 allows authenticated remote attackers to determine project titles they do not have access to via an improper authorization vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://jira.atlassian.com/browse/JRASERVER-70569"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:* versions from (including) 8.2.4 up to (excluding) 8.6.0\n     *cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:* versions from (including) 8.6.1 up to (excluding) 8.7.0",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:* versions from (including) 8.2.4 up to (excluding) 8.6.0\n     *cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:* versions from (including) 8.6.1 up to (excluding) 8.7.0",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira_software_data_center:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira_software_data_center:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "Atlassian",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2019-20405",
+        "cwe_id": "CWE-352",
+        "description": "The JMX monitoring flag in Atlassian Jira Server and Data Center before version 8.6.0 allows remote attackers to turn the JMX monitoring flag off or on via a Cross-site request forgery (CSRF) vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://jira.atlassian.com/browse/JRASERVER-70570"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:* versions from (including) 7.13.0 up to (excluding) 8.6.0",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:* versions from (including) 7.13.0 up to (excluding) 8.6.0",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira_software_data_center:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "07/14/2020",
+        "vulnerability_source": "Atlassian",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2019-20406",
+        "cwe_id": "CWE-426",
+        "description": "The usage of Tomcat in Confluence on the Microsoft Windows operating system before version 7.0.5, and from version 7.1.0 before version 7.1.1 allows local system attackers who have permission to write a DLL file in a directory in the global path environmental variable variable to inject code & escalate their privileges via a DLL hijacking vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.4 MEDIUM",
+        "hyperlinks": [
+            "https://jira.atlassian.com/browse/CONFSERVER-59428"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "Atlassian",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-8658",
+        "cwe_id": "CWE-352",
+        "description": "The BestWebSoft Htaccess plugin through 1.8.1 for WordPress allows wp-admin/admin.php?page=htaccess.php&action=htaccess_editor CSRF. The flag htccss_nonce_name passes the nonce to WordPress but the plugin does not validate it correctly, resulting in a wrong implementation of anti-CSRF protection. In this way, an attacker is able to direct the victim to a malicious web page that modifies the .htaccess file, and takes control of the website.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/V1n1v131r4/Exploiting-WP-Htaccess-by-BestWebSoft-Plugin/blob/master/README.md",
+            "https://wordpress.org/plugins/htaccess/#developers",
+            "https://wpvulndb.com/vulnerabilities/10060"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:bestwebsoft:htaccess:*:*:*:*:*:wordpress:*:* versions up to (including) 1.8.1",
+            "*cpe:2.3:a:bestwebsoft:htaccess:*:*:*:*:*:wordpress:*:*",
+            "(including)"
+        ],
+        "published_date": "02/05/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2020-5528",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting vulnerability in Movable Type series (Movable Type 7 r.4603 and earlier (Movable Type 7), Movable Type 6.5.2 and earlier (Movable Type 6.5), Movable Type Advanced 7 r.4603 and earlier (Movable Type Advanced 7), Movable Type Advanced 6.5.2 and earlier (Movable Type Advanced 6.5), Movable Type Premium 1.26 and earlier (Movable Type Premium), and Movable Type Premium Advanced 1.26 and earlier (Movable Type Premium Advanced)) allows remote attackers to inject arbitrary web script or HTML in the block editor and the rich text editor via a specially crafted URL.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://jvn.jp/en/jp/JVN94435544/index.html",
+            "https://movabletype.org/news/2020/02/movable_type_r4605_v720_v653_and_v6311_released.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:sixapart:movable_type:*:*:*:*:*:*:*:* versions from (including) 6.5.0 up to (including) 6.5.2\n     *cpe:2.3:a:sixapart:movable_type:*:*:*:*:*:*:*:* versions from (including) 7.0 up to (including) 7.1.4",
+            "*cpe:2.3:a:sixapart:movable_type:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:sixapart:movable_type:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:sixapart:movable_type:*:*:*:*:advanced:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:sixapart:movable_type:*:*:*:*:premium:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:sixapart:movable_type:*:*:*:*:advanced:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:sixapart:movable_type:*:*:*:*:advanced:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "02/06/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "JPCERT/CC",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2010-3917",
+        "cwe_id": "CWE-200",
+        "description": "Google Chrome before 3.0 does not properly handle XML documents, which allows remote attackers to obtain sensitive information via a crafted web site.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://jvn.jp/en/jp/JVN36765384/index.html",
+            "http://jvndb.jvn.jp/en/contents/2010/JVNDB-2010-000056.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:google:chrome:*:*:*:*:*:*:*:* versions up to (excluding) 3.0",
+            "*cpe:2.3:a:google:chrome:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "02/06/2020",
+        "modified_date": "02/10/2020",
+        "vulnerability_source": "JPCERT/CC",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2012-2593",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in the administrative interface in Atmail Webmail Server 6.4 allows remote attackers to inject arbitrary web script or HTML via the Date field of an email.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.exploit-db.com/exploits/20009",
+            "http://www.securityfocus.com/bid/54630"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:atmail:atmail:6.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:atmail:atmail:6.4.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/06/2020",
+        "modified_date": "02/10/2020",
+        "vulnerability_source": "CERT/CC",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2015-6000",
+        "cwe_id": "CWE-434",
+        "description": "Unrestricted file upload vulnerability in the Settings_Vtiger_CompanyDetailsSave_Action class in modules/Settings/Vtiger/actions/CompanyDetailsSave.php in Vtiger CRM 6.3.0 and earlier allows remote authenticated users to execute arbitrary code by uploading a file with an executable extension, then accessing it via a direct request to the file in test/logo/.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://b.fl7.de/2015/09/vtiger-crm-authenticated-rce-cve-2015-6000.html",
+            "http://www.securityfocus.com//archive/1/536563/100/0/threaded",
+            "https://www.exploit-db.com/exploits/38345/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:vtiger:vtiger_crm:*:*:*:*:*:*:*:* versions up to (including) 6.3.0",
+            "*cpe:2.3:a:vtiger:vtiger_crm:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "02/06/2020",
+        "modified_date": "02/10/2020",
+        "vulnerability_source": "CERT/CC",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-7523",
+        "cwe_id": "CWE-125",
+        "description": "coders/meta.c in ImageMagick allows remote attackers to cause a denial of service (out-of-bounds read) via a crafted file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/09/22/2",
+            "https://bugs.launchpad.net/ubuntu/+source/imagemagick/+bug/1537420",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1378754",
+            "https://github.com/ImageMagick/ImageMagick/issues/94"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:imagemagick:imagemagick:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:imagemagick:imagemagick:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/06/2020",
+        "modified_date": "02/10/2020",
+        "vulnerability_source": "Debian GNU/Linux",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-7524",
+        "cwe_id": "CWE-125",
+        "description": "coders/meta.c in ImageMagick allows remote attackers to cause a denial of service (out-of-bounds read) via a crafted file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/09/22/2",
+            "https://bugs.launchpad.net/ubuntu/+source/imagemagick/+bug/1537422",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1378762",
+            "https://github.com/ImageMagick/ImageMagick/commit/97c9f438a9b3454d085895f4d1f66389fd22a0fb",
+            "https://github.com/ImageMagick/ImageMagick/commit/f8c318d462270b03e77f082e2a3a32867cacd3c6",
+            "https://github.com/ImageMagick/ImageMagick/issues/96"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:imagemagick:imagemagick:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:imagemagick:imagemagick:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/06/2020",
+        "modified_date": "02/10/2020",
+        "vulnerability_source": "Debian GNU/Linux",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-9928",
+        "cwe_id": "CWE-269",
+        "description": "MCabber before 1.0.4 is vulnerable to roster push attacks, which allows remote attackers to intercept communications, or add themselves as an entity on a 3rd party's roster as another user, which will also garner associated privileges, via crafted XMPP packets.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "7.4 HIGH",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-updates/2017-01/msg00130.html",
+            "http://www.openwall.com/lists/oss-security/2016/12/11/2",
+            "http://www.openwall.com/lists/oss-security/2017/02/09/29",
+            "http://www.securityfocus.com/bid/94862",
+            "https://bitbucket.org/McKael/mcabber-crew/commits/6e1ead98930d7dd0a520ad17c720ae4908429033/raw",
+            "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=845258",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1403790",
+            "https://gultsch.de/gajim_roster_push_and_message_interception.html",
+            "https://lists.debian.org/debian-lts-announce/2020/06/msg00031.html",
+            "https://usn.ubuntu.com/4506-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mcabber:mcabber:*:*:*:*:*:*:*:* versions from (including) 1.0.0 up to (excluding) 1.0.4",
+            "*cpe:2.3:a:mcabber:mcabber:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "02/06/2020",
+        "modified_date": "09/17/2020",
+        "vulnerability_source": "Debian GNU/Linux",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2013-4166",
+        "cwe_id": "CWE-200",
+        "description": "The gpg_ctx_add_recipient function in camel/camel-gpg-context.c in GNOME Evolution 3.8.4 and earlier and Evolution Data Server 3.9.5 and earlier does not properly select the GPG key to use for email encryption, which might cause the email to be encrypted with the wrong key and allow remote attackers to obtain sensitive information.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2013-1540.html",
+            "http://seclists.org/oss-sec/2013/q3/191",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=973728",
+            "https://git.gnome.org/browse/evolution-data-server/commit/?h=gnome-3-8&id=f7059bb37dcce485d36d769142ec9515708d8ae5",
+            "https://git.gnome.org/browse/evolution-data-server/commit/?id=5d8b92c622f6927b253762ff9310479dd3ac627d"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gnome:evolution:*:*:*:*:*:*:*:* versions up to (including) 3.8.4\n     *cpe:2.3:a:gnome:evolution_data_server:*:*:*:*:*:*:*:* versions up to (including) 3.9.5",
+            "*cpe:2.3:a:gnome:evolution:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:gnome:evolution_data_server:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_workstation:6.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/06/2020",
+        "modified_date": "02/10/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2013-4572",
+        "cwe_id": "CWE-384",
+        "description": "The CentralNotice extension for MediaWiki before 1.19.9, 1.20.x before 1.20.8, and 1.21.x before 1.21.3 sets the Cache-Control header to cache session cookies when a user is autocreated, which allows remote attackers to authenticate as the created user.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://lists.fedoraproject.org/pipermail/package-announce/2013-December/122998.html",
+            "http://lists.fedoraproject.org/pipermail/package-announce/2013-December/123011.html",
+            "http://lists.wikimedia.org/pipermail/mediawiki-announce/2013-November/000135.html",
+            "https://bugzilla.wikimedia.org/show_bug.cgi?id=53032"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mediawiki:mediawiki:*:*:*:*:*:*:*:* versions up to (excluding) 1.19.9\n     *cpe:2.3:a:mediawiki:mediawiki:*:*:*:*:*:*:*:* versions from (including) 1.20 up to (excluding) 1.20.8\n     *cpe:2.3:a:mediawiki:mediawiki:*:*:*:*:*:*:*:* versions from (including) 1.21 up to (excluding) 1.21.3",
+            "*cpe:2.3:a:mediawiki:mediawiki:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:mediawiki:mediawiki:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:mediawiki:mediawiki:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:o:fedoraproject:fedora:18:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:fedoraproject:fedora:19:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/06/2020",
+        "modified_date": "02/10/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2014-1958",
+        "cwe_id": "CWE-120",
+        "description": "Buffer overflow in the DecodePSDPixels function in coders/psd.c in ImageMagick before 6.8.8-5 might allow remote attackers to execute arbitrary code via a crafted PSD image, involving the L%06ld string, a different vulnerability than CVE-2014-2030.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-updates/2014-03/msg00032.html",
+            "http://lists.opensuse.org/opensuse-updates/2014-03/msg00039.html",
+            "http://trac.imagemagick.org/changeset/14801",
+            "http://ubuntu.com/usn/usn-2132-1",
+            "http://www.openwall.com/lists/oss-security/2014/02/13/2",
+            "http://www.openwall.com/lists/oss-security/2014/02/13/5",
+            "https://www.openwall.com/lists/oss-security/2014/02/19/13"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:* versions up to (excluding) 6.8.8-5",
+            "*cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:12.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:13.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:opensuse:11.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:opensuse:12.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:opensuse:13.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/06/2020",
+        "modified_date": "02/12/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2014-2030",
+        "cwe_id": "CWE-787",
+        "description": "Stack-based buffer overflow in the WritePSDImage function in coders/psd.c in ImageMagick, possibly 6.8.8-5, allows remote attackers to cause a denial of service (crash) and possibly execute arbitrary code via a crafted PSD image, involving the L%06ld string, a different vulnerability than CVE-2014-1947.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-updates/2014-03/msg00032.html",
+            "http://lists.opensuse.org/opensuse-updates/2014-03/msg00039.html",
+            "http://ubuntu.com/usn/usn-2132-1",
+            "http://www.openwall.com/lists/oss-security/2014/02/12/2",
+            "http://www.openwall.com/lists/oss-security/2014/02/13/5",
+            "http://www.openwall.com/lists/oss-security/2014/02/19/13",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1064098",
+            "https://web.archive.org/web/20090120112751/http://trac.imagemagick.org/changeset/13736"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:imagemagick:imagemagick:6.8.8-5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:imagemagick:imagemagick:6.8.8-5:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:12.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:13.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:opensuse:11.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:opensuse:12.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:opensuse:13.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/06/2020",
+        "modified_date": "02/11/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2014-8271",
+        "cwe_id": "CWE-120",
+        "description": "Buffer overflow in the Reclaim function in Tianocore EDK2 before SVN 16280 allows physically proximate attackers to gain privileges via a long variable name.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "6.8 MEDIUM",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://sourceforge.net/p/edk2/code/16280/",
+            "http://www.kb.cert.org/vuls/id/533140"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:* versions up to (excluding) svn_16280",
+            "*cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "02/06/2020",
+        "modified_date": "02/11/2020",
+        "vulnerability_source": "CERT/CC",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2015-2909",
+        "cwe_id": "CWE-269",
+        "description": "Dedicated Micros DV-IP Express, SD Advanced, SD, EcoSense, and DS2 devices rely on a GUI warning to help ensure that the administrator configures login credentials, which makes it easier for remote attackers to obtain access by leveraging situations in which this warning was not heeded. NOTE: the vendor states \"The user is presented with clear warnings on the GUI that they should set usernames and passwords.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://cybergibbons.com/security-2/shodan-searches/interesting-shodan-searches-sd-advanced-dvrs/",
+            "http://www.kb.cert.org/vuls/id/276148"
+        ],
+        "cpe": [
+            "cpe:2.3:h:netvu:ds2_\\(dvtr\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:netvu:ds2_\\(dvtu\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:netvu:ds2_\\(dvtx\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:netvu:ds2_\\(dvtx\\)_netvu_connected:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:netvu:ds2_\\(m2ip\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:netvu:dv-ip_express:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:netvu:ecosense_4\\/8\\/16_\\(m4t\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:netvu:sd-advanced_-_sdhd:*:*:*:*:*:*:*:*",
+            "cpe:2.3:h:netvu:sd-advanced_8\\/12\\/16_vga:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:netvu:sd_32_\\(m3g\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:netvu:sd_32_\\(m3h\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:netvu:sd_4_\\(m3s\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:netvu:sd_4_\\(m3t\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:netvu:sd_8\\/12\\/16_no_kbd_\\(m3r\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:netvu:sd_8\\/12\\/16_no_kbd_\\(m3s\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:netvu:sd_8\\/16_front_panel_kbd_\\(m3r\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:netvu:sd_8\\/16_front_panel_kbd_\\(m3u\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:netvu:sd_advanced_closed_iptv_\\(m3u\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:netvu:sd_advanced_non_closed_iptv_\\(m3u\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:netvu:sd_advanced_nvr:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/06/2020",
+        "modified_date": "02/12/2020",
+        "vulnerability_source": "CERT/CC",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-1544",
+        "cwe_id": "CWE-400",
+        "description": "nghttp2 before 1.7.1 allows remote attackers to cause a denial of service (memory exhaustion).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "3.3 LOW",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://lists.fedoraproject.org/pipermail/package-announce/2016-February/177308.html",
+            "http://lists.fedoraproject.org/pipermail/package-announce/2016-February/177666.html",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1308461",
+            "https://github.com/nghttp2/nghttp2/compare/v1.7.0...v1.7.1",
+            "https://github.com/nghttp2/nghttp2/releases/tag/v1.7.1",
+            "https://security.gentoo.org/glsa/201612-13"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nghttp2:nghttp2:*:*:*:*:*:*:*:* versions up to (excluding) 1.7.1",
+            "*cpe:2.3:a:nghttp2:nghttp2:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:fedoraproject:fedora:22:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:fedoraproject:fedora:23:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/06/2020",
+        "modified_date": "02/10/2020",
+        "vulnerability_source": "CERT/CC",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2013-4521",
+        "cwe_id": "CWE-502",
+        "description": "RichFaces implementation in Nuxeo Platform 5.6.0 before HF27 and 5.8.0 before HF-01 does not restrict the classes for which deserialization methods can be called, which allows remote attackers to execute arbitrary code via crafted serialized data. NOTE: this vulnerability may overlap CVE-2013-2165.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1027052",
+            "https://github.com/nuxeo/richfaces/commit/6cbad2a6dcb70d3e33a6ce5879b1a3ad79eb1aec"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nuxeo:nuxeo:5.6.0:-:*:*:*:*:*:*\n     *cpe:2.3:a:nuxeo:nuxeo:5.6.0:hotfix01:*:*:*:*:*:*\n     *cpe:2.3:a:nuxeo:nuxeo:5.6.0:hotfix02:*:*:*:*:*:*\n     *cpe:2.3:a:nuxeo:nuxeo:5.6.0:hotfix03:*:*:*:*:*:*\n     *cpe:2.3:a:nuxeo:nuxeo:5.6.0:hotfix04:*:*:*:*:*:*\n     *cpe:2.3:a:nuxeo:nuxeo:5.6.0:hotfix05:*:*:*:*:*:*\n     *cpe:2.3:a:nuxeo:nuxeo:5.6.0:hotfix06:*:*:*:*:*:*\n     *cpe:2.3:a:nuxeo:nuxeo:5.6.0:hotfix07:*:*:*:*:*:*\n     *cpe:2.3:a:nuxeo:nuxeo:5.6.0:hotfix08:*:*:*:*:*:*\n     *cpe",
+            "*cpe:2.3:a:nuxeo:nuxeo:5.6.0:-:*:*:*:*:*:*",
+            "*cpe:2.3:a:nuxeo:nuxeo:5.6.0:hotfix01:*:*:*:*:*:*",
+            "*cpe:2.3:a:nuxeo:nuxeo:5.6.0:hotfix02:*:*:*:*:*:*",
+            "*cpe:2.3:a:nuxeo:nuxeo:5.6.0:hotfix03:*:*:*:*:*:*",
+            "*cpe:2.3:a:nuxeo:nuxeo:5.6.0:hotfix04:*:*:*:*:*:*",
+            "*cpe:2.3:a:nuxeo:nuxeo:5.6.0:hotfix05:*:*:*:*:*:*",
+            "*cpe:2.3:a:nuxeo:nuxeo:5.6.0:hotfix06:*:*:*:*:*:*",
+            "*cpe:2.3:a:nuxeo:nuxeo:5.6.0:hotfix07:*:*:*:*:*:*",
+            "*cpe:2.3:a:nuxeo:nuxeo:5.6.0:hotfix08:*:*:*:*:*:*"
+        ],
+        "published_date": "02/06/2020",
+        "modified_date": "02/13/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2014-10399",
+        "cwe_id": "CWE-384",
+        "description": "The session.lua library in CGILua 5.1.x uses the same ID for each session, which allows remote attackers to hijack arbitrary sessions. NOTE: this vulnerability was SPLIT from CVE-2014-2875.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2014/Apr/318",
+            "http://www.securityfocus.com/archive/1/531981/100/0/threaded",
+            "http://www.syhunt.com/en/index.php?n=Advisories.Cgilua-weaksessionid"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:keplerproject:cgilua:*:*:*:*:*:*:*:* versions from (including) 5.0.0 up to (including) 5.0.1\n     *cpe:2.3:a:keplerproject:cgilua:*:*:*:*:*:*:*:* versions from (including) 5.1.0 up to (including) 5.1.4\n     *cpe:2.3:a:keplerproject:cgilua:5.2:alpha1:*:*:*:*:*:*\n     *cpe:2.3:a:keplerproject:cgilua:5.2:alpha2:*:*:*:*:*:*",
+            "*cpe:2.3:a:keplerproject:cgilua:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:keplerproject:cgilua:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:keplerproject:cgilua:5.2:alpha1:*:*:*:*:*:*",
+            "*cpe:2.3:a:keplerproject:cgilua:5.2:alpha2:*:*:*:*:*:*"
+        ],
+        "published_date": "02/06/2020",
+        "modified_date": "02/11/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2014-10400",
+        "cwe_id": "CWE-384",
+        "description": "The session.lua library in CGILua 5.0.x uses sequential session IDs, which makes it easier for remote attackers to predict the session ID and hijack arbitrary sessions. NOTE: this vulnerability was SPLIT from CVE-2014-2875.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2014/Apr/318",
+            "http://www.securityfocus.com/archive/1/531981/100/0/threaded",
+            "http://www.syhunt.com/en/index.php?n=Advisories.Cgilua-weaksessionid"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:keplerproject:cgilua:*:*:*:*:*:*:*:* versions from (including) 5.0.0 up to (including) 5.0.1\n     *cpe:2.3:a:keplerproject:cgilua:*:*:*:*:*:*:*:* versions from (including) 5.1.0 up to (including) 5.1.4\n     *cpe:2.3:a:keplerproject:cgilua:5.2:alpha1:*:*:*:*:*:*\n     *cpe:2.3:a:keplerproject:cgilua:5.2:alpha2:*:*:*:*:*:*",
+            "*cpe:2.3:a:keplerproject:cgilua:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:keplerproject:cgilua:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:keplerproject:cgilua:5.2:alpha1:*:*:*:*:*:*",
+            "*cpe:2.3:a:keplerproject:cgilua:5.2:alpha2:*:*:*:*:*:*"
+        ],
+        "published_date": "02/06/2020",
+        "modified_date": "02/11/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2014-2875",
+        "cwe_id": "CWE-307",
+        "description": "The session.lua library in CGILua 5.2 alpha 1 and 5.2 alpha 2 uses weak session IDs generated based on OS time, which allows remote attackers to hijack arbitrary sessions via a brute force attack. NOTE: CVE-2014-10399 and CVE-2014-10400 were SPLIT from this ID.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2014/Apr/318",
+            "http://www.securityfocus.com/archive/1/531981/100/0/threaded",
+            "http://www.syhunt.com/en/index.php?n=Advisories.Cgilua-weaksessionid"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:keplerproject:cgilua:*:*:*:*:*:*:*:* versions from (including) 5.0.0 up to (including) 5.0.1\n     *cpe:2.3:a:keplerproject:cgilua:*:*:*:*:*:*:*:* versions from (including) 5.1.0 up to (including) 5.1.4\n     *cpe:2.3:a:keplerproject:cgilua:5.2:alpha1:*:*:*:*:*:*\n     *cpe:2.3:a:keplerproject:cgilua:5.2:alpha2:*:*:*:*:*:*",
+            "*cpe:2.3:a:keplerproject:cgilua:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:keplerproject:cgilua:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:keplerproject:cgilua:5.2:alpha1:*:*:*:*:*:*",
+            "*cpe:2.3:a:keplerproject:cgilua:5.2:alpha2:*:*:*:*:*:*"
+        ],
+        "published_date": "02/06/2020",
+        "modified_date": "03/06/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2019-10789",
+        "cwe_id": "CWE-78",
+        "description": "All versions of curling.js are vulnerable to Command Injection via the run function. The command argument can be controlled by users without any sanitization.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://github.com/hgarcia/curling/blob/e861d625c074679a2931bcf4ce8da0afa8162c53/lib/curl-transport.js#L56",
+            "https://snyk.io/vuln/SNYK-JS-CURLING-546484"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:curling_project:curling:*:*:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:curling_project:curling:*:*:*:*:*:node.js:*:*"
+        ],
+        "published_date": "02/06/2020",
+        "modified_date": "02/07/2020",
+        "vulnerability_source": "Snyk",
+        "year": "2020",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2019-15711",
+        "cwe_id": null,
+        "description": "A privilege escalation vulnerability in FortiClient for Linux 6.2.1 and below may allow an user with low privilege to run system commands under root privilege via injecting specially crafted \"ExportLogs\" type IPC client requests to the fctsched process.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://danishcyberdefence.dk/blog/forticlient_linux",
+            "https://fortiguard.com/psirt/FG-IR-19-238"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fortinet:forticlient:*:*:*:*:*:linux:*:* versions up to (including) 6.2.1",
+            "*cpe:2.3:a:fortinet:forticlient:*:*:*:*:*:linux:*:*",
+            "(including)"
+        ],
+        "published_date": "02/06/2020",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "Fortinet, Inc.",
+        "year": "2020",
+        "month": "2"
+    }
+]

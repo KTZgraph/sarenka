@@ -13,6 +13,7 @@ from connectors.censys.connector import Connector as CensysConnector
 from .cve_and_cwe.mitre_cwe_scrapers import CWETableTop25Scraper, CWEDataScraper
 from .cve_and_cwe.nist_cve_scrapers import  NISTCVEScraper
 from .cve_and_cwe.cwe_all import CWEAll
+from .cve_and_cwe.cve_all import CVEAll
 
 from .dns.dns_searcher import DNSSearcher, DNSSearcherFQDNError
 from .windows.registry import WindowsRegistry
@@ -306,6 +307,30 @@ class CWEAllView(views.APIView):
         server_address = self.get_server_address(request)
         response = CWEAll().render_output(server_address)
         return Response(response)
+
+
+class CVEAllView(views.APIView):
+    """Zwraca wszystkei kody CWE na podstawie pliku który został wygenerowany przez nas w innym narzędziu"""
+
+    @staticmethod
+    def get_server_address(request):
+        """
+        Zwraca adres do serwera aplikacji z uwzglednieniem protokołu np: http://127.0.0.1:8000/.
+        Użycie - generpowanie urli do wewnątrz aplikacji.
+        """
+        host_address = request.get_host()
+        # TODO: refaktor - milion kopii jes ttej funkcji
+        if request.is_secure():
+            address = "https://" + host_address
+        else:
+            address = "http://"+ host_address
+        return address
+
+    def get(self, request):
+        server_address = self.get_server_address(request)
+        response = CVEAll().render_output(server_address)
+        return Response(response)
+
 
 @login_required
 def login_required_view(request, cve_code):

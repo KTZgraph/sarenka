@@ -9,12 +9,14 @@ from .views import (DNSSearcherView,
                     CWETop25,
                     CWEData,
                     CWEAllView,
+                    CVEAllView,
                     WindowsHardwareView,
                     WindowsRegistryView,
                     NetworkLocalView,
                     SearcherView)
 
 urlpatterns = [
+    path('cve/all', CVEAllView.as_view(), name="cve_all"),
     path('cve/<str:code>', CVESearchView.as_view(), name="get_by_cve"),
     path('cwe', CWETop25.as_view(), name="cwe_top_25"),
     path('cwe/all', CWEAllView.as_view(), name="cwe_all"),

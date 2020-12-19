@@ -1,0 +1,3051 @@
+[
+    {
+        "cve_id": "CVE-2020-14039",
+        "cwe_id": "CWE-295",
+        "description": "In Go before 1.13.13 and 1.14.x before 1.14.5, Certificate.Verify may lack a check on the VerifyOptions.KeyUsages EKU requirements (if VerifyOptions.Roots equals nil and the installation is on Windows). Thus, X.509 certificate verification is incomplete.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00077.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00082.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-09/msg00029.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-09/msg00030.html",
+            "https://groups.google.com/forum/#!forum/golang-announce",
+            "https://groups.google.com/forum/#!topic/golang-announce/XZNfaiwgt2w",
+            "https://security.netapp.com/advisory/ntap-20200731-0005/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:golang:go:*:*:*:*:*:*:*:* versions up to (excluding) 1.13.13\n     *cpe:2.3:a:golang:go:*:*:*:*:*:*:*:* versions from (including) 1.14.0 up to (excluding) 1.14.5",
+            "*cpe:2.3:a:golang:go:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:golang:go:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "09/11/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-14928",
+        "cwe_id": "CWE-74",
+        "description": "evolution-data-server (eds) through 3.36.3 has a STARTTLS buffering issue that affects SMTP and POP3. When a server sends a \"begin TLS\" response, eds reads additional data and evaluates it in a TLS context, aka \"response injection.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://bugzilla.suse.com/show_bug.cgi?id=1173910",
+            "https://gitlab.gnome.org/GNOME//evolution-data-server/commit/ba82be72cfd427b5d72ff21f929b3a6d8529c4df",
+            "https://gitlab.gnome.org/GNOME/evolution-data-server/-/commit/f404f33fb01b23903c2bbb16791c7907e457fbac",
+            "https://gitlab.gnome.org/GNOME/evolution-data-server/-/issues/226",
+            "https://lists.debian.org/debian-lts-announce/2020/07/msg00012.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QMBEZWA22EAYAZQWUX4KPEBER726KSIG/",
+            "https://security-tracker.debian.org/tracker/DLA-2281-1",
+            "https://security-tracker.debian.org/tracker/DSA-4725-1",
+            "https://usn.ubuntu.com/4429-1/",
+            "https://www.debian.org/security/2020/dsa-4725"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:a:gnome:evolution-data-server:*:*:*:*:*:*:*:* versions up to (including) 3.36.3",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:20.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:gnome:evolution-data-server:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "08/14/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15586",
+        "cwe_id": "CWE-362",
+        "description": "Go before 1.13.13 and 1.14.x before 1.14.5 has a data race in some net/http servers, as demonstrated by the httputil.ReverseProxy Handler, because it reads a request body and writes a response at the same time.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00077.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00082.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-09/msg00029.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-09/msg00030.html",
+            "https://groups.google.com/forum/#!topic/golang-announce/XZNfaiwgt2w",
+            "https://groups.google.com/forum/#!topic/golang-announce/f2c5bqrGH_g",
+            "https://lists.debian.org/debian-lts-announce/2020/11/msg00037.html",
+            "https://lists.debian.org/debian-lts-announce/2020/11/msg00038.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/OCR6LAKCVKL55KJQPPBBWVQGOP7RL2RW/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WIRVUHD7TJIT7JJ33FKHIVTHPYABYPHR/",
+            "https://security.netapp.com/advisory/ntap-20200731-0005/",
+            "https://www.cloudfoundry.org/blog/cve-2020-15586/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:cloudfoundry:cf-deployment:*:*:*:*:*:*:*:* versions up to (excluding) 13.7.0\n     *cpe:2.3:a:cloudfoundry:routing-release:*:*:*:*:*:*:*:* versions up to (excluding) 0.203.0",
+            "*cpe:2.3:a:cloudfoundry:cf-deployment:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:cloudfoundry:routing-release:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:golang:go:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:golang:go:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "11/21/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15807",
+        "cwe_id": "CWE-476",
+        "description": "GNU LibreDWG before 0.11 allows NULL pointer dereferences via crafted input files.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/LibreDWG/libredwg/issues/186",
+            "https://github.com/LibreDWG/libredwg/issues/189",
+            "https://github.com/LibreDWG/libredwg/issues/190"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gnu:libredwg:*:*:*:*:*:*:*:* versions up to (excluding) 0.11",
+            "*cpe:2.3:a:gnu:libredwg:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-7825",
+        "cwe_id": "CWE-78",
+        "description": "A vulnerability exists that could allow the execution of operating system commands on systems running MiPlatform 2019.05.16 and earlier. An attacker could execute arbitrary remote command by sending parameters to WinExec function in ExtCommandApi.dll module of MiPlatform.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://www.boho.or.kr/krcert/secNoticeView.do?bulletin_writing_sequence=35509"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:tobesoft:miplatform:*:*:*:*:*:*:*:* versions up to (including) 2019.05.16",
+            "*cpe:2.3:a:tobesoft:miplatform:*:*:*:*:*:*:*:*",
+            "(including)",
+            "2019.05.16"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/23/2020",
+        "vulnerability_source": "KrCERT/CC",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-7826",
+        "cwe_id": "CWE-494",
+        "description": "EyeSurfer BflyInstallerX.ocx v1.0.0.16 and earlier versions contain a vulnerability that could allow remote files to be download by setting the arguments to the vulnerable method. This can be leveraged for code execution. When the vulnerable method is called, they fail to properly check the parameters that are passed to it.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://www.boho.or.kr/krcert/secNoticeView.do?bulletin_writing_sequence=35512"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:eyesurfer:bflyinstallerx.ocx:*:*:*:*:*:*:*:* versions up to (including) 1.0.0.16",
+            "*cpe:2.3:a:eyesurfer:bflyinstallerx.ocx:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "KrCERT/CC",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15497",
+        "cwe_id": "CWE-79",
+        "description": "** DISPUTED ** jcore/portal/ajaxPortal.jsp in Jalios JCMS 10.0.2 build-20200224104759 allows XSS via the types parameter. Note: It is asserted that this vulnerability is not present in the standard installation of Jalios JCMS.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://pastebin.com/KSJJu5Nx",
+            "https://www.jalios.com/jcms/j_6/en/home"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jalios:jcms:10.0.2:build-20200224104759:*:*:*:*:*:*",
+            "*cpe:2.3:a:jalios:jcms:10.0.2:build-20200224104759:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/29/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-5130",
+        "cwe_id": "CWE-20",
+        "description": "SonicOS SSLVPN LDAP login request allows remote attackers to cause external service interaction (DNS) due to improper validation of the request. This vulnerability impact SonicOS version 6.5.4.4-44n and earlier.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0003"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:sonicwall:sonicos:*:*:*:*:*:*:*:* versions up to (including) 6.5.4.4-44n",
+            "*cpe:2.3:o:sonicwall:sonicos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "6.5.4.4-44n"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "SonicWALL, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-5131",
+        "cwe_id": "CWE-20",
+        "description": "SonicWall NetExtender Windows client vulnerable to arbitrary file write vulnerability, this allows attacker to overwrite a DLL and execute code with the same privilege in the host operating system. This vulnerability impact SonicWall NetExtender Windows client version 9.0.815 and earlier.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2020-0004"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:sonicwall:netextender:*:*:*:*:*:windows:*:* versions up to (including) 9.0.815",
+            "*cpe:2.3:a:sonicwall:netextender:*:*:*:*:*:windows:*:*",
+            "(including)"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "SonicWALL, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15813",
+        "cwe_id": "CWE-295",
+        "description": "Graylog before 3.3.3 lacks SSL Certificate Validation for LDAP servers. It allows use of an external user/group database stored in LDAP. The connection configuration allows the usage of unencrypted, SSL- or TLS-secured connections. Unfortunately, the Graylog client code (in all versions that support LDAP) does not implement proper certificate validation (regardless of whether the \"Allow self-signed certificates\" option is used). Therefore, any attacker with the ability to intercept network traffic between a Graylog server and an LDAP server is able to redirect traffic to a different LDAP server (unnoticed by the Graylog server due to the lack of certificate validation), effectively bypassing Graylog's authentication mechanism.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/Graylog2/graylog2-server/issues/5906"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:graylog:graylog:*:*:*:*:*:*:*:* versions up to (excluding) 3.3.3",
+            "*cpe:2.3:a:graylog:graylog:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-1640",
+        "cwe_id": "CWE-20",
+        "description": "An improper use of a validation framework when processing incoming genuine BGP packets within Juniper Networks RPD (routing protocols process) daemon allows an attacker to crash RPD thereby causing a Denial of Service (DoS) condition. This framework requires these packets to be passed. By continuously sending any of these types of formatted genuine packets, an attacker can repeatedly crash the RPD process causing a sustained Denial of Service. Authentication to the BGP peer is not required. This issue can be initiated or propagated through eBGP and iBGP and can impact devices in either modes of use as long as the devices are configured to support the compromised framework and a BGP path is activated or active. This issue affects: Juniper Networks Junos OS 16.1 versions 16.1R7-S6 and later versions prior to 16.1R7-S8; 17.3 versions 17.3R2-S5, 17.3R3-S6 and later versions prior to 17.3R3-S8; 17.4 versions 17.4R2-S7, 17.4R3 and later versions prior to 17.4R2-S11, 17.4R3-S2; 18.1 versions 18.1R3-S7 and later versions prior to 18.1R3-S10; 18.2 versions 18.2R2-S6, 18.2R3-S2 and later versions prior to 18.2R2-S7, 18.2R3-S5; 18.2X75 versions 18.2X75-D12, 18.2X75-D32, 18.2X75-D33, 18.2X75-D51, 18.2X75-D60, 18.2X75-D411, 18.2X75-D420 and later versions prior to 18.2X75-D32, 18.2X75-D33, 18.2X75-D420, 18.2X75-D52, 18.2X75-D60, 18.2X75-D65, 18.2X75-D70;(*1) 18.3 versions 18.3R1-S6, 18.3R2-S3, 18.3R3 and later versions prior to 18.3R2-S4, 18.3R3-S2; 18.4 versions 18.4R1-S5, 18.4R2-S4, 18.4R3 and later versions prior to 18.4R1-S7, 18.4R2-S5, 18.4R3-S3(*2); 19.1 versions 19.1R1-S3, 19.1R2 and later versions prior to 19.1R1-S5, 19.1R2-S2, 19.1R3-S2; 19.2 versions 19.2R1-S2, 19.2R2 and later versions prior to 19.2R1-S5, 19.2R2, 19.2R3; 19.3 versions prior to 19.3R2-S3, 19.3R3; 19.4 versions prior to 19.4R1-S2, 19.4R2, 19.4R3; 20.1 versions prior to 20.1R1-S1, 20.1R2. This issue does not affect Junos OS prior to 16.1R1. This issue affects IPv4 and IPv6 traffic.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-1640"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://kb.juniper.net/JSA11024"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:juniper:junos:16.1:r7-s6:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:16.1:r7-s7:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.3:r2-s5:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.3:r3-s6:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.3:r3-s7:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.4:r2-s10:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.4:r2-s7:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.4:r2-s8:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.4:r2-s9:*:*:*:*:*:*\n     *cpe:2.3:o:jun",
+            "*cpe:2.3:o:juniper:junos:16.1:r7-s6:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:16.1:r7-s7:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.3:r2-s5:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.3:r3-s6:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.3:r3-s7:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.4:r2-s10:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.4:r2-s7:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.4:r2-s8:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.4:r2-s9:*:*:*:*:*:*",
+            "*cpe:2.3:o:jun"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/24/2020",
+        "vulnerability_source": "Juniper Networks, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-1641",
+        "cwe_id": "CWE-362",
+        "description": "A Race Condition vulnerability in Juniper Networks Junos OS LLDP implementation allows an attacker to cause LLDP to crash leading to a Denial of Service (DoS). This issue occurs when crafted LLDP packets are received by the device from an adjacent device. Multiple LACP flaps will occur after LLDP crashes. An indicator of compromise is to evaluate log file details for lldp with RLIMIT. Intervention should occur before 85% threshold of used KB versus maximum available KB memory is reached. show log messages | match RLIMIT | match lldp | last 20 Matching statement is \" /kernel: %KERNEL-[number]: Process ([pid #],lldpd) has exceeded 85% of RLIMIT_DATA: \" with [] as variable data to evaluate for. This issue affects: Juniper Networks Junos OS: 12.3 versions prior to 12.3R12-S15; 12.3X48 versions prior to 12.3X48-D95; 15.1 versions prior to 15.1R7-S6; 15.1X49 versions prior to 15.1X49-D200; 15.1X53 versions prior to 15.1X53-D593; 16.1 versions prior to 16.1R7-S7; 17.1 versions prior to 17.1R2-S11, 17.1R3-S2; 17.2 versions prior to 17.2R1-S9, 17.2R3-S3; 17.3 versions prior to 17.3R2-S5, 17.3R3-S6; 17.4 versions prior to 17.4R2-S4, 17.4R3; 18.1 versions prior to 18.1R3-S5; 18.2 versions prior to 18.2R2-S7, 18.2R3; 18.2X75 versions prior to 18.2X75-D12, 18.2X75-D33, 18.2X75-D50, 18.2X75-D420; 18.3 versions prior to 18.3R1-S7, 18.3R2-S3, 18.3R3; 18.4 versions prior to 18.4R1-S5, 18.4R2; 19.1 versions prior to 19.1R1-S4, 19.1R2.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "2.9 LOW",
+        "hyperlinks": [
+            "https://kb.juniper.net/JSA11027"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:juniper:junos:12.3:-:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:12.3:r1:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:12.3:r10:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:12.3:r10-s1:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:12.3:r10-s2:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:12.3:r11:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:12.3:r12:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:12.3:r12-s1:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:12.3:r12-s11:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:juno",
+            "*cpe:2.3:o:juniper:junos:12.3:-:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:12.3:r1:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:12.3:r10:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:12.3:r10-s1:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:12.3:r10-s2:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:12.3:r11:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:12.3:r12:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:12.3:r12-s1:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:12.3:r12-s11:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:juno"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "08/12/2020",
+        "vulnerability_source": "Juniper Networks, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-1643",
+        "cwe_id": "CWE-755",
+        "description": "Execution of the \"show ospf interface extensive\" or \"show ospf interface detail\" CLI commands on a Juniper Networks device running Junos OS may cause the routing protocols process (RPD) to crash and restart if OSPF interface authentication is configured, leading to a Denial of Service (DoS). By continuously executing the same CLI commands, a local attacker can repeatedly crash the RPD process causing a sustained Denial of Service. Note: Only systems utilizing ARM processors, found on the EX2300 and EX3400, are vulnerable to this issue. Systems shipped with other processor architectures are not vulnerable to this issue. The processor architecture can be displayed via the 'uname -a' command. For example: ARM (vulnerable): % uname -a | awk '{print $NF}' arm PowerPC (not vulnerable): % uname -a | awk '{print $NF}' powerpc AMD (not vulnerable): % uname -a | awk '{print $NF}' amd64 Intel (not vulnerable): % uname -a | awk '{print $NF}' i386 This issue affects Juniper Networks Junos OS: 12.3X48 versions prior to 12.3X48-D100; 14.1X53 versions prior to 14.1X53-D140, 14.1X53-D54; 15.1 versions prior to 15.1R7-S7; 15.1X49 versions prior to 15.1X49-D210; 15.1X53 versions prior to 15.1X53-D593; 16.1 versions prior to 16.1R7-S8; 17.1 versions prior to 17.1R2-S12; 17.2 versions prior to 17.2R3-S4; 17.3 versions prior to 17.3R3-S8; 17.4 versions prior to 17.4R2-S2, 17.4R3; 18.1 versions prior to 18.1R3-S2; 18.2 versions prior to 18.2R2, 18.2R3; 18.2X75 versions prior to 18.2X75-D40; 18.3 versions prior to 18.3R1-S2, 18.3R2.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-1643"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "1.9 LOW",
+        "hyperlinks": [
+            "https://kb.juniper.net/JSA11030"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:juniper:junos:12.3x48:-:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:12.3x48:d10:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:12.3x48:d15:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:12.3x48:d20:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:12.3x48:d25:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:12.3x48:d30:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:12.3x48:d35:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:12.3x48:d40:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:12.3x48:d45:*:*:*:*:*:*\n     *cpe:2.3",
+            "*cpe:2.3:o:juniper:junos:12.3x48:-:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:12.3x48:d10:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:12.3x48:d15:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:12.3x48:d20:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:12.3x48:d25:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:12.3x48:d30:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:12.3x48:d35:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:12.3x48:d40:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:12.3x48:d45:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/24/2020",
+        "vulnerability_source": "Juniper Networks, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-1644",
+        "cwe_id": "CWE-20",
+        "description": "On Juniper Networks Junos OS and Junos OS Evolved devices, the receipt of a specific BGP UPDATE packet causes an internal counter to be incremented incorrectly, which over time can lead to the routing protocols process (RPD) crash and restart. This issue affects both IBGP and EBGP multihop deployment in IPv4 or IPv6 network. This issue affects: Juniper Networks Junos OS: 17.2X75 versions prior to 17.2X75-D105.19; 17.3 versions prior to 17.3R3-S8; 17.4 versions prior to 17.4R2-S10, 17.4R3-S2; 18.1 versions prior to 18.1R3-S10; 18.2 versions prior to 18.2R2-S7, 18.2R3-S4; 18.2X75 versions prior to 18.2X75-D13, 18.2X75-D411.1, 18.2X75-D420.18, 18.2X75-D52.3, 18.2X75-D60; 18.3 versions prior to 18.3R2-S4, 18.3R3-S2; 18.4 versions prior to 18.4R1-S7, 18.4R2-S4, 18.4R3-S2; 19.1 versions prior to 19.1R1-S5, 19.1R2-S1, 19.1R3; 19.2 versions prior to 19.2R1-S5, 19.2R2; 19.3 versions prior to 19.3R2-S2, 19.3R3; 19.4 versions prior to 19.4R1-S2, 19.4R2. Juniper Networks Junos OS Evolved: any releases prior to 20.1R2-EVO. This issue does not affect Juniper Networks Junos OS releases prior to 17.3R1.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-1644"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://kb.juniper.net/JSA11032"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:juniper:junos:17.2x75:-:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.2x75:d102:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.2x75:d50:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.2x75:d70:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.2x75:d92:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.3:-:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.3:r1-s1:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.3:r2:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.3:r2-s1:*:*:*:*:*:*\n     *cpe:2.3:o:juniper",
+            "*cpe:2.3:o:juniper:junos:17.2x75:-:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.2x75:d102:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.2x75:d50:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.2x75:d70:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.2x75:d92:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.3:-:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.3:r1-s1:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.3:r2:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.3:r2-s1:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/24/2020",
+        "vulnerability_source": "Juniper Networks, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-1645",
+        "cwe_id": "CWE-20",
+        "description": "When DNS filtering is enabled on Juniper Networks Junos MX Series with one of the following cards MS-PIC, MS-MIC or MS-MPC, an incoming stream of packets processed by the Multiservices PIC Management Daemon (mspmand) process, responsible for managing \"URL Filtering service\", may crash, causing the Services PIC to restart. While the Services PIC is restarting, all PIC services including DNS filtering service (DNS sink holing) will be bypassed until the Services PIC completes its boot process. If the issue occurs, system core-dumps output will show a crash of mspmand process: root@device> show system core-dumps -rw-rw---- 1 nobody wheel 575685123 <Date> /var/tmp/pics/mspmand.core.<*>.gz This issue affects Juniper Networks Junos OS: 17.3 versions prior to 17.3R3-S8; 18.3 versions prior to 18.3R2-S4, 18.3R3-S1; 18.4 versions prior to 18.4R2-S5, 18.4R3; 19.1 versions prior to 19.1R2-S2, 19.1R3; 19.2 versions prior to 19.2R1-S5, 19.2R2; 19.3 versions prior to 19.3R2-S3, 19.3R3; 19.4 versions prior to 19.4R1-S3, 19.4R2. This issue does not affect Juniper Networks Junos OS releases prior to 17.3R2.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-1645"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://kb.juniper.net/JSA11028"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:juniper:junos:17.3:-:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.3:r1-s1:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.3:r2:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.3:r2-s1:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.3:r2-s2:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.3:r2-s3:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.3:r2-s4:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.3:r3:-:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.3:r3-s1:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:",
+            "*cpe:2.3:o:juniper:junos:17.3:-:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.3:r1-s1:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.3:r2:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.3:r2-s1:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.3:r2-s2:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.3:r2-s3:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.3:r2-s4:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.3:r3:-:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.3:r3-s1:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/24/2020",
+        "vulnerability_source": "Juniper Networks, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-1646",
+        "cwe_id": "CWE-20",
+        "description": "On Juniper Networks Junos OS and Junos OS Evolved devices, processing a specific UPDATE for an EBGP peer can lead to a routing process daemon (RPD) crash and restart. This issue occurs only when the device is receiving and processing the BGP UPDATE for an EBGP peer. This issue does not occur when the device is receiving and processing the BGP UPDATE for an IBGP peer. However, the offending BGP UPDATE can originally come from an EBGP peer, propagates through the network via IBGP peers without causing crash, then it causes RPD crash when it is processed for a BGP UPDATE towards an EBGP peer. Repeated receipt and processing of the same specific BGP UPDATE can result in an extended Denial of Service (DoS) condition. This issue affects: Juniper Networks Junos OS: 17.3R3-S6, 17.4R2-S7, and 18.1R3-S7. Juniper Networks Junos OS Evolved 19.2R2-EVO and later versions, prior to 19.3R1-EVO. Other Junos OS releases are not affected.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-1646"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://kb.juniper.net/JSA11033"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:juniper:junos:17.3:r3-s6:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.4:r2-s7:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:18.1:r3-s7:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos_evolved:19.2:r2:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.3:r3-s6:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.4:r2-s7:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:18.1:r3-s7:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos_evolved:19.2:r2:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/24/2020",
+        "vulnerability_source": "Juniper Networks, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-1647",
+        "cwe_id": "CWE-415",
+        "description": "On Juniper Networks SRX Series with ICAP (Internet Content Adaptation Protocol) redirect service enabled, a double free vulnerability can lead to a Denial of Service (DoS) or Remote Code Execution (RCE) due to processing of a specific HTTP message. Continued processing of this specific HTTP message may result in an extended Denial of Service (DoS). The offending HTTP message that causes this issue may originate both from the HTTP server or the client. This issue affects Juniper Networks Junos OS on SRX Series: 18.1 versions prior to 18.1R3-S9; 18.2 versions prior to 18.2R3-S3; 18.3 versions prior to 18.3R2-S4, 18.3R3-S1; 18.4 versions prior to 18.4R2-S5, 18.4R3; 19.1 versions prior to 19.1R2; 19.2 versions prior to 19.2R1-S2, 19.2R2; 19.3 versions prior to 19.3R2. This issue does not affect Juniper Networks Junos OS prior to 18.1R1.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-1647"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://kb.juniper.net/JSA11034"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:juniper:junos:18.1:-:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:18.1:r1:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:18.1:r2:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:18.1:r2-s1:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:18.1:r2-s2:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:18.1:r2-s4:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:18.1:r3:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:18.1:r3-s1:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:18.1:r3-s2:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:18.",
+            "*cpe:2.3:o:juniper:junos:18.1:-:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:18.1:r1:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:18.1:r2:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:18.1:r2-s1:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:18.1:r2-s2:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:18.1:r2-s4:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:18.1:r3:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:18.1:r3-s1:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:18.1:r3-s2:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:18."
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/24/2020",
+        "vulnerability_source": "Juniper Networks, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-1648",
+        "cwe_id": "CWE-20",
+        "description": "On Juniper Networks Junos OS and Junos OS Evolved devices, processing a specific BGP packet can lead to a routing process daemon (RPD) crash and restart. This issue can occur even before the BGP session with the peer is established. Repeated receipt of this specific BGP packet can result in an extended Denial of Service (DoS) condition. This issue affects: Juniper Networks Junos OS: 18.2X75 versions starting from 18.2X75-D50.8, 18.2X75-D60 and later versions, prior to 18.2X75-D52.8, 18.2X75-D53, 18.2X75-D60.2, 18.2X75-D65.1, 18.2X75-D70; 19.4 versions 19.4R1 and 19.4R1-S1; 20.1 versions prior to 20.1R1-S2, 20.1R2. Juniper Networks Junos OS Evolved: 19.4-EVO versions prior to 19.4R2-S2-EVO; 20.1-EVO versions prior to 20.1R2-EVO. This issue does not affect: Juniper Networks Junos OS releases prior to 19.4R1. Juniper Networks Junos OS Evolved releases prior to 19.4R1-EVO.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-1648"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://kb.juniper.net/JSA11035"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:juniper:junos:18.2x75:*:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:18.2x75:-:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:18.2x75:d20:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:18.2x75:d30:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:18.2x75:d40:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:19.4:r1:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:19.4:r1-s1:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:20.1:r1:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:20.1:r1-s1:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:j",
+            "*cpe:2.3:o:juniper:junos:18.2x75:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:18.2x75:-:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:18.2x75:d20:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:18.2x75:d30:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:18.2x75:d40:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:19.4:r1:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:19.4:r1-s1:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:20.1:r1:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:20.1:r1-s1:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:j"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/24/2020",
+        "vulnerability_source": "Juniper Networks, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-1649",
+        "cwe_id": "CWE-20",
+        "description": "When a device running Juniper Networks Junos OS with MPC7, MPC8, or MPC9 line cards installed and the system is configured for inline IP reassembly, used by L2TP, MAP-E, GRE, and IPIP, the packet forwarding engine (PFE) will become disabled upon receipt of small fragments requiring reassembly, generating the following error messages: [LOG: Err] MQSS(2): WO: Packet Error - Error Packets 1, Connection 29 [LOG: Err] eachip_hmcif_rx_intr_handler(7259): EA[2:0]: HMCIF Rx: Injected checksum error detected on WO response - Chunk Address 0x0 [LOG: Err] MQSS(2): DRD: RORD1: CMD reorder ID error - Command 11, Reorder ID 1960, QID 0 [LOG: Err] MQSS(2): DRD: UNROLL0: HMC chunk address error in stage 5 - Chunk Address: 0xc38fb1 [LOG: Notice] Error: /fpc/0/pfe/0/cm/0/MQSS(2)/2/MQSS_CMERROR_DRD_RORD_ENG_INT_REG_CMD_FSM_STATE_ERR (0x2203cc), scope: pfe, category: functional, severity: major, module: MQSS(2), type: DRD_RORD_ENG_INT: CMD FSM State Error [LOG: Notice] Performing action cmalarm for error /fpc/0/pfe/0/cm/0/MQSS(2)/2/MQSS_CMERROR_DRD_RORD_ENG_INT_REG_CMD_FSM_STATE_ERR (0x2203cc) in module: MQSS(2) with scope: pfe category: functional level: major [LOG: Notice] Performing action get-state for error /fpc/0/pfe/0/cm/0/MQSS(2)/2/MQSS_CMERROR_DRD_RORD_ENG_INT_REG_CMD_FSM_STATE_ERR (0x2203cc) in module: MQSS(2) with scope: pfe category: functional level: major [LOG: Notice] Performing action disable-pfe for error /fpc/0/pfe/0/cm/0/MQSS(2)/2/MQSS_CMERROR_DRD_RORD_ENG_INT_REG_CMD_FSM_STATE_ERR (0x2203cc) in module: MQSS(2) with scope: pfe category: functional level: major By continuously sending fragmented packets that cannot be reassembled, an attacker can repeatedly disable the PFE causing a sustained Denial of Service (DoS). This issue affects Juniper Networks Junos OS: 17.2 versions prior to 17.2R3-S4 on MX Series; 17.3 versions prior to 17.3R3-S8 on MX Series; 17.4 versions prior to 17.4R2-S9, 17.4R3-S1 on MX Series; 18.1 versions prior to 18.1R3-S10 on MX Series; 18.2 versions prior to 18.2R2-S6, 18.2R3-S3 on MX Series; 18.2X75 versions prior to 18.2X75-D34, 18.2X75-D41, 18.2X75-D53, 18.2X75-D65, 18.2X75-D430 on MX Series; 18.3 versions prior to 18.3R1-S7, 18.3R2-S4, 18.3R3-S2 on MX Series; 18.4 versions prior to 18.4R1-S6, 18.4R2-S4, 18.4R3 on MX Series; 19.1 versions prior to 19.1R1-S4, 19.1R2-S1, 19.1R3 on MX Series; 19.2 versions prior to 19.2R1-S3, 19.2R2 on MX Series; 19.3 versions prior to 19.3R2-S2, 19.3R3 on MX Series. This issue is specific to inline IP reassembly, introduced in Junos OS 17.2. Versions of Junos OS prior to 17.2 are unaffected by this vulnerability.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-1649"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://kb.juniper.net/JSA11036",
+            "https://www.juniper.net/documentation/en_US/junos/topics/topic-map/l2tp-lns-inline-service-interfaces.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:juniper:junos:17.2:-:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.2:r1:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.2:r1-s1:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.2:r1-s2:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.2:r1-s3:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.2:r1-s4:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.2:r1-s5:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.2:r1-s7:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:ju"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/24/2020",
+        "vulnerability_source": "Juniper Networks, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-1650",
+        "cwe_id": "CWE-400",
+        "description": "On Juniper Networks Junos MX Series with service card configured, receipt of a stream of specific packets may crash the MS-PIC component on MS-MIC or MS-MPC. By continuously sending these specific packets, an attacker can repeatedly bring down MS-PIC on MS-MIC/MS-MPC causing a prolonged Denial of Service. This issue affects MX Series devices using MS-PIC, MS-MIC or MS-MPC service cards with any service configured. This issue affects Juniper Networks Junos OS on MX Series: 17.2R2-S7; 17.3R3-S4, 17.3R3-S5; 17.4R2-S4 and the subsequent SRs (17.4R2-S5, 17.4R2-S6, etc.); 17.4R3; 18.1R3-S3, 18.1R3-S4, 18.1R3-S5, 18.1R3-S6, 18.1R3-S7, 18.1R3-S8; 18.2R3, 18.2R3-S1, 18.2R3-S2; 18.3R2 and the SRs based on 18.3R2; 18.4R2 and the SRs based on 18.4R2; 19.1R1 and the SRs based on 19.1R1; 19.2R1 and the SRs based on 19.2R1; 19.3R1 and the SRs based on 19.3R1.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-1650"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://kb.juniper.net/JSA11037"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:juniper:junos:17.2:r2-s7:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.4:r2-s4:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.4:r2-s5:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.4:r2-s6:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.4:r2-s7:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.4:r2-s8:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.4:r2-s9:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.4:r3:*:*:*:*:*:*",
+            "*cpe:2.3:o:junipe"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/24/2020",
+        "vulnerability_source": "Juniper Networks, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-1651",
+        "cwe_id": "CWE-772",
+        "description": "On Juniper Networks MX series, receipt of a stream of specific Layer 2 frames may cause a memory leak resulting in the packet forwarding engine (PFE) on the line card to crash and restart, causing traffic interruption. By continuously sending this stream of specific layer 2 frame, an attacker connected to the same broadcast domain can repeatedly crash the PFE, causing a prolonged Denial of Service (DoS). This issue affects Juniper Networks Junos OS on MX Series: 17.2 versions prior to 17.2R3-S4; 17.2X75 versions prior to 17.2X75-D105.19; 17.3 versions prior to 17.3R3-S7; 17.4 versions prior to 17.4R1-S3, 17.4R2; 18.1 versions prior to 18.1R2. This issue does not affect Juniper Networks Junos OS releases prior to 17.2R1.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-1651"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.3 LOW",
+        "hyperlinks": [
+            "https://kb.juniper.net/JSA11038"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:juniper:junos:17.2:-:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.2:r1:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.2:r1-s1:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.2:r1-s2:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.2:r1-s3:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.2:r1-s4:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.2:r1-s5:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.2:r1-s7:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:ju"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/24/2020",
+        "vulnerability_source": "Juniper Networks, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-1652",
+        "cwe_id": "CWE-213",
+        "description": "OpenNMS is accessible via port 9443",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://kb.juniper.net/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:opennms:opennms:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:opennms:opennms:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/31/2020",
+        "vulnerability_source": "Juniper Networks, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-1653",
+        "cwe_id": "CWE-119",
+        "description": "On Juniper Networks Junos OS devices, a stream of TCP packets sent to the Routing Engine (RE) may cause mbuf leak which can lead to Flexible PIC Concentrator (FPC) crash or the system to crash and restart (vmcore). This issue can be trigged by IPv4 or IPv6 and it is caused only by TCP packets. This issue is not related to any specific configuration and it affects Junos OS releases starting from 17.4R1. However, this issue does not affect Junos OS releases prior to 18.2R1 when Nonstop active routing (NSR) is configured [edit routing-options nonstop-routing]. The number of mbufs is platform dependent. The following command provides the number of mbufs counter that are currently in use and maximum number of mbufs that can be allocated on a platform: user@host> show system buffers 2437/3143/5580 mbufs in use (current/cache/total) Once the device runs out of mbufs, the FPC crashes or the vmcore occurs and the device might become inaccessible requiring a manual restart. This issue affects Juniper Networks Junos OS 17.4 versions prior to 17.4R2-S11, 17.4R3-S2; 18.1 versions prior to 18.1R3-S10; 18.2 versions prior to 18.2R2-S7, 18.2R3-S5; 18.2X75 versions prior to 18.2X75-D41, 18.2X75-D420.12, 18.2X75-D51, 18.2X75-D60, 18.2X75-D34; 18.3 versions prior to 18.3R2-S4, 18.3R3-S2; 18.4 versions prior to 18.4R1-S7, 18.4R2-S4, 18.4R3-S1; 19.1 versions prior to 19.1R1-S5, 19.1R2-S1, 19.1R3; 19.2 versions prior to 19.2R1-S5, 19.2R2; 19.3 versions prior to 19.3R2-S3, 19.3R3; 19.4 versions prior to 19.4R1-S2, 19.4R2. Versions of Junos OS prior to 17.4R1 are unaffected by this vulnerability.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-1653"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://kb.juniper.net/JSA11040"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:juniper:junos:18.2:r1:*:*:*:*:*:*\n     *cpe:2.3:a:juniper:junos:18.2:r1-s3:*:*:*:*:*:*\n     *cpe:2.3:a:juniper:junos:18.2:r1-s4:*:*:*:*:*:*\n     *cpe:2.3:a:juniper:junos:18.2:r2:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.4:-:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.4:r1:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.4:r1-s1:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.4:r1-s2:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.4:r1-s4:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:17.",
+            "*cpe:2.3:a:juniper:junos:18.2:r1:*:*:*:*:*:*",
+            "*cpe:2.3:a:juniper:junos:18.2:r1-s3:*:*:*:*:*:*",
+            "*cpe:2.3:a:juniper:junos:18.2:r1-s4:*:*:*:*:*:*",
+            "*cpe:2.3:a:juniper:junos:18.2:r2:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.4:-:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.4:r1:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.4:r1-s1:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.4:r1-s2:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.4:r1-s4:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17."
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/24/2020",
+        "vulnerability_source": "Juniper Networks, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-1654",
+        "cwe_id": "CWE-120",
+        "description": "On Juniper Networks SRX Series with ICAP (Internet Content Adaptation Protocol) redirect service enabled, processing a malformed HTTP message can lead to a Denial of Service (DoS) or Remote Code Execution (RCE) Continued processing of this malformed HTTP message may result in an extended Denial of Service (DoS) condition. The offending HTTP message that causes this issue may originate both from the HTTP server or the HTTP client. This issue affects Juniper Networks Junos OS on SRX Series: 18.1 versions prior to 18.1R3-S9 ; 18.2 versions prior to 18.2R2-S7, 18.2R3-S3; 18.3 versions prior to 18.3R1-S7, 18.3R2-S4, 18.3R3-S1; 18.4 versions prior to 18.4R1-S7, 18.4R2-S4, 18.4R3; 19.1 versions prior to 19.1R1-S5, 19.1R2; 19.2 versions prior to 19.2R1-S2, 19.2R2; 19.3 versions prior to 19.3R2. This issue does not affect Juniper Networks Junos OS prior to 18.1R1.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-1654"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://kb.juniper.net/JSA11031"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:juniper:junos:18.2:r1:*:*:*:*:*:*\n     *cpe:2.3:a:juniper:junos:18.2:r1-s3:*:*:*:*:*:*\n     *cpe:2.3:a:juniper:junos:18.2:r1-s4:*:*:*:*:*:*\n     *cpe:2.3:a:juniper:junos:18.2:r2:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:18.1:-:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:18.1:r1:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:18.1:r2:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:18.1:r2-s1:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:18.1:r2-s2:*:*:*:*:*:*\n     *cpe:2.3:o:juniper:junos:18.1:r",
+            "*cpe:2.3:a:juniper:junos:18.2:r1:*:*:*:*:*:*",
+            "*cpe:2.3:a:juniper:junos:18.2:r1-s3:*:*:*:*:*:*",
+            "*cpe:2.3:a:juniper:junos:18.2:r1-s4:*:*:*:*:*:*",
+            "*cpe:2.3:a:juniper:junos:18.2:r2:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:18.1:-:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:18.1:r1:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:18.1:r2:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:18.1:r2-s1:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:18.1:r2-s2:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:18.1:r"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/24/2020",
+        "vulnerability_source": "Juniper Networks, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-1655",
+        "cwe_id": "CWE-400",
+        "description": "When a device running Juniper Networks Junos OS with MPC7, MPC8, or MPC9 line cards installed and the system is configured for inline IP reassembly, used by L2TP, MAP-E, GRE, and IPIP, the packet forwarding engine (PFE) will become disabled upon receipt of large packets requiring fragmentation, generating the following error messages: [LOG: Err] MQSS(0): WO: Packet Error - Error Packets 1, Connection 29 [LOG: Err] eachip_hmcif_rx_intr_handler(7259): EA[0:0]: HMCIF Rx: Injected checksum error detected on WO response - Chunk Address 0x0 [LOG: Err] MQSS(0): DRD: RORD1: CMD reorder ID error - Command 11, Reorder ID 1838, QID 0 [LOG: Err] MQSS(0): DRD: UNROLL0: HMC chunk length error in stage 5 - Chunk Address: 0x4321f3 [LOG: Err] MQSS(0): DRD: UNROLL0: HMC chunk address error in stage 5 - Chunk Address: 0x0 [LOG: Notice] Error: /fpc/8/pfe/0/cm/0/MQSS(0)/0/MQSS_CMERROR_DRD_RORD_ENG_INT_REG_CMD_FSM_STATE_ERR (0x2203cc), scope: pfe, category: functional, severity: major, module: MQSS(0), type: DRD_RORD_ENG_INT: CMD FSM State Error [LOG: Notice] Performing action cmalarm for error /fpc/8/pfe/0/cm/0/MQSS(0)/0/MQSS_CMERROR_DRD_RORD_ENG_INT_REG_CMD_FSM_STATE_ERR (0x2203cc) in module: MQSS(0) with scope: pfe category: functional level: major [LOG: Notice] Performing action get-state for error /fpc/8/pfe/0/cm/0/MQSS(0)/0/MQSS_CMERROR_DRD_RORD_ENG_INT_REG_CMD_FSM_STATE_ERR (0x2203cc) in module: MQSS(0) with scope: pfe category: functional level: major [LOG: Notice] Performing action disable-pfe for error /fpc/8/pfe/0/cm/0/MQSS(0)/0/MQSS_CMERROR_DRD_RORD_ENG_INT_REG_CMD_FSM_STATE_ERR (0x2203cc) in module: MQSS(0) with scope: pfe category: functional level: major By continuously sending fragmented packets that cannot be reassembled, an attacker can repeatedly disable the PFE causing a sustained Denial of Service (DoS). This issue affects Juniper Networks Junos OS: 17.2 versions prior to 17.2R3-S4 on MX Series; 17.3 versions prior to 17.3R3-S8 on MX Series; 17.4 versions prior to 17.4R2-S10, 17.4R3-S2 on MX Series; 18.1 versions prior to 18.1R3-S10 on MX Series; 18.2 versions prior to 18.2R3-S3 on MX Series; 18.2X75 versions prior to 18.2X75-D41, 18.2X75-D430, 18.2X75-D65 on MX Series; 18.3 versions prior to 18.3R1-S7, 18.3R2-S4, 18.3R3-S1 on MX Series; 18.4 versions prior to 18.4R1-S7, 18.4R2-S4, 18.4R3 on MX Series; 19.1 versions prior to 19.1R1-S5, 19.1R2-S1, 19.1R3 on MX Series; 19.2 versions prior to 19.2R1-S4, 19.2R2 on MX Series; 19.3 versions prior to 19.3R2-S2, 19.3R3 on MX Series. This issue is specific to inline IP reassembly, introduced in Junos OS 17.2. Versions of Junos OS prior to 17.2 are unaffected by this vulnerability.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-1655"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://kb.juniper.net/JSA11041",
+            "https://www.juniper.net/documentation/en_US/junos/topics/topic-map/l2tp-lns-inline-service-interfaces.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:juniper:junos:17.2:-:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.2:r1:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.2:r1-s1:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.2:r1-s2:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.2:r1-s3:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.2:r1-s4:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.2:r1-s5:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:junos:17.2:r1-s7:*:*:*:*:*:*",
+            "*cpe:2.3:o:juniper:ju"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/24/2020",
+        "vulnerability_source": "Juniper Networks, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2019-4090",
+        "cwe_id": "CWE-79",
+        "description": "\"HCL Campaign is vulnerable to cross-site scripting when a user provides XSS scripts in Campaign Description field.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://support.hcltechsw.com/csm?id=kb_article&sysparm_article=KB0080448"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hcltech:marketing_campaign:*:*:*:*:*:*:*:* versions from (including) 10.1.0 up to (excluding) 10.1.0.3\n     *cpe:2.3:a:hcltech:marketing_campaign:11.0.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:hcltech:marketing_campaign:*:*:*:*:*:*:*:* versions from (including) 11.1.0 up to (excluding) 11.1.0.2",
+            "*cpe:2.3:a:hcltech:marketing_campaign:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:hcltech:marketing_campaign:11.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hcltech:marketing_campaign:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "psirt@hcl.com",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2019-4091",
+        "cwe_id": "CWE-79",
+        "description": "\"HCL Marketing Platform is vulnerable to cross-site scripting during addition of new users and also while searching for users in Dashboard, potentially giving an attacker ability to inject malicious code into the system. \"",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://support.hcltechsw.com/csm?id=kb_article&sysparm_article=KB0080437"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hcltech:marketing_campaign:9.1.2.4:*:*:*:*:*:*:*\n     *cpe:2.3:a:hcltech:marketing_campaign:*:*:*:*:*:*:*:* versions from (including) 10.1.0 up to (excluding) 10.1.0.4\n     *cpe:2.3:a:hcltech:marketing_campaign:*:*:*:*:*:*:*:* versions from (including) 11.1.0 up to (excluding) 11.1.0.3",
+            "*cpe:2.3:a:hcltech:marketing_campaign:9.1.2.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hcltech:marketing_campaign:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:hcltech:marketing_campaign:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "psirt@hcl.com",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-0120",
+        "cwe_id": "CWE-787",
+        "description": "In notifyErrorForPendingRequests of QCamera3HWI.cpp, there is a possible out of bounds write due to a heap buffer overflow. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android-10Android ID: A-149995442",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2020-06-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/23/2020",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-0305",
+        "cwe_id": "CWE-362",
+        "description": "In cdev_get of char_dev.c, there is a possible use-after-free due to a race condition. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android-10Android ID: A-153467744",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "6.4 MEDIUM",
+        "base_score_v2": "4.4 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-08/msg00009.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-08/msg00047.html",
+            "https://source.android.com/security/bulletin/pixel/2020-06-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "08/21/2020",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15816",
+        "cwe_id": "CWE-74",
+        "description": "In Western Digital WD Discovery before 4.0.251.0, a malicious application running with standard user permissions could potentially execute code in the application's process through library injection by using DYLD environment variables.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://www.westerndigital.com/support/productsecurity/wdc-20005-wd-discovery-remote-command-execution-vulnerability"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:westerndigital:wd_discovery:*:*:*:*:*:mac_os:*:* versions up to (excluding) 4.0.251.0\n     *cpe:2.3:a:westerndigital:wd_discovery:*:*:*:*:*:windows:*:* versions up to (excluding) 4.0.251.0",
+            "*cpe:2.3:a:westerndigital:wd_discovery:*:*:*:*:*:mac_os:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:westerndigital:wd_discovery:*:*:*:*:*:windows:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-0107",
+        "cwe_id": "CWE-276",
+        "description": "In getUiccCardsInfo of PhoneInterfaceManager.java, there is a possible permissions bypass due to improper input validation. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android-10Android ID: A-146570216",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/2020-07-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/21/2020",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-0122",
+        "cwe_id": "CWE-276",
+        "description": "In the permission declaration for com.google.android.providers.gsf.permission.WRITE_GSERVICES in AndroidManifest.xml, there is a possible permissions bypass. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android-8.0 Android-8.1 Android-9 Android-10Android ID: A-147247775",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "6.7 MEDIUM",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/2020-07-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-0224",
+        "cwe_id": "CWE-843",
+        "description": "In FastKeyAccumulator::GetKeysSlow of keys.cc, there is a possible out of bounds write due to type confusion. This could lead to remote code execution when processing a proxy configuration with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android-8.0 Android-8.1 Android-9 Android-10Android ID: A-147664838",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/2020-07-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-0225",
+        "cwe_id": "CWE-787",
+        "description": "In a2dp_vendor_ldac_decoder_decode_packet of a2dp_vendor_ldac_decoder.cc, there is a possible out of bounds write due to a missing bounds check. This could lead to remote code execution with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android-10Android ID: A-142546668",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/2020-07-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-0226",
+        "cwe_id": "CWE-843",
+        "description": "In createWithSurfaceParent of Client.cpp, there is a possible out of bounds write due to type confusion. This could lead to local escalation of privilege in the graphics server with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android-10Android ID: A-150226994",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/2020-07-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-0227",
+        "cwe_id": "CWE-276",
+        "description": "In onCommand of CompanionDeviceManagerService.java, there is a possible permissions bypass due to a missing permission check. This could lead to local escalation of privilege allowing background data usage or launching from the background, with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android-8.0 Android-8.1 Android-9 Android-10Android ID: A-129476618",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/2020-07-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:10.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/21/2020",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-0228",
+        "cwe_id": "CWE-200",
+        "description": "There is an improper configuration of recorder related service. Product: AndroidVersions: Android SoCAndroid ID: A-156333723",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/2020-07-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/21/2020",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-0230",
+        "cwe_id": "CWE-787",
+        "description": "There is a possible out of bounds write due to an incorrect bounds check. Product: AndroidVersions: Android SoCAndroid ID: A-156337262",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/2020-07-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/21/2020",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-0231",
+        "cwe_id": "CWE-787",
+        "description": "There is a possible out of bounds write due to an incorrect bounds check. Product: AndroidVersions: Android SoCAndroid ID: A-156333727",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/2020-07-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/21/2020",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15108",
+        "cwe_id": "CWE-89",
+        "description": "In glpi before 9.5.1, there is a SQL injection for all usages of \"Clone\" feature. This has been fixed in 9.5.1.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-15108"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/glpi-project/glpi/commit/a4baa64114eb92fd2adf6056a36e0582324414ba",
+            "https://github.com/glpi-project/glpi/pull/6684",
+            "https://github.com/glpi-project/glpi/security/advisories/GHSA-qv6w-68gq-wx2v"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:glpi-project:glpi:*:*:*:*:*:*:*:* versions up to (excluding) 9.5.1",
+            "*cpe:2.3:a:glpi-project:glpi:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "GitHub, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15110",
+        "cwe_id": "CWE-863",
+        "description": "In jupyterhub-kubespawner before 0.12, certain usernames will be able to craft particular server names which will grant them access to the default server of other users who have matching usernames. This has been fixed in 0.12.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "5.5 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/jupyterhub/kubespawner/commit/3dfe870a7f5e98e2e398b01996ca6b8eff4bb1d0",
+            "https://github.com/jupyterhub/kubespawner/security/advisories/GHSA-v7m9-9497-p9gr"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jupyterhub:kubespawner:*:*:*:*:*:*:*:* versions up to (excluding) 0.12",
+            "*cpe:2.3:a:jupyterhub:kubespawner:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "GitHub, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-4104",
+        "cwe_id": "CWE-79",
+        "description": "HCL BigFix WebUI is vulnerable to stored cross-site scripting (XSS) within the Apps->Software module. An attacker can use XSS to send a malicious script to an unsuspecting user. This affects all versions prior to latest releases as specified in https://support.hcltechsw.com/csm?id=kb_article&sysparm_article=KB0080855&sys_kb_id=971d99ed1b8ed01c086dcbfc0a4bcb6a.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://support.hcltechsw.com/csm?id=kb_article&sysparm_article=KB0080855"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hcltech:bigfix_webui:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hcltech:bigfix_webui:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "psirt@hcl.com",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-5756",
+        "cwe_id": "CWE-78",
+        "description": "Grandstream GWN7000 firmware version 1.0.9.4 and below allows authenticated remote users to modify the system's crontab via undocumented API. An attacker can use this functionality to execute arbitrary OS commands on the router.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "https://www.tenable.com/cve/CVE-2020-5756",
+            "https://www.tenable.com/security/research/tra-2020-41"
+        ],
+        "cpe": [
+            "cpe:2.3:h:grandstream:gwn7000:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "Tenable Network Security, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-5757",
+        "cwe_id": "CWE-78",
+        "description": "Grandstream UCM6200 series firmware version 1.0.20.23 and below is vulnerable to OS command injection via HTTP. An authenticated remote attacker can bypass command injection mitigations and execute commands as the root user by sending a crafted HTTP POST to the UCM's \"New\" HTTPS API.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://www.tenable.com/cve/CVE-2020-5757",
+            "https://www.tenable.com/security/research/tra-2020-42"
+        ],
+        "cpe": [
+            "cpe:2.3:h:grandstream:ucm6202:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:grandstream:ucm6204:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:grandstream:ucm6208:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/23/2020",
+        "vulnerability_source": "Tenable Network Security, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-5758",
+        "cwe_id": "CWE-78",
+        "description": "Grandstream UCM6200 series firmware version 1.0.20.23 and below is vulnerable to OS command injection via HTTP. An authenticated remote attacker can execute commands as the root user by sending a crafted HTTP GET to the UCM's \"Old\" HTTPS API.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "https://www.tenable.com/cve/CVE-2020-5758",
+            "https://www.tenable.com/security/research/tra-2020-42"
+        ],
+        "cpe": [
+            "cpe:2.3:h:grandstream:ucm6202:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:grandstream:ucm6204:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:grandstream:ucm6208:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/23/2020",
+        "vulnerability_source": "Tenable Network Security, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-5759",
+        "cwe_id": "CWE-78",
+        "description": "Grandstream UCM6200 series firmware version 1.0.20.23 and below is vulnerable to OS command injection via SSH. An authenticated remote attacker can execute commands as the root user by issuing a specially crafted \"unset\" command.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://www.tenable.com/cve/CVE-2020-5759",
+            "https://www.tenable.com/security/research/tra-2020-42"
+        ],
+        "cpe": [
+            "cpe:2.3:h:grandstream:ucm6202:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:grandstream:ucm6204:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:grandstream:ucm6208:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/23/2020",
+        "vulnerability_source": "Tenable Network Security, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2019-12000",
+        "cwe_id": "CWE-20",
+        "description": "HPE has found a potential Remote Access Restriction Bypass in HPE MSE Msg Gw application E-LTU prior to version 3.2 when HTTPS is used between the USSD and an external USSD service logic application. Update to version 3.2 and update the HTTPS configuration as described in the HPE MSE Messaging Gateway Configuration and Operations Guide.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:M/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:M/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "6.6 MEDIUM",
+        "base_score_v2": "5.4 MEDIUM",
+        "hyperlinks": [
+            "https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbmu03979en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:mse_msg_gw_application_e-ltu:*:*:*:*:*:*:*:* versions up to (excluding) 3.2",
+            "*cpe:2.3:a:hp:mse_msg_gw_application_e-ltu:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/23/2020",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-10605",
+        "cwe_id": "CWE-306",
+        "description": "Grundfos CIM 500 before v06.16.00 responds to unauthenticated requests for password storage files.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://us-cert.cisa.gov/ics/advisories/icsa-20-189-01"
+        ],
+        "cpe": [
+            "cpe:2.3:h:grundfos:cim_500:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/23/2020",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-5767",
+        "cwe_id": "CWE-352",
+        "description": "Cross-site request forgery in Icegram Email Subscribers & Newsletters Plugin for WordPress v4.4.8 allows a remote attacker to send forged emails by tricking legitimate users into clicking a crafted link.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://www.tenable.com/security/research/tra-2020-44-0"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:icegram:email_subscribers_\\&_newsletters:4.4.8:*:*:*:*:wordpress:*:*",
+            "*cpe:2.3:a:icegram:email_subscribers_\\&_newsletters:4.4.8:*:*:*:*:wordpress:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/21/2020",
+        "vulnerability_source": "Tenable Network Security, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-5768",
+        "cwe_id": "CWE-89",
+        "description": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') in Icegram Email Subscribers & Newsletters Plugin for WordPress v4.4.8 allows a remote, authenticated attacker to determine the value of database fields.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.9 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://www.tenable.com/security/research/tra-2020-44-0"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:icegram:email_subscribers_\\&_newsletters:4.4.8:*:*:*:*:wordpress:*:*",
+            "*cpe:2.3:a:icegram:email_subscribers_\\&_newsletters:4.4.8:*:*:*:*:wordpress:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/21/2020",
+        "vulnerability_source": "Tenable Network Security, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-5769",
+        "cwe_id": "CWE-79",
+        "description": "Insufficient output sanitization in Teltonika firmware TRB2_R_00.02.02 allows a remote, authenticated attacker to conduct persistent cross-site scripting (XSS) attacks by injecting malicious client-side code into the 'URL/ Host / Connection' form in the 'DATA TO SERVER' configuration section.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://www.tenable.com/security/research/tra-2020-43-0"
+        ],
+        "cpe": [
+            "cpe:2.3:h:teltonika-networks:gateway_trb245:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "Tenable Network Security, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-7206",
+        "cwe_id": "CWE-94",
+        "description": "HP nagios plugin for iLO (nagios-plugins-hpilo v1.50 and earlier) has a php code injection vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/HewlettPackard/nagios-plugins-hpilo/commit/7617b2736a95c7f354198f092febe37e7005c677"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:nagios-plugins-hpilo:*:*:*:*:*:*:*:* versions up to (including) 1.50",
+            "*cpe:2.3:a:hp:nagios-plugins-hpilo:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-7818",
+        "cwe_id": "CWE-787",
+        "description": "DaviewIndy 8.98.9 and earlier has a Heap-based overflow vulnerability, triggered when the user opens a malformed PDF file that is mishandled by Daview.exe. Attackers could exploit this and arbitrary code execution.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-7818"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.hmtalk.com/",
+            "https://www.krcert.or.kr/krcert/secNoticeView.do?bulletin_writing_sequence=35521"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hmtalk:daviewindy:*:*:*:*:*:*:*:* versions up to (including) 8.98.9",
+            "*cpe:2.3:a:hmtalk:daviewindy:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "KrCERT/CC",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-9102",
+        "cwe_id": "CWE-200",
+        "description": "There is a information leak vulnerability in some Huawei products, and it could allow a local attacker to get information. The vulnerability is due to the improper management of the username. An attacker with the ability to access the device and cause the username information leak. Affected product versions include: CloudEngine 12800 versions V200R002C50SPC800, V200R003C00SPC810, V200R005C00SPC800, V200R005C10SPC800, V200R019C00SPC800; CloudEngine 5800 versions V200R002C50SPC800, V200R003C00SPC810, V200R005C00SPC800, V200R005C10SPC800, V200R019C00SPC800; CloudEngine 6800 versions V200R002C50SPC800, V200R003C00SPC810, V200R005C00SPC800, V200R005C10SPC800, V200R005C20SPC800, V200R019C00SPC800; CloudEngine 7800 versions V200R002C50SPC800, V200R003C00SPC810, V200R005C00SPC800, V200R005C10SPC800, V200R019C00SPC800",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "3.3 LOW",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200715-03-informationleak-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:cloudengine_12800:",
+            "cpe:2.3:h:huawei:cloudengine_5800:-:*:*:",
+            "*cpe:2.3:o:huawei:cloudengine_6800_firmware:v200r002c50spc800:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:cloudengine_6800_firmware:v200r003c00spc810:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:cloudengine_6800_firmware:v200r005c00spc800:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:cloudengine_6800_firmware:v200r005c10spc800:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:cloudengine_6800_firmware:v200r005c20spc800:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:cloudengine_6800_firmware:v200",
+            "cpe:2.3:h:huawei:cloudengine_7800:-:*:*:"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/23/2020",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-9227",
+        "cwe_id": "CWE-909",
+        "description": "Huawei Smart Phones Moana-AL00B with versions earlier than 10.1.0.166 have a missing initialization of resource vulnerability. An attacker tricks the user into installing then running a crafted application. Due to improper initialization of specific parameters, successful exploit of this vulnerability may cause device exceptions.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200715-09-smartphone-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:moana-al00b:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-9252",
+        "cwe_id": "CWE-22",
+        "description": "HUAWEI Mate 20 versions earlier than 10.1.0.160(C00E160R3P8), HUAWEI Mate 20 X versions earlier than 10.1.0.135(C00E135R2P8), HUAWEI Mate 20 RS versions earlier than 10.1.0.160(C786E160R3P8), and Honor Magic2 smartphones versions earlier than 10.1.0.160(C00E160R2P11) have a path traversal vulnerability. The system does not sufficiently validate certain pathname from certain process, successful exploit could allow the attacker write files to a crafted path.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "2.3 LOW",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200715-07-smartphone-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:magic2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:mate_20:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:mate_20_rs:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:mate_20_x:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-9254",
+        "cwe_id": "CWE-74",
+        "description": "HUAWEI P30 Pro smartphones with versions earlier than 10.1.0.123(C432E19R2P5patch02), versions earlier than 10.1.0.126(C10E11R5P1), and versions earlier than 10.1.0.160(C00E160R2P8) have a logic check error vulnerability. A logic error occurs when the software checking the size of certain parameter, the attacker should trick the user into installing a malicious application, successful exploit may cause code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200715-04-smartphone-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:p30_pro:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:p30_pro:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:p30_pro:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-9255",
+        "cwe_id": "CWE-20",
+        "description": "Huawei Honor 10 smartphones with versions earlier than 10.0.0.178(C00E178R1P4) have a denial of service vulnerability. Certain service in the system does not sufficiently validate certain parameter which is received, the attacker should trick the user into installing a malicious application, successful exploit could cause a denial of service condition.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200715-06-smartphone-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:honor_10:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-9257",
+        "cwe_id": "CWE-120",
+        "description": "HUAWEI P30 Pro smartphones with versions earlier than 10.1.0.123(C432E19R2P5patch02), versions earlier than 10.1.0.126(C10E11R5P1), and versions earlier than 10.1.0.160(C00E160R2P8) have a buffer overflow vulnerability. The software access data past the end, or before the beginning, of the intended buffer when handling certain operations of certificate, the attacker should trick the user into installing a malicious application, successful exploit may cause code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200715-03-smartphone-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:p30_pro:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:p30_pro:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:p30_pro:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-9259",
+        "cwe_id": "CWE-287",
+        "description": "Huawei Honor V30 smartphones with versions earlier than 10.1.0.212(C00E210R5P1) have an improper authentication vulnerability. The system does not sufficiently validate certain parameter passed from the bottom level, the attacker should trick the user into installing a malicious application and control the bottom level, successful exploit could cause information disclosure.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200715-02-smartphone-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:honor_v30:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-9101",
+        "cwe_id": "CWE-787",
+        "description": "There is an out-of-bounds write vulnerability in some products. An unauthenticated attacker crafts malformed packets with specific parameter and sends the packets to the affected products. Due to insufficient validation of packets, which may be exploited to cause the process reboot. Affected product versions include: IPS Module versions V500R005C00, V500R005C10; NGFW Module versions V500R005C00, V500R005C10; Secospace USG6300 versions V500R001C30, V500R001C60, V500R005C00, V500R005C10; Secospace USG6500 versions V500R001C30, V500R001C60, V500R005C00, V500R005C10; Secospace USG6600 versions V500R001C30, V500R001C60, V500R005C00, V500R005C10; USG9500 versions V500R001C30, V500R001C60, V500R005C00, V500R005C10",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "3.3 LOW",
+        "hyperlinks": [
+            "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200715-01-outofboundswrite-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:ips_module:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ngfw_module:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:secospace_usg6300:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:secospace_usg6500:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:secospace_usg6600:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:usg9500:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/24/2020",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-9256",
+        "cwe_id": null,
+        "description": "Huawei Mate 30 Pro smartphones with versions earlier than 10.1.0.150(C00E136R5P3) have an improper authorization vulnerability. The system does not properly restrict the use of system service by applications, the attacker should trick the user into installing a malicious application, successful exploit could cause a denial of audio service.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://www.huawei.com/en/psirt/security-advisories/huawei-sa-20200715-05-smartphone-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:mate_30_pro:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/17/2020",
+        "modified_date": "07/24/2020",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15841",
+        "cwe_id": "CWE-522",
+        "description": "Liferay Portal before 7.3.0, and Liferay DXP 7.0 before fix pack 89, 7.1 before fix pack 17, and 7.2 before fix pack 4, does not safely test a connection to a LDAP server, which allows remote attackers to obtain the LDAP server's password via the Test LDAP Connection feature.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://issues.liferay.com/browse/LPE-16928",
+            "https://portal.liferay.dev/learn/security/known-vulnerabilities/-/asset_publisher/HbL5mxmVrnXW/content/id/119317439"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:liferay:dxp:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:liferay:dxp:7.0:fix_pack_13:*:*:*:*:*:*\n     *cpe:2.3:a:liferay:dxp:7.0:fix_pack_14:*:*:*:*:*:*\n     *cpe:2.3:a:liferay:dxp:7.0:fix_pack_24:*:*:*:*:*:*\n     *cpe:2.3:a:liferay:dxp:7.0:fix_pack_25:*:*:*:*:*:*\n     *cpe:2.3:a:liferay:dxp:7.0:fix_pack_26:*:*:*:*:*:*\n     *cpe:2.3:a:liferay:dxp:7.0:fix_pack_27:*:*:*:*:*:*\n     *cpe:2.3:a:liferay:dxp:7.0:fix_pack_28:*:*:*:*:*:*\n     *cpe:2.3:a:liferay:dxp:7.0:fix_pack_3\\+:*:*:*:*:*:*",
+            "*cpe:2.3:a:liferay:dxp:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:liferay:dxp:7.0:fix_pack_13:*:*:*:*:*:*",
+            "*cpe:2.3:a:liferay:dxp:7.0:fix_pack_14:*:*:*:*:*:*",
+            "*cpe:2.3:a:liferay:dxp:7.0:fix_pack_24:*:*:*:*:*:*",
+            "*cpe:2.3:a:liferay:dxp:7.0:fix_pack_25:*:*:*:*:*:*",
+            "*cpe:2.3:a:liferay:dxp:7.0:fix_pack_26:*:*:*:*:*:*",
+            "*cpe:2.3:a:liferay:dxp:7.0:fix_pack_27:*:*:*:*:*:*",
+            "*cpe:2.3:a:liferay:dxp:7.0:fix_pack_28:*:*:*:*:*:*",
+            "*cpe:2.3:a:liferay:dxp:7.0:fix_pack_3\\+:*:*:*:*:*:*"
+        ],
+        "published_date": "07/19/2020",
+        "modified_date": "07/23/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15842",
+        "cwe_id": "CWE-502",
+        "description": "Liferay Portal before 7.3.0, and Liferay DXP 7.0 before fix pack 90, 7.1 before fix pack 17, and 7.2 before fix pack 5, allows man-in-the-middle attackers to execute arbitrary code via crafted serialized payloads, because of insecure deserialization.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-15842"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://issues.liferay.com/browse/LPE-16963",
+            "https://portal.liferay.dev/learn/security/known-vulnerabilities/-/asset_publisher/HbL5mxmVrnXW/content/id/119317427"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:liferay:dxp:7.0:-:*:*:*:*:*:*\n     *cpe:2.3:a:liferay:dxp:7.0:fix_pack_13:*:*:*:*:*:*\n     *cpe:2.3:a:liferay:dxp:7.0:fix_pack_14:*:*:*:*:*:*\n     *cpe:2.3:a:liferay:dxp:7.0:fix_pack_24:*:*:*:*:*:*\n     *cpe:2.3:a:liferay:dxp:7.0:fix_pack_25:*:*:*:*:*:*\n     *cpe:2.3:a:liferay:dxp:7.0:fix_pack_26:*:*:*:*:*:*\n     *cpe:2.3:a:liferay:dxp:7.0:fix_pack_27:*:*:*:*:*:*\n     *cpe:2.3:a:liferay:dxp:7.0:fix_pack_28:*:*:*:*:*:*\n     *cpe:2.3:a:liferay:dxp:7.0:fix_pack_3\\+:*:*:*:*:*:*",
+            "*cpe:2.3:a:liferay:dxp:7.0:-:*:*:*:*:*:*",
+            "*cpe:2.3:a:liferay:dxp:7.0:fix_pack_13:*:*:*:*:*:*",
+            "*cpe:2.3:a:liferay:dxp:7.0:fix_pack_14:*:*:*:*:*:*",
+            "*cpe:2.3:a:liferay:dxp:7.0:fix_pack_24:*:*:*:*:*:*",
+            "*cpe:2.3:a:liferay:dxp:7.0:fix_pack_25:*:*:*:*:*:*",
+            "*cpe:2.3:a:liferay:dxp:7.0:fix_pack_26:*:*:*:*:*:*",
+            "*cpe:2.3:a:liferay:dxp:7.0:fix_pack_27:*:*:*:*:*:*",
+            "*cpe:2.3:a:liferay:dxp:7.0:fix_pack_28:*:*:*:*:*:*",
+            "*cpe:2.3:a:liferay:dxp:7.0:fix_pack_3\\+:*:*:*:*:*:*"
+        ],
+        "published_date": "07/19/2020",
+        "modified_date": "07/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15009",
+        "cwe_id": "CWE-426",
+        "description": "AsusScreenXpertServicec.exe and ScreenXpertUpgradeServiceManager.exe in ScreenPad2_Upgrade_Tool.msi V1.0.3 for ASUS PCs with ScreenPad 1.0 (UX450FDX, UX550GDX and UX550GEX) could lead to unsigned code execution with no additional restrictions when a user puts an application at a particular path with a particular file name.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.4 MEDIUM",
+        "hyperlinks": [
+            "https://drive.google.com/file/d/1ClzHH5Jw3PgZw74RvKrEP8xU0TUc5Ta0/view?usp=sharing",
+            "https://www.asus.com/Static_WebPage/ASUS-Product-Security-Advisory/",
+            "https://www.asus.com/support/FAQ/1043674"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:asus:screenpad2_upgrade_tool:1.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:asus:screenpad2_upgrade_tool:1.0.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/29/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-4361",
+        "cwe_id": "CWE-200",
+        "description": "IBM Planning Analytics 2.0 could allow a remote attacker to obtain sensitive information by disclosing private IP addresses in HTTP responses. IBM X-Force ID: 178766.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/178766",
+            "https://www.ibm.com/support/pages/node/6249981"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:planning_analytics:2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:planning_analytics:2.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-4466",
+        "cwe_id": null,
+        "description": "IBM MQ for HPE NonStop 8.0.4 and 8.1.0 could allow a remote authenticated attacker could cause a denial of service due to an error within the Queue processing function. IBM X-Force ID: 181563.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/181563",
+            "https://www.ibm.com/support/pages/node/6250473"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:mq_for_hpe_nonstop:8.0.4:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:mq_for_hpe_nonstop:8.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:mq_for_hpe_nonstop:8.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:mq_for_hpe_nonstop:8.1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-4527",
+        "cwe_id": "CWE-384",
+        "description": "IBM Planning Analytics 2.0 could allow a remote attacker to obtain sensitive information, caused by the failure to set the Secure flag for the session cookie in TLS mode. By intercepting its transmission within an HTTP session, an attacker could exploit this vulnerability to capture the cookie and obtain sensitive information. IBM X-Force ID: 182631.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/182631",
+            "https://www.ibm.com/support/pages/node/6249981"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:planning_analytics:2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:planning_analytics:2.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-12029",
+        "cwe_id": "CWE-20",
+        "description": "All versions of FactoryTalk View SE do not properly validate input of filenames within a project directory. A remote, unauthenticated attacker may be able to execute a crafted file on a remote endpoint that may result in remote code execution (RCE). Rockwell Automation recommends applying patch 1126289. Before installing this patch, the patch rollup dated 06 Apr 2020 or later MUST be applied. 1066644 \u2013 Patch Roll-up for CPR9 SRx.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/160156/Rockwell-FactoryTalk-View-SE-SCADA-Unauthenticated-Remote-Code-Execution.html",
+            "https://rockwellautomation.custhelp.com/app/answers/detail/a_id/1126944",
+            "https://us-cert.cisa.gov/ics/advisories/icsa-20-170-05"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:rockwellautomation:factorytalk_view:-:*:*:*:se:*:*:*",
+            "*cpe:2.3:a:rockwellautomation:factorytalk_view:-:*:*:*:se:*:*:*"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "11/20/2020",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-14484",
+        "cwe_id": "CWE-307",
+        "description": "OpenClinic GA versions 5.09.02 and 5.89.05b may allow an attacker to bypass the system\u2019s account lockout protection, which may allow brute force password attacks.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://us-cert.cisa.gov/ics/advisories/icsma-20-184-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:openclinic_ga_project:openclinic_ga:5.09.02:*:*:*:*:*:*:*\n     *cpe:2.3:a:openclinic_ga_project:openclinic_ga:5.89.05b:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openclinic_ga_project:openclinic_ga:5.09.02:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openclinic_ga_project:openclinic_ga:5.89.05b:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-14485",
+        "cwe_id": "CWE-287",
+        "description": "OpenClinic GA versions 5.09.02 and 5.89.05b may allow an attacker to bypass client-side access controls or use a crafted request to initiate a session with limited functionality, which may allow execution of admin functions such as SQL queries.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://us-cert.cisa.gov/ics/advisories/icsma-20-184-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:openclinic_ga_project:openclinic_ga:5.09.02:*:*:*:*:*:*:*\n     *cpe:2.3:a:openclinic_ga_project:openclinic_ga:5.89.05b:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openclinic_ga_project:openclinic_ga:5.09.02:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openclinic_ga_project:openclinic_ga:5.89.05b:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-14491",
+        "cwe_id": "CWE-862",
+        "description": "OpenClinic GA versions 5.09.02 and 5.89.05b do not properly check permissions before executing SQL queries, which may allow a low-privilege user to access privileged information.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://us-cert.cisa.gov/ics/advisories/icsma-20-184-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:openclinic_ga_project:openclinic_ga:5.09.02:*:*:*:*:*:*:*\n     *cpe:2.3:a:openclinic_ga_project:openclinic_ga:5.89.05b:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openclinic_ga_project:openclinic_ga:5.09.02:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openclinic_ga_project:openclinic_ga:5.89.05b:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-14494",
+        "cwe_id": "CWE-287",
+        "description": "OpenClinic GA versions 5.09.02 and 5.89.05b contain an authentication mechanism within the system that does not provide sufficient complexity to protect against brute force attacks, which may allow unauthorized users to access the system after no more than a fixed maximum number of attempts.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://us-cert.cisa.gov/ics/advisories/icsma-20-184-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:openclinic_ga_project:openclinic_ga:5.09.02:*:*:*:*:*:*:*\n     *cpe:2.3:a:openclinic_ga_project:openclinic_ga:5.89.05b:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openclinic_ga_project:openclinic_ga:5.09.02:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openclinic_ga_project:openclinic_ga:5.89.05b:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-8205",
+        "cwe_id": "CWE-918",
+        "description": "The uppy npm package < 1.13.2 and < 2.0.0-alpha.5 is vulnerable to a Server-Side Request Forgery (SSRF) vulnerability, which allows an attacker to scan local or external networks or otherwise interact with internal systems.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://hackerone.com/reports/891270"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:transloadit:uppy:*:*:*:*:*:node.js:*:* versions up to (excluding) 1.13.2\n     *cpe:2.3:a:transloadit:uppy:2.0.0:alpha0:*:*:*:node.js:*:*\n     *cpe:2.3:a:transloadit:uppy:2.0.0:alpha1:*:*:*:node.js:*:*\n     *cpe:2.3:a:transloadit:uppy:2.0.0:alpha2:*:*:*:node.js:*:*\n     *cpe:2.3:a:transloadit:uppy:2.0.0:alpha3:*:*:*:node.js:*:*\n     *cpe:2.3:a:transloadit:uppy:2.0.0:alpha4:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:transloadit:uppy:*:*:*:*:*:node.js:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:transloadit:uppy:2.0.0:alpha0:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:transloadit:uppy:2.0.0:alpha1:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:transloadit:uppy:2.0.0:alpha2:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:transloadit:uppy:2.0.0:alpha3:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:transloadit:uppy:2.0.0:alpha4:*:*:*:node.js:*:*"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/23/2020",
+        "vulnerability_source": "HackerOne",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-8215",
+        "cwe_id": "CWE-120",
+        "description": "A buffer overflow is present in canvas version <= 1.6.9, which could lead to a Denial of Service or execution of arbitrary code when it processes a user-provided image.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://hackerone.com/reports/315037"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:automattic:canvas:*:*:*:*:*:node.js:*:* versions up to (including) 1.6.9",
+            "*cpe:2.3:a:automattic:canvas:*:*:*:*:*:node.js:*:*",
+            "(including)"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/23/2020",
+        "vulnerability_source": "HackerOne",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-12027",
+        "cwe_id": "CWE-200",
+        "description": "All versions of FactoryTalk View SE disclose the hostnames and file paths for certain files within the system. A remote, authenticated attacker may be able to leverage this information for reconnaissance efforts. Rockwell Automation recommends enabling built in security features found within FactoryTalk View SE. Users should follow guidance found in knowledge base articles 109056 and 1126943 to set up IPSec and/or HTTPs.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-12027"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/160156/Rockwell-FactoryTalk-View-SE-SCADA-Unauthenticated-Remote-Code-Execution.html",
+            "https://rockwellautomation.custhelp.com/app/answers/detail/a_id/1126944",
+            "https://us-cert.cisa.gov/ics/advisories/icsa-20-170-05"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:rockwellautomation:factorytalk_view:*:*:*:*:se:*:*:*",
+            "*cpe:2.3:a:rockwellautomation:factorytalk_view:*:*:*:*:se:*:*:*"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "11/20/2020",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-12028",
+        "cwe_id": "CWE-281",
+        "description": "In all versions of FactoryTalk View SEA remote, an authenticated attacker may be able to utilize certain handlers to interact with the data on the remote endpoint since those handlers do not enforce appropriate permissions. Rockwell Automation recommends enabling built in security features found within FactoryTalk View SE. Users should follow guidance found in knowledge base articles 109056 and 1126943 to set up IPSec and/or HTTPs.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "5.5 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/160156/Rockwell-FactoryTalk-View-SE-SCADA-Unauthenticated-Remote-Code-Execution.html",
+            "https://rockwellautomation.custhelp.com/app/answers/detail/a_id/1126944",
+            "https://us-cert.cisa.gov/ics/advisories/icsa-20-170-05"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:rockwellautomation:factorytalk_view:*:*:*:*:se:*:*:*",
+            "*cpe:2.3:a:rockwellautomation:factorytalk_view:*:*:*:*:se:*:*:*"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "11/20/2020",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-12031",
+        "cwe_id": "CWE-119",
+        "description": "In all versions of FactoryTalk View SE, after bypassing memory corruption mechanisms found in the operating system, a local, authenticated attacker may corrupt the associated memory space allowing for arbitrary code execution. Rockwell Automation recommends applying patch 1126290. Before installing this patch, the patch rollup dated 06 Apr 2020 or later MUST be applied. 1066644 \u2013 Patch Roll-up for CPR9 SRx.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://rockwellautomation.custhelp.com/app/answers/detail/a_id/1126944",
+            "https://us-cert.cisa.gov/ics/advisories/icsa-20-170-05"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:rockwellautomation:factorytalk_view:*:*:*:*:se:*:*:*",
+            "*cpe:2.3:a:rockwellautomation:factorytalk_view:*:*:*:*:se:*:*:*"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/24/2020",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-7680",
+        "cwe_id": "CWE-79",
+        "description": "docsify prior to 4.11.4 is susceptible to Cross-site Scripting (XSS). Docsify.js uses fragment identifiers (parameters after # sign) to load resources from server-side .md files. Due to lack of validation here, it is possible to provide external URLs after the /#/ (domain.com/#//attacker.com) and render arbitrary JavaScript/HTML inside docsify page.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/158515/Docsify.js-4.11.4-Cross-Site-Scripting.html",
+            "https://github.com/docsifyjs/docsify/issues/1126",
+            "https://github.com/docsifyjs/docsify/pull/1128",
+            "https://snyk.io/vuln/SNYK-JS-DOCSIFY-567099"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:docsifyjs:docsify:*:*:*:*:*:*:*:* versions up to (excluding) 4.11.4",
+            "*cpe:2.3:a:docsifyjs:docsify:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/23/2020",
+        "vulnerability_source": "Snyk",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-8214",
+        "cwe_id": "CWE-22",
+        "description": "A path traversal vulnerability in servey version < 3 allows an attacker to read content of any arbitrary file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://hackerone.com/reports/355501"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:servey_project:servey:*:*:*:*:*:node.js:*:* versions from (including) 2.2.0 up to (excluding) 3.1.0",
+            "*cpe:2.3:a:servey_project:servey:*:*:*:*:*:node.js:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "HackerOne",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15052",
+        "cwe_id": "CWE-89",
+        "description": "An issue was discovered in Artica Proxy CE before 4.28.030.418. SQL Injection exists via the Netmask, Hostname, and Alias fields.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/pratikshad19/CVE-2020-15052"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:articatech:artica_proxy:*:*:*:*:community:*:*:* versions up to (excluding) 4.28.030.418",
+            "*cpe:2.3:a:articatech:artica_proxy:*:*:*:*:community:*:*:*",
+            "(excluding)",
+            "4.28.030.418"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15053",
+        "cwe_id": "CWE-79",
+        "description": "An issue was discovered in Artica Proxy CE before 4.28.030.418. Reflected XSS exists via these search fields: real time request, System Events, Proxy Events, Proxy Objects, and Firewall objects.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/pratikshad19/CVE-2020-15053"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:articatech:artica_proxy:*:*:*:*:community:*:*:* versions up to (excluding) 4.28.030.418",
+            "*cpe:2.3:a:articatech:artica_proxy:*:*:*:*:community:*:*:*",
+            "(excluding)",
+            "4.28.030.418"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/22/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15111",
+        "cwe_id": "CWE-74",
+        "description": "In Fiber before version 1.12.6, the filename that is given in c.Attachment() (https://docs.gofiber.io/ctx#attachment) is not escaped, and therefore vulnerable for a CRLF injection attack. I.e. an attacker could upload a custom filename and then give the link to the victim. With this filename, the attacker can change the name of the downloaded file, redirect to another site, change the authorization header, etc. A possible workaround is to serialize the input before passing it to ctx.Attachment().",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/gofiber/fiber/pull/579/commits/f698b5d5066cfe594102ae252cd58a1fe57cf56f",
+            "https://github.com/gofiber/fiber/security/advisories/GHSA-9cx9-x2gp-9qvh"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gofiber:fiber:*:*:*:*:*:*:*:* versions up to (excluding) 1.12.6",
+            "*cpe:2.3:a:gofiber:fiber:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/28/2020",
+        "vulnerability_source": "GitHub, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15118",
+        "cwe_id": "CWE-79",
+        "description": "In Wagtail before versions 2.7.4 and 2.9.3, when a form page type is made available to Wagtail editors through the `wagtail.contrib.forms` app, and the page template is built using Django's standard form rendering helpers such as form.as_p, any HTML tags used within a form field's help text will be rendered unescaped in the page. Allowing HTML within help text is an intentional design decision by Django; however, as a matter of policy Wagtail does not allow editors to insert arbitrary HTML by default, as this could potentially be used to carry out cross-site scripting attacks, including privilege escalation. This functionality should therefore not have been made available to editor-level users. The vulnerability is not exploitable by an ordinary site visitor without access to the Wagtail admin. Patched versions have been released as Wagtail 2.7.4 (for the LTS 2.7 branch) and Wagtail 2.9.3 (for the current 2.9 branch). In these versions, help text will be escaped to prevent the inclusion of HTML tags. Site owners who wish to re-enable the use of HTML within help text (and are willing to accept the risk of this being exploited by editors) may set WAGTAILFORMS_HELP_TEXT_ALLOW_HTML = True in their configuration settings. Site owners who are unable to upgrade to the new versions can secure their form page templates by rendering forms field-by-field as per Django's documentation, but omitting the |safe filter when outputting the help text.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://docs.djangoproject.com/en/3.0/ref/models/fields/#django.db.models.Field.help_text",
+            "https://docs.wagtail.io/en/stable/reference/contrib/forms/index.html#usage",
+            "https://github.com/wagtail/wagtail/blob/master/docs/releases/2.9.3.rst",
+            "https://github.com/wagtail/wagtail/commit/d9a41e7f24d08c024acc9a3094940199df94db34",
+            "https://github.com/wagtail/wagtail/security/advisories/GHSA-2473-9hgq-j7xw"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:torchbox:wagtail:*:*:*:*:*:*:*:* versions from (including) 2.7 up to (excluding) 2.7.4\n     *cpe:2.3:a:torchbox:wagtail:*:*:*:*:*:*:*:* versions from (including) 2.9 up to (excluding) 2.9.3",
+            "*cpe:2.3:a:torchbox:wagtail:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:torchbox:wagtail:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/28/2020",
+        "vulnerability_source": "GitHub, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15121",
+        "cwe_id": "CWE-78",
+        "description": "In radare2 before version 4.5.0, malformed PDB file names in the PDB server path cause shell injection. To trigger the problem it's required to open the executable in radare2 and run idpd to trigger the download. The shell code will execute, and will create a file called pwned in the current directory.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.6 CRITICAL",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/radareorg/radare2/commit/04edfa82c1f3fa2bc3621ccdad2f93bdbf00e4f9",
+            "https://github.com/radareorg/radare2/issues/16945",
+            "https://github.com/radareorg/radare2/pull/16966",
+            "https://github.com/radareorg/radare2/security/advisories/GHSA-r552-vp94-9358",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MWC7KNBETYE5MK6VIUU26LUIISIFGSBZ/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/YE77P5RSE2T7JHEKMWF2ARTSJGMPXCFY/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:radare:radare2:*:*:*:*:*:*:*:* versions up to (excluding) 4.5.0",
+            "*cpe:2.3:a:radare:radare2:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "08/06/2020",
+        "vulnerability_source": "GitHub, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15123",
+        "cwe_id": "CWE-78",
+        "description": "In codecov (npm package) before version 3.7.1 the upload method has a command injection vulnerability. Clients of the codecov-node library are unlikely to be aware of this, so they might unwittingly write code that contains a vulnerability. A similar CVE (CVE-2020-7597 for GHSA-5q88-cjfq-g2mh) was issued but the fix was incomplete. It only blocked &, and command injection is still possible using backticks instead to bypass the sanitizer. The attack surface is low in this case. Particularly in the standard use of codecov, where the module is used directly in a build pipeline, not built against as a library in another application that may supply malicious input and perform command injection.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-15123"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/advisories/GHSA-5q88-cjfq-g2mh",
+            "https://github.com/codecov/codecov-node/commit/c0711c656686e902af2cd92d6aecc8074de4d83d",
+            "https://github.com/codecov/codecov-node/pull/180",
+            "https://github.com/codecov/codecov-node/security/advisories/GHSA-xp63-6vf5-xf3v",
+            "https://lgtm.com/query/7714424068617023832"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:codecov:codecov:*:*:*:*:*:node.js:*:* versions up to (excluding) 3.7.1",
+            "*cpe:2.3:a:codecov:codecov:*:*:*:*:*:node.js:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/27/2020",
+        "vulnerability_source": "GitHub, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-3481",
+        "cwe_id": "CWE-476",
+        "description": "A vulnerability in the EGG archive parsing module in Clam AntiVirus (ClamAV) Software versions 0.102.0 - 0.102.3 could allow an unauthenticated, remote attacker to cause a denial of service condition on an affected device. The vulnerability is due to a null pointer dereference. An attacker could exploit this vulnerability by sending a crafted EGG file to an affected device. An exploit could allow the attacker to cause the ClamAV scanning process crash, resulting in a denial of service condition.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2020-3481"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://blog.clamav.net/2020/07/clamav-01024-security-patch-released.html",
+            "https://lists.debian.org/debian-lts-announce/2020/08/msg00010.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/IJ67VH37NCG25PICGWFWZHSVG7PBT7MC/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QM7EXJHDEZJLWM2NKH6TCDXOBP5NNYIN/",
+            "https://security.gentoo.org/glsa/202007-23",
+            "https://usn.ubuntu.com/4435-1/",
+            "https://usn.ubuntu.com/4435-2/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:clamav:clamav:*:*:*:*:*:*:*:* versions from (including) 0.102.0 up to (including) 0.102.3",
+            "*cpe:2.3:a:clamav:clamav:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "08/06/2020",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-6871",
+        "cwe_id": "CWE-287",
+        "description": "The server management software module of ZTE has an authentication issue vulnerability, which allows users to skip the authentication of the server and execute some commands for high-level users. This affects: <R5300G4V03.08.0100/V03.07.0300/V03.07.0200/V03.07.0108/V03.07.0100/V03.05.0047/V03.05.0046/V03.05.0045/V03.05.0044/V03.05.0043/V03.05.0040/V03.04.0020;R8500G4V03.07.0103/V03.07.0101/V03.06.0100/V03.05.0400/V03.05.0020;R5500G4V03.08.0100/V03.07.0200/V03.07.0100/V03.06.0100>",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://support.zte.com.cn/support/news/LoopholeInfoDetail.aspx?newsId=1013203"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:zte:r5300g4_firmware:03.04.0020:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:zte:r5300g4_firmware:03.05.0040:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:zte:r5300g4_firmware:03.05.0043:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:zte:r5300g4_firmware:03.05.0044:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:zte:r5300g4_firmware:03.05.0045:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:zte:r5300g4_firmware:03.05.0046:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:zte:r5300g4_firmware:03.05.0047:*:*:*:*:*:*:*",
+            "cpe:2.3:h:zte:r5500g4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:zte:r8500g4:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/24/2020",
+        "vulnerability_source": "ZTE Corporation",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-6872",
+        "cwe_id": "CWE-79",
+        "description": "The server management software module of ZTE has a storage XSS vulnerability. The attacker inserts some attack codes through the foreground login page, which will cause the user to execute the predefined malicious script in the browser. This affects <R5300G4V03.08.0100/V03.07.0300/V03.07.0200/V03.07.0108/V03.07.0100/V03.05.0047/V03.05.0046/V03.05.0045/V03.05.0044/V03.05.0043/V03.05.0040/V03.04.0020;R8500G4V03.07.0103/V03.07.0101/V03.06.0100/V03.05.0400/V03.05.0020;R5500G4V03.08.0100/V03.07.0200/V03.07.0100/V03.06.0100>.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://support.zte.com.cn/support/news/LoopholeInfoDetail.aspx?newsId=1013203"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:zte:r5300g4_firmware:03.04.0020:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:zte:r5300g4_firmware:03.05.0040:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:zte:r5300g4_firmware:03.05.0043:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:zte:r5300g4_firmware:03.05.0044:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:zte:r5300g4_firmware:03.05.0045:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:zte:r5300g4_firmware:03.05.0046:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:zte:r5300g4_firmware:03.05.0047:*:*:*:*:*:*:*",
+            "cpe:2.3:h:zte:r5500g4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:zte:r8500g4:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/24/2020",
+        "vulnerability_source": "ZTE Corporation",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-15852",
+        "cwe_id": "CWE-276",
+        "description": "An issue was discovered in the Linux kernel 5.5 through 5.7.9, as used in Xen through 4.13.x for x86 PV guests. An attacker may be granted the I/O port permissions of an unrelated task. This occurs because tss_invalidate_io_bitmap mishandling causes a loss of synchronization between the I/O bitmaps of TSS and Xen, aka CID-cadfad870154.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2020/07/21/2",
+            "http://xenbits.xen.org/xsa/advisory-329.html",
+            "https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=cadfad870154e14f745ec845708bc17d166065f2",
+            "https://github.com/torvalds/linux/commit/cadfad870154e14f745ec845708bc17d166065f2",
+            "https://security.netapp.com/advisory/ntap-20200810-0001/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:* versions from (including) 5.5 up to (including) 5.7.9",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:o:xen:xen:*:*:*:*:*:*:x86:*",
+            "(including)"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "08/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-1776",
+        "cwe_id": "CWE-613",
+        "description": "When an agent user is renamed or set to invalid the session belonging to the user is keept active. The session can not be used to access ticket data in the case the agent is invalid. This issue affects ((OTRS)) Community Edition: 6.0.28 and prior versions. OTRS: 7.0.18 and prior versions, 8.0.4. and prior versions.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://otrs.com/release-notes/otrs-security-advisory-2020-13/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:otrs:otrs:*:*:*:*:community:*:*:* versions up to (excluding) 6.0.29\n     *cpe:2.3:a:otrs:otrs:*:*:*:*:*:*:*:* versions from (including) 7.0.0 up to (excluding) 7.0.19\n     *cpe:2.3:a:otrs:otrs:*:*:*:*:*:*:*:* versions from (including) 8.0.1 up to (excluding) 8.0.5",
+            "*cpe:2.3:a:otrs:otrs:*:*:*:*:community:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:otrs:otrs:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:otrs:otrs:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/24/2020",
+        "vulnerability_source": "OTRS AG",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-3442",
+        "cwe_id": "CWE-319",
+        "description": "The DuoConnect client enables users to establish SSH connections to hosts protected by a DNG instance. When a user initiates an SSH connection to a DNG-protected host for the first time using DuoConnect, the user\u00e2\u20ac\u2122s browser is opened to a login screen in order to complete authentication determined by the contents of the '-relay' argument. If the \u00e2\u20ac\u02dc-relay\u00e2\u20ac\u2122 is set to a URL beginning with \"http://\", then the browser will initially attempt to load the URL over an insecure HTTP connection, before being immediately redirected to HTTPS (in addition to standard redirect mechanisms, the DNG uses HTTP Strict Transport Security headers to enforce this). After successfully authenticating to a DNG, DuoConnect stores an authentication token in a local system cache, so users do not have to complete this browser-based authentication workflow for every subsequent SSH connection. These tokens are valid for a configurable period of time, which defaults to 8 hours. If a user running DuoConnect already has a valid token, then instead of opening a web browser, DuoConnect directly contacts the DNG, again using the configured '-relay' value, and sends this token, as well as the intended SSH server hostname and port numbers. If the '-relay' argument begins with \"http://\", then this request will be sent over an insecure connection, and could be exposed to an attacker who is sniffing the traffic on the same network. The DNG authentication tokens that may be exposed during SSH relay may be used to gain network-level access to the servers and ports protected by that given relay host. The DNG provides network-level access only to the protected SSH servers. It does not interact with the independent SSH authentication and encryption. An attacker cannot use a stolen token on its own to authenticate against a DNG-protected SSH server.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.7 MEDIUM",
+        "base_score_v2": "2.9 LOW",
+        "hyperlinks": [
+            "https://duo.com/labs/psa/duo-psa-2020-003"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:duo:duoconnect:*:*:*:*:*:*:*:* versions up to (excluding) 1.1.1",
+            "*cpe:2.3:a:duo:duoconnect:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/24/2020",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-6100",
+        "cwe_id": "CWE-787",
+        "description": "An exploitable memory corruption vulnerability exists in AMD atidxx64.dll 26.20.15019.19000 graphics driver. A specially crafted pixel shader can cause memory corruption vulnerability. An attacker can provide a specially crafted shader file to trigger this vulnerability. This vulnerability potentially could be triggered from guest machines running virtualization environments (ie. VMware, qemu, VirtualBox etc.) in order to perform guest-to-host escape - as it was demonstrated before (TALOS-2018-0533, TALOS-2018-0568, etc.). Theoretically this vulnerability could be also triggered from web browser (using webGL and webassembly). This vulnerability was triggered from HYPER-V guest using RemoteFX feature leading to executing the vulnerable code on the HYPER-V host (inside of the rdvgm.exe process).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.9 CRITICAL",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://talosintelligence.com/vulnerability_reports/TALOS-2020-1040"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:amd:radeon_directx_11_driver_atidxx64.dll:26.20.15019.19000:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:amd:radeon_directx_11_driver_atidxx64.dll:26.20.15019.19000:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/24/2020",
+        "vulnerability_source": "Talos",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-6101",
+        "cwe_id": "CWE-787",
+        "description": "An exploitable code execution vulnerability exists in the Shader functionality of AMD Radeon DirectX 11 Driver atidxx64.dll 26.20.15019.19000. An attacker can provide a specially crafted shader file to trigger this vulnerability, resulting in code execution. This vulnerability can be triggered from a HYPER-V guest using the RemoteFX feature, leading to executing the vulnerable code on the HYPER-V host (inside of the rdvgm.exe process). Theoretically this vulnerability could be also triggered from web browser (using webGL and webassembly).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.9 CRITICAL",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://talosintelligence.com/vulnerability_reports/TALOS-2020-1041"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:amd:radeon_directx_11_driver_atidxx64.dll:26.20.15019.19000:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:amd:radeon_directx_11_driver_atidxx64.dll:26.20.15019.19000:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/24/2020",
+        "vulnerability_source": "Talos",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-6102",
+        "cwe_id": "CWE-20",
+        "description": "An exploitable code execution vulnerability exists in the Shader functionality of AMD Radeon DirectX 11 Driver atidxx64.dll 26.20.15019.19000. An attacker can provide a a specially crafted shader file to trigger this vulnerability, resulting in code execution. This vulnerability can be triggered from a HYPER-V guest using the RemoteFX feature, leading to executing the vulnerable code on the HYPER-V host (inside of the rdvgm.exe process). Theoretically this vulnerability could be also triggered from web browser (using webGL and webassembly).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.9 CRITICAL",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://www.talosintelligence.com/vulnerability_reports/TALOS-2020-1042"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:amd:radeon_directx_11_driver_atidxx64.dll:26.20.15019.19000:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:amd:radeon_directx_11_driver_atidxx64.dll:26.20.15019.19000:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/28/2020",
+        "vulnerability_source": "Talos",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-6103",
+        "cwe_id": "CWE-787",
+        "description": "An exploitable code execution vulnerability exists in the Shader functionality of AMD Radeon DirectX 11 Driver atidxx64.dll 26.20.15019.19000. An attacker can provide a a specially crafted shader file to trigger this vulnerability, resulting in code execution. This vulnerability can be triggered from a HYPER-V guest using the RemoteFX feature, leading to executing the vulnerable code on the HYPER-V host (inside of the rdvgm.exe process). Theoretically this vulnerability could be also triggered from web browser (using webGL and webassembly).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.9 CRITICAL",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://talosintelligence.com/vulnerability_reports/TALOS-2020-1043"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:amd:radeon_directx_11_driver_atidxx64.dll:26.20.15019.19000:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:amd:radeon_directx_11_driver_atidxx64.dll:26.20.15019.19000:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/24/2020",
+        "vulnerability_source": "Talos",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-13932",
+        "cwe_id": "CWE-79",
+        "description": "In Apache ActiveMQ Artemis 2.5.0 to 2.13.0, a specially crafted MQTT packet which has an XSS payload as client-id or topic name can exploit this vulnerability. The XSS payload is being injected into the admin console's browser. The XSS payload is triggered in the diagram plugin; queue node and the info section.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://activemq.apache.org/security-advisories.data/CVE-2020-13932-announcement.txt",
+            "https://lists.apache.org/thread.html/r7fcedcc89e5f296b174d6b8c1438c607c30d809c04292e5732d6e4eb@%3Cusers.activemq.apache.org%3E"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apache:activemq_artemis:*:*:*:*:*:*:*:* versions from (including) 2.5.0 up to (including) 2.13.0",
+            "*cpe:2.3:a:apache:activemq_artemis:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/23/2020",
+        "vulnerability_source": "Apache Software Foundation",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-4125",
+        "cwe_id": "CWE-494",
+        "description": "Using HCL Marketing Operations 9.1.2.4, 10.1.x, 11.1.0.x, a malicious attacker could download files from the RHEL environment by doing some modification in the link, giving the attacker access to confidential information.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "5.5 MEDIUM",
+        "hyperlinks": [
+            "https://support.hcltechsw.com/csm?id=kb_article&sysparm_article=KB0080941"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:marketing_operations:9.1.2.4:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:marketing_operations:*:*:*:*:*:*:*:* versions from (including) 10.1 up to (including) 10.1.0.3\n     *cpe:2.3:a:ibm:marketing_operations:*:*:*:*:*:*:*:* versions from (including) 11.1.0.1 up to (including) 11.1.0.2",
+            "*cpe:2.3:a:ibm:marketing_operations:9.1.2.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:marketing_operations:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:ibm:marketing_operations:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "07/20/2020",
+        "modified_date": "07/24/2020",
+        "vulnerability_source": "psirt@hcl.com",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-21036",
+        "cwe_id": "CWE-20",
+        "description": "Sails.js before v1.0.0-46 allows attackers to cause a denial of service with a single request because there is no error handler in sails-hook-sockets to handle an empty pathname in a WebSocket request.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2020/07/19/1",
+            "https://github.com/balderdashy/sails-hook-sockets/commit/0533a4864b1920fd8fbb5287bc0889193c5faf44",
+            "https://github.com/balderdashy/sails-hook-sockets/commit/ff02114eaec090ee51db48435cc32d451662606e",
+            "https://github.com/balderdashy/sails/blob/56f8276f6501a144a03d1f0f28df4ccdb4ad82e2/CHANGELOG.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:sailsjs:sails:*:*:*:*:*:node.js:*:* versions up to (excluding) 1.0.0-46",
+            "*cpe:2.3:a:sailsjs:sails:*:*:*:*:*:node.js:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/21/2020",
+        "modified_date": "07/23/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2020-12432",
+        "cwe_id": "CWE-79",
+        "description": "The WOPI API integration for Vereign Collabora CODE through 4.2.2 does not properly restrict delivery of JavaScript to a victim's browser, and lacks proper MIME type access control, which could lead to XSS that steals account credentials via cookies or local storage. The attacker must first obtain an API access token, which can be accomplished if the attacker is able to upload a .docx or .odt file. The associated API endpoints for exploitation are /wopi/files and /wopi/getAccessToken.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/d7x/CVE-2020-12432",
+            "https://www.youtube.com/watch?v=_tkRnSr6yc0"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:collaboraoffice:collabora_online_development_edition:*:*:*:*:*:*:*:* versions up to (including) 4.2.2",
+            "*cpe:2.3:a:collaboraoffice:collabora_online_development_edition:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/21/2020",
+        "modified_date": "07/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2020",
+        "month": "7"
+    }
+]
