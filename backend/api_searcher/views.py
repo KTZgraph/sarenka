@@ -10,10 +10,11 @@ import socket
 from connectors.credential import Credential
 from connectors.cve_search.connector import Connector as CVEConnector
 from connectors.censys.connector import Connector as CensysConnector
-from .scrapers.mitre_cwe_scrapers import CWETableTop25Scraper, CWEDataScraper
-from .scrapers.nist_cve_scrapers import  NISTCVEScraper
+from .cve_and_cwe.mitre_cwe_scrapers import CWETableTop25Scraper, CWEDataScraper
+from .cve_and_cwe.nist_cve_scrapers import  NISTCVEScraper
+from .cve_and_cwe.cwe_all import CWEAll
+
 from .dns.dns_searcher import DNSSearcher, DNSSearcherFQDNError
-from common.contact import Contact
 from .windows.registry import WindowsRegistry
 from .windows.hardware import Hardware
 from .windows.network import LocalNetworkData
@@ -108,7 +109,7 @@ class CWEData(APIView):
 
     def get(self, request, id_cwe):
         server_address = self.get_server_address(request)
-        return Response(CWEDataScraper(server_address, id_cwe).get_data())
+        return Response(CWEDataScraper(id_cwe, server_address).get_data())
 
 
 class CWETop25(APIView):
@@ -156,7 +157,7 @@ class CWEData(APIView):
 
     def get(self, request, id_cwe):
         server_address = self.get_server_address(request)
-        return Response(CWEDataScraper(server_address, id_cwe).get_data())
+        return Response(CWEDataScraper(id_cwe, server_address).get_data())
 
 
 class SearcherView(views.APIView):
@@ -284,6 +285,12 @@ class LocalView(views.APIView):
         return Response(LocalInfo().values)
 
 
+class CWEAllView(views.APIView):
+    """Zwraca wszystkei kody CWE na podstawie pliku który został wygenerowany przez nas w innym narzędziu"""
+    def get(self, request):
+        result = {"source": "https://cwe.mitre.org/data/published/cwe_latest.pdf"}
+        result.update(CWEAll().values)
+        return Response(result)
 
 @login_required
 def login_required_view(request, cve_code):
