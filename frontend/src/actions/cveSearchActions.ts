@@ -15,7 +15,6 @@ export const fetchData = (searchCve: string, tabIndex: number) => (
   return axios
     .get(`${serverRoutes.cveSearchData}${searchCve}`)
     .then(({ data }) => {
-      console.log(data);
       dispatch({
         type: actions.FETCH_DATA_SUCCESS,
         payload: {
