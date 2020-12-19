@@ -63,6 +63,7 @@ const CveSearchResult = () => {
                   modificationDate={data.modified_date}
                   source={data.vulnerability_source}
                   hyperlinks={data.hyperlinks}
+                  description={data.description}
                 />
               ) : (
                 <>

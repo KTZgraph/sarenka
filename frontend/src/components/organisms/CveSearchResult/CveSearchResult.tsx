@@ -50,6 +50,7 @@ type Props = {
   source: string;
   hyperlinks: string[];
   cweLink: string;
+  description: string;
 };
 
 const CveSearchResult: React.FC<Props> = ({
@@ -66,6 +67,7 @@ const CveSearchResult: React.FC<Props> = ({
   source,
   hyperlinks,
   cweLink,
+  description,
 }: Props) => {
   return (
     <CardWrapper>
@@ -114,7 +116,7 @@ const CveSearchResult: React.FC<Props> = ({
       </StyledInnerWrapper>
       <Paragraph>
         <strong>Description: </strong>
-        {title}
+        {description}
       </Paragraph>
       <Paragraph>
         <strong>Useful links: </strong>
