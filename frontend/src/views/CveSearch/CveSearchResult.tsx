@@ -7,12 +7,13 @@ import Loading from 'components/atoms/LoadingAnimation/LoadingAnimation';
 import Search from 'components/molecules/Search/Search';
 import Heading from 'components/atoms/Heading/Heading';
 import { useParams } from 'react-router';
-import { updateTabLabel } from '../../actions/TabsActions';
+import Paragraph from 'components/atoms/Paragraph/Paragraph';
+import { updateTabLabel } from 'actions/TabsActions';
 
 const CveSearchResult = () => {
   const dispatch = useDispatch();
   const { page } = useParams();
-  const { isLoading, data } = useSelector(
+  const { isLoading, data, error } = useSelector(
     ({ cveSearch }: Record<string, any>) => cveSearch[page],
   );
 
@@ -45,21 +46,29 @@ const CveSearchResult = () => {
             <Loading />
           ) : (
             <>
-              {JSON.stringify(data) !== '{}' ? (
+              {JSON.stringify(data) !== '{}' && !error ? (
                 <SearchResult
-                  title={data.title}
+                  title={data.cwe[0]?.cwe_title}
                   cve={data.cve}
-                  cwe={data.cwe}
-                  cvssvector={data.cvss_vector}
-                  complexity={data.complexity}
-                  auth={data.authentication}
-                  score={data.cvss}
-                  availability={data.availability}
-                  confidentiality={data.confidentiality}
-                  products={data.products}
+                  cwe={data.cwe[0]?.ID_CWE}
+                  cweLink={data.cwe[0]?.cwe_mitre_url}
+                  cvss2={data.cvss2?.cvss2}
+                  cvss2link={data.cvss2?.cvss2_url}
+                  cvss3={data.cvss3?.cvss3}
+                  cvss3link={data.cvss3?.cvss3_url}
+                  score={
+                    data.base_score_v3 ? data.base_score_v3 : data.base_score_v2
+                  }
+                  publishedDate={data.published_date}
+                  modificationDate={data.modified_date}
+                  source={data.vulnerability_source}
+                  hyperlinks={data.hyperlinks}
                 />
               ) : (
-                <Heading as="h3">No result found</Heading>
+                <>
+                  <Heading as="h3">No result found</Heading>
+                  <Paragraph>{error}</Paragraph>
+                </>
               )}
             </>
           )

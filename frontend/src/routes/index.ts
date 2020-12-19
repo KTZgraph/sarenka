@@ -44,11 +44,11 @@ const routes: Record<string, string> = {
 };
 
 export const serverRoutes: Record<string, string> = {
-  remoteHostData: `${serverIp}/search/censys/`,
+  remoteHostData: `${serverIp}/api/censys/`,
   remoteHostReport: `${serverIp}/reports/host_info/`,
-  registryScanData: `${serverIp}/analyzer/local/windows/`,
-  hardwareInfoData: `${serverIp}/analyzer/local/windows/hardware/`,
-  cveSearchData: `${serverIp}/search/cve/`,
+  registryScanData: `${serverIp}/api/local/registry`,
+  hardwareInfoData: `${serverIp}/api/local/hardware`,
+  cveSearchData: `${serverIp}/api/cve/`,
 };
 
 export default routes;
