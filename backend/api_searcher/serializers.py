@@ -1,5 +1,7 @@
 from rest_framework import serializers
 
+from .models import CWEModel, TechnicalImpactModel
+
 
 class ProductSerializer(serializers.Serializer):
     vendor = serializers.CharField()
@@ -22,3 +24,9 @@ class CveWrapperSerializer(serializers.Serializer):
     products = ProductSerializer(many=True)
 
 
+class CWEModelSerializer(serializers.HyperlinkedModelSerializer):
+    """Serializowanie obiektu z bazy danych"""
+
+    class Meta:
+        model = CWEModel
+        fields = ["cwe_id", "title", "description", "likehood"]

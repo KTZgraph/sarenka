@@ -5,14 +5,11 @@ from rest_framework.reverse import reverse
 from django.conf import settings
 
 
-class CVEDetailsAll:
-    feeder_url = "https://raw.githubusercontent.com/pawlaczyk/sarenka_tools/master/cve_all.json"
-    file_name = "cve_all.json"
-    source_nist = "https://nvd.nist.gov/vuln/full-listing"
+class CWEDetailsAll:
     nist_url = "https://nvd.nist.gov/vuln/detail/"
     mitre_cwe_url = "https://cwe.mitre.org/data/definitions/"
-    file_prefix = "cve_all_details"
-    feed_file_path = "feedes\cve_details\\"
+    file_prefix = "cwe_details"
+    feed_file_path = "feedes\cwe_details\\"
 
     def __init__(self, page:str):
         self.__page = int(page)
@@ -26,7 +23,7 @@ class CVEDetailsAll:
 
     def get_filepath(self):
         two_up = os.path.abspath(os.path.join(settings.BASE_DIR, "../.."))
-        feed_path = os.path.join(two_up, self.feed_file_path )
+        feed_path = os.path.join(two_up, "feedes\cwe_details\\" )
 
         start_idx = str(self.__page * 100)
         end_idx = str((self.__page + 1) * 100)
@@ -48,27 +45,23 @@ class CVEDetailsAll:
 
     def render_output(self, host_address):
         """Dodaje url do sarenki i zewnętrzen do mitre wskazujące na mitre"""
-        result = {}
 
-        all_cves = self.values
-        if all_cves:
-            for cve in all_cves: #lista słowników
-                cve_id = cve["cve_id"]
+        all_cwes = self.values
+        if all_cwes:
+            for cwe in all_cwes: #lista słowników
+                cwe_id = cwe.get("cwe_id", None)
+                if cwe_id:
+                    cwe["mitre_url"] = f"{self.nist_url}{cwe_id}"
+                    cwe["sarenka_cwe_url"] = host_address + reverse('get_by_cwe', kwargs={"id_cwe": cwe_id})
 
-                cve["nist_cve_url"] = f"{self.nist_url}{cve_id}"
-                cve["sarenka_cve_url"] = host_address + reverse('get_by_cve', kwargs={"code": cve_id})
+                for cve_example in cwe["cve_examples"]:
+                    # czasami są jakieś sztndarowe przykłądy podatności
+                    cve_example_id = cve_example.get("cve_id", None)
+                    if cve_example_id:
+                        cve_example["nist_cve_url"] = f"{self.nist_url}{cve_example_id}"
+                        cve_example["sarenka_cve_url"] = host_address + reverse('get_by_cve', kwargs={"code": cve_example_id})
 
-                if cve["cwe_id"]:
-                    cwe_id = cve["cwe_id"].split("-")[-1]  # oólne np.: SQLi
-                    cve["mitre_cwe_url"] = f"{self.mitre_cwe_url}{cwe_id}"
-                    cve["sarenka_cwe_url"] = host_address + reverse('get_by_cwe', kwargs={"id_cwe": cwe_id})
-                else:
-                    cve["mitre_cwe_url"] = None
-                    cve["sarenka_cwe_url"] = None
-
-            return all_cves
+            return all_cwes
 
         # jak nie ma danych
         return {"page": self.__page, "message": "No data available"}
-
-

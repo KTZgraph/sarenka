@@ -14,6 +14,12 @@ from .cve_and_cwe.mitre_cwe_scrapers import CWETableTop25Scraper, CWEDataScraper
 from .cve_and_cwe.nist_cve_scrapers import  NISTCVEScraper
 from .cve_and_cwe.cwe_all import CWEAll
 from .cve_and_cwe.cve_details_all import CVEDetailsAll
+from .cve_and_cwe.cwe_details_all import CWEDetailsAll
+
+
+from .models import CWEModel, TechnicalImpactModel, CausedByModel, CVEModel
+from .cwe_crud import CWECRUD
+from .serializers import CWEModelSerializer
 
 from .dns.dns_searcher import DNSSearcher, DNSSearcherFQDNError
 from .windows.registry import WindowsRegistry
@@ -330,6 +336,60 @@ class CVEDetailsAllView(views.APIView):
         server_address = self.get_server_address(request)
         response = CVEDetailsAll(page).render_output(server_address) #render_output(server_address)
         return Response(response)
+
+################## CWE ##########################
+class CWEDetailsAllView(views.APIView):
+    """Zwraca wszystkei kody CWE z dokładdnymi informacjami
+    - dlatego stronnicowanie / pojedyncze pliko po 100
+    na podstawie pliku który został wygenerowany przez nas w innym narzędziu"""
+
+    @staticmethod
+    def get_server_address(request):
+        """
+        Zwraca adres do serwera aplikacji z uwzglednieniem protokołu np: http://127.0.0.1:8000/.
+        Użycie - generpowanie urli do wewnątrz aplikacji.
+        """
+        host_address = request.get_host()
+        # TODO: refaktor - milion kopii jes ttej funkcji
+        if request.is_secure():
+            address = "https://" + host_address
+        else:
+            address = "http://"+ host_address
+        return address
+
+    def get(self, request, page):
+        server_address = self.get_server_address(request)
+        response = CWEDetailsAll(page).render_output(server_address) #render_output(server_address)
+        return Response(response)
+
+
+
+
+
+######################################################
+class AddCWEandCVE(views.APIView):
+
+    def get(self, request):
+        # nist_cve_scraper = NISTCVEScraper("CVE-2013-3621") CWE_NONE
+        nist_cve_scraper = NISTCVEScraper("CVE-2019-4570")
+        cve = nist_cve_scraper.get_data()
+
+        cwe = cve["cwe"]
+
+        # zapisz do bazy obiekt CWE
+        cwe_crud = CWECRUD(cwe)
+        cwe_crud.add()
+        cwe_db_obj = cwe_crud.get()
+
+        return Response({"message": "Żyjemy",
+                         "cve": cve,
+                         "cwe": cwe,
+                         # "cwe_response": CWEModelSerializer(instance=cwe_db_obj).data,
+                         "cwe_response": cwe_db_obj,
+                         })
+
+
+
 
 
 @login_required
