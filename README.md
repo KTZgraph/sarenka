@@ -97,9 +97,9 @@ Description in progress.
 
 SARENKA uses a number of open source projects to work properly on:
 * [Renderforest](https://www.renderforest.com/) - logo generator
-* [gnuAWK](http://gnuwin32.sourceforge.net/packages/gawk.htm) - python manage.py migrate --database CWE_ID 
-* [chocolatey](https://chocolatey.org/) - description
-* [Technology](url_address) - description
+* [gawk](http://gnuwin32.sourceforge.net/packages/gawk.htm) - python manage.py migrate --database CWE_ID 
+* [chocolatey](https://chocolatey.org/)
+* [PyCharm](https://www.jetbrains.com/pycharm/) - Community Edition
 * [Technology](url_address) - description
 * [Technology](url_address) - description
 * [Technology](url_address) - description
