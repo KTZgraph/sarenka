@@ -96,14 +96,14 @@ class NISTCVEScraper:
             if td.find("a"):
                 ID_CWE = td.find("a").text
                 mitre_url = td.find("a")["href"]
-                result.append({
+
+                return {
                     "ID_CWE": ID_CWE,
                     "cwe_mitre_url" : mitre_url,
                     "cwe_title": CWEDataScraper(td.find("a").text, self.host_address).get_title(),
                     # "sarenka_cwe_url":  self.host_address + reverse('get_by_cwe', kwargs={"id_cwe": ID_CWE}),
-                })
+                }
 
-        return result
 
     def get_cpe(self, soup):
         """

@@ -1,5 +1,7 @@
 from rest_framework import serializers
 
+from .models import CWEModel
+
 
 class ProductSerializer(serializers.Serializer):
     vendor = serializers.CharField()
@@ -22,3 +24,8 @@ class CveWrapperSerializer(serializers.Serializer):
     products = ProductSerializer(many=True)
 
 
+class CWEModelSerializer(serializers.ModelSerializer):
+    """Serializowanie obiektu z bazy danych"""
+    class Meta:
+        model = CWEModel
+        fields = "__all__"

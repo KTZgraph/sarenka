@@ -14,8 +14,10 @@ from .cve_and_cwe.mitre_cwe_scrapers import CWETableTop25Scraper, CWEDataScraper
 from .cve_and_cwe.nist_cve_scrapers import  NISTCVEScraper
 from .cve_and_cwe.cwe_all import CWEAll
 from .cve_and_cwe.cve_details_all import CVEDetailsAll
+
 from .models import CWEModel, TechnicalImpactModel, CausedByModel, CVEModel
 from .cwe_crud import CWECRUD
+from .serializers import CWEModelSerializer
 
 from .dns.dns_searcher import DNSSearcher, DNSSearcherFQDNError
 from .windows.registry import WindowsRegistry
@@ -342,35 +344,20 @@ class AddCWEandCVE(views.APIView):
         cve = nist_cve_scraper.get_data()
 
         cwe = cve["cwe"]
-        cwe_all = None
 
         # zapisz do bazy obiekt CWE
         cwe_crud = CWECRUD(cwe)
         cwe_crud.add()
-
-        cwe_all = CWEModel.objects.using('CWE_NONE').all()
-        print("cwe_all: ", len(cwe_all))
-        for i in cwe_all:
-            print(i)
-            print(i.cwe_id)
-            print(i.title)
-            print(i.description)
-            print(i.likehood)
-            for t in i.cwe_technical_model.all():
-                print(t.title)
-            for c in i.cwe_caused_by.all():
-                print(c.field)
-                print(c.process)
-                print(c.description)
-
-
-        # print("cwe_all: ", cwe_all)
+        cwe_db_obj = cwe_crud.get()
+        print("PRZY WIDOKU")
+        print(cwe_db_obj.title=="None")
+        print(cwe_db_obj.description)
 
 
         return Response({"message": "Żyjemy",
                          "cve": cve,
                          "cwe": cwe,
-                         # "cwe_id": cwe_id,
+                         "cwe_response": CWEModelSerializer(instance=cwe_db_obj).data,
                          })
 
 @login_required
