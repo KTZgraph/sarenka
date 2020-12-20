@@ -23,7 +23,6 @@ class CVEDetailsAll:
     def values(self):
         return self.__data
 
-
     def get_filepath(self):
         two_up = os.path.abspath(os.path.join(settings.BASE_DIR, "../.."))
         feed_path = os.path.join(two_up, "feedes\cve_details\\" )
@@ -53,7 +52,6 @@ class CVEDetailsAll:
         all_cves = self.values
         if all_cves:
             for cve in all_cves: #lista słowników
-                print(cve)
                 cve_id = cve["cve_id"]
 
                 cve["nist_cve_url"] = f"{self.nist_url}{cve_id}"
