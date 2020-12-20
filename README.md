@@ -82,7 +82,7 @@ You can also:
 [2.1]: http://i.imgur.com/P3YfQoD.png (facebook icon with padding)
 
 [1]: https://twitter.com/OsintSarenka
-[2]: https://www.facebook.com/Sarenka-103418271668240
+[2]: https://www.facebook.com/sarenka.osint.5
 
 - Whant some feature, other tool, library functionality?
 - Have any idea or question?  [![alt text][1.1]][1]
