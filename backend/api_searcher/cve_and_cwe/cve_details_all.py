@@ -66,8 +66,6 @@ class CVEDetailsAll:
                     cve["mitre_cwe_url"] = None
                     cve["sarenka_cwe_url"] = None
 
-            result.update({"cve_all": all_cves})
-
             return all_cves
 
         # jak nie ma danych

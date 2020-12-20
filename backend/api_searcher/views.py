@@ -359,8 +359,7 @@ class CWEDetailsAllView(views.APIView):
 
     def get(self, request, page):
         server_address = self.get_server_address(request)
-        # response = CWEDetailsAll(page).render_output(server_address) #render_output(server_address)
-        response = CWEDetailsAll(page).get_data() #render_output(server_address)
+        response = CWEDetailsAll(page).render_output(server_address) #render_output(server_address)
         return Response(response)
 
 

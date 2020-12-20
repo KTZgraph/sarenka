@@ -6,7 +6,6 @@ from django.conf import settings
 
 
 class CWEDetailsAll:
-    source_nist = "https://nvd.nist.gov/vuln/full-listing"
     nist_url = "https://nvd.nist.gov/vuln/detail/"
     mitre_cwe_url = "https://cwe.mitre.org/data/definitions/"
     file_prefix = "cwe_details"
@@ -43,3 +42,26 @@ class CWEDetailsAll:
                 data = json.load(json_file)
 
         return data # zwraca w postaci jsona
+
+    def render_output(self, host_address):
+        """Dodaje url do sarenki i zewnętrzen do mitre wskazujące na mitre"""
+
+        all_cwes = self.values
+        if all_cwes:
+            for cwe in all_cwes: #lista słowników
+                cwe_id = cwe.get("cwe_id", None)
+                if cwe_id:
+                    cwe["mitre_url"] = f"{self.nist_url}{cwe_id}"
+                    cwe["sarenka_cwe_url"] = host_address + reverse('get_by_cwe', kwargs={"id_cwe": cwe_id})
+
+                for cve_example in cwe["cve_examples"]:
+                    # czasami są jakieś sztndarowe przykłądy podatności
+                    cve_example_id = cve_example.get("cve_id", None)
+                    if cve_example_id:
+                        cve_example["nist_cve_url"] = f"{self.nist_url}{cve_example_id}"
+                        cve_example["sarenka_cve_url"] = host_address + reverse('get_by_cve', kwargs={"code": cve_example_id})
+
+            return all_cwes
+
+        # jak nie ma danych
+        return {"page": self.__page, "message": "No data available"}
