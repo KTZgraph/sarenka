@@ -349,15 +349,12 @@ class AddCWEandCVE(views.APIView):
         cwe_crud = CWECRUD(cwe)
         cwe_crud.add()
         cwe_db_obj = cwe_crud.get()
-        print("PRZY WIDOKU")
-        print(cwe_db_obj.title=="None")
-        print(cwe_db_obj.description)
-
 
         return Response({"message": "Żyjemy",
                          "cve": cve,
                          "cwe": cwe,
-                         "cwe_response": CWEModelSerializer(instance=cwe_db_obj).data,
+                         # "cwe_response": CWEModelSerializer(instance=cwe_db_obj).data,
+                         "cwe_response": cwe_db_obj,
                          })
 
 @login_required

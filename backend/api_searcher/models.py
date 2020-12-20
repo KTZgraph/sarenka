@@ -6,7 +6,6 @@ na stronie https://nvd.nist.gov/ ani https://cwe.mitre.org/.
 from django.db import models
 
 
-
 class CWEModel(models.Model):
     """Klasa do przechowywanie kodów CWE (common weakness enumeration)
     ogólnych słabości np.: SQL Injection i listy konkretnych podatnosci CVE związanych z nim.
@@ -49,6 +48,9 @@ class TechnicalImpactModel(models.Model):
                             on_delete=models.CASCADE,
                             related_name="cwe_technical_model")
 
+    def __str__(self):
+        return self.title
+
 
 class CausedByModel(models.Model):
     """
@@ -65,6 +67,18 @@ class CausedByModel(models.Model):
     cwe = models.ForeignKey(CWEModel,
                             on_delete=models.CASCADE,
                             related_name="cwe_caused_by")
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 class CVEModel(models.Model):

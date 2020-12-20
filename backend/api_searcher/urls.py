@@ -21,7 +21,7 @@ urlpatterns = [
     path('cve/<str:code>', CVESearchView.as_view(), name="get_by_cve"),
     path('cwe', CWETop25.as_view(), name="cwe_top_25"),
     path('cwe', CWETop25.as_view(), name="cwe_top_25"),
-    path('cwe/add', AddCWEandCVE.as_view(), name="cwe_all"),
+    path('cwe/add', AddCWEandCVE.as_view(), name="cwe_add"),
     # path("top_25", CWETop25.as_view(), name="cwe_top_25"),
     path('cwe/<str:id_cwe>', CWEData.as_view(), name="get_by_cwe"),
     path('list_vendors', ListVendors.as_view()),

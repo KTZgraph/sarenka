@@ -68,7 +68,32 @@ class CWECRUD:
                     cwe=cwe_db_obj
                 )
 
+    def __get_dict(self, cwe_db_obj):
+        # tODO: tymczasowe rozwiazanie -> serializery
+        response = {}
+        response.update({"cwe_id": cwe_db_obj.cwe_id})
+        response.update({"title": cwe_db_obj.title})
+        response.update({"description": cwe_db_obj.description})
+        response.update({"likehood": cwe_db_obj.likehood})
+
+        cwe_technical_model = []
+        for i in cwe_db_obj.cwe_technical_model.all():
+            cwe_technical_model.append({"title": i.title})
+
+        response.update({"cwe_technical_model": cwe_technical_model})
+
+        cwe_caused_by = []
+        for i in cwe_db_obj.cwe_caused_by.all():
+            cwe_caused_by.append({"field": i.field})
+            cwe_caused_by.append({"process": i.process})
+            cwe_caused_by.append({"description": i.description})
+
+        response.update({"cwe_caused_by": cwe_caused_by})
+
+        return response
+
     def get(self):
         # pwoinien byc jeden taki obiekt w bazie konkretnej
         cwe_db_obj = CWEModel.objects.using(self.db_name).first()
-        return cwe_db_obj
+        return self.__get_dict(cwe_db_obj) #TODO tyczasowe rozwiązanie
+
