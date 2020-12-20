@@ -1,6 +1,6 @@
 from django.shortcuts import get_list_or_404, get_object_or_404
 from .models import CWEModel, TechnicalImpactModel, CausedByModel, CVEModel
-
+from .cve_and_cwe.mitre_cwe_scrapers import CWEDataScraper
 
 class CWECRUD:
     """
@@ -25,12 +25,7 @@ class CWECRUD:
         return self.get_database_name()
 
     def get_cwe_id(self):
-        try:
-            return self.cwe_data["cwe_id"]
-        except TypeError:
-            # cwe bez id i danych
-            return None
-
+        return self.cwe_data.get("ID_CWE", None)
 
     def get_database_name(self):
         """Wybiera odpowiednią nazwę bazy danych"""
@@ -40,33 +35,68 @@ class CWECRUD:
 
         return "CWE_NONE"  # jawnie ma mi zwrócić, że nie ma  cwe_id
 
+    def __add_cwe_none_obj(self):
+        print("no cwe id")
+        cwe_db_obj, is_created = CWEModel.objects.using(self.db_name).get_or_create(
+            cwe_id="None",
+            title="None",
+            description="None",
+            likehood="None"
+        )
+
+        # jeśli obiekt ZOSTAL WLASNIE stworzony
+        # created jest False jak już istnieje w bazie dancyh obiekt
+        if is_created:
+            TechnicalImpactModel.objects.using(self.db_name).create(
+                title="None",
+                cwe=cwe_db_obj
+            )
+
+            CausedByModel.objects.using(self.db_name).create(
+                field="None",
+                process="None",
+                description="None",
+                cwe=cwe_db_obj
+            )
+
     def add(self):
         """"
         Dodaje obiekt CWE do odpowiedniej bazy danych.
         """
         if self.db_name == "CWE_NONE":
-            print("no cwe id")
-            cwe_db_obj, is_created = CWEModel.objects.using(self.db_name).get_or_create(
-                cwe_id="None",
-                title="None",
-                description="None",
-                likehood="None"
-            )
+            # nietypowa pojedyncza sytuakcja
+            self.__add_cwe_none_obj()
+            return
 
-            # jeśli obiekt ZOSTAL WLASNIE stworzony
-            # created jest False jak już istnieje w bazie dancyh obiekt
-            if is_created:
+        # gdy normalnie CWE obiekt ma id
+        print("TUUUUUUUUUUUUUUUUUUU")
+        print("self.db_name: ", self.db_name)
+        cwe_data_scraper = CWEDataScraper(self.cwe_id).get_data()
+
+        cwe_db_obj, is_created = CWEModel.objects.using(self.db_name).get_or_create(
+            cwe_id=cwe_data_scraper["ID_CWE"],
+            title=cwe_data_scraper["title"],
+            description=cwe_data_scraper["description"],
+            likehood=cwe_data_scraper["likehood"]
+        )
+
+        # jeśli obiekt ZOSTAL WLASNIE stworzony
+        # created jest False jak już istnieje w bazie dancyh obiekt
+        if is_created:
+            for technical_impact in cwe_data_scraper["technical_impact"]:
                 TechnicalImpactModel.objects.using(self.db_name).create(
-                    title="None",
+                    title=technical_impact,
                     cwe=cwe_db_obj
                 )
 
-                CausedByModel.objects.using(self.db_name).create(
-                    field="None",
-                    process="None",
-                    description="None",
-                    cwe=cwe_db_obj
-                )
+            # for caused_by in cwe_data_scraper["caused_by"]:
+            caused_by = cwe_data_scraper["caused_by"]
+            CausedByModel.objects.using(self.db_name).create(
+                field=caused_by["field"],
+                process=caused_by["process"],
+                description=caused_by["description"],
+                cwe=cwe_db_obj
+            )
 
     def __get_dict(self, cwe_db_obj):
         # tODO: tymczasowe rozwiazanie -> serializery

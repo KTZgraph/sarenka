@@ -1,0 +1,3331 @@
+[
+    {
+        "cwe_id": "CWE-770",
+        "title": "Allocation of Resources Without Limits or Throttling",
+        "description": "The software allocates a reusable resource or group of resources on behalf of an actor without imposing any restrictions on the size or number of resources that can be allocated, in violation of the intended security policy for that actor. ",
+        "likehood": "High",
+        "technical_impact": [
+            "DoS: Resource Consumption (Memory)",
+            "DoS: Resource Consumption (CPU)",
+            "DoS: Resource Consumption (Other)"
+        ],
+        "caused_by": {
+            "field": "Architecture and DesignOMISSION: This weakness is caused by missing a security tactic during the architecture and design phase. ",
+            "process": "System Configuration",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2009-4017",
+                "description": "Language interpreter does not restrict the number of temporary files being created when handling a MIME request with a large number of parts.. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4017"
+            },
+            {
+                "id_CVE": "CVE-2009-2726",
+                "description": "Driver does not use a maximum width when invoking sscanf style functions, causing stack consumption. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2726"
+            },
+            {
+                "id_CVE": "CVE-2009-2540",
+                "description": "Large integer value for a length property in an object causes a large amount of memory allocation. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2540"
+            },
+            {
+                "id_CVE": "CVE-2009-2054",
+                "description": "Product allows exhaustion of file descriptors when processing a large number of TCP packets. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2054"
+            },
+            {
+                "id_CVE": "CVE-2008-5180",
+                "description": "Communication product allows memory consumption with a large number of SIP requests, which cause many sessions to be created. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5180"
+            },
+            {
+                "id_CVE": "CVE-2008-1700",
+                "description": "Product allows attackers to cause a denial of service via a large number of directives, each of which opens a separate window. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1700"
+            },
+            {
+                "id_CVE": "CVE-2005-4650",
+                "description": "CMS does not restrict the number of searches that can occur simultaneously, leading to resource exhaustion. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4650"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-521",
+        "title": "Weak Password Requirements",
+        "description": "The product does not require that users should have strong passwords, which makes it easier for attackers to compromise user accounts. ",
+        "likehood": null,
+        "technical_impact": [
+            "Gain Privileges or Assume Identity"
+        ],
+        "caused_by": {
+            "field": "Architecture and DesignCOMMISSION: This weakness refers to an incorrect design related to an architectural security tactic. ",
+            "process": "Implementation",
+            "description": "Not enforcing the password policy stated in a products design can allow users to create passwords that do not provide the necessary level of protection."
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-220",
+        "title": "Storage of File With Sensitive Data Under FTP Root",
+        "description": "The application stores sensitive data under the FTP server root with insufficient access control, which might make it accessible to untrusted parties. ",
+        "likehood": null,
+        "technical_impact": [
+            "Read Application Data"
+        ],
+        "caused_by": {
+            "field": "Operation",
+            "process": "Architecture and Design",
+            "description": "This weakness refers to an incorrect design related to an architectural security tactic."
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-266",
+        "title": "Incorrect Privilege Assignment",
+        "description": "A product incorrectly assigns a privilege to a particular actor, creating an unintended sphere of control for that actor. ",
+        "likehood": null,
+        "technical_impact": [
+            "Gain Privileges or Assume Identity"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Implementation",
+            "description": "This weakness is caused during implementation of an architectural security tactic."
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-1999-1193",
+                "description": "untrusted user placed in unix \"wheel\" group ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-1193"
+            },
+            {
+                "id_CVE": "CVE-2005-2741",
+                "description": "Product allows users to grant themselves certain rights that can be used to escalate privileges. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2741"
+            },
+            {
+                "id_CVE": "CVE-2005-2496",
+                "description": "Product uses group ID of a user instead of the group, causing it to run with different privileges. This is resultant from some other unknown issue. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2496"
+            },
+            {
+                "id_CVE": "CVE-2004-0274",
+                "description": "Product mistakenly assigns a particular status to an entity, leading to increased privileges. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0274"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-602",
+        "title": "Client-Side Enforcement of Server-Side Security",
+        "description": "The software is composed of a server that relies on the client to implement a mechanism that is intended to protect the server. ",
+        "likehood": "Medium",
+        "technical_impact": [
+            "DoS: Crash, Exit, or Restart",
+            "Bypass Protection Mechanism",
+            "Gain Privileges or Assume Identity"
+        ],
+        "caused_by": {
+            "field": "Architecture and DesignCOMMISSION: This weakness refers to an incorrect design related to an architectural security tactic. ",
+            "process": "Architecture and Design",
+            "description": "Consider a product that consists of two or more processes or nodes that must interact closely, such as a client/server model. If the product uses protection schemes in the client in order to defend from attacks against the server, and the server does not use the same schemes, then an attacker could modify the client in a way that bypasses those schemes. This is a fundamental design flaw that is primary to many weaknesses."
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2006-6994",
+                "description": "ASP program allows upload of .asp files by bypassing client-side checks. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6994"
+            },
+            {
+                "id_CVE": "CVE-2007-0163",
+                "description": "steganography products embed password information in the carrier file, which can be extracted from a modified client. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0163"
+            },
+            {
+                "id_CVE": "CVE-2007-0164",
+                "description": "steganography products embed password information in the carrier file, which can be extracted from a modified client. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0164"
+            },
+            {
+                "id_CVE": "CVE-2007-0100",
+                "description": "client allows server to modify client's configuration and overwrite arbitrary files. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0100"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-111",
+        "title": "Direct Use of Unsafe JNI",
+        "description": "When a Java application uses the Java Native Interface (JNI) to call code written in another programming language, it can expose the application to weaknesses in that code, even if those weaknesses cannot occur in Java. ",
+        "likehood": null,
+        "technical_impact": [
+            "Bypass Protection Mechanism"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-192",
+        "title": "Integer Coercion Error",
+        "description": "Integer coercion refers to a set of flaws pertaining to the type casting, extension, or truncation of primitive data types. ",
+        "likehood": "Medium",
+        "technical_impact": [
+            "DoS: Resource Consumption (Memory)",
+            "DoS: Crash, Exit, or Restart",
+            "DoS: Resource Consumption (CPU)",
+            "Execute Unauthorized Code or Commands",
+            "Other"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-311",
+        "title": "Missing Encryption of Sensitive Data",
+        "description": "The software does not encrypt sensitive or critical information before storage or transmission. ",
+        "likehood": "High",
+        "technical_impact": [
+            "Read Application Data",
+            "Modify Application Data"
+        ],
+        "caused_by": {
+            "field": "Architecture and DesignOMISSION: This weakness is caused by missing a security tactic during the architecture and design phase. ",
+            "process": "Operation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2009-2272",
+                "description": "password and username stored in cleartext in a cookie ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2272"
+            },
+            {
+                "id_CVE": "CVE-2009-1466",
+                "description": "password stored in cleartext in a file with insecure permissions ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1466"
+            },
+            {
+                "id_CVE": "CVE-2009-0152",
+                "description": "chat program disables SSL in some circumstances even when the user says to use SSL. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0152"
+            },
+            {
+                "id_CVE": "CVE-2009-1603",
+                "description": "Chain: product uses an incorrect public exponent when generating an RSA key, which effectively disables the encryption ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1603"
+            },
+            {
+                "id_CVE": "CVE-2009-0964",
+                "description": "storage of unencrypted passwords in a database ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0964"
+            },
+            {
+                "id_CVE": "CVE-2008-6157",
+                "description": "storage of unencrypted passwords in a database ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-6157"
+            },
+            {
+                "id_CVE": "CVE-2008-6828",
+                "description": "product stores a password in cleartext in memory ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-6828"
+            },
+            {
+                "id_CVE": "CVE-2008-1567",
+                "description": "storage of a secret key in cleartext in a temporary file ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1567"
+            },
+            {
+                "id_CVE": "CVE-2008-0174",
+                "description": "SCADA product uses HTTP Basic Authentication, which is not encrypted ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0174"
+            },
+            {
+                "id_CVE": "CVE-2007-5778",
+                "description": "login credentials stored unencrypted in a registry key ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5778"
+            },
+            {
+                "id_CVE": "CVE-2002-1949",
+                "description": "Passwords transmitted in cleartext. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1949"
+            },
+            {
+                "id_CVE": "CVE-2008-4122",
+                "description": "Chain: Use of HTTPS cookie without \"secure\" flag causes it to be transmitted across unencrypted HTTP. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4122"
+            },
+            {
+                "id_CVE": "CVE-2008-3289",
+                "description": "Product sends password hash in cleartext in violation of intended policy. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3289"
+            },
+            {
+                "id_CVE": "CVE-2008-4390",
+                "description": "Remote management feature sends sensitive information including passwords in cleartext. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4390"
+            },
+            {
+                "id_CVE": "CVE-2007-5626",
+                "description": "Backup routine sends password in cleartext in email. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5626"
+            },
+            {
+                "id_CVE": "CVE-2004-1852",
+                "description": "Product transmits Blowfish encryption key in cleartext. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1852"
+            },
+            {
+                "id_CVE": "CVE-2008-0374",
+                "description": "Printer sends configuration information, including administrative password, in cleartext. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0374"
+            },
+            {
+                "id_CVE": "CVE-2007-4961",
+                "description": "Chain: cleartext transmission of the MD5 hash of password enables attacks against a server that is susceptible to replay (CWE-294). ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4961"
+            },
+            {
+                "id_CVE": "CVE-2007-4786",
+                "description": "Product sends passwords in cleartext to a log server. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4786"
+            },
+            {
+                "id_CVE": "CVE-2005-3140",
+                "description": "Product sends file with cleartext passwords in e-mail message intended for diagnostic purposes. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3140"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-175",
+        "title": "Improper Handling of Mixed Encoding",
+        "description": "The software does not properly handle when the same input uses several different (mixed) encodings. ",
+        "likehood": null,
+        "technical_impact": [
+            "Unexpected State"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-573",
+        "title": "Improper Following of Specification by Caller",
+        "description": "The software does not follow or incorrectly follows the specifications as required by the implementation language, environment, framework, protocol, or platform. ",
+        "likehood": null,
+        "technical_impact": [
+            "Varies by Context",
+            "Quality Degradation"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2006-7140",
+                "description": "Crypto implementation removes padding when it shouldn't, allowing forged signatures ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-7140"
+            },
+            {
+                "id_CVE": "CVE-2006-4339",
+                "description": "Crypto implementation removes padding when it shouldn't, allowing forged signatures ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4339"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-1052",
+        "title": "Excessive Use of Hard-Coded Literals in Initialization",
+        "description": "The software initializes a data element using a hard-coded literal that is not a simple integer or static constant element. ",
+        "likehood": null,
+        "technical_impact": [
+            "Reduce Maintainability"
+        ],
+        "caused_by": {
+            "field": null,
+            "process": null,
+            "description": null
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-334",
+        "title": "Small Space of Random Values",
+        "description": "The number of possible random values is smaller than needed by the product, making it more susceptible to brute force attacks. ",
+        "likehood": null,
+        "technical_impact": [
+            "Bypass Protection Mechanism",
+            "Other"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Implementation",
+            "description": "This weakness is caused during implementation of an architectural security tactic."
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2002-0583",
+                "description": "Product uses 5 alphanumeric characters for filenames of expense claim reports, stored under web root. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0583"
+            },
+            {
+                "id_CVE": "CVE-2002-0903",
+                "description": "Product uses small number of random numbers for a code to approve an action, and also uses predictable new user IDs, allowing attackers to hijack new accounts. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0903"
+            },
+            {
+                "id_CVE": "CVE-2003-1230",
+                "description": "SYN cookies implementation only uses 32-bit keys, making it easier to brute force ISN. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-1230"
+            },
+            {
+                "id_CVE": "CVE-2004-0230",
+                "description": "Complex predictability / randomness (reduced space). ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0230"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-459",
+        "title": "Incomplete Cleanup",
+        "description": "The software does not properly \"clean up\" and remove temporary or supporting resources after they have been used. ",
+        "likehood": null,
+        "technical_impact": [
+            "DoS: Resource Consumption (Other)",
+            "Read Application Data",
+            "Modify Application Data",
+            "Other"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2000-0552",
+                "description": "World-readable temporary file not deleted after use. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-0552"
+            },
+            {
+                "id_CVE": "CVE-2005-2293",
+                "description": "Temporary file not deleted after use, leaking database usernames and passwords. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2293"
+            },
+            {
+                "id_CVE": "CVE-2002-0788",
+                "description": "Interaction error creates a temporary file that can not be deleted due to strong permissions. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0788"
+            },
+            {
+                "id_CVE": "CVE-2002-2066",
+                "description": "Alternate data streams for NTFS files are not cleared when files are wiped (alternate channel / infoleak). ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-2066"
+            },
+            {
+                "id_CVE": "CVE-2002-2067",
+                "description": "Alternate data streams for NTFS files are not cleared when files are wiped (alternate channel / infoleak). ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-2067"
+            },
+            {
+                "id_CVE": "CVE-2002-2068",
+                "description": "Alternate data streams for NTFS files are not cleared when files are wiped (alternate channel / infoleak). ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-2068"
+            },
+            {
+                "id_CVE": "CVE-2002-2069",
+                "description": "Alternate data streams for NTFS files are not cleared when files are wiped (alternate channel / infoleak). ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-2069"
+            },
+            {
+                "id_CVE": "CVE-2002-2070",
+                "description": "Alternate data streams for NTFS files are not cleared when files are wiped (alternate channel / infoleak). ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-2070"
+            },
+            {
+                "id_CVE": "CVE-2005-1744",
+                "description": "Users not logged out when application is restarted after security-relevant changes were made. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1744"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-780",
+        "title": "Use of RSA Algorithm without OAEP",
+        "description": "The software uses the RSA algorithm but does not incorporate Optimal Asymmetric Encryption Padding (OAEP), which might weaken the encryption. ",
+        "likehood": "Medium",
+        "technical_impact": [
+            "Bypass Protection Mechanism"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Implementation",
+            "description": "This weakness is caused during implementation of an architectural security tactic."
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-547",
+        "title": "Use of Hard-coded, Security-relevant Constants",
+        "description": "The program uses hard-coded constants instead of symbolic names for security-critical values, which increases the likelihood of mistakes during code maintenance or security policy change. ",
+        "likehood": null,
+        "technical_impact": [
+            "Varies by Context",
+            "Quality Degradation"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-560",
+        "title": "Use of umask() with chmod-style Argument",
+        "description": "The product calls umask() with an incorrect argument that is specified as if it is an argument to chmod(). ",
+        "likehood": null,
+        "technical_impact": [
+            "Modify Files or Directories",
+            "Read Files or Directories",
+            "Bypass Protection Mechanism"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-789",
+        "title": "Memory Allocation with Excessive Size Value",
+        "description": "The product allocates memory based on an untrusted, large size value, but it does not ensure that the size is within expected limits, allowing arbitrary amounts of memory to be allocated. ",
+        "likehood": null,
+        "technical_impact": [
+            "DoS: Resource Consumption (Memory)"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2010-3701",
+                "description": "program uses ::alloca() for encoding messages, but large messages trigger segfault ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-3701"
+            },
+            {
+                "id_CVE": "CVE-2008-1708",
+                "description": "memory consumption and daemon exit by specifying a large value in a length field ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1708"
+            },
+            {
+                "id_CVE": "CVE-2008-0977",
+                "description": "large value in a length field leads to memory consumption and crash when no more memory is available ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0977"
+            },
+            {
+                "id_CVE": "CVE-2006-3791",
+                "description": "large key size in game program triggers crash when a resizing function cannot allocate enough memory ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3791"
+            },
+            {
+                "id_CVE": "CVE-2004-2589",
+                "description": "large Content-Length HTTP header value triggers application crash in instant messaging application due to failure in memory allocation ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-2589"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-676",
+        "title": "Use of Potentially Dangerous Function",
+        "description": "The program invokes a potentially dangerous function that could introduce a vulnerability if it is used incorrectly, but the function can also be used safely. ",
+        "likehood": "High",
+        "technical_impact": [
+            "Unexpected State",
+            "Varies by Context",
+            "Quality Degradation"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2007-1470",
+                "description": "Library has multiple buffer overflows using sprintf() and strcpy() ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1470"
+            },
+            {
+                "id_CVE": "CVE-2009-3849",
+                "description": "Buffer overflow using strcat() ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3849"
+            },
+            {
+                "id_CVE": "CVE-2006-2114",
+                "description": "Buffer overflow using strcpy() ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2114"
+            },
+            {
+                "id_CVE": "CVE-2006-0963",
+                "description": "Buffer overflow using strcpy() ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0963"
+            },
+            {
+                "id_CVE": "CVE-2011-0712",
+                "description": "Vulnerable use of strcpy() changed to use safer strlcpy() ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-0712"
+            },
+            {
+                "id_CVE": "CVE-2008-5005",
+                "description": "Buffer overflow using strcpy() ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5005"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-543",
+        "title": "Use of Singleton Pattern Without Synchronization in a Multithreaded Context",
+        "description": "The software uses the singleton pattern when creating a resource within a multithreaded environment. ",
+        "likehood": null,
+        "technical_impact": [
+            "Modify Application Data",
+            "Other"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-1299",
+        "title": "Missing Protection Mechanism for Alternate Hardware Interface",
+        "description": "The lack of protections on alternate paths to access control-protected assets (such as unprotected shadow registers and other external facing unguarded interfaces) allows an attacker to bypass existing protections to the asset that are only performed against the primary path. ",
+        "likehood": null,
+        "technical_impact": [
+            "Quality Degradation",
+            "Modify Memory",
+            "Gain Privileges or Assume Identity",
+            "Execute Unauthorized Code or Commands",
+            "Read Memory",
+            "DoS: Resource Consumption (Other)"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2017-18293",
+                "description": "When GPIO is protected by blocking access to corresponding GPIO resource registers, protection can be bypassed by writing to the corresponding banked GPIO registers instead. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-18293"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-636",
+        "title": "Not Failing Securely ('Failing Open')",
+        "description": "When the product encounters an error condition or failure, its design requires it to fall back to a state that is less secure than other options that are available, such as selecting the weakest encryption algorithm or using the most permissive access control restrictions. ",
+        "likehood": null,
+        "technical_impact": [
+            "Bypass Protection Mechanism"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2007-5277",
+                "description": "The failure of connection attempts in a web browser resets DNS pin restrictions. An attacker can then bypass the same origin policy by rebinding a domain name to a different IP address. This was an attempt to \"fail functional.\" ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5277"
+            },
+            {
+                "id_CVE": "CVE-2006-4407",
+                "description": "Incorrect prioritization leads to the selection of a weaker cipher. Although it is not known whether this issue occurred in implementation or design, it is feasible that a poorly designed algorithm could be a factor. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4407"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-823",
+        "title": "Use of Out-of-range Pointer Offset",
+        "description": "The program performs pointer arithmetic on a valid pointer, but it uses an offset that can point outside of the intended range of valid memory locations for the resulting pointer. ",
+        "likehood": null,
+        "technical_impact": [
+            "Execute Unauthorized Code or Commands",
+            "DoS: Crash, Exit, or Restart",
+            "Modify Memory",
+            "Read Memory"
+        ],
+        "caused_by": {
+            "field": null,
+            "process": null,
+            "description": null
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2010-2160",
+                "description": "Invalid offset in undocumented opcode leads to memory corruption. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2160"
+            },
+            {
+                "id_CVE": "CVE-2010-1281",
+                "description": "Multimedia player uses untrusted value from a file when using file-pointer calculations. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-1281"
+            },
+            {
+                "id_CVE": "CVE-2009-3129",
+                "description": "Spreadsheet program processes a record with an invalid size field, which is later used as an offset. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3129"
+            },
+            {
+                "id_CVE": "CVE-2009-2694",
+                "description": "Instant messaging library does not validate an offset value specified in a packet. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2694"
+            },
+            {
+                "id_CVE": "CVE-2009-2687",
+                "description": "Language interpreter does not properly handle invalid offsets in JPEG image, leading to out-of-bounds memory access and crash. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2687"
+            },
+            {
+                "id_CVE": "CVE-2009-0690",
+                "description": "negative offset leads to out-of-bounds read ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0690"
+            },
+            {
+                "id_CVE": "CVE-2008-4114",
+                "description": "untrusted offset in kernel ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4114"
+            },
+            {
+                "id_CVE": "CVE-2010-2873",
+                "description": "\"blind trust\" of an offset value while writing heap memory allows corruption of function pointer,leading to code execution ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2873"
+            },
+            {
+                "id_CVE": "CVE-2010-2866",
+                "description": "negative value (signed) causes pointer miscalculation ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2866"
+            },
+            {
+                "id_CVE": "CVE-2010-2872",
+                "description": "signed values cause incorrect pointer calculation ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2872"
+            },
+            {
+                "id_CVE": "CVE-2007-5657",
+                "description": "values used as pointer offsets ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5657"
+            },
+            {
+                "id_CVE": "CVE-2010-2867",
+                "description": "a return value from a function is sign-extended if the value is signed, then used as an offset for pointer arithmetic ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2867"
+            },
+            {
+                "id_CVE": "CVE-2009-1097",
+                "description": "portions of a GIF image used as offsets, causing corruption of an object pointer. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1097"
+            },
+            {
+                "id_CVE": "CVE-2008-1807",
+                "description": "invalid numeric field leads to a free of arbitrary memory locations, then code execution. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1807"
+            },
+            {
+                "id_CVE": "CVE-2007-2500",
+                "description": "large number of elements leads to a free of an arbitrary address ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2500"
+            },
+            {
+                "id_CVE": "CVE-2008-1686",
+                "description": "array index issue (CWE-129) with negative offset, used to dereference a function pointer ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1686"
+            },
+            {
+                "id_CVE": "CVE-2010-2878",
+                "description": "\"buffer seek\" value - basically an offset? ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2878"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-367",
+        "title": "Time-of-check Time-of-use (TOCTOU) Race Condition",
+        "description": "The software checks the state of a resource before using that resource, but the resource's state can change between the check and the use in a way that invalidates the results of the check. This can cause the software to perform invalid actions when the resource is in an unexpected state. ",
+        "likehood": "Medium",
+        "technical_impact": [
+            "Modify Application Data",
+            "Unexpected State",
+            "Alter Execution Logic",
+            "Modify Memory",
+            "Other",
+            "Modify Files or Directories",
+            "Hide Activities"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2003-0813",
+                "description": "A multi-threaded race condition allows remote attackers to cause a denial of service (crash or reboot) by causing two threads to process the same RPC request, which causes one thread to use memory after it has been freed. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0813"
+            },
+            {
+                "id_CVE": "CVE-2004-0594",
+                "description": "PHP flaw allows remote attackers to execute arbitrary code by aborting execution before the initialization of key data structures is complete. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0594"
+            },
+            {
+                "id_CVE": "CVE-2008-2958",
+                "description": "chain: time-of-check time-of-use (TOCTOU) race condition in program allows bypass of protection mechanism that was designed to prevent symlink attacks. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2958"
+            },
+            {
+                "id_CVE": "CVE-2008-1570",
+                "description": "chain: time-of-check time-of-use (TOCTOU) race condition in program allows bypass of protection mechanism that was designed to prevent symlink attacks. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1570"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-239",
+        "title": "Failure to Handle Incomplete Element",
+        "description": "The software does not properly handle when a particular element is not completely specified. ",
+        "likehood": null,
+        "technical_impact": [
+            "Unexpected State",
+            "Varies by Context"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2002-1532",
+                "description": "HTTP GET without \\r\\n\\r\\n CRLF sequences causes product to wait indefinitely and prevents other users from accessing it. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1532"
+            },
+            {
+                "id_CVE": "CVE-2003-0195",
+                "description": "Partial request is not timed out. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0195"
+            },
+            {
+                "id_CVE": "CVE-2005-2526",
+                "description": "MFV. CPU exhaustion in printer via partial printing request then early termination of connection. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2526"
+            },
+            {
+                "id_CVE": "CVE-2002-1906",
+                "description": "CPU consumption by sending incomplete HTTP requests and leaving the connections open. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1906"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-1286",
+        "title": "Improper Validation of Syntactic Correctness of Input",
+        "description": "The product receives input that is expected to be well-formed - i.e., to comply with a certain syntax - but it does not validate or incorrectly validates that the input complies with the syntax. ",
+        "likehood": null,
+        "technical_impact": [
+            "Varies by Context"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2007-5893",
+                "description": "HTTP request with missing protocol version number leads to crash ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5893"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-1294",
+        "title": "Insecure Security Identifier Mechanism",
+        "description": "The System-on-Chip (SoC) implements a Security Identifier mechanism to differentiate what actions are allowed or disallowed when a transaction originates from an entity. However, the Security Identifiers are not correctly implemented. ",
+        "likehood": null,
+        "technical_impact": [
+            "Quality Degradation",
+            "Modify Memory",
+            "Gain Privileges or Assume Identity",
+            "Execute Unauthorized Code or Commands",
+            "Read Memory",
+            "DoS: Resource Consumption (Other)"
+        ],
+        "caused_by": {
+            "field": "Architecture and DesignSuch issues could be introduced during hardware architecture and design, then identified later during Testing or System Configuration phases. ",
+            "process": "Implementation",
+            "description": "Such issues could be introduced during hardware implementation, then identified later during Testing or System Configuration phases."
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-528",
+        "title": "Exposure of Core Dump File to an Unauthorized Control Sphere",
+        "description": "The product generates a core dump file in a directory, archive, or other resource that is stored, transferred, or otherwise made accessible to unauthorized actors. ",
+        "likehood": null,
+        "technical_impact": [
+            "Read Application Data",
+            "Read Files or Directories"
+        ],
+        "caused_by": {
+            "field": "OperationOMISSION: This weakness is caused by missing a security tactic during the architecture and design phase. ",
+            "process": "Operation",
+            "description": "This weakness is caused by missing a security tactic during the architecture and design phase."
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-539",
+        "title": "Use of Persistent Cookies Containing Sensitive Information",
+        "description": "The web application uses persistent cookies, but the cookies contain sensitive information. ",
+        "likehood": null,
+        "technical_impact": [
+            "Read Application Data"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-166",
+        "title": "Improper Handling of Missing Special Element",
+        "description": "The software receives input from an upstream component, but it does not handle or incorrectly handles when an expected special element is missing. ",
+        "likehood": null,
+        "technical_impact": [
+            "DoS: Crash, Exit, or Restart"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2002-1362",
+                "description": "Crash via message type without separator character ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1362"
+            },
+            {
+                "id_CVE": "CVE-2002-0729",
+                "description": "Missing special character (separator) causes crash ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0729"
+            },
+            {
+                "id_CVE": "CVE-2002-1532",
+                "description": "HTTP GET without \\r\\n\\r\\n CRLF sequences causes product to wait indefinitely and prevents other users from accessing it ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1532"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-353",
+        "title": "Missing Support for Integrity Check",
+        "description": "The software uses a transmission protocol that does not include a mechanism for verifying the integrity of the data during transmission, such as a checksum. ",
+        "likehood": "Medium",
+        "technical_impact": [
+            "Hide Activities",
+            "Other"
+        ],
+        "caused_by": {
+            "field": "Architecture and DesignOMISSION: This weakness is caused by missing a security tactic during the architecture and design phase. ",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-1110",
+        "title": "Incomplete Design Documentation",
+        "description": "The product's design documentation does not adequately describe control flow, data flow, system initialization, relationships between tasks, components, rationales, or other important aspects of the design. ",
+        "likehood": null,
+        "technical_impact": [],
+        "caused_by": {
+            "field": null,
+            "process": null,
+            "description": null
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-805",
+        "title": "Buffer Access with Incorrect Length Value",
+        "description": "The software uses a sequential operation to read or write a buffer, but it uses an incorrect length value that causes it to access memory that is outside of the bounds of the buffer. ",
+        "likehood": "High",
+        "technical_impact": [
+            "DoS: Crash, Exit, or Restart",
+            "DoS: Resource Consumption (CPU)",
+            "Modify Memory",
+            "Execute Unauthorized Code or Commands",
+            "Read Memory"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2011-1959",
+                "description": "Chain: large length value causes buffer over-read (CWE-126) ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-1959"
+            },
+            {
+                "id_CVE": "CVE-2011-1848",
+                "description": "Use of packet length field to make a calculation, then copy into a fixed-size buffer ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-1848"
+            },
+            {
+                "id_CVE": "CVE-2011-0105",
+                "description": "Chain: retrieval of length value from an uninitialized memory location ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-0105"
+            },
+            {
+                "id_CVE": "CVE-2011-0606",
+                "description": "Crafted length value in document reader leads to buffer overflow ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-0606"
+            },
+            {
+                "id_CVE": "CVE-2011-0651",
+                "description": "SSL server overflow when the sum of multiple length fields exceeds a given value ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-0651"
+            },
+            {
+                "id_CVE": "CVE-2010-4156",
+                "description": "Language interpreter API function doesn't validate length argument, leading to information exposure ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4156"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-561",
+        "title": "Dead Code",
+        "description": "The software contains dead code, which can never be executed. ",
+        "likehood": null,
+        "technical_impact": [
+            "Reduce Maintainability",
+            "Quality Degradation"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2014-1266",
+                "description": "chain: incorrect \"goto\" in Apple SSL product bypasses certificate validation, allowing MITM attack (Apple \"goto fail\" bug). CWE-705 (Incorrect Control Flow Scoping) -> CWE-561 (Dead Code) -> CWE-295 (Improper Certificate Validation) -> CWE-393 (Return of Wrong Status Code) -> CWE-300 (Channel Accessible by Non-Endpoint). ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-1266"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-486",
+        "title": "Comparison of Classes by Name",
+        "description": "The program compares classes by name, which can cause it to use the wrong class when multiple classes can have the same name. ",
+        "likehood": "High",
+        "technical_impact": [
+            "Execute Unauthorized Code or Commands"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-825",
+        "title": "Expired Pointer Dereference",
+        "description": "The program dereferences a pointer that contains a location for memory that was previously valid, but is no longer valid. ",
+        "likehood": null,
+        "technical_impact": [
+            "Execute Unauthorized Code or Commands",
+            "DoS: Crash, Exit, or Restart",
+            "Read Memory"
+        ],
+        "caused_by": {
+            "field": null,
+            "process": null,
+            "description": null
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2008-5013",
+                "description": "access of expired memory address leads to arbitrary code execution ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5013"
+            },
+            {
+                "id_CVE": "CVE-2010-3257",
+                "description": "stale pointer issue leads to denial of service and possibly other consequences ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-3257"
+            },
+            {
+                "id_CVE": "CVE-2007-1211",
+                "description": "read of value at an offset into a structure after the offset is no longer valid ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1211"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-1053",
+        "title": "Missing Documentation for Design",
+        "description": "The product does not have documentation that represents how it is designed. ",
+        "likehood": null,
+        "technical_impact": [],
+        "caused_by": {
+            "field": null,
+            "process": null,
+            "description": null
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-562",
+        "title": "Return of Stack Variable Address",
+        "description": "A function returns the address of a stack variable, which will cause unintended program behavior, typically in the form of a crash. ",
+        "likehood": null,
+        "technical_impact": [
+            "Execute Unauthorized Code or Commands",
+            "Modify Memory",
+            "DoS: Crash, Exit, or Restart",
+            "Read Memory"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-567",
+        "title": "Unsynchronized Access to Shared Data in a Multithreaded Context",
+        "description": "The product does not properly synchronize shared data, such as static variables across threads, which can lead to undefined behavior and unpredictable data changes. ",
+        "likehood": null,
+        "technical_impact": [
+            "Read Application Data",
+            "Modify Application Data",
+            "DoS: Crash, Exit, or Restart",
+            "DoS: Instability"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-467",
+        "title": "Use of sizeof() on a Pointer Type",
+        "description": "The code calls sizeof() on a malloced pointer type, which always returns the wordsize/8. This can produce an unexpected result if the programmer intended to determine how much memory has been allocated. ",
+        "likehood": "High",
+        "technical_impact": [
+            "Modify Memory",
+            "Read Memory"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-404",
+        "title": "Improper Resource Shutdown or Release",
+        "description": "The program does not release or incorrectly releases a resource before it is made available for re-use. ",
+        "likehood": "Medium",
+        "technical_impact": [
+            "Read Application Data",
+            "Varies by Context",
+            "DoS: Resource Consumption (Other)"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-1999-1127",
+                "description": "Does not shut down named pipe connections if malformed data is sent. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-1127"
+            },
+            {
+                "id_CVE": "CVE-2001-0830",
+                "description": "Sockets not properly closed when attacker repeatedly connects and disconnects from server. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0830"
+            },
+            {
+                "id_CVE": "CVE-2002-1372",
+                "description": "Return values of file/socket operations not checked, allowing resultant consumption of file descriptors. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1372"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-1047",
+        "title": "Modules with Circular Dependencies",
+        "description": "The software contains modules in which one module has references that cycle back to itself, i.e., there are circular dependencies. ",
+        "likehood": null,
+        "technical_impact": [
+            "Reduce Reliability"
+        ],
+        "caused_by": {
+            "field": null,
+            "process": null,
+            "description": null
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-356",
+        "title": "Product UI does not Warn User of Unsafe Actions",
+        "description": "The software's user interface does not warn the user before undertaking an unsafe action on behalf of that user. This makes it easier for attackers to trick users into inflicting damage to their system. ",
+        "likehood": null,
+        "technical_impact": [
+            "Hide Activities"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-1999-1055",
+                "description": "Product does not warn user when document contains certain dangerous functions or macros. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-1055"
+            },
+            {
+                "id_CVE": "CVE-1999-0794",
+                "description": "Product does not warn user when document contains certain dangerous functions or macros. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-0794"
+            },
+            {
+                "id_CVE": "CVE-2000-0277",
+                "description": "Product does not warn user when document contains certain dangerous functions or macros. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-0277"
+            },
+            {
+                "id_CVE": "CVE-2000-0517",
+                "description": "Product does not warn user about a certificate if it has already been accepted for a different site. Possibly resultant. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-0517"
+            },
+            {
+                "id_CVE": "CVE-2005-0602",
+                "description": "File extractor does not warn user it setuid/setgid files could be extracted. Overlaps privileges/permissions. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0602"
+            },
+            {
+                "id_CVE": "CVE-2000-0342",
+                "description": "E-mail client allows bypass of warning for dangerous attachments via a Windows .LNK file that refers to the attachment. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-0342"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-1025",
+        "title": "Comparison Using Wrong Factors",
+        "description": "The code performs a comparison between two entities, but the comparison examines the wrong factors or characteristics of the entities, which can lead to incorrect results and resultant weaknesses. ",
+        "likehood": null,
+        "technical_impact": [
+            "Varies by Context"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-386",
+        "title": "Symbolic Name not Mapping to Correct Object",
+        "description": "A constant symbolic reference to an object is used, even though the reference can resolve to a different object over time. ",
+        "likehood": null,
+        "technical_impact": [
+            "Read Application Data",
+            "Modify Application Data",
+            "Gain Privileges or Assume Identity",
+            "Read Files or Directories",
+            "Other",
+            "Modify Files or Directories",
+            "Hide Activities"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-1078",
+        "title": "Inappropriate Source Code Style or Formatting",
+        "description": "The source code does not follow desired style or formatting for indentation, white space, comments, etc. ",
+        "likehood": null,
+        "technical_impact": [],
+        "caused_by": {
+            "field": null,
+            "process": null,
+            "description": null
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-477",
+        "title": "Use of Obsolete Function",
+        "description": "The code uses deprecated or obsolete functions, which suggests that the code has not been actively reviewed or maintained. ",
+        "likehood": null,
+        "technical_impact": [
+            "Quality Degradation"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-708",
+        "title": "Incorrect Ownership Assignment",
+        "description": "The software assigns an owner to a resource, but the owner is outside of the intended control sphere. ",
+        "likehood": null,
+        "technical_impact": [
+            "Read Application Data",
+            "Modify Application Data"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Operation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2007-5101",
+                "description": "File system sets wrong ownership and group when creating a new file. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5101"
+            },
+            {
+                "id_CVE": "CVE-2007-4238",
+                "description": "OS installs program with bin owner/group, allowing modification. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4238"
+            },
+            {
+                "id_CVE": "CVE-2007-1716",
+                "description": "Manager does not properly restore ownership of a reusable resource when a user logs out, allowing privilege escalation. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1716"
+            },
+            {
+                "id_CVE": "CVE-2005-3148",
+                "description": "Backup software restores symbolic links with incorrect uid/gid. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3148"
+            },
+            {
+                "id_CVE": "CVE-2005-1064",
+                "description": "Product changes the ownership of files that a symlink points to, instead of the symlink itself. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1064"
+            },
+            {
+                "id_CVE": "CVE-2011-1551",
+                "description": "Component assigns ownership of sensitive directory tree to a user account, which can be leveraged to perform privileged operations. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-1551"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-671",
+        "title": "Lack of Administrator Control over Security",
+        "description": "The product uses security features in a way that prevents the product's administrator from tailoring security settings to reflect the environment in which the product is being used. This introduces resultant weaknesses or prevents it from operating at a level of security that is desired by the administrator. ",
+        "likehood": null,
+        "technical_impact": [
+            "Varies by Context"
+        ],
+        "caused_by": {
+            "field": "Architecture and DesignOMISSION: This weakness is caused by missing a security tactic during the architecture and design phase. ",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-507",
+        "title": "Trojan Horse",
+        "description": "The software appears to contain benign or useful functionality, but it also contains code that is hidden from normal operation that violates the intended security policy of the user or the system administrator. ",
+        "likehood": null,
+        "technical_impact": [
+            "Execute Unauthorized Code or Commands"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Operation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-667",
+        "title": "Improper Locking",
+        "description": "The software does not properly acquire or release a lock on a resource, leading to unexpected resource state changes and behaviors. ",
+        "likehood": null,
+        "technical_impact": [
+            "DoS: Resource Consumption (CPU)"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2009-0935",
+                "description": "Attacker provides invalid address to a memory-reading function, causing a mutex to be unlocked twice ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0935"
+            },
+            {
+                "id_CVE": "CVE-2010-4210",
+                "description": "function in OS kernel unlocks a mutex that was not previously locked, causing a panic or overwrite of arbitrary memory. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4210"
+            },
+            {
+                "id_CVE": "CVE-2008-4302",
+                "description": "Chain: OS kernel does not properly handle a failure of a function call (CWE-755), leading to an unlock of a resource that was not locked (CWE-832), with resultant crash. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4302"
+            },
+            {
+                "id_CVE": "CVE-2009-1243",
+                "description": "OS kernel performs an unlock in some incorrect circumstances, leading to panic. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1243"
+            },
+            {
+                "id_CVE": "CVE-2009-2857",
+                "description": "OS deadlock ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2857"
+            },
+            {
+                "id_CVE": "CVE-2009-1961",
+                "description": "OS deadlock involving 3 separate functions ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1961"
+            },
+            {
+                "id_CVE": "CVE-2009-2699",
+                "description": "deadlock in library ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2699"
+            },
+            {
+                "id_CVE": "CVE-2009-4272",
+                "description": "deadlock triggered by packets that force collisions in a routing table ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4272"
+            },
+            {
+                "id_CVE": "CVE-2002-1850",
+                "description": "read/write deadlock between web server and script ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1850"
+            },
+            {
+                "id_CVE": "CVE-2004-0174",
+                "description": "web server deadlock involving multiple listening connections ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0174"
+            },
+            {
+                "id_CVE": "CVE-2009-1388",
+                "description": "multiple simultaneous calls to the same function trigger deadlock. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1388"
+            },
+            {
+                "id_CVE": "CVE-2006-5158",
+                "description": "chain: other weakness leads to NULL pointer dereference (CWE-476) or deadlock (CWE-833). ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5158"
+            },
+            {
+                "id_CVE": "CVE-2006-4342",
+                "description": "deadlock when an operation is performed on a resource while it is being removed. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4342"
+            },
+            {
+                "id_CVE": "CVE-2006-2374",
+                "description": "Deadlock in device driver triggered by using file handle of a related device. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2374"
+            },
+            {
+                "id_CVE": "CVE-2006-2275",
+                "description": "Deadlock when large number of small messages cannot be processed quickly enough. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2275"
+            },
+            {
+                "id_CVE": "CVE-2005-3847",
+                "description": "OS kernel has deadlock triggered by a signal during a core dump. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3847"
+            },
+            {
+                "id_CVE": "CVE-2005-3106",
+                "description": "Race condition leads to deadlock. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3106"
+            },
+            {
+                "id_CVE": "CVE-2005-2456",
+                "description": "Chain: array index error (CWE-129) leads to deadlock (CWE-833) ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2456"
+            },
+            {
+                "id_CVE": "CVE-2001-0682",
+                "description": "Program can not execute when attacker obtains a mutex. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0682"
+            },
+            {
+                "id_CVE": "CVE-2002-1914",
+                "description": "Program can not execute when attacker obtains a lock on a critical output file. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1914"
+            },
+            {
+                "id_CVE": "CVE-2002-1915",
+                "description": "Program can not execute when attacker obtains a lock on a critical output file. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1915"
+            },
+            {
+                "id_CVE": "CVE-2002-0051",
+                "description": "Critical file can be opened with exclusive read access by user, preventing application of security policy. Possibly related to improper permissions, large-window race condition. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0051"
+            },
+            {
+                "id_CVE": "CVE-2000-0338",
+                "description": "Chain: predictable file names used for locking, allowing attacker to create the lock beforehand. Resultant from permissions and randomness. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-0338"
+            },
+            {
+                "id_CVE": "CVE-2000-1198",
+                "description": "Chain: Lock files with predictable names. Resultant from randomness. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-1198"
+            },
+            {
+                "id_CVE": "CVE-2002-1869",
+                "description": "Product does not check if it can write to a log file, allowing attackers to avoid logging by accessing the file using an exclusive lock. Overlaps unchecked error condition. This is not quite CWE-412, but close. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1869"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-756",
+        "title": "Missing Custom Error Page",
+        "description": "The software does not return custom error pages to the user, possibly exposing sensitive information. ",
+        "likehood": null,
+        "technical_impact": [
+            "Read Application Data"
+        ],
+        "caused_by": {
+            "field": null,
+            "process": null,
+            "description": null
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-96",
+        "title": "Improper Neutralization of Directives in Statically Saved Code ('Static Code Injection')",
+        "description": "The software receives input from an upstream component, but it does not neutralize or incorrectly neutralizes code syntax before inserting the input into an executable resource, such as a library, configuration file, or template. ",
+        "likehood": null,
+        "technical_impact": [
+            "Read Application Data",
+            "Gain Privileges or Assume Identity",
+            "Read Files or Directories",
+            "Execute Unauthorized Code or Commands",
+            "Bypass Protection Mechanism",
+            "Hide Activities"
+        ],
+        "caused_by": {
+            "field": "Architecture and DesignThis issue is most frequently found in PHP applications that allow users to set configuration variables that are stored within executable PHP files. Technically, this could also be performed in some compiled code (e.g. by byte-patching an executable), although it is highly unlikely. ",
+            "process": "Implementation",
+            "description": "This weakness is caused during implementation of an architectural security tactic."
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2002-0495",
+                "description": "Perl code directly injected into CGI library file from parameters to another CGI program. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0495"
+            },
+            {
+                "id_CVE": "CVE-2005-1876",
+                "description": "Direct PHP code injection into supporting template file. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1876"
+            },
+            {
+                "id_CVE": "CVE-2005-1894",
+                "description": "Direct code injection into PHP script that can be accessed by attacker. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1894"
+            },
+            {
+                "id_CVE": "CVE-2003-0395",
+                "description": "PHP code from User-Agent HTTP header directly inserted into log file implemented as PHP script. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0395"
+            },
+            {
+                "id_CVE": "CVE-2007-6652",
+                "description": "chain: execution after redirect allows non-administrator to perform static code injection. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6652"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-122",
+        "title": "Heap-based Buffer Overflow",
+        "description": "A heap overflow condition is a buffer overflow, where the buffer that can be overwritten is allocated in the heap portion of memory, generally meaning that the buffer was allocated using a routine such as malloc(). ",
+        "likehood": "High",
+        "technical_impact": [
+            "DoS: Resource Consumption (Memory)",
+            "DoS: Crash, Exit, or Restart",
+            "DoS: Resource Consumption (CPU)",
+            "Modify Memory",
+            "Execute Unauthorized Code or Commands",
+            "Other",
+            "Bypass Protection Mechanism"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2007-4268",
+                "description": "Chain: integer signedness error (CWE-195) passes signed comparison, leading to heap overflow (CWE-122) ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4268"
+            },
+            {
+                "id_CVE": "CVE-2009-2523",
+                "description": "Chain: product does not handle when an input string is not NULL terminated (CWE-170), leading to buffer over-read (CWE-125) or heap-based buffer overflow (CWE-122). ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2523"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-822",
+        "title": "Untrusted Pointer Dereference",
+        "description": "The program obtains a value from an untrusted source, converts this value to a pointer, and dereferences the resulting pointer. ",
+        "likehood": null,
+        "technical_impact": [
+            "Execute Unauthorized Code or Commands",
+            "DoS: Crash, Exit, or Restart",
+            "Modify Memory",
+            "Read Memory"
+        ],
+        "caused_by": {
+            "field": null,
+            "process": null,
+            "description": null
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2007-5655",
+                "description": "message-passing framework interprets values in packets as pointers, causing a crash. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5655"
+            },
+            {
+                "id_CVE": "CVE-2010-2299",
+                "description": "labeled as a \"type confusion\" issue, also referred to as a \"stale pointer.\" However, the bug ID says \"contents are simply interpreted as a pointer... renderer ordinarily doesn't supply this pointer directly\". The \"handle\" in the untrusted area is replaced in one function, but not another - thus also, effectively, exposure to wrong sphere (CWE-668). ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2299"
+            },
+            {
+                "id_CVE": "CVE-2009-1719",
+                "description": "Untrusted dereference using undocumented constructor. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1719"
+            },
+            {
+                "id_CVE": "CVE-2009-1250",
+                "description": "An error code is incorrectly checked and interpreted as a pointer, leading to a crash. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1250"
+            },
+            {
+                "id_CVE": "CVE-2009-0311",
+                "description": "An untrusted value is obtained from a packet and directly called as a function pointer, leading to code execution. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0311"
+            },
+            {
+                "id_CVE": "CVE-2010-1818",
+                "description": "Undocumented attribute in multimedia software allows \"unmarshaling\" of an untrusted pointer. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-1818"
+            },
+            {
+                "id_CVE": "CVE-2010-3189",
+                "description": "ActiveX control for security software accepts a parameter that is assumed to be an initialized pointer. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-3189"
+            },
+            {
+                "id_CVE": "CVE-2010-1253",
+                "description": "Spreadsheet software treats certain record values that lead to \"user-controlled pointer\" (might be untrusted offset, not untrusted pointer). ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-1253"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-193",
+        "title": "Off-by-one Error",
+        "description": "A product calculates or uses an incorrect maximum or minimum value that is 1 more, or 1 less, than the correct value. ",
+        "likehood": null,
+        "technical_impact": [
+            "DoS: Resource Consumption (Memory)",
+            "DoS: Crash, Exit, or Restart",
+            "DoS: Resource Consumption (CPU)",
+            "DoS: Instability",
+            "Modify Memory",
+            "Execute Unauthorized Code or Commands",
+            "Bypass Protection Mechanism"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2003-0252",
+                "description": "Off-by-one error allows remote attackers to cause a denial of service and possibly execute arbitrary code via requests that do not contain newlines. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0252"
+            },
+            {
+                "id_CVE": "CVE-2001-1391",
+                "description": "Off-by-one vulnerability in driver allows users to modify kernel memory. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-1391"
+            },
+            {
+                "id_CVE": "CVE-2002-0083",
+                "description": "Off-by-one error allows local users or remote malicious servers to gain privileges. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0083"
+            },
+            {
+                "id_CVE": "CVE-2002-0653",
+                "description": "Off-by-one buffer overflow in function usd by server allows local users to execute arbitrary code as the server user via .htaccess files with long entries. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0653"
+            },
+            {
+                "id_CVE": "CVE-2002-0844",
+                "description": "Off-by-one buffer overflow in version control system allows local users to execute arbitrary code. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0844"
+            },
+            {
+                "id_CVE": "CVE-1999-1568",
+                "description": "Off-by-one error in FTP server allows a remote attacker to cause a denial of service (crash) via a long PORT command. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-1568"
+            },
+            {
+                "id_CVE": "CVE-2004-0346",
+                "description": "Off-by-one buffer overflow in FTP server allows local users to gain privileges via a 1024 byte RETR command. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0346"
+            },
+            {
+                "id_CVE": "CVE-2004-0005",
+                "description": "Multiple buffer overflows in chat client allow remote attackers to cause a denial of service and possibly execute arbitrary code. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0005"
+            },
+            {
+                "id_CVE": "CVE-2003-0356",
+                "description": "Multiple off-by-one vulnerabilities in product allow remote attackers to cause a denial of service and possibly execute arbitrary code. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0356"
+            },
+            {
+                "id_CVE": "CVE-2001-1496",
+                "description": "Off-by-one buffer overflow in server allows remote attackers to cause a denial of service and possibly execute arbitrary code. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-1496"
+            },
+            {
+                "id_CVE": "CVE-2004-0342",
+                "description": "This is an interesting example that might not be an off-by-one. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0342"
+            },
+            {
+                "id_CVE": "CVE-2001-0609",
+                "description": "An off-by-one enables a terminating null to be overwritten, which causes 2 strings to be merged and enable a format string. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0609"
+            },
+            {
+                "id_CVE": "CVE-2002-1745",
+                "description": "Off-by-one error allows source code disclosure of files with 4 letter extensions that match an accepted 3-letter extension. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1745"
+            },
+            {
+                "id_CVE": "CVE-2002-1816",
+                "description": "Off-by-one buffer overflow. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1816"
+            },
+            {
+                "id_CVE": "CVE-2002-1721",
+                "description": "Off-by-one error causes an snprintf call to overwrite a critical internal variable with a null value. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1721"
+            },
+            {
+                "id_CVE": "CVE-2003-0466",
+                "description": "Off-by-one error in function used in many products leads to a buffer overflow during pathname management, as demonstrated using multiple commands in an FTP server. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0466"
+            },
+            {
+                "id_CVE": "CVE-2003-0625",
+                "description": "Off-by-one error allows read of sensitive memory via a malformed request. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0625"
+            },
+            {
+                "id_CVE": "CVE-2006-4574",
+                "description": "Chain: security monitoring product has an off-by-one error that leads to unexpected length values, triggering an assertion. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4574"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-360",
+        "title": "Trust of System Event Data",
+        "description": "Security based on event locations are insecure and can be spoofed. ",
+        "likehood": "High",
+        "technical_impact": [
+            "Gain Privileges or Assume Identity",
+            "Execute Unauthorized Code or Commands"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-420",
+        "title": "Unprotected Alternate Channel",
+        "description": "The software protects a primary channel, but it does not use the same level of protection for an alternate channel. ",
+        "likehood": null,
+        "technical_impact": [
+            "Gain Privileges or Assume Identity",
+            "Bypass Protection Mechanism"
+        ],
+        "caused_by": {
+            "field": "Architecture and DesignOMISSION: This weakness is caused by missing a security tactic during the architecture and design phase. ",
+            "process": "Operation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2002-0567",
+                "description": "DB server assumes that local clients have performed authentication, allowing attacker to directly connect to a process to load libraries and execute commands; a socket interface also exists (another alternate channel), so attack can be remote. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0567"
+            },
+            {
+                "id_CVE": "CVE-2002-1578",
+                "description": "Product does not restrict access to underlying database, so attacker can bypass restrictions by directly querying the database. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1578"
+            },
+            {
+                "id_CVE": "CVE-2003-1035",
+                "description": "User can avoid lockouts by using an API instead of the GUI to conduct brute force password guessing. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-1035"
+            },
+            {
+                "id_CVE": "CVE-2002-1863",
+                "description": "FTP service can not be disabled even when other access controls would require it. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1863"
+            },
+            {
+                "id_CVE": "CVE-2002-0066",
+                "description": "Windows named pipe created without authentication/access control, allowing configuration modification. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0066"
+            },
+            {
+                "id_CVE": "CVE-2004-1461",
+                "description": "Router management interface spawns a separate TCP connection after authentication, allowing hijacking by attacker coming from the same IP address. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1461"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-760",
+        "title": "Use of a One-Way Hash with a Predictable Salt",
+        "description": "The software uses a one-way cryptographic hash against an input that should not be reversible, such as a password, but the software uses a predictable salt as part of the input. ",
+        "likehood": null,
+        "technical_impact": [
+            "Bypass Protection Mechanism"
+        ],
+        "caused_by": {
+            "field": "ImplementationREALIZATION: This weakness is caused during implementation of an architectural security tactic. ",
+            "process": "Implementation",
+            "description": "This weakness is caused during implementation of an architectural security tactic."
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2008-4905",
+                "description": "Blogging software uses a hard-coded salt when calculating a password hash. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4905"
+            },
+            {
+                "id_CVE": "CVE-2002-1657",
+                "description": "Database server uses the username for a salt when encrypting passwords, simplifying brute force attacks. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1657"
+            },
+            {
+                "id_CVE": "CVE-2001-0967",
+                "description": "Server uses a constant salt when encrypting passwords, simplifying brute force attacks. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0967"
+            },
+            {
+                "id_CVE": "CVE-2005-0408",
+                "description": "chain: product generates predictable MD5 hashes using a constant value combined with username, allowing authentication bypass. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0408"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-177",
+        "title": "Improper Handling of URL Encoding (Hex Encoding)",
+        "description": "The software does not properly handle when all or part of an input has been URL encoded. ",
+        "likehood": null,
+        "technical_impact": [
+            "Unexpected State"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2000-0900",
+                "description": "Hex-encoded path traversal variants - \"%2e%2e\", \"%2e%2e%2f\", \"%5c%2e%2e\" ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-0900"
+            },
+            {
+                "id_CVE": "CVE-2005-2256",
+                "description": "Hex-encoded path traversal variants - \"%2e%2e\", \"%2e%2e%2f\", \"%5c%2e%2e\" ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2256"
+            },
+            {
+                "id_CVE": "CVE-2004-2121",
+                "description": "Hex-encoded path traversal variants - \"%2e%2e\", \"%2e%2e%2f\", \"%5c%2e%2e\" ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-2121"
+            },
+            {
+                "id_CVE": "CVE-2004-0280",
+                "description": "\"%20\" (encoded space) ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0280"
+            },
+            {
+                "id_CVE": "CVE-2003-0424",
+                "description": "\"%20\" (encoded space) ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0424"
+            },
+            {
+                "id_CVE": "CVE-2001-0693",
+                "description": "\"%20\" (encoded space) ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0693"
+            },
+            {
+                "id_CVE": "CVE-2001-0778",
+                "description": "\"%20\" (encoded space) ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0778"
+            },
+            {
+                "id_CVE": "CVE-2002-1831",
+                "description": "Crash via hex-encoded space \"%20\". ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1831"
+            },
+            {
+                "id_CVE": "CVE-2000-0671",
+                "description": "\"%00\" (encoded null) ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-0671"
+            },
+            {
+                "id_CVE": "CVE-2004-0189",
+                "description": "\"%00\" (encoded null) ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0189"
+            },
+            {
+                "id_CVE": "CVE-2002-1291",
+                "description": "\"%00\" (encoded null) ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1291"
+            },
+            {
+                "id_CVE": "CVE-2002-1031",
+                "description": "\"%00\" (encoded null) ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1031"
+            },
+            {
+                "id_CVE": "CVE-2001-1140",
+                "description": "\"%00\" (encoded null) ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-1140"
+            },
+            {
+                "id_CVE": "CVE-2004-0760",
+                "description": "\"%00\" (encoded null) ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0760"
+            },
+            {
+                "id_CVE": "CVE-2002-1025",
+                "description": "\"%00\" (encoded null) ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1025"
+            },
+            {
+                "id_CVE": "CVE-2002-1213",
+                "description": "\"%2f\" (encoded slash) ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1213"
+            },
+            {
+                "id_CVE": "CVE-2004-0072",
+                "description": "\"%5c\" (encoded backslash) and \"%2e\" (encoded dot) sequences ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0072"
+            },
+            {
+                "id_CVE": "CVE-2004-0847",
+                "description": "\"%5c\" (encoded backslash) ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0847"
+            },
+            {
+                "id_CVE": "CVE-2002-1575",
+                "description": "\"%0a\" (overlaps CRLF) ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1575"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-231",
+        "title": "Improper Handling of Extra Values",
+        "description": "The software does not handle or incorrectly handles when more values are provided than expected. ",
+        "likehood": null,
+        "technical_impact": [
+            "Unexpected State"
+        ],
+        "caused_by": {
+            "field": "ImplementationThis typically occurs in situations when only one value is expected. ",
+            "process": "Implementation",
+            "description": "This typically occurs in situations when only one value is expected."
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-82",
+        "title": "Improper Neutralization of Script in Attributes of IMG Tags in a Web Page",
+        "description": "The web application does not neutralize or incorrectly neutralizes scripting elements within attributes of HTML IMG tags, such as the src attribute. ",
+        "likehood": null,
+        "technical_impact": [
+            "Read Application Data",
+            "Execute Unauthorized Code or Commands"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2006-3211",
+                "description": "Stored XSS in a guestbook application using a javascript: URI in a bbcode img tag. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3211"
+            },
+            {
+                "id_CVE": "CVE-2002-1649",
+                "description": "javascript URI scheme in IMG tag. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1649"
+            },
+            {
+                "id_CVE": "CVE-2002-1803",
+                "description": "javascript URI scheme in IMG tag. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1803"
+            },
+            {
+                "id_CVE": "CVE-2002-1804",
+                "description": "javascript URI scheme in IMG tag. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1804"
+            },
+            {
+                "id_CVE": "CVE-2002-1805",
+                "description": "javascript URI scheme in IMG tag. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1805"
+            },
+            {
+                "id_CVE": "CVE-2002-1806",
+                "description": "javascript URI scheme in IMG tag. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1806"
+            },
+            {
+                "id_CVE": "CVE-2002-1807",
+                "description": "javascript URI scheme in IMG tag. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1807"
+            },
+            {
+                "id_CVE": "CVE-2002-1808",
+                "description": "javascript URI scheme in IMG tag. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1808"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-288",
+        "title": "Authentication Bypass Using an Alternate Path or Channel",
+        "description": "A product requires authentication, but the product has an alternate path or channel that does not require authentication. ",
+        "likehood": null,
+        "technical_impact": [
+            "Bypass Protection Mechanism"
+        ],
+        "caused_by": {
+            "field": "Architecture and DesignCOMMISSION: This weakness refers to an incorrect design related to an architectural security tactic. ",
+            "process": "Architecture and Design",
+            "description": "This is often seen in web applications that assume that access to a particular CGI program can only be obtained through a \"front\" screen, when the supporting programs are directly accessible. But this problem is not just in web apps."
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2000-1179",
+                "description": "Router allows remote attackers to read system logs without authentication by directly connecting to the login screen and typing certain control characters. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-1179"
+            },
+            {
+                "id_CVE": "CVE-1999-1454",
+                "description": "Attackers with physical access to the machine may bypass the password prompt by pressing the ESC (Escape) key. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-1454"
+            },
+            {
+                "id_CVE": "CVE-1999-1077",
+                "description": "OS allows local attackers to bypass the password protection of idled sessions via the programmer's switch or CMD-PWR keyboard sequence, which brings up a debugger that the attacker can use to disable the lock. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-1077"
+            },
+            {
+                "id_CVE": "CVE-2003-0304",
+                "description": "Direct request of installation file allows attacker to create administrator accounts. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0304"
+            },
+            {
+                "id_CVE": "CVE-2002-0870",
+                "description": "Attackers may gain additional privileges by directly requesting the web management URL. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0870"
+            },
+            {
+                "id_CVE": "CVE-2002-0066",
+                "description": "Bypass authentication via direct request to named pipe. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0066"
+            },
+            {
+                "id_CVE": "CVE-2003-1035",
+                "description": "User can avoid lockouts by using an API instead of the GUI to conduct brute force password guessing. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-1035"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-767",
+        "title": "Access to Critical Private Variable via Public Method",
+        "description": "The software defines a public method that reads or modifies a private variable. ",
+        "likehood": null,
+        "technical_impact": [
+            "Modify Application Data",
+            "Other"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-322",
+        "title": "Key Exchange without Entity Authentication",
+        "description": "The software performs a key exchange with an actor without verifying the identity of that actor. ",
+        "likehood": "High",
+        "technical_impact": [
+            "Read Application Data",
+            "Bypass Protection Mechanism"
+        ],
+        "caused_by": {
+            "field": "Architecture and DesignOMISSION: This weakness is caused by missing a security tactic during the architecture and design phase. ",
+            "process": "Architecture and Design",
+            "description": "This weakness is caused by missing a security tactic during the architecture and design phase."
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-259",
+        "title": "Use of Hard-coded Password",
+        "description": "The software contains a hard-coded password, which it uses for its own inbound authentication or for outbound communication to external components. ",
+        "likehood": "High",
+        "technical_impact": [
+            "Gain Privileges or Assume Identity"
+        ],
+        "caused_by": {
+            "field": "ImplementationREALIZATION: This weakness is caused during implementation of an architectural security tactic. ",
+            "process": "Architecture and Design",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-1223",
+        "title": "Race Condition for Write-Once Attributes",
+        "description": "A write-once register in hardware design is programmable by an untrusted software component earlier than the trusted software component, resulting in a race condition issue. ",
+        "likehood": null,
+        "technical_impact": [
+            "Bypass Protection Mechanism"
+        ],
+        "caused_by": {
+            "field": "Architecture and DesignThis weakness can appear in designs that use register write-once attributes with two or more software/firmware modules with varying levels of trust executing in parallel. ",
+            "process": "Architecture and Design",
+            "description": "This weakness can appear in designs that use register write-once attributes with two or more software/firmware modules with varying levels of trust executing in parallel."
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-382",
+        "title": "J2EE Bad Practices",
+        "description": "A J2EE application uses System.exit(), which also shuts down its container. ",
+        "likehood": null,
+        "technical_impact": [
+            "DoS: Crash, Exit, or Restart"
+        ],
+        "caused_by": {
+            "field": "ImplementationA call to System.exit() is probably part of leftover debug code or code imported from a non-J2EE application. ",
+            "process": "Implementation",
+            "description": "A call to System.exit() is probably part of leftover debug code or code imported from a non-J2EE application."
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-781",
+        "title": "Improper Address Validation in IOCTL with METHOD_NEITHER I/O Control Code",
+        "description": "The software defines an IOCTL that uses METHOD_NEITHER for I/O, but it does not validate or incorrectly validates the addresses that are provided. ",
+        "likehood": null,
+        "technical_impact": [
+            "Execute Unauthorized Code or Commands",
+            "Modify Memory",
+            "DoS: Crash, Exit, or Restart",
+            "Read Memory"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2006-2373",
+                "description": "Driver for file-sharing and messaging protocol allows attackers to execute arbitrary code. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2373"
+            },
+            {
+                "id_CVE": "CVE-2009-0686",
+                "description": "Anti-virus product does not validate addresses, allowing attackers to gain SYSTEM privileges. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0686"
+            },
+            {
+                "id_CVE": "CVE-2009-0824",
+                "description": "DVD software allows attackers to cause a crash. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0824"
+            },
+            {
+                "id_CVE": "CVE-2008-5724",
+                "description": "Personal firewall allows attackers to gain SYSTEM privileges. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5724"
+            },
+            {
+                "id_CVE": "CVE-2007-5756",
+                "description": "chain: device driver for packet-capturing software allows access to an unintended IOCTL with resultant array index error. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5756"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-107",
+        "title": "Struts",
+        "description": "An unused validation form indicates that validation logic is not up-to-date. ",
+        "likehood": null,
+        "technical_impact": [
+            "Quality Degradation"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Operation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-365",
+        "title": "Race Condition in Switch",
+        "description": "The code contains a switch statement in which the switched variable can be modified while the switch is still executing, resulting in unexpected behavior. ",
+        "likehood": "Medium",
+        "technical_impact": [
+            "Unexpected State",
+            "Alter Execution Logic"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-1224",
+        "title": "Improper Restriction of Write-Once Bit Fields",
+        "description": "The hardware design control register \"sticky bits\" or write-once bit fields are improperly implemented, such that they can be reprogrammed by software. ",
+        "likehood": null,
+        "technical_impact": [
+            "Varies by Context"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Implementation",
+            "description": "Such issues could be introduced during implementation of hardware design, since IP parameters and defaults are defined in HDL code and identified later during Testing or System Configuration phases."
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-613",
+        "title": "Insufficient Session Expiration",
+        "description": "According to WASC, \"Insufficient Session Expiration is when a web site permits an attacker to reuse old session credentials or session IDs for authorization.\" ",
+        "likehood": null,
+        "technical_impact": [
+            "Bypass Protection Mechanism"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Implementation",
+            "description": "This weakness is caused during implementation of an architectural security tactic."
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-665",
+        "title": "Improper Initialization",
+        "description": "The software does not initialize or incorrectly initializes a resource, which might leave the resource in an unexpected state when it is accessed or used. ",
+        "likehood": "Medium",
+        "technical_impact": [
+            "Read Application Data",
+            "Bypass Protection Mechanism",
+            "DoS: Crash, Exit, or Restart",
+            "Read Memory"
+        ],
+        "caused_by": {
+            "field": "ImplementationThis weakness can occur in code paths that are not well-tested, such as rare error conditions. This is because the use of uninitialized data would be noticed as a bug during frequently-used functionality. ",
+            "process": "Operation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2001-1471",
+                "description": "chain: an invalid value prevents a library file from being included, skipping initialization of key variables, leading to resultant eval injection. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-1471"
+            },
+            {
+                "id_CVE": "CVE-2008-3637",
+                "description": "Improper error checking in protection mechanism produces an uninitialized variable, allowing security bypass and code execution. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3637"
+            },
+            {
+                "id_CVE": "CVE-2008-4197",
+                "description": "Use of uninitialized memory may allow code execution. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4197"
+            },
+            {
+                "id_CVE": "CVE-2008-2934",
+                "description": "Free of an uninitialized pointer leads to crash and possible code execution. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2934"
+            },
+            {
+                "id_CVE": "CVE-2007-3749",
+                "description": "OS kernel does not reset a port when starting a setuid program, allowing local users to access the port and gain privileges. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3749"
+            },
+            {
+                "id_CVE": "CVE-2008-0063",
+                "description": "Product does not clear memory contents when generating an error message, leading to information leak. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0063"
+            },
+            {
+                "id_CVE": "CVE-2008-0062",
+                "description": "Lack of initialization triggers NULL pointer dereference or double-free. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0062"
+            },
+            {
+                "id_CVE": "CVE-2008-0081",
+                "description": "Uninitialized variable leads to code execution in popular desktop application. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0081"
+            },
+            {
+                "id_CVE": "CVE-2008-3688",
+                "description": "chain: Uninitialized variable leads to infinite loop. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3688"
+            },
+            {
+                "id_CVE": "CVE-2008-3475",
+                "description": "chain: Improper initialization leads to memory corruption. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3475"
+            },
+            {
+                "id_CVE": "CVE-2008-5021",
+                "description": "Composite: race condition allows attacker to modify an object while it is still being initialized, causing software to access uninitialized memory. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5021"
+            },
+            {
+                "id_CVE": "CVE-2005-1036",
+                "description": "Permission bitmap is not properly initialized, leading to resultant privilege elevation or DoS. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1036"
+            },
+            {
+                "id_CVE": "CVE-2008-3597",
+                "description": "chain: game server can access player data structures before initialization has happened leading to NULL dereference ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3597"
+            },
+            {
+                "id_CVE": "CVE-2009-2692",
+                "description": "chain: uninitialized function pointers can be dereferenced allowing code execution ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2692"
+            },
+            {
+                "id_CVE": "CVE-2009-0949",
+                "description": "chain: improper initialization of memory can lead to NULL dereference ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0949"
+            },
+            {
+                "id_CVE": "CVE-2009-3620",
+                "description": "chain: some unprivileged ioctls do not verify that a structure has been initialized before invocation, leading to NULL dereference ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3620"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-1051",
+        "title": "Initialization with Hard-Coded Network Resource Configuration Data",
+        "description": "The software initializes data using hard-coded values that act as network resource identifiers. ",
+        "likehood": null,
+        "technical_impact": [
+            "Reduce Reliability"
+        ],
+        "caused_by": {
+            "field": null,
+            "process": null,
+            "description": null
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-1268",
+        "title": "Policy Privileges are not Assigned Consistently Between Control and Data Agents",
+        "description": "The product's hardware-enforced access control for a particular resource improperly accounts for privilege discrepancies between control and write policies. ",
+        "likehood": null,
+        "technical_impact": [
+            "DoS: Crash, Exit, or Restart",
+            "Reduce Reliability",
+            "Modify Memory",
+            "Gain Privileges or Assume Identity",
+            "Read Files or Directories",
+            "Execute Unauthorized Code or Commands",
+            "Read Memory",
+            "Bypass Protection Mechanism"
+        ],
+        "caused_by": {
+            "field": "Architecture and DesignThis weakness may be introduced during the design of a device when the architect does not comprehensively specify all of the policies required by an agent. ",
+            "process": "Implementation",
+            "description": "This weakness may be introduced during implementation if device policy restrictions do not sufficiently constrain less-privileged clients."
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-597",
+        "title": "Use of Wrong Operator in String Comparison",
+        "description": "The product uses the wrong operator when comparing a string, such as using \"==\" when the equals() method should be used instead. ",
+        "likehood": null,
+        "technical_impact": [
+            "Other"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-498",
+        "title": "Cloneable Class Containing Sensitive Information",
+        "description": "The code contains a class with sensitive data, but the class is cloneable. The data can then be accessed by cloning the class. ",
+        "likehood": "Medium",
+        "technical_impact": [
+            "Bypass Protection Mechanism"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-159",
+        "title": "Improper Handling of Invalid Use of Special Elements",
+        "description": "The product does not properly filter, remove, quote, or otherwise manage the invalid use of special elements in user-controlled input, which could cause adverse effect on its behavior and integrity. ",
+        "likehood": null,
+        "technical_impact": [
+            "Unexpected State"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-298",
+        "title": "Improper Validation of Certificate Expiration",
+        "description": "A certificate expiration is not validated or is incorrectly validated, so trust may be assigned to certificates that have been abandoned due to age. ",
+        "likehood": "Low",
+        "technical_impact": [
+            "Other"
+        ],
+        "caused_by": {
+            "field": "Architecture and DesignREALIZATION: This weakness is caused during implementation of an architectural security tactic. ",
+            "process": "Implementation",
+            "description": "When the software uses certificate pinning, the developer might not properly validate all relevant components of the certificate before pinning the certificate. This can make it difficult or expensive to test after the pinning is complete."
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-620",
+        "title": "Unverified Password Change",
+        "description": "When setting a new password for a user, the product does not require knowledge of the original password, or using another form of authentication. ",
+        "likehood": null,
+        "technical_impact": [
+            "Gain Privileges or Assume Identity",
+            "Bypass Protection Mechanism"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Implementation",
+            "description": "This weakness is caused during implementation of an architectural security tactic."
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2007-0681",
+                "description": "Web app allows remote attackers to change the passwords of arbitrary users without providing the original password, and possibly perform other unauthorized actions. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0681"
+            },
+            {
+                "id_CVE": "CVE-2000-0944",
+                "description": "Web application password change utility doesn't check the original password. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-0944"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-1251",
+        "title": "Mirrored Regions with Different Values",
+        "description": "The product's architecture mirrors regions without ensuring that their contents always stay in sync. ",
+        "likehood": null,
+        "technical_impact": [
+            "Varies by Context"
+        ],
+        "caused_by": {
+            "field": null,
+            "process": null,
+            "description": null
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-624",
+        "title": "Executable Regular Expression Error",
+        "description": "The product uses a regular expression that either (1) contains an executable component with user-controlled inputs, or (2) allows a user to enable execution by inserting pattern modifiers. ",
+        "likehood": null,
+        "technical_impact": [
+            "Execute Unauthorized Code or Commands"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2006-2059",
+                "description": "Executable regexp in PHP by inserting \"e\" modifier into first argument to preg_replace ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2059"
+            },
+            {
+                "id_CVE": "CVE-2005-3420",
+                "description": "Executable regexp in PHP by inserting \"e\" modifier into first argument to preg_replace ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3420"
+            },
+            {
+                "id_CVE": "CVE-2006-2878",
+                "description": "Complex curly syntax inserted into the replacement argument to PHP preg_replace(), which uses the \"/e\" modifier ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2878"
+            },
+            {
+                "id_CVE": "CVE-2006-2908",
+                "description": "Function allows remote attackers to execute arbitrary PHP code via the username field, which is used in a preg_replace function call with a /e (executable) modifier. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2908"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-205",
+        "title": "Observable Behavioral Discrepancy",
+        "description": "The product's behaviors indicate important differences that may be observed by unauthorized actors in a way that reveals (1) its internal state or decision process, or (2) differences from other products with equivalent functionality. ",
+        "likehood": null,
+        "technical_impact": [
+            "Read Application Data",
+            "Bypass Protection Mechanism"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2002-0208",
+                "description": "Product modifies TCP/IP stack and ICMP error messages in unusual ways that show the product is in use. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0208"
+            },
+            {
+                "id_CVE": "CVE-2004-2252",
+                "description": "Behavioral infoleak by responding to SYN-FIN packets. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-2252"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-1209",
+        "title": "Failure to Disable Reserved Bits",
+        "description": "The reserved bits in a hardware design are not disabled prior to production. Typically, reserved bits are used for future capabilities and should not support any functional logic in the design. However, designers might covertly use these bits to debug or further develop new capabilities in production hardware. Adversaries with access to these bits will write to them in hopes of compromising hardware state. ",
+        "likehood": null,
+        "technical_impact": [
+            "Varies by Context"
+        ],
+        "caused_by": {
+            "field": "Architecture and DesignThe Designer and Implementer have to make a conscious choice to do this ",
+            "process": "Documentation",
+            "description": "If documentation labels anything \"for future use\", \"reserved\", or the like, such labeling could indicate to an attacker a potential attack point"
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-123",
+        "title": "Write-what-where Condition",
+        "description": "Any condition where the attacker has the ability to write an arbitrary value to an arbitrary location, often as the result of a buffer overflow. ",
+        "likehood": "High",
+        "technical_impact": [
+            "DoS: Crash, Exit, or Restart",
+            "Modify Memory",
+            "Gain Privileges or Assume Identity",
+            "Execute Unauthorized Code or Commands",
+            "Other",
+            "Bypass Protection Mechanism"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-487",
+        "title": "Reliance on Package-level Scope",
+        "description": "Java packages are not inherently closed; therefore, relying on them for code security is not a good practice. ",
+        "likehood": "Medium",
+        "technical_impact": [
+            "Read Application Data",
+            "Modify Application Data"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-691",
+        "title": "Insufficient Control Flow Management",
+        "description": "The code does not sufficiently manage its control flow during execution, creating conditions in which the control flow can be modified in unexpected ways. ",
+        "likehood": null,
+        "technical_impact": [
+            "Alter Execution Logic"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-526",
+        "title": "Exposure of Sensitive Information Through Environmental Variables",
+        "description": "Environmental variables may contain sensitive information about a remote server. ",
+        "likehood": null,
+        "technical_impact": [
+            "Read Application Data"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Operation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-215",
+        "title": "Insertion of Sensitive Information Into Debugging Code",
+        "description": "The application inserts sensitive information into debugging code, which could expose this information if the debugging code is not disabled in production. ",
+        "likehood": null,
+        "technical_impact": [
+            "Read Application Data"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2004-2268",
+                "description": "Password exposed in debug information. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-2268"
+            },
+            {
+                "id_CVE": "CVE-2002-0918",
+                "description": "CGI script includes sensitive information in debug messages when an error is triggered. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0918"
+            },
+            {
+                "id_CVE": "CVE-2003-1078",
+                "description": "FTP client with debug option enabled shows password to the screen. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-1078"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-87",
+        "title": "Improper Neutralization of Alternate XSS Syntax",
+        "description": "The software does not neutralize or incorrectly neutralizes user-controlled input for alternate script syntax. ",
+        "likehood": null,
+        "technical_impact": [
+            "Read Application Data",
+            "Execute Unauthorized Code or Commands"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2002-0738",
+                "description": "XSS using \"&={script}\". ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0738"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-1043",
+        "title": "Data Element Aggregating an Excessively Large Number of Non-Primitive Elements",
+        "description": "The software uses a data element that has an excessively large number of sub-elements with non-primitive data types such as structures or aggregated objects. ",
+        "likehood": null,
+        "technical_impact": [
+            "Reduce Performance"
+        ],
+        "caused_by": {
+            "field": null,
+            "process": null,
+            "description": null
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-1256",
+        "title": "Hardware Features Enable Physical Attacks from Software",
+        "description": "Software-controllable device functionality such as power and clock management permits unauthorized modification of memory or register bits. ",
+        "likehood": null,
+        "technical_impact": [
+            "Modify Memory",
+            "Bypass Protection Mechanism",
+            "Modify Application Data"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2019-11157",
+                "description": "Plundervolt: Improper conditions check in voltage settings for some Intel(R) Processors may allow a privileged user to potentially enable escalation of privilege and/or information disclosure via local access. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11157"
+            },
+            {
+                "id_CVE": "CVE-2015-0565",
+                "description": "NaCl in 2015 allowed the CLFLUSH instruction, making rowhammer attacks possible. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0565"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-1252",
+        "title": "CPU Hardware Not Configured to Support Exclusivity of Write and Execute Operations",
+        "description": "The CPU is not configured to provide hardware support for exclusivity of write and execute operations on memory. This allows an attacker to execute data from all of memory. ",
+        "likehood": null,
+        "technical_impact": [
+            "Execute Unauthorized Code or Commands"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Architecture and Design",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-640",
+        "title": "Weak Password Recovery Mechanism for Forgotten Password",
+        "description": "The software contains a mechanism for users to recover or change their passwords without knowing the original password, but the mechanism is weak. ",
+        "likehood": "High",
+        "technical_impact": [
+            "Gain Privileges or Assume Identity",
+            "Other",
+            "DoS: Resource Consumption (Other)"
+        ],
+        "caused_by": {
+            "field": "Architecture and DesignCOMMISSION: This weakness refers to an incorrect design related to an architectural security tactic. ",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-168",
+        "title": "Improper Handling of Inconsistent Special Elements",
+        "description": "The software does not properly handle input in which an inconsistency exists between two or more special characters or reserved words. ",
+        "likehood": null,
+        "technical_impact": [
+            "DoS: Crash, Exit, or Restart",
+            "Bypass Protection Mechanism",
+            "Hide Activities"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-83",
+        "title": "Improper Neutralization of Script in Attributes in a Web Page",
+        "description": "The software does not neutralize or incorrectly neutralizes \"javascript:\" or other URIs from dangerous attributes within tags, such as onmouseover, onload, onerror, or style. ",
+        "likehood": null,
+        "technical_impact": [
+            "Read Application Data",
+            "Execute Unauthorized Code or Commands"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": "CVE-2001-0520",
+                "description": "Bypass filtering of SCRIPT tags using onload in BODY, href in A, BUTTON, INPUT, and others. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0520"
+            },
+            {
+                "id_CVE": "CVE-2002-1493",
+                "description": "guestbook XSS in STYLE or IMG SRC attributes. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1493"
+            },
+            {
+                "id_CVE": "CVE-2002-1965",
+                "description": "Javascript in onerror attribute of IMG tag. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1965"
+            },
+            {
+                "id_CVE": "CVE-2002-1495",
+                "description": "XSS in web-based email product via onmouseover event. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1495"
+            },
+            {
+                "id_CVE": "CVE-2002-1681",
+                "description": "XSS via script in <P> tag. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1681"
+            },
+            {
+                "id_CVE": "CVE-2004-1935",
+                "description": "Onload, onmouseover, and other events in an e-mail attachment. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1935"
+            },
+            {
+                "id_CVE": "CVE-2005-0945",
+                "description": "Onmouseover and onload events in img, link, and mail tags. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0945"
+            },
+            {
+                "id_CVE": "CVE-2003-1136",
+                "description": "Javascript in onmouseover attribute in e-mail address or URL. ",
+                "mitre_url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-1136"
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-612",
+        "title": "Improper Authorization of Index Containing Sensitive Information",
+        "description": "The product creates a search index of private or sensitive documents, but it does not properly limit index access to actors who are authorized to see the original information. ",
+        "likehood": null,
+        "technical_impact": [
+            "Read Application Data"
+        ],
+        "caused_by": {
+            "field": "Architecture and Design",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-768",
+        "title": "Incorrect Short Circuit Evaluation",
+        "description": "The software contains a conditional statement with multiple logical expressions in which one of the non-leading expressions may produce side effects. This may lead to an unexpected state in the program after the execution of the conditional, because short-circuiting logic may prevent the side effects from occurring. ",
+        "likehood": "Low",
+        "technical_impact": [
+            ""
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-1297",
+        "title": "Unprotected Confidential Information on Device is Accessible by OSAT Vendors",
+        "description": "The product does not adequately protect confidential information on the device from being accessed by Outsourced Semiconductor Assembly and Test (OSAT) vendors. ",
+        "likehood": null,
+        "technical_impact": [
+            "Modify Files or Directories",
+            "Modify Memory",
+            "Gain Privileges or Assume Identity",
+            "Execute Unauthorized Code or Commands",
+            "Bypass Protection Mechanism"
+        ],
+        "caused_by": {
+            "field": "Implementation",
+            "process": "Implementation",
+            "description": ""
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    },
+    {
+        "cwe_id": "CWE-527",
+        "title": "Exposure of Version-Control Repository to an Unauthorized Control Sphere",
+        "description": "The product stores a CVS, git, or other repository in a directory, archive, or other resource that is stored, transferred, or otherwise made accessible to unauthorized actors. ",
+        "likehood": null,
+        "technical_impact": [
+            "Read Application Data",
+            "Read Files or Directories"
+        ],
+        "caused_by": {
+            "field": "OperationOMISSION: This weakness is caused by missing a security tactic during the architecture and design phase. ",
+            "process": "Operation",
+            "description": "This weakness is caused by missing a security tactic during the architecture and design phase."
+        },
+        "cve_examples": [
+            {
+                "id_CVE": null,
+                "description": null,
+                "mitre_url": null
+            }
+        ]
+    }
+]

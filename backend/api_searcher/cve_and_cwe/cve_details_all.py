@@ -12,8 +12,9 @@ class CVEDetailsAll:
     nist_url = "https://nvd.nist.gov/vuln/detail/"
     mitre_cwe_url = "https://cwe.mitre.org/data/definitions/"
     file_prefix = "cve_all_details"
+    feed_file_path = "feedes\cve_details\\"
 
-    def __init__(self, page):
+    def __init__(self, page:str):
         self.__page = int(page)
         self.__filepath = self.get_filepath()
         self.__data = self.get_data()
@@ -25,7 +26,7 @@ class CVEDetailsAll:
 
     def get_filepath(self):
         two_up = os.path.abspath(os.path.join(settings.BASE_DIR, "../.."))
-        feed_path = os.path.join(two_up, "feedes\cve_details\\" )
+        feed_path = os.path.join(two_up, self.feed_file_path )
 
         start_idx = str(self.__page * 100)
         end_idx = str((self.__page + 1) * 100)
