@@ -96,9 +96,9 @@ This is tricki part, because we have 863 sqlite3 database files: default, CWE-NO
 Description in progress.
 
 SARENKA uses a number of open source projects to work properly on:
-* <3 [Renderforest](https://www.renderforest.com/) - logo generator
-* <3 [gnuAWK](http://gnuwin32.sourceforge.net/packages/gawk.htm) - python manage.py migrate --database CWE_ID 
-* <3 [chocolatey](https://chocolatey.org/) - description
+* [Renderforest](https://www.renderforest.com/) - logo generator
+* [gnuAWK](http://gnuwin32.sourceforge.net/packages/gawk.htm) - python manage.py migrate --database CWE_ID 
+* [chocolatey](https://chocolatey.org/) - description
 * [Technology](url_address) - description
 * [Technology](url_address) - description
 * [Technology](url_address) - description
