@@ -78,9 +78,17 @@ You can also:
   - check is **port** open|closed (instead always use nmap if you can - it's slow)
 
 #### Suggestions are welcome
+[1.1]: http://i.imgur.com/tXSoThF.png (twitter icon with padding)
+[2.1]: http://i.imgur.com/P3YfQoD.png (facebook icon with padding)
+
+[1]: https://twitter.com/OsintSarenka
+[2]: https://www.facebook.com/Sarenka-103418271668240
+
 Whant some feature, other tool, library functionality?
-Have any idea or question?  
-Don't hesitate to contact  [![Author](https://img.shields.io/badge/pawlaczyk-black.svg)](https://github.com/pawlaczyk/)
+Have any idea or question?  [![alt text][1.1]][1]
+Don't hesitate to contact  [![Author](https://img.shields.io/badge/pawlaczyk-black.svg)](https://github.com/pawlaczyk/) .
+
+
 
 ## Tech
 Description in progress.
