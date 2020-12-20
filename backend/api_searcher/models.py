@@ -6,6 +6,7 @@ na stronie https://nvd.nist.gov/ ani https://cwe.mitre.org/.
 from django.db import models
 
 
+
 class CWEModel(models.Model):
     """Klasa do przechowywanie kodów CWE (common weakness enumeration)
     ogólnych słabości np.: SQL Injection i listy konkretnych podatnosci CVE związanych z nim.
@@ -34,7 +35,7 @@ class CWEModel(models.Model):
         return f"CWE_ID: {self.cwe_id}\n title: {self.title}"
 
 
-class TechnicalImactModel(models.Model):
+class TechnicalImpactModel(models.Model):
     """
     1 (one) CWE <- n (many) impacts
     "technical_impact": [
@@ -43,8 +44,10 @@ class TechnicalImactModel(models.Model):
         "Execute Unauthorized Code or Commands"
     ],
     """
-
     title = models.TextField()
+    cwe = models.ForeignKey(CWEModel,
+                            on_delete=models.CASCADE,
+                            related_name="cwe_technical_model")
 
 
 class CausedByModel(models.Model):
@@ -59,12 +62,34 @@ class CausedByModel(models.Model):
     field = models.CharField(max_length=350)
     process = models.TextField(max_length=350)
     description = models.TextField()
+    cwe = models.ForeignKey(CWEModel,
+                            on_delete=models.CASCADE,
+                            related_name="cwe_caused_by")
 
 
 class CVEModel(models.Model):
     """Common Vulnerabilities and Exposures (CVE) - konkretna podatnośc z konkretnej wersji oprogramowania.
     CVE-\d{4}-\d{4,7}
-    Relacja n many (CVE) -> 1 one (CWE)  """
+    Relacja n many (CVE) -> 1 one (CWE)
+        "cve": {
+        "cve": "CVE-2019-4570",
+        "description": "IBM Tivoli Netcool Impact 7.1.0 through 7.1.0.16 generates an error message that includes sensitive information about its environment, users, or associated data. IBM X-Force ID: 166720.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/166720",
+            "https://www.ibm.com/support/pages/node/1110141"
+        ],
+
+    """
     cve_id  = models.CharField(max_length=17, unique=True)
     year = models.CharField(max_length=4)
     month = models.CharField(max_length=2) # miesiące cyframi 1,2, ..., 12

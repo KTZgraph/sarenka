@@ -14,6 +14,8 @@ from .cve_and_cwe.mitre_cwe_scrapers import CWETableTop25Scraper, CWEDataScraper
 from .cve_and_cwe.nist_cve_scrapers import  NISTCVEScraper
 from .cve_and_cwe.cwe_all import CWEAll
 from .cve_and_cwe.cve_details_all import CVEDetailsAll
+from .models import CWEModel, TechnicalImpactModel, CausedByModel, CVEModel
+from .cwe_crud import CWECRUD
 
 from .dns.dns_searcher import DNSSearcher, DNSSearcherFQDNError
 from .windows.registry import WindowsRegistry
@@ -331,6 +333,45 @@ class CVEDetailsAllView(views.APIView):
         response = CVEDetailsAll(page).render_output(server_address) #render_output(server_address)
         return Response(response)
 
+
+class AddCWEandCVE(views.APIView):
+
+    def get(self, request):
+        nist_cve_scraper = NISTCVEScraper("CVE-2013-3621")
+        # nist_cve_scraper = NISTCVEScraper("CVE-2019-4570")
+        cve = nist_cve_scraper.get_data()
+
+        cwe = cve["cwe"]
+        cwe_all = None
+
+        # zapisz do bazy obiekt CWE
+        cwe_crud = CWECRUD(cwe)
+        cwe_crud.add()
+
+        cwe_all = CWEModel.objects.using('CWE_NONE').all()
+        print("cwe_all: ", len(cwe_all))
+        for i in cwe_all:
+            print(i)
+            print(i.cwe_id)
+            print(i.title)
+            print(i.description)
+            print(i.likehood)
+            for t in i.cwe_technical_model.all():
+                print(t.title)
+            for c in i.cwe_caused_by.all():
+                print(c.field)
+                print(c.process)
+                print(c.description)
+
+
+        # print("cwe_all: ", cwe_all)
+
+
+        return Response({"message": "Żyjemy",
+                         "cve": cve,
+                         "cwe": cwe,
+                         # "cwe_id": cwe_id,
+                         })
 
 @login_required
 def login_required_view(request, cve_code):

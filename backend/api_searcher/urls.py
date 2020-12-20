@@ -1,6 +1,7 @@
 
 from django.urls import path
-from .views import (DNSSearcherView,
+from .views import (AddCWEandCVE,
+                    DNSSearcherView,
                     CVESearchView,
                     CensysHostSearchView,
                     ListVendors,
@@ -19,7 +20,8 @@ urlpatterns = [
     path('cve/all/<str:page>', CVEDetailsAllView.as_view(), name="cve_all"),
     path('cve/<str:code>', CVESearchView.as_view(), name="get_by_cve"),
     path('cwe', CWETop25.as_view(), name="cwe_top_25"),
-    path('cwe/all', CWEAllView.as_view(), name="cwe_all"),
+    path('cwe', CWETop25.as_view(), name="cwe_top_25"),
+    path('cwe/add', AddCWEandCVE.as_view(), name="cwe_all"),
     # path("top_25", CWETop25.as_view(), name="cwe_top_25"),
     path('cwe/<str:id_cwe>', CWEData.as_view(), name="get_by_cwe"),
     path('list_vendors', ListVendors.as_view()),

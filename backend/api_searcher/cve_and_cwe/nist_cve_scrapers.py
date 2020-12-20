@@ -18,7 +18,7 @@ class NISTCVEScraper:
     # https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:H/PR:L/UI:R/S:C/C:H/I:H/A:H
     nist_vector_v3_1_url = "https://www.first.org/cvss/calculator/3.1#"
 
-    def __init__(self, id_cve, host_address= "NA SZTYWNO 127.0.0.1:8000"):
+    def __init__(self, id_cve, host_address=None):
         self.id_cve = id_cve
         self.cve_url = self.nist_url + id_cve
         self.host_address = host_address
