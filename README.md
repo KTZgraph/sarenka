@@ -2,7 +2,8 @@
     <img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/logo.png">
 </p>
 
-[![Release release](https://img.shields.io/badge/release-planned-red.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) [![CircleCi release](https://img.shields.io/badge/coverage-None-green.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) [![CircleCi release](https://img.shields.io/badge/CircleCi-passed-lime.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) [![Platform release](https://img.shields.io/badge/platform-Windows-blue.svg)][![CWEfee](https://img.shields.io/badge/20.12.2020-blue.svg)](https://github.com/pawlaczyk/sarenka/releases/latest)  [![license](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/pawlaczyk/sarenka/blob/master/LICENSE) 
+[![Release release](https://img.shields.io/badge/release-planned-red.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) [![CircleCi release](https://img.shields.io/badge/coverage-None-green.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) [![CircleCi release](https://img.shields.io/badge/CircleCi-passed-lime.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) [![Platform release](https://img.shields.io/badge/platform-Windows-blue.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) ![CWE feed](https://img.shields.io/badge/CWE-12/20/2020-darkgreen.svg) [![license](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/pawlaczyk/sarenka/blob/master/LICENSE) 
+
 
 **♥ Free Software, requires only free accounts to third part services ♥**
 
