@@ -84,10 +84,9 @@ You can also:
 [1]: https://twitter.com/OsintSarenka
 [2]: https://www.facebook.com/Sarenka-103418271668240
 
-Whant some feature, other tool, library functionality?
-Have any idea or question?  [![alt text][1.1]][1]
-Don't hesitate to contact  [![Author](https://img.shields.io/badge/pawlaczyk-black.svg)](https://github.com/pawlaczyk/) .
-
+- Whant some feature, other tool, library functionality?
+- Have any idea or question?  [![alt text][1.1]][1]
+- Don't hesitate to contact  [![Author](https://img.shields.io/badge/pawlaczyk-black.svg)](https://github.com/pawlaczyk/) .
 
 
 ## Tech
