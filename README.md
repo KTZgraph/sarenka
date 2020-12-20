@@ -89,13 +89,15 @@ You can also:
 - Have any idea or question?  [![alt text][1.1]][1]
 - Don't hesitate to contact  [![Author](https://img.shields.io/badge/pawlaczyk-black.svg)](https://github.com/pawlaczyk/) .
 
+# Database
+This is tricki part, because we have 863 sqlite3 database files: default, CWE-NONE (some CVE hasn't cwe_id eg.: CVE-2013-3621) and 861 individual for CWEs 
 
 ## Tech
 Description in progress.
 
 SARENKA uses a number of open source projects to work properly on:
 * [Renderforest](https://www.renderforest.com/) - logo generator
-* [Technology](url_address) - description
+* [gnuAWK](http://gnuwin32.sourceforge.net/packages/gawk.htm) - python manage.py migrate --database CWE_ID 
 * [Technology](url_address) - description
 * [Technology](url_address) - description
 * [Technology](url_address) - description
