@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import routes from 'routes';
+import { Helmet } from 'react-helmet-async';
 
 const HomeView = () => {
   const history = useHistory();
@@ -17,7 +17,17 @@ const HomeView = () => {
     }
   }, [history, page, tab.index, tab.link]);
 
-  return null;
+  return (
+    <Helmet>
+      <title>Sarenka</title>
+      <link
+        id="favicon"
+        rel="icon"
+        href="/frontend/src/static/favicon/favicon.ico"
+        type="image/x-icon"
+      />
+    </Helmet>
+  );
 };
 
 export default HomeView;
