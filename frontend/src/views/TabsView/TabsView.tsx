@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Tab from 'components/atoms/Tab/Tab';
-import { useHistory, useParams } from 'react-router';
+import { useHistory } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeTab } from 'actions/TabsActions';
 import styled from 'styled-components';
