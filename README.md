@@ -152,31 +152,6 @@ The documentation is availabe [here](https://pawlaczyk.github.io/sarenka/).
 # Authors
 [![Author](https://img.shields.io/badge/Dominika-Pawlaczyk-red.svg)](https://github.com/pawlaczyk/)  [![Author](https://img.shields.io/badge/Michał-Pawlaczyk-red.svg)](https://github.com/michalpawlaczyk) [![Author](https://img.shields.io/badge/Karolina-Słonka-red.svg)](https://github.com/k-slonka)
 
-## Installation
-
-Run the following to install:
-
-```python
-pip install sarenka
-```
-
-## Usage
-
-```python
-from abstract_algebra import say_hello
-
-# Generate "Hello, World!"
-say_hello()
-
-# Generate "Hello, Everybody!"
-say_hello("Everybody")
-```
-
-# Developing sarenka
-To install sarenka, along with the tools you need to develop and run tests, run the following in your virtualenv:
-```bash
-$ pip install -e .[dev]
-```
 
 
 ##### Contact
