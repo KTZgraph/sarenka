@@ -25,6 +25,7 @@ More cryptography-math tools and reconnaissance scripts are planned.
 
 #### Look
 https://www.facebook.com/ncybersec/posts/1671427243027993
+https://www.instagram.com/p/CI8tXMNg3yI/
 
 # Realtion beetwen CWE and CVE - sarenka data feeder
 Generating this file takes a long time e.g: 702.5641514
