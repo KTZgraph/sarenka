@@ -2,21 +2,19 @@ from pathlib import Path
 
 from backend.settings.base import *
 
-# class LogFileError(Exception):
 
 # gdy plik logów nie istnieje
 if not Path("logs").is_dir():
-    dirname= Path('logs')
-    dirname.mkdir()
+    dir_name= Path('logs')
+    dir_name.mkdir()
 
+if not Path('info_dev.log').is_file():
+    file_name = Path('logs/info_dev.log')
+    file_name.touch(exist_ok=True)  # will create file, if it exists will do nothing
 
-if not Path('info_dev1.log').is_file():
-    filename = Path('logs/info_dev1.log')
-    filename.touch(exist_ok=True)  # will create file, if it exists will do nothing
-
-if not Path('debug_dev1.log').is_file():
-    filename = Path('logs/debug_dev1.log')
-    filename.touch(exist_ok=True)  # will create file, if it exists will do nothing
+if not Path('debug_dev.log').is_file():
+    file_name = Path('logs/debug_dev.log')
+    file_name.touch(exist_ok=True)  # will create file, if it exists will do nothing
 
 
 
