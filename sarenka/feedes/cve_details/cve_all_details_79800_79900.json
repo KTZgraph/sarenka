@@ -1,0 +1,3052 @@
+[
+    {
+        "cve_id": "CVE-2016-8632",
+        "cwe_id": "CWE-264",
+        "description": "The tipc_msg_build function in net/tipc/msg.c in the Linux kernel through 4.8.11 does not validate the relationship between the minimum fragment length and the maximum packet size, which allows local users to gain privileges or cause a denial of service (heap-based buffer overflow) by leveraging the CAP_NET_ADMIN capability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/11/08/5",
+            "http://www.securityfocus.com/bid/94211",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1390832",
+            "https://www.mail-archive.com/netdev@vger.kernel.org/msg133205.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.8.11:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/27/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-8633",
+        "cwe_id": "CWE-284",
+        "description": "drivers/firewire/net.c in the Linux kernel before 4.8.7, in certain unusual hardware configurations, allows remote attackers to execute arbitrary code via crafted fragmented packets.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:H/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:H/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "6.8 MEDIUM",
+        "base_score_v2": "6.2 MEDIUM",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=667121ace9dbafb368618dbabcf07901c962ddac",
+            "http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.7",
+            "http://www.openwall.com/lists/oss-security/2016/11/06/1",
+            "http://www.securityfocus.com/bid/94149",
+            "https://access.redhat.com/errata/RHSA-2018:0676",
+            "https://access.redhat.com/errata/RHSA-2018:1062",
+            "https://access.redhat.com/errata/RHSA-2019:1170",
+            "https://access.redhat.com/errata/RHSA-2019:1190",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1391490",
+            "https://eyalitkin.wordpress.com/2016/11/06/cve-publication-cve-2016-8633/",
+            "https://github.com/torvalds/linux/commit/667121ace9dbafb368618dbabcf07901c962ddac"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.8.6:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/27/2016",
+        "modified_date": "05/14/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-8645",
+        "cwe_id": "CWE-284",
+        "description": "The TCP stack in the Linux kernel before 4.8.10 mishandles skb truncation, which allows local users to cause a denial of service (system crash) via a crafted application that makes sendto system calls, related to net/ipv4/tcp_ipv4.c and net/ipv6/tcp_ipv6.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=ac6e780070e30e4c35bd395acfe9191e6268bdd3",
+            "http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.10",
+            "http://www.openwall.com/lists/oss-security/2016/11/11/3",
+            "http://www.openwall.com/lists/oss-security/2016/11/30/3",
+            "http://www.securityfocus.com/bid/94264",
+            "http://www.securitytracker.com/id/1037285",
+            "https://access.redhat.com/errata/RHSA-2017:1842",
+            "https://access.redhat.com/errata/RHSA-2017:2077",
+            "https://access.redhat.com/errata/RHSA-2017:2669",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1393904",
+            "https://github.com/torvalds/linux/commit/ac6e780070e30e4c35bd395acfe9191e6268bdd3"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.8.9:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/27/2016",
+        "modified_date": "01/04/2018",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-8646",
+        "cwe_id": "CWE-476",
+        "description": "The hash_accept function in crypto/algif_hash.c in the Linux kernel before 4.3.6 allows local users to cause a denial of service (OOPS) by attempting to trigger use of in-kernel hash algorithms for a socket that has received zero bytes of data.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=4afa5f9617927453ac04b24b584f6c718dfb4f45",
+            "http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.3.6",
+            "http://www.openwall.com/lists/oss-security/2016/11/15/2",
+            "http://www.securityfocus.com/bid/94309",
+            "https://access.redhat.com/errata/RHSA-2017:1297",
+            "https://access.redhat.com/errata/RHSA-2017:1298",
+            "https://access.redhat.com/errata/RHSA-2017:1308",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1388821",
+            "https://github.com/torvalds/linux/commit/4afa5f9617927453ac04b24b584f6c718dfb4f45"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.3.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/27/2016",
+        "modified_date": "01/04/2018",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-8650",
+        "cwe_id": "CWE-399",
+        "description": "The mpi_powm function in lib/mpi/mpi-pow.c in the Linux kernel through 4.8.11 does not ensure that memory is allocated for limb data, which allows local users to cause a denial of service (stack memory corruption and panic) via an add_key system call for an RSA key with a zero exponent.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=f5527fffff3f002b0a6b376163613b82f69de073",
+            "http://seclists.org/fulldisclosure/2016/Nov/76",
+            "http://www.openwall.com/lists/oss-security/2016/11/24/8",
+            "http://www.securityfocus.com/bid/94532",
+            "http://www.securitytracker.com/id/1037968",
+            "https://access.redhat.com/errata/RHSA-2017:0931",
+            "https://access.redhat.com/errata/RHSA-2017:0932",
+            "https://access.redhat.com/errata/RHSA-2017:0933",
+            "https://access.redhat.com/errata/RHSA-2018:1854",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1395187",
+            "https://github.com/torvalds/linux/commit/f5527fffff3f002b0a6b376163613b82f69de073",
+            "https://source.android.com/security/bulletin/2017-03-01.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.8.11:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/27/2016",
+        "modified_date": "06/19/2018",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-9083",
+        "cwe_id": "CWE-119",
+        "description": "drivers/vfio/pci/vfio_pci.c in the Linux kernel through 4.8.11 allows local users to bypass integer overflow checks, and cause a denial of service (memory corruption) or have unspecified other impact, by leveraging access to a vfio PCI device file for a VFIO_DEVICE_SET_IRQS ioctl call, aka a \"state machine confusion bug.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=05692d7005a364add85c6e25a6c4447ce08f913a",
+            "http://rhn.redhat.com/errata/RHSA-2017-0386.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0387.html",
+            "http://www.openwall.com/lists/oss-security/2016/10/26/11",
+            "http://www.securityfocus.com/bid/93929",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1389258",
+            "https://github.com/torvalds/linux/commit/05692d7005a364add85c6e25a6c4447ce08f913a",
+            "https://patchwork.kernel.org/patch/9373631/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.8.11:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/27/2016",
+        "modified_date": "01/04/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-9084",
+        "cwe_id": "CWE-190",
+        "description": "drivers/vfio/pci/vfio_pci_intrs.c in the Linux kernel through 4.8.11 misuses the kzalloc function, which allows local users to cause a denial of service (integer overflow) or have unspecified other impact by leveraging access to a vfio PCI device file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=05692d7005a364add85c6e25a6c4447ce08f913a",
+            "http://rhn.redhat.com/errata/RHSA-2017-0386.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0387.html",
+            "http://www.openwall.com/lists/oss-security/2016/10/26/11",
+            "http://www.securityfocus.com/bid/93930",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1389259",
+            "https://github.com/torvalds/linux/commit/05692d7005a364add85c6e25a6c4447ce08f913a",
+            "https://patchwork.kernel.org/patch/9373631/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.8.11:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/27/2016",
+        "modified_date": "01/04/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-9178",
+        "cwe_id": "CWE-200",
+        "description": "The __get_user_asm_ex macro in arch/x86/include/asm/uaccess.h in the Linux kernel before 4.7.5 does not initialize a certain integer variable, which allows local users to obtain sensitive information from kernel stack memory by triggering failure of a get_user_ex call.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=1c109fabbd51863475cd12ac206bdd249aee35af",
+            "http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.5",
+            "http://www.openwall.com/lists/oss-security/2016/11/04/4",
+            "http://www.securityfocus.com/bid/94144",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1391908",
+            "https://github.com/torvalds/linux/commit/1c109fabbd51863475cd12ac206bdd249aee35af"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.7.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/27/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-9191",
+        "cwe_id": "CWE-20",
+        "description": "The cgroup offline implementation in the Linux kernel through 4.8.11 mishandles certain drain operations, which allows local users to cause a denial of service (system hang) by leveraging access to a container environment for executing a crafted application, as demonstrated by trinity.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=93362fa47fe98b62e4a34ab408c4a418432e7939",
+            "http://www.debian.org/security/2017/dsa-3791",
+            "http://www.openwall.com/lists/oss-security/2016/11/05/4",
+            "http://www.securityfocus.com/bid/94129",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1392439",
+            "https://github.com/torvalds/linux/commit/93362fa47fe98b62e4a34ab408c4a418432e7939",
+            "https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbhf03802en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.8.11:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/27/2016",
+        "modified_date": "05/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-9313",
+        "cwe_id": "CWE-476",
+        "description": "security/keys/big_key.c in the Linux kernel before 4.8.7 mishandles unsuccessful crypto registration in conjunction with successful key-type registration, which allows local users to cause a denial of service (NULL pointer dereference and panic) or possibly have unspecified other impact via a crafted application that uses the big_key data type.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=7df3e59c3d1df4f87fe874c7956ef7a3d2f4d5fb",
+            "http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.7",
+            "http://www.openwall.com/lists/oss-security/2016/07/22/1",
+            "http://www.securityfocus.com/bid/94546",
+            "https://github.com/torvalds/linux/commit/7df3e59c3d1df4f87fe874c7956ef7a3d2f4d5fb"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.8.6:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/27/2016",
+        "modified_date": "11/29/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-9555",
+        "cwe_id": "CWE-125",
+        "description": "The sctp_sf_ootb function in net/sctp/sm_statefuns.c in the Linux kernel before 4.8.8 lacks chunk-length checking for the first chunk, which allows remote attackers to cause a denial of service (out-of-bounds slab access) or possibly have unspecified other impact via crafted SCTP data.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=bf911e985d6bbaa328c20c3e05f4eb03de11fdd6",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00044.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00054.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00055.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00056.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00067.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00070.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00073.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00076.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00077.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00087.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0086.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0091.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0113.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0307.html",
+            "http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.8",
+            "http://www.openwall.com/lists/oss-security/2016/11/22/18",
+            "http://www.securityfocus.com/bid/94479",
+            "http://www.securitytracker.com/id/1037339",
+            "https://bto.bluecoat.com/security-advisory/sa134",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1397930",
+            "https://github.com/torvalds/linux/commit/bf911e985d6bbaa328c20c3e05f4eb03de11fdd6",
+            "https://groups.google.com/forum/#!topic/syzkaller/pAUcHsUJbjk"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.8.7:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/27/2016",
+        "modified_date": "08/13/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-9644",
+        "cwe_id": "CWE-264",
+        "description": "The __get_user_asm_ex macro in arch/x86/include/asm/uaccess.h in the Linux kernel 4.4.22 through 4.4.28 contains extended asm statements that are incompatible with the exception table, which allows local users to obtain root access on non-SMEP platforms via a crafted application.  NOTE: this vulnerability exists because of incorrect backporting of the CVE-2016-9178 patch to older kernels.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/11/07/4",
+            "http://www.securityfocus.com/bid/94545",
+            "http://www.ubuntu.com/usn/USN-3146-1",
+            "http://www.ubuntu.com/usn/USN-3146-2",
+            "https://lwn.net/Articles/705220/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.4.23:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.4.24:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.4.25:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.4.26:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.4.27:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.4.28:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.4.22:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/27/2016",
+        "modified_date": "01/06/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-5393",
+        "cwe_id": "CWE-284",
+        "description": "In Apache Hadoop 2.6.x before 2.6.5 and 2.7.x before 2.7.3, a remote user who can authenticate with the HDFS NameNode can possibly run arbitrary commands with the same privileges as the HDFS service.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://mail-archives.apache.org/mod_mbox/hadoop-general/201611.mbox/%3CCAA0W1bTbUmUUSF1rjRpX-2DvWutcrPt7TJSWUcSLg1F0gyHG1Q%40mail.gmail.com%3E",
+            "http://www.securityfocus.com/bid/94574"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apache:hadoop:2.7.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apache:hadoop:2.7.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apache:hadoop:2.7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apache:hadoop:2.6.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apache:hadoop:2.6.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apache:hadoop:2.6.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apache:hadoop:2.6.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apache:hadoop:2.6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apache:hadoop:2.7.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apache:hadoop:2.7.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apache:hadoop:2.7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/29/2016",
+        "modified_date": "12/01/2016",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-5765",
+        "cwe_id": "CWE-200",
+        "description": "Administrative Server in Micro Focus Host Access Management and Security Server (MSS) and Reflection for the Web (RWeb) and Reflection Security Gateway (RSG) and Reflection ZFE (ZFE) allows remote unauthenticated attackers to read arbitrary files via a specially crafted URL that allows limited directory traversal. Applies to MSS 12.3 before 12.3.326 and MSS 12.2 before 12.2.342 and RSG 12.1 before 12.1.362 and RWeb 12.3 before 12.3.312 and RWeb 12.2 before 12.2.342 and RWeb 12.1 before 12.1.362 and ZFE 2.0.1 before 2.0.1.18 and ZFE 2.0.0 before 2.0.0.52 and ZFE 1.4.0 before 1.4.0.14.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://support.attachmate.com/techdocs/1704.html",
+            "http://www.securityfocus.com/bid/94579",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-618"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:microfocus:reflection_zfe:2.0.0.52:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microfocus:reflection_zfe:1.4.0.14:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microfocus:reflection_zfe:2.0.1.18:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microfocus:reflection_security_gateway:12.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microfocus:reflection_for_the_web:12.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microfocus:reflection_for_the_web:12.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microfocus:host_ac"
+        ],
+        "published_date": "11/29/2016",
+        "modified_date": "12/23/2016",
+        "vulnerability_source": "SUSE",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-5685",
+        "cwe_id": "CWE-74",
+        "description": "Dell iDRAC7 and iDRAC8 devices with firmware before 2.40.40.40 allow authenticated users to gain Bash shell access through a string injection.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://en.community.dell.com/techcenter/extras/m/white_papers/20443326",
+            "http://www.securityfocus.com/bid/94585"
+        ],
+        "cpe": [
+            "cpe:2.3:h:dell:idrac7:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:dell:idrac8:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/29/2016",
+        "modified_date": "12/01/2016",
+        "vulnerability_source": "Dell",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-1247",
+        "cwe_id": "CWE-59",
+        "description": "The nginx package before 1.6.2-5+deb8u3 on Debian jessie, the nginx packages before 1.4.6-1ubuntu3.6 on Ubuntu 14.04 LTS, before 1.10.0-0ubuntu0.16.04.3 on Ubuntu 16.04 LTS, and before 1.10.1-0ubuntu1.1 on Ubuntu 16.10, and the nginx ebuild before 1.10.2-r3 on Gentoo allow local users with access to the web server user account to gain root privileges via a symlink attack on the error log.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/139750/Nginx-Debian-Based-Distros-Root-Privilege-Escalation.html",
+            "http://seclists.org/fulldisclosure/2016/Nov/78",
+            "http://seclists.org/fulldisclosure/2017/Jan/33",
+            "http://www.debian.org/security/2016/dsa-3701",
+            "http://www.securityfocus.com/archive/1/539796/100/0/threaded",
+            "http://www.securityfocus.com/bid/93903",
+            "http://www.securitytracker.com/id/1037104",
+            "http://www.ubuntu.com/usn/USN-3114-1",
+            "https://legalhackers.com/advisories/Nginx-Exploit-Deb-Root-PrivEsc-CVE-2016-1247.html",
+            "https://security.gentoo.org/glsa/201701-22",
+            "https://www.exploit-db.com/exploits/40768/",
+            "https://www.youtube.com/watch?v=aTswN1k1fQs"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nginx:nginx:1.6.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/29/2016",
+        "modified_date": "10/09/2018",
+        "vulnerability_source": "Debian GNU/Linux",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-1251",
+        "cwe_id": "CWE-416",
+        "description": "There is a vulnerability of type use-after-free affecting DBD::mysql (aka DBD-mysql or the Database Interface (DBI) MySQL driver for Perl) 3.x and 4.x before 4.041 when used with mysql_server_prepare=1.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/11/28/2",
+            "http://www.securityfocus.com/bid/94573",
+            "https://anonscm.debian.org/cgit/pkg-perl/packages/libdbd-mysql-perl.git/commit/?id=a8b97e4713391b1f8beffbfddac483c276feaff1",
+            "https://github.com/perl5-dbi/DBD-mysql/commit/3619c170461a3107a258d1fd2d00ed4832adb1b1",
+            "https://security.gentoo.org/glsa/201701-51",
+            "https://tracker.debian.org/news/819888"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:dbd-mysql_project:dbd-mysql:4.039:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:dbd-mysql_project:dbd-mysql:4.038_01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:dbd-mysql_project:dbd-mysql:4.038:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:dbd-mysql_project:dbd-mysql:4.037_01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:dbd-mysql_project:dbd-mysql:4.037:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:dbd-mysql_project:dbd-mysql:4.036:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:dbd-mysql_project:dbd-mysql:4.035_0"
+        ],
+        "published_date": "11/29/2016",
+        "modified_date": "06/30/2017",
+        "vulnerability_source": "Debian GNU/Linux",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-8223",
+        "cwe_id": "CWE-284",
+        "description": "During an internal security review, Lenovo identified a local privilege escalation vulnerability in Lenovo System Interface Foundation software installed on some Windows 10 PCs where a user with local privileges could run arbitrary code with administrator level privileges.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94597",
+            "https://support.lenovo.com/us/en/solutions/LEN_10150"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows_10:-:*:*:*:*:*:x86:*",
+            "cpe:2.3:o:microsoft:windows_10:-:*:*:*:*:*:x64:*"
+        ],
+        "published_date": "11/29/2016",
+        "modified_date": "12/06/2016",
+        "vulnerability_source": "Lenovo Group Ltd.",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-8224",
+        "cwe_id": "CWE-310",
+        "description": "A vulnerability has been identified in some Lenovo Notebook and ThinkServer systems where an attacker with administrative privileges on a system could install a program that circumvents Intel Management Engine (ME) protections. This could result in a denial of service or privilege escalation attack on the system.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:S/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:S/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "4.4 MEDIUM",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94595",
+            "https://support.lenovo.com/us/en/solutions/LEN_9903"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:lenovo:thinkserver_ts450_bios:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:lenovo:thinkserver_ts150_bios:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:lenovo:notebook_110_14ibr_bios:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:lenovo:notebook_110_15ibr_bios:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:lenovo:notebook_b70_80_bios:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:lenovo:notebook_e31_80_bios:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:lenovo"
+        ],
+        "published_date": "11/29/2016",
+        "modified_date": "12/06/2016",
+        "vulnerability_source": "Lenovo Group Ltd.",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-9480",
+        "cwe_id": "CWE-119",
+        "description": "libdwarf 2016-10-21 allows context-dependent attackers to obtain sensitive information or cause a denial of service by using the \"malformed dwarf file\" approach, related to a \"Heap Buffer Over-read\" issue affecting the dwarf_util.c component, aka DW201611-006.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:P)"
+        },
+        "base_score_v3": "9.1 CRITICAL",
+        "base_score_v2": "6.4 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94980",
+            "https://sourceforge.net/p/libdwarf/bugs/5/",
+            "https://sourceforge.net/p/libdwarf/code/ci/5dd64de047cd5ec479fb11fe7ff2692fd819e5e5/",
+            "https://www.prevanders.net/dwarfbug.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libdwarf_project:libdwarf:2016-10-21:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/29/2016",
+        "modified_date": "12/22/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-9481",
+        "cwe_id": "CWE-89",
+        "description": "In framework/modules/core/controllers/expCommentController.php of Exponent CMS 2.4.0, content_id input is passed into showComments. The method showComments is defined in the expCommentControllercontroller with the parameter '$this->params['content_id']' used directly in SQL. Impact is a SQL injection.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.pang0lin.com/?p=1076",
+            "http://www.securityfocus.com/bid/94590",
+            "http://www.securitytracker.com/id/1037368"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:exponentcms:exponent_cms:2.4.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/29/2016",
+        "modified_date": "07/27/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2931",
+        "cwe_id": "CWE-200",
+        "description": "IBM BigFix Remote Control before 9.1.3 allows remote attackers to obtain sensitive cleartext information by sniffing the network.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IV89791",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21991876",
+            "http://www.securityfocus.com/bid/94984"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:bigfix_remote_control:9.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/30/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2932",
+        "cwe_id": "CWE-91",
+        "description": "IBM BigFix Remote Control before 9.1.3 allows remote attackers to conduct XML injection attacks via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IV89787",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21991882",
+            "http://www.securityfocus.com/bid/94983"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:bigfix_remote_control:9.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/30/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2933",
+        "cwe_id": "CWE-22",
+        "description": "Directory traversal vulnerability in IBM BigFix Remote Control before 9.1.3 allows remote authenticated administrators to read arbitrary files via a crafted request.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:N/A:N)"
+        },
+        "base_score_v3": "6.8 MEDIUM",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IV89780",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21991892",
+            "http://www.securityfocus.com/bid/94986"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:bigfix_remote_control:9.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/30/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2934",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in IBM BigFix Remote Control before 9.1.3 allows remote attackers to inject arbitrary web script or HTML via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IV89795",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21991870",
+            "http://www.securityfocus.com/bid/94987"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:bigfix_remote_control:9.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/30/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2935",
+        "cwe_id": "CWE-20",
+        "description": "The broker application in IBM BigFix Remote Control before 9.1.3 allows remote attackers to cause a denial of service via an invalid HTTP request.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IV89745",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21991955",
+            "http://www.securityfocus.com/bid/94989"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:bigfix_remote_control:9.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/30/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2936",
+        "cwe_id": "CWE-255",
+        "description": "IBM BigFix Remote Control before 9.1.3 uses cleartext storage for unspecified passwords, which allows local users to obtain sensitive information via unknown vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.3 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IV89786",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21991884",
+            "http://www.securityfocus.com/bid/94645"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:bigfix_remote_control:9.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/06/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2937",
+        "cwe_id": "CWE-200",
+        "description": "IBM BigFix Remote Control before 9.1.3 allows remote attackers to obtain sensitive information or spoof e-mail transmission via a crafted POST request, related to an \"untrusted information vulnerability.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "6.4 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IV89783",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21991887",
+            "http://www.securityfocus.com/bid/94646"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:bigfix_remote_control:9.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/06/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2940",
+        "cwe_id": "CWE-200",
+        "description": "Multiple unspecified vulnerabilities in IBM BigFix Remote Control before 9.1.3 allow remote attackers to obtain sensitive information via unknown vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IV89735",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21991961",
+            "http://www.securityfocus.com/bid/94621"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:bigfix_remote_control:9.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/02/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2943",
+        "cwe_id": "CWE-532",
+        "description": "IBM BigFix Remote Control before 9.1.3 allows local users to obtain sensitive information by leveraging unspecified privileges to read a log file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:H/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:H/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "1.9 LOW",
+        "base_score_v2": "1.9 LOW",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IV89736",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21991960",
+            "http://www.securityfocus.com/bid/94617"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:bigfix_remote_control:9.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/02/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2944",
+        "cwe_id": "CWE-287",
+        "description": "IBM BigFix Remote Control before 9.1.3 does not properly restrict failed login attempts, which makes it easier for remote attackers to obtain access via a brute-force approach.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IV89790",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21991878",
+            "http://www.securityfocus.com/bid/94623"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:bigfix_remote_control:9.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/02/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2948",
+        "cwe_id": "CWE-798",
+        "description": "IBM BigFix Remote Control before 9.1.3 allows local users to discover hardcoded credentials via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IV89781",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21991889",
+            "http://www.securityfocus.com/bid/94619"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:bigfix_remote_control:9.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/02/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2949",
+        "cwe_id": "CWE-200",
+        "description": "IBM BigFix Remote Control before 9.1.3 allows local users to obtain sensitive information by reading cached web pages from a different user's session.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "3.3 LOW",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IV89740",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21991959",
+            "http://www.securityfocus.com/bid/94608"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:bigfix_remote_control:9.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/02/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2950",
+        "cwe_id": "CWE-89",
+        "description": "SQL injection vulnerability in IBM BigFix Remote Control before 9.1.3 allows remote authenticated users to execute arbitrary SQL commands via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IV89784",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21991886",
+            "http://www.securityfocus.com/bid/94607"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:bigfix_remote_control:9.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/02/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2951",
+        "cwe_id": "CWE-310",
+        "description": "IBM BigFix Remote Control before 9.1.3 does not properly set the default encryption strength, which makes it easier for remote attackers to defeat cryptographic protection mechanisms by sniffing the network and performing calculations on encrypted data.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "3.7 LOW",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IV89785",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21991885",
+            "http://www.securityfocus.com/bid/94601"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:bigfix_remote_control:9.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/02/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2952",
+        "cwe_id": "CWE-200",
+        "description": "IBM BigFix Remote Control before 9.1.3 does not enable the HSTS protection mechanism, which makes it easier for remote attackers to obtain sensitive information by leveraging use of HTTP.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "3.7 LOW",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IV89794",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21991871",
+            "http://www.securityfocus.com/bid/94598"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:bigfix_remote_control:9.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/02/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2953",
+        "cwe_id": "CWE-310",
+        "description": "IBM Connections 4.0 through CR4, 4.5 through CR5, and 5.0 before CR4 does not require SSL, which allows remote attackers to obtain sensitive cleartext information by sniffing the network.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "3.7 LOW",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1LO90268",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1LO90295",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21990888",
+            "http://www.securityfocus.com/bid/94415"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:connections:5.0.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:connections:4.0.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:connections:4.5.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "11/30/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2957",
+        "cwe_id": "CWE-200",
+        "description": "IBM Connections 4.0 through CR4, 4.5 through CR5, and 5.0 before CR4 allows remote authenticated users to obtain sensitive information by reading a stack trace in a response.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1LO90039",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21990864",
+            "http://www.securityfocus.com/bid/94300"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:connections:5.0.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:connections:4.5.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:connections:4.0.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "11/30/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2958",
+        "cwe_id": "CWE-200",
+        "description": "IBM Connections 4.0 through CR4, 4.5 through CR5, and 5.0 before CR4 allows remote authenticated users to obtain sensitive information by reading an \"archaic\" e-mail address in a response.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1LO90039",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21990864",
+            "http://www.securityfocus.com/bid/94328",
+            "http://www.securitytracker.com/id/1039231"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:connections:5.0.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:connections:4.5.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:connections:4.0.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "08/27/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2963",
+        "cwe_id": "CWE-352",
+        "description": "Cross-site request forgery (CSRF) vulnerability in IBM BigFix Remote Control before 9.1.3 allows remote attackers to hijack the authentication of arbitrary users for requests that insert XSS sequences.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IV89797",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21991867",
+            "http://www.securityfocus.com/bid/94596"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:bigfix_remote_control:9.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/02/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-3002",
+        "cwe_id": "CWE-200",
+        "description": "IBM Connections 4.0 through CR4, 4.5 through CR5, and 5.0 before CR4 allows physically proximate attackers to obtain sensitive information by reading cached data on a client device.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:P/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:P/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "2.1 LOW",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1LO90039",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21990864",
+            "http://www.securityfocus.com/bid/94331"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:connections:5.0.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:connections:4.0.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:connections:4.5.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "11/30/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-3004",
+        "cwe_id": "CWE-352",
+        "description": "Cross-site request forgery (CSRF) vulnerability in IBM Connections 4.0 through CR4, 4.5 through CR5, and 5.0 before CR4 allows remote authenticated users to hijack the authentication of arbitrary users for requests that modify the set of available applications.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:P)"
+        },
+        "base_score_v3": "4.6 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1LO90039",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21990864",
+            "http://www.securityfocus.com/bid/94332"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:connections:5.0.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:connections:4.5.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:connections:4.0.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "11/30/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-3009",
+        "cwe_id": "CWE-352",
+        "description": "Cross-site request forgery (CSRF) vulnerability in IBM Connections 4.0 through CR4, 4.5 through CR5, and 5.0 before CR4 allows remote authenticated users to hijack the authentication of arbitrary users for requests that modify the Connections generic page.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "3.5 LOW",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1LO90039",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21990864",
+            "http://www.securityfocus.com/bid/94329"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:connections:4.0.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:connections:4.5.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:connections:5.0.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "11/30/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-3014",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in IBM Rational Collaborative Lifecycle Management 4.0 before 4.0.7 iFix11 and 5.0 before 5.0.2 iFix17, Rational Quality Manager 4.0 before 4.0.7 iFix11 and 5.0 before 5.0.2 iFix17, Rational Team Concert 4.0 before 4.0.7 iFix11 and 5.0 before 5.0.2 iFix17, Rational DOORS Next Generation 4.0 before 4.0.7 iFix11 and 5.0 before 5.0.2 iFix17, Rational Engineering Lifecycle Manager 4.x before 4.0.7 iFix11 and 5.0 before 5.0.2 iFix17, Rational Rhapsody Design Manager 4.0 before 4.0.7 iFix11 and 5.0 before 5.0.2 iFix17, and Rational Software Architect Design Manager 4.0 before 4.0.7 iFix11 and 5.0 before 5.0.2 iFix17 allows remote authenticated users to inject arbitrary web script or HTML via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21992151",
+            "http://www.securityfocus.com/bid/93515",
+            "http://www.securitytracker.com/id/1037025",
+            "http://www.securitytracker.com/id/1037026",
+            "http://www.securitytracker.com/id/1037027",
+            "http://www.securitytracker.com/id/1037028"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:rational_engineering_lifecycle_manager:4.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:rational_engineering_lifecycle_manager:4.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:rational_engineering_lifecycle_manager:4.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:rational_engineering_lifecycle_manager:4.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:rational_engineering_lifecycle_manager:4.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:rational_engineering_lifecycle_"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-3057",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in IBM Sterling B2B Integrator 5.2 before 5020500_14 and 5.2 06 before 5020602_1 allows remote attackers to inject arbitrary web script or HTML via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IT15790",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21989578",
+            "http://www.securityfocus.com/bid/94389"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:sterling_b2b_integrator:5.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "11/30/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-5890",
+        "cwe_id": "CWE-255",
+        "description": "IBM Sterling B2B Integrator 5.2 before 5020500_14 and 5.2 06 before 5020602_1 allows remote authenticated users to change arbitrary passwords via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IT16043",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21989577",
+            "http://www.securityfocus.com/bid/94391"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:sterling_b2b_integrator:5.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/02/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-5905",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in IBM Maximo Asset Management 7.5 before 7.5.0.10 IF3 and 7.6 before 7.6.0.5 IF2 allows remote authenticated users to inject arbitrary web script or HTML via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21988253",
+            "http://www.securityfocus.com/bid/93871"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:maximo_asset_management:7.6.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:maximo_asset_management:7.5.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:maximo_asset_management:7.5.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:maximo_asset_management:7.5.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:maximo_asset_management:7.5.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:maximo_asset_management:7.6.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:maximo_asset_management:7"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "11/30/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-5987",
+        "cwe_id": "CWE-20",
+        "description": "IBM Maximo Asset Management 7.1 through 7.1.1.13, 7.5 before 7.5.0.10 IF4, and 7.6 before 7.6.0.5 IF3 allows remote attackers to obtain sensitive information via a crafted HTTP request that triggers construction of a runtime error message.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21990449",
+            "http://www.securityfocus.com/bid/93511"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:maximo_asset_management:7.6.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:maximo_asset_management:7.1.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:maximo_asset_management:7.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:maximo_asset_management:7.5.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:maximo_asset_management:7.6.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:maximo_asset_management:7.6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:maximo_asset_management:7.6"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "11/30/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-9564",
+        "cwe_id": "CWE-20",
+        "description": "Buffer overflow in send_redirect() in Boa Webserver 0.92r allows remote attackers to DoS via an HTTP GET request requesting a long URI with only '/' and '.' characters.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.ljcusack.io/cve-2016-9564-stack-based-buffer-overflow-in-boa-0-dot-92r",
+            "http://www.securityfocus.com/bid/94599"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:boa:boa:0.92r:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/02/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-8222",
+        "cwe_id": "CWE-284",
+        "description": "A vulnerability has been identified in a signed kernel driver for the BIOS of some ThinkPad systems that can allow an attacker with Windows administrator-level privileges to call System Management Mode (SMM) services. This could lead to a denial of service attack or allow certain BIOS variables or settings to be altered (such as boot sequence). The setting or changing of BIOS passwords is not affected by this vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "4.4 MEDIUM",
+        "base_score_v2": "4.7 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94409",
+            "https://support.lenovo.com/us/en/solutions/LEN_8327"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:lenovo:thinkpad_10_ella_2_bios:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:lenovo:thinkpad_yoga_11e_beema_bios:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:lenovo:thinkpad_11e_beema_bios:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:lenovo:thinkpad_yoga_11e_broadwell_bios:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:lenovo:thinkpad_11e_broadwell_bios:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:lenovo:thinkpad_yoga_11e_braswell_bios:-:*:*:*:*:*:*:"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/06/2016",
+        "vulnerability_source": "Lenovo Group Ltd.",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2869",
+        "cwe_id": "CWE-79",
+        "description": "Multiple cross-site scripting (XSS) vulnerabilities in the UI in IBM QRadar SIEM 7.1 before MR2 Patch 13 and 7.2 before 7.2.7 allow remote authenticated users to inject arbitrary web script or HTML via crafted fields in a URL.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21987768",
+            "http://www.securityfocus.com/bid/94859"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/14/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2871",
+        "cwe_id": "CWE-255",
+        "description": "IBM QRadar SIEM 7.1 before MR2 Patch 13 and 7.2 before 7.2.7 uses cleartext storage for unspecified passwords, which allows local users to obtain sensitive information by reading a configuration file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21987769",
+            "http://www.securityfocus.com/bid/94861"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/14/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2873",
+        "cwe_id": "CWE-89",
+        "description": "SQL injection vulnerability in IBM QRadar SIEM 7.1 before MR2 Patch 13 and 7.2 before 7.2.7 allows remote authenticated users to execute arbitrary SQL commands via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21987770",
+            "http://www.securityfocus.com/bid/95000"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/22/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2874",
+        "cwe_id": "CWE-284",
+        "description": "IBM QRadar SIEM 7.1 before MR2 Patch 13 and 7.2 before 7.2.7 mishandles authorization, which allows remote authenticated users to obtain sensitive information via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "3.1 LOW",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21987771",
+            "http://www.securityfocus.com/bid/95003"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/22/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2876",
+        "cwe_id": "CWE-78",
+        "description": "IBM QRadar SIEM 7.1 before MR2 Patch 13 and 7.2 before 7.2.7 executes unspecified processes at an incorrect privilege level, which makes it easier for remote authenticated users to obtain root access by leveraging a command-injection issue.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "8.5 HIGH",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21987774",
+            "http://www.securityfocus.com/bid/95001"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/22/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2877",
+        "cwe_id": "CWE-275",
+        "description": "IBM QRadar SIEM 7.1 before MR2 Patch 13 and 7.2 before 7.2.7 uses weak permissions for unspecified directories under the web root, which allows local users to modify data by writing to a file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "3.3 LOW",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21987773",
+            "http://www.securityfocus.com/bid/95002"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/22/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2878",
+        "cwe_id": "CWE-352",
+        "description": "Multiple cross-site request forgery (CSRF) vulnerabilities in IBM QRadar SIEM 7.1 before MR2 Patch 13 and 7.2 before 7.2.7 allow remote attackers to hijack the authentication of arbitrary users for requests that insert XSS sequences.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.0 HIGH",
+        "base_score_v2": "6.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21987776",
+            "http://www.securityfocus.com/bid/95004"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/22/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2881",
+        "cwe_id": "CWE-254",
+        "description": "IBM QRadar SIEM 7.1 before MR2 Patch 13 and 7.2 before 7.2.7 and QRadar Incident Forensics 7.2 before 7.2.7 allow remote attackers to bypass intended access restrictions via modified request parameters.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "6.4 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21987777"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/01/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2884",
+        "cwe_id": "CWE-352",
+        "description": "Cross-site request forgery (CSRF) vulnerability in IBM Forms Experience Builder 8.5.x and 8.6.x before 8.6.3.1, in an unspecified non-default configuration, allows remote authenticated users to hijack the authentication of arbitrary users for requests that insert XSS sequences.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.0 HIGH",
+        "base_score_v2": "6.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1LO89686",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21987252"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:forms_experience_builder:8.5.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:forms_experience_builder:8.5.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:forms_experience_builder:8.5.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:forms_experience_builder:8.6.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:forms_experience_builder:8.6.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:forms_experience_builder:8.6.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:forms_experience_buil"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/01/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2887",
+        "cwe_id": "CWE-284",
+        "description": "IBM IMS Enterprise Suite Data Provider before 3.2.0.1 for Microsoft .NET allows remote authenticated users to obtain sensitive information or modify data via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "5.5 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21982967",
+            "http://www.securityfocus.com/bid/94611"
+        ],
+        "cpe": [
+            "cpe:2.3:a:microsoft:.net_framework:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/02/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2917",
+        "cwe_id": "CWE-264",
+        "description": "The notifications component in IBM TRIRIGA Applications 10.4 and 10.5 before 10.5.1 allows remote authenticated users to obtain sensitive password information, and consequently gain privileges, via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IV84740",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21984304"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:tririga_application_platform:10.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:tririga_application_platform:10.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "11/30/2016",
+        "modified_date": "12/01/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "11"
+    },
+    {
+        "cve_id": "CVE-2016-2946",
+        "cwe_id": "CWE-119",
+        "description": "Stack-based buffer overflow in the ax Shared Libraries in the Agent in IBM Tivoli Monitoring (ITM) 6.2.2 before FP9, 6.2.3 before FP5, and 6.3.0 before FP2 on Linux and UNIX allows local users to gain privileges via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IV85845",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21984578",
+            "http://www.securityfocus.com/bid/92389"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:tivoli_monitoring:6.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:tivoli_monitoring:6.2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:tivoli_monitoring:6.2.2.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:tivoli_monitoring:6.2.2.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:tivoli_monitoring:6.2.2.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:tivoli_monitoring:6.2.2.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:tivoli_monitorin"
+        ],
+        "published_date": "12/01/2016",
+        "modified_date": "12/01/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-2955",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in IBM Connections 5.0 before CR4 and 5.5 before CR1 allows remote authenticated users to inject arbitrary web script or HTML via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21988531",
+            "http://www.securityfocus.com/bid/92544"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:connections:5.0.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:connections:5.5.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/01/2016",
+        "modified_date": "12/01/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-2991",
+        "cwe_id": "CWE-79",
+        "description": "Multiple cross-site scripting (XSS) vulnerabilities in IBM Lotus Protector for Mail Security 2.8.0.0 through 2.8.1.0 before 2.8.1.0-22115 allow remote authenticated users to inject arbitrary web script or HTML via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21985280",
+            "http://www.securityfocus.com/bid/92391"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:lotus_protector_for_mail_security:2.8.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:lotus_protector_for_mail_security:2.8:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/01/2016",
+        "modified_date": "12/01/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-2994",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in IBM UrbanCode Deploy 6.2.x before 6.2.1.2 allows remote authenticated users to inject arbitrary web script or HTML via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg2C1000177",
+            "http://www.securityfocus.com/bid/92870"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:urbancode_deploy:6.2.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:urbancode_deploy:6.2.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:urbancode_deploy:6.2.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:urbancode_deploy:6.2.0.201:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:urbancode_deploy:6.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:urbancode_deploy:6.2.1.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/01/2016",
+        "modified_date": "12/06/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-3012",
+        "cwe_id": "CWE-200",
+        "description": "IBM API Connect (aka APIConnect) before 5.0.3.0 with NPM before 2.2.8 includes certain internal server credentials in the software package, which might allow remote attackers to bypass intended access restrictions by leveraging knowledge of these credentials.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21988212",
+            "http://www.securityfocus.com/bid/92417"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:network_path_manager:2.1.1.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:api_connect:5.0.2.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/01/2016",
+        "modified_date": "12/01/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-3033",
+        "cwe_id": "CWE-611",
+        "description": "IBM AppScan Source 8.7 through 9.0.3.3 allows remote authenticated users to read arbitrary files or cause a denial of service (memory consumption) via an XML document containing an external entity declaration in conjunction with an entity reference, related to an XML External Entity (XXE) issue.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:P)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "5.5 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21987326",
+            "http://www.securityfocus.com/bid/92388"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:appscan_source:8.7.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:appscan_source:8.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:appscan_source:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:appscan_source:9.0.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:appscan_source:9.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:appscan_source:9.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:appscan_source:9.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:appscan_source:9.0.3.1:*:*:*:*:"
+        ],
+        "published_date": "12/01/2016",
+        "modified_date": "12/02/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-3044",
+        "cwe_id": "CWE-20",
+        "description": "The Linux kernel component in IBM PowerKVM 2.1 before 2.1.1.3-65.10 and 3.1 before 3.1.0.2 allows guest OS users to cause a denial of service (host OS infinite loop and hang) via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2016-1033.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2574.html",
+            "http://www-01.ibm.com/support/docview.wss?uid=isg3T1023969",
+            "http://www.securityfocus.com/bid/92123"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:powerkvm:2.1.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:powerkvm:2.1.0.2:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:powerkvm:2.1.1.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:powerkvm:2.1.1.2:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:powerkvm:2.1.1.3:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:powerkvm:3.1.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:powerkvm:3.1.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:powerkvm:2.1.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:powerkvm:2.1.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:powerkvm:2.1.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:powerkvm:2.1.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:powerkvm:2.1.1.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:powerkvm:3.1.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:powerkvm:3.1.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:powerkvm:2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:powerkvm:2.1.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:powerkvm:2.1.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:powerkvm:2.1.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:powerkvm:2.1.1.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:powerkvm:3.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:powerkvm:3.1.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:powerkvm:2.1.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:powerkvm:2.1.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:powerkvm:2.1.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:powerkvm:2.1.1.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:powerkvm:3.1.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:powerkvm:3.1.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:powerkvm:2.1.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/01/2016",
+        "modified_date": "01/04/2018",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-3047",
+        "cwe_id": "CWE-601",
+        "description": "Open redirect vulnerability in IBM FileNet Workplace 4.0.2 through 4.0.2.14 IF001 allows remote authenticated users to redirect users to arbitrary web sites and conduct phishing attacks via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "6.8 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21987126"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:filenet_workplace:4.0.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/01/2016",
+        "modified_date": "12/01/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-3055",
+        "cwe_id": "CWE-611",
+        "description": "IBM FileNet Workplace 4.0.2 before 4.0.2.14 LA012 allows remote authenticated users to read arbitrary files or cause a denial of service (memory consumption) via an XML document containing an external entity declaration in conjunction with an entity reference, related to an XML External Entity (XXE) issue.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:P)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "5.5 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21987128",
+            "http://www.securityfocus.com/bid/92411"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:filenet_workplace:4.0.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/01/2016",
+        "modified_date": "12/01/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9751",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in the search results front end in Piwigo 2.8.3 allows remote attackers to inject arbitrary web script or HTML via the search parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94637",
+            "https://github.com/Piwigo/Piwigo/issues/559"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:piwigo:piwigo:2.8.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/01/2016",
+        "modified_date": "12/06/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9752",
+        "cwe_id": "CWE-918",
+        "description": "In Serendipity before 2.0.5, an attacker can bypass SSRF protection by using a malformed IP address (e.g., http://127.1) or a 30x (aka Redirection) HTTP status code.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "8.6 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94622",
+            "https://blog.s9y.org/archives/271-Serendipity-2.0.5-and-2.1-beta3-released.html",
+            "https://github.com/s9y/Serendipity/commit/fbdd50a448ed87ba34ea8c56446b8f1873eadd6f"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:s9y:serendipity:2.0.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/01/2016",
+        "modified_date": "12/02/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9479",
+        "cwe_id": "CWE-255",
+        "description": "The \"lost password\" functionality in b2evolution before 6.7.9 allows remote attackers to reset arbitrary user passwords via a crafted request.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://b2evolution.net/downloads/6-7-9-stable",
+            "http://www.securityfocus.com/bid/95006",
+            "http://www.securitytracker.com/id/1037393",
+            "https://github.com/b2evolution/b2evolution/issues/33"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:b2evolution:b2evolution:6.7.8:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/02/2016",
+        "modified_date": "07/27/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9638",
+        "cwe_id": "CWE-264",
+        "description": "In BMC Patrol before 9.13.10.02, the binary \"listguests64\" is configured with the setuid bit. However, when executing it, it will look for a binary named \"virsh\" using the PATH environment variable. The \"listguests64\" program will then run \"virsh\" using root privileges. This allows local users to elevate their privileges to root.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.nes.fr/securitylab/index.php/2016/12/02/privilege-escalation-on-bmc-patrol",
+            "http://www.securityfocus.com/bid/95009",
+            "http://www.securitytracker.com/id/1037385"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:bmc:patrol:9.13.10.01:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/02/2016",
+        "modified_date": "07/27/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9796",
+        "cwe_id": "CWE-287",
+        "description": "Alcatel-Lucent OmniVista 8770 2.0 through 3.0 exposes different ORBs interfaces, which can be queried using the GIOP protocol on TCP port 30024. An attacker can bypass authentication, and OmniVista invokes methods (AddJobSet, AddJob, and ExecuteNow) that can be used to run arbitrary commands on the server, with the privilege of NT AUTHORITY\\SYSTEM on the server. NOTE: The discoverer states \"The vendor position is to refer to the technical guidelines of the product security deployment to mitigate this issue, which means applying proper firewall rules to prevent unauthorised clients to connect to the OmniVista server.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://blog.malerisch.net/2016/12/alcatel-omnivista-8770-unauth-rce-giop-corba.html",
+            "http://www.securityfocus.com/bid/94649",
+            "https://github.com/malerisch/omnivista-8770-unauth-rce",
+            "https://www.exploit-db.com/exploits/40862/",
+            "https://www.youtube.com/watch?v=aq37lQKa9sk"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:alcatel-lucent:omnivista_8770_network_management_system:2.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:alcatel-lucent:omnivista_8770_network_management_system:3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:alcatel-lucent:omnivista_8770_network_management_system:2.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/03/2016",
+        "modified_date": "09/02/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9797",
+        "cwe_id": "CWE-119",
+        "description": "In BlueZ 5.42, a buffer over-read was observed in \"l2cap_dump\" function in \"tools/parser/l2cap.c\" source file. This issue can be triggered by processing a corrupted dump file and will result in hcidump crash.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2019-05/msg00069.html",
+            "http://www.securityfocus.com/bid/94652",
+            "https://www.spinics.net/lists/linux-bluetooth/msg68892.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:bluez:bluez:5.42:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/03/2016",
+        "modified_date": "05/30/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9798",
+        "cwe_id": "CWE-416",
+        "description": "In BlueZ 5.42, a use-after-free was identified in \"conf_opt\" function in \"tools/parser/l2cap.c\" source file. This issue can be triggered by processing a corrupted dump file and will result in hcidump crash.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2019-05/msg00069.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00071.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00072.html",
+            "http://www.securityfocus.com/bid/94652",
+            "https://www.spinics.net/lists/linux-bluetooth/msg68892.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:bluez:bluez:5.42:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/03/2016",
+        "modified_date": "05/30/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9799",
+        "cwe_id": "CWE-119",
+        "description": "In BlueZ 5.42, a buffer overflow was observed in \"pklg_read_hci\" function in \"btsnoop.c\" source file. This issue can be triggered by processing a corrupted dump file and will result in btmon crash.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94652",
+            "https://www.spinics.net/lists/linux-bluetooth/msg68898.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:bluez:bluez:5.42:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/03/2016",
+        "modified_date": "12/07/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9800",
+        "cwe_id": "CWE-119",
+        "description": "In BlueZ 5.42, a buffer overflow was observed in \"pin_code_reply_dump\" function in \"tools/parser/hci.c\" source file. The issue exists because \"pin\" array is overflowed by supplied parameter due to lack of boundary checks on size of the buffer from frame \"pin_code_reply_cp *cp\" parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94652",
+            "https://www.spinics.net/lists/linux-bluetooth/msg68892.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:bluez:bluez:5.42:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/03/2016",
+        "modified_date": "12/07/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9801",
+        "cwe_id": "CWE-119",
+        "description": "In BlueZ 5.42, a buffer overflow was observed in \"set_ext_ctrl\" function in \"tools/parser/l2cap.c\" source file when processing corrupted dump file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94652",
+            "https://www.spinics.net/lists/linux-bluetooth/msg68892.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:bluez:bluez:5.42:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/03/2016",
+        "modified_date": "12/07/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9802",
+        "cwe_id": "CWE-119",
+        "description": "In BlueZ 5.42, a buffer over-read was identified in \"l2cap_packet\" function in \"monitor/packet.c\" source file. This issue can be triggered by processing a corrupted dump file and will result in btmon crash.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2019-05/msg00069.html",
+            "http://www.securityfocus.com/bid/94652",
+            "https://www.spinics.net/lists/linux-bluetooth/msg68898.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:bluez:bluez:5.42:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/03/2016",
+        "modified_date": "05/30/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9803",
+        "cwe_id": "CWE-119",
+        "description": "In BlueZ 5.42, an out-of-bounds read was observed in \"le_meta_ev_dump\" function in \"tools/parser/hci.c\" source file. This issue exists because 'subevent' (which is used to read correct element from 'ev_le_meta_str' array) is overflowed.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94652",
+            "https://www.spinics.net/lists/linux-bluetooth/msg68892.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:bluez:bluez:5.42:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/03/2016",
+        "modified_date": "12/07/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9804",
+        "cwe_id": "CWE-119",
+        "description": "In BlueZ 5.42, a buffer overflow was observed in \"commands_dump\" function in \"tools/parser/csr.c\" source file. The issue exists because \"commands\" array is overflowed by supplied parameter due to lack of boundary checks on size of the buffer from frame \"frm->ptr\" parameter. This issue can be triggered by processing a corrupted dump file and will result in hcidump crash.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94652",
+            "https://www.spinics.net/lists/linux-bluetooth/msg68892.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:bluez:bluez:5.42:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/03/2016",
+        "modified_date": "12/07/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9156",
+        "cwe_id": "CWE-284",
+        "description": "A vulnerability in Siemens SICAM PAS (all versions before V8.09) could allow a remote attacker to upload, download, or delete files in certain parts of the file system by sending specially crafted packets to port 19235/TCP.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.3 HIGH",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94549",
+            "http://www.siemens.com/cert/pool/cert/siemens_security_advisory_ssa-946325.pdf"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:siemens:sicam_pas:8.08:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/05/2016",
+        "modified_date": "06/12/2017",
+        "vulnerability_source": "Siemens AG",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9157",
+        "cwe_id": "CWE-284",
+        "description": "A vulnerability in Siemens SICAM PAS (all versions before V8.09) could allow a remote attacker to cause a Denial of Service condition and potentially lead to unauthenticated remote code execution by sending specially crafted packets to port 19234/TCP.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94549",
+            "http://www.siemens.com/cert/pool/cert/siemens_security_advisory_ssa-946325.pdf"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:siemens:sicam_pas:8.08:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/05/2016",
+        "modified_date": "06/12/2017",
+        "vulnerability_source": "Siemens AG",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9835",
+        "cwe_id": "CWE-77",
+        "description": "Directory traversal vulnerability in file \"jcss.php\" in Zikula 1.3.x before 1.3.11 and 1.4.x before 1.4.4 on Windows allows a remote attacker to launch a PHP object injection by uploading a serialized file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/95005",
+            "https://github.com/zikula/core/blob/1.3/CHANGELOG-1.3.md",
+            "https://github.com/zikula/core/blob/1.4/CHANGELOG-1.4.md",
+            "https://github.com/zikula/core/issues/3237"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:zikula:zikula_application_framework:1.3.10:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:a:zikula:zikula_application_framework:1.4.0:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:a:zikula:zikula_application_framework:1.4.0:rc2:*:*:*:*:*:*",
+            "*cpe:2.3:a:zikula:zikula_application_framework:1.4.0:rc3:*:*:*:*:*:*",
+            "*cpe:2.3:a:zikula:zikula_application_framework:1.4.0:rc4:*:*:*:*:*:*",
+            "*cpe:2.3:a:zikula:zikula_application_framework:1.4.0:rc5:*:*:*:*:*:*"
+        ],
+        "published_date": "12/05/2016",
+        "modified_date": "12/27/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9836",
+        "cwe_id": "CWE-284",
+        "description": "The file scanning mechanism of JFilterInput::isFileSafe() in Joomla! CMS before 3.6.5 does not consider alternative PHP file extensions when checking uploaded files for PHP content, which enables a user to upload and execute files with the `.php6`, `.php7`, `.phtml`, and `.phpt` extensions. Additionally, JHelperMedia::canUpload() did not blacklist these file extensions as uploadable file types.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94663",
+            "https://github.com/XiphosResearch/exploits/tree/master/Joomraa"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:joomla:joomla\\!:3.6.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/05/2016",
+        "modified_date": "12/07/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-7171",
+        "cwe_id": "CWE-295",
+        "description": "NetApp Plug-in for Symantec NetBackup prior to version 2.0.1 makes use of a non-unique server certificate, making it vulnerable to impersonation.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "5.6 MEDIUM",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94659",
+            "http://www.securitytracker.com/id/1037391",
+            "https://kb.netapp.com/support/s/article/NTAP-20161129-0001"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:netapp:netapp_plug-in:2.0:*:*:*:*:*:netbackup:*"
+        ],
+        "published_date": "12/05/2016",
+        "modified_date": "12/23/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9152",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in ecrire/exec/plonger.php in SPIP 3.1.3 allows remote attackers to inject arbitrary web script or HTML via the rac parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94658",
+            "http://www.securitytracker.com/id/1037392",
+            "https://core.spip.net/projects/spip/repository/revisions/23290"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:spip:spip:3.1.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/05/2016",
+        "modified_date": "07/27/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-8740",
+        "cwe_id": "CWE-399",
+        "description": "The mod_http2 module in the Apache HTTP Server 2.4.17 through 2.4.23, when the Protocols configuration includes h2 or h2c, does not restrict request-header length, which allows remote attackers to cause a denial of service (memory consumption) via crafted CONTINUATION frames in an HTTP/2 request.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/140023/Apache-HTTPD-Web-Server-2.4.23-Memory-Exhaustion.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-1415.html",
+            "http://www.securityfocus.com/bid/94650",
+            "http://www.securitytracker.com/id/1037388",
+            "https://access.redhat.com/errata/RHSA-2017:1161",
+            "https://access.redhat.com/errata/RHSA-2017:1413",
+            "https://access.redhat.com/errata/RHSA-2017:1414",
+            "https://github.com/apache/httpd/commit/29c63b786ae028d82405421585e91283c8fa0da3",
+            "https://h20566.www2.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbux03725en_us",
+            "https://lists.apache.org/thread.html/56c2e7cc9deb1c12a843d0dc251ea7fd3e7e80293cde02fcd65286ba@%3Ccvs.httpd.apache.org%3E",
+            "https://lists.apache.org/thread.html/84a3714f0878781f6ed84473d1a503d2cc382277e100450209231830@%3Ccvs.httpd.apache.org%3E",
+            "https://lists.apache.org/thread.html/rd18c3c43602e66f9cdcf09f1de233804975b9572b0456cc582390b6f@%3Ccvs.httpd.apache.org%3E",
+            "https://lists.apache.org/thread.html/re3d27b6250aa8548b8845d314bb8a350b3df326cacbbfdfe4d455234@%3Ccvs.httpd.apache.org%3E",
+            "https://security.gentoo.org/glsa/201701-36",
+            "https://security.netapp.com/advisory/ntap-20180423-0001/",
+            "https://support.apple.com/HT208221",
+            "https://www.exploit-db.com/exploits/40909/",
+            "https://www.tenable.com/security/tns-2017-04"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apache:http_server:2.4.22:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apache:http_server:2.4.21:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apache:http_server:2.4.20:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apache:http_server:2.4.19:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apache:http_server:2.4.18:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apache:http_server:2.4.17:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apache:http_server:2.4.23:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/05/2016",
+        "modified_date": "04/24/2018",
+        "vulnerability_source": "Apache Software Foundation",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-5341",
+        "cwe_id": "CWE-284",
+        "description": "The GPS component in Android before 2016-12-05 allows man-in-the-middle attackers to cause a denial of service (GPS signal-acquisition delay) via an incorrect xtra.bin or xtra2.bin file on a spoofed Qualcomm gpsonextra.net or izatcloud.net host, aka internal bug 31470303 and external bug 211602 (and AndroidID-7225554).",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "7.1 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-12-01.html",
+            "http://www.securityfocus.com/bid/94689",
+            "https://source.android.com/security/bulletin/pixel/2017-12-01",
+            "https://wwws.nightwatchcybersecurity.com/2016/12/05/cve-2016-5341/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:7.1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/06/2016",
+        "modified_date": "12/05/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9299",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: CVE-2015-8870.  Reason: This candidate is a duplicate of CVE-2015-8870.  The CVE-2014-9299 ID originated from an unrelated and invalid assignment, and this ID was inadvertently used for the CVE-2015-8870 issue.  Notes: All CVE users should reference CVE-2015-8870 instead of this candidate.  All references and descriptions in this candidate have been removed to prevent accidental usage.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9299"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9299"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "12/06/2016",
+        "modified_date": "12/06/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2015-8870",
+        "cwe_id": "CWE-190",
+        "description": "Integer overflow in tools/bmp2tiff.c in LibTIFF before 4.0.4 allows remote attackers to cause a denial of service (heap-based buffer over-read), or possibly obtain sensitive information from process memory, via crafted width and length values in RLE4 or RLE8 data in a BMP file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:P)"
+        },
+        "base_score_v3": "7.4 HIGH",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "http://download.osgeo.org/libtiff/tiff-4.0.4.tar.gz",
+            "http://rhn.redhat.com/errata/RHSA-2017-0225.html",
+            "http://www.floyd.ch/?p=874BMP",
+            "http://www.securityfocus.com/bid/94717"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libtiff:libtiff:4.0.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/06/2016",
+        "modified_date": "01/04/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-8601",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was withdrawn by its CNA.  Further investigation showed that it was not a security issue in a \"generally available\" software product.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-8601"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-8601"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "12/06/2016",
+        "modified_date": "12/06/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9300",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was withdrawn by its CNA.  Further investigation showed that it was not a security issue.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-9300"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-9300"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "12/06/2016",
+        "modified_date": "12/06/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9301",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was withdrawn by its CNA.  Further investigation showed that it was not a security issue.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-9301"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-9301"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "12/06/2016",
+        "modified_date": "12/06/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9302",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was withdrawn by its CNA.  Further investigation showed that it was not a security issue.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-9302"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-9302"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "12/06/2016",
+        "modified_date": "12/06/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-8655",
+        "cwe_id": "CWE-416",
+        "description": "Race condition in net/packet/af_packet.c in the Linux kernel through 4.8.12 allows local users to gain privileges or cause a denial of service (use-after-free) by leveraging the CAP_NET_RAW capability to change a socket version, related to the packet_set_ring and packet_setsockopt functions.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=84ac7260236a49c79eede91617700174c2c19b0c",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00044.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00054.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00055.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00056.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00067.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00070.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00073.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00076.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00077.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00087.html",
+            "http://packetstormsecurity.com/files/140063/Linux-Kernel-4.4.0-AF_PACKET-Race-Condition-Privilege-Escalation.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0386.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0387.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0402.html",
+            "http://www.openwall.com/lists/oss-security/2016/12/06/1",
+            "http://www.securityfocus.com/bid/94692",
+            "http://www.securitytracker.com/id/1037403",
+            "http://www.securitytracker.com/id/1037968",
+            "http://www.ubuntu.com/usn/USN-3149-1",
+            "http://www.ubuntu.com/usn/USN-3149-2",
+            "http://www.ubuntu.com/usn/USN-3150-1",
+            "http://www.ubuntu.com/usn/USN-3150-2",
+            "http://www.ubuntu.com/usn/USN-3151-1",
+            "http://www.ubuntu.com/usn/USN-3151-2",
+            "http://www.ubuntu.com/usn/USN-3151-3",
+            "http://www.ubuntu.com/usn/USN-3151-4",
+            "http://www.ubuntu.com/usn/USN-3152-1",
+            "http://www.ubuntu.com/usn/USN-3152-2",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1400019",
+            "https://github.com/torvalds/linux/commit/84ac7260236a49c79eede91617700174c2c19b0c",
+            "https://source.android.com/security/bulletin/2017-03-01.html",
+            "https://www.exploit-db.com/exploits/40871/",
+            "https://www.exploit-db.com/exploits/44696/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.8.12:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/08/2016",
+        "modified_date": "05/24/2018",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9839",
+        "cwe_id": "CWE-200",
+        "description": "In MapServer before 7.0.3, OGR driver error messages are too verbose and may leak sensitive information if data connection fails.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94856",
+            "https://github.com/mapserver/mapserver/pull/5356"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:umn:mapserver:7.0.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/08/2016",
+        "modified_date": "12/14/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9888",
+        "cwe_id": "CWE-476",
+        "description": "An error within the \"tar_directory_for_file()\" function (gsf-infile-tar.c) in GNOME Structured File Library before 1.14.41 can be exploited to trigger a Null pointer dereference and subsequently cause a crash via a crafted TAR file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94860",
+            "https://github.com/GNOME/libgsf/commit/95a8351a75758cf10b3bf6abae0b6b461f90d9e5",
+            "https://lists.debian.org/debian-lts-announce/2020/04/msg00016.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gnome:libgsf:1.14.40:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/08/2016",
+        "modified_date": "12/14/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    }
+]

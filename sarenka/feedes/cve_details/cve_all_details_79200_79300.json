@@ -1,0 +1,3475 @@
+[
+    {
+        "cve_id": "CVE-2016-7097",
+        "cwe_id": "CWE-285",
+        "description": "The filesystem implementation in the Linux kernel through 4.8.2 preserves the setgid bit during a setxattr call, which allows local users to gain group privileges by leveraging the existence of a setgid program with restrictions on execute permissions.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "4.4 MEDIUM",
+        "base_score_v2": "3.6 LOW",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=073931017b49d9458aa351605b43a7e34598caef",
+            "http://marc.info/?l=linux-fsdevel&m=147162313630259&w=2",
+            "http://rhn.redhat.com/errata/RHSA-2017-0817.html",
+            "http://www.openwall.com/lists/oss-security/2016/08/26/3",
+            "http://www.securityfocus.com/bid/92659",
+            "http://www.securitytracker.com/id/1038201",
+            "http://www.spinics.net/lists/linux-fsdevel/msg98328.html",
+            "http://www.ubuntu.com/usn/USN-3146-1",
+            "http://www.ubuntu.com/usn/USN-3146-2",
+            "http://www.ubuntu.com/usn/USN-3147-1",
+            "https://access.redhat.com/errata/RHSA-2017:1842",
+            "https://access.redhat.com/errata/RHSA-2017:2077",
+            "https://access.redhat.com/errata/RHSA-2017:2669",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1368938",
+            "https://github.com/torvalds/linux/commit/073931017b49d9458aa351605b43a7e34598caef",
+            "https://source.android.com/security/bulletin/2017-04-01",
+            "https://support.f5.com/csp/article/K31603170?utm_source=f5support&amp;utm_medium=RSS"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.8.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.8.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/16/2016",
+        "modified_date": "01/04/2018",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-7425",
+        "cwe_id": "CWE-119",
+        "description": "The arcmsr_iop_message_xfer function in drivers/scsi/arcmsr/arcmsr_hba.c in the Linux kernel through 4.8.2 does not restrict a certain length field, which allows local users to gain privileges or cause a denial of service (heap-based buffer overflow) via an ARCMSR_MESSAGE_WRITE_WQBUFFER control code.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=7bc2b55a5c030685b399bb65b6baa9ccc3d1f167",
+            "http://marc.info/?l=linux-scsi&m=147394713328707&w=2",
+            "http://marc.info/?l=linux-scsi&m=147394796228991&w=2",
+            "http://www.openwall.com/lists/oss-security/2016/09/17/2",
+            "http://www.securityfocus.com/bid/93037",
+            "http://www.ubuntu.com/usn/USN-3144-1",
+            "http://www.ubuntu.com/usn/USN-3144-2",
+            "http://www.ubuntu.com/usn/USN-3145-1",
+            "http://www.ubuntu.com/usn/USN-3145-2",
+            "http://www.ubuntu.com/usn/USN-3146-1",
+            "http://www.ubuntu.com/usn/USN-3146-2",
+            "http://www.ubuntu.com/usn/USN-3147-1",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1377330",
+            "https://github.com/torvalds/linux/commit/7bc2b55a5c030685b399bb65b6baa9ccc3d1f167",
+            "https://security-tracker.debian.org/tracker/CVE-2016-7425"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.8.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.8.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/16/2016",
+        "modified_date": "01/06/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-8658",
+        "cwe_id": "CWE-119",
+        "description": "Stack-based buffer overflow in the brcmf_cfg80211_start_ap function in drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c in the Linux kernel before 4.7.5 allows local users to cause a denial of service (system crash) or possibly have unspecified other impact via a long SSID Information Element in a command to a Netlink socket.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:P/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:P/A:C)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "5.6 MEDIUM",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=ded89912156b1a47d940a0c954c43afbabd0c42c",
+            "http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.5",
+            "http://www.openwall.com/lists/oss-security/2016/10/13/1",
+            "http://www.securityfocus.com/bid/93541",
+            "http://www.ubuntu.com/usn/USN-3145-1",
+            "http://www.ubuntu.com/usn/USN-3145-2",
+            "http://www.ubuntu.com/usn/USN-3146-1",
+            "http://www.ubuntu.com/usn/USN-3146-2",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1384403",
+            "https://github.com/torvalds/linux/commit/ded89912156b1a47d940a0c954c43afbabd0c42c"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.7.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.7.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/16/2016",
+        "modified_date": "01/06/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-8660",
+        "cwe_id": "CWE-19",
+        "description": "The XFS subsystem in the Linux kernel through 4.8.2 allows local users to cause a denial of service (fdatasync failure and system hang) by using the vfs syscall group in the trinity program, related to a \"page lock order bug in the XFS seek hole/data implementation.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/10/13/8",
+            "http://www.securityfocus.com/bid/93558",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1384851"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.8.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.8.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/16/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-8666",
+        "cwe_id": "CWE-400",
+        "description": "The IP stack in the Linux kernel before 4.6 allows remote attackers to cause a denial of service (stack consumption and panic) or possibly have unspecified other impact by triggering use of the GRO path for packets with tunnel stacking, as demonstrated by interleaved IPv4 headers and GRE headers, a related issue to CVE-2016-7039.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=fac8e0f579695a3ecbc4d3cac369139d7f819971",
+            "http://rhn.redhat.com/errata/RHSA-2016-2047.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2107.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2110.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0004.html",
+            "http://www.openwall.com/lists/oss-security/2016/10/13/11",
+            "http://www.securityfocus.com/bid/93562",
+            "https://access.redhat.com/errata/RHSA-2017:0372",
+            "https://bto.bluecoat.com/security-advisory/sa134",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1384991",
+            "https://bugzilla.suse.com/show_bug.cgi?id=1001486",
+            "https://github.com/torvalds/linux/commit/fac8e0f579695a3ecbc4d3cac369139d7f819971"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.5.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.6.7:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/16/2016",
+        "modified_date": "01/04/2018",
+        "vulnerability_source": "SUSE",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-2848",
+        "cwe_id": "CWE-20",
+        "description": "ISC BIND 9.1.0 through 9.8.4-P2 and 9.9.0 through 9.9.2-P2 allows remote attackers to cause a denial of service (assertion failure and daemon exit) via malformed options data in an OPT resource record.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2016-2093.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2094.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2099.html",
+            "http://www.securityfocus.com/bid/93809",
+            "http://www.securityfocus.com/bid/93814",
+            "http://www.securitytracker.com/id/1037073",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1385450",
+            "https://kb.isc.org/article/AA-01433/74/CVE-2016-2848",
+            "https://security.netapp.com/advisory/ntap-20180926-0002/",
+            "https://security.netapp.com/advisory/ntap-20180926-0005/",
+            "https://source.isc.org/cgi-bin/gitweb.cgi?p=bind9.git;a=commit;h=4adf97c32fcca7d00e5756607fd045f2aab9c3d4"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:isc:bind:9.9.2:p1:*:*:*:*:*:*",
+            "*cpe:2.3:a:isc:bind:9.9.2:p2:*:*:*:*:*:*",
+            "*cpe:2.3:a:isc:bind:9.9.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:isc:bind:9.9.1:p4:*:*:*:*:*:*",
+            "*cpe:2.3:a:isc:bind:9.9.1:p3:*:*:*:*:*:*",
+            "*cpe:2.3:a:isc:bind:9.9.1:p2:*:*:*:*:*:*",
+            "*cpe:2.3:a:isc:bind:9.9.1:p1:*:*:*:*:*:*",
+            "*cpe:2.3:a:isc:bind:9.9.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:isc:bind:9.9.0:rc4:*:*:*:*:*:*",
+            "*cpe:2.3:a:isc:bind:9.9.2:p1:*:*:*:*:*:*",
+            "*cpe:2.3:a:isc:bind:9.9.2:p2:*:*:*:*:*:*",
+            "*cpe:2.3:a:isc:bind:9.9.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:isc:bind:9.9.1:p4:*:*:*:*:*:*",
+            "*cpe:2.3:a:isc:bind:9.9.1:p3:*:*:*:*:*:*",
+            "*cpe:2.3:a:isc:bind:9.9.1:p2:*:*:*:*:*:*",
+            "*cpe:2.3:a:isc:bind:9.9.1:p1:*:*:*:*:*:*",
+            "*cpe:2.3:a:isc:bind:9.9.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:isc:bind:9.9.0:rc4:*:*:*:*:*:*"
+        ],
+        "published_date": "10/21/2016",
+        "modified_date": "09/27/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-1000115",
+        "cwe_id": "CWE-79",
+        "description": "Huge-IT Portfolio Gallery manager v1.1.0 SQL Injection and XSS",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.2 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://huge-it.com/joomla-portfolio-gallery/",
+            "http://www.securityfocus.com/bid/93821",
+            "http://www.vapidlabs.com/advisory.php?v=165"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:huge-it:portfolio_gallery_manager:1.1.5:*:*:*:*:joomla:*:*",
+            "*cpe:2.3:a:huge-it:portfolio_gallery_manager:1.1.5:*:*:*:*:joomla:*:*",
+            "*cpe:2.3:a:huge-it:portfolio_gallery_manager:1.1.0:*:*:*:*:joomla\\!:*:*",
+            "*cpe:2.3:a:huge-it:portfolio_gallery_manager:1.1.5:*:*:*:*:joomla:*:*",
+            "*cpe:2.3:a:huge-it:portfolio_gallery_manager:1.1.5:*:*:*:*:joomla:*:*"
+        ],
+        "published_date": "10/21/2016",
+        "modified_date": "11/13/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-1000116",
+        "cwe_id": "CWE-79",
+        "description": "Huge-IT Portfolio Gallery manager v1.1.0 SQL Injection and XSS",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.2 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://huge-it.com/joomla-portfolio-gallery/",
+            "http://www.securityfocus.com/bid/93821",
+            "http://www.vapidlabs.com/advisory.php?v=165"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:huge-it:portfolio_gallery_manager:1.1.5:*:*:*:*:joomla:*:*",
+            "*cpe:2.3:a:huge-it:portfolio_gallery_manager:1.1.5:*:*:*:*:joomla:*:*"
+        ],
+        "published_date": "10/21/2016",
+        "modified_date": "03/27/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-1000117",
+        "cwe_id": "CWE-79",
+        "description": "XSS & SQLi in HugeIT slideshow v1.0.4",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.2 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://extensions.joomla.org/extensions/extension/photos-a-images/slideshow/slideshow",
+            "http://www.securityfocus.com/bid/93822",
+            "http://www.vapidlabs.com/advisory.php?v=166"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:huge-it:slideshow:1.0.4:*:*:*:*:joomla:*:*",
+            "*cpe:2.3:a:huge-it:slideshow:1.0.4:*:*:*:*:joomla:*:*"
+        ],
+        "published_date": "10/21/2016",
+        "modified_date": "01/05/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-1000118",
+        "cwe_id": "CWE-89",
+        "description": "XSS & SQLi in HugeIT slideshow v1.0.4",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.2 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://extensions.joomla.org/extensions/extension/photos-a-images/slideshow/slideshow",
+            "http://www.securityfocus.com/bid/93822",
+            "http://www.vapidlabs.com/advisory.php?v=166"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:huge-it:slideshow:1.0.4:*:*:*:*:joomla:*:*",
+            "*cpe:2.3:a:huge-it:slideshow:1.0.4:*:*:*:*:joomla:*:*",
+            "*cpe:2.3:a:huge-it:slideshow:1.0.4:*:*:*:*:joomla\\!:*:*",
+            "*cpe:2.3:a:huge-it:slideshow:1.0.4:*:*:*:*:joomla:*:*",
+            "*cpe:2.3:a:hugeit:slideshow:1.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:huge-it:slideshow:1.0.4:*:*:*:*:joomla:*:*",
+            "*cpe:2.3:a:hugeit:slideshow:1.0.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/21/2016",
+        "modified_date": "05/02/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-1000119",
+        "cwe_id": "CWE-89",
+        "description": "SQLi and XSS in Huge IT catalog extension v1.0.4 for Joomla",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.2 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://extensions.joomla.org/extensions/extension/e-commerce/shopping-cart/catalog",
+            "http://www.securityfocus.com/bid/92185",
+            "http://www.vapidlabs.com/advisory.php?v=167"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:huge-it:catalog:1.0.4:*:*:*:*:joomla:*:*",
+            "*cpe:2.3:a:huge-it:catalog:1.0.4:*:*:*:*:joomla:*:*",
+            "*cpe:2.3:a:huge-it:catalog:1.0.4:*:*:*:*:joomla\\!:*:*",
+            "*cpe:2.3:a:huge-it:catalog:1.0.4:*:*:*:*:joomla:*:*",
+            "*cpe:2.3:a:huge-it:catalog_extension:1.0.4:*:*:*:*:joomla:*:*",
+            "*cpe:2.3:a:huge-it:catalog:1.0.4:*:*:*:*:joomla:*:*",
+            "*cpe:2.3:a:huge-it:catalog_extension:1.0.4:*:*:*:*:joomla:*:*"
+        ],
+        "published_date": "10/21/2016",
+        "modified_date": "05/02/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-0236",
+        "cwe_id": "CWE-77",
+        "description": "IBM Security Guardium Database Activity Monitor 8.2 before p310, 9.x through 9.5 before p700, and 10.x through 10.1 before p100 allows remote authenticated users to execute arbitrary commands with root privileges via the search field.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21990372",
+            "http://www.securityfocus.com/bid/93823"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:10.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:10.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:8.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_gua",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:10.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:10.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:8.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_gua"
+        ],
+        "published_date": "10/21/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-7852",
+        "cwe_id": "CWE-119",
+        "description": "Adobe Reader and Acrobat before 11.0.18, Acrobat and Acrobat Reader DC Classic before 15.006.30243, and Acrobat and Acrobat Reader DC Continuous before 15.020.20039 on Windows and OS X allow attackers to execute arbitrary code or cause a denial of service (memory corruption) via unspecified vectors, a different vulnerability than CVE-2016-6940, CVE-2016-6941, CVE-2016-6942, CVE-2016-6943, CVE-2016-6947, CVE-2016-6948, CVE-2016-6950, CVE-2016-6951, CVE-2016-6954, CVE-2016-6955, CVE-2016-6956, CVE-2016-6959, CVE-2016-6960, CVE-2016-6966, CVE-2016-6970, CVE-2016-6972, CVE-2016-6973, CVE-2016-6974, CVE-2016-6975, CVE-2016-6976, CVE-2016-6977, CVE-2016-6978, CVE-2016-6995, CVE-2016-6996, CVE-2016-6997, CVE-2016-6998, CVE-2016-7000, CVE-2016-7001, CVE-2016-7002, CVE-2016-7003, CVE-2016-7004, CVE-2016-7005, CVE-2016-7006, CVE-2016-7007, CVE-2016-7008, CVE-2016-7009, CVE-2016-7010, CVE-2016-7011, CVE-2016-7012, CVE-2016-7013, CVE-2016-7014, CVE-2016-7015, CVE-2016-7016, CVE-2016-7017, CVE-2016-7018, CVE-2016-7019, CVE-2016-7853, and CVE-2016-7854.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93496",
+            "https://helpx.adobe.com/security/products/acrobat/apsb16-33.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:adobe:reader:11.0.17:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:acrobat:11.0.17:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:acrobat_reader_dc:15.017.20053:*:*:*:continuous:*:*:*",
+            "*cpe:2.3:a:adobe:acrobat_reader_dc:15.006.30201:*:*:*:classic:*:*",
+            "*cpe:2.3:a:adobe:reader:11.0.17:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:acrobat:11.0.17:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:acrobat_reader_dc:15.017.20053:*:*:*:continuous:*:*:*",
+            "*cpe:2.3:a:adobe:acrobat_reader_dc:15.006.30201:*:*:*:classic:*:*"
+        ],
+        "published_date": "10/21/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Adobe Systems Incorporated",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-7853",
+        "cwe_id": "CWE-119",
+        "description": "Adobe Reader and Acrobat before 11.0.18, Acrobat and Acrobat Reader DC Classic before 15.006.30243, and Acrobat and Acrobat Reader DC Continuous before 15.020.20039 on Windows and OS X allow attackers to execute arbitrary code or cause a denial of service (memory corruption) via unspecified vectors, a different vulnerability than CVE-2016-6940, CVE-2016-6941, CVE-2016-6942, CVE-2016-6943, CVE-2016-6947, CVE-2016-6948, CVE-2016-6950, CVE-2016-6951, CVE-2016-6954, CVE-2016-6955, CVE-2016-6956, CVE-2016-6959, CVE-2016-6960, CVE-2016-6966, CVE-2016-6970, CVE-2016-6972, CVE-2016-6973, CVE-2016-6974, CVE-2016-6975, CVE-2016-6976, CVE-2016-6977, CVE-2016-6978, CVE-2016-6995, CVE-2016-6996, CVE-2016-6997, CVE-2016-6998, CVE-2016-7000, CVE-2016-7001, CVE-2016-7002, CVE-2016-7003, CVE-2016-7004, CVE-2016-7005, CVE-2016-7006, CVE-2016-7007, CVE-2016-7008, CVE-2016-7009, CVE-2016-7010, CVE-2016-7011, CVE-2016-7012, CVE-2016-7013, CVE-2016-7014, CVE-2016-7015, CVE-2016-7016, CVE-2016-7017, CVE-2016-7018, CVE-2016-7019, CVE-2016-7852, and CVE-2016-7854.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93496",
+            "https://helpx.adobe.com/security/products/acrobat/apsb16-33.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:adobe:reader:11.0.17:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:acrobat:11.0.17:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:acrobat_reader_dc:15.017.20053:*:*:*:continuous:*:*:*",
+            "*cpe:2.3:a:adobe:acrobat_reader_dc:15.006.30201:*:*:*:classic:*:*",
+            "*cpe:2.3:a:adobe:reader:11.0.17:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:acrobat:11.0.17:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:acrobat_reader_dc:15.017.20053:*:*:*:continuous:*:*:*",
+            "*cpe:2.3:a:adobe:acrobat_reader_dc:15.006.30201:*:*:*:classic:*:*"
+        ],
+        "published_date": "10/21/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Adobe Systems Incorporated",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-7854",
+        "cwe_id": "CWE-119",
+        "description": "Adobe Reader and Acrobat before 11.0.18, Acrobat and Acrobat Reader DC Classic before 15.006.30243, and Acrobat and Acrobat Reader DC Continuous before 15.020.20039 on Windows and OS X allow attackers to execute arbitrary code or cause a denial of service (memory corruption) via unspecified vectors, a different vulnerability than CVE-2016-6940, CVE-2016-6941, CVE-2016-6942, CVE-2016-6943, CVE-2016-6947, CVE-2016-6948, CVE-2016-6950, CVE-2016-6951, CVE-2016-6954, CVE-2016-6955, CVE-2016-6956, CVE-2016-6959, CVE-2016-6960, CVE-2016-6966, CVE-2016-6970, CVE-2016-6972, CVE-2016-6973, CVE-2016-6974, CVE-2016-6975, CVE-2016-6976, CVE-2016-6977, CVE-2016-6978, CVE-2016-6995, CVE-2016-6996, CVE-2016-6997, CVE-2016-6998, CVE-2016-7000, CVE-2016-7001, CVE-2016-7002, CVE-2016-7003, CVE-2016-7004, CVE-2016-7005, CVE-2016-7006, CVE-2016-7007, CVE-2016-7008, CVE-2016-7009, CVE-2016-7010, CVE-2016-7011, CVE-2016-7012, CVE-2016-7013, CVE-2016-7014, CVE-2016-7015, CVE-2016-7016, CVE-2016-7017, CVE-2016-7018, CVE-2016-7019, CVE-2016-7852, and CVE-2016-7853.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93496",
+            "https://helpx.adobe.com/security/products/acrobat/apsb16-33.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:adobe:reader:11.0.17:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:acrobat:11.0.17:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:acrobat_reader_dc:15.017.20053:*:*:*:continuous:*:*:*",
+            "*cpe:2.3:a:adobe:acrobat_reader_dc:15.006.30201:*:*:*:classic:*:*",
+            "*cpe:2.3:a:adobe:reader:11.0.17:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:acrobat:11.0.17:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:acrobat_reader_dc:15.017.20053:*:*:*:continuous:*:*:*",
+            "*cpe:2.3:a:adobe:acrobat_reader_dc:15.006.30201:*:*:*:classic:*:*"
+        ],
+        "published_date": "10/21/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Adobe Systems Incorporated",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-0239",
+        "cwe_id": "CWE-264",
+        "description": "IBM Security Guardium Database Activity Monitor 9.x through 9.5 before p700 and 10.x through 10.0.1 before p100 allows remote authenticated users to make HTTP requests with administrator privileges via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21988999",
+            "http://www.securityfocus.com/bid/93827"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:10.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:9.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:9.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:9.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:9.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/21/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-0240",
+        "cwe_id": "CWE-254",
+        "description": "IBM Security Guardium Database Activity Monitor 8.2 before p310, 9.x through 9.5 before p700, and 10.x through 10.1 before p100 does not enable the HSTS protection mechanism, which makes it easier for remote attackers to obtain sensitive information by leveraging use of HTTP.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "3.7 LOW",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21990232",
+            "http://www.securityfocus.com/bid/93836"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:10.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:10.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:9.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:9.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_gua",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:10.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:10.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:9.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:9.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_gua"
+        ],
+        "published_date": "10/21/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-0241",
+        "cwe_id": "CWE-284",
+        "description": "IBM Security Guardium Database Activity Monitor 8.2 before p310, 9.x through 9.5 before p700, and 10.x through 10.1 before p100 allows remote authenticated users to spoof administrator accounts by sending a modified login request over HTTP.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21990219",
+            "http://www.securityfocus.com/bid/93828"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:10.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:10.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:9.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:9.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guar",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:10.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:10.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:9.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:9.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guar"
+        ],
+        "published_date": "10/21/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-0242",
+        "cwe_id": "CWE-200",
+        "description": "IBM Security Guardium 10.x through 10.1 before p100 allows remote authenticated users to obtain sensitive information by reading an Application Error message.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21990229",
+            "http://www.securityfocus.com/bid/93825"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:security_guardium:10.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:10.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_v:10.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_v:10.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_v:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:10.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:10.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_v:10.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_v:10.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_v:10.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/21/2016",
+        "modified_date": "04/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-0246",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in IBM Security Guardium 8.2 before p310, 9.x through 9.5 before p700, and 10.x through 10.1 before p100 allows remote attackers to inject arbitrary web script or HTML via a crafted URL.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21990377",
+            "http://www.securityfocus.com/bid/93400"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:security_guardium:10.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:10.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:9.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:9.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:8.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:10.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:10.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:9.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:9.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:8.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/21/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-0247",
+        "cwe_id": "CWE-200",
+        "description": "IBM Security Guardium 8.2 before p310, 9.x through 9.5 before p700, and 10.x through 10.1 before p100 allows local users to obtain sensitive cleartext information via unspecified vectors, as demonstrated by password information.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21990368",
+            "http://www.securityfocus.com/bid/93341"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:security_guardium:10.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:10.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:8.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:9.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:9.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:10.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:10.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:8.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:9.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:9.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:10.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/21/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-0326",
+        "cwe_id": "CWE-77",
+        "description": "IBM Rational Quality Manager (RQM) and Rational Collaborative Lifecycle Management 3.0.1.6 before iFix8, 4.x before 4.0.7 iFix11, 5.x before 5.0.2 iFix17, and 6.x before 6.0.1 ifix3 allow remote authenticated users to execute arbitrary OS commands via a crafted \"HTML request.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21989735",
+            "http://www.securityfocus.com/bid/93824"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:rational_collaborative_lifecycle_management:4.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:rational_collaborative_lifecycle_management:4.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:rational_collaborative_lifecycle_management:4.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:rational_collaborative_lifecycle_management:4.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:rational_collaborative_lifecycle_management:4.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:ration",
+            "*cpe:2.3:a:ibm:rational_collaborative_lifecycle_management:4.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:rational_collaborative_lifecycle_management:4.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:rational_collaborative_lifecycle_management:4.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:rational_collaborative_lifecycle_management:4.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:rational_collaborative_lifecycle_management:4.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:ration"
+        ],
+        "published_date": "10/21/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-0328",
+        "cwe_id": "CWE-77",
+        "description": "IBM Security Guardium Database Activity Monitor 8.2 before p310, 9.x through 9.5 before p700, and 10.x through 10.1 before p100 allows local users to obtain administrator privileges for command execution via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21990226",
+            "http://www.securityfocus.com/bid/93402"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:10.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:10.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:9.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:9.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guar",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:10.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:10.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:9.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:9.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium_database_activity_monitor:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guar"
+        ],
+        "published_date": "10/21/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-0377",
+        "cwe_id": "CWE-200",
+        "description": "The Administrative Console in IBM WebSphere Application Server (WAS) 7.x before 7.0.0.43, 8.0.x before 8.0.0.13, and 8.5.x before 8.5.5.10 mishandles CSRFtoken cookies, which allows remote authenticated users to obtain sensitive information via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21980645",
+            "http://www.securityfocus.com/bid/92514",
+            "http://www.securitytracker.com/id/1036653"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:websphere_application_server:7.0.0.42:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:7.0.0.41:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:7.0.0.40:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:8.5.5.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:8.5.5.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:8.5.5.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:7.0.0.42:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:7.0.0.41:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:7.0.0.40:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:8.5.5.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:8.5.5.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:8.5.5.7:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/21/2016",
+        "modified_date": "08/15/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-1000031",
+        "cwe_id": "CWE-284",
+        "description": "Apache Commons FileUpload before 1.3.3 DiskFileItem File Manipulation Remote Code Execution",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2019-05/msg00036.html",
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html",
+            "http://www.securityfocus.com/bid/93604",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-570/",
+            "https://issues.apache.org/jira/browse/FILEUPLOAD-279",
+            "https://issues.apache.org/jira/browse/WW-4812",
+            "https://lists.apache.org/thread.html/708d94141126eac03011144a971a6411fcac16d9c248d1d535a39451@%3Csolr-user.lucene.apache.org%3E",
+            "https://lists.apache.org/thread.html/d66657323fd25e437face5e84899c8ca404ccd187e81c3f2fa8b6080@%3Cannounce.apache.org%3E",
+            "https://security.netapp.com/advisory/ntap-20190212-0001/",
+            "https://www.oracle.com/security-alerts/cpuapr2020.html",
+            "https://www.oracle.com/security-alerts/cpujan2020.html",
+            "https://www.oracle.com/security-alerts/cpujul2020.html",
+            "https://www.oracle.com/security-alerts/cpuoct2020.html",
+            "https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html",
+            "https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html",
+            "https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html",
+            "https://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+            "https://www.tenable.com/security/research/tra-2016-12",
+            "https://www.tenable.com/security/research/tra-2016-23",
+            "https://www.tenable.com/security/research/tra-2016-30"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apache:commons_fileupload:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apache:commons_fileupload:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apache:commons_fileupload:1.3.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apache:commons_fileupload:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apache:commons_fileupload:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "10/20/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-1000032",
+        "cwe_id": "CWE-284",
+        "description": "TGCaptcha2 version 0.3.0 is vulnerable to a replay attack due to a missing nonce allowing attackers to use a single solved CAPTCHA multiple times.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1316083",
+            "https://patrick.uiterwijk.org/2016/03/09/fedora-spam-dwf-2016-89000/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:python:tgcaptcha2:0.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:tgcaptcha2:0.3.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "01/18/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-1000033",
+        "cwe_id": "CWE-295",
+        "description": "Shotwell version 0.22.0 (and possibly other versions) is vulnerable to a TLS/SSL certification validation flaw resulting in a potential for man in the middle attacks.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "3.7 LOW",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://bugzilla.gnome.org/show_bug.cgi?id=754488"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:shotwell_project:shotwell:0.22.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:shotwell_project:shotwell:0.22.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:gnome:shotwell:0.22.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:shotwell_project:shotwell:0.22.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:shotwell_project:shotwell:0.22.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:shotwell_project:shotwell:0.22.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "02/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-1000213",
+        "cwe_id": "CWE-352",
+        "description": "Ruckus Wireless H500 web management interface CSRF",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://b910a83a1a1fa9c20d93-2435f2f08e773abe005b52170fce6d94.r84.cf2.rackcdn.com/security/faq-security-advisory-id-062117.txt",
+            "https://www.tripwire.com/state-of-security/vulnerability-management/ruckus-vulnerability/"
+        ],
+        "cpe": [
+            "*cpe:2.3:h:ruckus:wireless_h500:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:h:ruckus:wireless_h500:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/06/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-1000214",
+        "cwe_id": "CWE-200",
+        "description": "Ruckus Wireless H500 web management interface authentication bypass",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://b910a83a1a1fa9c20d93-2435f2f08e773abe005b52170fce6d94.r84.cf2.rackcdn.com/security/faq-security-advisory-id-062117.txt",
+            "https://www.tripwire.com/state-of-security/vulnerability-management/ruckus-vulnerability/"
+        ],
+        "cpe": [
+            "*cpe:2.3:h:ruckus:wireless_h500:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:h:ruckus:wireless_h500:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/06/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-1000215",
+        "cwe_id": null,
+        "description": "Ruckus Wireless H500 web management interface denial of service",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://b910a83a1a1fa9c20d93-2435f2f08e773abe005b52170fce6d94.r84.cf2.rackcdn.com/security/faq-security-advisory-id-062117.txt",
+            "https://www.tripwire.com/state-of-security/vulnerability-management/ruckus-vulnerability/"
+        ],
+        "cpe": [
+            "*cpe:2.3:h:ruckus:wireless_h500:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:h:ruckus:wireless_h500:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/06/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-3473",
+        "cwe_id": "CWE-200",
+        "description": "Unspecified vulnerability in the BI Publisher (formerly XML Publisher) component in Oracle Fusion Middleware 11.1.1.7.0, 11.1.1.9.0, and 12.2.1.0.0 allows remote authenticated users to affect confidentiality via unknown vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.7 HIGH",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93719",
+            "http://www.securitytracker.com/id/1037051",
+            "https://www.exploit-db.com/exploits/40590/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:business_intelligence_publisher:11.1.1.9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:business_intelligence_publisher:11.1.1.7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:business_intelligence_publisher:12.2.1.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:business_intelligence_publisher:11.1.1.9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:business_intelligence_publisher:11.1.1.7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:business_intelligence_publisher:12.2.1.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "09/02/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-3492",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in Oracle MySQL 5.5.51 and earlier, 5.6.32 and earlier, and 5.7.14 and earlier allows remote authenticated users to affect availability via vectors related to Server: Optimizer.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2016-2130.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2131.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2595.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2749.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2927.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2928.html",
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93650",
+            "http://www.securitytracker.com/id/1037050",
+            "https://mariadb.com/kb/en/mariadb/mariadb-10028-release-notes/",
+            "https://mariadb.com/kb/en/mariadb/mariadb-10118-release-notes/",
+            "https://mariadb.com/kb/en/mariadb/mariadb-5552-release-notes/",
+            "https://security.gentoo.org/glsa/201701-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:mysql:*:*:*:*:*:*:*:* versions up to (including) 5.5.51\n     *cpe:2.3:a:oracle:mysql:*:*:*:*:*:*:*:* versions up to (including) 5.6.32\n     *cpe:2.3:a:oracle:mysql:*:*:*:*:*:*:*:* versions up to (including) 5.7.14",
+            "*cpe:2.3:a:mariadb:mariadb:10.0.27:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:oracle:mysql:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:oracle:mysql:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:oracle:mysql:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:oracle:mysql:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:oracle:mysql:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:oracle:mysql:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:mariadb:mariadb:10.0.27:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:mysql:5.6.32:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:mysql:5.5.51:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:mysql:5.7.14:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:mysql:5.6.32:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:mysql:5.5.51:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:mysql:5.7.14:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "02/21/2019",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-3495",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in Oracle MySQL 5.7.13 and earlier allows remote administrators to affect availability via vectors related to Server: InnoDB.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "4.9 MEDIUM",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93670",
+            "http://www.securitytracker.com/id/1037050",
+            "https://security.gentoo.org/glsa/201701-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mariadb:mariadb:10.0.27:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:mariadb:mariadb:10.0.27:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:mysql:5.7.13:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:mysql:5.7.13:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-3505",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in the Oracle WebLogic Server component in Oracle Fusion Middleware 10.3.6.0, 12.1.3.0, and 12.2.1.0 allows remote authenticated users to affect confidentiality, integrity, and availability via vectors related to JavaServer Faces.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93708",
+            "http://www.securitytracker.com/id/1037052"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:weblogic_server:12.2.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.1.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:10.3.6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.2.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.2.1.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.1.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.1.3.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:10.3.6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:10.3.6.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.2.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.1.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:10.3.6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.2.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.1.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:10.3.6.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "10/30/2018",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-3551",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in the Oracle Web Services component in Oracle Fusion Middleware 11.1.1.7.0, 11.1.1.9.0, 12.1.3.0.0, and 12.2.1.0.0 allows remote attackers to affect confidentiality, integrity, and availability via vectors related to JAXWS Web Services Stack.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93658",
+            "http://www.securitytracker.com/id/1037051"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:weblogic_server:11.1.1.7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.2.1.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:11.1.1.9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.1.3.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:11.1.1.7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.2.1.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:11.1.1.9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.1.3.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-3562",
+        "cwe_id": "CWE-200",
+        "description": "Unspecified vulnerability in the RDBMS Security and SQL*Plus components in Oracle Database Server 11.2.0.4 and 12.1.0.2 allows remote administrators to affect confidentiality via vectors related to DBA.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "2.4 LOW",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93640",
+            "http://www.securitytracker.com/id/1037035"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:database_server:11.2.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:database_server:12.1.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:database_server:11.2.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:database_server:12.1.0.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5479",
+        "cwe_id": "CWE-200",
+        "description": "Unspecified vulnerability in the Oracle FLEXCUBE Universal Banking component in Oracle Financial Services Applications 11.3.0, 11.4.0, and 12.0.1 allows remote authenticated users to affect confidentiality via vectors related to INFRA.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93611",
+            "http://www.securitytracker.com/id/1037049"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:flexcube_universal_banking:12.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:flexcube_universal_banking:11.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:flexcube_universal_banking:11.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:flexcube_universal_banking:12.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:flexcube_universal_banking:11.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:flexcube_universal_banking:11.3.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5480",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in Oracle Sun Solaris 10 allows local users to affect integrity via vectors related to Bash.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "2.8 LOW",
+        "base_score_v2": "1.9 LOW",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93717",
+            "http://www.securitytracker.com/id/1037048"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:oracle:solaris:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:solaris:10:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5481",
+        "cwe_id": "CWE-200",
+        "description": "Unspecified vulnerability in the Sun ZFS Storage Appliance Kit (AK) component in Oracle Sun Systems Products Suite AK 2013 allows remote attackers to affect confidentiality via vectors related to Core Services.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "3.7 LOW",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93705"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:sun_zfs_storage_appliance_kit:ak_2013:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:sun_zfs_storage_appliance_kit:ak_2013:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5482",
+        "cwe_id": "CWE-284",
+        "description": "Unspecified vulnerability in the Oracle Commerce Guided Search component in Oracle Commerce 6.2.2, 6.3.0, 6.4.1.2, and 6.5.0 through 6.5.2 allows remote attackers to affect confidentiality and integrity via unknown vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "8.2 HIGH",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93664"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:commerce_guided_search:6.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:commerce_guided_search:6.4.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:commerce_guided_search:6.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:commerce_guided_search:6.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:commerce_guided_search:6.5.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:commerce_guided_search:6.2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:commerce_guided_search:6.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:commerce_guided_search:6.4.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:commerce_guided_search:6.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:commerce_guided_search:6.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:commerce_guided_search:6.5.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:commerce_guided_search:6.2.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5486",
+        "cwe_id": "CWE-199",
+        "description": "Unspecified vulnerability in the Sun ZFS Storage Appliance Kit (AK) component in Oracle Sun Systems Products Suite AK 2013 allows local users to affect confidentiality via vectors related to Core Services.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93696"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:sun_zfs_storage_appliance_kit:ak_2013:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:sun_zfs_storage_appliance_kit:ak_2013:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5487",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in Oracle Sun Solaris 11.3 allows local users to affect confidentiality, integrity, and availability via unknown vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93742",
+            "http://www.securitytracker.com/id/1037048"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:oracle:solaris:11.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:solaris:11.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5488",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in the Oracle WebLogic Server component in Oracle Fusion Middleware 10.3.6.0 and 12.1.3.0 allows remote attackers to affect availability via vectors related to Web Container, a different vulnerability than CVE-2016-3445.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93627",
+            "http://www.securitytracker.com/id/1037052"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:weblogic_server:12.1.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:10.3.6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.1.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.1.3.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:10.3.6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:10.3.6.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.1.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:10.3.6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.1.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:10.3.6.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "10/30/2018",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5489",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in the Oracle iStore component in Oracle E-Business Suite 12.1.1 through 12.1.3, 12.2.3, and 12.2.4 allows remote attackers to affect confidentiality and integrity via vectors related to Runtime Catalog.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:P/A:N)"
+        },
+        "base_score_v3": "8.2 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93738",
+            "http://www.securitytracker.com/id/1037038"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:istore:12.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:istore:12.1.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:istore:12.2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:istore:12.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:istore:12.2.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:istore:12.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:istore:12.1.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:istore:12.2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:istore:12.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:istore:12.2.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5490",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in the Oracle FLEXCUBE Universal Banking component in Oracle Financial Services Applications 11.4.0 allows local users to affect confidentiality via vectors related to INFRA.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "3.3 LOW",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93677",
+            "http://www.securitytracker.com/id/1037049"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:flexcube_universal_banking:11.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:flexcube_universal_banking:11.4.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5491",
+        "cwe_id": "CWE-284",
+        "description": "Unspecified vulnerability in the Oracle Commerce Service Center component in Oracle Commerce 10.0.3.5 and 10.2.0.5 allows remote attackers to affect confidentiality and integrity via unknown vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "8.2 HIGH",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93667"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:commerce_service_center:10.2.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:commerce_service_center:10.0.3.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:commerce_service_center:10.2.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:commerce_service_center:10.0.3.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5492",
+        "cwe_id": "CWE-284",
+        "description": "Unspecified vulnerability in the Sun ZFS Storage Appliance Kit (AK) component in Oracle Sun Systems Products Suite AK 2013 allows local users to affect confidentiality and integrity via vectors related to SMB Users.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "7.1 HIGH",
+        "base_score_v2": "3.6 LOW",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93701"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:sun_zfs_storage_appliance_kit:ak_2013:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:sun_zfs_storage_appliance_kit:ak_2013:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5493",
+        "cwe_id": "CWE-284",
+        "description": "Unspecified vulnerability in the Oracle FLEXCUBE Private Banking component in Oracle Financial Services Applications 12.0.1 through 12.0.3 allows remote authenticated users to affect confidentiality and integrity via unknown vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "4.2 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93654",
+            "http://www.securitytracker.com/id/1037049"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:flexcube_private_banking:12.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:flexcube_private_banking:12.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:flexcube_private_banking:12.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:flexcube_private_banking:12.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:flexcube_private_banking:12.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:flexcube_private_banking:12.0.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5495",
+        "cwe_id": "CWE-284",
+        "description": "Unspecified vulnerability in the Oracle Discoverer component in Oracle Fusion Middleware 11.1.1.7.0 allows remote attackers to affect confidentiality via vectors related to EUL Code & Schema.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93736",
+            "http://www.securitytracker.com/id/1037051"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:discoverer:11.1.1.7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:discoverer:11.1.1.7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5497",
+        "cwe_id": "CWE-284",
+        "description": "Unspecified vulnerability in the RDBMS Security component in Oracle Database Server 12.1.0.2 allows local users to affect confidentiality, integrity, and availability via unknown vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "6.4 MEDIUM",
+        "base_score_v2": "4.4 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93631",
+            "http://www.securitytracker.com/id/1037035"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:database:12.1.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:database:12.1.0.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5498",
+        "cwe_id": "CWE-200",
+        "description": "Unspecified vulnerability in the RDBMS Security component in Oracle Database Server 11.2.0.4 and 12.1.0.2 allows local users to affect confidentiality via unknown vectors, a different vulnerability than CVE-2016-5499.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "3.3 LOW",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93620",
+            "http://www.securitytracker.com/id/1037035"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:database_server:11.2.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:database_server:12.1.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:database_server:11.2.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:database_server:12.1.0.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5499",
+        "cwe_id": "CWE-264",
+        "description": "Unspecified vulnerability in the RDBMS Security component in Oracle Database Server 11.2.0.4 and 12.1.0.2 allows local users to affect confidentiality via unknown vectors, a different vulnerability than CVE-2016-5498.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "3.3 LOW",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93629",
+            "http://www.securitytracker.com/id/1037035"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:database_server:11.2.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:database_server:12.1.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:database_server:11.2.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:database_server:12.1.0.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5500",
+        "cwe_id": "CWE-200",
+        "description": "Unspecified vulnerability in the Oracle Discoverer component in Oracle Fusion Middleware 11.1.1.7.0 allows remote attackers to affect confidentiality via vectors related to Viewer.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93680",
+            "http://www.securitytracker.com/id/1037051"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:discoverer:11.1.1.7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:fusion_middleware:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:discoverer:11.1.1.7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5501",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in the Oracle VM VirtualBox component before 5.0.28 and 5.1.x before 5.1.8 in Oracle Virtualization allows local users to affect confidentiality, integrity, and availability via vectors related to Core, a different vulnerability than CVE-2016-5538.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93687",
+            "http://www.securitytracker.com/id/1037053"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:vm_virtualbox:*:*:*:*:*:*:*:* versions up to (including) 5.0.27\n     *cpe:2.3:a:oracle:vm_virtualbox:*:*:*:*:*:*:*:* versions up to (including) 5.1.7",
+            "*cpe:2.3:a:oracle:vm_virtualbox:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:oracle:vm_virtualbox:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:oracle:vm_virtualbox:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:oracle:vm_virtualbox:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:oracle:vm_virtualbox:5.1.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:vm_virtualbox:5.0.27:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:vm_virtualbox:5.1.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:vm_virtualbox:5.0.27:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "03/04/2019",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5502",
+        "cwe_id": "CWE-284",
+        "description": "Unspecified vulnerability in the Oracle FLEXCUBE Universal Banking component in Oracle Financial Services Applications 11.3.0, 11.4.0, 12.0.1 through 12.0.3 allows remote authenticated users to affect confidentiality and integrity via vectors related to INFRA.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "5.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93656",
+            "http://www.securitytracker.com/id/1037049"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:flexcube_universal_banking:12.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:flexcube_universal_banking:12.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:flexcube_universal_banking:11.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:flexcube_universal_banking:11.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:flexcube_universal_banking:12.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:flexcube_universal_banking:12.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:flexcube_universal_banking:12.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:flexcube_universal_banking:11.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:flexcube_universal_banking:11.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:flexcube_universal_banking:12.0.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5503",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in the Sun ZFS Storage Appliance Kit (AK) component in Oracle Sun Systems Products Suite AK 2013 allows local users to affect confidentiality, integrity, and availability via vectors related to Core Services.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.2 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93689"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:sun_zfs_storage_appliance_kit:ak_2013:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:sun_zfs_storage_appliance_kit:ak_2013:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5504",
+        "cwe_id": "CWE-200",
+        "description": "Unspecified vulnerability in the Oracle Agile Product Lifecycle Management for Process component in Oracle Supply Chain Products Suite 6.1.0.4, 6.1.1.6, and 6.2.0.0 allows local users to affect confidentiality via vectors related to Supplier Portal.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:C/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:C/I:N/A:N)"
+        },
+        "base_score_v3": "4.1 MEDIUM",
+        "base_score_v2": "4.7 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93679"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:agile_product_supplier_collaboration_for_process:6.2.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_supplier_collaboration_for_process:6.1.1.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_supplier_collaboration_for_process:6.1.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_supplier_collaboration_for_process:6.2.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_supplier_collaboration_for_process:6.1.1.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_supplier_collaboration_for_process:6.1.0.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5505",
+        "cwe_id": "CWE-200",
+        "description": "Unspecified vulnerability in the RDBMS Programmable Interface component in Oracle Database Server 11.2.0.4 and 12.1.0.2 allows local users to affect confidentiality via unknown vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93613",
+            "http://www.securitytracker.com/id/1037035"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:database_server:11.2.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:database_server:12.1.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:database_server:11.2.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:database_server:12.1.0.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5506",
+        "cwe_id": "CWE-284",
+        "description": "Unspecified vulnerability in the Oracle Identity Manager component in Oracle Fusion Middleware allows local users to affect confidentiality and integrity via vectors related to App Server.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:H/UI:R/S:U/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:H/UI:R/S:U/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "3.1 LOW",
+        "base_score_v2": "3.3 LOW",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93648",
+            "http://www.securitytracker.com/id/1037051"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:identity_manager:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:identity_manager:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:fusion_middleware:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5507",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in Oracle MySQL 5.6.32 and earlier and 5.7.14 and earlier allows remote administrators to affect availability via vectors related to Server: InnoDB.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "4.9 MEDIUM",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2016-2749.html",
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93678",
+            "http://www.securitytracker.com/id/1037050",
+            "https://security.gentoo.org/glsa/201701-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mariadb:mariadb:*:*:*:*:*:*:*:* versions up to (including) 10.0.27",
+            "*cpe:2.3:a:mariadb:mariadb:10.0.27:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:mariadb:mariadb:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:mariadb:mariadb:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:oracle:mysql:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:oracle:mysql:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:oracle:mysql:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:oracle:mysql:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:mariadb:mariadb:10.0.27:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:mysql:5.6.32:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:mysql:5.7.14:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:mysql:5.6.32:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:mysql:5.7.14:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "03/04/2019",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5508",
+        "cwe_id": "CWE-200",
+        "description": "Unspecified vulnerability in the Solaris Cluster component in Oracle Sun Systems Products Suite 4.3 allows local users to affect confidentiality via vectors related to Cluster Geo.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "3.3 LOW",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93731",
+            "http://www.securitytracker.com/id/1037048"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:solaris_cluster:4.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:solaris_cluster:4.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5510",
+        "cwe_id": "CWE-200",
+        "description": "Unspecified vulnerability in the Oracle Agile PLM component in Oracle Supply Chain Products Suite 9.3.4 and 9.3.5 allows remote attackers to affect confidentiality via unknown vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93669"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5511",
+        "cwe_id": "CWE-254",
+        "description": "Unspecified vulnerability in the Oracle WebCenter Sites component in Oracle Fusion Middleware 12.2.1.0.0, 12.2.1.1.0, and 12.2.1.2.0 allows remote attackers to affect integrity via unknown vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93683",
+            "http://www.securitytracker.com/id/1037051"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:webcenter_sites:12.2.1.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:webcenter_sites:12.2.1.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:webcenter_sites:12.2.1.2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:webcenter_sites:12.2.1.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:webcenter_sites:12.2.1.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:webcenter_sites:12.2.1.2.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5512",
+        "cwe_id": "CWE-79",
+        "description": "Unspecified vulnerability in the Oracle Agile PLM component in Oracle Supply Chain Products Suite 9.3.4 and 9.3.5 allows remote attackers to affect confidentiality and integrity via unknown vectors, a different vulnerability than CVE-2016-5521.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93660"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5513",
+        "cwe_id": "CWE-200",
+        "description": "Unspecified vulnerability in the Oracle Agile PLM component in Oracle Supply Chain Products Suite 9.3.4 and 9.3.5 allows remote authenticated users to affect confidentiality via vectors related to File Manager.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93673"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5514",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in the Oracle Agile PLM component in Oracle Supply Chain Products Suite 9.3.4 and 9.3.5 allows remote authenticated users to affect confidentiality, integrity, and availability via vectors related to ExportServlet.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93644"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5515",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in the Oracle Agile PLM component in Oracle Supply Chain Products Suite 9.3.4 and 9.3.5 allows remote authenticated users to affect confidentiality, integrity, and availability via vectors related to RMIServlet.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93645"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5516",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in the Kernel PDB component in Oracle Database Server 12.1.0.2 allows local users to affect availability via unknown vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:C/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:C/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "6.0 MEDIUM",
+        "base_score_v2": "4.7 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93626",
+            "http://www.securitytracker.com/id/1037035"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:database_server:12.1.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:database_server:12.1.0.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5517",
+        "cwe_id": "CWE-284",
+        "description": "Unspecified vulnerability in the Oracle Applications DBA component in Oracle E-Business Suite 12.1.3 allows local users to affect confidentiality via vectors related to AD Utilities.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93769",
+            "http://www.securitytracker.com/id/1037038"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:applications_dba:12.1.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:applications_dba:12.1.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5518",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in the Oracle Agile Engineering Data Management component in Oracle Supply Chain Products Suite 6.1.3.0 and 6.2.0.0 allows remote attackers to affect confidentiality, integrity, and availability via vectors related to webfileservices.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93647"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:agile_engineering_data_management:6.1.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_engineering_data_management:6.2.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_engineering_data_management:6.1.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_engineering_data_management:6.2.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5519",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in the Oracle GlassFish Server component in Oracle Fusion Middleware 2.1.1, 3.0.1, and 3.1.2 allows remote authenticated users to affect confidentiality, integrity, and availability via vectors related to Java Server Faces.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93698",
+            "http://www.securitytracker.com/id/1037055"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:glassfish_server:3.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:glassfish_server:2.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:glassfish_server:3.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:glassfish_server:3.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:glassfish_server:2.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:glassfish_server:3.0.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5521",
+        "cwe_id": "CWE-284",
+        "description": "Unspecified vulnerability in the Oracle Agile PLM component in Oracle Supply Chain Products Suite 9.3.4 and 9.3.5 allows remote attackers to affect confidentiality and integrity via unknown vectors, a different vulnerability than CVE-2016-5512.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93655"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5522",
+        "cwe_id": "CWE-200",
+        "description": "Unspecified vulnerability in the Oracle Agile PLM component in Oracle Supply Chain Products Suite 9.3.4 and 9.3.5 allows remote authenticated users to affect confidentiality via unknown vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93675"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5523",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in the Oracle Agile PLM component in Oracle Supply Chain Products Suite 9.3.4 and 9.3.5 allows remote authenticated users to affect confidentiality, integrity, and availability via vectors related to AutoVue Java Applet.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93625"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5524",
+        "cwe_id": "CWE-200",
+        "description": "Unspecified vulnerability in the Oracle Agile PLM component in Oracle Supply Chain Products Suite 9.3.4 and 9.3.5 allows remote attackers to affect confidentiality via unknown vectors, a different vulnerability than CVE-2016-5527.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93671"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5525",
+        "cwe_id": "CWE-254",
+        "description": "Unspecified vulnerability in the Solaris Cluster component in Oracle Sun Systems Products Suite 3.3 and 4.3 allows local users to affect integrity via vectors related to Cluster check files.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "3.3 LOW",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93753",
+            "http://www.securitytracker.com/id/1037048"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:solaris_cluster:4.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:solaris_cluster:3.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:solaris_cluster:4.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:solaris_cluster:3.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5526",
+        "cwe_id": "CWE-284",
+        "description": "Unspecified vulnerability in the Oracle Agile PLM component in Oracle Supply Chain Products Suite 9.3.4 and 9.3.5 allows remote attackers to affect confidentiality, integrity, and availability via vectors related to Apache Tomcat.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.3 HIGH",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93652"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5527",
+        "cwe_id": "CWE-284",
+        "description": "Unspecified vulnerability in the Oracle Agile PLM component in Oracle Supply Chain Products Suite 9.3.4 and 9.3.5 allows remote attackers to affect confidentiality via unknown vectors, a different vulnerability than CVE-2016-5524.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93665"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:agile_product_lifecycle_management_framework:9.3.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5529",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in the PeopleSoft Enterprise PeopleTools component in Oracle PeopleSoft Products 8.54 and 8.55 allows remote attackers to affect confidentiality and integrity via vectors related to Integration Broker, a different vulnerability than CVE-2016-5530 and CVE-2016-8293.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93700",
+            "http://www.securitytracker.com/id/1037046"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:8.55:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:8.54:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:8.55:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:8.54:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5530",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in the PeopleSoft Enterprise PeopleTools component in Oracle PeopleSoft Products 8.54 and 8.55 allows remote attackers to affect confidentiality and integrity via vectors related to Integration Broker, a different vulnerability than CVE-2016-5529 and CVE-2016-8293.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93706",
+            "http://www.securitytracker.com/id/1037046"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:8.55:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:8.54:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:8.55:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:peoplesoft_enterprise_peopletools:8.54:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5531",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in the Oracle WebLogic Server component in Oracle Fusion Middleware 10.3.6.0, 12.1.3.0, and 12.2.1.0 allows remote attackers to affect confidentiality, integrity, and availability via vectors related to WLS-WebServices.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93730",
+            "http://www.securitytracker.com/id/1037052"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:weblogic_server:12.2.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.1.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:10.3.6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.2.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.2.1.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.1.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.1.3.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:10.3.6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:10.3.6.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.2.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.1.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:10.3.6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.2.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.1.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:10.3.6.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "10/30/2018",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5532",
+        "cwe_id": "CWE-284",
+        "description": "Unspecified vulnerability in the Oracle Shipping Execution component in Oracle E-Business Suite 12.1.1 through 12.1.3 and 12.2.3 through 12.2.6 allows remote attackers to affect confidentiality via vectors related to Workflow Events.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93758",
+            "http://www.securitytracker.com/id/1037038"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:shipping_execution:12.2.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:shipping_execution:12.1.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:shipping_execution:12.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:shipping_execution:12.2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:shipping_execution:12.2.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:shipping_execution:12.2.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:shipping_execution:12.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:shipping_execution:12.2.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:shipping_execution:12.1.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:shipping_execution:12.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:shipping_execution:12.2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:shipping_execution:12.2.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:shipping_execution:12.2.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:shipping_execution:12.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5533",
+        "cwe_id": "CWE-284",
+        "description": "Unspecified vulnerability in the Primavera P6 Enterprise Project Portfolio Management component in Oracle Primavera Products Suite 8.4, 15.x, and 16.x allows remote authenticated users to affect confidentiality and integrity via unknown vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "5.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93676"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:primavera_p6_enterprise_project_portfolio_management:16.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:primavera_p6_enterprise_project_portfolio_management:16.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:primavera_p6_enterprise_project_portfolio_management:16.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:primavera_p6_enterprise_project_portfolio_management:15.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:primavera_p6_enterprise_project_portfolio_manage",
+            "*cpe:2.3:a:oracle:primavera_p6_enterprise_project_portfolio_management:16.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:primavera_p6_enterprise_project_portfolio_management:16.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:primavera_p6_enterprise_project_portfolio_management:16.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:primavera_p6_enterprise_project_portfolio_management:15.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:primavera_p6_enterprise_project_portfolio_manage"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5534",
+        "cwe_id": "CWE-284",
+        "description": "Unspecified vulnerability in the Siebel Apps - Customer Order Management component in Oracle Siebel CRM 16.1 allows remote authenticated users to affect confidentiality via unknown vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93757"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:siebel_user_interface_framework:16.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:siebel_user_interface_framework:16.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5535",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in the Oracle WebLogic Server component in Oracle Fusion Middleware 10.3.6.0, 12.1.3.0, 12.2.1.0, and 12.2.1.1 allows remote attackers to affect confidentiality, integrity, and availability via unknown vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93692",
+            "http://www.securitytracker.com/id/1037052",
+            "https://www.tenable.com/security/research/tra-2016-33"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:weblogic_server:12.2.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.2.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.1.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:10.3.6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.2.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.2.1.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.2.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.2.1.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.1.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.1.3.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:10.3.6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:10.3.6.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.2.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.1.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:10.3.6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.2.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.2.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.1.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:10.3.6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:weblogic_server:12.2.1.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "10/30/2018",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5536",
+        "cwe_id": "CWE-284",
+        "description": "Unspecified vulnerability in the Oracle Platform Security for Java component in Oracle Fusion Middleware 12.1.3.0.0, 12.2.1.0.0, and 12.2.1.1.0 allows remote authenticated users to affect confidentiality, integrity, and availability via unknown vectors, a different vulnerability than CVE-2016-8281.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.6 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93772",
+            "http://www.securitytracker.com/id/1037051"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:platform_security_for_java:12.2.1.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:platform_security_for_java:12.1.3.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:platform_security_for_java:12.2.1.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:platform_security_for_java:12.2.1.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:platform_security_for_java:12.1.3.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:platform_security_for_java:12.2.1.1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5537",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in the NetBeans component in Oracle Fusion Middleware 8.1 allows local users to affect confidentiality, integrity, and availability via unknown vectors. NOTE: the previous information is from the October 2016 CPU. Oracle has not commented on third-party claims that this issue is a directory traversal vulnerability which allows local users with certain permissions to write to arbitrary files and consequently gain privileges via a .. (dot dot) in a archive entry in a ZIP file imported as a project.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:C/C:L/I:L/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:C/C:L/I:L/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "5.7 MEDIUM",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://hyp3rlinx.altervista.org/advisories/ORACLE-NETBEANS-IDE-DIRECTORY-TRAVERSAL.txt",
+            "http://packetstormsecurity.com/files/139259/Oracle-Netbeans-IDE-8.1-Directory-Traversal.html",
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/archive/1/539615/100/0/threaded",
+            "http://www.securityfocus.com/bid/93686",
+            "http://www.securitytracker.com/id/1037051",
+            "https://www.exploit-db.com/exploits/40588/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:netbeans:8.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:netbeans:8.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "10/09/2018",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5538",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in the Oracle VM VirtualBox component before 5.0.28 and 5.1.x before 5.1.8 in Oracle Virtualization allows local users to affect confidentiality, integrity, and availability via vectors related to Core, a different vulnerability than CVE-2016-5501.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "6.7 MEDIUM",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93697",
+            "http://www.securitytracker.com/id/1037053"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:vm_virtualbox:5.1.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:vm_virtualbox:5.0.27:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:vm_virtualbox:5.1.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:vm_virtualbox:5.0.27:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5539",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in the Oracle Retail Xstore Payment component in Oracle Retail Applications 1.x allows local users to affect confidentiality, integrity, and availability via unknown vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:P/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:P/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.3 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93663"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:micros_xstore_payment:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:micros_xstore_payment:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5540",
+        "cwe_id": "CWE-254",
+        "description": "Unspecified vulnerability in the Oracle Retail Xstore Payment component in Oracle Retail Applications 1.x allows local users to affect confidentiality and integrity via unknown vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:P/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:P/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "6.7 MEDIUM",
+        "base_score_v2": "3.3 LOW",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93657"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:micros_xstore_payment:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:micros_xstore_payment:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5542",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in Oracle Java SE 6u121, 7u111, 8u102; and Java SE Embedded 8u101 allows remote attackers to affect integrity via vectors related to Libraries.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "3.1 LOW",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2016-2079.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2088.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2089.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2090.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2136.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2137.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2138.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2658.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2659.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0061.html",
+            "http://www.debian.org/security/2016/dsa-3707",
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93643",
+            "http://www.securitytracker.com/id/1037040",
+            "http://www.ubuntu.com/usn/USN-3130-1",
+            "http://www.ubuntu.com/usn/USN-3154-1",
+            "https://access.redhat.com/errata/RHSA-2017:1216",
+            "https://security.gentoo.org/glsa/201611-04",
+            "https://security.gentoo.org/glsa/201701-43",
+            "https://security.netapp.com/advisory/ntap-20161019-0001/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:jdk:1.7.0:update_111:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.8.0:update_102:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.8.0:update_101:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.7.0:update_111:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.7.0:update111:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.8.0:update_102:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.8.0:update102:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.8.0:update_101:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.8.0:update101:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jre:1.8.0:update_101:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.8.0:update_101:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jre:1.6.0:update_121:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jre:1.7.0:update_111:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.7.0:update_111:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.6.0:update_121:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.8.0:update_102:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jre:1.8.0:update_102:",
+            "*cpe:2.3:a:oracle:jre:1.8.0:update_101:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.8.0:update_101:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jre:1.6.0:update_121:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jre:1.7.0:update_111:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.7.0:update_111:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.6.0:update_121:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.8.0:update_102:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jre:1.8.0:update_102:"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "09/08/2020",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5543",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in the Oracle FLEXCUBE Enterprise Limits and Collateral Management component in Oracle Financial Services Applications 12.0.0 and 12.1.0 allows remote attackers to affect confidentiality and integrity via vectors related to INFRA.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93624",
+            "http://www.securitytracker.com/id/1037049"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:flexcube_enterprise_limits_and_collateral_management:12.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:flexcube_enterprise_limits_and_collateral_management:12.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:flexcube_enterprise_limits_and_collateral_management:12.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:flexcube_enterprise_limits_and_collateral_management:12.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5544",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in Oracle Sun Solaris 10 and 11.3 allows local users to affect confidentiality, integrity, and availability via vectors related to Kernel/X86.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93746",
+            "http://www.securitytracker.com/id/1037048"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:oracle:solaris:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:solaris:11.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:solaris:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:solaris:11.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5553",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in Oracle Sun Solaris 10 and 11.3 allows local users to affect availability via unknown vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.0 MEDIUM",
+        "base_score_v2": "4.7 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93759",
+            "http://www.securitytracker.com/id/1037048"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:oracle:solaris:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:solaris:11.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:solaris:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:solaris:11.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5554",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in Oracle Java SE 6u121, 7u111, 8u102; and Java SE Embedded 8u101 allows remote attackers to affect integrity via vectors related to JMX.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2016-2079.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2088.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2089.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2090.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2136.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2137.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2138.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2658.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2659.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0061.html",
+            "http://www.debian.org/security/2016/dsa-3707",
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93637",
+            "http://www.securitytracker.com/id/1037040",
+            "http://www.ubuntu.com/usn/USN-3130-1",
+            "http://www.ubuntu.com/usn/USN-3154-1",
+            "https://access.redhat.com/errata/RHSA-2017:1216",
+            "https://security.gentoo.org/glsa/201611-04",
+            "https://security.gentoo.org/glsa/201701-43",
+            "https://security.netapp.com/advisory/ntap-20161019-0001/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:jdk:1.7.0:update_111:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.8.0:update_102:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.8.0:update_101:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.7.0:update_111:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.7.0:update111:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.8.0:update_102:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.8.0:update102:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.8.0:update_101:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.8.0:update101:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jre:1.8.0:update_101:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.8.0:update_101:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jre:1.8.0:update_102:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.8.0:update_102:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jre:1.7.0:update_111:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.7.0:update_111:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jre:1.6.0:update_121:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.6.0:update_121:",
+            "*cpe:2.3:a:oracle:jre:1.8.0:update_101:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.8.0:update_101:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jre:1.8.0:update_102:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.8.0:update_102:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jre:1.7.0:update_111:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.7.0:update_111:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jre:1.6.0:update_121:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.6.0:update_121:"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "09/08/2020",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5555",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in the OJVM component in Oracle Database Server 11.2.0.4 and 12.1.0.2 allows remote administrators to affect confidentiality, integrity, and availability via unknown vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.1 CRITICAL",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93615",
+            "http://www.securitytracker.com/id/1037035"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:database_server:11.2.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:database_server:12.1.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:database_server:11.2.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:database_server:12.1.0.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5556",
+        "cwe_id": "CWE-284",
+        "description": "Unspecified vulnerability in Oracle Java SE 6u121, 7u111, and 8u102 allows remote attackers to affect confidentiality, integrity, and availability via vectors related to 2D.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.6 CRITICAL",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2016-2088.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2089.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2090.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2136.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2137.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2138.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2659.html",
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93618",
+            "http://www.securitytracker.com/id/1037040",
+            "https://access.redhat.com/errata/RHSA-2017:1216",
+            "https://lists.apache.org/thread.html/r1b103833cb5bc8466e24ff0ecc5e75b45a705334ab6a444e64e840a0@%3Cissues.bookkeeper.apache.org%3E",
+            "https://security.gentoo.org/glsa/201611-04",
+            "https://security.netapp.com/advisory/ntap-20161019-0001/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:jdk:1.7.0:update_111:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.8.0:update_102:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.7.0:update_111:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.7.0:update111:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.8.0:update_102:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.8.0:update102:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.6.0:update_121:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jre:1.6.0:update_121:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jre:1.7.0:update_111:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.7.0:update_111:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jre:1.8.0:update_102:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.8.0:update_102:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.6.0:update_121:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jre:1.6.0:update_121:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jre:1.7.0:update_111:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.7.0:update_111:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jre:1.8.0:update_102:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:jdk:1.8.0:update_102:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "09/08/2020",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5557",
+        "cwe_id": "CWE-284",
+        "description": "Unspecified vulnerability in the Oracle Advanced Pricing component in Oracle E-Business Suite 12.1.1 through 12.1.3 and 12.2.3 through 12.2.6 allows remote attackers to affect confidentiality and integrity via unknown vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "8.2 HIGH",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93690",
+            "http://www.securitytracker.com/id/1037038"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:advanced_pricing:12.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:advanced_pricing:12.2.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:advanced_pricing:12.2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:advanced_pricing:12.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:advanced_pricing:12.2.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:advanced_pricing:12.1.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:advanced_pricing:12.2.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:advanced_pricing:12.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:advanced_pricing:12.2.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:advanced_pricing:12.2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:advanced_pricing:12.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:advanced_pricing:12.2.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:advanced_pricing:12.1.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:advanced_pricing:12.2.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5558",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in the Oracle Outside In Technology component in Oracle Fusion Middleware 8.4.0 and 8.5.1 through 8.5.3 allows remote attackers to affect confidentiality, integrity, and availability via vectors related to Outside In Filters, a different vulnerability than CVE-2016-5574, CVE-2016-5577, CVE-2016-5578, CVE-2016-5579, and CVE-2016-5588.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.6 HIGH",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/archive/1/539731/100/0/threaded",
+            "http://www.securityfocus.com/bid/93752",
+            "http://www.securitytracker.com/id/1037051",
+            "https://secuniaresearch.flexerasoftware.com/secunia_research/2016-11/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:outside_in_technology:8.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:outside_in_technology:8.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:outside_in_technology:8.5.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:outside_in_technology:8.5.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:outside_in_technology:8.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:outside_in_technology:8.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:outside_in_technology:8.5.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:outside_in_technology:8.5.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "09/27/2019",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-5559",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in Oracle Sun Solaris 10 and 11.3 allows local users to affect integrity via vectors related to Kernel.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:H/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:H/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:H/Au:N/C:N/I:C/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:H/Au:N/C:N/I:C/A:N)"
+        },
+        "base_score_v3": "4.1 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html",
+            "http://www.securityfocus.com/bid/93722",
+            "http://www.securitytracker.com/id/1037048"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:oracle:solaris:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:solaris:11.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:solaris:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:solaris:11.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Oracle",
+        "year": "2016",
+        "month": "10"
+    }
+]

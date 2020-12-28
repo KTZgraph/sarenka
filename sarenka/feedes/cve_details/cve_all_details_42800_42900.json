@@ -1,0 +1,3163 @@
+[
+    {
+        "cve_id": "CVE-2018-0150",
+        "cwe_id": "CWE-798",
+        "description": "A vulnerability in Cisco IOS XE Software could allow an unauthenticated, remote attacker to log in to a device running an affected release of Cisco IOS XE Software with the default username and password that are used at initial boot, aka a Static Credential Vulnerability. The vulnerability is due to an undocumented user account with privilege level 15 that has a default username and password. An attacker could exploit this vulnerability by using this account to remotely connect to an affected device. A successful exploit could allow the attacker to log in to the device with privilege level 15 access. This vulnerability affects Cisco devices that are running a vulnerable release of Cisco IOS XE Software Release 16.x. This vulnerability does not affect Cisco IOS XE Software releases prior to Release 16.x. Cisco Bug IDs: CSCve89880.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103539",
+            "http://www.securitytracker.com/id/1040579",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-xesc"
+        ],
+        "cpe": [
+            "cpe:2.3:h:cisco:integrated_services_router_4431:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:integrated_services_router_4451:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:integrated_services_router_4431:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:integrated_services_router_4451:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:integrated_services_router_4431:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:integrated_services_router_4451:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "12/02/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0151",
+        "cwe_id": "CWE-119",
+        "description": "A vulnerability in the quality of service (QoS) subsystem of Cisco IOS Software and Cisco IOS XE Software could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition or execute arbitrary code with elevated privileges. The vulnerability is due to incorrect bounds checking of certain values in packets that are destined for UDP port 18999 of an affected device. An attacker could exploit this vulnerability by sending malicious packets to an affected device. When the packets are processed, an exploitable buffer overflow condition may occur. A successful exploit could allow the attacker to execute arbitrary code on the affected device with elevated privileges. The attacker could also leverage this vulnerability to cause the device to reload, causing a temporary DoS condition while the device is reloading. The malicious packets must be destined to and processed by an affected device. Traffic transiting a device will not trigger the vulnerability. Cisco Bug IDs: CSCvf73881.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103540",
+            "http://www.securitytracker.com/id/1040582",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-107-03",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-qos"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:cisco:ios:everest-16.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:everest-16.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:everest-16.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:16.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:everest-16.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "12/02/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0152",
+        "cwe_id": "CWE-613",
+        "description": "A vulnerability in the web-based user interface (web UI) of Cisco IOS XE Software could allow an authenticated, remote attacker to gain elevated privileges on an affected device. The vulnerability exists because the affected software does not reset the privilege level for each web UI session. An attacker who has valid credentials for an affected device could exploit this vulnerability by remotely accessing a VTY line to the device. A successful exploit could allow the attacker to access an affected device with the privileges of the user who previously logged in to the web UI. This vulnerability affects Cisco devices that are running a vulnerable release of Cisco IOS XE Software, if the HTTP Server feature is enabled and authentication, authorization, and accounting (AAA) authorization is not configured for EXEC sessions. The default state of the HTTP Server feature is version-dependent. This vulnerability was introduced in Cisco IOS XE Software Release 16.1.1. Cisco Bug IDs: CSCvf71769.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103558",
+            "http://www.securitytracker.com/id/1040597",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-xepriv"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:cisco:ios:16.6.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:cisco:ios:everest-16.6.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:16.6.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:cisco:ios:everest-16.6.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:16.6.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:everest-16.6.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:16.6.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:everest-16.6.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:16.1.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "12/03/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0154",
+        "cwe_id": "CWE-399",
+        "description": "A vulnerability in the crypto engine of the Cisco Integrated Services Module for VPN (ISM-VPN) running Cisco IOS Software could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition on an affected device. The vulnerability is due to insufficient handling of VPN traffic by the affected device. An attacker could exploit this vulnerability by sending crafted VPN traffic to an affected device. A successful exploit could allow the attacker to cause the affected device to hang or crash, resulting in a DoS condition. Cisco Bug IDs: CSCvd39267.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103559",
+            "http://www.securitytracker.com/id/1040585",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-dos"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:cisco:ios:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0155",
+        "cwe_id": "CWE-755",
+        "description": "A vulnerability in the Bidirectional Forwarding Detection (BFD) offload implementation of Cisco Catalyst 4500 Series Switches and Cisco Catalyst 4500-X Series Switches could allow an unauthenticated, remote attacker to cause a crash of the iosd process, causing a denial of service (DoS) condition. The vulnerability is due to insufficient error handling when the BFD header in a BFD packet is incomplete. An attacker could exploit this vulnerability by sending a crafted BFD message to or across an affected switch. A successful exploit could allow the attacker to trigger a reload of the system. This vulnerability affects Catalyst 4500 Supervisor Engine 6-E (K5), Catalyst 4500 Supervisor Engine 6L-E (K10), Catalyst 4500 Supervisor Engine 7-E (K10), Catalyst 4500 Supervisor Engine 7L-E (K10), Catalyst 4500E Supervisor Engine 8-E (K10), Catalyst 4500E Supervisor Engine 8L-E (K10), Catalyst 4500E Supervisor Engine 9-E (K10), Catalyst 4500-X Series Switches (K10), Catalyst 4900M Switch (K5), Catalyst 4948E Ethernet Switch (K5). Cisco Bug IDs: CSCvc40729.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "8.6 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103565",
+            "http://www.securitytracker.com/id/1040587",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-107-05",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-bfd"
+        ],
+        "cpe": [
+            "cpe:2.3:h:cisco:catalyst_4500-x_series_switches_\\(k10\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_4500_supervisor_engine_6-e_\\(k5\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_4500_supervisor_engine_6l-e_\\(k10\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_4500_supervisor_engine_7-e_\\(k10\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:c",
+            "cpe:2.3:h:rockwellautomation:allen-bradley_stratix_8300_industrial_managed_ethernet_switch:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "09/04/2020",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0156",
+        "cwe_id": "CWE-20",
+        "description": "A vulnerability in the Smart Install feature of Cisco IOS Software and Cisco IOS XE Software could allow an unauthenticated, remote attacker to trigger a reload of an affected device, resulting in a denial of service (DoS) condition. The vulnerability is due to improper validation of packet data. An attacker could exploit this vulnerability by sending a crafted packet to an affected device on TCP port 4786. Only Smart Install client switches are affected. Cisco devices that are configured as a Smart Install director are not affected by this vulnerability. Cisco Bug IDs: CSCvd40673.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103569",
+            "http://www.securitytracker.com/id/1040596",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-107-04",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-107-05",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-smi"
+        ],
+        "cpe": [
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24lc-l:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24lc-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24pc-l:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24pc-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24tc-l:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24lc-l:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24lc-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24pc-l:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24pc-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24tc-l:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24lc-l:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24lc-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24pc-l:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24pc-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24tc-l:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24lc-l:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24lc-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24pc-l:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24pc-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24tc-l:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24lc-l:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24lc-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24pc-l:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24pc-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24tc-l:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24lc-l:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24lc-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24pc-l:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24pc-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960-plus_24tc-l:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "09/02/2020",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0157",
+        "cwe_id": "CWE-19",
+        "description": "A vulnerability in the Zone-Based Firewall code of Cisco IOS XE Software could allow an unauthenticated, remote attacker to cause a device to reload. The vulnerability is due to the way fragmented packets are handled in the firewall code. An attacker could exploit this vulnerability by sending fragmented IP Version 4 or IP Version 6 packets through an affected device. An exploit could allow the attacker to cause the device to crash, resulting in a denial of service (DoS) condition. The following releases of Cisco IOS XE Software are vulnerable: Everest-16.4.1, Everest-16.4.2, Everest-16.5.1, Everest-16.5.1b, Everest-16.6.1, Everest-16.6.1a. Cisco Bug IDs: CSCvf60296.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "8.6 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103561",
+            "http://www.securitytracker.com/id/1040593",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-fwip"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:cisco:ios_xe:everest-16.4.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:cisco:ios_xe:everest-16.4.2:*:*:*:*:*:*:*\n     *cpe:2.3:o:cisco:ios_xe:everest-16.5.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:cisco:ios_xe:everest-16.5.1b:*:*:*:*:*:*:*\n     *cpe:2.3:o:cisco:ios_xe:everest-16.6.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:cisco:ios_xe:everest-16.6.1a:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:everest-16.4.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:cisco:ios_xe:everest-16.4.2:*:*:*:*:*:*:*\n     *cpe:2.3:o:cisco:ios_xe:everest-16.5.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:cisco:ios_xe:everest-16.5.1b:*:*:*:*:*:*:*\n     *cpe:2.3:o:cisco:ios_xe:everest-16.6.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:cisco:ios_xe:everest-16.6.1a:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:everest-16.4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:everest-16.4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:everest-16.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:everest-16.5.1b:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:everest-16.6.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:everest-16.6.1a:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:16.4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:16.4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:16.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:16.5.1b:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:16.6.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:16.6.1a:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:everest-16.4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:everest-16.4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:everest-16.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:everest-16.5.1b:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:everest-16.6.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:everest-16.6.1a:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "12/03/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0158",
+        "cwe_id": "CWE-772",
+        "description": "A vulnerability in the Internet Key Exchange Version 2 (IKEv2) module of Cisco IOS Software and Cisco IOS XE Software could allow an unauthenticated, remote attacker to cause a memory leak or a reload of an affected device that leads to a denial of service (DoS) condition. The vulnerability is due to incorrect processing of certain IKEv2 packets. An attacker could exploit this vulnerability by sending crafted IKEv2 packets to an affected device to be processed. A successful exploit could cause an affected device to continuously consume memory and eventually reload, resulting in a DoS condition. Cisco Bug IDs: CSCvf22394.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "8.6 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103566",
+            "http://www.securitytracker.com/id/1040595",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-107-03",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-107-04",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-ike"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:cisco:ios:15.5\\(3\\)s1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.5\\(3\\)s1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.5\\(3\\)s1.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.5\\(3\\)s1.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.5\\(3\\)s1.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.5\\(3\\)s1.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.5\\(3\\)s1.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.5\\(3\\)s1.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.5\\(3\\)s1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.5\\(3\\)s1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.5\\(3\\)s1.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.5\\(3\\)s1.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.5\\(3\\)s1.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.5\\(3\\)s1.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.5\\(3\\)s1.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.5\\(3\\)s1.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:15.5\\(3\\)s1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:15.5\\(3\\)s1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:15.5\\(3\\)s1.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:15.5\\(3\\)s1.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:15.5\\(3\\)s1.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:15.5\\(3\\)s1.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:15.5\\(3\\)s1.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:15.5\\(3\\)s1.10:*:*:*"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0159",
+        "cwe_id": "CWE-20",
+        "description": "A vulnerability in the implementation of Internet Key Exchange Version 1 (IKEv1) functionality in Cisco IOS Software and Cisco IOS XE Software could allow an unauthenticated, remote attacker to cause an affected device to reload, resulting in a denial of service (DoS) condition. The vulnerability is due to improper validation of specific IKEv1 packets. An attacker could exploit this vulnerability by sending crafted IKEv1 packets to an affected device during an IKE negotiation. A successful exploit could allow the attacker to cause an affected device to reload, resulting in a DoS condition. Cisco Bug IDs: CSCuj73916.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103562",
+            "http://www.securitytracker.com/id/1040595",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-ike-dos"
+        ],
+        "cpe": [
+            "cpe:2.3:h:cisco:asr_901-12c-f-d:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_901-12c-ft-d:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_901-4c-f-d:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_901-4c-ft-d:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_901-6cz-f-a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_901-6cz-f-d:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_901-6cz-ft-a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_901-12c-f-d:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_901-12c-ft-d:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_901-4c-f-d:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_901-4c-ft-d:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_901-6cz-f-a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_901-6cz-f-d:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_901-6cz-ft-a:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0160",
+        "cwe_id": "CWE-415",
+        "description": "A vulnerability in Simple Network Management Protocol (SNMP) subsystem of Cisco IOS XE Software could allow an authenticated, remote attacker to cause a denial of service (DoS) condition. The vulnerability is due to improper management of memory resources, referred to as a double free. An attacker could exploit this vulnerability by sending crafted SNMP packets to an affected device. A successful exploit could allow the attacker to cause the affected device to reload, resulting in a DoS condition. To exploit this vulnerability via SNMP Version 2c or earlier, the attacker must know the SNMP read-only community string for an affected system. To exploit this vulnerability via SNMP Version 3, the attacker must know the user credentials for the affected system. This vulnerability affects Cisco devices that are running a vulnerable release of Cisco IOS XE Software, have been configured to be queried over SNMP, and have Network Address Translation (NAT) enabled. Cisco Bug IDs: CSCve75818.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:C/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:C/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "6.3 MEDIUM",
+        "base_score_v2": "6.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103575",
+            "http://www.securitytracker.com/id/1040584",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-snmp-dos"
+        ],
+        "cpe": [
+            "cpe:2.3:h:cisco:asr_901-12c-f-d:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_901-12c-ft-d:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_901-4c-f-d:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_901-4c-ft-d:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_901-6cz-f-a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_901-6cz-f-d:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_901-6cz-fs-a:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0161",
+        "cwe_id": "CWE-399",
+        "description": "A vulnerability in the Simple Network Management Protocol (SNMP) subsystem of Cisco IOS Software running on certain models of Cisco Catalyst Switches could allow an authenticated, remote attacker to cause a denial of service (DoS) condition, aka a GET MIB Object ID Denial of Service Vulnerability. The vulnerability is due to a condition that could occur when the affected software processes an SNMP read request that contains a request for the ciscoFlashMIB object ID (OID). An attacker could trigger this vulnerability by issuing an SNMP GET request for the ciscoFlashMIB OID on an affected device. A successful exploit could cause the affected device to restart due to a SYS-3-CPUHOG. This vulnerability affects the following Cisco devices if they are running a vulnerable release of Cisco IOS Software and are configured to use SNMP Version 2 (SNMPv2) or SNMP Version 3 (SNMPv3): Cisco Catalyst 2960-L Series Switches, Cisco Catalyst Digital Building Series Switches 8P, Cisco Catalyst Digital Building Series Switches 8U. Cisco Bug IDs: CSCvd89541.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:C/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:C/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "6.3 MEDIUM",
+        "base_score_v2": "6.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103573",
+            "http://www.securitytracker.com/id/1040589",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-snmp"
+        ],
+        "cpe": [
+            "cpe:2.3:h:cisco:catalyst_2960l-16ps-ll:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960l-16ts-ll:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960l-24pq-ll:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960l-24ps-ll:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960l-24tq-ll:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_2960l-24ts-ll:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0163",
+        "cwe_id": "CWE-287",
+        "description": "A vulnerability in the 802.1x multiple-authentication (multi-auth) feature of Cisco IOS Software could allow an unauthenticated, adjacent attacker to bypass the authentication phase on an 802.1x multi-auth port. The vulnerability is due to a logic change error introduced into the code. An attacker could exploit this vulnerability by trying to access an 802.1x multi-auth port after a successful supplicant has authenticated. An exploit could allow the attacker to bypass the 802.1x access controls and obtain access to the network. Cisco Bug IDs: CSCvg69701.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "3.3 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103571",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-dot1x"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:cisco:ios:15.4\\(3\\)m6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.4\\(3\\)m6a:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.4\\(3\\)m7:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.4\\(3\\)m7a:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.4\\(3\\)m8:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.4\\(3.0i\\)m6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.5\\(3\\)m3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.5\\(3\\)m4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0164",
+        "cwe_id": "CWE-399",
+        "description": "A vulnerability in the Switch Integrated Security Features of Cisco IOS XE Software could allow an unauthenticated, remote attacker to cause an interface queue wedge. The vulnerability is due to incorrect handling of crafted IPv6 packets. An attacker could exploit this vulnerability by sending crafted IPv6 packets through the device. An exploit could allow the attacker to cause an interface queue wedge. This vulnerability affects the Cisco cBR-8 Converged Broadband Router, Cisco ASR 1000 Series Aggregation Services Routers, and Cisco Cloud Services Router 1000V Series when configured with IPv6. In the field and internal testing, this vulnerability was only observed or reproduced on the Cisco cBR-8 Converged Broadband Router. The Cisco ASR 1000 Series Aggregation Services Routers and Cisco Cloud Services Router 1000V Series contain the same code logic, so affected trains have had the code fix applied; however, on these two products, the vulnerability has not been observed in the field or successfully reproduced internally. Cisco Bug IDs: CSCvd75185.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "8.6 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103553",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-sisf"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:cisco:ios_xe:15.6\\(2\\)sp:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:15.6\\(2\\)sp:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0165",
+        "cwe_id": "CWE-772",
+        "description": "A vulnerability in the Internet Group Management Protocol (IGMP) packet-processing functionality of Cisco IOS XE Software could allow an unauthenticated, adjacent attacker to exhaust buffers on an affected device, resulting in a denial of service (DoS) condition, aka a Memory Leak. The vulnerability is due to the affected software insufficiently processing IGMP Membership Query packets that are sent to an affected device. An attacker could exploit this vulnerability by sending a large number of IGMP Membership Query packets, which contain certain values, to an affected device. A successful exploit could allow the attacker to exhaust buffers on the affected device, resulting in a DoS condition that requires the device to be reloaded manually. This vulnerability affects: Cisco Catalyst 4500 Switches with Supervisor Engine 8-E, if they are running Cisco IOS XE Software Release 3.x.x.E and IP multicast routing is configured; Cisco devices that are running Cisco IOS XE Software Release 16.x, if IP multicast routing is configured. Cisco Bug IDs: CSCuw09295, CSCve94496.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "7.4 HIGH",
+        "base_score_v2": "6.1 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103568",
+            "http://www.securitytracker.com/id/1040592",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-igmp"
+        ],
+        "cpe": [
+            "cpe:2.3:h:cisco:catalyst_4000:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_3850-12s-e:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_3850-12s-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_3850-12xs-e:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_3850-12xs-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_3850-16xs-e:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_3850-16xs-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:catalyst_3850-24"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0167",
+        "cwe_id": "CWE-119",
+        "description": "Multiple Buffer Overflow vulnerabilities in the Link Layer Discovery Protocol (LLDP) subsystem of Cisco IOS Software, Cisco IOS XE Software, and Cisco IOS XR Software could allow an unauthenticated, adjacent attacker to cause a denial of service (DoS) condition or execute arbitrary code with elevated privileges on an affected device. Cisco Bug IDs: CSCuo17183, CSCvd73487.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "8.3 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103564",
+            "http://www.securitytracker.com/id/1040586",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-107-03",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-107-04",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-107-05",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-lldp"
+        ],
+        "cpe": [
+            "cpe:2.3:h:cisco:asr_9001:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9006:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9010:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9904:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9906:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:asr_9910:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:rockwellautomation:allen-bradley_armorstratix_5700:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:rockwellautomation:allen-bradley_stratix_5400:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:rockwellautomation:allen-bradley_stratix_5410:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:rockwellautomation:allen-bradley_stratix_5700:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:rockwellauto"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0169",
+        "cwe_id": "CWE-78",
+        "description": "Multiple vulnerabilities in the CLI parser of Cisco IOS XE Software could allow an authenticated, local attacker to gain access to the underlying Linux shell of an affected device and execute arbitrary commands with root privileges on the device. The vulnerabilities are due to the affected software improperly sanitizing command arguments to prevent access to internal data structures on a device. An attacker who has user EXEC mode (privilege level 1) access to an affected device could exploit these vulnerabilities on the device by executing CLI commands that contain crafted arguments. A successful exploit could allow the attacker to gain access to the underlying Linux shell of the affected device and execute arbitrary commands with root privileges on the device. Cisco Bug IDs: CSCtw85441, CSCus42252, CSCuv95370.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103567",
+            "http://www.securitytracker.com/id/1040583",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-privesc1"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:cisco:ios:15.0\\(5.59\\)emd:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.0\\(5.59\\)emd:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0170",
+        "cwe_id": "CWE-416",
+        "description": "A vulnerability in the Cisco Umbrella Integration feature of Cisco IOS XE Software could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition, related to the OpenDNS software. The vulnerability is due to a logic error that exists when handling a malformed incoming packet, leading to access to an internal data structure after it has been freed. An attacker could exploit this vulnerability by sending crafted, malformed IP packets to an affected device. A successful exploit could allow the attacker to cause an affected device to reload, resulting in a DoS condition. Cisco Bug IDs: CSCvb86327.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103560",
+            "http://www.securitytracker.com/id/1040590",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-opendns-dos"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:cisco:ios_xe:16.4\\(1\\):*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:16.4\\(1\\):*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:16.4\\(1\\):*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:16.4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:16.4\\(1\\):*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "12/03/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0171",
+        "cwe_id": "CWE-787",
+        "description": "A vulnerability in the Smart Install feature of Cisco IOS Software and Cisco IOS XE Software could allow an unauthenticated, remote attacker to trigger a reload of an affected device, resulting in a denial of service (DoS) condition, or to execute arbitrary code on an affected device. The vulnerability is due to improper validation of packet data. An attacker could exploit this vulnerability by sending a crafted Smart Install message to an affected device on TCP port 4786. A successful exploit could allow the attacker to cause a buffer overflow on the affected device, which could have the following impacts: Triggering a reload of the device, Allowing the attacker to execute arbitrary code on the device, Causing an indefinite loop on the affected device that triggers a watchdog crash. Cisco Bug IDs: CSCvg76186.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103538",
+            "http://www.securitytracker.com/id/1040580",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-107-04",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-107-05",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-smi2",
+            "https://www.darkreading.com/perimeter/attackers-exploit-cisco-switch-issue-as-vendor-warns-of-yet-another-critical-flaw/d/d-id/1331490"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:cisco:ios:15.2\\(5\\)e:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.2\\(5\\)e:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "09/04/2020",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0172",
+        "cwe_id": "CWE-787",
+        "description": "A vulnerability in the DHCP option 82 encapsulation functionality of Cisco IOS Software and Cisco IOS XE Software could allow an unauthenticated, remote attacker to cause an affected device to reload, resulting in a denial of service (DoS) condition. The vulnerability exists because the affected software performs incomplete input validation of option 82 information that it receives in DHCP Version 4 (DHCPv4) packets from DHCP relay agents. An attacker could exploit this vulnerability by sending a crafted DHCPv4 packet to an affected device. A successful exploit could allow the attacker to cause a heap overflow condition on the affected device, which will cause the device to reload and result in a DoS condition. Cisco Bug IDs: CSCvg62730.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "8.6 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103552",
+            "http://www.securitytracker.com/id/1040591",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-107-04",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-107-05",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-dhcpr1",
+            "https://www.tenable.com/security/research/tra-2018-06"
+        ],
+        "cpe": [
+            "cpe:2.3:h:rockwellautomation:allen-bradley_armorstratix_5700:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:rockwellautomation:allen-bradley_stratix_5400:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:rockwellautomation:allen-bradley_stratix_5410:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:rockwellautomation:allen-bradley_stratix_5700:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:rockwellautomation:allen-bradl",
+            "*cpe:2.3:o:cisco:ios:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "09/04/2020",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0173",
+        "cwe_id": "CWE-20",
+        "description": "A vulnerability in the Cisco IOS Software and Cisco IOS XE Software function that restores encapsulated option 82 information in DHCP Version 4 (DHCPv4) packets could allow an unauthenticated, remote attacker to cause an affected device to reload, resulting in a Relay Reply denial of service (DoS) condition. The vulnerability exists because the affected software performs incomplete input validation of encapsulated option 82 information that it receives in DHCPOFFER messages from DHCPv4 servers. An attacker could exploit this vulnerability by sending a crafted DHCPv4 packet to an affected device, which the device would then forward to a DHCPv4 server. When the affected software processes the option 82 information that is encapsulated in the response from the server, an error could occur. A successful exploit could allow the attacker to cause the affected device to reload, resulting in a DoS condition. Cisco Bug IDs: CSCvg62754.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "8.6 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103545",
+            "http://www.securitytracker.com/id/1040591",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-107-04",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-107-05",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-dhcpr2",
+            "https://www.tenable.com/security/research/tra-2018-06"
+        ],
+        "cpe": [
+            "cpe:2.3:h:cisco:4321_integrated_services_router:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:4331_integrated_services_router:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:4351_integrated_services_router:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:4431_integrated_services_router:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:4451-x_integrated_services_router:-:*",
+            "cpe:2.3:h:rockwellautomation:allen-bradley_armorstratix_5700:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:rockwellautomation:allen-bradley_stratix_5400:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:rockwellautomation:allen-bradley_stratix_5410:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:rockwellautomation:allen-bradley_stratix_5700:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:rockwe"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0174",
+        "cwe_id": "CWE-20",
+        "description": "A vulnerability in the DHCP option 82 encapsulation functionality of Cisco IOS Software and Cisco IOS XE Software could allow an unauthenticated, remote attacker to cause an affected device to reload, resulting in a denial of service (DoS) condition. The vulnerability exists because the affected software performs incomplete input validation of option 82 information that it receives in DHCP Version 4 (DHCPv4) packets from DHCP relay agents. An attacker could exploit this vulnerability by sending a crafted DHCPv4 packet to an affected device. A successful exploit could allow the attacker to cause the affected device to reload, resulting in a DoS condition. Cisco Bug IDs: CSCuh91645.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "8.6 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103554",
+            "http://www.securitytracker.com/id/1040591",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-107-04",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-107-05",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-dhcpr3",
+            "https://www.tenable.com/security/research/tra-2018-06"
+        ],
+        "cpe": [
+            "cpe:2.3:h:cisco:7600_series_route_switch_processor_720:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:7600_series_supervisor_engine_32:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:7600_series_supervisor_engine_720:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:rockwellautomation:allen-bradley_armorstratix_5700:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:rockwellautomation:allen-bradley_stratix_5400:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:rockwellautomation:allen-bradley_stratix_5410:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:rockwellautomation:allen-bradley_stratix_5700:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ro"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0175",
+        "cwe_id": "CWE-134",
+        "description": "Format String vulnerability in the Link Layer Discovery Protocol (LLDP) subsystem of Cisco IOS Software, Cisco IOS XE Software, and Cisco IOS XR Software could allow an unauthenticated, adjacent attacker to cause a denial of service (DoS) condition or execute arbitrary code with elevated privileges on an affected device. Cisco Bug IDs: CSCvd73664.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:A/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:A/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.0 HIGH",
+        "base_score_v2": "7.9 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103564",
+            "http://www.securitytracker.com/id/1040586",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-107-03",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-107-04",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-107-05",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-lldp"
+        ],
+        "cpe": [
+            "cpe:2.3:h:rockwellautomation:allen-bradley_armorstratix_5700:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:rockwellautomation:allen-bradley_stratix_5400:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:rockwellautomation:allen-bradley_stratix_5410:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:rockwellautomation:allen-b",
+            "*cpe:2.3:o:cisco:ios:15.4\\(3\\)m4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:15.4\\(3\\)m4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xr:15.4\\(3\\)m4.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0176",
+        "cwe_id": "CWE-78",
+        "description": "Multiple vulnerabilities in the CLI parser of Cisco IOS XE Software could allow an authenticated, local attacker to gain access to the underlying Linux shell of an affected device and execute arbitrary commands with root privileges on the device. The vulnerabilities are due to the affected software improperly sanitizing command arguments to prevent access to internal data structures on a device. An attacker who has user EXEC mode (privilege level 1) access to an affected device could exploit these vulnerabilities on the device by executing CLI commands that contain crafted arguments. A successful exploit could allow the attacker to gain access to the underlying Linux shell of the affected device and execute arbitrary commands with root privileges on the device. Cisco Bug IDs: CSCtw85441, CSCus42252, CSCuv95370.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103567",
+            "http://www.securitytracker.com/id/1040583",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-privesc1"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:cisco:ios_xe:15.0\\(5.59\\)emd:*:*:*:*:*:*:*\n     *cpe:2.3:o:cisco:ios_xe:16.1\\(0\\):*:*:*:*:*:*:*\n     *cpe:2.3:o:cisco:ios_xe:16.2\\(0\\):*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:15.0\\(5.59\\)emd:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:16.1\\(0\\):*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:16.2\\(0\\):*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0177",
+        "cwe_id": "CWE-19",
+        "description": "A vulnerability in the IP Version 4 (IPv4) processing code of Cisco IOS XE Software running on Cisco Catalyst 3850 and Cisco Catalyst 3650 Series Switches could allow an unauthenticated, remote attacker to cause high CPU utilization, traceback messages, or a reload of an affected device that leads to a denial of service (DoS) condition. The vulnerability is due to incorrect processing of certain IPv4 packets. An attacker could exploit this vulnerability by sending specific IPv4 packets to an IPv4 address on an affected device. A successful exploit could allow the attacker to cause high CPU utilization, traceback messages, or a reload of the affected device that leads to a DoS condition. If the switch does not reboot when under attack, it would require manual intervention to reload the device. This vulnerability affects Cisco Catalyst 3850 and Cisco Catalyst 3650 Series Switches that are running Cisco IOS XE Software Release 16.1.1 or later, until the first fixed release, and are configured with an IPv4 address. Cisco Bug IDs: CSCvd80714.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103563",
+            "http://www.securitytracker.com/id/1040588",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-ipv4"
+        ],
+        "cpe": [
+            "cpe:2.3:h:cisco:4321_integrated_services_router:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:4331_integrated_services_router:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:4351_integrated_services_router:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:4431_integrated_services_router:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:4451-x_integrated_services_router:"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0179",
+        "cwe_id": "CWE-399",
+        "description": "Multiple vulnerabilities in the Login Enhancements (Login Block) feature of Cisco IOS Software could allow an unauthenticated, remote attacker to trigger a reload of an affected system, resulting in a denial of service (DoS) condition. These vulnerabilities affect Cisco devices that are running Cisco IOS Software Release 15.4(2)T, 15.4(3)M, or 15.4(2)CG and later. Cisco Bug IDs: CSCuy32360, CSCuz60599.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "7.1 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103556",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-slogin"
+        ],
+        "cpe": [
+            "cpe:2.3:h:cisco:1921:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:1941:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:1941w:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:2901:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:2911:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:2921:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:cisco:ios:15.4\\(2\\)t:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.4\\(3\\)m:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.3\\(0.0.19\\)sy:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.4\\(3\\)m4.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0180",
+        "cwe_id": "CWE-399",
+        "description": "Multiple vulnerabilities in the Login Enhancements (Login Block) feature of Cisco IOS Software could allow an unauthenticated, remote attacker to trigger a reload of an affected system, resulting in a denial of service (DoS) condition. These vulnerabilities affect Cisco devices that are running Cisco IOS Software Release 15.4(2)T, 15.4(3)M, or 15.4(2)CG and later. Cisco Bug IDs: CSCuy32360, CSCuz60599.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "7.1 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103556",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-slogin"
+        ],
+        "cpe": [
+            "cpe:2.3:h:cisco:1921:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:1941:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:1941w:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:2901:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:2911:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:cisco:2921:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:cisco:ios:15.4\\(2\\)t:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.4\\(3\\)m:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.3\\(0.0.19\\)sy:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios:15.4\\(3\\)m4.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0182",
+        "cwe_id": "CWE-78",
+        "description": "Multiple vulnerabilities in the CLI parser of Cisco IOS XE Software could allow an authenticated, local attacker to inject arbitrary commands into the CLI of the affected software, which could allow the attacker to gain access to the underlying Linux shell of an affected device and execute commands with root privileges on the device. The vulnerabilities exist because the affected software does not sufficiently sanitize command arguments before passing commands to the Linux shell for execution. An attacker could exploit these vulnerabilities by submitting a malicious CLI command to the affected software. A successful exploit could allow the attacker to break from the CLI of the affected software, which could allow the attacker to gain access to the underlying Linux shell on an affected device and execute arbitrary commands with root privileges on the device. Cisco Bug IDs: CSCuz03145, CSCuz56419, CSCva31971, CSCvb09542.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103547",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-cmdinj"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:* versions up to (excluding) 16.3.1",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0183",
+        "cwe_id": "CWE-78",
+        "description": "A vulnerability in the CLI parser of Cisco IOS XE Software could allow an authenticated, local attacker to gain access to the underlying Linux shell of an affected device and execute arbitrary commands with root privileges on the device. The vulnerability is due to the affected software improperly sanitizing command arguments to prevent access to internal data structures on a device. An attacker who has privileged EXEC mode (privilege level 15) access to an affected device could exploit this vulnerability on the device by executing CLI commands that contain crafted arguments. A successful exploit could allow the attacker to gain access to the underlying Linux shell of the affected device and execute arbitrary commands with root privileges on the device. Cisco Bug IDs: CSCuv91356.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "6.7 MEDIUM",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103555",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-privesc3"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:* versions up to (excluding) 16.3.5b",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0184",
+        "cwe_id": "CWE-78",
+        "description": "A vulnerability in the CLI parser of Cisco IOS XE Software could allow an authenticated, local attacker to gain access to the underlying Linux shell of an affected device and execute arbitrary commands with root privileges on the device. The vulnerability is due to the affected software improperly sanitizing command arguments to prevent access to internal data structures on a device. An attacker who has privileged EXEC mode (privilege level 15) access to an affected device could exploit this vulnerability on the device by executing CLI commands that contain crafted arguments. A successful exploit could allow the attacker to gain access to the underlying Linux shell of the affected device and execute arbitrary commands with root privileges on the device. Cisco Bug IDs: CSCve74432.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "6.7 MEDIUM",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103550",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-privesc2"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:* versions from (including) 16.3 up to (excluding) 16.3.6\n     *cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:* versions from (including) 16.6 up to (excluding) 16.6.2",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0185",
+        "cwe_id": "CWE-78",
+        "description": "Multiple vulnerabilities in the CLI parser of Cisco IOS XE Software could allow an authenticated, local attacker to inject arbitrary commands into the CLI of the affected software, which could allow the attacker to gain access to the underlying Linux shell of an affected device and execute commands with root privileges on the device. The vulnerabilities exist because the affected software does not sufficiently sanitize command arguments before passing commands to the Linux shell for execution. An attacker could exploit these vulnerabilities by submitting a malicious CLI command to the affected software. A successful exploit could allow the attacker to break from the CLI of the affected software, which could allow the attacker to gain access to the underlying Linux shell on an affected device and execute arbitrary commands with root privileges on the device. Cisco Bug IDs: CSCuz03145, CSCuz56419, CSCva31971, CSCvb09542.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103547",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-cmdinj"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:* versions up to (excluding) 16.3.1",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0186",
+        "cwe_id": "CWE-79",
+        "description": "Multiple vulnerabilities in the web-based user interface (web UI) of Cisco IOS XE Software could allow an unauthenticated, remote attacker to conduct a cross-site scripting (XSS) attack against a user of the web UI of the affected software. The vulnerabilities are due to insufficient input validation of certain parameters that are passed to the affected software via the web UI. An attacker could exploit these vulnerabilities by persuading a user of the affected UI to access a malicious link or by intercepting a user request for the affected UI and injecting malicious code into the request. A successful exploit could allow the attacker to execute arbitrary script code in the context of the affected UI or allow the attacker to access sensitive browser-based information on the user's system. Cisco Bug IDs: CSCuz38591, CSCvb09530, CSCvb10022.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103551",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-webuixss"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:* versions up to (excluding) 16.3.6",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0188",
+        "cwe_id": "CWE-79",
+        "description": "Multiple vulnerabilities in the web-based user interface (web UI) of Cisco IOS XE Software could allow an unauthenticated, remote attacker to conduct a cross-site scripting (XSS) attack against a user of the web UI of the affected software. The vulnerabilities are due to insufficient input validation of certain parameters that are passed to the affected software via the web UI. An attacker could exploit these vulnerabilities by persuading a user of the affected UI to access a malicious link or by intercepting a user request for the affected UI and injecting malicious code into the request. A successful exploit could allow the attacker to execute arbitrary script code in the context of the affected UI or allow the attacker to access sensitive browser-based information on the user's system. Cisco Bug IDs: CSCuz38591, CSCvb09530, CSCvb10022.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103551",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-webuixss"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:* versions up to (excluding) 16.3.6",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0189",
+        "cwe_id": "CWE-399",
+        "description": "A vulnerability in the Forwarding Information Base (FIB) code of Cisco IOS Software and Cisco IOS XE Software could allow an unauthenticated, network attacker to cause a denial of service (DoS) condition. The vulnerability is due to a limitation in the way the FIB is internally representing recursive routes. An attacker could exploit this vulnerability by injecting routes into the routing protocol that have a specific recursive pattern. The attacker must be in a position on the network that provides the ability to inject a number of recursive routes with a specific pattern. An exploit could allow the attacker to cause an affected device to reload, creating a DoS condition. Cisco Bug IDs: CSCva91655.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "7.1 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103548",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-FIB-dos"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:* versions up to (excluding) 15.2(1)e1",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "15.4(1)s0a",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0190",
+        "cwe_id": "CWE-79",
+        "description": "Multiple vulnerabilities in the web-based user interface (web UI) of Cisco IOS XE Software could allow an unauthenticated, remote attacker to conduct a cross-site scripting (XSS) attack against a user of the web UI of the affected software. The vulnerabilities are due to insufficient input validation of certain parameters that are passed to the affected software via the web UI. An attacker could exploit these vulnerabilities by persuading a user of the affected UI to access a malicious link or by intercepting a user request for the affected UI and injecting malicious code into the request. A successful exploit could allow the attacker to execute arbitrary script code in the context of the affected UI or allow the attacker to access sensitive browser-based information on the user's system. Cisco Bug IDs: CSCuz38591, CSCvb09530, CSCvb10022.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103551",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-webuixss"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:* versions up to (excluding) 16.3.6",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0193",
+        "cwe_id": "CWE-78",
+        "description": "Multiple vulnerabilities in the CLI parser of Cisco IOS XE Software could allow an authenticated, local attacker to inject arbitrary commands into the CLI of the affected software, which could allow the attacker to gain access to the underlying Linux shell of an affected device and execute commands with root privileges on the device. The vulnerabilities exist because the affected software does not sufficiently sanitize command arguments before passing commands to the Linux shell for execution. An attacker could exploit these vulnerabilities by submitting a malicious CLI command to the affected software. A successful exploit could allow the attacker to break from the CLI of the affected software, which could allow the attacker to gain access to the underlying Linux shell on an affected device and execute arbitrary commands with root privileges on the device. Cisco Bug IDs: CSCuz03145, CSCuz56419, CSCva31971, CSCvb09542.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103547",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-cmdinj"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:* versions up to (excluding) 16.3.1",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0195",
+        "cwe_id": "CWE-287",
+        "description": "A vulnerability in the Cisco IOS XE Software REST API could allow an authenticated, remote attacker to bypass API authorization checks and use the API to perform privileged actions on an affected device. The vulnerability is due to insufficient authorization checks for requests that are sent to the REST API of the affected software. An attacker could exploit this vulnerability by sending a malicious request to an affected device via the REST API. A successful exploit could allow the attacker to selectively bypass authorization checks for the REST API of the affected software and use the API to perform privileged actions on an affected device. Cisco Bug IDs: CSCuz56428.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103557",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-rest"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:* versions up to (excluding) 16.2.2",
+            "*cpe:2.3:o:cisco:ios_xe:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-0196",
+        "cwe_id": "CWE-20",
+        "description": "A vulnerability in the web-based user interface (web UI) of Cisco IOS XE Software could allow an authenticated, remote attacker to write arbitrary files to the operating system of an affected device. The vulnerability is due to insufficient input validation of HTTP requests that are sent to the web UI of the affected software. An attacker could exploit this vulnerability by sending a malicious HTTP request to the web UI of the affected software. A successful exploit could allow the attacker to write arbitrary files to the operating system of an affected device. Cisco Bug IDs: CSCvb22645.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.9 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103570",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-wfw"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:cisco:ios_xe:16.1.2:*:*:*:*:*:*:*\n     *cpe:2.3:o:cisco:ios_xe:16.2.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:cisco:ios_xe:16.3\\(1\\):*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:16.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:16.2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:cisco:ios_xe:16.3\\(1\\):*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/28/2018",
+        "modified_date": "10/22/2020",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-9120",
+        "cwe_id": "CWE-79",
+        "description": "In Crea8social 2018.2, there is Stored Cross-Site Scripting via a post.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://www.seekurity.com/blog/general/multiple-cross-site-scripting-vulnerabilities-in-crea8social-social-network-script/",
+            "https://www.youtube.com/watch?v=QqJFh3Ame9g"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:crea8social:crea8social:2018.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:crea8social:crea8social:2018.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "04/17/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-9121",
+        "cwe_id": "CWE-79",
+        "description": "In Crea8social 2018.2, there is Stored Cross-Site Scripting via a post comment.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://www.seekurity.com/blog/general/multiple-cross-site-scripting-vulnerabilities-in-crea8social-social-network-script/",
+            "https://www.youtube.com/watch?v=bCf0hO9upto"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:crea8social:crea8social:2018.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:crea8social:crea8social:2018.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "04/17/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-9122",
+        "cwe_id": "CWE-79",
+        "description": "In Crea8social 2018.2, there is Reflected Cross-Site Scripting via the term parameter to the /search URI.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://www.seekurity.com/blog/general/multiple-cross-site-scripting-vulnerabilities-in-crea8social-social-network-script/",
+            "https://www.youtube.com/watch?v=QqJFh3Ame9g"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:crea8social:crea8social:2018.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:crea8social:crea8social:2018.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "04/17/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-9123",
+        "cwe_id": "CWE-79",
+        "description": "In Crea8social 2018.2, there is Stored Cross-Site Scripting via a User Profile.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://www.seekurity.com/blog/general/multiple-cross-site-scripting-vulnerabilities-in-crea8social-social-network-script/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:crea8social:crea8social:2018.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:crea8social:crea8social:2018.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "04/17/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-7600",
+        "cwe_id": "CWE-20",
+        "description": "Drupal before 7.58, 8.x before 8.3.9, 8.4.x before 8.4.6, and 8.5.x before 8.5.1 allows remote attackers to execute arbitrary code because of an issue affecting multiple subsystems with default or common module configurations.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103534",
+            "http://www.securitytracker.com/id/1040598",
+            "https://badpackets.net/over-100000-drupal-websites-vulnerable-to-drupalgeddon-2-cve-2018-7600/",
+            "https://blog.appsecco.com/remote-code-execution-with-drupal-core-sa-core-2018-002-95e6ecc0c714",
+            "https://github.com/a2u/CVE-2018-7600",
+            "https://github.com/g0rx/CVE-2018-7600-Drupal-RCE",
+            "https://greysec.net/showthread.php?tid=2912&pid=10561",
+            "https://groups.drupal.org/security/faq-2018-002",
+            "https://lists.debian.org/debian-lts-announce/2018/03/msg00028.html",
+            "https://research.checkpoint.com/uncovering-drupalgeddon-2/",
+            "https://twitter.com/RicterZ/status/979567469726613504",
+            "https://twitter.com/RicterZ/status/984495201354854401",
+            "https://twitter.com/arancaytar/status/979090719003627521",
+            "https://www.debian.org/security/2018/dsa-4156",
+            "https://www.drupal.org/sa-core-2018-002",
+            "https://www.exploit-db.com/exploits/44448/",
+            "https://www.exploit-db.com/exploits/44449/",
+            "https://www.exploit-db.com/exploits/44482/",
+            "https://www.synology.com/support/security/Synology_SA_18_17",
+            "https://www.tenable.com/blog/critical-drupal-core-vulnerability-what-you-need-to-know"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:* versions up to (including) 7.57\n     *cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:* versions from (including) 8.0.0 up to (excluding) 8.3.9\n     *cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:* versions from (including) 8.4.0 up to (excluding) 8.4.6\n     *cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:* versions from (including) 8.5.0 up to (excluding) 8.5.1",
+            "*cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "03/01/2019",
+        "vulnerability_source": "Drupal.org",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-9116",
+        "cwe_id": "CWE-611",
+        "description": "An XXE vulnerability within WireMock before 2.16.0 allows a remote unauthenticated attacker to access local files and internal resources and potentially cause a Denial of Service.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:P)"
+        },
+        "base_score_v3": "9.1 CRITICAL",
+        "base_score_v2": "6.4 MEDIUM",
+        "hyperlinks": [
+            "https://groups.google.com/forum/#!topic/wiremock-user/PQ1UQzKZVl0"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:wiremock:wiremock:*:*:*:*:*:*:*:* versions up to (excluding) 2.16.0",
+            "*cpe:2.3:a:wiremock:wiremock:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "02/27/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-9117",
+        "cwe_id": "CWE-22",
+        "description": "WireMock before 2.16.0 contains a vulnerability that allows a remote unauthenticated attacker to access local files beyond the application directory via a specially crafted XML request, aka Directory Traversal.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://groups.google.com/forum/#!topic/wiremock-user/PQ1UQzKZVl0"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:wiremock:wiremock:*:*:*:*:*:*:*:* versions up to (excluding) 2.16.0",
+            "*cpe:2.3:a:wiremock:wiremock:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "02/27/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-4841",
+        "cwe_id": "CWE-287",
+        "description": "A vulnerability has been identified in TIM 1531 IRC (All versions < V1.1). A remote attacker with network access to port 80/tcp or port 443/tcp could perform administrative operations on the device without prior authentication. Successful exploitation could allow to cause a denial-of-service, or read and manipulate data as well as configuration settings of the affected device. At the stage of publishing this security advisory no public exploitation is known. Siemens provides mitigations to resolve it.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103576",
+            "https://cert-portal.siemens.com/productcert/pdf/ssa-110922.pdf"
+        ],
+        "cpe": [
+            "cpe:2.3:h:siemens:tim_1531_irc:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Siemens AG",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-5223",
+        "cwe_id": "CWE-20",
+        "description": "Fisheye and Crucible did not correctly check if a configured Mercurial repository URI contained values that the Windows operating system may consider argument parameters. An attacker who has permission to add a repository in Fisheye or Crucible can execute code of their choice on systems that run a vulnerable version of Fisheye or Crucible on the Windows operating system. All versions of Fisheye and Crucible before 4.4.6 (the fixed version for 4.4.x) and from 4.5.0 before 4.5.3 (the fixed version for 4.5.x) are affected by this vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.2 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103665",
+            "https://confluence.atlassian.com/x/Zi5sO",
+            "https://confluence.atlassian.com/x/aS5sO",
+            "https://jira.atlassian.com/browse/CRUC-8181",
+            "https://jira.atlassian.com/browse/FE-7014"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:atlassian:crucible:*:*:*:*:*:*:*:* versions from (including) 4.4.0 up to (excluding) 4.4.6\n     *cpe:2.3:a:atlassian:crucible:*:*:*:*:*:*:*:* versions from (including) 4.5.0 up to (excluding) 4.5.3",
+            "*cpe:2.3:a:atlassian:crucible:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:crucible:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:fisheye:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:fisheye:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "04/24/2018",
+        "vulnerability_source": "Atlassian",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-5224",
+        "cwe_id": "CWE-20",
+        "description": "Bamboo did not correctly check if a configured Mercurial repository URI contained values that the Windows operating system may consider argument parameters. An attacker who has permission to create a repository in Bamboo, edit an existing plan in Bamboo that has a non-linked Mercurial repository, or create a plan in Bamboo either globally or in a project using Bamboo Specs can can execute code of their choice on systems that run a vulnerable version of Bamboo on the Windows operating system. All versions of Bamboo starting with 2.7.0 before 6.3.3 (the fixed version for 6.3.x) and from version 6.4.0 before 6.4.1 (the fixed version for 6.4.x) running on the Windows operating system are affected by this vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103653",
+            "https://confluence.atlassian.com/x/PS9sO",
+            "https://jira.atlassian.com/browse/BAM-19743"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "04/24/2018",
+        "vulnerability_source": "Atlassian",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-6586",
+        "cwe_id": "CWE-79",
+        "description": "CA API Developer Portal 3.5 up to and including 3.5 CR6 has a stored cross-site scripting vulnerability related to profile picture processing.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1040603",
+            "https://support.ca.com/us/product-content/recommended-reading/security-notices/ca20180328-01--security-notice-for-ca-api-developer-portal.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ca:api_developer_portal:3.5:*:*:*:*:*:*:*\n     *cpe:2.3:a:ca:api_developer_portal:3.5:cr1:*:*:*:*:*:*\n     *cpe:2.3:a:ca:api_developer_portal:3.5:cr2:*:*:*:*:*:*\n     *cpe:2.3:a:ca:api_developer_portal:3.5:cr3:*:*:*:*:*:*\n     *cpe:2.3:a:ca:api_developer_portal:3.5:cr4:*:*:*:*:*:*\n     *cpe:2.3:a:ca:api_developer_portal:3.5:cr5:*:*:*:*:*:*\n     *cpe:2.3:a:ca:api_developer_portal:3.5:cr6:*:*:*:*:*:*",
+            "*cpe:2.3:a:ca:api_developer_portal:3.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ca:api_developer_portal:3.5:cr1:*:*:*:*:*:*",
+            "*cpe:2.3:a:ca:api_developer_portal:3.5:cr2:*:*:*:*:*:*",
+            "*cpe:2.3:a:ca:api_developer_portal:3.5:cr3:*:*:*:*:*:*",
+            "*cpe:2.3:a:ca:api_developer_portal:3.5:cr4:*:*:*:*:*:*",
+            "*cpe:2.3:a:ca:api_developer_portal:3.5:cr5:*:*:*:*:*:*",
+            "*cpe:2.3:a:ca:api_developer_portal:3.5:cr6:*:*:*:*:*:*"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "CA Technologies - A Broadcom Company",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-6587",
+        "cwe_id": "CWE-79",
+        "description": "CA API Developer Portal 3.5 up to and including 3.5 CR6 has a reflected cross-site scripting vulnerability related to the widgetID variable.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1040603",
+            "https://support.ca.com/us/product-content/recommended-reading/security-notices/ca20180328-01--security-notice-for-ca-api-developer-portal.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ca:api_developer_portal:3.5:*:*:*:*:*:*:*\n     *cpe:2.3:a:ca:api_developer_portal:3.5:cr1:*:*:*:*:*:*\n     *cpe:2.3:a:ca:api_developer_portal:3.5:cr2:*:*:*:*:*:*\n     *cpe:2.3:a:ca:api_developer_portal:3.5:cr3:*:*:*:*:*:*\n     *cpe:2.3:a:ca:api_developer_portal:3.5:cr4:*:*:*:*:*:*\n     *cpe:2.3:a:ca:api_developer_portal:3.5:cr5:*:*:*:*:*:*\n     *cpe:2.3:a:ca:api_developer_portal:3.5:cr6:*:*:*:*:*:*",
+            "*cpe:2.3:a:ca:api_developer_portal:3.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ca:api_developer_portal:3.5:cr1:*:*:*:*:*:*",
+            "*cpe:2.3:a:ca:api_developer_portal:3.5:cr2:*:*:*:*:*:*",
+            "*cpe:2.3:a:ca:api_developer_portal:3.5:cr3:*:*:*:*:*:*",
+            "*cpe:2.3:a:ca:api_developer_portal:3.5:cr4:*:*:*:*:*:*",
+            "*cpe:2.3:a:ca:api_developer_portal:3.5:cr5:*:*:*:*:*:*",
+            "*cpe:2.3:a:ca:api_developer_portal:3.5:cr6:*:*:*:*:*:*"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "CA Technologies - A Broadcom Company",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-6588",
+        "cwe_id": "CWE-79",
+        "description": "CA API Developer Portal 3.5 up to and including 3.5 CR5 has a reflected cross-site scripting vulnerability related to the apiExplorer.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1040603",
+            "https://support.ca.com/us/product-content/recommended-reading/security-notices/ca20180328-01--security-notice-for-ca-api-developer-portal.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ca:api_developer_portal:3.5:*:*:*:*:*:*:*\n     *cpe:2.3:a:ca:api_developer_portal:3.5:cr1:*:*:*:*:*:*\n     *cpe:2.3:a:ca:api_developer_portal:3.5:cr2:*:*:*:*:*:*\n     *cpe:2.3:a:ca:api_developer_portal:3.5:cr3:*:*:*:*:*:*\n     *cpe:2.3:a:ca:api_developer_portal:3.5:cr4:*:*:*:*:*:*\n     *cpe:2.3:a:ca:api_developer_portal:3.5:cr5:*:*:*:*:*:*",
+            "*cpe:2.3:a:ca:api_developer_portal:3.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ca:api_developer_portal:3.5:cr1:*:*:*:*:*:*",
+            "*cpe:2.3:a:ca:api_developer_portal:3.5:cr2:*:*:*:*:*:*",
+            "*cpe:2.3:a:ca:api_developer_portal:3.5:cr3:*:*:*:*:*:*",
+            "*cpe:2.3:a:ca:api_developer_portal:3.5:cr4:*:*:*:*:*:*",
+            "*cpe:2.3:a:ca:api_developer_portal:3.5:cr5:*:*:*:*:*:*"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "CA Technologies - A Broadcom Company",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2017-3777",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2017.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-3777"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-3777"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "03/29/2018",
+        "modified_date": "03/29/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2017-3778",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2017.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-3778"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-3778"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "03/29/2018",
+        "modified_date": "03/29/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2017-3779",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2017.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-3779"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-3779"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "03/29/2018",
+        "modified_date": "03/29/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2017-3780",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2017.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-3780"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-3780"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "03/29/2018",
+        "modified_date": "03/29/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2017-3781",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2017.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-3781"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-3781"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "03/29/2018",
+        "modified_date": "03/29/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2017-3782",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2017.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-3782"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-3782"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "03/29/2018",
+        "modified_date": "03/29/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2017-3783",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2017.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-3783"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-3783"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "03/29/2018",
+        "modified_date": "03/29/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2017-3784",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2017.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-3784"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-3784"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "03/29/2018",
+        "modified_date": "03/29/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2017-3785",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2017.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-3785"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-3785"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "03/29/2018",
+        "modified_date": "03/29/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2017-3786",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2017.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-3786"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-3786"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "03/29/2018",
+        "modified_date": "03/29/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2017-3787",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2017.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-3787"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-3787"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "03/29/2018",
+        "modified_date": "03/29/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2017-3788",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2017.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-3788"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-3788"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "03/29/2018",
+        "modified_date": "03/29/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2017-3789",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2017.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-3789"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-3789"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "03/29/2018",
+        "modified_date": "03/29/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-9031",
+        "cwe_id": "CWE-522",
+        "description": "The login interface on TNLSoftSolutions Sentry Vision 3.x devices provides password disclosure by reading an \"if(pwd ==\" line in the HTML source code. This means, in effect, that authentication occurs only on the client side.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://gist.github.com/pabloonicarres/c2c284ca7b025d629da39087445ed15d#file-sentryvision_authentication_bypass-sh",
+            "https://www.youtube.com/watch?v=pLMH9vGPRCo"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:tnlsoftsolutions:sentry_vision:3.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:tnlsoftsolutions:sentry_vision:3.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:tnlsoftsolutions:sentry_vision:3.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:tnlsoftsolutions:sentry_vision:3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:tnlsoftsolutions:sentry_vision:3.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:tnlsoftsolutions:sentry_vision:3.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2014-5028",
+        "cwe_id": "CWE-200",
+        "description": "The Original File and Patched File resources in Review Board 1.7.x before 1.7.27 and 2.0.x before 2.0.4 allow remote authenticated users to bypass intended access restrictions and obtain sensitive information from repository files by leveraging knowledge of database ids.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2014/07/22/12",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1123692",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/94813",
+            "https://www.reviewboard.org/docs/releasenotes/reviewboard/1.7.27",
+            "https://www.reviewboard.org/docs/releasenotes/reviewboard/2.0.4",
+            "https://www.reviewboard.org/news/2014/07/22/review-board-1-7-27-and-2-0-3-security-releases"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:reviewboard:review_board:*:*:*:*:*:*:*:* versions from (excluding) 1.7.0 up to (excluding) 1.7.27\n     *cpe:2.3:a:reviewboard:review_board:*:*:*:*:*:*:*:* versions from (including) 2.0 up to (excluding) 2.0.4",
+            "*cpe:2.3:a:reviewboard:review_board:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "(excluding)",
+            "*cpe:2.3:a:reviewboard:review_board:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "04/24/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2014-5170",
+        "cwe_id": "CWE-20",
+        "description": "The Storage API module 7.x before 7.x-1.6 for Drupal might allow remote attackers to execute arbitrary code by leveraging failure to update .htaccess file contents after SA-CORE-2013-003.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2014/07/31/4",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/95054",
+            "https://www.drupal.org/node/2312655",
+            "https://www.drupal.org/node/2312769"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:drupal:storage_api:7.x-1.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:drupal:storage_api:7.x-1.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:drupal:storage_api:7.x-1.2:*:*:*:*:*:*:*\n     *cpe:2.3:a:drupal:storage_api:7.x-1.3:*:*:*:*:*:*:*\n     *cpe:2.3:a:drupal:storage_api:7.x-1.4:*:*:*:*:*:*:*\n     *cpe:2.3:a:drupal:storage_api:7.x-1.5:*:*:*:*:*:*:*\n     *cpe:2.3:a:drupal:storage_api:7.x-1.x-dev:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:drupal:storage_api:7.x-1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:drupal:storage_api:7.x-1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:drupal:storage_api:7.x-1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:drupal:storage_api:7.x-1.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:drupal:storage_api:7.x-1.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:drupal:storage_api:7.x-1.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:drupal:storage_api:7.x-1.x-dev:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "04/27/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2014-6604",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in class-s2-list-table.php in the Subscribe2 plugin before 10.16 for WordPress allows remote attackers to inject arbitrary web script or HTML via the ip parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://barmat.io/blog/2014/10/01/stored-xss-vulnerability-in-the-wordpress-plugin-subscribe2/",
+            "https://plugins.trac.wordpress.org/changeset/993564/subscribe2"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:subscribe2_project:subscribe2:*:*:*:*:*:wordpress:*:* versions up to (excluding) 10.16",
+            "*cpe:2.3:a:subscribe2_project:subscribe2:*:*:*:*:*:wordpress:*:*",
+            "(excluding)"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "04/19/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2015-2000",
+        "cwe_id": "CWE-118",
+        "description": "The Jumio SDK before 1.5.0 for Android might allow attackers to execute arbitrary code by leveraging a finalize method in a Serializable class that improperly passes an attacker-controlled pointer to a native function.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://alephsecurity.com/vulns/aleph-2015001",
+            "https://www.usenix.org/system/files/conference/woot15/woot15-paper-peles.pdf"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jumio:jumio_sdk:*:*:*:*:*:android:*:* versions up to (excluding) 1.5.0",
+            "*cpe:2.3:a:jumio:jumio_sdk:*:*:*:*:*:android:*:*",
+            "(excluding)"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "04/23/2018",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2015-2001",
+        "cwe_id": "CWE-118",
+        "description": "The MetaIO SDK before 6.0.2.1 for Android might allow attackers to execute arbitrary code by leveraging a finalize method in a Serializable class that improperly passes an attacker-controlled pointer to a native function.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://alephsecurity.com/vulns/aleph-2015002",
+            "https://www.usenix.org/system/files/conference/woot15/woot15-paper-peles.pdf"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:metaio:metaio_sdk:*:*:*:*:*:android:*:* versions up to (excluding) 6.0.2.1",
+            "*cpe:2.3:a:metaio:metaio_sdk:*:*:*:*:*:android:*:*",
+            "(excluding)"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "04/23/2018",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2015-2002",
+        "cwe_id": "CWE-118",
+        "description": "The ESRI ArcGis Runtime SDK before 10.2.6-2 for Android might allow attackers to execute arbitrary code by leveraging a finalize method in a Serializable class that improperly passes an attacker-controlled pointer to a native function.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://alephsecurity.com/vulns/aleph-2015003",
+            "https://www.usenix.org/system/files/conference/woot15/woot15-paper-peles.pdf"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:esri:arcgisruntime_sdk:*:*:*:*:*:android:*:* versions up to (excluding) 10.2.6-2",
+            "*cpe:2.3:a:esri:arcgisruntime_sdk:*:*:*:*:*:android:*:*",
+            "(excluding)"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "04/23/2018",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2015-2003",
+        "cwe_id": "CWE-118",
+        "description": "The PJSIP PJSUA2 SDK before SVN Changeset 51322 for Android might allow attackers to execute arbitrary code by leveraging a finalize method in a Serializable class that improperly passes an attacker-controlled pointer to a native function.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://alephsecurity.com/vulns/aleph-2015004",
+            "https://www.usenix.org/system/files/conference/woot15/woot15-paper-peles.pdf"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:pjsip:pjsua2_sdk:*:*:*:*:*:android:*:* versions up to (excluding) 51322",
+            "*cpe:2.3:a:pjsip:pjsua2_sdk:*:*:*:*:*:android:*:*",
+            "(excluding)"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "04/23/2018",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2015-2004",
+        "cwe_id": "CWE-118",
+        "description": "The GraceNote GNSDK SDK before SVN Changeset 1.1.7 for Android might allow attackers to execute arbitrary code by leveraging a finalize method in a Serializable class that improperly passes an attacker-controlled pointer to a native function.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://alephsecurity.com/vulns/aleph-2015005",
+            "https://www.usenix.org/system/files/conference/woot15/woot15-paper-peles.pdf"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gracenote:gnsdk:*:*:*:*:*:android:*:* versions up to (excluding) 1.1.7",
+            "*cpe:2.3:a:gracenote:gnsdk:*:*:*:*:*:android:*:*",
+            "(excluding)"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "04/23/2018",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2015-2009",
+        "cwe_id": "CWE-352",
+        "description": "Cross-site request forgery (CSRF) vulnerability in the xmlrpc.cgi service in IBM QRadar SIEM 7.1 before MR2 Patch 11 Interim Fix 02 and 7.2.x before 7.2.5 Patch 4 allows remote attackers to hijack the authentication of arbitrary users for requests that insert XSS sequences via vectors related to webmin. IBM X-Force ID: 103921.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21965821"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.1.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.1.0:mr1:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.1.0:mr2:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:qradar_security_information_and_event_manager:*:*:*:*:*:*:*:* versions from (including) 7.2.0 up to (excluding) 7.2.5\n     *cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.5:patch1:*:*:*:*:*:*\n     *",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.1.0:mr1:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.1.0:mr2:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:ibm:qradar_security_information_and_event_manager:7.2.5:patch1:*:*:*:*:*:*"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "04/23/2018",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2015-2020",
+        "cwe_id": "CWE-502",
+        "description": "The MyScript SDK before 1.3 for Android might allow attackers to execute arbitrary code by leveraging a finalize method in a Serializable class that improperly passes an attacker-controlled pointer to a native function.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://alephsecurity.com/vulns/aleph-2015006",
+            "https://www.usenix.org/system/files/conference/woot15/woot15-paper-peles.pdf"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:myscript:myscript:*:*:*:*:*:android:*:* versions up to (excluding) 1.3",
+            "*cpe:2.3:a:myscript:myscript:*:*:*:*:*:android:*:*",
+            "(excluding)"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "04/24/2018",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2015-4952",
+        "cwe_id": null,
+        "description": "The on-demand plugin in IBM Endpoint Manager for Remote Control 9.0.1 and 9.1.0 allows user-assisted remote attackers to execute arbitrary code via unspecified vectors. IBM X-Force ID: 105196.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21962602"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:endpoint_manager_for_remote_control:9.0.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:endpoint_manager_for_remote_control:9.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:endpoint_manager_for_remote_control:9.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:endpoint_manager_for_remote_control:9.1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "04/23/2018",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2015-4953",
+        "cwe_id": "CWE-326",
+        "description": "IBM BigFix Remote Control before Interim Fix pack 9.1.2-TIV-IBRC912-IF0001 makes it easier for man-in-the-middle attackers to decrypt traffic by leveraging a weakness in its encryption protocol. IBM X-Force ID: 105197.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "4.8 MEDIUM",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IV81388",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/105197",
+            "https://www-304.ibm.com/support/docview.wss?uid=swg21972041"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:bigfix_remote_control:9.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:bigfix_remote_control:9.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "04/24/2018",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2017-5947",
+        "cwe_id": null,
+        "description": "An issue was discovered in OnePlus One, X, 2, 3, 3T, and 5 devices with OxygenOS 5.0 and earlier. The attacker can reboot the device into the Qualcomm Emergency Download (EDL) mode through ADB or by using Volume-Up when connected to USB, which in turn could allow for downgrading partitions such as the Android Bootloader.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "6.8 MEDIUM",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://alephsecurity.com/vulns/aleph-2017007"
+        ],
+        "cpe": [
+            "cpe:2.3:h:oneplus:2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:oneplus:3:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:oneplus:3t:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:oneplus:5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:oneplus:one:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:oneplus:x:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-1191",
+        "cwe_id": "CWE-200",
+        "description": "Cloud Foundry Garden-runC, versions prior to 1.11.0, contains an information exposure vulnerability. A user with access to Garden logs may be able to obtain leaked credentials and perform authenticated actions using those credentials.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://www.cloudfoundry.org/blog/cve-2018-1191/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:cloudfoundry:cf-deployment:*:*:*:*:*:*:*:* versions up to (excluding) 1.9.0\n     *cpe:2.3:a:cloudfoundry:garden-runc-release:*:*:*:*:*:*:*:* versions up to (excluding) 1.11.0",
+            "*cpe:2.3:a:cloudfoundry:cf-deployment:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:cloudfoundry:garden-runc-release:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Dell",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2016-0898",
+        "cwe_id": "CWE-255",
+        "description": "MySQL for PCF tiles 1.7.x before 1.7.10 were discovered to log the AWS access key in plaintext. These credentials were logged to the Service Backup component logs, and not the system log, thus were not exposed outside the Service Backup VM.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "10.0 CRITICAL",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/95146",
+            "https://pivotal.io/security/cve-2016-0898"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:pivotal_software:mysql:1.7.0:*:*:*:*:pcf_tiles:*:*\n     *cpe:2.3:a:pivotal_software:mysql:1.7.0.1:*:*:*:*:pcf_tiles:*:*\n     *cpe:2.3:a:pivotal_software:mysql:1.7.0.2:*:*:*:*:pcf_tiles:*:*\n     *cpe:2.3:a:pivotal_software:mysql:1.7.0.3:*:*:*:*:pcf_tiles:*:*\n     *cpe:2.3:a:pivotal_software:mysql:1.7.0.4:*:*:*:*:pcf_tiles:*:*\n     *cpe:2.3:a:pivotal_software:mysql:1.7.1:*:*:*:*:pcf_tiles:*:*\n     *cpe:2.3:a:pivotal_software:mysql:1.7.2:*:*:*:*:pcf_tiles:*:*\n     *cpe:2.3:a:pivo",
+            "*cpe:2.3:a:pivotal_software:mysql:1.7.0:*:*:*:*:pcf_tiles:*:*",
+            "*cpe:2.3:a:pivotal_software:mysql:1.7.0.1:*:*:*:*:pcf_tiles:*:*",
+            "*cpe:2.3:a:pivotal_software:mysql:1.7.0.2:*:*:*:*:pcf_tiles:*:*",
+            "*cpe:2.3:a:pivotal_software:mysql:1.7.0.3:*:*:*:*:pcf_tiles:*:*",
+            "*cpe:2.3:a:pivotal_software:mysql:1.7.0.4:*:*:*:*:pcf_tiles:*:*",
+            "*cpe:2.3:a:pivotal_software:mysql:1.7.1:*:*:*:*:pcf_tiles:*:*",
+            "*cpe:2.3:a:pivotal_software:mysql:1.7.2:*:*:*:*:pcf_tiles:*:*",
+            "*cpe:2.3:a:pivo"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "04/27/2018",
+        "vulnerability_source": "Dell",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2016-6658",
+        "cwe_id": "CWE-200",
+        "description": "Applications in cf-release before 245 can be configured and pushed with a user-provided custom buildpack using a URL pointing to the buildpack. Although it is not recommended, a user can specify a credential in the URL (basic auth or OAuth) to access the buildpack through the CLI. For example, the user could include a GitHub username and password in the URL to access a private repo. Because the URL to access the buildpack is stored unencrypted, an operator with privileged access to the Cloud Controller database could view these credentials.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "9.6 CRITICAL",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://pivotal.io/security/cve-2016-6658"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:cloudfoundry:cf-release:*:*:*:*:*:*:*:* versions up to (excluding) 245",
+            "*cpe:2.3:a:cloudfoundry:cf-release:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:pivotal_software:cloud_foundry_elastic_runtime:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:pivotal_software:cloud_foundry_elastic_runtime:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:pivotal_software:cloud_foundry_elastic_runtime:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "04/24/2018",
+        "vulnerability_source": "Dell",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2017-16512",
+        "cwe_id": "CWE-362",
+        "description": "The vagrant update process in Hashicorp vagrant-vmware-fusion 5.0.2 through 5.0.4 allows local users to steal root privileges via a crafted update request when no updates are available.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://m4.rkw.io/blog/cve201716512-hashicorp-vagrantvmwarefusion-v502504-local-root.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hashicorp:vagrant_vmware_fusion:*:*:*:*:*:*:*:* versions from (including) 5.0.2 up to (including) 5.0.4",
+            "*cpe:2.3:a:hashicorp:vagrant_vmware_fusion:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2017-16839",
+        "cwe_id": null,
+        "description": "Hashicorp vagrant-vmware-fusion 5.0.4 allows local users to steal root privileges if VMware Fusion is not installed.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.0 HIGH",
+        "base_score_v2": "6.9 MEDIUM",
+        "hyperlinks": [
+            "https://m4.rkw.io/blog/cve201716839-hashicorp-vagrantvmwarefusion-v504-local-root.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hashicorp:vagrant_vmware_fusion:5.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hashicorp:vagrant_vmware_fusion:5.0.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2017-16873",
+        "cwe_id": null,
+        "description": "It is possible to exploit an unsanitized PATH in the suid binary that ships with vagrant-vmware-fusion 4.0.25 through 5.0.4 in order to escalate to root privileges.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://m4.rkw.io/blog/cve201716873-hashicorp-vagrantvmwarefusion-v4025504-local-root.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hashicorp:vagrant_vmware_fusion:*:*:*:*:*:*:*:* versions from (including) 4.0.25 up to (including) 5.0.4",
+            "*cpe:2.3:a:hashicorp:vagrant_vmware_fusion:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "03/29/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-9130",
+        "cwe_id": "CWE-79",
+        "description": "IBOS 4.4.3 has XSS via a company full name.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://cnonce.github.io/2018/03/29/IBOS-4-4-3%E5%AD%98%E5%82%A8%E5%9E%8Bxss/",
+            "https://github.com/cnonce/IBOS_4.4.3/blob/master/Cross%20Site%20Scripting.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibos:ibos:4.4.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibos:ibos:4.4.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/30/2018",
+        "modified_date": "04/18/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-9132",
+        "cwe_id": "CWE-476",
+        "description": "libming 0.4.8 has a NULL pointer dereference in the getInt function of the decompile.c file. Remote attackers could leverage this vulnerability to cause a denial of service via a crafted swf file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/libming/libming/issues/133",
+            "https://lists.debian.org/debian-lts-announce/2018/05/msg00017.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/47KZ5RYWQMBN5DVDITBVRDNDCSFNBJ3V/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/CQNIJH5EQV2D6KEFGY2467ZS4I7TZLXP/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LBFCINUX3XXAPPH77OH6NKACBPFBQXXW/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:libming:libming:0.4.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:libming:libming:0.4.8:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/30/2018",
+        "modified_date": "10/11/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-9133",
+        "cwe_id": "CWE-834",
+        "description": "ImageMagick 7.0.7-26 Q16 has excessive iteration in the DecodeLabImage and EncodeLabImage functions (coders/tiff.c), which results in a hang (tens of minutes) with a tiny PoC file. Remote attackers could leverage this vulnerability to cause a denial of service via a crafted tiff file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/ImageMagick/ImageMagick/issues/1072",
+            "https://lists.debian.org/debian-lts-announce/2020/08/msg00030.html",
+            "https://usn.ubuntu.com/3681-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:a:imagemagick:imagemagick:7.0.7-26:q16:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:a:imagemagick:imagemagick:7.0.7-26:q16:*:*:*:*:*:*"
+        ],
+        "published_date": "03/30/2018",
+        "modified_date": "08/18/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-9135",
+        "cwe_id": "CWE-125",
+        "description": "In ImageMagick 7.0.7-24 Q16, there is a heap-based buffer over-read in IsWEBPImageLossless in coders/webp.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/ImageMagick/ImageMagick/issues/1009"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:imagemagick:imagemagick:7.0.7-24:q16:*:*:*:*:*:*",
+            "*cpe:2.3:a:imagemagick:imagemagick:7.0.7-24:q16:*:*:*:*:*:*"
+        ],
+        "published_date": "03/30/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-9136",
+        "cwe_id": "CWE-20",
+        "description": "windrvr1260.sys in Jungo DriverWizard WinDriver 12.6.0 allows attackers to cause a denial of service (BSOD) via a crafted .exe file, a different vulnerability than CVE-2018-8821.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "7.1 HIGH",
+        "hyperlinks": [
+            "https://github.com/bigric3/poc2"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jungo:windriver:12.6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:jungo:windriver:12.6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:jungo:windriver:12.6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:jungo:windriver:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:jungo:windriver:12.6.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/30/2018",
+        "modified_date": "10/17/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-9138",
+        "cwe_id": "CWE-674",
+        "description": "An issue was discovered in cplus-dem.c in GNU libiberty, as distributed in GNU Binutils 2.29 and 2.30. Stack Exhaustion occurs in the C++ demangling functions provided by libiberty, and there are recursive stack frames: demangle_nested_args, demangle_args, do_arg, and do_type.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=23008",
+            "https://usn.ubuntu.com/4326-1/",
+            "https://usn.ubuntu.com/4336-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gnu:binutils:2.29:*:*:*:*:*:*:*\n     *cpe:2.3:a:gnu:binutils:2.30:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:gnu:binutils:2.29:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:gnu:binutils:2.30:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/30/2018",
+        "modified_date": "04/21/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-9139",
+        "cwe_id": "CWE-119",
+        "description": "On Samsung mobile devices with N(7.x) software, a buffer overflow in the vision service allows code execution in a privileged process via a large frame size, aka SVE-2017-11165.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://security.samsungmobile.com/securityUpdate.smsb"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:samsung:samsung_mobile:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:samsung:samsung_mobile:7.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:samsung:samsung_mobile:7.1.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:samsung:samsung_mobile:7.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:samsung:samsung_mobile:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:samsung:samsung_mobile:7.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:samsung:samsung_mobile:7.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:samsung:samsung_mobile:7.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/30/2018",
+        "modified_date": "04/19/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-9140",
+        "cwe_id": "CWE-79",
+        "description": "On Samsung mobile devices with M(6.0) software, the Email application allows XSS via an event attribute and arbitrary file loading via a src attribute, aka SVE-2017-10747.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://security.samsungmobile.com/securityUpdate.smsb"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:samsung:samsung_mobile:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:samsung:samsung_mobile:6.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/30/2018",
+        "modified_date": "04/19/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-9141",
+        "cwe_id": "CWE-20",
+        "description": "On Samsung mobile devices with L(5.x), M(6.0), and N(7.x) software, Gallery allows remote attackers to execute arbitrary code via a BMP file with a crafted resolution, aka SVE-2017-11105.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "https://security.samsungmobile.com/securityUpdate.smsb"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:samsung:samsung_mobile:5.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:samsung:samsung_mobile:5.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:samsung:samsung_mobile:6.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:samsung:samsung_mobile:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:samsung:samsung_mobile:7.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:samsung:samsung_mobile:7.1.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:samsung:samsung_mobile:7.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:samsung:samsung_mobile:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:samsung:samsung_mobile:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:samsung:samsung_mobile:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:samsung:samsung_mobile:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:samsung:samsung_mobile:7.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:samsung:samsung_mobile:7.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:samsung:samsung_mobile:7.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/30/2018",
+        "modified_date": "04/19/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-9142",
+        "cwe_id": "CWE-20",
+        "description": "On Samsung mobile devices with N(7.x) software, attackers can install an arbitrary APK in the Secure Folder SD Card area because of faulty validation of a package signature and package name, aka SVE-2017-10932.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:H/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:H/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.0 HIGH",
+        "base_score_v2": "7.6 HIGH",
+        "hyperlinks": [
+            "https://security.samsungmobile.com/securityUpdate.smsb"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:samsung:samsung_mobile:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:samsung:samsung_mobile:7.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:samsung:samsung_mobile:7.1.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:samsung:samsung_mobile:7.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:samsung:samsung_mobile:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:samsung:samsung_mobile:7.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:samsung:samsung_mobile:7.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:samsung:samsung_mobile:7.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/30/2018",
+        "modified_date": "04/19/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-9143",
+        "cwe_id": "CWE-787",
+        "description": "On Samsung mobile devices with M(6.0) and N(7.x) software, a heap overflow in the sensorhub binder service leads to code execution in a privileged process, aka SVE-2017-10991.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://security.samsungmobile.com/securityUpdate.smsb"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:samsung:samsung_mobile:6.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:samsung:samsung_mobile:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:samsung:samsung_mobile:7.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:samsung:samsung_mobile:7.1.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:samsung:samsung_mobile:7.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:samsung:samsung_mobile:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:samsung:samsung_mobile:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:samsung:samsung_mobile:7.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:samsung:samsung_mobile:7.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:samsung:samsung_mobile:7.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/30/2018",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-9144",
+        "cwe_id": "CWE-125",
+        "description": "In Exiv2 0.26, there is an out-of-bounds read in Exiv2::Internal::binaryToString in image.cpp. It could result in denial of service or information disclosure.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:P)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/Exiv2/exiv2/issues/254",
+            "https://github.com/xiaoqx/pocs/tree/master/exiv2",
+            "https://security.gentoo.org/glsa/201811-14"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:exiv2:exiv2:0.26:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:exiv2:exiv2:0.26:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:exiv2:exiv2:0.26:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:exiv2:exiv2:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:exiv2:exiv2:0.26:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/30/2018",
+        "modified_date": "02/27/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-9145",
+        "cwe_id": "CWE-20",
+        "description": "In the DataBuf class in include/exiv2/types.hpp in Exiv2 0.26, an issue exists in the constructor with an initial buffer size. A large size value may lead to a SIGABRT during an attempt at memory allocation. NOTE: some third parties have been unable to reproduce the SIGABRT when using the 4-DataBuf-abort-1 PoC file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://bugzilla.novell.com/show_bug.cgi?id=1087879",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1564281",
+            "https://github.com/xiaoqx/pocs/tree/master/exiv2",
+            "https://security.gentoo.org/glsa/201811-14"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:exiv2:exiv2:0.26:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:exiv2:exiv2:0.26:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/30/2018",
+        "modified_date": "03/27/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-9146",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: CVE-2017-17724.  Reason: This candidate is a reservation duplicate of CVE-2017-17724.  Notes: All CVE users should reference CVE-2017-17724 instead of this candidate.  All references and descriptions in this candidate have been removed to prevent accidental usage.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-9146"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-9146"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [
+            "*cpe:2.3:a:exiv2:exiv2:0.26:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:exiv2:exiv2:0.26:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:exiv2:exiv2:0.26:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:exiv2:exiv2:0.26:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/30/2018",
+        "modified_date": "04/20/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2018-5799",
+        "cwe_id": "CWE-79",
+        "description": "In Zoho ManageEngine ServiceDesk Plus before 9403, an XSS issue allows an attacker to run arbitrary JavaScript via a /api/request/?OPERATION_NAME= URI, aka SD-69139.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2018/Mar/58",
+            "https://www.manageengine.com/products/service-desk/readme.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:zohocorp:manageengine_servicedesk_plus:*:*:*:*:*:*:*:* versions up to (excluding) 9403",
+            "*cpe:2.3:a:zohocorp:manageengine_servicedesk_plus:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "03/30/2018",
+        "modified_date": "04/19/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2017-11010",
+        "cwe_id": null,
+        "description": "In Android before 2018-01-05 on Qualcomm Snapdragon IoT, Snapdragon Mobile MDM9206, MDM9650, SD 210/SD 212/SD 205, SD 625, SD 650/52, SD 835, access control left a configuration space unprotected.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/102386",
+            "http://www.securitytracker.com/id/1040106",
+            "https://source.android.com/security/bulletin/2018-01-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/30/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2017-14906",
+        "cwe_id": null,
+        "description": "In Android before 2018-01-05 on Qualcomm Snapdragon IoT, Snapdragon Mobile MDM9206, MDM9607, MSM8909W, SD 210/SD 212/SD 205, SD 410/12, PKCS7 padding is not supported by the crypto storage APIs.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/102386",
+            "http://www.securitytracker.com/id/1040106",
+            "https://source.android.com/security/bulletin/2018-01-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/30/2018",
+        "modified_date": "04/23/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "3"
+    }
+]

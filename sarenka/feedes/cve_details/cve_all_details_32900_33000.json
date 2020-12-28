@@ -1,0 +1,3191 @@
+[
+    {
+        "cve_id": "CVE-2019-17545",
+        "cwe_id": "CWE-415",
+        "description": "GDAL through 3.0.1 has a poolDestroy double free in OGRExpatRealloc in ogr/ogr_expat.cpp when the 10MB threshold is exceeded.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00022.html",
+            "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=16178",
+            "https://github.com/OSGeo/gdal/commit/148115fcc40f1651a5d15fa34c9a8c528e7147bb",
+            "https://lists.debian.org/debian-lts-announce/2019/11/msg00005.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/CB7RRPCQP253XA5MYUOLHLRPKNGKVZNT/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XVRC3EBQBFBVQC26XJE3AI3KQXC2NGTP/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:osgeo:gdal:*:*:*:*:*:*:*:* versions up to (including) 3.0.1",
+            "*cpe:2.3:a:osgeo:gdal:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "10/13/2019",
+        "modified_date": "11/09/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17546",
+        "cwe_id": "CWE-190",
+        "description": "tif_getimage.c in LibTIFF through 4.0.10, as used in GDAL through 3.0.1 and other products, has an integer overflow that potentially causes a heap-based buffer overflow via a crafted RGBA image, related to a \"Negative-size-param\" condition.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=16443",
+            "https://github.com/OSGeo/gdal/commit/21674033ee246f698887604c7af7ba1962a40ddf",
+            "https://gitlab.com/libtiff/libtiff/commit/4bb584a35f87af42d6cf09d15e9ce8909a839145",
+            "https://lists.debian.org/debian-lts-announce/2019/11/msg00027.html",
+            "https://lists.debian.org/debian-lts-announce/2020/03/msg00020.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LM5ZW7E3IEW7LT2BPJP7D3RN6OUOE3MX/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/M3S4WNIMZ7XSLY2LD5FPRPZMGNUBVKOG/",
+            "https://seclists.org/bugtraq/2020/Jan/32",
+            "https://security.gentoo.org/glsa/202003-25",
+            "https://www.debian.org/security/2020/dsa-4608",
+            "https://www.debian.org/security/2020/dsa-4670"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libtiff:libtiff:*:*:*:*:*:*:*:* versions up to (including) 4.0.10",
+            "*cpe:2.3:a:libtiff:libtiff:*:*:*:*:*:*:*:* versions up to (including) 4.0.10",
+            "*cpe:2.3:a:libtiff:libtiff:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:libtiff:libtiff:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:libtiff:libtiff:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:osgeo:gdal:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "10/13/2019",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17547",
+        "cwe_id": "CWE-416",
+        "description": "In ImageMagick before 7.0.8-62, TraceBezier in MagickCore/draw.c has a use-after-free.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=16537",
+            "https://github.com/ImageMagick/ImageMagick/commit/ecf7c6b288e11e7e7f75387c5e9e93e423b98397",
+            "https://github.com/ImageMagick/ImageMagick/compare/7.0.8-51...7.0.8-62"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:* versions up to (excluding) 7.0.8-62",
+            "*cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/13/2019",
+        "modified_date": "10/18/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17408",
+        "cwe_id": "CWE-20",
+        "description": "parserIfLabel in inc/zzz_template.php in ZZZCMS zzzphp 1.7.3 allows remote attackers to execute arbitrary code because the danger_key function can be bypassed via manipulations such as strtr.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/Tardis07/CVE_GO/blob/master/zzzphp_code_execution_v1.7.3.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:zzcms:zzcms:1.7.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:zzcms:zzcms:1.7.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:zzcms:zzcms:1.7.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:zzzcms:zzzphp:1.7.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:zzcms:zzcms:1.7.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "11/14/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17552",
+        "cwe_id": "CWE-89",
+        "description": "An issue was discovered in idreamsoft iCMS v7.0.14. There is a spider_project.admincp.php SQL injection vulnerability in the 'upload spider project scheme' feature via a two-dimensional payload.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/idreamsoft/iCMS/issues/77"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:idreamsoft:icms:7.0.14:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:idreamsoft:icms:7.0.14:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "10/16/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17553",
+        "cwe_id": "CWE-89",
+        "description": "An issue was discovered in MetInfo v7.0.0 beta. There is SQL Injection via the admin/?n=tags&c=index&a=doSaveTags URI.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/sari3l/cve-test/issues/1"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:metinfo:metinfo:7.0.0:beta:*:*:*:*:*:*",
+            "*cpe:2.3:a:metinfo:metinfo:7.0.0:beta:*:*:*:*:*:*"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "10/17/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17574",
+        "cwe_id": "CWE-639",
+        "description": "An issue was discovered in the Popup Maker plugin before 1.8.13 for WordPress. An unauthenticated attacker can partially control the arguments of the do_action function to invoke certain popmake_ or pum_ methods, as demonstrated by controlling content and delivery of popmake-system-info.txt (aka the \"support debug text file\").",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "9.1 CRITICAL",
+        "base_score_v2": "6.4 MEDIUM",
+        "hyperlinks": [
+            "http://blog.redyops.com/wordpress-plugin-popup-maker/",
+            "https://github.com/PopupMaker/Popup-Maker/blob/master/CHANGELOG.md",
+            "https://wpvulndb.com/vulnerabilities/9907"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:code-atlantic:popup_maker:*:*:*:*:*:wordpress:*:* versions up to (excluding) 1.8.13",
+            "*cpe:2.3:a:code-atlantic:popup_maker:*:*:*:*:*:wordpress:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "10/18/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-4572",
+        "cwe_id": "CWE-532",
+        "description": "IBM FileNet Content Manager 5.5.2 and 5.5.3 in specific configurations, could log the web service user credentials into a log file that could be accessed by an administrator on the local machine. IBM X-Force ID: 166798.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.4 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/166798",
+            "https://www.ibm.com/support/pages/node/1072042"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:filenet_content_manager:5.5.2:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:filenet_content_manager:5.5.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:filenet_content_manager:5.5.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:filenet_content_manager:5.5.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "10/16/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-14838",
+        "cwe_id": "CWE-269",
+        "description": "A flaw was found in wildfly-core before 7.2.5.GA. The Management users with Monitor, Auditor and Deployer Roles should not be allowed to modify the runtime state of the server",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.9 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://access.redhat.com/errata/RHSA-2019:3082",
+            "https://access.redhat.com/errata/RHSA-2019:3083",
+            "https://access.redhat.com/errata/RHSA-2019:4018",
+            "https://access.redhat.com/errata/RHSA-2019:4019",
+            "https://access.redhat.com/errata/RHSA-2019:4020",
+            "https://access.redhat.com/errata/RHSA-2019:4021",
+            "https://access.redhat.com/errata/RHSA-2019:4040",
+            "https://access.redhat.com/errata/RHSA-2019:4041",
+            "https://access.redhat.com/errata/RHSA-2019:4042",
+            "https://access.redhat.com/errata/RHSA-2019:4045",
+            "https://access.redhat.com/errata/RHSA-2020:0728",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14838"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:data_grid:7.3.4:*:*:*:*:*:*:*\n     *cpe:2.3:a:redhat:jboss_enterprise_application_platform:7.2.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:data_grid:7.3.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:jboss_enterprise_application_platform:7.2.4:*:*:*:*:*:*:*",
+            "cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*",
+            "cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*",
+            "cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*",
+            "cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*",
+            "cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*",
+            "cpe:2.3:o:redhat:enterpri",
+            "cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*",
+            "cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*",
+            "cpe:2.3:o:redhat:enterprise_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:wildfly_core:7.0.0:-:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:wildfly_core:7.0.0:alpha1:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:wildfly_core:7.0.0:alpha2:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:wildfly_core:7.0.0:alpha3:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:wildfly_core:7.0.0:alpha4:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:wildfly_core:7.0.0:alpha5:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:wildfly_core:7.0.0:beta1:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:wildfly_core:7.0.0:cr1:*:*:*:*:*:*"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "10/13/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-14858",
+        "cwe_id": "CWE-532",
+        "description": "A vulnerability was found in Ansible engine 2.x up to 2.8 and Ansible tower 3.x up to 3.5. When a module has an argument_spec with sub parameters marked as no_log, passing an invalid parameter name to the module will cause the task to fail before the no_log options in the sub parameters are processed. As a result, data in the sub parameter fields will not be masked and will be displayed if Ansible is run with increased verbosity and present in the module invocation arguments for the task.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-04/msg00021.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-04/msg00026.html",
+            "https://access.redhat.com/errata/RHSA-2019:3201",
+            "https://access.redhat.com/errata/RHSA-2019:3202",
+            "https://access.redhat.com/errata/RHSA-2019:3203",
+            "https://access.redhat.com/errata/RHSA-2019:3207",
+            "https://access.redhat.com/errata/RHSA-2020:0756",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14858"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:ansible_engine:*:*:*:*:*:*:*:* versions from (including) 2.0 up to (including) 2.8.0\n     *cpe:2.3:a:redhat:ansible_tower:*:*:*:*:*:*:*:* versions from (including) 3.0 up to (including) 3.5.0",
+            "*cpe:2.3:a:redhat:ansible_engine:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:redhat:ansible_tower:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "10/24/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-16344",
+        "cwe_id": "CWE-79",
+        "description": "A cross-site scripting (XSS) vulnerability in the login form (/ScadaBR/login.htm) in ScadaBR 1.0CE allows a remote attacker to inject arbitrary web script or HTML via the username or password parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://fabiantronc.wordpress.com/2019/10/11/xss-on-scadabr-1-0ce/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:scadabr:scadabr:1.0ce:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:scadabr:scadabr:1.0ce:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "10/17/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17575",
+        "cwe_id": "CWE-94",
+        "description": "A file-rename filter bypass exists in admin/media/rename.php in WBCE CMS 1.4.0 and earlier. This can be exploited by an authenticated user with admin privileges to rename a media filename and extension. (For example: place PHP code in a .jpg file, and then change the file's base name to filename.ph and change the file's extension to p. Because of concatenation, the name is then treated as filename.php.) At the result, remote attackers can execute arbitrary PHP code.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.2 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/kbgsft/vuln-wbce/wiki/Arbitrary-file-upload-vulnerbility-in-WBCE-CMS-1.4.0"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:wbce:wbce_cms:*:*:*:*:*:*:*:* versions up to (including) 1.4.0",
+            "*cpe:2.3:a:wbce:wbce_cms:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "10/17/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17579",
+        "cwe_id": "CWE-79",
+        "description": "SonarSource SonarQube before 7.8 has XSS in project links on account/projects.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/SonarSource/sonarqube/commit/2beaf73c2d10dcaaf3949889af53579e7d5aba13"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:sonarsource:sonarqube:*:*:*:*:*:*:*:* versions up to (excluding) 7.8",
+            "*cpe:2.3:a:sonarsource:sonarqube:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "10/17/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-9745",
+        "cwe_id": "CWE-269",
+        "description": "CloudCTI HIP Integrator Recognition Configuration Tool allows privilege escalation via its EXQUISE integration. This tool communicates with a service (Recognition Update Client Service) via an insecure communication channel (Named Pipe). The data (JSON) sent via this channel is used to import data from CRM software using plugins (.dll files). The plugin to import data from the EXQUISE software (DatasourceExquiseExporter.dll) can be persuaded to start arbitrary programs (including batch files) that are executed using the same privileges as Recognition Update Client Service (NT AUTHORITY\\SYSTEM), thus elevating privileges. This occurs because a higher-privileged process executes scripts from a directory writable by a lower-privileged user.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://github.com/KPN-CISO/CVE-2019-9745/blob/master/README.md",
+            "/Security"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:cloudcti:hip_integrator_recognition_configuration_tool:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cloudcti:hip_integrator_recognition_configuration_tool:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "10/21/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-16519",
+        "cwe_id": "CWE-20",
+        "description": "ESET Cyber Security 6.7.900.0 for macOS allows a local attacker to execute unauthorized commands as root by abusing an undocumented feature in scheduled tasks.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://support.eset.com/ca7317/",
+            "https://danishcyberdefence.dk/blog/esets-cyber-security"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:eset:endpoint_security:*:*:*:*:-:mac_os:*:* versions from (including) 6.7.900.0",
+            "*cpe:2.3:a:eset:endpoint_antivirus:*:*:*:*:-:mac_os:*:* versions from (including) 6.7.900.0",
+            "*cpe:2.3:a:eset:cyber_security:*:*:*:*:pro:mac_os:*:* versions from (including) 6.7.900.0",
+            "*cpe:2.3:a:eset:cyber_security:*:*:*:*:-:mac_os:*:* versions from (including) 6.7.900.0",
+            "*cpe:2.3:a:eset:cyber_security:*:*:*:*:-:mac_os:*:* versions up to (including) 6.7.900.0\n     *cpe:2.3:a:eset:cyber_security:*:*:*:*:pro:mac_os:*:* versions up to (including) 6.7.900.0\n     *cpe:2.3:a:eset:endpoint_antivirus:*:*:*:*:-:mac_os:*:* versions up to (including) 6.7.900.0\n     *cpe:2.3:a:eset:endpoint_security:*:*:*:*:-:mac_os:*:* versions up to (including) 6.7.900.0",
+            "*cpe:2.3:a:eset:endpoint_security:*:*:*:*:-:mac_os:*:*",
+            "(including)",
+            "*cpe:2.3:a:eset:endpoint_security:*:*:*:*:-:macos:*:*",
+            "(including)",
+            "*cpe:2.3:a:eset:endpoint_antivirus:*:*:*:*:-:mac_os:*:*",
+            "(including)",
+            "*cpe:2.3:a:eset:endpoint_antivirus:*:*:*:*:-:macos:*:*",
+            "(including)",
+            "*cpe:2.3:a:eset:cyber_security:*:*:*:*:pro:mac_os:*:*",
+            "(including)",
+            "*cpe:2.3:a:eset:cyber_security:*:*:*:*:pro:macos:*:*",
+            "(including)",
+            "*cpe:2.3:a:eset:cyber_security:*:*:*:*:-:mac_os:*:*",
+            "(including)",
+            "*cpe:2.3:a:eset:cyber_security:*:*:*:*:-:macos:*:*",
+            "(including)",
+            "*cpe:2.3:a:eset:cyber_security:*:*:*:*:-:mac_os:*:*",
+            "(including)",
+            "*cpe:2.3:a:eset:cyber_security:*:*:*:*:pro:mac_os:*:*",
+            "(including)",
+            "*cpe:2.3:a:eset:endpoint_antivirus:*:*:*:*:-:mac_os:*:*",
+            "(including)",
+            "*cpe:2.3:a:eset:endpoint_security:*:*:*:*:-:mac_os:*:*",
+            "(including)"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "05/04/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17511",
+        "cwe_id": "CWE-306",
+        "description": "There are some web interfaces without authentication requirements on D-Link DIR-412 A1-1.14WW routers. An attacker can get the router's log file via log_get.php, which could be used to discover the intranet network structure.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/dahua966/Routers-vuls",
+            "https://github.com/dahua966/Routers-vuls/blob/master/DIR-412/vuls_info.md"
+        ],
+        "cpe": [
+            "cpe:2.3:h:dlink:dir-412:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17580",
+        "cwe_id": "CWE-89",
+        "description": "tonyy dormsystem through 1.3 allows SQL Injection in admin.php.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/Tooonyy/dormsystem/issues/1"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:dormsystem_project:dormsystem:*:*:*:*:*:*:*:* versions up to (including) 1.3",
+            "*cpe:2.3:a:dormsystem_project:dormsystem:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "10/16/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17583",
+        "cwe_id": "CWE-770",
+        "description": "idreamsoft iCMS 7.0.15 allows remote attackers to cause a denial of service (resource consumption) via a query for many comments, as demonstrated by the admincp.php?app=comment&perpage= substring followed by a large positive integer.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/idreamsoft/iCMS/issues/83"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:idreamsoft:icms:7.0.15:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:idreamsoft:icms:7.0.15:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-14225",
+        "cwe_id": "CWE-918",
+        "description": "OX App Suite 7.10.1 and 7.10.2 allows SSRF.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "5.5 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/154826/Open-Xchange-OX-App-Suite-SSRF-XSS-Information-Disclosure-Access-Controls.html",
+            "https://seclists.org/fulldisclosure/2019/Oct/25"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:open-xchange:open-xchange_appsuite:7.10.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:open-xchange:open-xchange_appsuite:7.10.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:open-xchange:open-xchange_appsuite:7.10.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:open-xchange:open-xchange_appsuite:7.10.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "10/16/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-14226",
+        "cwe_id": "CWE-281",
+        "description": "OX App Suite through 7.10.2 has Insecure Permissions.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "5.5 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/154826/Open-Xchange-OX-App-Suite-SSRF-XSS-Information-Disclosure-Access-Controls.html",
+            "https://seclists.org/fulldisclosure/2019/Oct/25"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:open-xchange:open-xchange_appsuite:*:*:*:*:*:*:*:* versions up to (including) 7.10.2",
+            "*cpe:2.3:a:open-xchange:open-xchange_appsuite:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "10/17/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-14227",
+        "cwe_id": "CWE-79",
+        "description": "OX App Suite 7.10.1 and 7.10.2 allows XSS.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/154826/Open-Xchange-OX-App-Suite-SSRF-XSS-Information-Disclosure-Access-Controls.html",
+            "http://seclists.org/fulldisclosure/2019/Oct/25"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:open-xchange:open-xchange_appsuite:7.10.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:open-xchange:open-xchange_appsuite:7.10.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:open-xchange:open-xchange_appsuite:7.10.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:open-xchange:open-xchange_appsuite:7.10.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "10/16/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-16278",
+        "cwe_id": "CWE-22",
+        "description": "Directory Traversal in the function http_verify in nostromo nhttpd through 1.9.6 allows an attacker to achieve remote code execution via a crafted HTTP request.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/155045/Nostromo-1.9.6-Directory-Traversal-Remote-Command-Execution.html",
+            "http://packetstormsecurity.com/files/155802/nostromo-1.9.6-Remote-Code-Execution.html",
+            "http://www.nazgul.ch/dev/nostromo_cl.txt",
+            "https://git.sp0re.sh/sp0re/Nhttpd-exploits",
+            "https://sp0re.sh"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nazgul:nostromo_nhttpd:*:*:*:*:*:*:*:* versions up to (including) 1.9.6",
+            "*cpe:2.3:a:nazgul:nostromo_nhttpd:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "10/31/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-16279",
+        "cwe_id": "CWE-22",
+        "description": "A memory error in the function SSL_accept in nostromo nhttpd through 1.9.6 allows an attacker to trigger a denial of service via a crafted HTTP request.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.nazgul.ch/dev/nostromo_cl.txt",
+            "https://git.sp0re.sh/sp0re/Nhttpd-exploits",
+            "https://sp0re.sh"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nazgul:nostromo_nhttpd:*:*:*:*:*:*:*:* versions up to (including) 1.9.6",
+            "*cpe:2.3:a:nazgul:nostromo_nhttpd:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "10/21/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17043",
+        "cwe_id": "CWE-276",
+        "description": "An issue was discovered in BMC Patrol Agent 9.0.10i. Weak execution permissions on the best1collect.exe SUID binary could allow an attacker to elevate his/her privileges to the ones of the \"patrol\" user by specially crafting a shared library .so file that will be loaded during execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/blogresponder/BMC-Patrol-Agent-local-root-privilege-escalation",
+            "https://twitter.com/whira_wr"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:bmc:patrol_agent:9.0.10i:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:bmc:patrol_agent:9.0.10i:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "10/18/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17044",
+        "cwe_id": "CWE-276",
+        "description": "An issue was discovered in BMC Patrol Agent 9.0.10i. Weak execution permissions on the PatrolAgent SUID binary could allow an attacker with \"patrol\" privileges to elevate his/her privileges to the ones of the \"root\" user by specially crafting a shared library .so file that will be loaded during execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://docs.bmc.com/docs/PATROLAgent/11302/notification-of-action-required-by-patrol-agent-users-to-apply-the-security-patch-898411558.html",
+            "https://github.com/blogresponder/BMC-Patrol-Agent-local-root-privilege-escalation",
+            "https://twitter.com/whira_wr"
+        ],
+        "cpe": [
+            "cpe:2.3:o:linux:linux_kernel:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "10/18/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2017-14948",
+        "cwe_id": "CWE-120",
+        "description": "Certain D-Link products are affected by: Buffer Overflow. This affects DIR-880L 1.08B04 and DIR-895 L/R 1.13b03. The impact is: execute arbitrary code (remote). The component is: htdocs/fileaccess.cgi. The attack vector is: A crafted HTTP request handled by fileacces.cgi could allow an attacker to mount a ROP attack: if the HTTP header field CONTENT_TYPE starts with ''boundary=' followed by more than 256 characters, a buffer overflow would be triggered, potentially causing code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/badnack/d_link_880_bug/blob/master/README.md"
+        ],
+        "cpe": [
+            "cpe:2.3:h:dlink:dir-868l:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:dlink:dir-880l:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:dlink:dir-885l:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:dlink:dir-890l:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:dlink:dir-895l:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:dlink:dir-895r:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "10/17/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-12941",
+        "cwe_id": "CWE-307",
+        "description": "AutoPi Wi-Fi/NB and 4G/LTE devices before 2019-10-15 allows an attacker to perform a brute-force attack or dictionary attack to gain access to the WiFi network, which provides root access to the device. The default WiFi password and WiFi SSID are derived from the same hash function output (input is only 8 characters), which allows an attacker to deduce the WiFi password from the WiFi SSID.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.diva-portal.org/smash/get/diva2:1334244/FULLTEXT01.pdf",
+            "https://www.kth.se/nse/research/software-systems-architecture-and-security/",
+            "https://www.kth.se/polopoly_fs/1.931922.1571071632!/Burdzovic_Matsson_dongle_v2.pdf"
+        ],
+        "cpe": [
+            "cpe:2.3:h:autopi:4g\\/lte:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:autopi:wi-fi\\/nb:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-16282",
+        "cwe_id": "CWE-79",
+        "description": "In NCH Express Invoice v7.12, persistent cross site scripting (XSS) exists via the Invoices/Items/Customers/Quotes input field. An authenticated unprivileged user can add/modify the Invoices/Items/Customers fields parameter to inject arbitrary JavaScript.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://www.exploit-db.com/exploits/47496"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nchsoftware:express_invoice:7.12:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:nchsoftware:express_invoice:7.12:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "10/16/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-3767",
+        "cwe_id": "CWE-312",
+        "description": "Dell ImageAssist versions prior to 8.7.15 contain an information disclosure vulnerability. Dell ImageAssist stores some sensitive encrypted information in the images it creates. A privileged user of a system running an operating system that was deployed with Dell ImageAssist could potentially retrieve this sensitive information to then compromise the system and related systems.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "8.2 HIGH",
+        "base_score_v2": "1.9 LOW",
+        "hyperlinks": [
+            "https://www.dell.com/support/article/us/en/19/sln318831/dsa-2019-139"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:dell:imageassist:*:*:*:*:*:*:*:* versions up to (excluding) 8.7.15",
+            "*cpe:2.3:a:dell:imageassist:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "10/16/2020",
+        "vulnerability_source": "Dell",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-14737",
+        "cwe_id": "CWE-276",
+        "description": "Ubisoft Uplay 92.0.0.6280 has Insecure Permissions.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://www.exploit-db.com/exploits/47493"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ubisoft:uplay:92.0.0.6280:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ubisoft:uplay:92.0.0.6280:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-14823",
+        "cwe_id": "CWE-295",
+        "description": "A flaw was found in the \"Leaf and Chain\" OCSP policy implementation in JSS' CryptoManager versions after 4.4.6, 4.5.3, 4.6.0, where it implicitly trusted the root certificate of a certificate chain. Applications using this policy may not properly verify the chain and could be vulnerable to attacks such as Man in the Middle.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "7.4 HIGH",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "https://access.redhat.com/errata/RHSA-2019:3067",
+            "https://access.redhat.com/errata/RHSA-2019:3225",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14823",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ENEN4DQBE6WOGEP5BQ5X62WZM7ZQEEBG/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/O53NXVKMF7PJCPMCJQHLMSYCUGDHGBVE/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UZZWZLNALV6AOIBIHB3ZMNA5AGZMZAIY/"
+        ],
+        "cpe": [
+            "cpe:2.3:o:linux:linux_kernel:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:6.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:6.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:6.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:6.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:6.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:6.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:6.",
+            "cpe:2.3:o:linux:linux_kernel:-:*:*:"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "10/25/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17592",
+        "cwe_id": "CWE-20",
+        "description": "The csv-parse module before 4.4.6 for Node.js is vulnerable to Regular Expression Denial of Service. The __isInt() function contains a malformed regular expression that processes large crafted input very slowly. This is triggered when using the cast option.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/adaltas/node-csv-parse/commit/b9d35940c6815cdf1dfd6b21857a1f6d0fd51e4a",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Z36UKPO5F3PQ3Q2POMF5LEKXWAH5RUFP/",
+            "https://security.netapp.com/advisory/ntap-20191127-0002/",
+            "https://www.npmjs.com/advisories/1171"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:csv-parse_project:csv-parse:*:*:*:*:*:node.js:*:* versions up to (excluding) 4.4.6",
+            "*cpe:2.3:a:csv-parse_project:csv-parse:*:*:*:*:*:node.js:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "11/27/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17593",
+        "cwe_id": "CWE-352",
+        "description": "JIZHICMS 1.5.1 allows admin.php/Admin/adminadd.html CSRF to add an administrator.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/Cherry-toto/jizhicms/issues/1"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jizhicms:jizhicms:1.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:jizhicms:jizhicms:1.5.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "10/16/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17594",
+        "cwe_id": "CWE-125",
+        "description": "There is a heap-based buffer over-read in the _nc_find_entry function in tinfo/comp_hash.c in the terminfo library in ncurses before 6.1-20191012.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00059.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00061.html",
+            "https://lists.gnu.org/archive/html/bug-ncurses/2019-10/msg00017.html",
+            "https://lists.gnu.org/archive/html/bug-ncurses/2019-10/msg00045.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:opensuse:leap:15.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:gnu:ncurses:*:*:*:*:*:*:*:* versions up to (excluding) 6.1.20191012",
+            "*cpe:2.3:o:opensuse:leap:15.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:gnu:ncurses:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "6.1.20191012"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "12/26/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17595",
+        "cwe_id": "CWE-125",
+        "description": "There is a heap-based buffer over-read in the fmt_entry function in tinfo/comp_hash.c in the terminfo library in ncurses before 6.1-20191012.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:P)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00059.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00061.html",
+            "https://lists.gnu.org/archive/html/bug-ncurses/2019-10/msg00013.html",
+            "https://lists.gnu.org/archive/html/bug-ncurses/2019-10/msg00045.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:opensuse:leap:15.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:gnu:ncurses:*:*:*:*:*:*:*:* versions up to (excluding) 6.1.20191012",
+            "*cpe:2.3:o:opensuse:leap:15.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:gnu:ncurses:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "6.1.20191012"
+        ],
+        "published_date": "10/14/2019",
+        "modified_date": "12/23/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17223",
+        "cwe_id": "CWE-79",
+        "description": "There is HTML Injection in the Note field in Dolibarr ERP/CRM 10.0.2 via user/note.php.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://medium.com/@k43p/cve-2019-17223-stored-html-injection-dolibarr-crm-erp-ad1e064d0ca5",
+            "https://www.dolibarr.org/forum/dolibarr-changelogs"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:dolibarr:dolibarr:10.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:dolibarr:dolibarr:10.0.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/15/2019",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-12944",
+        "cwe_id": "CWE-862",
+        "description": "Glue Smart Lock 2.7.8 devices do not properly block guest access in certain situations where the network connection is unavailable.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://www.kth.se/polopoly_fs/1.914054.1561620889!/Examensarbete%20Final.pdf",
+            "https://www.kth.se/polopoly_fs/1.931930.1571073241!/Vulnerability_Report_Glue_State_Consistency.pdf"
+        ],
+        "cpe": [
+            "cpe:2.3:h:gluehome:glue_smart_lock:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/15/2019",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17195",
+        "cwe_id": "CWE-754",
+        "description": "Connect2id Nimbus JOSE+JWT before v7.9 can throw various uncaught exceptions while parsing a JWT, which could result in an application crash (potential information disclosure) or a potential authentication bypass.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://bitbucket.org/connect2id/nimbus-jose-jwt/src/master/SECURITY-CHANGELOG.txt",
+            "https://connect2id.com/blog/nimbus-jose-jwt-7-9",
+            "https://lists.apache.org/thread.html/8768553cda5838f59ee3865cac546e824fa740e82d9dc2a7fc44e80d@%3Ccommon-dev.hadoop.apache.org%3E",
+            "https://lists.apache.org/thread.html/e10d43984f39327e443e875adcd4a5049193a7c010e81971908caf41@%3Ccommon-issues.hadoop.apache.org%3E",
+            "https://www.oracle.com/security-alerts/cpuapr2020.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:connect2id:nimbus_jose\\+jwt:*:*:*:*:*:*:*:* versions up to (excluding) 7.9",
+            "*cpe:2.3:a:connect2id:nimbus_jose\\+jwt:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/15/2019",
+        "modified_date": "11/07/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17600",
+        "cwe_id": "CWE-352",
+        "description": "Intelbras IWR 1000N 1.6.4 devices allow disclosure of the administrator login name and password because v1/system/user is mishandled.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://pastebin.com/QbhVPyXm",
+            "https://www.exploit-db.com/exploits/46770/"
+        ],
+        "cpe": [
+            "cpe:2.3:h:intelbras:iwr_1000n:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/15/2019",
+        "modified_date": "11/15/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-10759",
+        "cwe_id": "CWE-94",
+        "description": "safer-eval before 1.3.4 are vulnerable to Arbitrary Code Execution. A payload using constructor properties can escape the sandbox and execute arbitrary code.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.9 CRITICAL",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://snyk.io/vuln/SNYK-JS-SAFEREVAL-173772"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:safer-eval_project:safer-eval:*:*:*:*:*:*:*:* versions up to (excluding) 1.3.4",
+            "*cpe:2.3:a:safer-eval_project:safer-eval:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/15/2019",
+        "modified_date": "10/15/2019",
+        "vulnerability_source": "Snyk",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-10760",
+        "cwe_id": "CWE-94",
+        "description": "safer-eval before 1.3.2 are vulnerable to Arbitrary Code Execution. A payload using constructor properties can escape the sandbox and execute arbitrary code.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.9 CRITICAL",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://snyk.io/vuln/SNYK-JS-SAFEREVAL-473029"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:safer-eval_project:safer-eval:*:*:*:*:*:*:*:* versions up to (excluding) 1.3.2",
+            "*cpe:2.3:a:safer-eval_project:safer-eval:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/15/2019",
+        "modified_date": "10/15/2019",
+        "vulnerability_source": "Snyk",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17397",
+        "cwe_id": "CWE-532",
+        "description": "In the DoorDash application through 11.5.2 for Android, the username and password are stored in the log during authentication, and may be available to attackers via logcat.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://pastebin.com/hGg5efMe"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:doordash:doordash:*:*:*:*:*:android:*:* versions up to (including) 11.5.2",
+            "*cpe:2.3:a:doordash:doordash:*:*:*:*:*:android:*:*",
+            "(including)"
+        ],
+        "published_date": "10/15/2019",
+        "modified_date": "10/15/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2017-1002201",
+        "cwe_id": "CWE-79",
+        "description": "In haml versions prior to version 5.0.0.beta.2, when using user input to perform tasks on the server, characters like < > \" ' must be escaped properly. In this case, the ' character was missed. An attacker can manipulate the input to introduce additional attributes, potentially executing code.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/haml/haml/commit/18576ae6e9bdcb4303fdbe6b3199869d289d67c2",
+            "https://lists.debian.org/debian-lts-announce/2019/11/msg00007.html",
+            "https://security.gentoo.org/glsa/202007-27",
+            "https://snyk.io/vuln/SNYK-RUBY-HAML-20362"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:haml:haml:*:*:*:*:*:ruby:*:* versions up to (excluding) 5.0.0\n     *cpe:2.3:a:haml:haml:5.0.0:-:*:*:*:ruby:*:*",
+            "*cpe:2.3:a:haml:haml:*:*:*:*:*:ruby:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:haml:haml:5.0.0:-:*:*:*:ruby:*:*"
+        ],
+        "published_date": "10/15/2019",
+        "modified_date": "07/26/2020",
+        "vulnerability_source": "DWF",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-14832",
+        "cwe_id": "CWE-863",
+        "description": "A flaw was found in the Keycloak REST API before version 8.0.0 where it would permit user access from a realm the user was not configured. An authenticated attacker with knowledge of a user id could use this flaw to access unauthorized information or to carry out further attacks.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "6.0 MEDIUM",
+        "hyperlinks": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14832"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:keycloak:*:*:*:*:*:*:*:* versions up to (excluding) 8.0.0",
+            "*cpe:2.3:a:redhat:keycloak:*:*:*:*:*:*:*:* versions up to (excluding) 8.0.0",
+            "*cpe:2.3:a:redhat:keycloak:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:redhat:keycloak:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:redhat:keycloak:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/15/2019",
+        "modified_date": "12/11/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17355",
+        "cwe_id": "CWE-532",
+        "description": "In the Orbitz application 19.31.1 for Android, the username and password are stored in the log during authentication, and may be available to attackers via logcat.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://pastebin.com/GgpFz3ZW"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:orbitz:orbitz:19.31.1:*:*:*:*:android:*:*",
+            "*cpe:2.3:a:orbitz:orbitz:19.31.1:*:*:*:*:android:*:*"
+        ],
+        "published_date": "10/15/2019",
+        "modified_date": "10/17/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17356",
+        "cwe_id": "CWE-326",
+        "description": "The Infinite Design application 3.4.12 for Android sends a username and password via TCP without any encryption during login, as demonstrated by sniffing of a public Wi-Fi network.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "3.3 LOW",
+        "hyperlinks": [
+            "https://bit.ly/2kfL7xE",
+            "https://pastebin.com/yUFxs2J7"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:infinitestudio:infinite_design:3.4.12:*:*:*:*:android:*:*",
+            "*cpe:2.3:a:infinitestudio:infinite_design:3.4.12:*:*:*:*:android:*:*"
+        ],
+        "published_date": "10/15/2019",
+        "modified_date": "10/18/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17394",
+        "cwe_id": "CWE-532",
+        "description": "In the Seesaw Parent and Family application 6.2.5 for Android, the username and password are stored in the log during authentication, and may be available to attackers via logcat.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://pastebin.com/h8v0qxZH"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:seesaw:parent_and_family:6.2.5:*:*:*:*:android:*:*",
+            "*cpe:2.3:a:seesaw:parent_and_family:6.2.5:*:*:*:*:android:*:*"
+        ],
+        "published_date": "10/15/2019",
+        "modified_date": "10/17/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17396",
+        "cwe_id": "CWE-532",
+        "description": "In the PowerSchool Mobile application 1.1.8 for Android, the username and password are stored in the log during authentication, and may be available to attackers via logcat.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://pastebin.com/9VBiRpAR"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:powerschool:powerschool_mobile:*:*:*:*:*:android:*:* versions up to (excluding) 1.1.8",
+            "*cpe:2.3:a:powerschool:powerschool_mobile:*:*:*:*:*:android:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/15/2019",
+        "modified_date": "10/17/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17398",
+        "cwe_id": "CWE-532",
+        "description": "In the Dark Horse Comics application 1.3.21 for Android, token information (equivalent to the username and password) is stored in the log during authentication, and may be available to attackers via logcat.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://pastebin.com/5ZDDCqgL"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:darkhorse:dark_horse_comics:1.3.21:*:*:*:*:android:*:*",
+            "*cpe:2.3:a:darkhorse:dark_horse_comics:1.3.21:*:*:*:*:android:*:*"
+        ],
+        "published_date": "10/15/2019",
+        "modified_date": "10/17/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17601",
+        "cwe_id": "CWE-787",
+        "description": "In MiniShare 1.4.1, there is a stack-based buffer overflow via an HTTP CONNECT request, which allows an attacker to achieve arbitrary code execution, a similar issue to CVE-2018-19862 and CVE-2018-19861. NOTE: this product is discontinued.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/154819/MiniShare-1.4.1-CONNECT-Remote-Buffer-Overflow.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:minishare_project:minishare:1.4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:minishare_project:minishare:1.4.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/15/2019",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17602",
+        "cwe_id": "CWE-89",
+        "description": "An issue was discovered in Zoho ManageEngine OpManager before 12.4 build 124089. The OPMDeviceDetailsServlet servlet is prone to SQL injection. Depending on the configuration, this vulnerability could be exploited unauthenticated or authenticated.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://www.manageengine.com/network-monitoring/help/read-me-complete.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:zohocorp:manageengine_opmanager:*:*:*:*:*:*:*:* versions up to (excluding) 12.4\n     *cpe:2.3:a:zohocorp:manageengine_opmanager:12.4:-:*:*:*:*:*:*\n     *cpe:2.3:a:zohocorp:manageengine_opmanager:12.4:124000:*:*:*:*:*:*\n     *cpe:2.3:a:zohocorp:manageengine_opmanager:12.4:124011:*:*:*:*:*:*\n     *cpe:2.3:a:zohocorp:manageengine_opmanager:12.4:124012:*:*:*:*:*:*\n     *cpe:2.3:a:zohocorp:manageengine_opmanager:12.4:124013:*:*:*:*:*:*\n     *cpe:2.3:a:zohocorp:manageengine_opmanage",
+            "*cpe:2.3:a:zohocorp:manageengine_opmanager:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:zohocorp:manageengine_opmanager:12.4:-:*:*:*:*:*:*",
+            "*cpe:2.3:a:zohocorp:manageengine_opmanager:12.4:124000:*:*:*:*:*:*",
+            "*cpe:2.3:a:zohocorp:manageengine_opmanager:12.4:124011:*:*:*:*:*:*",
+            "*cpe:2.3:a:zohocorp:manageengine_opmanager:12.4:124012:*:*:*:*:*:*",
+            "*cpe:2.3:a:zohocorp:manageengine_opmanager:12.4:124013:*:*:*:*:*:*",
+            "*cpe:2.3:a:zohocorp:manageengine_opmanage"
+        ],
+        "published_date": "10/15/2019",
+        "modified_date": "10/17/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17395",
+        "cwe_id": "CWE-532",
+        "description": "In the Rapid Gator application 0.7.1 for Android, the username and password are stored in the log during authentication, and may be available to attackers via logcat.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://pastebin.com/8dvs5RcJ"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:rapidgator:rapidgator:0.7.1:*:*:*:*:android:*:*",
+            "*cpe:2.3:a:rapidgator:rapidgator:0.7.1:*:*:*:*:android:*:*"
+        ],
+        "published_date": "10/15/2019",
+        "modified_date": "10/17/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17612",
+        "cwe_id": "CWE-89",
+        "description": "An issue was discovered in 74CMS v5.2.8. There is a SQL Injection generated by the _list method in the Common/Controller/BackendController.class.php file via the index.php?m=Admin&c=Ad&a=category sort parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.2 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/Ers4tz/vuln/blob/master/74cms_5.2.8_SQLI.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:74cms:74cms:5.2.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:74cms:74cms:5.2.8:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/15/2019",
+        "modified_date": "10/17/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17613",
+        "cwe_id": "CWE-94",
+        "description": "qibosoft 7 allows remote code execution because do/jf.php makes eval calls. The attacker can use the Point Introduction Management feature to supply PHP code to be evaluated. Alternatively, the attacker can access admin/index.php?lfj=jfadmin&action=addjf via CSRF, as demonstrated by a payload in the content parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/Ers4tz/vuln/blob/master/qibosoft/qibosoft_v7_remote_code_execution.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:qibosoft:qibosoft:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qibosoft:qibosoft:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/15/2019",
+        "modified_date": "10/18/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-13392",
+        "cwe_id": "CWE-79",
+        "description": "A reflected Cross-Site Scripting (XSS) vulnerability in MindPalette NateMail 3.0.15 allows an attacker to execute remote JavaScript in a victim's browser via a specially crafted POST request. The application will reflect the recipient value if it is not in the NateMail recipient array. Note that this array is keyed via integers by default, so any string input will be invalid.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://mindpalette.com/tag/natemail/",
+            "https://twitter.com/mindpalette",
+            "https://www.doyler.net/security-not-included/natemail-vulnerabilities"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mindpalette:natemail:3.0.15:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:mindpalette:natemail:3.0.15:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/15/2019",
+        "modified_date": "10/18/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-11014",
+        "cwe_id": "CWE-613",
+        "description": "NETGEAR JNR1010 devices before 1.0.0.32 have Incorrect Access Control because the ok value of the auth cookie is a special case.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://cybersecurityworks.com/zerodays/cve-2016-11014-netgear.html",
+            "https://github.com/cybersecurityworks/Disclosed/issues/14",
+            "https://khalil-shreateh.com/khalil.shtml/it-highlights/593-Netgear-1.0.0.24-Bypass---Improper-Session-Management--.html",
+            "https://lists.openwall.net/full-disclosure/2016/01/11/5",
+            "https://packetstormsecurity.com/files/135216/Netgear-1.0.0.24-Bypass-Improper-Session-Management.html"
+        ],
+        "cpe": [
+            "cpe:2.3:h:netgear:jnr1010:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "11/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-11015",
+        "cwe_id": "CWE-352",
+        "description": "NETGEAR JNR1010 devices before 1.0.0.32 allow cgi-bin/webproc CSRF via the :InternetGatewayDevice.X_TWSZ-COM_URL_Filter.BlackList.1.URL parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://cybersecurityworks.com/zerodays/cve-2016-11015-netgear.html",
+            "https://github.com/cybersecurityworks/Disclosed/issues/13",
+            "https://lists.openwall.net/full-disclosure/2016/01/11/4",
+            "https://packetstormsecurity.com/files/135215/Netgear-1.0.0.24-Cross-Site-Request-Forgery.html",
+            "https://pmcg2k15.wordpress.com/2016/01/11/fd-cross-site-request-forgery-in-netgear-router-jnr1010-version-1-0-0-24/"
+        ],
+        "cpe": [
+            "cpe:2.3:h:netgear:jnr1010:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "11/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-11016",
+        "cwe_id": "CWE-79",
+        "description": "NETGEAR JNR1010 devices before 1.0.0.32 allow webproc?getpage= XSS.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://007software.net/multiple-cross-site-scripting-in-netgear-router-version1-0-0-24/",
+            "https://cybersecurityworks.com/zerodays/cve-2016-11016-netgear.html",
+            "https://github.com/cybersecurityworks/Disclosed/issues/12",
+            "https://khalil-shreateh.com/khalil.shtml/it-highlights/592-Netgear-1.0.0.24-Cross-Site-Request-Forgery--.html",
+            "https://lists.openwall.net/full-disclosure/2016/01/11/1",
+            "https://packetstormsecurity.com/files/135194/Netgear-1.0.0.24-Cross-Site-Scripting.html"
+        ],
+        "cpe": [
+            "cpe:2.3:h:netgear:jnr1010:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "11/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17624",
+        "cwe_id": "CWE-787",
+        "description": "\"\" In X.Org X Server 1.20.4, there is a stack-based buffer overflow in the function XQueryKeymap. For example, by sending ct.c_char 1000 times, an attacker can cause a denial of service (application crash) or possibly have unspecified other impact. Note: It is disputed if the X.Org X Server is involved or if there is a stack overflow.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/154868/X.Org-X-Server-1.20.4-Local-Stack-Overflow.html",
+            "https://www.exploit-db.com/exploits/47507",
+            "https://www.x.org/releases/individual/xserver/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:x:x_server:*:*:*:*:*:*:*:* versions from (including) 1.20.4",
+            "*cpe:2.3:a:x:x_server:*:*:*:*:*:*:*:* versions up to (including) 1.20.4",
+            "*cpe:2.3:a:x:x_server:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:x.org:x_server:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:x:x_server:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17625",
+        "cwe_id": "CWE-79",
+        "description": "There is a stored XSS in Rambox 0.6.9 that can lead to code execution. The XSS is in the name field while adding/editing a service. The problem occurs due to incorrect sanitization of the name field when being processed and stored. This allows a user to craft a payload for Node.js and Electron, such as an exec of OS commands within the onerror attribute of an IMG element.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.0 CRITICAL",
+        "base_score_v2": "8.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/ramboxapp/community-edition/issues/2418"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:rambox:rambox:0.6.9:*:*:*:community:*:*:*",
+            "*cpe:2.3:a:rambox:rambox:0.6.9:*:*:*:community:*:*:*"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/16/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17626",
+        "cwe_id": "CWE-91",
+        "description": "ReportLab through 3.5.26 allows remote code execution because of toColor(eval(arg)) in colors.py, as demonstrated by a crafted XML document with '<span color=\"' followed by arbitrary Python code.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-02/msg00002.html",
+            "https://access.redhat.com/errata/RHSA-2020:0195",
+            "https://access.redhat.com/errata/RHSA-2020:0197",
+            "https://access.redhat.com/errata/RHSA-2020:0201",
+            "https://access.redhat.com/errata/RHSA-2020:0230",
+            "https://bitbucket.org/rptlab/reportlab/issues/199/eval-in-colorspy-leads-to-remote-code",
+            "https://bitbucket.org/rptlab/reportlab/src/default/CHANGES.md",
+            "https://lists.debian.org/debian-lts-announce/2020/02/msg00019.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NSCTOE3DITFICY2XKBYZ5WAF5TSQ52DM/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZZPHP2BJSTP4IYCSJRQINP763IHO6ASL/",
+            "https://security.gentoo.org/glsa/202007-35",
+            "https://usn.ubuntu.com/4273-1/",
+            "https://www.debian.org/security/2020/dsa-4663"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:reportlab:reportlab:*:*:*:*:*:*:*:* versions up to (including) 3.5.26",
+            "*cpe:2.3:a:reportlab:reportlab:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "07/26/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17627",
+        "cwe_id": "CWE-287",
+        "description": "The Yale Bluetooth Key application for mobile devices allows unauthorized unlock actions by sniffing Bluetooth Low Energy (BLE) traffic during one authorized unlock action, and then calculating the authentication key via simple computations on the hex digits of a valid authentication request. This affects the Yale ZEN-R lock and unspecified other locks.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "3.3 LOW",
+        "hyperlinks": [
+            "https://github.com/PwnMonkeyLab/YaleDoorlockVulnerability/blob/master/HowToDo.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:yalehome:yale_bluetooth_key:-:*:*:*:*:android:*:*",
+            "*cpe:2.3:a:yalehome:yale_bluetooth_key:-:*:*:*:*:android:*:*"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/18/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-4031",
+        "cwe_id": null,
+        "description": "IBM Workload Scheduler Distributed 9.2, 9.3, 9.4, and 9.5 contains a vulnerability that could allow a local user to write files as root in the file system, which could allow the attacker to gain root privileges. IBM X-Force ID: 155997.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/155997",
+            "https://www.ibm.com/support/pages/node/1076775"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:tivoli_workload_scheduler:9.2.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:tivoli_workload_scheduler:9.3.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:tivoli_workload_scheduler:9.4.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:tivoli_workload_scheduler:9.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:tivoli_workload_scheduler:9.2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:tivoli_workload_scheduler:9.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:tivoli_workload_scheduler:9.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:tivoli_workload_scheduler:9.5.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-10436",
+        "cwe_id": "CWE-22",
+        "description": "An arbitrary file read vulnerability in Jenkins Google OAuth Credentials Plugin 0.9 and earlier allowed attackers able to configure jobs and credentials in Jenkins to obtain the contents of any file on the Jenkins master.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2019-10-16/#SECURITY-1583"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:google_oauth_credentials:*:*:*:*:*:jenkins:*:* versions up to (including) 0.9",
+            "*cpe:2.3:a:jenkins:google_oauth_credentials:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/01/2020",
+        "vulnerability_source": "Jenkins Project",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-10437",
+        "cwe_id": "CWE-352",
+        "description": "A cross-site request forgery vulnerability in Jenkins CRX Content Package Deployer Plugin 1.8.1 and earlier allowed attackers to connect to an attacker-specified URL using attacker-specified credentials IDs obtained through another method, capturing credentials stored in Jenkins.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2019-10-16/#SECURITY-1006%20(1)"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:crx_content_package_deployer:*:*:*:*:*:jenkins:*:* versions up to (including) 1.8.1",
+            "*cpe:2.3:a:jenkins:crx_content_package_deployer:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/23/2019",
+        "vulnerability_source": "Jenkins Project",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-10438",
+        "cwe_id": "CWE-862",
+        "description": "A missing permission check in Jenkins CRX Content Package Deployer Plugin 1.8.1 and earlier allowed attackers with Overall/Read permission to connect to an attacker-specified URL using attacker-specified credentials IDs obtained through another method, capturing credentials stored in Jenkins.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2019-10-16/#SECURITY-1006%20(1)"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:crx_content_package_deployer:*:*:*:*:*:jenkins:*:* versions up to (including) 1.8.1",
+            "*cpe:2.3:a:jenkins:crx_content_package_deployer:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/01/2020",
+        "vulnerability_source": "Jenkins Project",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-10439",
+        "cwe_id": "CWE-862",
+        "description": "A missing permission check in Jenkins CRX Content Package Deployer Plugin 1.8.1 and earlier in various 'doFillCredentialsIdItems' methods allowed users with Overall/Read access to enumerate credentials ID of credentials stored in Jenkins.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2019-10-16/#SECURITY-1006%20(2)"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:crx_content_package_deployer:*:*:*:*:*:jenkins:*:* versions up to (including) 1.8.1",
+            "*cpe:2.3:a:jenkins:crx_content_package_deployer:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/01/2020",
+        "vulnerability_source": "Jenkins Project",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-10440",
+        "cwe_id": "CWE-312",
+        "description": "Jenkins NeoLoad Plugin 2.2.5 and earlier stored credentials unencrypted in its global configuration file and in job config.xml files on the Jenkins master where they could be viewed by users with Extended Read permission, or access to the master file system.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2019/10/16/6",
+            "https://jenkins.io/security/advisory/2019-10-16/#SECURITY-1427",
+            "https://www.zerodayinitiative.com/advisories/ZDI-19-932/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:neoload:*:*:*:*:*:jenkins:*:* versions up to (including) 2.2.5",
+            "*cpe:2.3:a:jenkins:neoload:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/30/2019",
+        "vulnerability_source": "Jenkins Project",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-10441",
+        "cwe_id": "CWE-352",
+        "description": "A cross-site request forgery vulnerability in Jenkins iceScrum Plugin 1.1.5 and earlier allowed attackers to connect to an attacker-specified URL using attacker-specified credentials.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2019-10-16/#SECURITY-1484"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:icescrum:*:*:*:*:*:jenkins:*:* versions up to (including) 1.1.5",
+            "*cpe:2.3:a:jenkins:icescrum:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/21/2019",
+        "vulnerability_source": "Jenkins Project",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-10442",
+        "cwe_id": "CWE-862",
+        "description": "A missing permission check in Jenkins iceScrum Plugin 1.1.5 and earlier allowed attackers with Overall/Read permission to connect to an attacker-specified URL using attacker-specified credentials.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2019/10/16/6",
+            "https://jenkins.io/security/advisory/2019-10-16/#SECURITY-1484"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:icescrum:*:*:*:*:*:jenkins:*:* versions up to (including) 1.1.5",
+            "*cpe:2.3:a:jenkins:icescrum:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/01/2020",
+        "vulnerability_source": "Jenkins Project",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-10443",
+        "cwe_id": "CWE-312",
+        "description": "Jenkins iceScrum Plugin 1.1.4 and earlier stored credentials unencrypted in job config.xml files on the Jenkins master where they could be viewed by users with Extended Read permission, or access to the master file system.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2019/10/16/6",
+            "https://jenkins.io/security/advisory/2019-10-16/#SECURITY-1436",
+            "https://www.zerodayinitiative.com/advisories/ZDI-19-933/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:icescrum:*:*:*:*:*:jenkins:*:* versions up to (including) 1.1.4",
+            "*cpe:2.3:a:jenkins:icescrum:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/30/2019",
+        "vulnerability_source": "Jenkins Project",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-10444",
+        "cwe_id": "CWE-295",
+        "description": "Jenkins Bumblebee HP ALM Plugin 4.1.3 and earlier unconditionally disabled SSL/TLS and hostname verification for connections to HP ALM.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "6.4 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2019-10-16/#SECURITY-1481"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:bumblebee_hp_alm:*:*:*:*:*:jenkins:*:* versions up to (including) 4.1.3",
+            "*cpe:2.3:a:jenkins:bumblebee_hp_alm:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/18/2019",
+        "vulnerability_source": "Jenkins Project",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-10445",
+        "cwe_id": "CWE-862",
+        "description": "A missing permission check in Jenkins Google Kubernetes Engine Plugin 0.7.0 and earlier allowed attackers with Overall/Read permission to obtain limited information about the scope of a credential with an attacker-specified credentials ID.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2019/10/16/6",
+            "https://jenkins.io/security/advisory/2019-10-16/#SECURITY-1607"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:google_kubernetes_engine:*:*:*:*:*:jenkins:*:* versions up to (including) 0.7.0",
+            "*cpe:2.3:a:jenkins:google_kubernetes_engine:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/01/2020",
+        "vulnerability_source": "Jenkins Project",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-10446",
+        "cwe_id": "CWE-295",
+        "description": "Jenkins Cadence vManager Plugin 2.7.0 and earlier disabled SSL/TLS and hostname verification globally for the Jenkins master JVM.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "8.2 HIGH",
+        "base_score_v2": "6.4 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2019-10-16/#SECURITY-1615"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:cadence_vmanager:*:*:*:*:*:jenkins:*:* versions up to (including) 2.7.0",
+            "*cpe:2.3:a:jenkins:cadence_vmanager:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/18/2019",
+        "vulnerability_source": "Jenkins Project",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-10447",
+        "cwe_id": "CWE-312",
+        "description": "Jenkins Sofy.AI Plugin stores credentials unencrypted in job config.xml files on the Jenkins master where they can be viewed by users with Extended Read permission, or access to the master file system.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2019/10/16/6",
+            "https://jenkins.io/security/advisory/2019-10-16/#SECURITY-1431"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:sofy.ai:*:*:*:*:*:jenkins:*:* versions up to (including) 1.0.3",
+            "*cpe:2.3:a:jenkins:sofy.ai:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/20/2019",
+        "vulnerability_source": "Jenkins Project",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-10448",
+        "cwe_id": "CWE-522",
+        "description": "Jenkins Extensive Testing Plugin stores credentials unencrypted in job config.xml files on the Jenkins master where they can be viewed by users with Extended Read permission, or access to the master file system.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2019-10-16/#SECURITY-1432"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:extensive_testing:1.4.3:beta:*:*:*:jenkins:*:*\n     *cpe:2.3:a:jenkins:extensive_testing:1.4.4:beta:*:*:*:jenkins:*:*",
+            "*cpe:2.3:a:jenkins:extensive_testing:1.4.3:beta:*:*:*:jenkins:*:*",
+            "*cpe:2.3:a:jenkins:extensive_testing:1.4.4:beta:*:*:*:jenkins:*:*"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/18/2019",
+        "vulnerability_source": "Jenkins Project",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-10449",
+        "cwe_id": "CWE-312",
+        "description": "Jenkins Fortify on Demand Plugin stores credentials unencrypted in job config.xml files on the Jenkins master where they can be viewed by users with Extended Read permission, or access to the master file system.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2019-10-16/#SECURITY-1433"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:fortify_on_demand:*:*:*:*:*:jenkins:*:* versions up to (including) 4.0.0",
+            "*cpe:2.3:a:jenkins:fortify_on_demand:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/18/2019",
+        "vulnerability_source": "Jenkins Project",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-10450",
+        "cwe_id": "CWE-312",
+        "description": "Jenkins ElasticBox CI Plugin stores credentials unencrypted in the global config.xml configuration file on the Jenkins master where they can be viewed by users with access to the master file system.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "3.3 LOW",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2019-10-16/#SECURITY-1434"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:elasticbox_ci:*:*:*:*:*:jenkins:*:* versions up to (including) 5.0.1",
+            "*cpe:2.3:a:jenkins:elasticbox_ci:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/18/2019",
+        "vulnerability_source": "Jenkins Project",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-10451",
+        "cwe_id": "CWE-312",
+        "description": "Jenkins SOASTA CloudTest Plugin stores credentials unencrypted in its global configuration file on the Jenkins master where they can be viewed by users with access to the master file system.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2019-10-16/#SECURITY-1439"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:soasta_cloudtest:*:*:*:*:*:jenkins:*:* versions up to (including) 2.25",
+            "*cpe:2.3:a:jenkins:soasta_cloudtest:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/22/2019",
+        "vulnerability_source": "Jenkins Project",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-10452",
+        "cwe_id": "CWE-312",
+        "description": "Jenkins View26 Test-Reporting Plugin stores credentials unencrypted in job config.xml files on the Jenkins master where they can be viewed by users with Extended Read permission, or access to the master file system.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2019-10-16/#SECURITY-1440"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:view26_test-reporting:*:*:*:*:*:jenkins:*:* versions up to (including) 1.0.7",
+            "*cpe:2.3:a:jenkins:view26_test-reporting:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/18/2019",
+        "vulnerability_source": "Jenkins Project",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-10453",
+        "cwe_id": "CWE-312",
+        "description": "Jenkins Delphix Plugin stores credentials unencrypted in its global configuration file on the Jenkins master where they can be viewed by users with access to the master file system.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2019/10/16/6",
+            "https://jenkins.io/security/advisory/2019-10-16/#SECURITY-1450"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:delphix:*:*:*:*:*:jenkins:*:* versions up to (including) 2.0.4",
+            "*cpe:2.3:a:jenkins:delphix:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/18/2019",
+        "vulnerability_source": "Jenkins Project",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-10454",
+        "cwe_id": "CWE-352",
+        "description": "A cross-site request forgery vulnerability in Jenkins Rundeck Plugin allows attackers to connect to an attacker-specified URL using attacker-specified credentials.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2019-10-16/#SECURITY-1460"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:rundeck:*:*:*:*:*:jenkins:*:* versions up to (including) 3.6.5",
+            "*cpe:2.3:a:jenkins:rundeck:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/18/2019",
+        "vulnerability_source": "Jenkins Project",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-10455",
+        "cwe_id": "CWE-862",
+        "description": "A missing permission check in Jenkins Rundeck Plugin allows attackers with Overall/Read permission to connect to an attacker-specified URL using attacker-specified credentials.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2019-10-16/#SECURITY-1460"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:rundeck:*:*:*:*:*:jenkins:*:* versions up to (including) 3.6.5",
+            "*cpe:2.3:a:jenkins:rundeck:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/01/2020",
+        "vulnerability_source": "Jenkins Project",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-10456",
+        "cwe_id": "CWE-352",
+        "description": "A cross-site request forgery vulnerability in Jenkins Oracle Cloud Infrastructure Compute Classic Plugin allows attackers to connect to an attacker-specified URL using attacker-specified credentials.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2019-10-16/#SECURITY-1462"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:oracle_cloud_infrastructure_compute_classic:*:*:*:*:*:jenkins:*:* versions up to (including) 1.0.0",
+            "*cpe:2.3:a:jenkins:oracle_cloud_infrastructure_compute_classic:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/18/2019",
+        "vulnerability_source": "Jenkins Project",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-10457",
+        "cwe_id": "CWE-862",
+        "description": "A missing permission check in Jenkins Oracle Cloud Infrastructure Compute Classic Plugin allows attackers with Overall/Read permission to connect to an attacker-specified URL using attacker-specified credentials.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2019/10/16/6",
+            "https://jenkins.io/security/advisory/2019-10-16/#SECURITY-1462"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:oracle_cloud_infrastructure_compute_classic:*:*:*:*:*:jenkins:*:* versions up to (including) 1.0.0",
+            "*cpe:2.3:a:jenkins:oracle_cloud_infrastructure_compute_classic:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/01/2020",
+        "vulnerability_source": "Jenkins Project",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-10458",
+        "cwe_id": "CWE-20",
+        "description": "Jenkins Puppet Enterprise Pipeline 1.3.1 and earlier specifies unsafe values in its custom Script Security whitelist, allowing attackers able to execute Script Security protected scripts to execute arbitrary code.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.9 CRITICAL",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2019-10-16/#SECURITY-918"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:puppet_enterprise_pipeline:*:*:*:*:*:jenkins:*:* versions up to (including) 1.3.1",
+            "*cpe:2.3:a:jenkins:puppet_enterprise_pipeline:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/18/2019",
+        "vulnerability_source": "Jenkins Project",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-15893",
+        "cwe_id": null,
+        "description": "Sonatype Nexus Repository Manager 2.x before 2.14.15 allows Remote Code Execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.2 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://support.sonatype.com/hc/en-us/articles/360035055794"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:sonatype:nexus_repository_manager:*:*:*:*:*:*:*:* versions up to (excluding) 2.14.15",
+            "*cpe:2.3:a:sonatype:nexus_repository_manager:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-16520",
+        "cwe_id": "CWE-79",
+        "description": "The all-in-one-seo-pack plugin before 3.2.7 for WordPress (aka All in One SEO Pack) is susceptible to Stored XSS due to improper encoding of the SEO-specific description for posts provided by the plugin via unsafe placeholder replacement.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2019/10/16/5",
+            "https://github.com/sbaresearch/advisories/tree/public/2019/SBA-ADV-20190913-04_WordPress_Plugin_All_in_One_SEO_Pack",
+            "https://github.com/semperfiwebdesign/all-in-one-seo-pack/issues/2888",
+            "https://semperplugins.com/all-in-one-seo-pack-changelog/",
+            "https://wordpress.org/plugins/all-in-one-seo-pack/#developers",
+            "https://wpvulndb.com/vulnerabilities/9915"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:semperplugins:all_in_one_seo_pack:*:*:*:*:*:wordpress:*:* versions up to (excluding) 3.2.7",
+            "*cpe:2.3:a:semperplugins:all_in_one_seo_pack:*:*:*:*:*:wordpress:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/18/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17629",
+        "cwe_id": "CWE-79",
+        "description": "CMS Made Simple (CMSMS) 2.2.11 allows stored XSS by an admin via a crafted image filename on the \"file manager > upload images\" screen.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.8 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://dev.cmsmadesimple.org/bug/view/12146",
+            "https://forum.cmsmadesimple.org/viewforum.php?f=1"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:cmsmadesimple:cms_made_simple:2.2.11:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cmsmadesimple:cms_made_simple:2.2.11:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/16/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17630",
+        "cwe_id": "CWE-79",
+        "description": "CMS Made Simple (CMSMS) 2.2.11 allows stored XSS by an admin via a crafted image filename on the \"News > Add Article\" screen.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.8 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://dev.cmsmadesimple.org/bug/view/12149",
+            "https://forum.cmsmadesimple.org/viewforum.php?f=1"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:cmsmadesimple:cms_made_simple:2.2.11:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cmsmadesimple:cms_made_simple:2.2.11:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/16/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-16521",
+        "cwe_id": "CWE-79",
+        "description": "The broken-link-checker plugin through 1.11.8 for WordPress (aka Broken Link Checker) is susceptible to Reflected XSS due to improper encoding and insertion of an HTTP GET parameter into HTML. The filter function on the page listing all detected broken links can be exploited by providing an XSS payload in the s_filter GET parameter in a filter_id=search request. NOTE: this is an end-of-life product.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2019/10/16/3",
+            "https://github.com/sbaresearch/advisories/tree/public/2019/SBA-ADV-20190913-02_WordPress_Plugin_Broken_Link_Checker",
+            "https://wordpress.org/plugins/broken-link-checker/#developers",
+            "https://wpvulndb.com/vulnerabilities/9917"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:managewp:broken_link_checker:*:*:*:*:*:wordpress:*:* versions up to (including) 1.11.8",
+            "*cpe:2.3:a:managewp:broken_link_checker:*:*:*:*:*:wordpress:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/18/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-16522",
+        "cwe_id": "CWE-79",
+        "description": "The eu-cookie-law plugin through 3.0.6 for WordPress (aka EU Cookie Law (GDPR)) is susceptible to Stored XSS due to improper encoding of several configuration options in the admin area and the displayed cookie consent message. This affects Font Color, Background Color, and the Disable Cookie text. An attacker with high privileges can attack other users.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.8 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://github.com/sbaresearch/advisories/tree/public/2019/SBA-ADV-20190913-01_WordPress_Plugin_EU_Cookie_Law",
+            "https://wordpress.org/plugins/eu-cookie-law/#developers",
+            "https://wpvulndb.com/vulnerabilities/9918"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:eu_cookie_law_project:eu_cookie_law:*:*:*:*:*:wordpress:*:* versions up to (including) 3.0.6",
+            "*cpe:2.3:a:eu_cookie_law_project:eu_cookie_law:*:*:*:*:*:wordpress:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/20/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-16523",
+        "cwe_id": "CWE-79",
+        "description": "The events-manager plugin through 5.9.5 for WordPress (aka Events Manager) is susceptible to Stored XSS due to improper encoding and insertion of data provided to the attribute map_style of shortcodes (locations_map and events_map) provided by the plugin.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2019/10/16/4",
+            "https://github.com/sbaresearch/advisories/tree/public/2019/SBA-ADV-20190913-03_WordPress_Plugin_Events_Manager",
+            "https://wordpress.org/plugins/events-manager/#developers",
+            "https://wpvulndb.com/vulnerabilities/9916"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:wp-events-plugin:events_manager:*:*:*:*:*:wordpress:*:* versions up to (including) 5.9.5",
+            "*cpe:2.3:a:wp-events-plugin:events_manager:*:*:*:*:*:wordpress:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/18/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-6334",
+        "cwe_id": null,
+        "description": "HP LaserJet, PageWide, OfficeJet Enterprise, and LaserJet Managed Printers have a solution to check application signature that may allow potential execution of arbitrary code.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://support.hp.com/us-en/document/c06447795"
+        ],
+        "cpe": [
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m630_b3g86a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m630_l3u62a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m630_p7z47a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m527z_f2a76a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m527z_f2a77a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m527z_f2a78a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_fl",
+            "cpe:2.3:h:hp:officejet_enterprise_flow_mfp_x585_b5l06a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:officejet_enterprise_flow_mfp_x585_b5l07a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:officejet_enterprise_flow_mfp_x585_l3u41a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:officejet_enterprise_m",
+            "cpe:2.3:h:hp:officejet_enterprise_x555_c2s11a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:officejet_enterprise_x555_c2s12a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:officejet_enterprise_x555_l1h45a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m552_b5l23a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m553_b5l24a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m553_b5l25a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m553_b5l26a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m552_b5l23a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m604_e6b67a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m604_e6b68a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m605_e6b69a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m605_e6b70a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m506_f2a66a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m506_f2a67a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m506_f2a68a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m506_f2a69a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m577_b5l46a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m577_b5l47a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m577_b5l48a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_",
+            "cpe:2.3:h:hp:pagewide_enterprise_556_g1w46a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:pagewide_enterprise_556_g1w46v:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:pagewide_enterprise_556_g1w47a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:pagewide_enterprise_556_g1w47v:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:pagewide_enterprise_flow_mfp_586z_g1w39a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:pagewide_enterprise_flow_mfp_586z_g1w40a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:pagewide_enterprise_flow_mfp_586z_g1w41a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:pagewide_enterprise_mfp_5",
+            "cpe:2.3:h:hp:laserjet_enterprises_cp5525_ce707a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprises_cp5525_ce708a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprises_cp5525_ce709a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_cm4540_mfp_cc419a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_cm4540_mfp_cc420a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_cm4540_mfp_cc421a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:scanjet_enterprise_8500_fn1_document_capture_workstation_l2717a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m651_cz255a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m651_cz256a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m651_cz257a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m651_h0dc9a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m830_cf367a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m830_l3u65a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_flow_mfp_m830_cf367a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_flow_mfp_m8",
+            "cpe:2.3:h:hp:laserjet_enterprise_500_mfp_m525f_cf116a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_500_mfp_m525f_cf117a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_500_mfp_m525f_cf118a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m880z_a2w75a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m880z_a2w76a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m880z_d7p70a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_fl",
+            "cpe:2.3:h:hp:laserjet_enterprise_m855_a2w77a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m855_a2w78a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m855_a2w79a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m855_d7p72a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m680_ca251a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m680_cz248a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m680_cz249a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_",
+            "cpe:2.3:h:hp:laserjet_enterprise_m4555_mfp_ce502a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m4555_mfp_ce503a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m4555_mfp_ce504a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m4555_mfp_ce738a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m750_d3l08a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m750_d3l09a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m750_d3l10a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m806_cz244a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m806_cz245a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_mfp_m725_cf066a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_mfp_m725_cf067a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_mfp_m725_cf068a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_mfp_m725_cf069a:-:*:",
+            "cpe:2.3:h:hp:laserjet_enterprise_700_m712_cf235a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_700_m712_cf236a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_700_m712_cf238a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_700_mfp_m775_cc522a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_700_mfp_m775_cc523a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_700_mfp_m775_cc524a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_700_mfp_",
+            "cpe:2.3:h:hp:laserjet_enterprise_600_m601_ce989a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_600_m601_ce990a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_600_m602_ce991a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_600_m602_ce992a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_600_m602_ce993a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_500_m551_cf081a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_500_m551_cf082a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_500_m551_cf083a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_500_mfp_m575_cd644a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_500_mfp_m575_cd645a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_500_mfp_m575_cd646a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp",
+            "cpe:2.3:h:hp:laserjet_managed_e55040dw_3gx98a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:pagewide_755_4pz47a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:pagewide_enterprise_765_j7z04a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:pagewide_managed_e75160_j7z06a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:pagewide_managed_p75250_y3z49a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m607_k0q14a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m607_k0q15a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m608_k0q17a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m608_k0q18a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m608_k0q19a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserj",
+            "cpe:2.3:h:hp:laserjet_enterprise_m507_1pu51a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m507_1pu52a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m507_1pv86a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m507_1pv87a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m507_1pv88a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserj",
+            "cpe:2.3:h:hp:pagewide_managed_mfp_p77440_y3z60a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:pagewide_managed_mfp_p77940_2gp22a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:pagewide_managed_mfp_p77940_2gp23a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:pagewide_managed_mfp_p77940_2gp25a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:pagewide_managed_mfp_p77940_2gp26a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m652_j7z98a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m652_j7z99a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m653_j8a04a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m653_j8a05a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m653_j8a06a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserj",
+            "cpe:2.3:h:hp:digital_sender_flow_8500_fn2_document_capture_workstation_l2762a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:scanjet_enterprise_flow_n9120_fn2_document_scanner_l2763a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m751_t3u43a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m751_t3u44a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_m751_t3u64a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_e75245_t3u43a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_e75245_t3u44a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet",
+            "cpe:2.3:h:hp:laserjet_managed_flow_mfp_e82540_az8z20a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_flow_mfp_e82540_x3a68a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_flow_mfp_e82540_x3a69a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_flow_mfp_e82540_x3a71a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_flow_mfp_e82540_x3a72a:-:*:",
+            "cpe:2.3:h:hp:laserjet_managed_flow_mfp_e72525_x3a59a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_flow_mfp_e72525_x3a60a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_flow_mfp_e72525_x3a62a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_flow_mfp_e72525_x3a63a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_flow_mfp_e72525_x3a65a:-:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_mfp_e77422_5cm75a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_mfp_e77422_5cm76a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_mfp_e77422_5cm77a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_mfp_e77422_5cm78a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_mfp_e77422_5cm79a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_flow_mfp_e77822_x3a77a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_flow_mfp_e77822_x3a80a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_flow_mfp_e77822_x3a83a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_flow_mfp_e77822_z8z01a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_flow_mfp_e77822_z8z05a:-:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_mfp_e72425_5cm68a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_mfp_e72425_5cm69a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_mfp_e72425_5cm70a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_mfp_e72425_5cm71a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_mfp_e72425_5cm72a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_flow_mfp_e87640_x3a86a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_flow_mfp_e87640_x3a87a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_flow_mfp_e87640_x3a89a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_flow_mfp_e87640_x3a90a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_flow_mfp_e87640_x3a92a:-:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_mfp_m528_1ps54a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_mfp_m528_1ps55a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_mfp_m528_1pv49a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_mfp_m528_1pv64a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_mfp_m528_1pv65a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:pagewide_enterprise_flow_mfp_780f_j7z09a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:pagewide_enterprise_flow_mfp_780f_j7z10a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:pagewide_enterprise_flow_mfp_785_j7z11a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:pagewide_enterprise_flow_mfp_785_j7z12a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:pagewide_enterprise_mfp_780_j7z09a:-:*:*:*:",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m631_j8j63a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m631_j8j64a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m631_j8j65a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m632_j8j70a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m632_j8j71a:",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m681_j8a10a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m681_j8a11a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m681_j8a12a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m681_j8a13a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_enterprise_flow_mfp_m682_j8a16a:",
+            "cpe:2.3:h:hp:laserjet_managed_flow_mfp_e57540_3gy25a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_flow_mfp_e57540_3gy26a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_mfp_e57540_3gy25a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:laserjet_managed_mfp_e57540_3gy26a:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "HP Inc.",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-11281",
+        "cwe_id": "CWE-79",
+        "description": "Pivotal RabbitMQ, versions prior to v3.7.18, and RabbitMQ for PCF, versions 1.15.x prior to 1.15.13, versions 1.16.x prior to 1.16.6, and versions 1.17.x prior to 1.17.3, contain two components, the virtual host limits page, and the federation management UI, which do not properly sanitize user input. A remote authenticated malicious user with administrative access could craft a cross site scripting attack that would gain access to virtual hosts and policy management information.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.8 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://access.redhat.com/errata/RHSA-2020:0078",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/EEQ6O7PMNJKYFMQYHAB55L423GYK63SO/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PYTGR3D5FW2O25RXZOTIZMOD2HAUVBE4/",
+            "https://pivotal.io/security/cve-2019-11281"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:pivotal_software:rabbitmq:*:*:*:*:*:pivotal_cloud_foundry:*:* versions from (including) 1.15.0 up to (excluding) 1.15.13\n     *cpe:2.3:a:pivotal_software:rabbitmq:*:*:*:*:*:pivotal_cloud_foundry:*:* versions from (including) 1.16.0 up to (excluding) 1.16.6\n     *cpe:2.3:a:pivotal_software:rabbitmq:*:*:*:*:*:pivotal_cloud_foundry:*:* versions from (including) 1.17.0 up to (excluding) 1.17.3\n     *cpe:2.3:a:pivotal_software:rabbitmq:*:*:*:*:*:*:*:* versions up to (excluding) 3.7",
+            "*cpe:2.3:a:pivotal_software:rabbitmq:*:*:*:*:*:pivotal_cloud_foundry:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:pivotal_software:rabbitmq:*:*:*:*:*:pivotal_cloud_foundry:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:pivotal_software:rabbitmq:*:*:*:*:*:pivotal_cloud_foundry:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:pivotal_software:rabbitmq:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "12/06/2019",
+        "vulnerability_source": "Pivotal Software, Inc.",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17660",
+        "cwe_id": "CWE-79",
+        "description": "A cross-site scripting (XSS) vulnerability in admin/translate/translateheader_view.php in LimeSurvey 3.19.1 and earlier allows remote attackers to inject arbitrary web script or HTML via the tolang parameter, as demonstrated by the index.php/admin/translate/sa/index/surveyid/336819/lang/ PATH_INFO.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/kbgsft/vuln-limesurvey/wiki/Reflected-XSS-in-LimeSurvey-3.19.1-by-xcuter"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:limesurvey:limesurvey:*:*:*:*:*:*:*:* versions up to (including) 3.19.1",
+            "*cpe:2.3:a:limesurvey:limesurvey:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/17/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-2875",
+        "cwe_id": null,
+        "description": "Vulnerability in the Core RDBMS component of Oracle Database Server. Supported versions that are affected are 12.2.0.1, 18c and 19c. Easily exploitable vulnerability allows low privileged attacker having Create Session privilege with network access via OracleNet to compromise Core RDBMS. While the vulnerability is in Core RDBMS, attacks may significantly impact additional products. Successful attacks of this vulnerability can result in unauthorized read access to a subset of Core RDBMS accessible data. CVSS 3.0 Base Score 5.0 (Confidentiality impacts). CVSS Vector: (CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:N/A:N).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.0 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:database_server:12.2.0.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:oracle:database_server:18c:*:*:*:*:*:*:*\n     *cpe:2.3:a:oracle:database_server:19c:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:database_server:12.2.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:database_server:18c:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:database_server:19c:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/17/2019",
+        "vulnerability_source": "Oracle",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-3300",
+        "cwe_id": null,
+        "description": "Vulnerability in the Oracle Retail Xstore Office product of Oracle Retail Applications (component: Internal Operations). The supported version that is affected is 7.1. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Retail Xstore Office. Successful attacks of this vulnerability can result in unauthorized update, insert or delete access to some of Oracle Retail Xstore Office accessible data as well as unauthorized read access to a subset of Oracle Retail Xstore Office accessible data. CVSS 3.0 Base Score 5.4 (Confidentiality and Integrity impacts). CVSS Vector: (CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N).",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "5.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:retail_xstore_office:7.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:retail_xstore_office:7.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/17/2019",
+        "vulnerability_source": "Oracle",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17576",
+        "cwe_id": "CWE-79",
+        "description": "An issue was discovered in Dolibarr 10.0.2. It has XSS via the \"outgoing email setup\" feature in the /admin/mails.php?action=edit URI via the \"Send all emails to (instead of real recipients, for test purposes)\" field.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://mycvee.blogspot.com/p/blog-page.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:dolibarr:dolibarr:10.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:dolibarr:dolibarr:10.0.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/18/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2019-17577",
+        "cwe_id": "CWE-79",
+        "description": "An issue was discovered in Dolibarr 10.0.2. It has XSS via the \"outgoing email setup\" feature in the admin/mails.php?action=edit URI via the \"Email used for error returns emails (fields 'Errors-To' in emails sent)\" field.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://mycvee.blogspot.com/p/cve-2019-17576.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:dolibarr:dolibarr:10.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:dolibarr:dolibarr:10.0.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/16/2019",
+        "modified_date": "10/18/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "10"
+    }
+]

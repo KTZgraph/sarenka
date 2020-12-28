@@ -1,0 +1,3329 @@
+[
+    {
+        "cve_id": "CVE-2019-11358",
+        "cwe_id": "CWE-79",
+        "description": "jQuery before 3.4.0, as used in Drupal, Backdrop CMS, and other products, mishandles jQuery.extend(true, {}, ...) because of Object.prototype pollution. If an unsanitized source object contained an enumerable __proto__ property, it could extend the native Object.prototype.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00006.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00025.html",
+            "http://packetstormsecurity.com/files/152787/dotCMS-5.1.1-Vulnerable-Dependencies.html",
+            "http://packetstormsecurity.com/files/153237/RetireJS-CORS-Issue-Script-Execution.html",
+            "http://packetstormsecurity.com/files/156743/OctoberCMS-Insecure-Dependencies.html",
+            "http://seclists.org/fulldisclosure/2019/May/10",
+            "http://seclists.org/fulldisclosure/2019/May/11",
+            "http://seclists.org/fulldisclosure/2019/May/13",
+            "http://www.openwall.com/lists/oss-security/2019/06/03/2",
+            "http://www.securityfocus.com/bid/108023",
+            "https://access.redhat.com/errata/RHBA-2019:1570",
+            "https://access.redhat.com/errata/RHSA-2019:1456",
+            "https://access.redhat.com/errata/RHSA-2019:2587",
+            "https://access.redhat.com/errata/RHSA-2019:3023",
+            "https://access.redhat.com/errata/RHSA-2019:3024",
+            "https://backdropcms.org/security/backdrop-sa-core-2019-009",
+            "https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/",
+            "https://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b",
+            "https://github.com/jquery/jquery/pull/4333",
+            "https://kb.pulsesecure.net/articles/Pulse_Security_Advisories/SA44601",
+            "https://lists.apache.org/thread.html/08720ef215ee7ab3386c05a1a90a7d1c852bf0706f176a7816bf65fc@%3Ccommits.airflow.apache.org%3E",
+            "https://lists.apache.org/thread.html/519eb0fd45642dcecd9ff74cb3e71c20a4753f7d82e2f07864b5108f@%3Cdev.drill.apache.org%3E",
+            "https://lists.apache.org/thread.html/5928aa293e39d248266472210c50f176cac1535220f2486e6a7fa844@%3Ccommits.airflow.apache.org%3E",
+            "https://lists.apache.org/thread.html/6097cdbd6f0a337bedd9bb5cc441b2d525ff002a96531de367e4259f@%3Ccommits.airflow.apache.org%3E",
+            "https://lists.apache.org/thread.html/88fb0362fd40e5b605ea8149f63241537b8b6fb5bfa315391fc5cbb7@%3Ccommits.airflow.apache.org%3E",
+            "https://lists.apache.org/thread.html/b0656d359c7d40ec9f39c8cc61bca66802ef9a2a12ee199f5b0c1442@%3Cdev.drill.apache.org%3E",
+            "https://lists.apache.org/thread.html/b736d0784cf02f5a30fbb4c5902762a15ad6d47e17e2c5a17b7d6205@%3Ccommits.airflow.apache.org%3E",
+            "https://lists.apache.org/thread.html/ba79cf1658741e9f146e4c59b50aee56656ea95d841d358d006c18b6@%3Ccommits.roller.apache.org%3E",
+            "https://lists.apache.org/thread.html/bcce5a9c532b386c68dab2f6b3ce8b0cc9b950ec551766e76391caa3@%3Ccommits.nifi.apache.org%3E",
+            "https://lists.apache.org/thread.html/f9bc3e55f4e28d1dcd1a69aae6d53e609a758e34d2869b4d798e13cc@%3Cissues.drill.apache.org%3E",
+            "https://lists.apache.org/thread.html/r2041a75d3fc09dec55adfd95d598b38d22715303f65c997c054844c9@%3Cissues.flink.apache.org%3E",
+            "https://lists.apache.org/thread.html/r2baacab6e0acb5a2092eb46ae04fd6c3e8277b4fd79b1ffb7f3254fa@%3Cissues.flink.apache.org%3E",
+            "https://lists.apache.org/thread.html/r38f0d1aa3c923c22977fe7376508f030f22e22c1379fbb155bf29766@%3Cdev.syncope.apache.org%3E",
+            "https://lists.apache.org/thread.html/r41b5bfe009c845f67d4f68948cc9419ac2d62e287804aafd72892b08@%3Cissues.flink.apache.org%3E",
+            "https://lists.apache.org/thread.html/r7aac081cbddb6baa24b75e74abf0929bf309b176755a53e3ed810355@%3Cdev.flink.apache.org%3E",
+            "https://lists.apache.org/thread.html/r7d64895cc4dff84d0becfc572b20c0e4bf9bfa7b10c6f5f73e783734@%3Cdev.storm.apache.org%3E",
+            "https://lists.apache.org/thread.html/r7e8ebccb7c022e41295f6fdb7b971209b83702339f872ddd8cf8bf73@%3Cissues.flink.apache.org%3E",
+            "https://lists.apache.org/thread.html/rac25da84ecdcd36f6de5ad0d255f4e967209bbbebddb285e231da37d@%3Cissues.flink.apache.org%3E",
+            "https://lists.apache.org/thread.html/rca37935d661f4689cb4119f1b3b224413b22be161b678e6e6ce0c69b@%3Ccommits.nifi.apache.org%3E",
+            "https://lists.debian.org/debian-lts-announce/2019/05/msg00006.html",
+            "https://lists.debian.org/debian-lts-announce/2019/05/msg00029.html",
+            "https://lists.debian.org/debian-lts-announce/2020/02/msg00024.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4UOAZIFCSZ3ENEFOR5IXX6NFAD3HV7FA/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/5IABSKTYZ5JUGL735UKGXL5YPRYOPUYI/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KYH3OAGR2RTCHRA5NOKX2TES7SNQMWGO/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QV3PKZC3PQCO3273HAT76PAQZFBEO4KP/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/RLXRX23725JL366CNZGJZ7AQQB7LHQ6F/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WZW27UCJ5CYFL4KFFFMYMIBNMIU2ALG5/",
+            "https://seclists.org/bugtraq/2019/Apr/32",
+            "https://seclists.org/bugtraq/2019/Jun/12",
+            "https://seclists.org/bugtraq/2019/May/18",
+            "https://security.netapp.com/advisory/ntap-20190919-0001/",
+            "https://snyk.io/vuln/SNYK-JS-JQUERY-174006",
+            "https://www.debian.org/security/2019/dsa-4434",
+            "https://www.debian.org/security/2019/dsa-4460",
+            "https://www.drupal.org/sa-core-2019-006",
+            "https://www.oracle.com/security-alerts/cpuapr2020.html",
+            "https://www.oracle.com/security-alerts/cpujan2020.html",
+            "https://www.oracle.com/security-alerts/cpujul2020.html",
+            "https://www.oracle.com/security-alerts/cpuoct2020.html",
+            "https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html",
+            "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+            "https://www.privacy-wise.com/mitigating-cve-2019-11358-in-old-versions-of-jquery/",
+            "https://www.synology.com/security/advisory/Synology_SA_19_19",
+            "https://www.tenable.com/security/tns-2019-08",
+            "https://www.tenable.com/security/tns-2020-02"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:backdropcms:backdrop:*:*:*:*:*:*:*:* versions from (including) 1.11.0 up to (excluding) 1.11.9\n     *cpe:2.3:a:backdropcms:backdrop:*:*:*:*:*:*:*:* versions from (including) 1.12.0 up to (excluding) 1.12.6",
+            "*cpe:2.3:a:backdropcms:backdrop:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:backdropcms:backdrop:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:jquery:jquery:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/19/2019",
+        "modified_date": "10/26/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11359",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in display.php in I, Librarian 4.10 allows remote attackers to inject arbitrary web script or HTML via the project parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/mkucej/i-librarian/issues/138"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:i-librarian:i\\,_librarian:4.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:i-librarian:i\\,_librarian:4.10:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/19/2019",
+        "modified_date": "04/22/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11362",
+        "cwe_id": "CWE-89",
+        "description": "app/controllers/frontend/PostController.php in ROCBOSS V2.2.1 has SQL injection via the Post:doReward score paramter, as demonstrated by the /do/reward/3 URI.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/rocboss/ROCBOSS/issues/12"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:rocboss:rocboss:2.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:rocboss:rocboss:2.2.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/20/2019",
+        "modified_date": "04/22/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11365",
+        "cwe_id": "CWE-787",
+        "description": "An issue was discovered in atftpd in atftp 0.7.1. A remote attacker may send a crafted packet triggering a stack-based buffer overflow due to an insecurely implemented strncpy call. The vulnerability is triggered by sending an error packet of 3 bytes or fewer. There are multiple instances of this vulnerable strncpy pattern within the code base, specifically within tftpd_file.c, tftp_file.c, tftpd_mtftp.c, and tftp_mtftp.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://lists.debian.org/debian-lts-announce/2019/05/msg00012.html",
+            "https://pulsesecurity.co.nz/advisories/atftpd-multiple-vulnerabilities",
+            "https://seclists.org/bugtraq/2019/May/16",
+            "https://security.gentoo.org/glsa/202003-14",
+            "https://sourceforge.net/p/atftp/code/ci/abed7d245d8e8bdfeab24f9f7f55a52c3140f96b/",
+            "https://usn.ubuntu.com/4540-1/",
+            "https://www.debian.org/security/2019/dsa-4438"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:atftp_project:atftp:0.7.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:atftp_project:atftp:0.7.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/20/2019",
+        "modified_date": "09/28/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11366",
+        "cwe_id": "CWE-476",
+        "description": "An issue was discovered in atftpd in atftp 0.7.1. It does not lock the thread_list_mutex mutex before assigning the current thread data structure. As a result, the daemon is vulnerable to a denial of service attack due to a NULL pointer dereference. If thread_data is NULL when assigned to current, and modified by another thread before a certain tftpd_list.c check, there is a crash when dereferencing current->next.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://lists.debian.org/debian-lts-announce/2019/05/msg00012.html",
+            "https://pulsesecurity.co.nz/advisories/atftpd-multiple-vulnerabilities",
+            "https://seclists.org/bugtraq/2019/May/16",
+            "https://security.gentoo.org/glsa/202003-14",
+            "https://sourceforge.net/p/atftp/code/ci/382f76a90b44f81fec00e2f609a94def4a5d3580/",
+            "https://usn.ubuntu.com/4540-1/",
+            "https://www.debian.org/security/2019/dsa-4438"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:atftpd_project:atftpd:0.7.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:atftpd_project:atftpd:0.7.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:atftpd_project:atftpd:0.7.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:atftp_project:atftp:0.7.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:atftpd_project:atftpd:0.7.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/20/2019",
+        "modified_date": "09/28/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11372",
+        "cwe_id": "CWE-125",
+        "description": "An out-of-bounds read in MediaInfoLib::File__Tags_Helper::Synched_Test in Tag/File__Tags.cpp in MediaInfoLib in MediaArea MediaInfo 18.12 leads to a crash.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00069.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00083.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00028.html",
+            "https://github.com/MediaArea/MediaInfoLib/pull/1111",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/B752JY7TABWSVYHFATD37XDD6PVIO5C6/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BC4Z4BGGMSSVTRKVD3OCW4JLH3K2ZNGP/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BYKBAXS35KFMU4YLO37VGDIKHEL5HSPO/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NJYASICJ2VUUNGHDBB62FGYQN2SNITM5/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XOA4AWTRLWVQBZZAKXXQHP7M2NK6CB3Z/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XYF5I42OBJR7HKJD2OFS6LP26I52IT3M/",
+            "https://sourceforge.net/p/mediainfo/bugs/1101/",
+            "https://usn.ubuntu.com/3988-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:fedoraproject:fedora:28:*:*:*:*:*:*:*\n     *cpe:2.3:o:fedoraproject:fedora:29:*:*:*:*:*:*:*\n     *cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:mediaarea:mediainfo:18.12:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:fedoraproject:fedora:28:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:fedoraproject:fedora:29:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:mediaarea:mediainfo:18.12:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/20/2019",
+        "modified_date": "05/25/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11373",
+        "cwe_id": "CWE-125",
+        "description": "An out-of-bounds read in File__Analyze::Get_L8 in File__Analyze_Buffer.cpp in MediaInfoLib in MediaArea MediaInfo 18.12 leads to a crash.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00069.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00083.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00028.html",
+            "https://github.com/MediaArea/MediaInfoLib/pull/1111",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/B752JY7TABWSVYHFATD37XDD6PVIO5C6/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BC4Z4BGGMSSVTRKVD3OCW4JLH3K2ZNGP/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BYKBAXS35KFMU4YLO37VGDIKHEL5HSPO/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NJYASICJ2VUUNGHDBB62FGYQN2SNITM5/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XOA4AWTRLWVQBZZAKXXQHP7M2NK6CB3Z/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XYF5I42OBJR7HKJD2OFS6LP26I52IT3M/",
+            "https://sourceforge.net/p/mediainfo/bugs/1101/",
+            "https://usn.ubuntu.com/3988-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:fedoraproject:fedora:28:*:*:*:*:*:*:*\n     *cpe:2.3:o:fedoraproject:fedora:29:*:*:*:*:*:*:*\n     *cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:mediaarea:mediainfo:18.12:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:fedoraproject:fedora:28:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:fedoraproject:fedora:29:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:mediaarea:mediainfo:18.12:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/20/2019",
+        "modified_date": "05/25/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11374",
+        "cwe_id": "CWE-352",
+        "description": "74CMS v5.0.1 has a CSRF vulnerability to add a new admin user via the index.php?m=Admin&c=admin&a=add URI.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/152603/74CMS-5.0.1-Cross-Site-Request-Forgery.html",
+            "http://www.iwantacve.cn/index.php/archives/203/",
+            "https://www.exploit-db.com/exploits/46738/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:74cms:74cms:5.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:74cms:74cms:5.0.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/20/2019",
+        "modified_date": "04/26/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11375",
+        "cwe_id": "CWE-352",
+        "description": "Msvod v10 has a CSRF vulnerability to change user information via the admin/member/edit.html URI.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/152604/Msvod-10-Cross-Site-Request-Forgery.html",
+            "http://www.iwantacve.cn/index.php/archives/198/",
+            "https://www.exploit-db.com/exploits/46739/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:meisivod:msvod:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:meisivod:msvod:10:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/20/2019",
+        "modified_date": "04/26/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11376",
+        "cwe_id": "CWE-94",
+        "description": "** DISPUTED ** SOY CMS v3.0.2 allows remote attackers to execute arbitrary PHP code via a <?php substring in the second text box. NOTE: the vendor indicates that there was an assumption that the content is \"made editable on its own.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.2 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.iwantacve.cn/index.php/archives/212/",
+            "https://github.com/inunosinsi/soycms/issues/5"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:brassica:soy_cms:3.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:brassica:soy_cms:3.0.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/20/2019",
+        "modified_date": "04/22/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11377",
+        "cwe_id": "CWE-434",
+        "description": "wcms/wex/finder/action.php in WCMS v0.3.2 has a Arbitrary File Upload Vulnerability via developer/finder because .php is a valid extension according to the fm_get_text_exts function.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.iwantacve.cn/index.php/archives/208/",
+            "https://github.com/vedees/wcms/issues/2"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:wcms:wcms:0.3.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:wcms:wcms:0.3.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/20/2019",
+        "modified_date": "04/22/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11378",
+        "cwe_id": "CWE-434",
+        "description": "An issue was discovered in ProjectSend r1053. upload-process-form.php allows finished_files[]=../ directory traversal. It is possible for users to read arbitrary files and (potentially) access the supporting database, delete arbitrary files, access user passwords, or run arbitrary code.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/108069",
+            "https://github.com/projectsend/projectsend/issues/700"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:projectsend:projectsend:r1053:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:projectsend:projectsend:r1053:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/20/2019",
+        "modified_date": "05/10/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11371",
+        "cwe_id": "CWE-119",
+        "description": "BWA (aka Burrow-Wheeler Aligner) 0.7.17 r1198 has a Buffer Overflow via a long prefix that is mishandled in bns_fasta2bntseq and bns_dump at btnseq.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/lh3/bwa/issues/239"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:burrow-wheeler_aligner_project:burrow-wheeler_aligner:0.7.17:r1198:*:*:*:*:*:*",
+            "*cpe:2.3:a:burrow-wheeler_aligner_project:burrow-wheeler_aligner:0.7.17:r1198:*:*:*:*:*:*"
+        ],
+        "published_date": "04/20/2019",
+        "modified_date": "04/22/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11387",
+        "cwe_id": "CWE-185",
+        "description": "An issue was discovered in OWASP ModSecurity Core Rule Set (CRS) through 3.1.0. /rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf allows remote attackers to cause a denial of service (ReDOS) by entering a specially crafted string with nested repetition operators.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://coreruleset.org/20190627/announcement-owasp-modsecurity-core-rule-set-version-3-1-1/",
+            "https://github.com/SpiderLabs/owasp-modsecurity-crs/blob/v3.1/dev/CHANGES",
+            "https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/1359"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:modsecurity:owasp_modsecurity_core_rule_set:*:*:*:*:*:*:*:* versions up to (including) 3.1.0",
+            "*cpe:2.3:a:modsecurity:owasp_modsecurity_core_rule_set:*:*:*:*:*:*:*:* versions up to (including) 3.1.0",
+            "*cpe:2.3:a:modsecurity:owasp_modsecurity_core_rule_set:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:modsecurity:owasp_modsecurity_core_rule_set:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:modsecurity:owasp_modsecurity_core_rule_set:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "04/20/2019",
+        "modified_date": "07/11/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11388",
+        "cwe_id": "CWE-185",
+        "description": "** DISPUTED ** An issue was discovered in OWASP ModSecurity Core Rule Set (CRS) through 3.1.0. /rules/REQUEST-932-APPLICATION-ATTACK-RCE.conf allows remote attackers to cause a denial of service (ReDOS) by entering a specially crafted string with nested repetition operators. NOTE: the software maintainer disputes that this is a vulnerability because the issue cannot be exploited via ModSecurity.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/1354",
+            "https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/1372"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:modsecurity:owasp_modsecurity_core_rule_set:*:*:*:*:*:*:*:* versions up to (including) 3.1.0",
+            "*cpe:2.3:a:modsecurity:owasp_modsecurity_core_rule_set:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "04/20/2019",
+        "modified_date": "07/12/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11389",
+        "cwe_id": "CWE-185",
+        "description": "** DISPUTED ** An issue was discovered in OWASP ModSecurity Core Rule Set (CRS) through 3.1.0. /rules/REQUEST-933-APPLICATION-ATTACK-PHP.conf allows remote attackers to cause a denial of service (ReDOS) by entering a specially crafted string with next# at the beginning and nested repetition operators. NOTE: the software maintainer disputes that this is a vulnerability because the issue cannot be exploited via ModSecurity.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/1356",
+            "https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/1372"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:modsecurity:owasp_modsecurity_core_rule_set:*:*:*:*:*:*:*:* versions up to (including) 3.1.0",
+            "*cpe:2.3:a:modsecurity:owasp_modsecurity_core_rule_set:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "04/20/2019",
+        "modified_date": "07/12/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11390",
+        "cwe_id": "CWE-185",
+        "description": "** DISPUTED ** An issue was discovered in OWASP ModSecurity Core Rule Set (CRS) through 3.1.0. /rules/REQUEST-933-APPLICATION-ATTACK-PHP.conf allows remote attackers to cause a denial of service (ReDOS) by entering a specially crafted string with set_error_handler# at the beginning and nested repetition operators. NOTE: the software maintainer disputes that this is a vulnerability because the issue cannot be exploited via ModSecurity.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/1358",
+            "https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/1372"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:modsecurity:owasp_modsecurity_core_rule_set:*:*:*:*:*:*:*:* versions up to (including) 3.1.0",
+            "*cpe:2.3:a:modsecurity:owasp_modsecurity_core_rule_set:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "04/20/2019",
+        "modified_date": "07/12/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11391",
+        "cwe_id": "CWE-185",
+        "description": "** DISPUTED ** An issue was discovered in OWASP ModSecurity Core Rule Set (CRS) through 3.1.0. /rules/REQUEST-933-APPLICATION-ATTACK-PHP.conf allows remote attackers to cause a denial of service (ReDOS) by entering a specially crafted string with $a# at the beginning and nested repetition operators. NOTE: the software maintainer disputes that this is a vulnerability because the issue cannot be exploited via ModSecurity.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/1357",
+            "https://github.com/SpiderLabs/owasp-modsecurity-crs/issues/1372"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:modsecurity:owasp_modsecurity_core_rule_set:*:*:*:*:*:*:*:* versions up to (including) 3.1.0",
+            "*cpe:2.3:a:modsecurity:owasp_modsecurity_core_rule_set:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "04/20/2019",
+        "modified_date": "07/12/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2018-20818",
+        "cwe_id": "CWE-119",
+        "description": "A buffer overflow vulnerability was discovered in the OpenPLC controller, in the OpenPLC_v2 and OpenPLC_v3 versions. It occurs in the modbus.cpp mapUnusedIO() function, which can cause a runtime crash of the PLC or possibly have unspecified other impact.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://arxiv.org/pdf/1809.07477"
+        ],
+        "cpe": [
+            "cpe:2.3:h:openplcproject:openplc_v2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:openplcproject:openplc_v3:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "04/23/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11234",
+        "cwe_id": "CWE-287",
+        "description": "FreeRADIUS before 3.0.19 does not prevent use of reflection for authentication spoofing, aka a \"Dragonblood\" issue, a similar issue to CVE-2019-9497.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2019-05/msg00014.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2019-05/msg00032.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-04/msg00033.html",
+            "https://access.redhat.com/errata/RHSA-2019:1131",
+            "https://access.redhat.com/errata/RHSA-2019:1142",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1695783",
+            "https://freeradius.org/release_notes/?br=3.0.x&re=3.0.19",
+            "https://freeradius.org/security/",
+            "https://papers.mathyvanhoef.com/dragonblood.pdf",
+            "https://usn.ubuntu.com/3954-1/",
+            "https://www.kb.cert.org/vuls/id/871675/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:19.04:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:freeradius:freeradius:*:*:*:*:*:*:*:* versions up to (excluding) 3.0.19",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:19.04:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:fedoraproject:fedora:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:fedoraproject:fedora:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:freeradius:freeradius:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:fedoraproject:fedora:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "05/13/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11235",
+        "cwe_id": "CWE-345",
+        "description": "FreeRADIUS before 3.0.19 mishandles the \"each participant verifies that the received scalar is within a range, and that the received group element is a valid point on the curve being used\" protection mechanism, aka a \"Dragonblood\" issue, a similar issue to CVE-2019-9498 and CVE-2019-9499.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2019-05/msg00014.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2019-05/msg00032.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2020-04/msg00033.html",
+            "https://access.redhat.com/errata/RHSA-2019:1131",
+            "https://access.redhat.com/errata/RHSA-2019:1142",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1695748",
+            "https://freeradius.org/release_notes/?br=3.0.x&re=3.0.19",
+            "https://freeradius.org/security/",
+            "https://papers.mathyvanhoef.com/dragonblood.pdf",
+            "https://usn.ubuntu.com/3954-1/",
+            "https://www.kb.cert.org/vuls/id/871675/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:19.04:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:freeradius:freeradius:*:*:*:*:*:*:*:* versions up to (excluding) 3.0.19",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:19.04:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:leap:15.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_eus:7.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_tus:7.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:freeradius:freeradius:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:fedoraproject:fedora:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "05/13/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11393",
+        "cwe_id": "CWE-640",
+        "description": "An issue was discovered in /admin/users/update in M/Monit before 3.7.3. It allows unprivileged users to escalate their privileges to an administrator by requesting a password change and specifying the admin parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://mmonit.com/wiki/MMonit/Release3-7-3",
+            "https://www.exploit-db.com/exploits/46404"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:tildeslash:monit:*:*:*:*:*:*:*:* versions up to (excluding) 3.7.3",
+            "*cpe:2.3:a:tildeslash:monit:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "04/30/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11395",
+        "cwe_id": "CWE-119",
+        "description": "A buffer overflow in MailCarrier 2.51 allows remote attackers to execute arbitrary code via a long string, as demonstrated by SMTP RCPT TO, POP3 USER, POP3 LIST, POP3 TOP, or POP3 RETR.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/152502/MailCarrier-2.51-RCPT-TO-Buffer-Overflow.html",
+            "http://packetstormsecurity.com/files/152504/MailCarrier-2.51-USER-Buffer-Overflow.html",
+            "http://packetstormsecurity.com/files/152505/MailCarrier-2.51-LIST-Buffer-Overflow.html",
+            "http://packetstormsecurity.com/files/152506/MailCarrier-2.51-TOP-Buffer-Overflow.html",
+            "http://packetstormsecurity.com/files/152530/MailCarrier-2.51-RETR-Buffer-Overflow.html",
+            "https://packetstormsecurity.com/files/152502/MailCarrier-2.51-RCPT-TO-Buffer-Overflow.html",
+            "https://packetstormsecurity.com/files/152504/MailCarrier-2.51-USER-Buffer-Overflow.html",
+            "https://packetstormsecurity.com/files/152505/MailCarrier-2.51-LIST-Buffer-Overflow.html",
+            "https://packetstormsecurity.com/files/152506/MailCarrier-2.51-TOP-Buffer-Overflow.html",
+            "https://packetstormsecurity.com/files/152530/MailCarrier-2.51-RETR-Buffer-Overflow.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:tabslab:mailcarrier:2.51:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:tabslab:mailcarrier:2.51:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "04/26/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11401",
+        "cwe_id": "CWE-434",
+        "description": "A issue was discovered in SiteServer CMS 6.9.0. It allows remote attackers to execute arbitrary code because an administrator can add the permitted file extension .aassp, which is converted to .asp because the \"as\" substring is deleted.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.2 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/siteserver/cms/issues/1858"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:siteserver:siteserver_cms:6.9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:siteserver:siteserver_cms:6.9.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "04/24/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11402",
+        "cwe_id": "CWE-522",
+        "description": "In Gradle Enterprise before 2018.5.3, Build Cache Nodes did not store the credentials at rest in an encrypted format.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://gradle.com/enterprise/releases/2018.5/#changes-3",
+            "https://security.gradle.com/advisory/CVE-2019-11402"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gradle:enterprise:*:*:*:*:*:*:*:* versions up to (excluding) 2018.5.3",
+            "*cpe:2.3:a:gradle:enterprise:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "09/18/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11403",
+        "cwe_id": "CWE-200",
+        "description": "In Gradle Enterprise before 2018.5.2, Build Cache Nodes would reflect the configured password back when viewing the HTML page source of the settings page.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://gradle.com/enterprise/releases/2018.5/#changes-2",
+            "https://security.gradle.com/advisory/CVE-2019-11403"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gradle:enterprise:*:*:*:*:*:*:*:* versions up to (excluding) 2018.5.2",
+            "*cpe:2.3:a:gradle:enterprise:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "09/18/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11404",
+        "cwe_id": "CWE-311",
+        "description": "arrow-kt Arrow before 0.9.0 resolved Gradle build artifacts (for compiling and building the published JARs) over HTTP instead of HTTPS. Any of these dependent artifacts could have been maliciously compromised by an MITM attack.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/arrow-kt/ank/issues/35",
+            "https://github.com/arrow-kt/ank/pull/36",
+            "https://github.com/arrow-kt/arrow/commit/74198dab522393487d5344f194dc21208ab71ae8",
+            "https://github.com/arrow-kt/arrow/issues/1310",
+            "https://github.com/arrow-kt/arrow/releases/tag/0.9.0"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:arrow-kt:arrow:*:*:*:*:*:*:*:* versions up to (excluding) 0.9.0",
+            "*cpe:2.3:a:arrow-kt:arrow:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11405",
+        "cwe_id": "CWE-311",
+        "description": "OpenAPI Tools OpenAPI Generator before 4.0.0-20190419.052012-560 uses http:// URLs in various build.gradle, build.gradle.mustache, and build.sbt files, which may have caused insecurely resolved dependencies.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "7.4 HIGH",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/OpenAPITools/openapi-generator/issues/2253",
+            "https://github.com/OpenAPITools/openapi-generator/pull/2248",
+            "https://github.com/OpenAPITools/openapi-generator/pull/2697"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:openapi-generator:openapi_generator:*:*:*:*:*:*:*:* versions up to (excluding) 4.0.0-20190419.052012-560",
+            "*cpe:2.3:a:openapi-generator:openapi_generator:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "4.0.0-20190419.052012-560"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11411",
+        "cwe_id": "CWE-787",
+        "description": "An issue was discovered in Artifex MuJS 1.0.5. The Number#toFixed() and numtostr implementations in jsnumber.c have a stack-based buffer overflow.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.ghostscript.com/cgi-bin/findgit.cgi?da632ca08f240590d2dec786722ed08486ce1be6",
+            "http://www.securityfocus.com/bid/108093",
+            "https://bugs.ghostscript.com/show_bug.cgi?id=700938",
+            "https://github.com/ccxvii/mujs/commit/da632ca08f240590d2dec786722ed08486ce1be6",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3RQXMWEOWCGLOLFBQSXBM3MBN33T4I5H/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/67PMOZV4DLVL2KGU2SV724QL7Y4PKWKU/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MFCRO74ORRIVWNVAX2MAMRY3THCTWLQI/",
+            "https://security.gentoo.org/glsa/202007-52"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:artifex:mujs:1.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:artifex:mujs:1.0.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "11/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11412",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in Artifex MuJS 1.0.5. jscompile.c can cause a denial of service (invalid stack-frame jump) because it lacks an ENDTRY opcode call.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.ghostscript.com/cgi-bin/findgit.cgi?1e5479084bc9852854feb1ba9bf68b52cd127e02",
+            "http://www.securityfocus.com/bid/108093",
+            "https://bugs.ghostscript.com/show_bug.cgi?id=700947",
+            "https://github.com/ccxvii/mujs/commit/1e5479084bc9852854feb1ba9bf68b52cd127e02",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3RQXMWEOWCGLOLFBQSXBM3MBN33T4I5H/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/67PMOZV4DLVL2KGU2SV724QL7Y4PKWKU/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MFCRO74ORRIVWNVAX2MAMRY3THCTWLQI/",
+            "https://security.gentoo.org/glsa/202007-52"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:artifex:mujs:1.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:artifex:mujs:1.0.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "11/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11413",
+        "cwe_id": "CWE-674",
+        "description": "An issue was discovered in Artifex MuJS 1.0.5. It has unlimited recursion because the match function in regexp.c lacks a depth check.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.ghostscript.com/cgi-bin/findgit.cgi?00d4606c3baf813b7b1c176823b2729bf51002a2",
+            "http://www.securityfocus.com/bid/108093",
+            "https://bugs.ghostscript.com/show_bug.cgi?id=700937",
+            "https://github.com/ccxvii/mujs/commit/00d4606c3baf813b7b1c176823b2729bf51002a2",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3RQXMWEOWCGLOLFBQSXBM3MBN33T4I5H/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/67PMOZV4DLVL2KGU2SV724QL7Y4PKWKU/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MFCRO74ORRIVWNVAX2MAMRY3THCTWLQI/",
+            "https://security.gentoo.org/glsa/202007-52"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:artifex:mujs:1.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:artifex:mujs:1.0.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "11/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11414",
+        "cwe_id": "CWE-640",
+        "description": "An issue was discovered on Intelbras IWR 3000N 1.5.0 devices. When the administrator password is changed from a certain client IP address, administrative authorization remains available to any client at that IP address, leading to complete control of the router.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://1.337.zone/2019/04/07/intelbras-iwr-3000n-1-5-0-unproper-de-authorization/"
+        ],
+        "cpe": [
+            "cpe:2.3:h:intelbras:iwr_3000n:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "04/22/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11415",
+        "cwe_id": null,
+        "description": "An issue was discovered on Intelbras IWR 3000N 1.5.0 devices. A malformed login request allows remote attackers to cause a denial of service (reboot), as demonstrated by JSON misparsing of the \\\"\"} string to v1/system/login.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/152680/Intelbras-IWR-3000N-Denial-Of-Service.html",
+            "https://1.337.zone/2019/04/08/intelbras-iwr-3000n-any-version-dos-on-malformed-login-request/",
+            "https://www.exploit-db.com/exploits/46768/"
+        ],
+        "cpe": [
+            "cpe:2.3:h:intelbras:iwr_3000n:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11416",
+        "cwe_id": "CWE-352",
+        "description": "A CSRF issue was discovered on Intelbras IWR 3000N 1.5.0 devices, leading to complete control of the router, as demonstrated by v1/system/user.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/152682/Intelbras-IWR-3000N-1.5.0-Cross-Site-Request-Forgery.html",
+            "https://1.337.zone/2019/04/08/intelbras-iwr-3000n-1-5-0-csrf-lead-to-router-takeover/",
+            "https://www.exploit-db.com/exploits/46770/"
+        ],
+        "cpe": [
+            "cpe:2.3:h:intelbras:iwr_3000n:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "05/05/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11417",
+        "cwe_id": "CWE-119",
+        "description": "system.cgi on TRENDnet TV-IP110WN cameras has a buffer overflow caused by an inadequate source-length check before a strcpy operation in the respondAsp function. Attackers can exploit the vulnerability by using the languse parameter with a long string. This affects 1.2.2 build 28, 64, 65, and 68.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/zyw-200/IOTFuzzer/blob/master/Trendnet_response.png"
+        ],
+        "cpe": [
+            "cpe:2.3:h:trendnet:tv-ip110wn:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "04/23/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11418",
+        "cwe_id": "CWE-119",
+        "description": "apply.cgi on the TRENDnet TEW-632BRP 1.010B32 router has a buffer overflow via long strings to the SOAPACTION:HNAP1 interface.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/zyw-200/IOTFuzzer/blob/master/Trendnet_response.png"
+        ],
+        "cpe": [
+            "cpe:2.3:h:trendnet:tew-632brp:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "04/23/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11426",
+        "cwe_id": "CWE-79",
+        "description": "An XSS issue was discovered in app/admincp/template/admincp.header.php in idreamsoft iCMS 7.0.14 via the admincp.php?app=config tab parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/idreamsoft/iCMS/issues/64"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:idreamsoft:icms:7.0.14:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:idreamsoft:icms:7.0.14:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "04/22/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11427",
+        "cwe_id": "CWE-79",
+        "description": "An XSS issue was discovered in app/search/search.app.php in idreamsoft iCMS 7.0.14 via the public/api.php?app=search q parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/idreamsoft/iCMS/issues/64"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:idreamsoft:icms:7.0.14:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:idreamsoft:icms:7.0.14:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "04/22/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11428",
+        "cwe_id": "CWE-79",
+        "description": "I, Librarian 4.10 has XSS via the export.php export_files parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/mkucej/i-librarian/issues/139"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:i-librarian:i\\,_librarian:4.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:i-librarian:i\\,_librarian:4.10:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "04/22/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11444",
+        "cwe_id": "CWE-78",
+        "description": "** DISPUTED ** An issue was discovered in Liferay Portal CE 7.1.2 GA3. An attacker can use Liferay's Groovy script console to execute OS commands. Commands can be executed via a [command].execute() call, as demonstrated by \"def cmd =\" in the ServerAdminPortlet_script value to group/control_panel/manage. Valid credentials for an application administrator user account are required. NOTE: The developer disputes this as a vulnerability since it is a feature for administrators to run groovy scripts and therefore not a design flaw.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.2 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "https://dev.liferay.com/discover/portal/-/knowledge_base/7-1/running-scripts-from-the-script-console",
+            "https://pentest.com.tr/exploits/Liferay-CE-Portal-Tomcat-7-1-2-ga3-Groovy-Console-Remote-Command-Execution-Metasploit.html",
+            "https://www.exploit-db.com/exploits/46525"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:liferay:liferay_portal:7.1.2:ga3:*:*:*:*:*:*",
+            "*cpe:2.3:a:liferay:liferay_portal:7.1.2:ga3:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "05/09/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11445",
+        "cwe_id": "CWE-434",
+        "description": "OpenKM 6.3.2 through 6.3.7 allows an attacker to upload a malicious JSP file into the /okm:root directories and move that file to the home directory of the site, via frontend/FileUpload and admin/repository_export.jsp. This is achieved by interfering with the Filesystem path control in the admin's Export field. As a result, attackers can gain remote code execution through the application server with root privileges.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.2 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "https://pentest.com.tr/exploits/OpenKM-DM-6-3-7-Remote-Command-Execution-Metasploit.html",
+            "https://www.exploit-db.com/exploits/46526"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:openkm:openkm:*:*:*:*:*:*:*:* versions up to (excluding) 6.3.7",
+            "*cpe:2.3:a:openkm:openkm:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "04/23/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11446",
+        "cwe_id": "CWE-434",
+        "description": "An issue was discovered in ATutor through 2.2.4. It allows the user to run commands on the server with the teacher user privilege. The Upload Files section in the File Manager field contains an arbitrary file upload vulnerability via upload.php. The $IllegalExtensions value only lists lowercase (and thus .phP is a bypass), and omits .shtml and .phtml.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://pentest.com.tr/exploits/ATutor-2-2-4-file-manager-Remote-Code-Execution-Injection-Metasploit.html",
+            "https://www.exploit-db.com/exploits/46691/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:atutor:atutor:*:*:*:*:*:*:*:* versions up to (including) 2.2.4",
+            "*cpe:2.3:a:atutor:atutor:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "04/26/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11447",
+        "cwe_id": "CWE-434",
+        "description": "An issue was discovered in CutePHP CuteNews 2.1.2. An attacker can infiltrate the server through the avatar upload process in the profile area via the avatar_file field to index.php?mod=main&opt=personal. There is no effective control of $imgsize in /core/modules/dashboard.php. The header content of a file can be changed and the control can be bypassed for code execution. (An attacker can use the GIF header for this.)",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/159134/CuteNews-2.1.2-Remote-Code-Execution.html",
+            "http://pentest.com.tr/exploits/CuteNews-2-1-2-Remote-Code-Execution-Metasploit.html",
+            "https://www.exploit-db.com/exploits/46698/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:cutephp:cutenews:2.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cutephp:cutenews:2.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "09/11/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11448",
+        "cwe_id": "CWE-89",
+        "description": "An issue was discovered in Zoho ManageEngine Applications Manager 11.0 through 14.0. An unauthenticated user can gain the authority of SYSTEM on the server due to a Popup_SLA.jsp sid SQL injection vulnerability. For example, the attacker can subsequently write arbitrary text to a .vbs file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://pentest.com.tr/exploits/ManageEngine-App-Manager-14-SQLi-Remote-Code-Execution.html",
+            "https://www.exploit-db.com/exploits/46725",
+            "https://www.exploit-db.com/exploits/46725/",
+            "https://www.manageengine.com/products/applications_manager/security-updates/security-updates-cve-2019-11448.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:zohocorp:manageengine_applications_manager:*:*:*:*:*:*:*:* versions from (including) 11.0 up to (including) 14.0",
+            "*cpe:2.3:a:zohocorp:manageengine_applications_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "05/06/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11449",
+        "cwe_id": "CWE-79",
+        "description": "I, Librarian 4.10 has XSS via the notes.php notes parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/mkucej/i-librarian/issues/140"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:i-librarian:i\\,_librarian:4.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:i-librarian:i\\,_librarian:4.10:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "04/23/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11243",
+        "cwe_id": "CWE-212",
+        "description": "In Kubernetes v1.12.0-v1.12.4 and v1.13.0, the rest.AnonymousClientConfig() method returns a copy of the provided config, with credentials removed (bearer token, username/password, and client certificate/key data). In the affected versions, rest.AnonymousClientConfig() did not effectively clear service account credentials loaded using rest.InClusterConfig()",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/108053",
+            "https://github.com/kubernetes/kubernetes/issues/76797",
+            "https://security.netapp.com/advisory/ntap-20190509-0002/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:netapp:trident:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:* versions from (including) 1.12.0 up to (including) 1.12.4\n     *cpe:2.3:a:kubernetes:kubernetes:1.13.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:netapp:trident:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:kubernetes:kubernetes:1.13.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/02/2020",
+        "vulnerability_source": "Kubernetes",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11244",
+        "cwe_id": "CWE-732",
+        "description": "In Kubernetes v1.8.x-v1.14.x, schema info is cached by kubectl in the location specified by --cache-dir (defaulting to $HOME/.kube/http-cache), written with world-writeable permissions (rw-rw-rw-). If --cache-dir is specified and pointed at a different location accessible to other users/groups, the written files may be modified by other users/groups and disrupt the kubectl invocation.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.0 MEDIUM",
+        "base_score_v2": "1.9 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/108064",
+            "https://access.redhat.com/errata/RHSA-2019:3942",
+            "https://access.redhat.com/errata/RHSA-2020:0020",
+            "https://access.redhat.com/errata/RHSA-2020:0074",
+            "https://github.com/kubernetes/kubernetes/issues/76676",
+            "https://security.netapp.com/advisory/ntap-20190509-0002/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:netapp:trident:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:* versions from (including) 1.8.0 up to (including) 1.14.1",
+            "*cpe:2.3:a:netapp:trident:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openshift_container_platform:3.11:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openshift_container_platform:4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:kubernetes:kubernetes:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/02/2020",
+        "vulnerability_source": "Kubernetes",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11450",
+        "cwe_id": "CWE-89",
+        "description": "whatsns 4.0 allows index.php?question/ajaxadd.html title SQL injection.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/kikulo/DebugOpen/blob/master/whatsns4.0/Main.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:whatsns:whatsns:4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:whatsns:whatsns:4.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "04/22/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11451",
+        "cwe_id": "CWE-89",
+        "description": "whatsns 4.0 allows index.php?inform/add.html qid SQL injection.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.2 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/kikulo/DebugOpen/blob/master/whatsns4.0/Main.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:whatsns:whatsns:4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:whatsns:whatsns:4.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "04/22/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11452",
+        "cwe_id": "CWE-89",
+        "description": "whatsns 4.0 allows index.php?admin_category/remove.html cid[] SQL injection.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.2 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/kikulo/DebugOpen/blob/master/whatsns4.0/Main.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:whatsns:whatsns:4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:whatsns:whatsns:4.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "04/22/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2011-1830",
+        "cwe_id": "CWE-94",
+        "description": "Ekiga versions before 3.3.0 attempted to load a module from /tmp/ekiga_test.so.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://gitlab.gnome.org/GNOME/ekiga/commit/02654fc949722a78d41fcffac8687d73d8574647"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ekiga:ekiga:*:*:*:*:*:*:*:* versions up to (excluding) 3.3.0",
+            "*cpe:2.3:a:ekiga:ekiga:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Canonical Ltd.",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2011-3145",
+        "cwe_id": "CWE-254",
+        "description": "When mount.ecrpytfs_private before version 87-0ubuntu1.2 calls setreuid() it doesn't also set the effective group id. So when it creates the new version, mtab.tmp, it's created with the group id of the user running mount.ecryptfs_private.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://bazaar.launchpad.net/~ecryptfs/ecryptfs/trunk/revision/558"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mount.ecrpytfs_private_project:mount.ecrpytfs_private:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:mount.ecrpytfs_private_project:mount.ecrpytfs_private:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2011-3147",
+        "cwe_id": "CWE-200",
+        "description": "Versions of nova before 2012.1 could expose hypervisor host files to a guest operating system when processing a maliciously constructed qcow filesystem.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "8.6 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://bazaar.launchpad.net/~hudson-openstack/nova/trunk/revision/1604"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:openstack:nova:*:*:*:*:*:*:*:* versions up to (excluding) 2012.1",
+            "*cpe:2.3:a:openstack:nova:*:*:*:*:*:*:*:* versions up to (excluding) 2012.1",
+            "*cpe:2.3:a:openstack:nova:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:openstack:nova:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:openstack:nova:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "09/03/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2011-3151",
+        "cwe_id": "CWE-693",
+        "description": "The Ubuntu SELinux initscript before version 1:0.10 used touch to create a lockfile in a world-writable directory. If the OS kernel does not have symlink protections then an attacker can cause a zero byte file to be allocated on any writable filesystem.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:P)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "https://launchpadlibrarian.net/88098106/selinux_0.10~10.04.1.debdiff"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:canonical:selinux:*:*:*:*:*:*:*:* versions up to (excluding) 1:0.10",
+            "*cpe:2.3:a:canonical:selinux:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2014-1426",
+        "cwe_id": "CWE-20",
+        "description": "A vulnerability in maasserver.api.get_file_by_name of Ubuntu MAAS allows unauthenticated network clients to download any file. This issue affects: Ubuntu MAAS versions prior to 1.9.2.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://launchpad.net/maas/+milestone/1.9.2"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:canonical:metal_as_a_service:*:*:*:*:*:*:*:* versions up to (excluding) 1.9.2",
+            "*cpe:2.3:a:canonical:metal_as_a_service:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Canonical Ltd.",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2014-1427",
+        "cwe_id": "CWE-79",
+        "description": "A vulnerability in the REST API of Ubuntu MAAS allows an attacker to cause a logged-in user to execute commands via cross-site scripting. This issue affects MAAS versions prior to 1.9.2.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://launchpad.net/maas/+milestone/1.9.2"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:canonical:metal_as_a_service:*:*:*:*:*:*:*:* versions up to (excluding) 1.9.2",
+            "*cpe:2.3:a:canonical:metal_as_a_service:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Canonical Ltd.",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2014-1428",
+        "cwe_id": "CWE-254",
+        "description": "A vulnerability in generate_filestorage_key of Ubuntu MAAS allows an attacker to brute-force filenames. This issue affects Ubuntu MAAS versions prior to 1.9.2.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://launchpad.net/maas/+milestone/1.9.2"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:canonical:metal_as_a_service:*:*:*:*:*:*:*:* versions up to (excluding) 1.9.2",
+            "*cpe:2.3:a:canonical:metal_as_a_service:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Canonical Ltd.",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2015-1316",
+        "cwe_id": "CWE-320",
+        "description": "Juju Core's Joyent provider before version 1.25.5 uploads the user's private ssh key.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://bazaar.launchpad.net/~juju-core/juju-core/trunk/revision/4119"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:canonical:juju:*:*:*:*:*:*:*:* versions up to (excluding) 1.25.5",
+            "*cpe:2.3:a:canonical:juju:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Canonical Ltd.",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2015-1320",
+        "cwe_id": "CWE-255",
+        "description": "The SeaMicro provisioning of Ubuntu MAAS logs credentials, including username and password, for the management interface. This issue affects Ubuntu MAAS versions prior to 1.9.2.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://launchpad.net/maas/+milestone/1.9.2"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:canonical:metal_as_a_service:*:*:*:*:*:*:*:* versions up to (excluding) 1.9.2",
+            "*cpe:2.3:a:canonical:metal_as_a_service:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Canonical Ltd.",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2015-1326",
+        "cwe_id": "CWE-20",
+        "description": "python-dbusmock before version 0.15.1 AddTemplate() D-Bus method call or DBusTestCase.spawn_server_template() method could be tricked into executing malicious code if an attacker supplies a .pyc file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "https://github.com/martinpitt/python-dbusmock/commit/4e7d0df9093"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:python-dbusmock_project:python-dbusmock:*:*:*:*:*:*:*:* versions up to (excluding) 0.15.1",
+            "*cpe:2.3:a:python-dbusmock_project:python-dbusmock:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Canonical Ltd.",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2015-1327",
+        "cwe_id": "CWE-264",
+        "description": "Content Hub before version 0.0+15.04.20150331-0ubuntu1.0 DBUS API only requires a file path for a content item, it doesn't actually require the confined app have access to the file to create a transfer. This could allow a malicious application using the DBUS API to export file:///etc/passwd which would then send a copy of that file to another app.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://bazaar.launchpad.net/~phablet-team/content-hub/trunk/revision/212"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:15.04:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:15.04:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Canonical Ltd.",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2015-1340",
+        "cwe_id": "CWE-362",
+        "description": "LXD before version 0.19-0ubuntu5 doUidshiftIntoContainer() has an unsafe Chmod() call that races against the stat in the Filepath.Walk() function. A symbolic link created in that window could cause any file on the system to have any mode of the attacker's choice.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/lxc/lxd/commit/19c6961cc1012c8a529f20807328a9357f5034f4"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:linuxcontainers:lxd:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:linuxcontainers:lxd:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Canonical Ltd.",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2015-1341",
+        "cwe_id": "CWE-264",
+        "description": "Any Python module in sys.path can be imported if the command line of the process triggering the coredump is Python and the first argument is -m in Apport before 2.19.2 function _python_module_path.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://launchpad.net/apport/trunk/2.19.2",
+            "https://usn.ubuntu.com/2782-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:canonical:apport:*:*:*:*:*:*:*:* versions up to (excluding) 2.19.2",
+            "*cpe:2.3:a:canonical:apport:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:15.04:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:15.10:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "05/07/2019",
+        "vulnerability_source": "Canonical Ltd.",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2015-1343",
+        "cwe_id": "CWE-532",
+        "description": "All versions of unity-scope-gdrive logs search terms to syslog.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://bugs.launchpad.net/ubuntu/+source/unity-scope-gdrive/+bug/1509076"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:15.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:15.10:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Canonical Ltd.",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2016-1573",
+        "cwe_id": "CWE-416",
+        "description": "Versions of Unity8 before 8.11+16.04.20160122-0ubuntu1 file plugins/Dash/CardCreator.js will execute any code found in place of a fallback image supplied by a scope.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://bazaar.launchpad.net/~unity-team/unity8/stable/revision/2138"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:unity8:unity8:*:*:*:*:*:*:*:* versions up to (excluding) 8.11\\+16.04.20160122-0ubuntu1",
+            "*cpe:2.3:a:unity8:unity8:*:*:*:*:*:*:*:* versions up to (excluding) 8.11+16.04.20160122-0ubuntu1",
+            "*cpe:2.3:a:unity8:unity8:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "8.11\\+16.04.20160122-0ubuntu1",
+            "*cpe:2.3:a:ubports:unity8:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "8.11\\+16.04.20160122-0ubuntu1",
+            "*cpe:2.3:a:unity8:unity8:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "8.11+16.04.20160122-0ubuntu1"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "07/14/2020",
+        "vulnerability_source": "Canonical Ltd.",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2016-1579",
+        "cwe_id": "CWE-264",
+        "description": "UDM provides support for running commands after a download is completed, this is currently made use of for click package installation. This functionality was not restricted to unconfined applications. Before UDM version 1.2+16.04.20160408-0ubuntu1 any confined application could make use of the UDM C++ API to run arbitrary commands in an unconfined environment as the phablet user.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://bazaar.launchpad.net/~phablet-team/ubuntu-download-manager/trunk/revision/359"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:canonical:ubuntu_download_manager:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:canonical:ubuntu_download_manager:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Canonical Ltd.",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2016-1584",
+        "cwe_id": "CWE-399",
+        "description": "In all versions of Unity8 a running but not active application on a large-screen device could talk with Maliit and consume keyboard input.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://bazaar.launchpad.net/~mir-team/qtmir/trunk/revision/521"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:unity8:unity8:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:unity8:unity8:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Canonical Ltd.",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2016-1585",
+        "cwe_id": "CWE-254",
+        "description": "In all versions of AppArmor mount rules are accidentally widened when compiled.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://bugs.launchpad.net/apparmor/+bug/1597017"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:canonical:apparmor:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:canonical:apparmor:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Canonical Ltd.",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2016-1586",
+        "cwe_id": "CWE-20",
+        "description": "A malicious webview could install long-lived unload handlers that re-use an incognito BrowserContext that is queued for destruction in versions of Oxide before 1.18.3.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://git.launchpad.net/oxide/commit/?id=29014da83e5fc358d6bff0f574e9ed45e61a35ac"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oxide_project:oxide:*:*:*:*:*:*:*:* versions up to (excluding) 1.18.3",
+            "*cpe:2.3:a:oxide_project:oxide:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Canonical Ltd.",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2016-1587",
+        "cwe_id": "CWE-284",
+        "description": "The Snapweb interface before version 0.21.2 was exposing controls to install or remove snap packages without controlling the identity of the user, nor the origin of the connection. An attacker could have used the controls to remotely add a valid, but malicious, snap package, from the Store, potentially using system resources without permission from the legitimate administrator of the system.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/snapcore/snapweb/commit/3f4cf9403f7687fbc8e27c0e01b2cf6aa5e7e0d5"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:snapweb:snapweb:*:*:*:*:*:*:*:* versions up to (excluding) 0.21.2",
+            "*cpe:2.3:a:snapweb:snapweb:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Canonical Ltd.",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11454",
+        "cwe_id": "CWE-79",
+        "description": "Persistent cross-site scripting (XSS) in http/cervlet.c in Tildeslash Monit before 5.25.3 allows a remote unauthenticated attacker to introduce arbitrary JavaScript via manipulation of an unsanitized user field of the Authorization header for HTTP Basic Authentication, which is mishandled during an _viewlog operation.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://bitbucket.org/tildeslash/monit/commits/1a8295eab6815072a18019b668fe084945b751f3",
+            "https://bitbucket.org/tildeslash/monit/commits/328f60773057641c4b2075fab9820145e95b728c",
+            "https://github.com/dzflack/exploits/blob/master/unix/monit_xss.py",
+            "https://lists.debian.org/debian-lts-announce/2019/04/msg00028.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HZQDHRSKTEX5MSYXNCGFTUSFGANBARHX/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/L475QJMFFI2QV5QEHAKKPVX6QX6ECUL6/",
+            "https://usn.ubuntu.com/3971-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:mmonit:monit:*:*:*:*:*:*:*:* versions up to (excluding) 5.25.3",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:19.04:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:fedoraproject:fedora:31:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:fedoraproject:fedora:32:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:mmonit:monit:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/28/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11455",
+        "cwe_id": "CWE-125",
+        "description": "A buffer over-read in Util_urlDecode in util.c in Tildeslash Monit before 5.25.3 allows a remote authenticated attacker to retrieve the contents of adjacent memory via manipulation of GET or POST parameters. The attacker can also cause a denial of service (application outage).",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:P)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "5.5 MEDIUM",
+        "hyperlinks": [
+            "https://bitbucket.org/tildeslash/monit/commits/f12d0cdb42d4e74dffe1525d4062c815c48ac57a",
+            "https://github.com/dzflack/exploits/blob/master/macos/monit_dos.py",
+            "https://github.com/dzflack/exploits/blob/master/unix/monit_buffer_overread.py",
+            "https://lists.debian.org/debian-lts-announce/2019/04/msg00028.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HZQDHRSKTEX5MSYXNCGFTUSFGANBARHX/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/L475QJMFFI2QV5QEHAKKPVX6QX6ECUL6/",
+            "https://usn.ubuntu.com/3971-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:tildeslash:monit:*:*:*:*:*:*:*:* versions up to (excluding) 5.25.3",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:tildeslash:monit:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11456",
+        "cwe_id": "CWE-352",
+        "description": "Gila CMS 1.10.1 allows fm/save CSRF for executing arbitrary PHP code.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://cisk123456.blogspot.com/2019/04/gila-cms-1101-csrf.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gilacms:gila_cms:1.10.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:gilacms:gila_cms:1.10.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "04/26/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-3899",
+        "cwe_id": "CWE-306",
+        "description": "It was found that default configuration of Heketi does not require any authentication potentially exposing the management interface to misuse. This isue only affects heketi as shipped with Openshift Container Platform 3.11.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://access.redhat.com/errata/RHSA-2019:3255",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3899"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:heketi_project:heketi:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:heketi_project:heketi:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openshift_container_platform:3.11:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/15/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-3901",
+        "cwe_id": "CWE-667",
+        "description": "A race condition in perf_event_open() allows local attackers to leak sensitive data from setuid programs. As no relevant locks (in particular the cred_guard_mutex) are held during the ptrace_may_access() call, it is possible for the specified target task to perform an execve() syscall with setuid execution before perf_event_alloc() actually attaches to it, allowing an attacker to bypass the ptrace_may_access() check and the perf_event_exit_task(current) call that is performed in install_exec_creds() during privileged execve() calls. This issue affects kernel versions before 4.8.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.7 MEDIUM",
+        "base_score_v2": "1.9 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/89937",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3901",
+            "https://lists.debian.org/debian-lts-announce/2019/05/msg00041.html",
+            "https://lists.debian.org/debian-lts-announce/2019/05/msg00042.html",
+            "https://security.netapp.com/advisory/ntap-20190517-0005/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:* versions up to (excluding) 4.8",
+            "cpe:2.3:h:netapp:cn1610:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:netapp:active_iq_unified_manager_for_vmware_vsphere:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:netapp:hci_management_node:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:netapp:snapprotect:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:netapp:solidfire:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:netapp:storage_replication_adapter_for_clustered_data_ontap_for_vmware_vsphere:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:netapp:vasa_provider_for_clustered_data_ontap:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "12/04/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-3902",
+        "cwe_id": "CWE-59",
+        "description": "A flaw was found in Mercurial before 4.9. It was possible to use symlinks and subrepositories to defeat Mercurial's path-checking logic and write files outside a repository.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:P)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3902",
+            "https://lists.debian.org/debian-lts-announce/2019/04/msg00024.html",
+            "https://lists.debian.org/debian-lts-announce/2020/07/msg00032.html",
+            "https://usn.ubuntu.com/4086-1/",
+            "https://www.mercurial-scm.org/wiki/WhatsNew#Mercurial_4.9_.282019-02-01.29"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mercurial:mercurial:*:*:*:*:*:*:*:* versions up to (excluding) 4.9",
+            "*cpe:2.3:a:mercurial:mercurial:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "07/31/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-6155",
+        "cwe_id": null,
+        "description": "A potential vulnerability was found in an SMI handler in various BIOS versions of certain legacy IBM System x and IBM BladeCenter systems that could lead to denial of service.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "https://support.lenovo.com/solutions/LEN-25165"
+        ],
+        "cpe": [
+            "cpe:2.3:h:ibm:bladecenter_hs23:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3530_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3630_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3650_m4_hd:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "Lenovo Group Ltd.",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-6157",
+        "cwe_id": "CWE-532",
+        "description": "In various firmware versions of Lenovo System x, the integrated management module II (IMM2)'s first failure data capture (FFDC) includes the web server's private key in the generated log file for support.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://support.lenovo.com/solutions/LEN-25667"
+        ],
+        "cpe": [
+            "cpe:2.3:h:ibm:bladecenter_hs22:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:bladecenter_hs23:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:bladecenter_hs23e:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:flex_system_x220_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:flex_system_x222_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:flex_system_x240_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:flex_system_x280_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:flex_system_x440_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:flex_system_x480_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:flex_system_x880_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:idataplex_dx360_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:idataplex_dx360_m4_water_cooled:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:nextscale_nx360_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3100_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3100_m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3250_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3250_m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3300_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3500_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3530_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3550_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3630_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3650_m4_bd:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3650_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3650_m4_hd:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3750_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3850_x6:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3950_x6:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:flex_system_x240_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:flex_system_x240_m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:flex_system_x280_x6:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:flex_system_x440_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:flex_system_x480_x6:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:flex_system_x880:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:nextscale_nx360_m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:system_x3250_m6:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:system_x3500_m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:system_x3550_m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:system_x3650_m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:system_x3750_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:system_x3850_x6:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:system_x3950_x6:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Lenovo Group Ltd.",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-10241",
+        "cwe_id": "CWE-79",
+        "description": "In Eclipse Jetty version 9.2.26 and older, 9.3.25 and older, and 9.4.15 and older, the server is vulnerable to XSS conditions if a remote client USES a specially formatted URL against the DefaultServlet or ResourceHandler that is configured for showing a Listing of directory contents.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://bugs.eclipse.org/bugs/show_bug.cgi?id=546121",
+            "https://lists.apache.org/thread.html/01e004c3f7c7365863a27e7038b7f32dae56ccf3a496b277c9b7f7b6@%3Cjira.kafka.apache.org%3E",
+            "https://lists.apache.org/thread.html/053d9ce4d579b02203db18545fee5e33f35f2932885459b74d1e4272@%3Cissues.activemq.apache.org%3E",
+            "https://lists.apache.org/thread.html/464892b514c029dfc0c8656a93e1c0de983c473df70fdadbd224e09f@%3Cjira.kafka.apache.org%3E",
+            "https://lists.apache.org/thread.html/519eb0fd45642dcecd9ff74cb3e71c20a4753f7d82e2f07864b5108f@%3Cdev.drill.apache.org%3E",
+            "https://lists.apache.org/thread.html/8bff534863c7aaf09bb17c3d0532777258dd3a5c7ddda34198cc2742@%3Cdev.kafka.apache.org%3E",
+            "https://lists.apache.org/thread.html/ac51944aef91dd5006b8510b0bef337adaccfe962fb90e7af9c22db4@%3Cissues.activemq.apache.org%3E",
+            "https://lists.apache.org/thread.html/bcfb37bfba7b3d7e9c7808b5e5a38a98d6bb714d52cf5162bdd48e32@%3Cjira.kafka.apache.org%3E",
+            "https://lists.apache.org/thread.html/d7c4a664a34853f57c2163ab562f39802df5cf809523ea40c97289c1@%3Cdev.kafka.apache.org%3E",
+            "https://lists.apache.org/thread.html/f9bc3e55f4e28d1dcd1a69aae6d53e609a758e34d2869b4d798e13cc@%3Cissues.drill.apache.org%3E",
+            "https://security.netapp.com/advisory/ntap-20190509-0003/",
+            "https://www.oracle.com/security-alerts/cpuoct2020.html",
+            "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:eclipse:jetty:9.3.0:maintenance_1:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.3.0:maintenance_0:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.3.0:m2:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:*:*:*:*:*:*:*:* versions up to (including) 9.2.26\n     *cpe:2.3:a:eclipse:jetty:*:*:*:*:*:*:*:* versions from (including) 9.3.0 up to (including) 9.3.25\n     *cpe:2.3:a:eclipse:jetty:*:*:*:*:*:*:*:* versions from (including) 9.4.0 up to (including) 9.4.15",
+            "*cpe:2.3:a:eclipse:jetty:*:*:*:*:*:*:*:* versions up to (including) 9.2.26\n     *cpe:2.3:a:eclipse:jetty:*:*:*:*:*:*:*:* versions from (including) 9.3.0 up to (including) 9.3.25\n     *cpe:2.3:a:eclipse:jetty:*:*:*:*:*:*:*:* versions from (including) 9.4.0 up to (including) 9.4.15",
+            "*cpe:2.3:a:eclipse:jetty:9.3.0:maintenance_1:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.3.0:maintenance1:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.3.0:maintenance_0:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.3.0:maintenance0:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.3.0:m2:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.3.0:maintenance2:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:eclipse:jetty:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:eclipse:jetty:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:eclipse:jetty:9.2.0:20140523:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.2.0:20140526:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.2.0:maintenance_0:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.2.0:maintenance_1:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.2.0:rc0:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.2.1:20140609:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.2.2:20140723:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.2.3:20140905:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.2.4:",
+            "*cpe:2.3:a:eclipse:jetty:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:eclipse:jetty:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:eclipse:jetty:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/20/2020",
+        "vulnerability_source": "Eclipse Foundation",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-10246",
+        "cwe_id": "CWE-200",
+        "description": "In Eclipse Jetty version 9.2.27, 9.3.26, and 9.4.16, the server running on Windows is vulnerable to exposure of the fully qualified Base Resource directory name on Windows to a remote client when it is configured for showing a Listing of directory contents. This information reveal is restricted to only the content in the configured base resource directories.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://bugs.eclipse.org/bugs/show_bug.cgi?id=546576",
+            "https://lists.apache.org/thread.html/bcce5a9c532b386c68dab2f6b3ce8b0cc9b950ec551766e76391caa3@%3Ccommits.nifi.apache.org%3E",
+            "https://lists.apache.org/thread.html/rca37935d661f4689cb4119f1b3b224413b22be161b678e6e6ce0c69b@%3Ccommits.nifi.apache.org%3E",
+            "https://security.netapp.com/advisory/ntap-20190509-0003/",
+            "https://www.oracle.com/security-alerts/cpuapr2020.html",
+            "https://www.oracle.com/security-alerts/cpujan2020.html",
+            "https://www.oracle.com/security-alerts/cpujul2020.html",
+            "https://www.oracle.com/security-alerts/cpuoct2020.html",
+            "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:eclipse:jetty:9.2.0:20140523:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.2.0:20140526:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.2.0:maintenance_0:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.2.0:maintenance_1:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.2.0:rc0:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.2.1:20140609:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.2.2:20140723:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.2.3:20140905",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.2.0:20140523:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.2.0:20140526:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.2.0:maintenance_0:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.2.0:maintenance_1:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.2.0:rc0:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.2.1:20140609:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.2.2:20140723:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.2.3:20140905",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/20/2020",
+        "vulnerability_source": "Eclipse Foundation",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-10247",
+        "cwe_id": "CWE-200",
+        "description": "In Eclipse Jetty version 7.x, 8.x, 9.2.27 and older, 9.3.26 and older, and 9.4.16 and older, the server running on any OS and Jetty version combination will reveal the configured fully qualified directory base resource location on the output of the 404 error for not finding a Context that matches the requested path. The default server behavior on jetty-distribution and jetty-home will include at the end of the Handler tree a DefaultHandler, which is responsible for reporting this 404 error, it presents the various configured contexts as HTML for users to click through to. This produced HTML includes output that contains the configured fully qualified directory base resource location for each context.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://bugs.eclipse.org/bugs/show_bug.cgi?id=546577",
+            "https://lists.apache.org/thread.html/053d9ce4d579b02203db18545fee5e33f35f2932885459b74d1e4272@%3Cissues.activemq.apache.org%3E",
+            "https://lists.apache.org/thread.html/519eb0fd45642dcecd9ff74cb3e71c20a4753f7d82e2f07864b5108f@%3Cdev.drill.apache.org%3E",
+            "https://lists.apache.org/thread.html/ac51944aef91dd5006b8510b0bef337adaccfe962fb90e7af9c22db4@%3Cissues.activemq.apache.org%3E",
+            "https://lists.apache.org/thread.html/bcce5a9c532b386c68dab2f6b3ce8b0cc9b950ec551766e76391caa3@%3Ccommits.nifi.apache.org%3E",
+            "https://lists.apache.org/thread.html/f9bc3e55f4e28d1dcd1a69aae6d53e609a758e34d2869b4d798e13cc@%3Cissues.drill.apache.org%3E",
+            "https://lists.apache.org/thread.html/rca37935d661f4689cb4119f1b3b224413b22be161b678e6e6ce0c69b@%3Ccommits.nifi.apache.org%3E",
+            "https://security.netapp.com/advisory/ntap-20190509-0003/",
+            "https://www.oracle.com/security-alerts/cpuapr2020.html",
+            "https://www.oracle.com/security-alerts/cpujan2020.html",
+            "https://www.oracle.com/security-alerts/cpujul2020.html",
+            "https://www.oracle.com/security-alerts/cpuoct2020.html",
+            "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:eclipse:jetty:9.3.0:maintenance_1:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.3.0:maintenance_0:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.3.0:m2:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:eclipse:jetty:7.0.0:20091005:*:*:*:*:*:*\n     *cpe:2.3:a:eclipse:jetty:7.0.0:m0:*:*:*:*:*:*\n     *cpe:2.3:a:eclipse:jetty:7.0.0:m1:*:*:*:*:*:*\n     *cpe:2.3:a:eclipse:jetty:7.0.0:m2:*:*:*:*:*:*\n     *cpe:2.3:a:eclipse:jetty:7.0.0:m3:*:*:*:*:*:*\n     *cpe:2.3:a:eclipse:jetty:7.0.0:m4:*:*:*:*:*:*\n     *cpe:2.3:a:eclipse:jetty:7.0.0:rc0:*:*:*:*:*:*\n     *cpe:2.3:a:eclipse:jetty:7.0.0:rc1:*:*:*:*:*:*\n     *cpe:2.3:a:eclipse:jetty:7",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:eclipse:jetty:7.0.0:20091005:*:*:*:*:*:*\n     *cpe:2.3:a:eclipse:jetty:7.0.0:m0:*:*:*:*:*:*\n     *cpe:2.3:a:eclipse:jetty:7.0.0:m1:*:*:*:*:*:*\n     *cpe:2.3:a:eclipse:jetty:7.0.0:m2:*:*:*:*:*:*\n     *cpe:2.3:a:eclipse:jetty:7.0.0:m3:*:*:*:*:*:*\n     *cpe:2.3:a:eclipse:jetty:7.0.0:m4:*:*:*:*:*:*\n     *cpe:2.3:a:eclipse:jetty:7.0.0:rc0:*:*:*:*:*:*\n     *cpe:2.3:a:eclipse:jetty:7.0.0:rc1:*:*:*:*:*:*\n     *cpe:2.3:a:eclipse:jetty:7",
+            "*cpe:2.3:a:eclipse:jetty:9.3.0:maintenance_1:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.3.0:maintenance1:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.3.0:maintenance_0:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.3.0:maintenance0:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.3.0:m2:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:9.3.0:maintenance2:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:20091005:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:m0:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:m1:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:m2:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:m3:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:m4:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:rc0:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:20091005:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:maintenance_0:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:maintenance_1:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:maintenance_2:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:maintenance_3:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:maintenance_4:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:rc0:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:je",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:20091005:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:m0:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:m1:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:m2:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:m3:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:m4:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:rc0:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7.0.0:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:jetty:7"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/20/2020",
+        "vulnerability_source": "Eclipse Foundation",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-9955",
+        "cwe_id": "CWE-79",
+        "description": "On Zyxel ATP200, ATP500, ATP800, USG20-VPN, USG20W-VPN, USG40, USG40W, USG60, USG60W, USG110, USG210, USG310, USG1100, USG1900, USG2200-VPN, ZyWALL 110, ZyWALL 310, ZyWALL 1100 devices, the security firewall login page is vulnerable to Reflected XSS via the unsanitized 'mp_idx' parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/152525/Zyxel-ZyWall-Cross-Site-Scripting.html",
+            "http://seclists.org/fulldisclosure/2019/Apr/22",
+            "https://www.exploit-db.com/exploits/46706/",
+            "https://www.securitymetrics.com/blog/Zyxel-Devices-Vulnerable-Cross-Site-Scripting-Login-page",
+            "https://www.zyxel.com/support/reflected-cross-site-scripting-vulnerability-of-firewalls.shtml"
+        ],
+        "cpe": [
+            "cpe:2.3:h:zyxel:atp200:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:zyxel:atp500:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:zyxel:atp800:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:zyxel:usg1100:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:zyxel:usg110:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:zyxel:usg1900:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:zyxel:usg20-vpn:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:zyxel:usg20w-vpn:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:zyxel:usg210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:zyxel:usg2200-vpn:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:zyxel:usg310:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:zyxel:usg40:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:zyxel:usg40w:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:zyxel:usg60:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:zyxel:usg60w:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:zyxel:vpn100:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:zyxel:vpn300:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:zyxel:vpn50:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:zyxel:zywall_1100:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:zyxel:zywall_110:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:zyxel:zywall_310:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "04/30/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-10248",
+        "cwe_id": "CWE-669",
+        "description": "Eclipse Vorto versions prior to 0.11 resolved Maven build artifacts for the Xtext project over HTTP instead of HTTPS. Any of these dependent artifacts could have been maliciously compromised by a MITM attack. Hence produced build artifacts of Vorto might be infected.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://bugs.eclipse.org/bugs/show_bug.cgi?id=546622"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:eclipse:vorto:*:*:*:*:*:*:*:* versions up to (excluding) 0.11",
+            "*cpe:2.3:a:eclipse:vorto:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Eclipse Foundation",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11384",
+        "cwe_id": "CWE-312",
+        "description": "The Zalora application 6.15.1 for Android stores confidential information insecurely on the system (i.e. plain text), which allows a non-root user to find out the username/password of a valid user via /data/data/com.zalora.android/shared_prefs/login_data.xml.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://pastebin.com/c90h9WfB"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:zalora:zalora:6.15.1:*:*:*:*:android:*:*",
+            "*cpe:2.3:a:zalora:zalora:6.15.1:*:*:*:*:android:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11461",
+        "cwe_id": null,
+        "description": "An issue was discovered in GNOME Nautilus 3.30 prior to 3.30.6 and 3.32 prior to 3.32.1. A compromised thumbnailer may escape the bubblewrap sandbox used to confine thumbnailers by using the TIOCSTI ioctl to push characters into the input buffer of the thumbnailer's controlling terminal, allowing an attacker to escape the sandbox if the thumbnailer has a controlling terminal. This is due to improper filtering of the TIOCSTI ioctl on 64-bit systems, similar to CVE-2019-10063.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.4 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00088.html",
+            "https://gitlab.gnome.org/GNOME/nautilus/issues/987",
+            "https://security.gentoo.org/glsa/201908-27"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gnome:nautilus:*:*:*:*:*:*:*:* versions from (including) 3.30 up to (excluding) 3.30.6\n     *cpe:2.3:a:gnome:nautilus:*:*:*:*:*:*:*:* versions from (including) 3.32 up to (excluding) 3.32.1",
+            "*cpe:2.3:a:gnome:nautilus:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gnome:nautilus:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-5427",
+        "cwe_id": "CWE-776",
+        "description": "c3p0 version < 0.9.5.4 may be exploited by a billion laughs attack when loading XML configuration due to missing protections against recursive entity expansion when loading configuration.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://hackerone.com/reports/509315",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BFIVX6HOVNLAM7W3SUAMHYRNLCVQSAWR/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MQ47OFV57Y2DAHMGA5H3JOL4WHRWRFN4/",
+            "https://www.oracle.com/security-alerts/cpuapr2020.html",
+            "https://www.oracle.com/security-alerts/cpujul2020.html",
+            "https://www.oracle.com/security-alerts/cpuoct2020.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:communications_ip_service_activator:7.3.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:oracle:communications_ip_service_activator:7.4.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:oracle:flexcube_private_banking:12.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:oracle:flexcube_private_banking:12.1.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:oracle:retail_xstore_point_of_service:15.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:oracle:retail_xstore_point_of_service:16.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:oracle:retail_xstore_point_of_service:1",
+            "*cpe:2.3:a:mchange:c3p0:*:*:*:*:*:*:*:* versions up to (excluding) 0.9.5.2",
+            "*cpe:2.3:a:oracle:communications_ip_service_activator:7.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:communications_ip_service_activator:7.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:flexcube_private_banking:12.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:flexcube_private_banking:12.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:retail_xstore_point_of_service:15.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:retail_xstore_point_of_service:16.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:retail_xstore_point_of_service:1",
+            "*cpe:2.3:o:fedoraproject:fedora:29:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:fedoraproject:fedora:30:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:mchange:c3p0:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/20/2020",
+        "vulnerability_source": "HackerOne",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-5428",
+        "cwe_id": null,
+        "description": "** REJECT ** DO NOT USE THIS CANDIDATE NUMBER. ConsultIDs: CVE-2019-11358. Reason: This candidate is a duplicate of CVE-2019-11358. Notes: All CVE users should reference CVE-2019-11358 instead of this candidate. All references and descriptions in this candidate have been removed to prevent accidental usage.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2019-5428"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2019-5428"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "04/22/2019",
+        "modified_date": "04/25/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-0218",
+        "cwe_id": "CWE-79",
+        "description": "A vulnerability was discovered wherein a specially crafted URL could enable reflected XSS via JavaScript in the pony mail interface.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/108046",
+            "https://lists.apache.org/thread.html/18a7ff26bc31a77e32e5e02e65dc86b1c41b610c753f8927d2cf955a@%3Cdev.ponymail.apache.org%3E",
+            "https://www.openwall.com/lists/oss-security/2019/04/20/1"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apache:pony_mail:*:*:*:*:*:*:*:* versions from (including) 0.8 up to (including) 0.10",
+            "*cpe:2.3:a:apache:pony_mail:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "04/26/2019",
+        "vulnerability_source": "Apache Software Foundation",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11383",
+        "cwe_id": null,
+        "description": "An issue was discovered in the Medha WiFi FTP Server application 1.8.3 for Android. An attacker can read the username/password of a valid user via /data/data/com.medhaapps.wififtpserver/shared_prefs/com.medhaapps.wififtpserver_preferences.xml",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://pastebin.com/6uT9jhDR"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:wifi_ftp_server_project:wifi_ftp_server:1.8.3:*:*:*:*:android:*:*",
+            "*cpe:2.3:a:wifi_ftp_server_project:wifi_ftp_server:1.8.3:*:*:*:*:android:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11459",
+        "cwe_id": "CWE-908",
+        "description": "The tiff_document_render() and tiff_document_get_thumbnail() functions in the TIFF document backend in GNOME Evince through 3.32.0 did not handle errors from TIFFReadRGBAImageOriented(), leading to uninitialized memory use when processing certain TIFF image files.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00089.html",
+            "https://access.redhat.com/errata/RHSA-2019:3553",
+            "https://gitlab.gnome.org/GNOME/evince/issues/1129",
+            "https://lists.debian.org/debian-lts-announce/2019/08/msg00013.html",
+            "https://lists.debian.org/debian-lts-announce/2019/08/msg00014.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/7LU4YZK5S46TZAH4J3NYYUYFMOC47LJG/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/YJ6R7NMY44IHIQIY24CV3WV2GLGJPQPZ/",
+            "https://seclists.org/bugtraq/2020/Feb/18",
+            "https://usn.ubuntu.com/3959-1/",
+            "https://www.debian.org/security/2020/dsa-4624"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:19.04:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:gnome:evince:*:*:*:*:*:*:*:* versions up to (including) 3.32.0",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:19.04:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:gnome:evince:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11460",
+        "cwe_id": "CWE-20",
+        "description": "An issue was discovered in GNOME gnome-desktop 3.26, 3.28, and 3.30 prior to 3.30.2.2, and 3.32 prior to 3.32.1.1. A compromised thumbnailer may escape the bubblewrap sandbox used to confine thumbnailers by using the TIOCSTI ioctl to push characters into the input buffer of the thumbnailer's controlling terminal, allowing an attacker to escape the sandbox if the thumbnailer has a controlling terminal. This is due to improper filtering of the TIOCSTI ioctl on 64-bit systems, similar to CVE-2019-10063.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.0 CRITICAL",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00088.html",
+            "https://gitlab.gnome.org/GNOME/gnome-desktop/issues/112",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/V5V6EIUHYR7SNKCRIGYCD3UWNEGFNT2F/",
+            "https://security.gentoo.org/glsa/201908-28",
+            "https://usn.ubuntu.com/3994-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gnome:gnome-desktop:3.26.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:gnome:gnome-desktop:3.28.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:gnome:gnome-desktop:*:*:*:*:*:*:*:* versions from (including) 3.30.0 up to (excluding) 3.30.2.2\n     *cpe:2.3:a:gnome:gnome-desktop:*:*:*:*:*:*:*:* versions from (including) 3.32.0 up to (excluding) 3.32.1.1",
+            "*cpe:2.3:a:gnome:gnome-desktop:3.26.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:gnome:gnome-desktop:3.28.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:gnome:gnome-desktop:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gnome:gnome-desktop:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "05/27/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-8452",
+        "cwe_id": "CWE-59",
+        "description": "A hard-link created from log file archive of Check Point ZoneAlarm up to 15.4.062 or Check Point Endpoint Security client for Windows before E80.96 to any file on the system will get its permission changed so that all users can access that linked file. Doing this on files with limited access gains the local attacker higher privileges to the file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/154754/CheckPoint-Endpoint-Security-Client-ZoneAlarm-Privilege-Escalation.html",
+            "https://supportcenter.us.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk150012",
+            "https://www.zonealarm.com/software/release-history/zafavfw.html#15.4.260.17960"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:checkpoint:endpoint_security_client:*:*:*:*:*:windows:*:* versions up to (excluding) e80.96\n     *cpe:2.3:a:checkpoint:zonealarm:*:*:*:*:*:*:*:* versions up to (including) 15.4.062",
+            "*cpe:2.3:a:checkpoint:endpoint_security_client:*:*:*:*:*:windows:*:* versions up to (excluding) e80.96\n     *cpe:2.3:a:checkpoint:zonealarm:*:*:*:*:*:*:*:* versions up to (including) 15.4.062",
+            "*cpe:2.3:a:checkpoint:endpoint_security_client:*:*:*:*:*:windows:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:checkpoint:zonealarm:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:checkpoint:endpoint_security:*:*:*:*:*:windows:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:checkpoint:zonealarm:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:checkpoint:endpoint_security_client:*:*:*:*:*:windows:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:checkpoint:zonealarm:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "10/22/2020",
+        "vulnerability_source": "Check Point Software Technologies Ltd.",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2013-7470",
+        "cwe_id": "CWE-400",
+        "description": "cipso_v4_validate in include/net/cipso_ipv4.h in the Linux kernel before 3.11.7, when CONFIG_NETLABEL is disabled, allows attackers to cause a denial of service (infinite loop and crash), as demonstrated by icmpsic, a different vulnerability than CVE-2013-0310.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "7.1 HIGH",
+        "hyperlinks": [
+            "https://cdn.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.11.7",
+            "https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=f2e5ddcc0d12f9c4c7b254358ad245c9dddce13b",
+            "https://github.com/torvalds/linux/commit/f2e5ddcc0d12f9c4c7b254358ad245c9dddce13b",
+            "https://support.f5.com/csp/article/K21914362"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:* versions up to (excluding) 3.11.7",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "06/14/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11463",
+        "cwe_id": "CWE-401",
+        "description": "A memory leak in archive_read_format_zip_cleanup in archive_read_support_format_zip.c in libarchive 3.3.4-dev allows remote attackers to cause a denial of service via a crafted ZIP file because of a HAVE_LZMA_H typo. NOTE: this only affects users who downloaded the development code from GitHub. Users of the product's official releases are unaffected.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://access.redhat.com/security/cve/cve-2019-11463",
+            "https://github.com/libarchive/libarchive/commit/ba641f73f3d758d9032b3f0e5597a9c6e593a505",
+            "https://github.com/libarchive/libarchive/issues/1165"
+        ],
+        "cpe": [
+            "",
+            "*cpe:2.3:o:redhat:virtualization:4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:virtualization:4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:libarchive:libarchive:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:redhat:virtualization:4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:virtualization:4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:virtualization:4.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2019",
+        "modified_date": "12/08/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2019-11469",
+        "cwe_id": "CWE-89",
+        "description": "Zoho ManageEngine Applications Manager 12 through 14 allows FaultTemplateOptions.jsp resourceid SQL injection. Subsequently, an unauthenticated user can gain the authority of SYSTEM on the server by uploading a malicious file via the \"Execute Program Action(s)\" feature.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/152607/ManageEngine-Applications-Manager-14.0-SQL-Injection-Command-Injection.html",
+            "https://pentest.com.tr/exploits/ManageEngine-App-Manager-14-Auth-Bypass-Remote-Command-Execution.html",
+            "https://www.exploit-db.com/exploits/46740",
+            "https://www.exploit-db.com/exploits/46740/",
+            "https://www.manageengine.com/products/applications_manager/security-updates/security-updates-cve-2019-11469.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:zohocorp:manageengine_applications_manager:*:*:*:*:*:*:*:* versions from (including) 12.0 up to (including) 14.0",
+            "*cpe:2.3:a:zohocorp:manageengine_applications_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "04/23/2019",
+        "modified_date": "04/26/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2018-17169",
+        "cwe_id": "CWE-611",
+        "description": "An XML external entity (XXE) vulnerability in PrinterOn version 4.1.4 and lower allows remote authenticated users to read arbitrary files or conduct server-side request forgery (SSRF) attacks via a crafted DTD in an XML request.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.7 HIGH",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/DrunkenShells/Disclosures/tree/master/CVE-2018-17169-XXE-PrinterON"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:printeron:printeron:*:*:*:*:*:*:*:* versions up to (including) 4.1.4",
+            "*cpe:2.3:a:printeron:printeron:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "04/23/2019",
+        "modified_date": "04/30/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2018-20819",
+        "cwe_id": "CWE-787",
+        "description": "io/ZlibCompression.cc in the decompression component in Dropbox Lepton 1.2.1 allows attackers to cause a denial of service (heap-based buffer overflow and application crash) or possibly have unspecified other impact by crafting a jpg image file. The root cause is a missing check of header payloads that may be (incorrectly) larger than the maximum file size.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/dropbox/lepton/issues/112"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:dropbox:lepton:1.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:dropbox:lepton:1.2.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/23/2019",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2018-20820",
+        "cwe_id": "CWE-190",
+        "description": "read_ujpg in jpgcoder.cc in Dropbox Lepton 1.2.1 allows attackers to cause a denial-of-service (application runtime crash because of an integer overflow) via a crafted file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/dropbox/lepton/commit/6a5ceefac1162783fffd9506a3de39c85c725761",
+            "https://github.com/dropbox/lepton/issues/111"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:dropbox:lepton:1.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:dropbox:lepton:1.2.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/23/2019",
+        "modified_date": "04/24/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2018-20821",
+        "cwe_id": "CWE-674",
+        "description": "The parsing component in LibSass through 3.5.5 allows attackers to cause a denial-of-service (uncontrolled recursion in Sass::Parser::parse_css_variable_value in parser.cpp).",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2019-07/msg00047.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2019-07/msg00051.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00027.html",
+            "https://github.com/sass/libsass/issues/2658"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:sass-lang:libsass:*:*:*:*:*:*:*:* versions up to (including) 3.5.5",
+            "*cpe:2.3:a:sass-lang:libsass:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "04/23/2019",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2018-20822",
+        "cwe_id": "CWE-674",
+        "description": "LibSass 3.5.4 allows attackers to cause a denial-of-service (uncontrolled recursion in Sass::Complex_Selector::perform in ast.hpp and Sass::Inspect::operator in inspect.cpp).",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2019-07/msg00047.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2019-07/msg00051.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00027.html",
+            "https://github.com/sass/libsass/issues/2671"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:sass-lang:libsass:3.5.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:sass-lang:libsass:3.5.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/23/2019",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2019",
+        "month": "4"
+    }
+]

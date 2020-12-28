@@ -1,0 +1,3193 @@
+[
+    {
+        "cve_id": "CVE-2018-13405",
+        "cwe_id": "CWE-269",
+        "description": "The inode_init_owner function in fs/inode.c in the Linux kernel through 4.17.4 allows local users to create files with an unintended group ownership, in a scenario where a directory is SGID to a certain group and is writable by a user who is not a member of that group. Here, the non-member can trigger creation of a plain file whose group ownership is that group. The intended behavior was that the non-member can trigger creation of a directory (but not a plain file) whose group ownership is that group. The non-member can escalate privileges by making the plain file executable and SGID.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=0fa3ecd87848c9c93c2c828ef4c3a8ca36ce46c7",
+            "http://openwall.com/lists/oss-security/2018/07/13/2",
+            "http://www.securityfocus.com/bid/106503",
+            "https://access.redhat.com/errata/RHSA-2018:2948",
+            "https://access.redhat.com/errata/RHSA-2018:3083",
+            "https://access.redhat.com/errata/RHSA-2018:3096",
+            "https://access.redhat.com/errata/RHSA-2019:0717",
+            "https://access.redhat.com/errata/RHSA-2019:2476",
+            "https://access.redhat.com/errata/RHSA-2019:2566",
+            "https://access.redhat.com/errata/RHSA-2019:2696",
+            "https://access.redhat.com/errata/RHSA-2019:2730",
+            "https://access.redhat.com/errata/RHSA-2019:4159",
+            "https://access.redhat.com/errata/RHSA-2019:4164",
+            "https://github.com/torvalds/linux/commit/0fa3ecd87848c9c93c2c828ef4c3a8ca36ce46c7",
+            "https://lists.debian.org/debian-lts-announce/2018/08/msg00014.html",
+            "https://support.f5.com/csp/article/K00854051",
+            "https://twitter.com/grsecurity/status/1015082951204327425",
+            "https://usn.ubuntu.com/3752-1/",
+            "https://usn.ubuntu.com/3752-2/",
+            "https://usn.ubuntu.com/3752-3/",
+            "https://usn.ubuntu.com/3753-1/",
+            "https://usn.ubuntu.com/3753-2/",
+            "https://usn.ubuntu.com/3754-1/",
+            "https://www.debian.org/security/2018/dsa-4266",
+            "https://www.exploit-db.com/exploits/45033/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-13406",
+        "cwe_id": "CWE-190",
+        "description": "An integer overflow in the uvesafb_setcmap function in drivers/video/fbdev/uvesafb.c in the Linux kernel before 4.17.4 could result in local attackers being able to crash the kernel or potentially elevate privileges because kmalloc_array is not used.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=9f645bcc566a1e9f921bdae7528a01ced5bc3713",
+            "http://www.securityfocus.com/bid/104685",
+            "http://www.securitytracker.com/id/1041355",
+            "https://cdn.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.17.4",
+            "https://github.com/torvalds/linux/commit/9f645bcc566a1e9f921bdae7528a01ced5bc3713",
+            "https://lists.debian.org/debian-lts-announce/2019/03/msg00017.html",
+            "https://usn.ubuntu.com/3752-1/",
+            "https://usn.ubuntu.com/3752-2/",
+            "https://usn.ubuntu.com/3752-3/",
+            "https://usn.ubuntu.com/3753-1/",
+            "https://usn.ubuntu.com/3753-2/",
+            "https://usn.ubuntu.com/3754-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "03/27/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-1494",
+        "cwe_id": "CWE-79",
+        "description": "IBM DOORS Next Generation (DNG/RRC) 5.0 through 5.0.2 and 6.0 through 6.0.5 is vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 141097.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-1494"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.ibm.com/support/docview.wss?uid=swg22015238",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/141097"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:rational_doors_next_generation:5.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:rational_doors_next_generation:5.0.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:rational_doors_next_generation:5.0.2:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:rational_doors_next_generation:6.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:rational_doors_next_generation:6.0.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:rational_doors_next_generation:6.0.2:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:rational_doors_next_generation:6.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:rational_doors_next_generation:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:rational_doors_next_generation:5.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:rational_doors_next_generation:5.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:rational_doors_next_generation:6.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:rational_doors_next_generation:6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:rational_doors_next_generation:6.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:rational_doors_next_generation:6.0.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-1542",
+        "cwe_id": "CWE-611",
+        "description": "IBM FileNet Content Manager, IBM Content Foundation, and IBM Case Foundation Administration Console for Content Platform Engine (ACCE) 5.2.1 and 5.5.0 are vulnerable to a XML External Entity Injection (XXE) attack when processing XML data. A remote attacker could exploit this vulnerability to expose sensitive information or consume memory resources. IBM X-Force ID: 142597.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-1542"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.ibm.com/support/docview.wss?uid=swg22015943",
+            "http://www.securitytracker.com/id/1041225",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/142597"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:content_foundation:5.2.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:content_foundation:5.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:content_foundation:5.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:content_foundation:5.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:filenet_content_manager:5.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:filenet_content_manager:5.5.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-1546",
+        "cwe_id": "CWE-200",
+        "description": "IBM API Connect 5.0.0.0 through 5.0.8.3 could allow a remote attacker to obtain sensitive information, caused by the failure to properly enable HTTP Strict Transport Security. An attacker could exploit this vulnerability to obtain sensitive information using man in the middle techniques. IBM X-Force ID: 142650.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-1546"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/142650",
+            "https://www-prd-trops.events.ibm.com/node/715299"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:api_connect:*:*:*:*:*:*:*:* versions from (including) 5.0.0.0 up to (including) 5.0.8.3",
+            "*cpe:2.3:a:ibm:api_connect:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-1555",
+        "cwe_id": "CWE-79",
+        "description": "IBM FileNet Content Manager 5.2.1 and 5.5.0 is vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 142892.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-1555"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.ibm.com/support/docview.wss?uid=swg22015943",
+            "http://www.securitytracker.com/id/1041225",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/142892"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:content_foundation:5.2.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:content_foundation:5.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:content_foundation:5.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:content_foundation:5.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:filenet_content_manager:5.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:filenet_content_manager:5.5.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-1556",
+        "cwe_id": "CWE-79",
+        "description": "IBM FileNet Content Manager 5.2.1 and 5.5.0 is vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 142893.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-1556"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.ibm.com/support/docview.wss?uid=swg22015943",
+            "http://www.securitytracker.com/id/1041225",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/142893"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:content_foundation:5.2.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:content_foundation:5.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:content_foundation:5.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:content_foundation:5.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:filenet_content_manager:5.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:filenet_content_manager:5.5.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-1621",
+        "cwe_id": "CWE-312",
+        "description": "IBM WebSphere Application Server 7.0, 8.0, 8.5, and 9.0 could allow a local attacker to obtain clear text password in a trace file caused by improper handling of some datasource custom properties. IBM X-Force ID: 144346.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.7 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.ibm.com/support/docview.wss?uid=swg22016821",
+            "http://www.securitytracker.com/id/1041226",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/144346"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:websphere_application_server:7.0.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:websphere_application_server:8.0.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:websphere_application_server:8.5.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:websphere_application_server:9.0.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:7.0.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:8.0.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:8.5.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:9.0.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-1676",
+        "cwe_id": "CWE-79",
+        "description": "IBM Planning Analytics 2.0.0 through 2.0.4 is vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 145118.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-1676"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.ibm.com/support/docview.wss?uid=swg22016372",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/145118"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:planning_analytics_local:*:*:*:*:*:*:*:* versions from (including) 2.0.0 up to (including) 2.0.4",
+            "*cpe:2.3:a:ibm:planning_analytics_local:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-10892",
+        "cwe_id": "CWE-250",
+        "description": "The default OCI linux spec in oci/defaults{_linux}.go in Docker/Moby from 1.11 to current does not block /proc/acpi pathnames. The flaw allows an attacker to modify host's hardware like enabling/disabling bluetooth or turning up/down keyboard brightness.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00084.html",
+            "https://access.redhat.com/errata/RHBA-2018:2796",
+            "https://access.redhat.com/errata/RHSA-2018:2482",
+            "https://access.redhat.com/errata/RHSA-2018:2729",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-10892",
+            "https://github.com/moby/moby/pull/37404"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:opensuse:leap:15.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:docker:docker:*:*:*:*:community_edition:*:*:* versions from (including) 1.11 up to (including) 18.03.1\n     *cpe:2.3:a:docker:docker:*:*:*:*:enterprise_edition:*:*:* versions from (including) 1.11 up to (including) 18.03.1\n     *cpe:2.3:a:mobyproject:moby:*:*:*:*:*:*:*:* versions from (including) 1.11 up to (including) 17.03.2",
+            "*cpe:2.3:o:opensuse:leap:15.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:leap:15.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:12:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:docker:docker:*:*:*:*:community_edition:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:docker:docker:*:*:*:*:enterprise_edition:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:mobyproject:moby:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/31/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-11088",
+        "cwe_id": "CWE-89",
+        "description": "Improper Input Validation in Linux io-prefetch in Snapdragon Mobile and Snapdragon Wear, A SQL injection vulnerability exists in versions MSM8909W, MSM8996AU, SD 210/SD 212/SD 205, SD 430, SD 450, SD 617, SD 625, SD 650/52, SD 820, SD 835, SD 845.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:msm8909w:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8996au:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_430:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_450:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_617:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_625:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_652:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "09/04/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-14872",
+        "cwe_id": "CWE-125",
+        "description": "While flashing a meta image, a buffer over-read can potentially occur when the number of images are out of the maximum range of 32 in Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-06-01#qualcomm-components",
+            "https://source.codeaurora.org/quic/la/abl/tianocore/edk2/commit/?id=1daa83baa41d1e6291e89f69e6487695b6890c01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/27/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-14893",
+        "cwe_id": "CWE-125",
+        "description": "While flashing meta image, a buffer over-read may potentially occur when the image size is smaller than the image header size or is smaller than the image header size + total image header entry in Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-06-01#qualcomm-components",
+            "https://source.codeaurora.org/quic/la/abl/tianocore/edk2/commit/?id=c8dc3bf07ee909e6e57ad7887f9d3c0ffa5df795"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/27/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-15824",
+        "cwe_id": "CWE-772",
+        "description": "In Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05, the function UpdateDeviceStatus() writes a local stack buffer without initialization to flash memory using WriteToPartition() which may potentially leak memory.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-06-01#qualcomm-components"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-15856",
+        "cwe_id": "CWE-362",
+        "description": "Due to a race condition while processing the power stats debug file to read status, a double free condition can occur in Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.0 HIGH",
+        "base_score_v2": "4.4 MEDIUM",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-06-01#qualcomm-components",
+            "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qcacld-2.0/commit/?id=ed02c0ccd6f7461a69d64903738372eaf21babcd",
+            "https://www.codeaurora.org/security-bulletin/2018/07/02/july-2018-code-aurora-security-bulletin"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/27/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-18158",
+        "cwe_id": "CWE-119",
+        "description": "Possible buffer overflows and array out of bounds accesses in Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05 while flashing images.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/2018-06-01#qualcomm-components",
+            "https://source.codeaurora.org/quic/la/abl/tianocore/edk2/commit/?id=316136f292cedaecf17823d6f3b63cf2d11314b3"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/27/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-18159",
+        "cwe_id": "CWE-125",
+        "description": "In Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05, while processing a StrHwPlatform with length smaller than EFICHIPINFO_MAX_ID_LENGTH, an array out of bounds access may occur.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/2018-06-01#qualcomm-components",
+            "https://source.codeaurora.org/quic/la/abl/tianocore/edk2/commit/?id=04f23441b8c0c897644f9bf391b691039fa0ab70",
+            "https://source.codeaurora.org/quic/la/abl/tianocore/edk2/commit/?id=3129148e5a4cfe83003449a1048660823bfddc51",
+            "https://source.codeaurora.org/quic/la/abl/tianocore/edk2/commit/?id=4a63a848c062851776123d4bc7ec10eb498a70dd",
+            "https://source.codeaurora.org/quic/la/abl/tianocore/edk2/commit/?id=5471b0cdf4bace12d872d074b97eae29f1317e6a",
+            "https://source.codeaurora.org/quic/la/abl/tianocore/edk2/commit/?id=633fa4ffb38bbfb0fad79204e19b9f59d42d7680",
+            "https://source.codeaurora.org/quic/la/abl/tianocore/edk2/commit/?id=7dcbee530800b16534d0f3e8db375492c03b3e0a",
+            "https://source.codeaurora.org/quic/la/abl/tianocore/edk2/commit/?id=9057a8b3339abc4eb2c4e462279f34bbe6410e7c",
+            "https://source.codeaurora.org/quic/la/abl/tianocore/edk2/commit/?id=b6b318431983f35a7734cae227478df3dc93a818",
+            "https://source.codeaurora.org/quic/la/abl/tianocore/edk2/commit/?id=bcceb2ceeea07aedaa5f97207cc88f9d8b4416ea"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/28/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-11257",
+        "cwe_id": null,
+        "description": "Permissions, Privileges, and Access Controls in TA in Snapdragon Mobile has an options that allows RPMB erase for secure devices in versions SD 210/SD 212/SD 205, SD 845, SD 850.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_850:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-11258",
+        "cwe_id": "CWE-416",
+        "description": "In ADSP RPC in Snapdragon Automobile, Snapdragon Mobile and Snapdragon Wear, a Use After Free condition can occur in versions MDM9206, MDM9607, MDM9650, MSM8909W, MSM8996AU, SD 210/SD 212/SD 205, SD 425, SD 450, SD 615/16/SD 415, SD 625, SD 650/52, SD 820, SD 820A, SD 835, SD 845, SDX20.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1041432",
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:mdm9206:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9607:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8909w:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8996au:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_415:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_425:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_450:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_615:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_616:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_625:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_652:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdx20:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "09/06/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-11259",
+        "cwe_id": "CWE-732",
+        "description": "Due to Improper Access Control of NAND-based EFS in Snapdragon Automobile, Snapdragon Mobile and Snapdragon Wear, From fastboot on a NAND-based device, the EFS partition can be erased. Apps processor then has non-secure world full read/write access to the partition until the modem boots and configures the EFS partition addresses in its MPU partition.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "7.7 HIGH",
+        "base_score_v2": "3.6 LOW",
+        "hyperlinks": [
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:mdm9206:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9607:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9635m:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9640:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9655:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8909w:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8996au:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_410:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_412:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_415:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_425:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_427:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_430:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_435:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_450:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_615:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_616:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_617:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_625:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_652:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_800:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_810:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_850:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm630:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm632:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm636:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm660:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdx20:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:snapdragon_high_med_2016:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-13407",
+        "cwe_id": "CWE-352",
+        "description": "A CSRF issue was discovered in Jirafeau before 3.4.1. The \"delete file\" feature on the admin panel is not protected against automated requests and could be abused.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:P)"
+        },
+        "base_score_v3": "4.9 MEDIUM",
+        "base_score_v2": "5.5 MEDIUM",
+        "hyperlinks": [
+            "https://www.bishopfox.com/news/2018/06/jirafeau-version-3-3-0-multiple-vulnerabilities/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jirafeau:jirafeau:*:*:*:*:*:*:*:* versions up to (excluding) 3.4.1",
+            "*cpe:2.3:a:jirafeau:jirafeau:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/23/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-13408",
+        "cwe_id": "CWE-79",
+        "description": "An issue was discovered in Jirafeau before 3.4.1. The \"search file by link\" form is affected by reflected XSS that could allow, by targeting an administrator, stealing a session and gaining administrative privileges.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://www.bishopfox.com/news/2018/06/jirafeau-version-3-3-0-multiple-vulnerabilities/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jirafeau:jirafeau:*:*:*:*:*:*:*:* versions up to (excluding) 3.4.1",
+            "*cpe:2.3:a:jirafeau:jirafeau:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/23/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-13409",
+        "cwe_id": "CWE-79",
+        "description": "An issue was discovered in Jirafeau before 3.4.1. The \"search file by hash\" form is affected by reflected XSS that could allow, by targeting an administrator, stealing a session and gaining administrative privileges.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://www.bishopfox.com/news/2018/06/jirafeau-version-3-3-0-multiple-vulnerabilities/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jirafeau:jirafeau:*:*:*:*:*:*:*:* versions up to (excluding) 3.4.1",
+            "*cpe:2.3:a:jirafeau:jirafeau:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/23/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-3564",
+        "cwe_id": "CWE-416",
+        "description": "In the FastRPC driver in Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05, a Use After Free condition can occur when mapping on the remote processor fails.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-06-01#qualcomm-components",
+            "https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=782cd411398e3cf2aca1615ab2649df0c46920ee",
+            "https://www.codeaurora.org/security-bulletin/2018/07/02/july-2018-code-aurora-security-bulletin"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/28/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-3569",
+        "cwe_id": "CWE-125",
+        "description": "A buffer over-read can occur during a fast initial link setup (FILS) connection in Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/2018-06-01#qualcomm-components",
+            "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qcacld-3.0/commit/?id=fe9ea02140c4be952171251515da90bc3a1a2bc0",
+            "https://www.codeaurora.org/security-bulletin/2018/07/02/july-2018-code-aurora-security-bulletin"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-3577",
+        "cwe_id": "CWE-190",
+        "description": "While processing fragments, when the fragment count becomes very large, an integer overflow leading to a buffer overflow can occur in Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-06-01#qualcomm-components",
+            "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qcacld-2.0/commit/?id=cf1c43ce8840021d2907afaa6c514e6971d7ebac",
+            "https://www.codeaurora.org/security-bulletin/2018/07/02/july-2018-code-aurora-security-bulletin"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/28/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-3597",
+        "cwe_id": "CWE-20",
+        "description": "In the ADSP RPC driver in Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05, an arbitrary kernel write can occur.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-06-01#qualcomm-components",
+            "https://source.codeaurora.org/quic/la/kernel/msm-4.4/commit/?id=e569b915a246627d0449016408a9c0d388ee4ab4"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/28/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5829",
+        "cwe_id": "CWE-125",
+        "description": "In wlan_hdd_cfg80211_set_privacy_ibss() in Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05, a buffer over-read can potentially occur.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/2018-06-01#qualcomm-components",
+            "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qcacld-3.0/commit/?id=27381e9d253629180dcdaa698d3fd01bec28d351",
+            "https://www.codeaurora.org/security-bulletin/2018/07/02/july-2018-code-aurora-security-bulletin"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5830",
+        "cwe_id": "CWE-119",
+        "description": "While processing the HTT_T2H_MSG_TYPE_MGMT_TX_COMPL_IND message, a buffer overflow can potentially occur in Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/2018-06-01#qualcomm-components",
+            "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qcacld-2.0/commit/?id=129e76e0ea923b319555f37ea601dfb974a06bfe",
+            "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qcacld-2.0/commit/?id=8174eb0235a7e581153ea1d4a401e7ea8354cc08",
+            "https://www.codeaurora.org/security-bulletin/2018/07/02/july-2018-code-aurora-security-bulletin"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/29/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5831",
+        "cwe_id": "CWE-416",
+        "description": "In the KGSL driver in Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05, a reference counting error can lead to a Use After Free condition.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/2018-06-01#qualcomm-components",
+            "https://source.codeaurora.org/quic/la/kernel/msm-3.18/commit/?id=e3e13d745238ad8853af47c2d938344ea8d3c77f",
+            "https://www.codeaurora.org/security-bulletin/2018/07/02/july-2018-code-aurora-security-bulletin"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/29/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5832",
+        "cwe_id": "CWE-362",
+        "description": "Due to a race condition in a camera driver ioctl handler in Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05, a Use After Free condition can occur.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.0 HIGH",
+        "base_score_v2": "4.4 MEDIUM",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-06-01#qualcomm-components",
+            "https://www.codeaurora.org/security-bulletin/2018/07/02/july-2018-code-aurora-security-bulletin"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "09/04/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5834",
+        "cwe_id": "CWE-119",
+        "description": "In __wlan_hdd_cfg80211_vendor_scan(), a buffer overwrite can potentially occur in Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/2018-06-01#qualcomm-components",
+            "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qcacld-3.0/commit/?id=ede0f8a4d11ec56ee87177478cc0c25af0894860",
+            "https://www.codeaurora.org/security-bulletin/2018/07/02/july-2018-code-aurora-security-bulletin"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "09/04/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5835",
+        "cwe_id": "CWE-119",
+        "description": "If the seq_len is greater then CSR_MAX_RSC_LEN, a buffer overflow in __wlan_hdd_cfg80211_add_key() may occur when copying keyRSC in Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/2018-06-01#qualcomm-components",
+            "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/prima/commit/?id=5a0eeb72c3cde7dcb8096967561a88a678ad9aec",
+            "https://www.codeaurora.org/security-bulletin/2018/07/02/july-2018-code-aurora-security-bulletin"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/28/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5836",
+        "cwe_id": "CWE-125",
+        "description": "In wma_nan_rsp_event_handler() in Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05, the data_len value is received from firmware and not properly validated which could potentially lead to an out-of-bounds access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-06-01#qualcomm-components",
+            "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qcacld-3.0/commit/?id=12a789c2e0e9fd2df40ac13ac27fe99487263887",
+            "https://www.codeaurora.org/security-bulletin/2018/07/02/july-2018-code-aurora-security-bulletin"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/27/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5838",
+        "cwe_id": "CWE-129",
+        "description": "Improper Validation of Array Index In the adreno OpenGL driver in Snapdragon Automobile, Snapdragon Mobile and Snapdragon Wear, an out-of-bounds access can occur in SurfaceFlinger.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:mdm9206:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9607:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8909w:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8996au:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_415:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_425:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_430:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_450:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_600:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_615:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_616:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_617:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_625:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_652:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_800:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_810:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdx20:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "09/04/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5874",
+        "cwe_id": "CWE-787",
+        "description": "While parsing an mp4 file, a stack-based buffer overflow can occur in Snapdragon Automobile, Snapdragon Mobile and Snapdragon Wear.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:mdm9206:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9607:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8909w:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8996au:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_415:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_425:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_430:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_450:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_600:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_615:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_616:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_617:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_625:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_652:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdx20:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5875",
+        "cwe_id": "CWE-119",
+        "description": "While parsing an mp4 file, an integer overflow leading to a buffer overflow can occur in Snapdragon Automobile, Snapdragon Mobile and Snapdragon Wear.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:mdm9206:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9607:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8909w:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8996au:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_415:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_425:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_430:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_450:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_600:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_615:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_616:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_617:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_625:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_652:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdx20:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "09/05/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5876",
+        "cwe_id": "CWE-119",
+        "description": "While parsing an mp4 file, a buffer overflow can occur in Snapdragon Automobile, Snapdragon Mobile and Snapdragon Wear.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:mdm9206:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9607:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8909w:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8996au:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_415:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_425:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_430:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_450:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_600:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_615:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_616:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_617:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_625:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_652:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdx20:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "09/05/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5878",
+        "cwe_id": "CWE-119",
+        "description": "While sending the response to a RIL_REQUEST_GET_SMSC_ADDRESS message, a buffer overflow can occur in Snapdragon Automobile, Snapdragon Mobile and Snapdragon Wear.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:mdm9206:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9607:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9635m:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_415:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_615:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_616:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_625:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "09/10/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5882",
+        "cwe_id": "CWE-125",
+        "description": "While parsing a Flac file with a corrupted comment block, a buffer over-read can occur in Snapdragon Automobile, Snapdragon Mobile and Snapdragon Wear.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:mdm9206:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9607:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8909w:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8996au:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_415:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_425:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_430:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_450:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_600:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_615:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_616:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_617:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_625:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_652:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdx20:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5884",
+        "cwe_id": "CWE-269",
+        "description": "Improper Access Control in Multimedia in Snapdragon Mobile and Snapdragon Wear, Non-standard applications without permission may acquire permission of Qualcomm-specific proprietary intents.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.4 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:mdm9206:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9607:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9635m:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_415:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_615:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_616:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_625:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5885",
+        "cwe_id": "CWE-119",
+        "description": "While loading dynamic fonts, a buffer overflow may occur if the number of segments in the font file is out of range in Snapdragon Mobile and Snapdragon Wear.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:msm8909w:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8996au:*:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_415:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_450:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_615:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_616:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_625:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820:*:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "09/10/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5887",
+        "cwe_id": "CWE-125",
+        "description": "While processing the USB StrSerialDescriptor array, an array index out of bounds can occur in Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-06-01#qualcomm-components",
+            "https://source.codeaurora.org/quic/la/abl/tianocore/edk2/commit/?id=c8415f6f2271008aef5056689950236df627d9b1"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/27/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5888",
+        "cwe_id": "CWE-125",
+        "description": "While processing the system path, an out of bounds access can occur in Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-06-01#qualcomm-components",
+            "https://source.codeaurora.org/quic/la/abl/tianocore/edk2/commit/?id=5388803fa6d004382f4a857056ce06d963698d9c"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/27/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5889",
+        "cwe_id": "CWE-119",
+        "description": "While processing a compressed kernel image, a buffer overflow can occur in Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-06-01#qualcomm-components",
+            "https://source.codeaurora.org/quic/la/abl/tianocore/edk2/commit/?id=a95ca8e2eeb8a030e977f033cff122cad408158c"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/27/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5890",
+        "cwe_id": null,
+        "description": "If the fdt_totalsize is reported as 0 for the current device tree, it bypasses an error check for a valid device tree in Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-06-01#qualcomm-components",
+            "https://source.codeaurora.org/quic/la/abl/tianocore/edk2/commit/?id=c9c8de8000ff32f8d1e24e697d861d92d8ed0b7a"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5891",
+        "cwe_id": "CWE-416",
+        "description": "While processing modem SSR after IMS is registered, the IMS data daemon is restarted but the ipc_dataHandle is no longer available. Consequently, the DPL thread frees the internal memory for dataDHandle but the local variable pointer is not updated which can lead to a Use After Free condition in Snapdragon Mobile and Snapdragon Wear.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.4 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:msm8909w:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8996au:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_415:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_450:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_615:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_616:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_625:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_652:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "09/04/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5892",
+        "cwe_id": "CWE-200",
+        "description": "The Touch Pal application can collect user behavior data without awareness by the user in Snapdragon Mobile and Snapdragon Wear.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:mdm9206:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9607:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8996au:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_415:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_425:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_427:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_430:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_435:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_450:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_615:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_616:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_625:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_652:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_810:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm630:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm636:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm660:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm710:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:snapdragon_high_med_2016:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5893",
+        "cwe_id": "CWE-119",
+        "description": "While processing a message from firmware in htt_t2h_msg_handler_fast() in Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05, a buffer overwrite can occur.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-06-01#qualcomm-components",
+            "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qcacld-3.0/commit/?id=4cc54a30958d2a8d989364aa45a27fde3dd17352",
+            "https://www.codeaurora.org/security-bulletin/2018/07/02/july-2018-code-aurora-security-bulletin"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/27/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5894",
+        "cwe_id": "CWE-125",
+        "description": "Improper Validation of Array Index in Multimedia While parsing an mp4 file in Snapdragon Automobile, Snapdragon Mobile and Snapdragon Wear, an out-of-bounds access can occur.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:mdm9206:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9607:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8909w:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8996au:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_415:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_425:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_430:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_450:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_600:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_615:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_616:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_617:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_625:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_652:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdx20:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "09/05/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5895",
+        "cwe_id": "CWE-125",
+        "description": "Buffer over-read may happen in wma_process_utf_event() due to improper buffer length validation before writing into param_buf->num_wow_packet_buffer in Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-06-01#qualcomm-components",
+            "https://www.codeaurora.org/security-bulletin/2018/07/02/july-2018-code-aurora-security-bulletin"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/27/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5896",
+        "cwe_id": "CWE-125",
+        "description": "In Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05, kernel panic may happen due to out-of-bound read, caused by not checking source buffer length against length of packet stream to be copied.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:N/A:C)"
+        },
+        "base_score_v3": "7.1 HIGH",
+        "base_score_v2": "6.6 MEDIUM",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/2018-06-01#qualcomm-components"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/27/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5897",
+        "cwe_id": "CWE-125",
+        "description": "While reading the data from buffer in dci_process_ctrl_status() there can be buffer over-read problem if the len is not checked correctly in Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-06-01#qualcomm-components"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5898",
+        "cwe_id": "CWE-190",
+        "description": "Integer overflow can occur in msm_pcm_adsp_stream_cmd_put() function if the user supplied data \"param_length\" goes beyond certain limit in Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-06-01#qualcomm-components"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/27/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5899",
+        "cwe_id": "CWE-416",
+        "description": "In Android releases from CAF using the linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-06-05, whenever TDLS connection is setup, we are freeing the netbuf in ol_tx_completion_handler and after that, we are accessing it in NBUF_UPDATE_TX_PKT_COUNT causing a use after free.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-06-01#qualcomm-components",
+            "https://www.codeaurora.org/security-bulletin/2018/07/02/july-2018-code-aurora-security-bulletin"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/27/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-15851",
+        "cwe_id": "CWE-200",
+        "description": "Lack of copy_from_user and information leak in function \"msm_ois_subdev_do_ioctl, file msm_ois.c can lead to a camera crash in all Android releases(Android for MSM, Firefox OS for MSM, QRD Android) from CAF using the Linux kernel",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-07-01#qualcomm-components",
+            "https://www.vulnerabilitycenter.com/#!vul=87351"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/27/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-11304",
+        "cwe_id": "CWE-190",
+        "description": "Possible buffer overflow in msm_adsp_stream_callback_put due to lack of input validation of user-provided data that leads to integer overflow in all Android releases(Android for MSM, Firefox OS for MSM, QRD Android) from CAF using the Linux kernel.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-07-01#qualcomm-components",
+            "https://www.vulnerabilitycenter.com/#!vul=87338"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:*:*:*:*:*:*:*:* versions up to (including) 8.1",
+            "*cpe:2.3:o:google:android:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "09/07/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-13410",
+        "cwe_id": "CWE-416",
+        "description": "** DISPUTED ** Info-ZIP Zip 3.0, when the -T and -TT command-line options are used, allows attackers to cause a denial of service (invalid free and application crash) or possibly have unspecified other impact because of an off-by-one error. NOTE: it is unclear whether there are realistic scenarios in which an untrusted party controls the -TT value, given that the entire purpose of -TT is execution of arbitrary commands.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2018/Jul/24"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:info-zip_project:zip:3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:info-zip_project:zip:3.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/27/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-3570",
+        "cwe_id": "CWE-476",
+        "description": "In the cpuidle driver in all Android releases(Android for MSM, Firefox OS for MSM, QRD Android) from CAF using the Linux kernel, the list_for_each macro was not used correctly which could lead to an untrusted pointer dereference.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-07-01#qualcomm-components",
+            "https://www.vulnerabilitycenter.com/#!vul=87349"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/27/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-3586",
+        "cwe_id": "CWE-190",
+        "description": "An integer overflow to buffer overflow vulnerability exists in the ADSPRPC heap manager in all Android releases(Android for MSM, Firefox OS for MSM, QRD Android) from CAF using the Linux kernel.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/2018-07-01#qualcomm-components"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/28/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-3587",
+        "cwe_id": "CWE-416",
+        "description": "In a firmware memory dump feature in all Android releases from CAF using the Linux kernel (Android for MSM, Firefox OS for MSM, QRD Android), a Use After Free condition can occur.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qcacld-2.0/commit/?id=35af847c2364acf1bfb4ffd679130898e6ae6285",
+            "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qcacld-2.0/commit/?id=a18c0b5955a2f6281bc89d1add3f24907813ae31",
+            "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qcacld-2.0/commit/?id=e4dbb2c8180d6f3b600b93f9090fe1a7f49df027",
+            "https://www.codeaurora.org/security-bulletin/2018/07/02/july-2018-code-aurora-security-bulletin"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/28/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-3608",
+        "cwe_id": "CWE-94",
+        "description": "A vulnerability in Trend Micro Maximum Security's (Consumer) 2018 (versions 12.0.1191 and below) User-Mode Hooking (UMH) driver could allow an attacker to create a specially crafted packet that could alter a vulnerable system in such a way that malicious code could be injected into other processes.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://esupport.trendmicro.com/support/vb/solution/ja-jp/1120144.aspx",
+            "https://esupport.trendmicro.com/en-US/home/pages/technical-support/1120237.aspx"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:trendmicro:officescan:11.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:trendmicro:officescan:12.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:trendmicro:officescan_monthly:11.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:trendmicro:officescan_monthly:12.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/28/2018",
+        "vulnerability_source": "Trend Micro, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5853",
+        "cwe_id": "CWE-416",
+        "description": "A race condition exists in a driver in all Android releases from CAF using the Linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-05-05 potentially leading to a use-after-free condition.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.0 HIGH",
+        "base_score_v2": "4.4 MEDIUM",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-05-01",
+            "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qcacld-3.0/commit/?id=f64e9815f0488a7b37e4e1395a1457d1dfefda66",
+            "https://www.codeaurora.org/security-bulletin/2018/07/02/july-2018-code-aurora-security-bulletin"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/29/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5855",
+        "cwe_id": "CWE-125",
+        "description": "While padding or shrinking a nested wmi packet in all Android releases from CAF using the Linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-07-05, a buffer over-read can potentially occur.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/107770",
+            "https://source.android.com/security/bulletin/2018-07-01",
+            "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qca-wifi-host-cmn/commit/?id=61f4a467177afc23bdc1944ec61e52bed156c104",
+            "https://www.codeaurora.org/security-bulletin/2018/07/02/july-2018-code-aurora-security-bulletin"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5858",
+        "cwe_id": "CWE-119",
+        "description": "In the audio debugfs in all Android releases from CAF using the Linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-07-05, out of bounds access can occur.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-07-01",
+            "https://source.codeaurora.org/quic/la/kernel/msm-3.18/commit/?id=cd1f0cdd4715e8eae4066bd34df2eef4cf94bd7f",
+            "https://source.codeaurora.org/quic/la/platform/vendor/opensource/audio-kernel/commit/?id=78193fa06b267c1d6582e5e6f9fb779cf067015e",
+            "https://www.codeaurora.org/security-bulletin/2018/07/02/july-2018-code-aurora-security-bulletin"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/29/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5859",
+        "cwe_id": "CWE-416",
+        "description": "Due to a race condition in the MDSS MDP driver in all Android releases from CAF using the Linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-07-05, a Use After Free condition can occur.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.0 HIGH",
+        "base_score_v2": "4.4 MEDIUM",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-07-01",
+            "https://source.codeaurora.org/quic/la/kernel/msm-3.18/commit/?id=36400a7fa3753028a3bf89a9cdb28c5e25693c59",
+            "https://www.codeaurora.org/security-bulletin/2018/07/02/july-2018-code-aurora-security-bulletin"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/27/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5862",
+        "cwe_id": "CWE-119",
+        "description": "In __wlan_hdd_cfg80211_vendor_scan() in all Android releases from CAF using the Linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-07-05, when SCAN_SSIDS and QCA_WLAN_VENDOR_ATTR_SCAN_FREQUENCIES are parsed, a buffer overwrite can potentially occur.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-07-01",
+            "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qcacld-3.0/commit/?id=41ad3f76792e08a84962a0b8e9cfb1ba6c4c9ca6",
+            "https://www.codeaurora.org/security-bulletin/2018/07/02/july-2018-code-aurora-security-bulletin"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "09/04/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5864",
+        "cwe_id": "CWE-125",
+        "description": "While processing a WMI_APFIND event in all Android releases from CAF using the Linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-07-05, a buffer over-read and information leak can potentially occur.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-07-01",
+            "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qcacld-2.0/commit/?id=9c042f7827e0d21e5b93c04b418bca0230de91dc",
+            "https://www.codeaurora.org/security-bulletin/2018/07/02/july-2018-code-aurora-security-bulletin"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5865",
+        "cwe_id": "CWE-191",
+        "description": "While processing a debug log event from firmware in all Android releases from CAF using the Linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-07-05, an integer underflow and/or buffer over-read can occur.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-07-01",
+            "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qcacld-3.0/commit/?id=8fb4202e3bb8cfbbb9f9f0e8695891c9971cfcc2",
+            "https://www.codeaurora.org/security-bulletin/2018/07/02/july-2018-code-aurora-security-bulletin"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/27/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5872",
+        "cwe_id": "CWE-119",
+        "description": "While parsing over-the-air information elements in all Android releases from CAF using the Linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-07-05, the use of an out-of-range pointer offset can occur.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:A/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:A/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.0 HIGH",
+        "base_score_v2": "8.3 HIGH",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/2018-07-01",
+            "https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/wlan/qca-wifi-host-cmn/commit/?id=7d65c1b32df795d4e95cdf2cfb624126f5125220",
+            "https://www.codeaurora.org/security-bulletin/2018/07/02/july-2018-code-aurora-security-bulletin"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/27/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5873",
+        "cwe_id": "CWE-416",
+        "description": "An issue was discovered in the __ns_get_path function in fs/nsfs.c in the Linux kernel before 4.11. Due to a race condition when accessing files, a Use After Free condition can occur. This also affects all Android releases from CAF using the Linux kernel (Android for MSM, Firefox OS for MSM, QRD Android) before security patch level 2018-07-05.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.0 HIGH",
+        "base_score_v2": "6.9 MEDIUM",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=073c516ff73557a8f7315066856c04b50383ac34",
+            "https://github.com/torvalds/linux/commit/073c516ff73557a8f7315066856c04b50383ac34",
+            "https://source.android.com/security/bulletin/2018-07-01",
+            "https://source.codeaurora.org/quic/la/kernel/msm-4.9/commit/?id=34742aaf7cb16c95edba4a7afed6d2c4fa7e434b",
+            "https://www.codeaurora.org/security-bulletin/2018/07/02/july-2018-code-aurora-security-bulletin"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/29/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5886",
+        "cwe_id": "CWE-125",
+        "description": "A pointer in an ADSPRPC command is not properly validated in all Android releases from CAF using the Linux kernel (Android for MSM, Firefox OS for MSM, QRD Android), which can lead to kernel memory being accessed.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://source.codeaurora.org/quic/la/kernel/msm-3.18/commit/?id=97017d59158086689488bdcfcafb59654a6f10da",
+            "https://www.codeaurora.org/security-bulletin/2018/07/02/july-2018-code-aurora-security-bulletin"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "08/29/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5907",
+        "cwe_id": "CWE-190",
+        "description": "Possible buffer overflow in msm_adsp_stream_callback_put due to lack of input validation of user-provided data that leads to integer overflow in all Android releases(Android for MSM, Firefox OS for MSM, QRD Android) from CAF using the Linux kernel.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://source.android.com/security/bulletin/pixel/2018-07-01#qualcomm-components",
+            "https://www.vulnerabilitycenter.com/#!vul=87341"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:*:*:*:*:*:*:*:* versions up to (including) 8.1",
+            "*cpe:2.3:o:google:android:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2016-6538",
+        "cwe_id": "CWE-255",
+        "description": "The TrackR Bravo mobile app stores the account password used to authenticate to the cloud API in cleartext in the cache.db file. Updated apps, version 5.1.6 for iOS and 2.2.5 for Android, have been released by the vendor to address the vulnerabilities in CVE-2016-6538, CVE-2016-6539, CVE-2016-6540 and CVE-2016-6541.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "3.3 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93874",
+            "https://blog.rapid7.com/2016/10/25/multiple-bluetooth-low-energy-ble-tracker-vulnerabilities/",
+            "https://www.kb.cert.org/vuls/id/617567",
+            "https://www.kb.cert.org/vuls/id/TNOY-AF3KCZ"
+        ],
+        "cpe": [
+            "cpe:2.3:h:thetrackr:trackr_bravo:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "CERT/CC",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2016-6539",
+        "cwe_id": "CWE-200",
+        "description": "The Trackr device ID is constructed of a manufacturer identifier of four zeroes followed by the BLE MAC address in reverse. The MAC address can be obtained by being in close proximity to the Bluetooth device, effectively exposing the device ID. The ID can be used to track devices. Updated apps, version 5.1.6 for iOS and 2.2.5 for Android, have been released by the vendor to address the vulnerabilities in CVE-2016-6538, CVE-2016-6539, CVE-2016-6540 and CVE-2016-6541.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:A/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:A/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "3.5 LOW",
+        "base_score_v2": "3.3 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93874",
+            "https://blog.rapid7.com/2016/10/25/multiple-bluetooth-low-energy-ble-tracker-vulnerabilities/",
+            "https://www.kb.cert.org/vuls/id/617567",
+            "https://www.kb.cert.org/vuls/id/TNOY-AF3KCZ"
+        ],
+        "cpe": [
+            "cpe:2.3:h:thetrackr:trackr:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "CERT/CC",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2016-6540",
+        "cwe_id": "CWE-200",
+        "description": "Unauthenticated access to the cloud-based service maintained by TrackR Bravo is allowed for querying or sending GPS data for any Trackr device by using the tracker ID number which can be discovered as described in CVE-2016-6539. Updated apps, version 5.1.6 for iOS and 2.2.5 for Android, have been released by the vendor to address the vulnerabilities in CVE-2016-6538, CVE-2016-6539, CVE-2016-6540 and CVE-2016-6541.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "3.3 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93874",
+            "https://blog.rapid7.com/2016/10/25/multiple-bluetooth-low-energy-ble-tracker-vulnerabilities/",
+            "https://www.kb.cert.org/vuls/id/617567",
+            "https://www.kb.cert.org/vuls/id/TNOY-AF3KCZ"
+        ],
+        "cpe": [
+            "cpe:2.3:h:thetrackr:trackr_bravo:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "CERT/CC",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2016-6541",
+        "cwe_id": "CWE-287",
+        "description": "TrackR Bravo device allows unauthenticated pairing, which enables unauthenticated connected applications to write to various device attributes. Updated apps, version 5.1.6 for iOS and 2.2.5 for Android, have been released by the vendor to address the vulnerabilities in CVE-2016-6538, CVE-2016-6539, CVE-2016-6540 and CVE-2016-6541.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93874",
+            "https://blog.rapid7.com/2016/10/25/multiple-bluetooth-low-energy-ble-tracker-vulnerabilities/",
+            "https://www.kb.cert.org/vuls/id/617567",
+            "https://www.kb.cert.org/vuls/id/TNOY-AF3KCZ"
+        ],
+        "cpe": [
+            "cpe:2.3:h:thetrackr:trackr_bravo:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/06/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "CERT/CC",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-11349",
+        "cwe_id": "CWE-352",
+        "description": "The administration panel of Jirafeau before 3.4.1 is vulnerable to three CSRF attacks on search functionalities: search_by_name, search_by_hash, and search_link.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.bishopfox.com/news/2018/06/jirafeau-version-3-3-0-multiple-vulnerabilities/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jirafeau:jirafeau:*:*:*:*:*:*:*:* versions up to (excluding) 3.4.1",
+            "*cpe:2.3:a:jirafeau:jirafeau:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/07/2018",
+        "modified_date": "09/05/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-11350",
+        "cwe_id": "CWE-79",
+        "description": "An issue was discovered in Jirafeau before 3.4.1. The file \"search by name\" form is affected by one Cross-Site Scripting vulnerability via the name parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://www.bishopfox.com/news/2018/06/jirafeau-version-3-3-0-multiple-vulnerabilities/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jirafeau:jirafeau:*:*:*:*:*:*:*:* versions up to (excluding) 3.4.1",
+            "*cpe:2.3:a:jirafeau:jirafeau:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/07/2018",
+        "modified_date": "09/05/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-11351",
+        "cwe_id": "CWE-79",
+        "description": "script.php in Jirafeau before 3.4.1 is affected by two stored Cross-Site Scripting (XSS) vulnerabilities. These are stored within the shared files description file and allow the execution of a JavaScript payload each time an administrator searches or lists uploaded files. These two injections could be triggered without authentication, and target the administrator. The attack vectors are the Content-Type field and the filename parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://www.bishopfox.com/news/2018/06/jirafeau-version-3-3-0-multiple-vulnerabilities/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jirafeau:jirafeau:*:*:*:*:*:*:*:* versions up to (excluding) 3.4.1",
+            "*cpe:2.3:a:jirafeau:jirafeau:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/07/2018",
+        "modified_date": "08/28/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-13419",
+        "cwe_id": "CWE-772",
+        "description": "** DISPUTED ** An issue has been found in libsndfile 1.0.28. There is a memory leak in psf_allocate in common.c, as demonstrated by sndfile-convert. NOTE: The maintainer and third parties were unable to reproduce and closed the issue.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/erikd/libsndfile/issues/398"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libsndfile_project:libsndfile:1.0.28:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:libsndfile_project:libsndfile:1.0.28:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-13420",
+        "cwe_id": "CWE-772",
+        "description": "** DISPUTED ** Google gperftools 2.7 has a memory leak in malloc_extension.cc, related to MallocExtension::Register and InitModule. NOTE: the software maintainer indicates that this is not a bug; it is only a false-positive report from the LeakSanitizer program.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/gperftools/gperftools/issues/1013"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gperftools_project:gperftools:2.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:gperftools_project:gperftools:2.7:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/07/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-13421",
+        "cwe_id": "CWE-125",
+        "description": "Fast C++ CSV Parser (aka fast-cpp-csv-parser) before 2018-07-06 has a heap-based buffer over-read in io::trim_chars in csv.h.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/ben-strasser/fast-cpp-csv-parser/issues/67"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fast-cpp-csv-parser_project:fast-cpp-csv-parser:*:*:*:*:*:*:*:* versions up to (excluding) 2018-07-06",
+            "*cpe:2.3:a:fast-cpp-csv-parser_project:fast-cpp-csv-parser:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "2018-07-06"
+        ],
+        "published_date": "07/07/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-13422",
+        "cwe_id": "CWE-79",
+        "description": "TCExam before 14.1.2 has XSS via an ff_ or xl_ field.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/tecnickcom/tcexam/pull/223"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:tecnick:tcexam:*:*:*:*:*:*:*:* versions up to (excluding) 14.1.2",
+            "*cpe:2.3:a:tecnick:tcexam:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/07/2018",
+        "modified_date": "08/27/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-13423",
+        "cwe_id": "CWE-79",
+        "description": "admin/themes/default/items/tag-form.php in Omeka before 2.6.1 allows XSS by adding or editing a tag.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/omeka/Omeka/commit/ba841892116544847d76d3838781c9708cb92221",
+            "https://github.com/omeka/Omeka/releases/tag/v2.6.1"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:omeka:omeka:*:*:*:*:*:*:*:* versions up to (excluding) 2.6.1",
+            "*cpe:2.3:a:omeka:omeka:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/07/2018",
+        "modified_date": "08/27/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-13433",
+        "cwe_id": "CWE-79",
+        "description": "Boostnote v0.11.7 allows XSS during highlighting of Markdown text, as demonstrated by an onerror attribute of an IMG element.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/BoostIO/Boostnote/issues/2184"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:boostnote:boostnote:0.11.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:boostnote:boostnote:0.11.7:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/08/2018",
+        "modified_date": "08/28/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-13439",
+        "cwe_id": "CWE-611",
+        "description": "WXPayUtil in WeChat Pay Java SDK allows XXE attacks involving a merchant notification URL.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/148390/WeChat-Pay-SDK-XXE-Injection.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:tencent:wechat_pay:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:tencent:wechat_pay:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/08/2018",
+        "modified_date": "09/10/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-13440",
+        "cwe_id": "CWE-476",
+        "description": "The audiofile Audio File Library 0.3.6 has a NULL pointer dereference bug in ModuleState::setup in modules/ModuleState.cpp, which allows an attacker to cause a denial of service via a crafted caf file, as demonstrated by sfconvert.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/mpruett/audiofile/issues/49",
+            "https://usn.ubuntu.com/3800-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:68k:audio_file_library:0.3.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:a:68k:audio_file_library:0.3.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:68k:audio_file_library:0.3.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:audio_file_library_project:audio_file_library:0.3.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:a:68k:audio_file_library:0.3.6:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/08/2018",
+        "modified_date": "04/13/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-13444",
+        "cwe_id": "CWE-352",
+        "description": "An issue was discovered in SeaCMS 6.61. There is a CSRF vulnerability that can add an admin account via adm1n/admin_manager.php?action=save&id=2.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/MichaelWayneLIU/seacms/blob/master/seacms1.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:seacms:seacms:6.61:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:seacms:seacms:6.61:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/08/2018",
+        "modified_date": "08/28/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-13445",
+        "cwe_id": "CWE-352",
+        "description": "An issue was discovered in SeaCMS 6.61. There is a CSRF vulnerability that can add a user account via adm1n/admin_manager.php?action=add.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/MichaelWayneLIU/seacms/blob/master/seacms1.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:seacms:seacms:6.61:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:seacms:seacms:6.61:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/08/2018",
+        "modified_date": "08/28/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-13447",
+        "cwe_id": "CWE-89",
+        "description": "SQL injection vulnerability in product/card.php in Dolibarr ERP/CRM version 7.0.3 allows remote attackers to execute arbitrary SQL commands via the statut parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/Dolibarr/dolibarr/commit/36402c22eef49d60edd73a2f312f8e28fe0bd1cb"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:dolibarr:dolibarr:7.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:dolibarr:dolibarr:7.0.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/08/2018",
+        "modified_date": "08/11/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-13448",
+        "cwe_id": "CWE-89",
+        "description": "SQL injection vulnerability in product/card.php in Dolibarr ERP/CRM version 7.0.3 allows remote attackers to execute arbitrary SQL commands via the country_id parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/Dolibarr/dolibarr/commit/36402c22eef49d60edd73a2f312f8e28fe0bd1cb"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:dolibarr:dolibarr_erp\\/crm:7.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:dolibarr:dolibarr_erp\\/crm:7.0.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/08/2018",
+        "modified_date": "08/10/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-13449",
+        "cwe_id": "CWE-89",
+        "description": "SQL injection vulnerability in product/card.php in Dolibarr ERP/CRM version 7.0.3 allows remote attackers to execute arbitrary SQL commands via the statut_buy parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/Dolibarr/dolibarr/commit/36402c22eef49d60edd73a2f312f8e28fe0bd1cb"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:dolibarr:dolibarr_erp\\/crm:7.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:dolibarr:dolibarr_erp\\/crm:7.0.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/08/2018",
+        "modified_date": "09/05/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-13450",
+        "cwe_id": "CWE-89",
+        "description": "SQL injection vulnerability in product/card.php in Dolibarr ERP/CRM version 7.0.3 allows remote attackers to execute arbitrary SQL commands via the status_batch parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/Dolibarr/dolibarr/commit/36402c22eef49d60edd73a2f312f8e28fe0bd1cb"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:dolibarr:dolibarr_erp\\/crm:7.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:dolibarr:dolibarr_erp\\/crm:7.0.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/08/2018",
+        "modified_date": "09/05/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-13462",
+        "cwe_id": "CWE-190",
+        "description": "The mintToken function of a smart contract implementation for MoonToken, an Ethereum token, has an integer overflow that allows the owner of the contract to set the balance of an arbitrary user to any value.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/BlockChainsSecurity/EtherTokens/blob/master/GEMCHAIN/mint%20integer%20overflow.md",
+            "https://github.com/BlockChainsSecurity/EtherTokens/tree/master/MoonToken"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:moontoken_project:moontoken:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:moontoken_project:moontoken:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/09/2018",
+        "modified_date": "08/28/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-13463",
+        "cwe_id": "CWE-190",
+        "description": "The mintToken function of a smart contract implementation for T-Swap-Token (T-S-T), an Ethereum token, has an integer overflow that allows the owner of the contract to set the balance of an arbitrary user to any value.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/BlockChainsSecurity/EtherTokens/blob/master/GEMCHAIN/mint%20integer%20overflow.md",
+            "https://github.com/BlockChainsSecurity/EtherTokens/tree/master/TSwap"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:t-swap-token_project:t-swap-token:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:t-swap-token_project:t-swap-token:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/09/2018",
+        "modified_date": "08/29/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-13464",
+        "cwe_id": "CWE-190",
+        "description": "The mintToken function of a smart contract implementation for t_swap, an Ethereum token, has an integer overflow that allows the owner of the contract to set the balance of an arbitrary user to any value.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/BlockChainsSecurity/EtherTokens/blob/master/GEMCHAIN/mint%20integer%20overflow.md",
+            "https://github.com/BlockChainsSecurity/EtherTokens/tree/master/t_swap"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:t-swap-token_project:t-swap-token:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:t-swap-token_project:t-swap-token:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/09/2018",
+        "modified_date": "08/28/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-13465",
+        "cwe_id": "CWE-190",
+        "description": "The mintToken function of a smart contract implementation for PaulyCoin, an Ethereum token, has an integer overflow that allows the owner of the contract to set the balance of an arbitrary user to any value.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/BlockChainsSecurity/EtherTokens/blob/master/GEMCHAIN/mint%20integer%20overflow.md",
+            "https://github.com/BlockChainsSecurity/EtherTokens/tree/master/PaulyCoin"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:paulycoin_project:paulycoin:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:paulycoin_project:paulycoin:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/09/2018",
+        "modified_date": "08/28/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-13466",
+        "cwe_id": "CWE-190",
+        "description": "The mintToken function of a smart contract implementation for Crystals, an Ethereum token, has an integer overflow that allows the owner of the contract to set the balance of an arbitrary user to any value.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/BlockChainsSecurity/EtherTokens/blob/master/GEMCHAIN/mint%20integer%20overflow.md",
+            "https://github.com/BlockChainsSecurity/EtherTokens/tree/master/Crystals"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:crystals:crystals:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:crystals:crystals:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/09/2018",
+        "modified_date": "08/28/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-13467",
+        "cwe_id": "CWE-190",
+        "description": "The mintToken function of a smart contract implementation for EpiphanyCoin, an Ethereum token, has an integer overflow that allows the owner of the contract to set the balance of an arbitrary user to any value.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/BlockChainsSecurity/EtherTokens/blob/master/GEMCHAIN/mint%20integer%20overflow.md",
+            "https://github.com/BlockChainsSecurity/EtherTokens/tree/master/EpiphanyCoin"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:epnex:epiphany:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:epnex:epiphany:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:epnex:epiphany:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:epnex:epiphanycoin:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:epnex:epiphany:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/09/2018",
+        "modified_date": "07/16/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    }
+]

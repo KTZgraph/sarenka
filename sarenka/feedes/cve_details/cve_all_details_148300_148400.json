@@ -1,0 +1,3001 @@
+[
+    {
+        "cve_id": "CVE-2002-0054",
+        "cwe_id": "CWE-294",
+        "description": "SMTP service in (1) Microsoft Windows 2000 and (2) Internet Mail Connector (IMC) in Exchange Server 5.5 does not properly handle responses to NTLM authentication, which allows remote attackers to perform mail relaying via an SMTP AUTH command using null session credentials.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0054"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://marc.info/?l=bugtraq&m=101501580409373&w=2",
+            "http://www.securityfocus.com/bid/4205",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2002/ms02-011"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:microsoft:exchange_server:5.5:*:*:*:*:*:*:*\n     *cpe:2.3:a:microsoft:exchange_server:5.5:sp1:*:*:*:*:*:*\n     *cpe:2.3:a:microsoft:exchange_server:5.5:sp2:*:*:*:*:*:*\n     *cpe:2.3:a:microsoft:exchange_server:5.5:sp3:*:*:*:*:*:*\n     *cpe:2.3:a:microsoft:exchange_server:5.5:sp4:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:professional:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:datacenter_server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:advanced_server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp2:server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp2:professional:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp2:datacenter_server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp2:advanced_server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp1:server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp1:professional:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp1:datacenter_server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp1:advanced_server:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:exchange_server:5.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:exchange_server:5.5:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:exchange_server:5.5:sp2:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:exchange_server:5.5:sp3:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:exchange_server:5.5:sp4:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:exchange_server:5.5:-:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:exchange_server:5.5:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:exchange_server:5.5:sp2:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:exchange_server:5.5:sp3:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:exchange_server:5.5:sp4:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp2:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:-:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:-:sp2:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:professional:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:datacenter_server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:advanced_server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp2:server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp2:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp2:professional:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp2:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp2:datacenter_server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp2:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp2:advanced_server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp2:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp1:server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp1:professional:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp1:datacenter_server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp1:advanced_server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp1:*:*:*:*:*:*"
+        ],
+        "published_date": "03/08/2002",
+        "modified_date": "04/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0055",
+        "cwe_id": "CWE-669",
+        "description": "SMTP service in Microsoft Windows 2000, Windows XP Professional, and Exchange 2000 allows remote attackers to cause a denial of service via a command with a malformed data transfer (BDAT) request.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0055"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://marc.info/?l=bugtraq&m=101558498401274&w=2",
+            "http://www.iss.net/security_center/static/8307.php",
+            "http://www.securityfocus.com/bid/4204",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2002/ms02-012",
+            "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A30"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:microsoft:exchange_server:2000:*:*:*:*:*:*:*\n     *cpe:2.3:a:microsoft:exchange_server:2000:sp1:*:*:*:*:*:*\n     *cpe:2.3:a:microsoft:exchange_server:2000:sp2:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:professional:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:advanced_server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp2:server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp2:professional:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp2:advanced_server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp1:server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp1:professional:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp1:advanced_server:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:exchange_server:2000:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:exchange_server:2000:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:exchange_server:2000:sp2:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:exchange_server:2000:-:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:exchange_server:2000:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:exchange_server:2000:sp2:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp2:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_xp:*:gold:professional:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:-:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:-:sp2:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_xp:*:gold:*:*:professional:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:professional:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:advanced_server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp2:server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp2:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp2:professional:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp2:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp2:advanced_server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp2:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp1:server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp1:professional:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp1:advanced_server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:sp1:*:*:*:*:*:*"
+        ],
+        "published_date": "03/08/2002",
+        "modified_date": "04/09/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0056",
+        "cwe_id": null,
+        "description": "Buffer overflow in SQL Server 7.0 and 2000 allows remote attackers to execute arbitrary code via a long OLE DB provider name to (1) OpenDataSource or (2) OpenRowset in an ad hoc connection.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0056"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://marc.info/?l=bugtraq&m=101422555428036&w=2",
+            "http://marc.info/?l=vuln-dev&m=101413924631329&w=2",
+            "http://www.kb.cert.org/vuls/id/619707",
+            "http://www.securityfocus.com/bid/4135",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2002/ms02-007",
+            "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A271"
+        ],
+        "cpe": [],
+        "published_date": "03/08/2002",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0057",
+        "cwe_id": null,
+        "description": "XMLHTTP control in Microsoft XML Core Services 2.6 and later does not properly handle IE Security Zone settings, which allows remote attackers to read arbitrary files by specifying a local file as an XML Data Source.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0057"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://archives.neohapsis.com/archives/bugtraq/2001-12/0152.html",
+            "http://marc.info/?l=bugtraq&m=101366383408821&w=2",
+            "http://www.securityfocus.com/bid/3699",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2002/ms02-008",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/7712"
+        ],
+        "cpe": [],
+        "published_date": "03/08/2002",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0058",
+        "cwe_id": null,
+        "description": "Vulnerability in Java Runtime Environment (JRE) allows remote malicious web sites to hijack or sniff a web client's sessions, when an HTTP proxy is being used, via a Java applet that redirects the session to another server, as seen in (1) Netscape 6.0 through 6.1 and 4.79 and earlier, (2) Microsoft VM build 3802 and earlier as used in Internet Explorer 4.x and 5.x, and possibly other implementations that use vulnerable versions of SDK or JDK.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0058"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://marc.info/?l=bugtraq&m=101534535304228&w=2",
+            "http://sunsolve.sun.com/pub-cgi/retrieve.pl?doctype=coll&doc=secbull/216",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2002/ms02-013"
+        ],
+        "cpe": [],
+        "published_date": "03/15/2002",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0059",
+        "cwe_id": null,
+        "description": "The decompression algorithm in zlib 1.1.3 and earlier, as used in many different utilities and packages, causes inflateEnd to release certain memory more than once (a \"double free\"), which may allow local and remote attackers to execute arbitrary code via a block of malformed compression data.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0059"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "ftp://ftp.caldera.com/pub/security/OpenLinux/CSSA-2002-015.1.txt",
+            "http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=000469",
+            "http://frontal2.mandriva.com/security/advisories?name=MDKSA-2002:022",
+            "http://www.caldera.com/support/security/advisories/CSSA-2002-014.1.txt",
+            "http://www.cert.org/advisories/CA-2002-07.html",
+            "http://www.debian.org/security/2002/dsa-122",
+            "http://www.kb.cert.org/vuls/id/368819",
+            "http://www.linux-mandrake.com/en/security/2002/MDKSA-2002-023.php",
+            "http://www.linux-mandrake.com/en/security/2002/MDKSA-2002-024.php3",
+            "http://www.redhat.com/support/errata/RHSA-2002-026.html",
+            "http://www.redhat.com/support/errata/RHSA-2002-027.html",
+            "http://www.securityfocus.com/bid/4267",
+            "http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBTL0204-030",
+            "http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBTL0204-036",
+            "http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBTL0204-037",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/8427"
+        ],
+        "cpe": [],
+        "published_date": "03/15/2002",
+        "modified_date": "05/02/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0060",
+        "cwe_id": null,
+        "description": "IRC connection tracking helper module in the netfilter subsystem for Linux 2.4.18-pre9 and earlier does not properly set the mask for conntrack expectations for incoming DCC connections, which could allow remote attackers to bypass intended firewall restrictions.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0060"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://frontal2.mandriva.com/security/advisories?name=MDKSA-2002:041",
+            "http://marc.info/?l=bugtraq&m=101483396412051&w=2",
+            "http://marc.info/?l=vuln-dev&m=101486352429653&w=2",
+            "http://www.kb.cert.org/vuls/id/230307",
+            "http://www.netfilter.org/security/2002-02-25-irc-dcc-mask.html",
+            "http://www.redhat.com/support/errata/RHSA-2002-028.html",
+            "http://www.securityfocus.com/bid/4188",
+            "http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBUX0203-027",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/8302"
+        ],
+        "cpe": [],
+        "published_date": "03/08/2002",
+        "modified_date": "10/09/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0061",
+        "cwe_id": null,
+        "description": "Apache for Win32 before 1.3.24, and 2.0.x before 2.0.34-beta, allows remote attackers to execute arbitrary commands via shell metacharacters (a | pipe character) provided as arguments to batch (.bat) or .cmd scripts, which are sent unfiltered to the shell interpreter, typically cmd.exe.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0061"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://marc.info/?l=bugtraq&m=101674082427358&w=2",
+            "http://online.securityfocus.com/archive/1/263927",
+            "http://www.apacheweek.com/issues/02-03-29#apache1324",
+            "http://www.iss.net/security_center/static/8589.php",
+            "http://www.securityfocus.com/bid/4335"
+        ],
+        "cpe": [],
+        "published_date": "03/21/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0062",
+        "cwe_id": null,
+        "description": "Buffer overflow in ncurses 5.0, and the ncurses4 compatibility package as used in Red Hat Linux, allows local users to gain privileges, related to \"routines for moving the physical cursor and scrolling.\"",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0062"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.debian.org/security/2002/dsa-113",
+            "http://www.iss.net/security_center/static/8222.php",
+            "http://www.redhat.com/support/errata/RHSA-2002-020.html",
+            "http://www.securityfocus.com/bid/2116"
+        ],
+        "cpe": [],
+        "published_date": "03/08/2002",
+        "modified_date": "09/05/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0063",
+        "cwe_id": null,
+        "description": "Buffer overflow in ippRead function of CUPS before 1.1.14 may allow attackers to execute arbitrary code via long attribute names or language values.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0063"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "ftp://ftp.caldera.com/pub/security/OpenLinux/CSSA-2002-008.0.txt",
+            "http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=000471",
+            "http://lists2.suse.com/archive/suse-security-announce/2001-Mar/0000.html",
+            "http://www.cups.org/relnotes.html",
+            "http://www.debian.org/security/2002/dsa-110",
+            "http://www.linux-mandrake.com/en/security/2002/MDKSA-2002-015.php",
+            "http://www.redhat.com/support/errata/RHSA-2002-032.html",
+            "http://www.securityfocus.com/bid/4100",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/8192"
+        ],
+        "cpe": [],
+        "published_date": "03/08/2002",
+        "modified_date": "05/02/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0067",
+        "cwe_id": null,
+        "description": "Squid 2.4 STABLE3 and earlier does not properly disable HTCP, even when \"htcp_port 0\" is specified in squid.conf, which could allow remote attackers to bypass intended access restrictions.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0067"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "ftp://ftp.freebsd.org/pub/FreeBSD/CERT/advisories/FreeBSD-SA-02:12.squid.asc",
+            "http://archives.neohapsis.com/archives/linux/caldera/2002-q1/0014.html",
+            "http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=000464",
+            "http://marc.info/?l=bugtraq&m=101431040422095&w=2",
+            "http://marc.info/?l=bugtraq&m=101443252627021&w=2",
+            "http://www.iss.net/security_center/static/8261.php",
+            "http://www.linux-mandrake.com/en/security/2002/MDKSA-2002-016.php",
+            "http://www.redhat.com/support/errata/RHSA-2002-029.html",
+            "http://www.securityfocus.com/bid/4150",
+            "http://www.squid-cache.org/Versions/v2/2.4/bugs/"
+        ],
+        "cpe": [],
+        "published_date": "03/08/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0068",
+        "cwe_id": null,
+        "description": "Squid 2.4 STABLE3 and earlier allows remote attackers to cause a denial of service (core dump) and possibly execute arbitrary code with an ftp:// URL with a larger number of special characters, which exceed the buffer when Squid URL-escapes the characters.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0068"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "ftp://ftp.freebsd.org/pub/FreeBSD/CERT/advisories/FreeBSD-SA-02:12.squid.asc",
+            "http://archives.neohapsis.com/archives/linux/caldera/2002-q1/0014.html",
+            "http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=000464",
+            "http://marc.info/?l=bugtraq&m=101431040422095&w=2",
+            "http://marc.info/?l=bugtraq&m=101440163111826&w=2",
+            "http://marc.info/?l=bugtraq&m=101443252627021&w=2",
+            "http://www.caldera.com/support/security/advisories/CSSA-2002-010.0.txt",
+            "http://www.iss.net/security_center/static/8258.php",
+            "http://www.linux-mandrake.com/en/security/2002/MDKSA-2002-016.php",
+            "http://www.novell.com/linux/security/advisories/2002_008_squid_txt.html",
+            "http://www.redhat.com/support/errata/RHSA-2002-029.html",
+            "http://www.securityfocus.com/bid/4148",
+            "http://www.squid-cache.org/Versions/v2/2.4/bugs/"
+        ],
+        "cpe": [],
+        "published_date": "03/08/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0069",
+        "cwe_id": null,
+        "description": "Memory leak in SNMP in Squid 2.4 STABLE3 and earlier allows remote attackers to cause a denial of service.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0069"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:H/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:H/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "2.6 LOW",
+        "hyperlinks": [
+            "ftp://ftp.freebsd.org/pub/FreeBSD/CERT/advisories/FreeBSD-SA-02:12.squid.asc",
+            "http://archives.neohapsis.com/archives/linux/caldera/2002-q1/0014.html",
+            "http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=000464",
+            "http://marc.info/?l=bugtraq&m=101431040422095&w=2",
+            "http://marc.info/?l=bugtraq&m=101443252627021&w=2",
+            "http://www.iss.net/security_center/static/8260.php",
+            "http://www.linux-mandrake.com/en/security/2002/MDKSA-2002-016.php",
+            "http://www.redhat.com/support/errata/RHSA-2002-029.html",
+            "http://www.securityfocus.com/bid/4146",
+            "http://www.squid-cache.org/Versions/v2/2.4/bugs/"
+        ],
+        "cpe": [],
+        "published_date": "03/08/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0070",
+        "cwe_id": "CWE-119",
+        "description": "Buffer overflow in Windows Shell (used as the Windows Desktop) allows local and possibly remote attackers to execute arbitrary code via a custom URL handler that has not been removed for an application that has been improperly uninstalled.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0070"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:H/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:H/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.6 HIGH",
+        "hyperlinks": [
+            "http://marc.info/?l=bugtraq&m=101594127017290&w=2",
+            "http://www.iss.net/security_center/static/8384.php",
+            "http://www.ntbugtraq.com/default.asp?pid=36&sid=1&A2=ind0203&L=ntbugtraq&F=P&S=&P=2404",
+            "http://www.securityfocus.com/bid/4248",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2002/ms02-014",
+            "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A147",
+            "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A18"
+        ],
+        "cpe": [],
+        "published_date": "03/15/2002",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0076",
+        "cwe_id": null,
+        "description": "Java Runtime Environment (JRE) Bytecode Verifier allows remote attackers to escape the Java sandbox and execute commands via an applet containing an illegal cast operation, as seen in (1) Microsoft VM build 3802 and earlier as used in Internet Explorer 4.x and 5.x, (2) Netscape 6.2.1 and earlier, and possibly other implementations that use vulnerable versions of SDK or JDK, aka a variant of the \"Virtual Machine Verifier\" vulnerability.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0076"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://sunsolve.sun.com/pub-cgi/retrieve.pl?doctype=coll&doc=secbull/218",
+            "http://www.iss.net/security_center/static/8480.php",
+            "http://www.securityfocus.com/bid/4313",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2002/ms02-013"
+        ],
+        "cpe": [],
+        "published_date": "03/19/2002",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0078",
+        "cwe_id": null,
+        "description": "The zone determination function in Microsoft Internet Explorer 5.5 and 6.0 allows remote attackers to run scripts in the Local Computer zone by embedding the script in a cookie, aka the \"Cookie-based Script Execution\" vulnerability.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0078"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://marc.info/?l=bugtraq&m=101781180528301&w=2",
+            "http://www.iss.net/security_center/static/8701.php",
+            "http://www.securityfocus.com/bid/4392",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2002/ms02-015",
+            "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A96"
+        ],
+        "cpe": [],
+        "published_date": "03/29/2002",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0080",
+        "cwe_id": "CWE-269",
+        "description": "rsync, when running in daemon mode, does not properly call setgroups before dropping privileges, which could provide supplemental group privileges to local users, who could then read certain files that would otherwise be disallowed.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0080"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.caldera.com/support/security/advisories/CSSA-2002-014.1.txt",
+            "http://www.iss.net/security_center/static/8463.php",
+            "http://www.linux-mandrake.com/en/security/2002/MDKSA-2002-024.php3",
+            "http://www.redhat.com/support/errata/RHSA-2002-026.html",
+            "http://www.securityfocus.com/bid/4285"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:andrew_tridgell:rsync:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:andrew_tridgell:rsync:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:samba:rsync:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:redhat:linux:6.2:*:alpha:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:linux:6.2:*:i386:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:linux:6.2:*:i586:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:linux:6.2:*:i686:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:linux:6.2:*:sparc:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:linux:7.0:*:alpha:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:linux:7.0:*:i386:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:linux:7.0:*:i586:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:linux:7.0:*:i686:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:linux:7.1:*:alpha:*:*",
+            "*cpe:2.3:o:redhat:linux:6.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:linux:7.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:linux:7.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/15/2002",
+        "modified_date": "11/16/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0081",
+        "cwe_id": null,
+        "description": "Buffer overflows in (1) php_mime_split in PHP 4.1.0, 4.1.1, and 4.0.6 and earlier, and (2) php3_mime_split in PHP 3.0.x allows remote attackers to execute arbitrary code via a multipart/form-data HTTP POST request when file_uploads is enabled.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0081"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=000468",
+            "http://marc.info/?l=bugtraq&m=101484705523351&w=2",
+            "http://marc.info/?l=bugtraq&m=101497256024338&w=2",
+            "http://marc.info/?l=bugtraq&m=101537076619812&w=2",
+            "http://marc.info/?l=ntbugtraq&m=101484975231922&w=2",
+            "http://marc.info/?l=vuln-dev&m=101468694824998&w=2",
+            "http://online.securityfocus.com/advisories/3911",
+            "http://security.e-matters.de/advisories/012002.html",
+            "http://www.cert.org/advisories/CA-2002-05.html",
+            "http://www.debian.org/security/2002/dsa-115",
+            "http://www.iss.net/security_center/static/8281.php",
+            "http://www.kb.cert.org/vuls/id/297363",
+            "http://www.linux-mandrake.com/en/security/2002/MDKSA-2002-017.php",
+            "http://www.linuxsecurity.com/advisories/other_advisory-1924.html",
+            "http://www.novell.com/linux/security/advisories/2002_007_mod_php4_txt.html",
+            "http://www.php.net/downloads.php",
+            "http://www.redhat.com/support/errata/RHSA-2002-035.html",
+            "http://www.redhat.com/support/errata/RHSA-2002-040.html",
+            "http://www.securityfocus.com/bid/4183"
+        ],
+        "cpe": [],
+        "published_date": "03/08/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0082",
+        "cwe_id": null,
+        "description": "The dbm and shm session cache code in mod_ssl before 2.8.7-1.3.23, and Apache-SSL before 1.3.22+1.46, does not properly initialize memory using the i2d_SSL_SESSION function, which allows remote attackers to use a buffer overflow to execute arbitrary code via a large client certificate that is signed by a trusted Certificate Authority (CA), which produces a large serialized session.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0082"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=000465",
+            "http://ftp.support.compaq.com/patches/.new/html/SSRT0817.shtml",
+            "http://marc.info/?l=bugtraq&m=101518491916936&w=2",
+            "http://marc.info/?l=bugtraq&m=101528358424306&w=2",
+            "http://online.securityfocus.com/archive/1/258646",
+            "http://packetstormsecurity.com/files/153567/Apache-mod_ssl-OpenSSL-Remote-Buffer-Overflow.html",
+            "http://www.apacheweek.com/issues/02-03-01#security",
+            "http://www.calderasystems.com/support/security/advisories/CSSA-2002-011.0.txt",
+            "http://www.debian.org/security/2002/dsa-120",
+            "http://www.iss.net/security_center/static/8308.php",
+            "http://www.linux-mandrake.com/en/security/2002/MDKSA-2002-020.php",
+            "http://www.linuxsecurity.com/advisories/other_advisory-1923.html",
+            "http://www.redhat.com/support/errata/RHSA-2002-041.html",
+            "http://www.redhat.com/support/errata/RHSA-2002-042.html",
+            "http://www.redhat.com/support/errata/RHSA-2002-045.html",
+            "http://www.securityfocus.com/advisories/3965",
+            "http://www.securityfocus.com/advisories/4008",
+            "http://www.securityfocus.com/bid/4189"
+        ],
+        "cpe": [],
+        "published_date": "03/15/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0083",
+        "cwe_id": "CWE-189",
+        "description": "Off-by-one error in the channel code of OpenSSH 2.0 through 3.0.2 allows local users or remote malicious servers to gain privileges.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0083"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "ftp://ftp.freebsd.org/pub/FreeBSD/CERT/advisories/FreeBSD-SA-02:13.openssh.asc",
+            "ftp://ftp.netbsd.org/pub/NetBSD/security/advisories/NetBSD-SA2002-004.txt.asc",
+            "ftp://stage.caldera.com/pub/security/openserver/CSSA-2002-SCO.10/CSSA-2002-SCO.10.txt",
+            "ftp://stage.caldera.com/pub/security/openunix/CSSA-2002-SCO.11/CSSA-2002-SCO.11.txt",
+            "http://archives.neohapsis.com/archives/bugtraq/2002-03/0108.html",
+            "http://archives.neohapsis.com/archives/vulnwatch/2002-q1/0060.html",
+            "http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=000467",
+            "http://marc.info/?l=bugtraq&m=101552065005254&w=2",
+            "http://marc.info/?l=bugtraq&m=101553908201861&w=2",
+            "http://marc.info/?l=bugtraq&m=101561384821761&w=2",
+            "http://marc.info/?l=bugtraq&m=101586991827622&w=2",
+            "http://online.securityfocus.com/advisories/3960",
+            "http://online.securityfocus.com/archive/1/264657",
+            "http://www.calderasystems.com/support/security/advisories/CSSA-2002-012.0.txt",
+            "http://www.debian.org/security/2002/dsa-119",
+            "http://www.iss.net/security_center/static/8383.php",
+            "http://www.linux-mandrake.com/en/security/2002/MDKSA-2002-019.php",
+            "http://www.linuxsecurity.com/advisories/other_advisory-1937.html",
+            "http://www.novell.com/linux/security/advisories/2002_009_openssh_txt.html",
+            "http://www.openbsd.org/advisories/ssh_channelalloc.txt",
+            "http://www.redhat.com/support/errata/RHSA-2002-043.html",
+            "http://www.securityfocus.com/bid/4241"
+        ],
+        "cpe": [],
+        "published_date": "03/15/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0084",
+        "cwe_id": null,
+        "description": "Buffer overflow in the fscache_setup function of cachefsd in Solaris 2.6, 7, and 8 allows local users to gain root privileges via a long mount argument.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0084"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://cert.uni-stuttgart.de/archive/bugtraq/2002/04/msg00416.html",
+            "http://sunsolve.sun.com/pub-cgi/retrieve.pl?doc=fsalert%2F44309",
+            "http://www.esecurityonline.com/advisories/eSO4198.asp",
+            "http://www.kb.cert.org/vuls/id/161931",
+            "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A43",
+            "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A97"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:sun:solaris:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:sun:solaris:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:sun:sunos:5.7:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/15/2002",
+        "modified_date": "10/30/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0085",
+        "cwe_id": null,
+        "description": "cachefsd in Solaris 2.6, 7, and 8 allows remote attackers to cause a denial of service (crash) via an invalid procedure call in an RPC request.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0085"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://archives.neohapsis.com/archives/vulnwatch/2002-q2/0047.html",
+            "http://online.securityfocus.com/archive/1/270122",
+            "http://www.esecurityonline.com/advisories/eSO4197.asp",
+            "http://www.securityfocus.com/bid/4634",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/8956",
+            "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A4329"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:sun:solaris:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:sun:solaris:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:sun:sunos:5.7:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/15/2002",
+        "modified_date": "10/30/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0086",
+        "cwe_id": null,
+        "description": "Buffer overflow in bindsock in Lotus Domino 5.0.4 and 5.0.7 on Linux allows local users to gain root privileges via a long (1) Notes_ExecDirectory or (2) PATH environment variable.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0086"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www-1.ibm.com/support/docview.wss?uid=swg21095569",
+            "http://www-1.ibm.com/support/docview.wss?uid=swg21100441",
+            "http://www.esecurityonline.com/advisories/eSO4124.asp",
+            "http://www.esecurityonline.com/advisories/eSO4126.asp",
+            "http://www.securityfocus.com/bid/4317",
+            "http://www.securityfocus.com/bid/4319",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/8583",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/8585"
+        ],
+        "cpe": [],
+        "published_date": "03/15/2002",
+        "modified_date": "07/10/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0087",
+        "cwe_id": null,
+        "description": "bindsock in Lotus Domino 5.07 on Solaris allows local users to create arbitrary files via a symlink attack on temporary files.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0087"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www-1.ibm.com/support/docview.wss?rs=0&uid=swg21095671",
+            "http://www.esecurityonline.com/advisories/eSO4125.asp",
+            "http://www.securityfocus.com/bid/4318",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/8586"
+        ],
+        "cpe": [],
+        "published_date": "03/15/2002",
+        "modified_date": "07/10/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0088",
+        "cwe_id": null,
+        "description": "Buffer overflow in admintool in Solaris 2.6, 7, and 8 allows local users to gain root privileges via a long media installation path.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0088"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.esecurityonline.com/advisories/eSO4123.asp",
+            "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A48",
+            "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A60"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:sun:solaris:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:sun:solaris:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:sun:sunos:5.7:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/15/2002",
+        "modified_date": "10/30/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0089",
+        "cwe_id": null,
+        "description": "Buffer overflow in admintool in Solaris 2.5 through 8 allows local users to gain root privileges via long arguments to (1) the -d command line option, or (2) the PRODVERS argument in the .cdtoc file.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0089"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://online.securityfocus.com/archive/1/270122",
+            "http://www.esecurityonline.com/advisories/eSO2397.asp",
+            "http://www.iss.net/security_center/static/8954.php",
+            "http://www.iss.net/security_center/static/8955.php",
+            "http://www.securityfocus.com/bid/4624",
+            "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A67",
+            "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A68"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:sun:solaris:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:sun:solaris:2.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:sun:solaris:2.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:sun:solaris:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:sun:sunos:5.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:sun:solaris:2.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:sun:sunos:5.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:sun:solaris:2.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:sun:sunos:5.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/15/2002",
+        "modified_date": "10/30/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0090",
+        "cwe_id": null,
+        "description": "Buffer overflow in Low BandWidth X proxy (lbxproxy) in Solaris 8 allows local users to execute arbitrary code via a long display command line option.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0090"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://archives.neohapsis.com/archives/vulnwatch/2002-q2/0041.html",
+            "http://online.securityfocus.com/archive/1/270149",
+            "http://sunsolve.sun.com/pub-cgi/retrieve.pl?doc=fsalert/44842",
+            "http://www.esecurityonline.com/advisories/eSO3761.asp",
+            "http://www.iss.net/security_center/static/8958.php",
+            "http://www.kb.cert.org/vuls/id/188507",
+            "http://www.securityfocus.com/bid/4633",
+            "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A179",
+            "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A86"
+        ],
+        "cpe": [],
+        "published_date": "03/15/2002",
+        "modified_date": "10/09/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0091",
+        "cwe_id": null,
+        "description": "Multiple CGI scripts in CIDER SHADOW 1.5 and 1.6 allows remote attackers to execute arbitrary commands via certain form fields.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0091"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://archives.neohapsis.com/archives/bugtraq/2002-04/0400.html",
+            "http://www.esecurityonline.com/advisories/eSO2408.asp",
+            "http://www.iss.net/security_center/static/8953.php",
+            "http://www.securityfocus.com/bid/4625"
+        ],
+        "cpe": [],
+        "published_date": "03/15/2002",
+        "modified_date": "09/05/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0092",
+        "cwe_id": null,
+        "description": "CVS before 1.10.8 does not properly initialize a global variable, which allows remote attackers to cause a denial of service (server crash) via the diff capability.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0092"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://marc.info/?l=vuln-dev&m=101422243817321&w=2",
+            "http://marc.info/?l=vuln-dev&m=101433077724524&w=2",
+            "http://www.debian.org/security/2002/dsa-117",
+            "http://www.iss.net/security_center/static/8366.php",
+            "http://www.redhat.com/support/errata/RHSA-2002-026.html",
+            "http://www.securityfocus.com/bid/4234"
+        ],
+        "cpe": [],
+        "published_date": "03/15/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0094",
+        "cwe_id": null,
+        "description": "config_converters.py in BSCW (Basic Support for Cooperative Work) 3.x and versions before 4.06 allows remote attackers to execute arbitrary commands via shell metacharacters in the file name during filename conversion.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0094"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://bscw.gmd.de/WhatsNew.html",
+            "http://www.iss.net/security_center/static/7774.php",
+            "http://www.securityfocus.com/archive/1/248000",
+            "http://www.securityfocus.com/bid/3776"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "09/05/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0095",
+        "cwe_id": null,
+        "description": "The default configuration of BSCW (Basic Support for Cooperative Work) 3.x and possibly version 4 enables user self registration, which could allow remote attackers to upload files and possibly join a user community that was intended to be closed.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0095"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.iss.net/security_center/static/7775.php",
+            "http://www.securityfocus.com/archive/1/248000",
+            "http://www.securityfocus.com/bid/3777"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "09/05/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0096",
+        "cwe_id": null,
+        "description": "The installation of Geeklog 1.3 creates an extra group_assignments record which is not properly deleted, which causes the first newly created user to be added to the GroupAdmin and UserAdmin groups, which could provide that user with administrative privileges that were not intended.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0096"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://geeklog.sourceforge.net/index.php?topic=Security",
+            "http://www.iss.net/security_center/static/7780.php",
+            "http://www.securityfocus.com/archive/1/248367",
+            "http://www.securityfocus.com/bid/3783"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "09/05/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0097",
+        "cwe_id": null,
+        "description": "Geeklog 1.3 allows remote attackers to hijack user accounts, including the administrator account, by modifying the UID of a user's permanent cookie to the target account.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0097"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://geeklog.sourceforge.net/index.php?topic=Security",
+            "http://online.securityfocus.com/archive/1/249443",
+            "http://www.iss.net/security_center/static/7869.php",
+            "http://www.securityfocus.com/bid/3844"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "09/10/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0098",
+        "cwe_id": null,
+        "description": "Buffer overflow in index.cgi administration interface for Boozt! Standard 0.9.8 allows local users to execute arbitrary code via a long name field when creating a new banner.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0098"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://marc.info/?l=bugtraq&m=101027773404836&w=2",
+            "http://online.securityfocus.com/archive/1/249219",
+            "http://online.securityfocus.com/cgi-bin/vulns-item.pl?section=info&id=3787",
+            "http://www.boozt.com/news_detail.php?id=3",
+            "http://www.iss.net/security_center/static/7790.php"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0099",
+        "cwe_id": null,
+        "description": "Buffer overflow in Michael Lamont Savant Web Server 3.0 allows remote attackers to cause a denial of service (crash) via a long HTTP request to the cgi-bin directory in which the CGI program name contains a large number of . (dot) characters.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0099"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://marc.info/?l=bugtraq&m=101027722904078&w=2",
+            "http://marc.info/?l=ntbugtraq&m=101062823305479&w=2",
+            "http://www.iss.net/security_center/static/7786.php",
+            "http://www.securityfocus.com/bid/3788"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0100",
+        "cwe_id": null,
+        "description": "AOL AOLserver 3.4.2 Win32 allows remote attackers to bypass authentication and read password-protected files via a URL that directly references the file.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0100"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://archives.neohapsis.com/archives/vulnwatch/2002-q1/0005.html",
+            "http://marc.info/?l=bugtraq&m=101038936305397&w=2",
+            "http://marc.info/?l=ntbugtraq&m=101062823205474&w=2",
+            "http://www.iss.net/security_center/static/7825.php",
+            "http://www.securityfocus.com/bid/3791"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0101",
+        "cwe_id": null,
+        "description": "Microsoft Internet Explorer 6.0 and earlier allows local users to cause a denial of service via an infinite loop for modeless dialogs showModelessDialog, which causes CPU usage while the focus for the dialog is not released.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0101"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://marc.info/?l=bugtraq&m=101039104608083&w=2",
+            "http://www.iss.net/security_center/static/7826.php",
+            "http://www.securityfocus.com/bid/3789"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0102",
+        "cwe_id": null,
+        "description": "Oracle9iAS Web Cache 2.0.0.x allows remote attackers to cause a denial of service via (1) a request to TCP ports 1100, 4000, 4001, and 4002 with a large number of null characters, and (2) a request to TCP port 4000 with a large number of \".\" characters.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0102"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://otn.oracle.com/deploy/security/pdf/webcache2.pdf",
+            "http://www.securityfocus.com/bid/3760",
+            "http://www.securityfocus.com/bid/3762",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/7765"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "12/18/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0103",
+        "cwe_id": null,
+        "description": "An installer program for Oracle9iAS Web Cache 2.0.0.x creates executable and configuration files with insecure permissions, which allows local users to gain privileges by (1) running webcached or (2) obtaining the administrator password from webcache.xml.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0103"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://marc.info/?l=bugtraq&m=101041510727937&w=2",
+            "http://otn.oracle.com/deploy/security/pdf/webcache2.pdf",
+            "http://www.iss.net/security_center/static/7766.php",
+            "http://www.iss.net/security_center/static/7768.php",
+            "http://www.securityfocus.com/bid/3761",
+            "http://www.securityfocus.com/bid/3764"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0104",
+        "cwe_id": null,
+        "description": "AFTPD 5.4.4 allows remote attackers to gain sensitive information via a CD (CWD) ~ (tilde) command, which causes a core dump.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0104"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://marc.info/?l=bugtraq&m=101041333323486&w=2",
+            "http://www.iss.net/security_center/static/7832.php",
+            "http://www.securityfocus.com/bid/3806"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0105",
+        "cwe_id": null,
+        "description": "CDE dtlogin in Caldera UnixWare 7.1.0, and possibly other operating systems, allows local users to gain privileges via a symlink attack on /var/dt/Xerrors since /var/dt is world-writable.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0105"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://marc.info/?l=bugtraq&m=101060400802428&w=2",
+            "http://www.iss.net/security_center/static/7864.php",
+            "http://www.securityfocus.com/bid/3818"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0106",
+        "cwe_id": null,
+        "description": "BEA Systems Weblogic Server 6.1 allows remote attackers to cause a denial of service via a series of requests to .JSP files that contain an MS-DOS device name.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0106"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://marc.info/?l=bugtraq&m=101050440629269&w=2",
+            "http://www.iss.net/security_center/static/7808.php",
+            "http://www.securityfocus.com/bid/3816"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0107",
+        "cwe_id": null,
+        "description": "Web administration interface in CacheFlow CacheOS 4.0.13 and earlier allows remote attackers to obtain sensitive information via a series of GET requests that do not end in with HTTP/1.0 or another version string, which causes the information to be leaked in the error message.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0107"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://marc.info/?l=bugtraq&m=101052887431488&w=2",
+            "http://online.securityfocus.com/archive/1/254167",
+            "http://www.iss.net/security_center/static/7835.php",
+            "http://www.securityfocus.com/bid/3841"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0108",
+        "cwe_id": null,
+        "description": "Allaire Forums 2.0.4 and 2.0.5 and Forums! 3.0 and 3.1 allows remote authenticated users to spoof messages as other users by modifying the hidden form fields for the name and e-mail address.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0108"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://online.securityfocus.com/archive/1/249026",
+            "http://www.iss.net/security_center/static/7841.php",
+            "http://www.kb.cert.org/vuls/id/575619",
+            "http://www.securityfocus.com/bid/3827"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "11/04/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0109",
+        "cwe_id": null,
+        "description": "Linksys EtherFast BEFN2PS4, BEFSR41, and BEFSR81 Routers, and possibly other products, allow remote attackers to gain sensitive information and cause a denial of service via an SNMP query for the default community string \"public,\" which causes the router to change its configuration and send SNMP trap information back to the system that initiated the query.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0109"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.4 MEDIUM",
+        "hyperlinks": [
+            "http://marc.info/?l=bugtraq&m=101039288111680&w=2",
+            "http://www.iss.net/security_center/static/7827.php",
+            "http://www.securityfocus.com/bid/3795",
+            "http://www.securityfocus.com/bid/3797"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0110",
+        "cwe_id": null,
+        "description": "Nevrona Designs MiraMail 1.04 and earlier stores authentication information such as POP usernames and passwords in plaintext in a .ini file, which allows an attacker to gain privileges by reading the passwords from the file.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0110"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://marc.info/?l=bugtraq&m=101063476715154&w=2",
+            "http://www.iss.net/security_center/static/7855.php",
+            "http://www.kb.cert.org/vuls/id/245707",
+            "http://www.securityfocus.com/bid/3843"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0111",
+        "cwe_id": null,
+        "description": "Directory traversal vulnerability in Funsoft Dino's Webserver 1.2 and earlier allows remote attackers to read files or execute arbitrary commands via a .. (dot dot) in the URL.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0111"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://marc.info/?l=bugtraq&m=101062213627501&w=2",
+            "http://online.securityfocus.com/cgi-bin/vulns-item.pl?section=info&id=3861",
+            "http://www.iss.net/security_center/static/7853.php"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0112",
+        "cwe_id": null,
+        "description": "Etype Eserv 2.97 allows remote attackers to view password protected files via /./ in the URL.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0112"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://archives.neohapsis.com/archives/vulnwatch/2002-q1/0010.html",
+            "http://marc.info/?l=bugtraq&m=101062172226812&w=2",
+            "http://marc.info/?l=ntbugtraq&m=101062823505486&w=2",
+            "http://online.securityfocus.com/archive/1/249734",
+            "http://www.iss.net/security_center/static/7849.php",
+            "http://www.securityfocus.com/bid/3838"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0113",
+        "cwe_id": null,
+        "description": "EMC NetWorker (formerly Legato NetWorker) before 7.0 stores log files in the /nsr/logs/ directory with world-readable permissions, which allows local users to read sensitive information and possibly gain privileges.  NOTE: this was originally reported for Legato NetWorker 6.1 on the Solaris 7 platform.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0113"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://online.securityfocus.com/archive/1/249420",
+            "http://www.iss.net/security_center/static/7897.php",
+            "http://www.securityfocus.com/bid/3840"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "03/29/2012",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0114",
+        "cwe_id": null,
+        "description": "EMC NetWorker (formerly Legato NetWorker) before 7.0 stores passwords in plaintext in the daemon.log file, which allows local users to gain privileges by reading the password from the file.  NOTE: this was originally reported for Legato NetWorker 6.1 on the Solaris 7 platform.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0114"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://online.securityfocus.com/archive/1/249420",
+            "http://www.iss.net/security_center/static/7898.php",
+            "http://www.securityfocus.com/bid/3842"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "03/29/2012",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0115",
+        "cwe_id": null,
+        "description": "Snort 1.8.3 does not properly define the minimum ICMP header size, which allows remote attackers to cause a denial of service (crash and core dump) via a malformed ICMP packet.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0115"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://online.securityfocus.com/archive/1/249340",
+            "http://online.securityfocus.com/cgi-bin/archive.pl?id=1&start=2002-03-08&end=2002-03-14&mid=249623&threads=1",
+            "http://www.iss.net/security_center/static/7874.php",
+            "http://www.securityfocus.com/bid/3849"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "09/10/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0116",
+        "cwe_id": null,
+        "description": "Palm OS 3.5h and possibly other versions, as used in Handspring Visor and Xircom products, allows remote attackers to cause a denial of service via a TCP connect scan, e.g. from nmap.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0116"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://marc.info/?l=bugtraq&m=101069677929208&w=2",
+            "http://marc.info/?l=bugtraq&m=101070523119956&w=2",
+            "http://www.iss.net/security_center/static/7865.php",
+            "http://www.securityfocus.com/bid/3847"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0117",
+        "cwe_id": null,
+        "description": "Cross-site scripting vulnerability in Yet Another Bulletin Board (YaBB) 1 Gold SP 1 and earlier allows remote attackers to execute arbitrary script and steal cookies via a message containing encoded Javascript in an IMG tag.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0117"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://online.securityfocus.com/archive/1/249031",
+            "http://online.securityfocus.com/cgi-bin/vulns-item.pl?section=info&id=3828",
+            "http://www.iss.net/security_center/static/7840.php",
+            "http://www.yabbforum.com/"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "09/05/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0118",
+        "cwe_id": null,
+        "description": "Cross-site scripting vulnerability in Infopop Ultimate Bulletin Board (UBB) 6.2.0 Beta Release 1.0 allows remote attackers to execute arbitrary script and steal cookies via a message containing encoded Javascript in an IMG tag.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0118"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://online.securityfocus.com/archive/1/249031",
+            "http://www.iss.net/security_center/static/7838.php",
+            "http://www.securityfocus.com/bid/3829"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "11/04/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0119",
+        "cwe_id": null,
+        "description": "Alcatel Speed Touch Home ADSL Modem allows remote attackers to cause a denial of service (reboot) via a network scan with unusual packets, such as nmap with OS detection.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0119"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://online.securityfocus.com/archive/1/249746",
+            "http://www.iss.net/security_center/static/7893.php",
+            "http://www.securityfocus.com/bid/3851"
+        ],
+        "cpe": [
+            "*cpe:2.3:h:alcatel:speed_touch_home:0.0\\,adsl:*:*:*:*:*:*:*",
+            "*cpe:2.3:h:alcatel:speed_touch_home:0.0\\,adsl:*:*:*:*:*:*:*",
+            "*cpe:2.3:h:alcatel:speed_touch_home:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "03/25/2002",
+        "modified_date": "07/31/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0120",
+        "cwe_id": null,
+        "description": "Apple Palm Desktop 4.0b76 and 4.0b77 creates world-readable backup files and folders when a hotsync is performed, which could allow a local user to obtain sensitive information.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0120"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://online.securityfocus.com/archive/1/250093",
+            "http://www.iss.net/security_center/static/7937.php",
+            "http://www.securityfocus.com/bid/3863"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "09/10/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0121",
+        "cwe_id": null,
+        "description": "PHP 4.0 through 4.1.1 stores session IDs in temporary files whose name contains the session ID, which allows local users to hijack web connections.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0121"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://online.securityfocus.com/archive/1/250196",
+            "http://www.iss.net/security_center/static/7908.php",
+            "http://www.securityfocus.com/bid/3873"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "09/10/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0122",
+        "cwe_id": null,
+        "description": "Siemens 3568i WAP mobile phones allows remote attackers to cause a denial of service (crash) via an SMS message containing unusual characters.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0122"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://online.securityfocus.com/archive/1/250115",
+            "http://www.iss.net/security_center/static/7902.php",
+            "http://www.securityfocus.com/bid/3870"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "09/10/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0123",
+        "cwe_id": null,
+        "description": "MDG Computer Services Web Server 4D WS4D/eCommerce 3.0 and earlier, and possibly 3.5.3, allows remote attackers to cause a denial of service and possibly execute arbitrary commands via a long HTTP request.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0123"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://online.securityfocus.com/archive/1/250242",
+            "http://www.iss.net/security_center/static/7879.php",
+            "http://www.securityfocus.com/bid/3874"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "09/10/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0124",
+        "cwe_id": null,
+        "description": "MDG Computer Services Web Server 4D/eCommerce 3.5.3 allows remote attackers to exploit directory traversal vulnerability via a ../ (dot dot) containing URL-encoded slashes in the HTTP request.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0124"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://online.securityfocus.com/archive/1/250231",
+            "http://www.iss.net/security_center/static/7878.php",
+            "http://www.securityfocus.com/bid/3872"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "09/10/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0125",
+        "cwe_id": null,
+        "description": "Buffer overflow in ClanLib library 0.5 may allow local users to execute arbitrary code in games that use the library, such as (1) Super Methane Brothers, (2) Star War, (3) Kwirk, (4) Clankanoid, and others, via a long HOME environment variable.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0125"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://online.securityfocus.com/archive/1/250414",
+            "http://www.iss.net/security_center/static/7905.php",
+            "http://www.securityfocus.com/bid/3877"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "09/10/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0126",
+        "cwe_id": null,
+        "description": "Buffer overflow in BlackMoon FTP Server 1.0 through 1.5 allows remote attackers to execute arbitrary code via a long argument to (1) USER, (2) PASS, or (3) CWD.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0126"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://members.rogers.com/blackmoon2k/pages/news_page.html",
+            "http://online.securityfocus.com/archive/1/250543",
+            "http://www.iss.net/security_center/static/7895.php",
+            "http://www.securityfocus.com/bid/3884"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "09/10/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0127",
+        "cwe_id": null,
+        "description": "Netgear RP114 Cable/DSL Web Safe Router Firmware 3.26, when configured to block traffic below port 1024, allows remote attackers to cause a denial of service (hang) via a port scan of the WAN port.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0127"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://online.securityfocus.com/archive/1/250405",
+            "http://www.securityfocus.com/bid/3876"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "11/04/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0128",
+        "cwe_id": null,
+        "description": "cgitest.exe in Sambar Server 5.1 before Beta 4 allows remote attackers to cause a denial of service, and possibly execute arbitrary code, via a long argument.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0128"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.der-keiler.de/Mailing-Lists/securityfocus/bugtraq/2002-02/0083.html",
+            "http://www.iss.net/security_center/static/7894.php",
+            "http://www.sambar.com/security.htm",
+            "http://www.securityfocus.com/archive/1/250545",
+            "http://www.securityfocus.com/bid/3885"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "09/05/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0129",
+        "cwe_id": null,
+        "description": "efax 0.9 and earlier, when installed setuid root, allows local users to read arbitrary files via the -d option, which prints the contents of the file in a warning message.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0129"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://marc.info/?l=vuln-dev&m=101114350330912&w=2",
+            "http://seclists.org/bugtraq/2002/Jan/0212.html",
+            "http://www.iss.net/security_center/static/7921.php",
+            "http://www.securityfocus.com/bid/3895"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0130",
+        "cwe_id": null,
+        "description": "Buffer overflow in efax 0.9 and earlier, when installed setuid root, allows local users to execute arbitrary code via a long -x argument.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0130"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://marc.info/?l=vuln-dev&m=101133782204289&w=2",
+            "http://seclists.org/bugtraq/2002/Jan/0212.html",
+            "http://www.iss.net/security_center/static/7920.php",
+            "http://www.securityfocus.com/bid/3894"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0131",
+        "cwe_id": null,
+        "description": "ActivePython ActiveX control for Python in the AXScript package, when used in Internet Explorer, does not prevent a script from reading files from the client's filesystem, which allows remote attackers to read arbitrary files via a malicious web page containing Python script.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0131"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://marc.info/?t=101113015900001&r=1&w=2",
+            "http://www.iss.net/security_center/static/7910.php",
+            "http://www.securityfocus.com/archive/1/250814",
+            "http://www.securityfocus.com/bid/3893"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0132",
+        "cwe_id": null,
+        "description": "Buffer overflow in Chinput 3.0 allows local users to execute arbitrary code via a long HOME environment variable.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0132"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://online.securityfocus.com/archive/1/250815",
+            "http://www.iss.net/security_center/static/7911.php",
+            "http://www.securityfocus.com/bid/3896"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "09/10/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0133",
+        "cwe_id": null,
+        "description": "Buffer overflows in Avirt Gateway Suite 4.2 allow remote attackers to cause a denial of service and possibly execute arbitrary code via (1) long header fields to the HTTP proxy, or (2) a long string to the telnet proxy.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0133"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://marc.info/?l=bugtraq&m=101164598828092&w=2",
+            "http://marc.info/?l=bugtraq&m=101366658112809&w=2",
+            "http://marc.info/?l=bugtraq&m=101424723728817&w=2",
+            "http://online.securityfocus.com/archive/1/251055",
+            "http://www.iss.net/security_center/static/7916.php",
+            "http://www.iss.net/security_center/static/7918.php",
+            "http://www.securityfocus.com/bid/3904",
+            "http://www.securityfocus.com/bid/3905"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0134",
+        "cwe_id": null,
+        "description": "Telnet proxy in Avirt Gateway Suite 4.2 does not require authentication for connecting to the proxy system itself, which allows remote attackers to list file contents of the proxy and execute arbitrary commands via a \"dos\" command.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0134"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://marc.info/?l=bugtraq&m=101131669102843&w=2",
+            "http://marc.info/?l=bugtraq&m=101424723728817&w=2",
+            "http://www.iss.net/security_center/static/7915.php",
+            "http://www.securityfocus.com/bid/3901"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0135",
+        "cwe_id": null,
+        "description": "Netopia Timbuktu Pro 6.0.1 and earlier allows remote attackers to cause a denial of service (crash) via a series of connections to one of the ports (1417 - 1420).",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0135"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://online.securityfocus.com/archive/1/251582",
+            "http://www.iss.net/security_center/static/7935.php",
+            "http://www.securityfocus.com/bid/3918"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "09/10/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0136",
+        "cwe_id": null,
+        "description": "Microsoft Internet Explorer 5.5 on Windows 98 allows remote web pages to cause a denial of service (hang) via extremely long values for form fields such as INPUT and TEXTAREA, which can be automatically filled via Javascript.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0136"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://online.securityfocus.com/archive/1/250592",
+            "http://www.securityfocus.com/bid/3892",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/7938"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "07/10/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0137",
+        "cwe_id": null,
+        "description": "CDRDAO 1.1.4 and 1.1.5 allows local users to overwrite arbitrary files via a symlink attack on the $HOME/.cdrdao configuration file.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0137"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://marc.info/?l=bugtraq&m=101102759631000&w=2",
+            "http://www.securityfocus.com/bid/3865"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0138",
+        "cwe_id": null,
+        "description": "CDRDAO 1.1.4 and 1.1.5 allows local users to read arbitrary files via the show-data command.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0138"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://marc.info/?l=bugtraq&m=101102759631000&w=2",
+            "http://marc.info/?l=bugtraq&m=101111688819855&w=2"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0139",
+        "cwe_id": null,
+        "description": "Pi-Soft SpoonFTP 1.1 and earlier allows remote attackers to redirect traffic to other sites (aka FTP bounce) via the PORT command.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0139"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://online.securityfocus.com/archive/1/251422",
+            "http://www.iss.net/security_center/static/7943.php",
+            "http://www.pi-soft.com/spoonftp/index.shtml",
+            "http://www.securityfocus.com/bid/3910"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "09/10/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0140",
+        "cwe_id": null,
+        "description": "Domain Name Relay Daemon (dnrd) 2.10 and earlier allows remote malicious DNS sites to cause a denial of service and possibly execute arbitrary code via a long or malformed DNS reply, which is not handled properly by parse_query, get_objectname, and possibly other functions.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0140"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.iss.net/security_center/static/7957.php",
+            "http://www.securityfocus.com/bid/3928"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "09/10/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0141",
+        "cwe_id": null,
+        "description": "Maelstrom GPL 3.0.1 allows local users to overwrite arbitrary files of other Maelstrom users via a symlink attack on the /tmp/f file.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0141"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:H/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:H/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "1.2 LOW",
+        "hyperlinks": [
+            "http://online.securityfocus.com/archive/1/251419",
+            "http://www.iss.net/security_center/static/7939.php",
+            "http://www.securityfocus.com/bid/3911"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "11/04/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0142",
+        "cwe_id": null,
+        "description": "CGI handler in John Roy Pi3Web for Windows 2.0 beta 1 and 2 allows remote attackers to cause a denial of service (crash) via a series of requests whose physical path is exactly 260 characters long and ends in a series of . (dot) characters.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0142"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://marc.info/?l=bugtraq&m=101164598828093&w=2",
+            "http://marc.info/?l=ntbugtraq&m=101102275316307&w=2",
+            "http://online.securityfocus.com/archive/1/250126",
+            "http://sourceforge.net/tracker/index.php?func=detail&aid=505583&group_id=17753&atid=317753",
+            "http://www.iss.net/security_center/static/7880.php",
+            "http://www.securityfocus.com/bid/3866"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0143",
+        "cwe_id": null,
+        "description": "Buffer overflow in Eterm of Enlightenment Imlib2 1.0.4 and earlier allows local users to execute arbitrary code via a long HOME environment variable.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0143"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://online.securityfocus.com/archive/1/250145",
+            "http://online.securityfocus.com/archive/1/251597",
+            "http://www.iss.net/security_center/static/7896.php",
+            "http://www.securityfocus.com/bid/3868"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "09/10/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0144",
+        "cwe_id": null,
+        "description": "Directory traversal vulnerability in chuid 1.2 and earlier allows remote attackers to change the ownership of files outside of the upload directory via a .. (dot dot) attack.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0144"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://online.securityfocus.com/archive/1/251763",
+            "http://www.iss.net/security_center/static/7976.php",
+            "http://www.securityfocus.com/bid/3937"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "09/10/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0145",
+        "cwe_id": null,
+        "description": "chuid 1.2 and earlier does not properly verify the ownership of files that will be changed, which allows remote attackers to change files owned by other users, such as root.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0145"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://online.securityfocus.com/archive/1/251763",
+            "http://www.securityfocus.com/bid/3938",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/7976"
+        ],
+        "cpe": [],
+        "published_date": "03/25/2002",
+        "modified_date": "07/10/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0162",
+        "cwe_id": null,
+        "description": "LogWatch before 2.5 allows local users to execute arbitrary code via a symlink attack on the logwatch temporary directory.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0162"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:H/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:H/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.2 MEDIUM",
+        "hyperlinks": [
+            "http://list.kaybee.org/archives/logwatch-announce/2002-March/000002.html",
+            "http://marc.info/?l=bugtraq&m=101724766216872",
+            "http://online.securityfocus.com/archive/82/264233",
+            "http://www.iss.net/security_center/static/8652.php",
+            "http://www.securityfocus.com/bid/4374"
+        ],
+        "cpe": [],
+        "published_date": "03/27/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0163",
+        "cwe_id": null,
+        "description": "Heap-based buffer overflow in Squid before 2.4 STABLE4, and Squid 2.5 and 2.6 until March 12, 2002 distributions, allows remote attackers to cause a denial of service, and possibly execute arbitrary code, via compressed DNS responses.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0163"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "ftp://ftp.caldera.com/pub/security/OpenLinux/CSSA-2002-017.1.txt",
+            "ftp://ftp.freebsd.org/pub/FreeBSD/CERT/advisories/FreeBSD-SA-02:19.squid.asc",
+            "http://marc.info/?l=bugtraq&m=101716495023226&w=2",
+            "http://rhn.redhat.com/errata/RHSA-2002-051.html",
+            "http://www.iss.net/security_center/static/8628.php",
+            "http://www.linux-mandrake.com/en/security/2002/MDKSA-2002-027.php",
+            "http://www.securityfocus.com/bid/4363",
+            "http://www.squid-cache.org/Advisories/SQUID-2002_2.txt"
+        ],
+        "cpe": [],
+        "published_date": "03/26/2002",
+        "modified_date": "10/17/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-0164",
+        "cwe_id": null,
+        "description": "Vulnerability in the MIT-SHM extension of the X server on Linux (XFree86) 4.2.1 and earlier allows local users to read and write arbitrary shared memory, possibly to cause a denial of service or gain privileges.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0164"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "ftp://patches.sgi.com/support/free/security/advisories/20021001-01-P",
+            "ftp://stage.caldera.com/pub/security/openunix/CSSA-2002-SCO.14/CSSA-2002-SCO.14.txt",
+            "http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=000529",
+            "http://marc.info/?l=bugtraq&m=103547625009363&w=2",
+            "http://sunsolve.sun.com/search/document.do?assetkey=1-66-228529-1",
+            "http://sunsolve.sun.com/search/document.do?assetkey=1-77-1017429.1-1",
+            "http://www.debian.org/security/2003/dsa-380",
+            "http://www.linuxsecurity.com/advisories/caldera_advisory-2006.html",
+            "http://www.redhat.com/support/errata/RHSA-2003-067.html",
+            "http://www.securityfocus.com/bid/4396",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/8706"
+        ],
+        "cpe": [],
+        "published_date": "03/15/2002",
+        "modified_date": "07/10/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2002-1619",
+        "cwe_id": null,
+        "description": "Buffer overflow in the FC client for IBM AIX 4.3.x allows remote attackers to cause a denial of service (crash and core dump).",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-1619"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-1.ibm.com/support/search.wss?rs=0&q=IY27310&apar=only",
+            "http://www.kb.cert.org/vuls/id/152955",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/10127"
+        ],
+        "cpe": [],
+        "published_date": "03/08/2002",
+        "modified_date": "07/10/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "3"
+    },
+    {
+        "cve_id": "CVE-2001-1165",
+        "cwe_id": null,
+        "description": "Intego FileGuard 4.0 uses weak encryption to store user information and passwords, which allows local users to gain privileges by decrypting the information, e.g., with the Disengage tool.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2001-1165"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://www.iss.net/security_center/static/7018.php",
+            "http://www.securemac.com/fileguard.php#disengage",
+            "http://www.securityfocus.com/bid/3213"
+        ],
+        "cpe": [],
+        "published_date": "04/01/2002",
+        "modified_date": "09/05/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2001-1171",
+        "cwe_id": null,
+        "description": "Check Point Firewall-1 3.0b through 4.0 SP1 follows symlinks and creates a world-writable temporary .cpp file when compiling Policy rules, which could allow local users to gain privileges or modify the firewall policy.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2001-1171"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://archives.neohapsis.com/archives/bugtraq/2001-09/0046.html"
+        ],
+        "cpe": [],
+        "published_date": "04/01/2002",
+        "modified_date": "09/05/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2001-1174",
+        "cwe_id": null,
+        "description": "Buffer overflow in Elm 2.5.5 and earlier allows remote attackers to execute arbitrary code via a long Message-ID header.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2001-1174"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.linux-mandrake.com/en/security/2001/MDKSA-2001-067.php",
+            "http://www.redhat.com/support/errata/RHSA-2001-091.html",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/6852"
+        ],
+        "cpe": [],
+        "published_date": "04/01/2002",
+        "modified_date": "10/09/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2001-1175",
+        "cwe_id": null,
+        "description": "vipw in the util-linux package before 2.10 causes /etc/shadow to be world-readable in some cases, which would make it easier for local users to perform brute force password guessing.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2001-1175"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.redhat.com/support/errata/RHSA-2001-095.html",
+            "http://www.redhat.com/support/errata/RHSA-2001-132.html",
+            "http://www.securityfocus.com/bid/3036",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/6851"
+        ],
+        "cpe": [],
+        "published_date": "04/01/2002",
+        "modified_date": "10/09/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2002-0017",
+        "cwe_id": null,
+        "description": "Buffer overflow in SNMP daemon (snmpd) on SGI IRIX 6.5 through 6.5.15m allows remote attackers to execute arbitrary code via an SNMP request.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0017"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "ftp://patches.sgi.com/support/free/security/advisories/20020201-01-P",
+            "http://www.iss.net/security_center/alerts/advise113.php",
+            "http://www.iss.net/security_center/static/7846.php",
+            "http://www.securityfocus.com/bid/4421"
+        ],
+        "cpe": [],
+        "published_date": "04/03/2002",
+        "modified_date": "09/05/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2002-0037",
+        "cwe_id": null,
+        "description": "Lotus Domino Servers 5.x, 4.6x, and 4.5x allows attackers to bypass the intended Reader and Author access list for a document's object via a Notes API call (NSFDbReadObject) that directly accesses the object.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0037"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://archives.neohapsis.com/archives/bugtraq/2001-09/0147.html",
+            "http://archives.neohapsis.com/archives/bugtraq/2001-09/0150.html",
+            "http://www.iss.net/security_center/static/10095.php",
+            "http://www.kb.cert.org/vuls/id/657899"
+        ],
+        "cpe": [],
+        "published_date": "04/22/2002",
+        "modified_date": "09/05/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2002-0041",
+        "cwe_id": null,
+        "description": "Unknown vulnerability in Mail for SGI IRIX 6.5 through 6.5.15f, and possibly earlier versions, when running with the -R option, allows local and remote attackers to cause a core dump.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0041"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "ftp://patches.sgi.com/support/free/security/advisories/20020401-01-P",
+            "http://www.ciac.org/ciac/bulletins/m-067.shtml",
+            "http://www.iss.net/security_center/static/8835.php",
+            "http://www.securityfocus.com/bid/4499"
+        ],
+        "cpe": [],
+        "published_date": "04/22/2002",
+        "modified_date": "09/05/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2002-0051",
+        "cwe_id": null,
+        "description": "Windows 2000 allows local users to prevent the application of new group policy settings by opening Group Policy files with exclusive-read access.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0051"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://online.securityfocus.com/archive/1/244329",
+            "http://www.securityfocus.com/bid/4438",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2002/ms02-016",
+            "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A38"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:datacenter_server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:advanced_server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:datacenter_server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:advanced_server:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_2000:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/04/2002",
+        "modified_date": "04/30/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2002-0064",
+        "cwe_id": null,
+        "description": "Funk Software Proxy Host 3.x is installed with insecure permissions for the registry and the file system.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0064"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://razor.bindview.com/publish/advisories/adv_FunkProxy.html",
+            "http://www.iss.net/security_center/static/8791.php",
+            "http://www.securityfocus.com/bid/4458"
+        ],
+        "cpe": [],
+        "published_date": "04/22/2002",
+        "modified_date": "09/10/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2002-0065",
+        "cwe_id": null,
+        "description": "Funk Software Proxy Host 3.x uses weak encryption for the Proxy Host password, which allows local users to gain privileges by recovering the passwords from the PHOST.INI file or the Windows registry.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0065"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://razor.bindview.com/publish/advisories/adv_FunkProxy.html",
+            "http://www.iss.net/security_center/static/8792.php",
+            "http://www.securityfocus.com/bid/4459"
+        ],
+        "cpe": [],
+        "published_date": "04/22/2002",
+        "modified_date": "09/10/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2002-0066",
+        "cwe_id": null,
+        "description": "Funk Software Proxy Host 3.x before 3.09A creates a Named Pipe that does not require authentication and is installed with insecure access control, which allows local and possibly remote users to use the Proxy Host's configuration utilities and gain privileges.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0066"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://razor.bindview.com/publish/advisories/adv_FunkProxy.html",
+            "http://www.iss.net/security_center/static/8793.php",
+            "http://www.securityfocus.com/bid/4460"
+        ],
+        "cpe": [],
+        "published_date": "04/22/2002",
+        "modified_date": "09/10/2008",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2002-0071",
+        "cwe_id": null,
+        "description": "Buffer overflow in the ism.dll ISAPI extension that implements HTR scripting in Internet Information Server (IIS) 4.0 and 5.0 allows attackers to cause a denial of service or execute arbitrary code via HTR requests with long variable names.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0071"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://marc.info/?l=bugtraq&m=101854087828265&w=2",
+            "http://www.atstake.com/research/advisories/2002/a041002-1.txt",
+            "http://www.cert.org/advisories/CA-2002-09.html",
+            "http://www.cisco.com/warp/public/707/Microsoft-IIS-vulnerabilities-MS02-018.shtml",
+            "http://www.iss.net/security_center/static/8799.php",
+            "http://www.kb.cert.org/vuls/id/363715",
+            "http://www.securityfocus.com/bid/4474",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2002/ms02-018",
+            "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A130",
+            "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A45"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:microsoft:internet_information_server:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:internet_information_server:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:internet_information_services:5.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2002",
+        "modified_date": "10/30/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2002-0072",
+        "cwe_id": null,
+        "description": "The w3svc.dll ISAPI filter in Front Page Server Extensions and ASP.NET for Internet Information Server (IIS) 4.0, 5.0, and 5.1 does not properly handle the error condition when a long URL is provided, which allows remote attackers to cause a denial of service (crash) when the URL parser accesses a null pointer.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0072"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://marc.info/?l=bugtraq&m=101853851025208&w=2",
+            "http://www.cert.org/advisories/CA-2002-09.html",
+            "http://www.cisco.com/warp/public/707/Microsoft-IIS-vulnerabilities-MS02-018.shtml",
+            "http://www.iss.net/security_center/static/8800.php",
+            "http://www.kb.cert.org/vuls/id/521059",
+            "http://www.securityfocus.com/bid/4479",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2002/ms02-018"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:microsoft:internet_information_server:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:internet_information_server:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:internet_information_server:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:internet_information_services:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:internet_information_server:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:internet_information_services:5.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2002",
+        "modified_date": "11/23/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2002-0073",
+        "cwe_id": null,
+        "description": "The FTP service in Internet Information Server (IIS) 4.0, 5.0 and 5.1 allows attackers who have established an FTP session to cause a denial of service via a specially crafted status request containing glob characters.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0073"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://archives.neohapsis.com/archives/vulnwatch/2002-q2/0023.html",
+            "http://marc.info/?l=bugtraq&m=101901273810598&w=2",
+            "http://www.cert.org/advisories/CA-2002-09.html",
+            "http://www.cisco.com/warp/public/707/Microsoft-IIS-vulnerabilities-MS02-018.shtml",
+            "http://www.digitaloffense.net/msftpd/advisory.txt",
+            "http://www.iss.net/security_center/static/8801.php",
+            "http://www.kb.cert.org/vuls/id/412203",
+            "http://www.securityfocus.com/bid/4482",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2002/ms02-018",
+            "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A24",
+            "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A35"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:microsoft:internet_information_server:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:internet_information_server:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:internet_information_server:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:internet_information_services:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:internet_information_server:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:internet_information_services:5.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2002",
+        "modified_date": "11/23/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "4"
+    },
+    {
+        "cve_id": "CVE-2002-0074",
+        "cwe_id": null,
+        "description": "Cross-site scripting vulnerability in Help File search facility for Internet Information Server (IIS) 4.0, 5.0 and 5.1 allows remote attackers to embed scripts into another user's session.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2002-0074"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://seclists.org/bugtraq/2002/Apr/0126.html",
+            "http://www.cert.org/advisories/CA-2002-09.html",
+            "http://www.cgisecurity.com/advisory/9.txt",
+            "http://www.cisco.com/warp/public/707/Microsoft-IIS-vulnerabilities-MS02-018.shtml",
+            "http://www.iss.net/security_center/static/8802.php",
+            "http://www.kb.cert.org/vuls/id/883091",
+            "http://www.securityfocus.com/bid/4483",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2002/ms02-018",
+            "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A46"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:microsoft:internet_information_server:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:internet_information_server:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:internet_information_server:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:internet_information_services:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:internet_information_server:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:internet_information_services:5.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "04/22/2002",
+        "modified_date": "11/23/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2002",
+        "month": "4"
+    }
+]

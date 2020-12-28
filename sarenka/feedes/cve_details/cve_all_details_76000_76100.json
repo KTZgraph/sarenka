@@ -1,0 +1,3539 @@
+[
+    {
+        "cve_id": "CVE-2016-2059",
+        "cwe_id": "CWE-269",
+        "description": "The msm_ipc_router_bind_control_port function in net/ipc_router/ipc_router_core.c in the IPC router kernel module for the Linux kernel 3.x, as used in Qualcomm Innovation Center (QuIC) Android contributions for MSM devices and other products, does not verify that a port is a client port, which allows attackers to gain privileges or cause a denial of service (race condition and list corruption) by making many BIND_CONTROL_PORT ioctl calls.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.0 HIGH",
+        "base_score_v2": "4.4 MEDIUM",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-10-01.html",
+            "http://www.securityfocus.com/bid/90230",
+            "http://www.securitytracker.com/id/1035765",
+            "https://us.codeaurora.org/cgit/quic/la/kernel/msm-3.18/commit/?id=9e8bdd63f7011dff5523ea435433834b3702398d"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc1:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:3.0:rc2:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:3.0:rc3:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:3.0:rc4:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:3.0:rc5:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:3.0:rc6:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:3.0:rc7:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:3.0.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:3.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc2:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc3:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc4:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc5:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc6:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc7:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.18.32:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.18.31:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.18.30:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.18.2",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.18.32:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.18.31:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.18.30:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.18.2",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.18.32:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.18.31:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.18.30:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.18.2",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.18.32:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.18.31:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.18.32:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.18.31:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.18.30:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.18.2"
+        ],
+        "published_date": "05/05/2016",
+        "modified_date": "08/03/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2062",
+        "cwe_id": "CWE-190",
+        "description": "The adreno_perfcounter_query_group function in drivers/gpu/msm/adreno_perfcounter.c in the Adreno GPU driver for the Linux kernel 3.x, as used in Qualcomm Innovation Center (QuIC) Android contributions for MSM devices and other products, uses an incorrect integer data type, which allows attackers to cause a denial of service (integer overflow, heap-based buffer overflow, and incorrect memory allocation) or possibly have unspecified other impact via a crafted IOCTL_KGSL_PERFCOUNTER_QUERY ioctl call.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-06-01.html",
+            "http://www.securitytracker.com/id/1035766",
+            "https://codeaurora.org/cgit/quic/la/kernel/msm-3.18/commit/?id=27c95b64b2e4b5ff1288cbaa6e353dd803d71576"
+        ],
+        "cpe": [
+            "cpe:2.3:h:google:nexus_5x:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:google:nexus_6p:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc2:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc3:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc4:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc5:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc6:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc7:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.18.32:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.18.31:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.18.30:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.18.2"
+        ],
+        "published_date": "05/05/2016",
+        "modified_date": "08/03/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2015-0857",
+        "cwe_id": "CWE-77",
+        "description": "Cool Projects TarDiff allows remote attackers to execute arbitrary commands via shell metacharacters in the name of a (1) tar file or (2) file within a tar file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.debian.org/security/2016/dsa-3562",
+            "https://anonscm.debian.org/cgit/collab-maint/tardiff.git/commit/?id=9bd6a07bc204472ac27242cea16f89943b43003a",
+            "https://anonscm.debian.org/cgit/collab-maint/tardiff.git/commit/?id=a18e8df51511df276e61dbccdbe1714fc53af965"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/06/2016",
+        "modified_date": "05/09/2016",
+        "vulnerability_source": "Debian GNU/Linux",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2015-0858",
+        "cwe_id": "CWE-59",
+        "description": "Cool Projects TarDiff allows local users to write to arbitrary files via a symlink attack on a pathname in a /tmp/tardiff-$$ temporary directory.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "3.3 LOW",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.debian.org/security/2016/dsa-3562",
+            "https://anonscm.debian.org/cgit/collab-maint/tardiff.git/commit/?id=9bd6a07bc204472ac27242cea16f89943b43003a"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:tardiff_project:tardiff:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/06/2016",
+        "modified_date": "05/09/2016",
+        "vulnerability_source": "Debian GNU/Linux",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2015-8863",
+        "cwe_id": "CWE-119",
+        "description": "Off-by-one error in the tokenadd function in jv_parse.c in jq allows remote attackers to cause a denial of service (crash) via a long JSON-encoded number, which triggers a heap-based buffer overflow.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-updates/2016-05/msg00012.html",
+            "http://lists.opensuse.org/opensuse-updates/2016-05/msg00014.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-1098.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-1099.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-1106.html",
+            "http://www.openwall.com/lists/oss-security/2016/04/23/1",
+            "http://www.openwall.com/lists/oss-security/2016/04/23/2",
+            "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=802231",
+            "https://github.com/stedolan/jq/commit/8eb1367ca44e772963e704a700ef72ae2e12babd",
+            "https://github.com/stedolan/jq/issues/995",
+            "https://security.gentoo.org/glsa/201612-20"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:novell:opensuse:13.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:novell:leap:42.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:novell:opensuse:13.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:opensuse:13.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:novell:leap:42.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:leap:42.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:jq_project:jq:1.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/06/2016",
+        "modified_date": "10/30/2018",
+        "vulnerability_source": "Debian GNU/Linux",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2015-8868",
+        "cwe_id": "CWE-119",
+        "description": "Heap-based buffer overflow in the ExponentialFunction::ExponentialFunction function in Poppler before 0.40.0 allows remote attackers to cause a denial of service (memory corruption and crash) or possibly execute arbitrary code via an invalid blend mode in the ExtGState dictionary in a crafted PDF document.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://lists.fedoraproject.org/pipermail/package-announce/2016-April/183107.html",
+            "http://lists.fedoraproject.org/pipermail/package-announce/2016-April/183142.html",
+            "http://lists.opensuse.org/opensuse-updates/2016-05/msg00068.html",
+            "http://lists.opensuse.org/opensuse-updates/2016-06/msg00077.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2580.html",
+            "http://www.debian.org/security/2016/dsa-3563",
+            "http://www.openwall.com/lists/oss-security/2016/04/12/1",
+            "http://www.securityfocus.com/bid/89324",
+            "http://www.ubuntu.com/usn/USN-2958-1",
+            "https://bugs.freedesktop.org/show_bug.cgi?id=93476",
+            "https://cgit.freedesktop.org/poppler/poppler/commit/?id=b3425dd3261679958cd56c0f71995c15d2124433",
+            "https://poppler.freedesktop.org/releases.html",
+            "https://security.gentoo.org/glsa/201611-15"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:freedesktop:poppler:0.39.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/06/2016",
+        "modified_date": "01/04/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2094",
+        "cwe_id": "CWE-399",
+        "description": "The HTTPS NIO Connector allows remote attackers to cause a denial of service (thread consumption) by opening a socket and not sending an SSL handshake, aka a read-timeout vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2016-0595.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-0596.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-0597.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-0598.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-0599.html",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1308465"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jboss:enterprise_application_platform:6.4.6:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/06/2016",
+        "modified_date": "05/10/2016",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-4074",
+        "cwe_id": "CWE-119",
+        "description": "The jv_dump_term function in jq 1.5 allows remote attackers to cause a denial of service (stack consumption and application crash) via a crafted JSON file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/04/24/3",
+            "http://www.openwall.com/lists/oss-security/2016/04/24/4",
+            "https://github.com/NixOS/nixpkgs/pull/18908",
+            "https://github.com/stedolan/jq/",
+            "https://github.com/stedolan/jq/issues/1136"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jq_project:jq:1.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/06/2016",
+        "modified_date": "11/30/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-4422",
+        "cwe_id": "CWE-287",
+        "description": "The pam_sm_authenticate function in pam_sshauth.c in libpam-sshauth might allow context-dependent attackers to bypass authentication or gain privileges via a system user account.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.debian.org/security/2016/dsa-3567",
+            "https://bazaar.launchpad.net/~ltsp-upstream/ltsp/libpam-sshauth/revision/114#src/pam_sshauth.c"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/06/2016",
+        "modified_date": "05/10/2016",
+        "vulnerability_source": "Debian GNU/Linux",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2013-7455",
+        "cwe_id": null,
+        "description": "Double free vulnerability in the DefaultICCintents function in cmscnvrt.c in liblcms2 in Little CMS 2.x before 2.6 allows remote attackers to execute arbitrary code via a malformed ICC profile that triggers an error in the default intent handler.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.kb.cert.org/vuls/id/369800",
+            "http://www.ubuntu.com/usn/USN-2961-1",
+            "https://github.com/mm2/Little-CMS/commit/fefaaa43c382eee632ea3ad0cfa915335140e1db",
+            "https://penteston.com/OSVDB-105462"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:littlecms:little_cms_color_engine:2.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:littlecms:little_cms_color_engine:2.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:littlecms:little_cms_color_engine:2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:littlecms:little_cms_color_engine:2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:littlecms:little_cms_color_engine:2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:littlecms:little_cms_color_engine:2.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/07/2016",
+        "modified_date": "11/30/2016",
+        "vulnerability_source": "CERT/CC",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0900",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in EMC RSA Authentication Manager before 8.1 SP1 P14 allows remote attackers to inject arbitrary web script or HTML via unspecified vectors, a different vulnerability than CVE-2016-0901.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/136994/RSA-Authentication-Manager-XSS-HTTP-Response-Splitting.html",
+            "http://seclists.org/bugtraq/2016/May/23",
+            "http://www.securitytracker.com/id/1035755"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:emc:rsa_authentication_manager:8.1:sp1:*:*:*:*:*:*"
+        ],
+        "published_date": "05/07/2016",
+        "modified_date": "11/30/2016",
+        "vulnerability_source": "Dell",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0901",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in EMC RSA Authentication Manager before 8.1 SP1 P14 allows remote attackers to inject arbitrary web script or HTML via unspecified vectors, a different vulnerability than CVE-2016-0900.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/136994/RSA-Authentication-Manager-XSS-HTTP-Response-Splitting.html",
+            "http://seclists.org/bugtraq/2016/May/23",
+            "http://www.securitytracker.com/id/1035755"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:emc:rsa_authentication_manager:8.1:sp1:*:*:*:*:*:*"
+        ],
+        "published_date": "05/07/2016",
+        "modified_date": "11/30/2016",
+        "vulnerability_source": "Dell",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0902",
+        "cwe_id": null,
+        "description": "CRLF injection vulnerability in EMC RSA Authentication Manager before 8.1 SP1 P14 allows remote attackers to inject arbitrary HTTP headers and conduct HTTP response splitting attacks via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/136994/RSA-Authentication-Manager-XSS-HTTP-Response-Splitting.html",
+            "http://seclists.org/bugtraq/2016/May/23",
+            "http://www.securitytracker.com/id/1035755"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:emc:rsa_authentication_manager:8.1:sp1:*:*:*:*:*:*"
+        ],
+        "published_date": "05/07/2016",
+        "modified_date": "11/30/2016",
+        "vulnerability_source": "Dell",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-1541",
+        "cwe_id": "CWE-20",
+        "description": "Heap-based buffer overflow in the zip_read_mac_metadata function in archive_read_support_format_zip.c in libarchive before 3.2.0 allows remote attackers to execute arbitrary code via crafted entry-size values in a ZIP archive.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-updates/2016-06/msg00003.html",
+            "http://lists.opensuse.org/opensuse-updates/2016-06/msg00090.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-1844.html",
+            "http://www.debian.org/security/2016/dsa-3574",
+            "http://www.kb.cert.org/vuls/id/862384",
+            "http://www.oracle.com/technetwork/topics/security/bulletinjul2016-3090568.html",
+            "http://www.oracle.com/technetwork/topics/security/linuxbulletinjul2016-3090544.html",
+            "http://www.securityfocus.com/bid/89355",
+            "http://www.slackware.com/security/viewer.php?l=slackware-security&y=2016&m=slackware-security.352685",
+            "http://www.ubuntu.com/usn/USN-2981-1",
+            "https://github.com/libarchive/libarchive/commit/d0331e8e5b05b475f20b1f3101fe1ad772d7e7e7",
+            "https://github.com/libarchive/libarchive/issues/656",
+            "https://security.gentoo.org/glsa/201701-03"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libarchive:libarchive:3.1.901a:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/07/2016",
+        "modified_date": "01/04/2018",
+        "vulnerability_source": "CERT/CC",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2009",
+        "cwe_id": "CWE-284",
+        "description": "HPE Network Node Manager i (NNMi) 9.20, 9.23, 9.24, 9.25, 10.00, and 10.01 allows remote authenticated users to execute arbitrary commands via a crafted serialized Java object, related to the Apache Commons Collections (ACC) library.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "/hpsc/public/kb/docDisplay?docId=emr_na-c05103564"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:network_node_manager_i:10.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:10.00:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:9.25:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:9.24:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:9.23:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:9.20:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/07/2016",
+        "modified_date": "11/30/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2010",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in HPE Network Node Manager i (NNMi) 9.20, 9.23, 9.24, 9.25, 10.00, and 10.01 allows remote authenticated users to inject arbitrary web script or HTML via unspecified vectors, a different vulnerability than CVE-2016-2011.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1035767",
+            "/hpsc/public/kb/docDisplay?docId=emr_na-c05103564"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:network_node_manager_i:10.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:10.00:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:9.25:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:9.24:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:9.23:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:9.20:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/07/2016",
+        "modified_date": "11/30/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2011",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in HPE Network Node Manager i (NNMi) 9.20, 9.23, 9.24, 9.25, 10.00, and 10.01 allows remote authenticated users to inject arbitrary web script or HTML via unspecified vectors, a different vulnerability than CVE-2016-2010.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1035767",
+            "/hpsc/public/kb/docDisplay?docId=emr_na-c05103564"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:network_node_manager_i:10.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:10.00:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:9.25:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:9.24:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:9.23:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:9.20:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/07/2016",
+        "modified_date": "11/30/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2012",
+        "cwe_id": "CWE-287",
+        "description": "HPE Network Node Manager i (NNMi) 9.20, 9.23, 9.24, 9.25, 10.00, and 10.01 allows remote attackers to bypass authentication via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1035767",
+            "/hpsc/public/kb/docDisplay?docId=emr_na-c05103564"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:network_node_manager_i:10.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:10.00:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:9.25:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:9.24:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:9.23:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:9.20:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/07/2016",
+        "modified_date": "11/30/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2013",
+        "cwe_id": "CWE-200",
+        "description": "HPE Network Node Manager i (NNMi) 9.20, 9.23, 9.24, 9.25, 10.00, and 10.01 allows remote authenticated users to obtain sensitive information via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1035767",
+            "/hpsc/public/kb/docDisplay?docId=emr_na-c05103564"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:network_node_manager_i:10.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:10.00:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:9.25:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:9.24:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:9.23:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:9.20:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/07/2016",
+        "modified_date": "11/30/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2014",
+        "cwe_id": "CWE-284",
+        "description": "HPE Network Node Manager i (NNMi) 9.20, 9.23, 9.24, 9.25, 10.00, and 10.01 allows remote authenticated users to modify data or cause a denial of service via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:C/A:C)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "8.5 HIGH",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1035767",
+            "/hpsc/public/kb/docDisplay?docId=emr_na-c05103564"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:network_node_manager_i:10.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:10.00:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:9.25:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:9.24:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:9.23:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_node_manager_i:9.20:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/07/2016",
+        "modified_date": "11/30/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2015-6550",
+        "cwe_id": "CWE-284",
+        "description": "bpcd in Veritas NetBackup 7.x through 7.5.0.7, 7.6.0.x through 7.6.0.4, 7.6.1.x through 7.6.1.2, and 7.7.x before 7.7.2 and NetBackup Appliance through 2.5.4, 2.6.0.x through 2.6.0.4, 2.6.1.x through 2.6.1.2, and 2.7.x before 2.7.2 allows remote attackers to execute arbitrary commands via crafted input.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1035704",
+            "https://www.veritas.com/content/support/en_US/security/VTS16-001.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:veritas:netbackup_appliance:2.7.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:veritas:netbackup_appliance:2.6.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:veritas:netbackup_appliance:2.6.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:veritas:netbackup_appliance:2.6.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:veritas:netbackup_appliance:2.6.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:veritas:netbackup_appliance:2.6.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:veritas:netbackup_appliance:2.6.0"
+        ],
+        "published_date": "05/07/2016",
+        "modified_date": "11/30/2016",
+        "vulnerability_source": "Symantec Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2015-6551",
+        "cwe_id": "CWE-200",
+        "description": "Veritas NetBackup 7.x through 7.5.0.7 and 7.6.0.x through 7.6.0.4 and NetBackup Appliance through 2.5.4 and 2.6.0.x through 2.6.0.4 do not use TLS for administration-console traffic to the NBU server, which allows remote attackers to obtain sensitive information by sniffing the network for key-exchange packets.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1035704",
+            "https://www.veritas.com/content/support/en_US/security/VTS16-001.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:veritas:netbackup_appliance:2.7.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:veritas:netbackup_appliance:2.6.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:veritas:netbackup_appliance:2.6.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:veritas:netbackup_appliance:2.6.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:veritas:netbackup_appliance:2.6.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:veritas:netbackup_appliance:2.6.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:veritas:netbackup_appliance:2.6.0"
+        ],
+        "published_date": "05/07/2016",
+        "modified_date": "11/30/2016",
+        "vulnerability_source": "Symantec Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2015-6552",
+        "cwe_id": "CWE-284",
+        "description": "The management-services protocol implementation in Veritas NetBackup 7.x through 7.5.0.7, 7.6.0.x through 7.6.0.4, 7.6.1.x through 7.6.1.2, and 7.7.x before 7.7.2 and NetBackup Appliance through 2.5.4, 2.6.0.x through 2.6.0.4, 2.6.1.x through 2.6.1.2, and 2.7.x before 2.7.2 allows remote attackers to make arbitrary RPC calls via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1035704",
+            "https://www.veritas.com/content/support/en_US/security/VTS16-001.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:veritas:netbackup_appliance:2.7.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:veritas:netbackup_appliance:2.6.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:veritas:netbackup_appliance:2.6.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:veritas:netbackup_appliance:2.6.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:veritas:netbackup_appliance:2.6.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:veritas:netbackup_appliance:2.6.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:veritas:netbackup_appliance:2.6.0"
+        ],
+        "published_date": "05/07/2016",
+        "modified_date": "11/30/2016",
+        "vulnerability_source": "Symantec Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2350",
+        "cwe_id": "CWE-79",
+        "description": "Multiple cross-site scripting (XSS) vulnerabilities on the Accellion File Transfer Appliance (FTA) before FTA_9_12_40 allow remote attackers to inject arbitrary web script or HTML via unspecified input to (1) getimageajax.php, (2) move_partition_frame.html, or (3) wmInfo.html.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://devco.re/blog/2016/04/21/how-I-hacked-facebook-and-found-someones-backdoor-script-eng-ver/",
+            "http://www.kb.cert.org/vuls/id/505560"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:accellion:file_transfer_appliance:9_11_210:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/07/2016",
+        "modified_date": "05/10/2016",
+        "vulnerability_source": "CERT/CC",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2351",
+        "cwe_id": "CWE-89",
+        "description": "SQL injection vulnerability in home/seos/courier/security_key2.api on the Accellion File Transfer Appliance (FTA) before FTA_9_12_40 allows remote attackers to execute arbitrary SQL commands via the client_id parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://devco.re/blog/2016/04/21/how-I-hacked-facebook-and-found-someones-backdoor-script-eng-ver/",
+            "http://www.kb.cert.org/vuls/id/505560"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:accellion:file_transfer_appliance:9_11_210:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/07/2016",
+        "modified_date": "05/10/2016",
+        "vulnerability_source": "CERT/CC",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2352",
+        "cwe_id": "CWE-264",
+        "description": "The Accellion File Transfer Appliance (FTA) before FTA_9_12_40 allows remote authenticated users to execute arbitrary commands by leveraging the YUM_CLIENT restricted-user role.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://devco.re/blog/2016/04/21/how-I-hacked-facebook-and-found-someones-backdoor-script-eng-ver/",
+            "http://www.kb.cert.org/vuls/id/505560"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:accellion:file_transfer_appliance:9_11_210:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/07/2016",
+        "modified_date": "05/09/2016",
+        "vulnerability_source": "CERT/CC",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2353",
+        "cwe_id": "CWE-264",
+        "description": "The Accellion File Transfer Appliance (FTA) before FTA_9_12_40 allows local users to add an SSH key to an arbitrary group, and consequently gain privileges, via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://devco.re/blog/2016/04/21/how-I-hacked-facebook-and-found-someones-backdoor-script-eng-ver/",
+            "http://www.kb.cert.org/vuls/id/505560"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:accellion:file_transfer_appliance:9_11_210:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/07/2016",
+        "modified_date": "05/10/2016",
+        "vulnerability_source": "CERT/CC",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2015-0569",
+        "cwe_id": "CWE-787",
+        "description": "Heap-based buffer overflow in the private wireless extensions IOCTL implementation in wlan_hdd_wext.c in the WLAN (aka Wi-Fi) driver for the Linux kernel 3.x and 4.x, as used in Qualcomm Innovation Center (QuIC) Android contributions for MSM devices and other products, allows attackers to gain privileges via a crafted application that establishes a packet filter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html",
+            "http://www.securityfocus.com/bid/77691",
+            "https://www.codeaurora.org/projects/security-advisories/multiple-issues-wlan-driver-allow-local-privilege-escalation-cve-2015",
+            "https://www.exploit-db.com/exploits/39308/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:4.0.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:4.0.2:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:4.0.3:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:4.0.4:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:4.0.5:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:4.0.6:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:4.0.7:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:4.0.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc2:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc3:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc4:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc5:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc6:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc7:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.18.32:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.18.31:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.18.30:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.18.2"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "07/31/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2015-0570",
+        "cwe_id": "CWE-787",
+        "description": "Stack-based buffer overflow in the SET_WPS_IE IOCTL implementation in wlan_hdd_hostapd.c in the WLAN (aka Wi-Fi) driver for the Linux kernel 3.x and 4.x, as used in Qualcomm Innovation Center (QuIC) Android contributions for MSM devices and other products, allows attackers to gain privileges via a crafted application that uses a long WPS IE element.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html",
+            "http://www.securityfocus.com/bid/77691",
+            "https://www.codeaurora.org/projects/security-advisories/multiple-issues-wlan-driver-allow-local-privilege-escalation-cve-2015"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:4.0.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:4.0.2:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:4.0.3:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:4.0.4:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:4.0.5:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:4.0.6:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:4.0.7:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:4.0.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc2:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc3:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc4:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc5:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc6:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc7:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.5.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.5.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.4.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.4.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.4.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.4.6:*:*:*:*:*:"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "07/31/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2015-0571",
+        "cwe_id": "CWE-862",
+        "description": "The WLAN (aka Wi-Fi) driver for the Linux kernel 3.x and 4.x, as used in Qualcomm Innovation Center (QuIC) Android contributions for MSM devices and other products, does not verify authorization for private SET IOCTL calls, which allows attackers to gain privileges via a crafted application, related to wlan_hdd_hostapd.c and wlan_hdd_wext.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html",
+            "http://www.securityfocus.com/bid/77691",
+            "https://www.codeaurora.org/projects/security-advisories/multiple-issues-wlan-driver-allow-local-privilege-escalation-cve-2015"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:4.0.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:4.0.2:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:4.0.3:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:4.0.4:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:4.0.5:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:4.0.6:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:4.0.7:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:4.0.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.0.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc2:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc3:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc4:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc5:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc6:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0:rc7:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:3.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.5.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.5.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.4.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.4.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.4.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.4.6:*:*:*:*:*:"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "07/31/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2060",
+        "cwe_id": "CWE-264",
+        "description": "server/TetherController.cpp in the tethering controller in netd, as distributed with Qualcomm Innovation Center (QuIC) Android contributions for MSM devices and other products, does not properly validate upstream interface names, which allows attackers to bypass intended access restrictions via a crafted application.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html",
+            "https://www.codeaurora.org/improper-input-validation-tethering-controller-netd-cve-2016-2060-0"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "05/16/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2428",
+        "cwe_id": "CWE-119",
+        "description": "libAACdec/src/aacdec_drc.cpp in mediaserver in Android 4.x before 4.4.4, 5.0.x before 5.0.2, 5.1.x before 5.1.1, and 6.x before 2016-05-01 does not properly limit the number of threads, which allows remote attackers to execute arbitrary code or cause a denial of service (stack memory corruption) via a crafted media file, aka internal bug 26751339.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html",
+            "https://android.googlesource.com/platform/external/aac/+/5d4405f601fa11a8955fd7611532c982420e4206"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.4.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:androi"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "05/10/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2429",
+        "cwe_id": "CWE-119",
+        "description": "libFLAC/stream_decoder.c in mediaserver in Android 4.x before 4.4.4, 5.0.x before 5.0.2, 5.1.x before 5.1.1, and 6.x before 2016-05-01 does not prevent free operations on uninitialized memory, which allows remote attackers to execute arbitrary code or cause a denial of service (heap memory corruption) via a crafted media file, aka internal bug 27211885.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html",
+            "https://android.googlesource.com/platform/external/flac/+/b499389da21d89d32deff500376c5ee4f8f0b04c"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.4.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:androi"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "05/10/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2430",
+        "cwe_id": "CWE-264",
+        "description": "libbacktrace/Backtrace.cpp in debuggerd in Android 4.x before 4.4.4, 5.0.x before 5.0.2, 5.1.x before 5.1.1, and 6.x before 2016-05-01 allows attackers to gain privileges via an application containing a crafted symbol name, aka internal bug 27299236.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html",
+            "https://android.googlesource.com/platform/system/core/+/ad54cfed4516292654c997910839153264ae00a0"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.4.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:androi"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "05/10/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2431",
+        "cwe_id": "CWE-264",
+        "description": "The Qualcomm TrustZone component in Android before 2016-05-01 on Nexus 5, Nexus 6, Nexus 7 (2013), and Android One devices allows attackers to gain privileges via a crafted application, aka internal bug 24968809.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*",
+            "cpe:2.3:h:google:nexus_5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:google:nexus_6:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:google:nexus_7_\\(2013\\):-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "09/02/2017",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2432",
+        "cwe_id": "CWE-264",
+        "description": "The Qualcomm TrustZone component in Android before 2016-05-01 on Nexus 6 and Android One devices allows attackers to gain privileges via a crafted application, aka internal bug 25913059.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "05/09/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2434",
+        "cwe_id": "CWE-264",
+        "description": "The NVIDIA video driver in Android before 2016-05-01 on Nexus 9 devices allows attackers to gain privileges via a crafted application, aka internal bug 27251090.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://nvidia.custhelp.com/app/answers/detail/a_id/4561",
+            "http://source.android.com/security/bulletin/2016-05-01.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "10/18/2017",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2435",
+        "cwe_id": "CWE-264",
+        "description": "The NVIDIA video driver in Android before 2016-05-01 on Nexus 9 devices allows attackers to gain privileges via a crafted application, aka internal bug 27297988.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "05/09/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2436",
+        "cwe_id": "CWE-264",
+        "description": "The NVIDIA video driver in Android before 2016-05-01 on Nexus 9 devices allows attackers to gain privileges via a crafted application, aka internal bug 27299111.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "05/09/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2437",
+        "cwe_id": "CWE-264",
+        "description": "The NVIDIA video driver in Android before 2016-05-01 on Nexus 9 devices allows attackers to gain privileges via a crafted application, aka internal bug 27436822.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "05/09/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2438",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: CVE-2016-2547, CVE-2016-2548.  Reason: This candidate is a duplicate of CVE-2016-2547 and CVE-2016-2548.  Notes: All CVE users should reference CVE-2016-2547 and/or CVE-2016-2548 instead of this candidate.  All references and descriptions in this candidate have been removed to prevent accidental usage.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-2438"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-2438"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "05/09/2016",
+        "modified_date": "05/09/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2439",
+        "cwe_id": "CWE-119",
+        "description": "Buffer overflow in btif/src/btif_dm.c in Bluetooth in Android 4.x before 4.4.4, 5.0.x before 5.0.2, 5.1.x before 5.1.1, and 6.x before 2016-05-01 allows remote attackers to execute arbitrary code via a long PIN value, aka internal bug 27411268.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "5.4 MEDIUM",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html",
+            "https://android.googlesource.com/platform/system/bt/+/9b534de2aca5d790c2a1c4d76b545f16137d95dd"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.4.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:androi"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "05/10/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2440",
+        "cwe_id": "CWE-264",
+        "description": "libs/binder/IPCThreadState.cpp in Binder in Android 4.x before 4.4.4, 5.0.x before 5.0.2, 5.1.x before 5.1.1, and 6.x before 2016-05-01 mishandles object references, which allows attackers to gain privileges via a crafted application, aka internal bug 27252896.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html",
+            "https://android.googlesource.com/platform/frameworks/native/+/a59b827869a2ea04022dd225007f29af8d61837a"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.4.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:androi"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "05/10/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2441",
+        "cwe_id": "CWE-264",
+        "description": "The Qualcomm buspm driver in Android before 2016-05-01 on Nexus 5X, 6, and 6P devices allows attackers to gain privileges via a crafted application, aka internal bug 26354602.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:H/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:H/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.0 HIGH",
+        "base_score_v2": "7.6 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html",
+            "https://www.codeaurora.org/issues-tsc-tspp2-and-buspm-drivers-cve-2015-0573-cve-2016-2441-cve-2016-2442"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "08/16/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2442",
+        "cwe_id": "CWE-264",
+        "description": "The Qualcomm buspm driver in Android before 2016-05-01 on Nexus 5X, 6, and 6P devices allows attackers to gain privileges via a crafted application, aka internal bug 26494907.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:H/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:H/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.0 HIGH",
+        "base_score_v2": "7.6 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html",
+            "https://www.codeaurora.org/issues-tsc-tspp2-and-buspm-drivers-cve-2015-0573-cve-2016-2441-cve-2016-2442"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "08/18/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2443",
+        "cwe_id": "CWE-264",
+        "description": "The Qualcomm MDP driver in Android before 2016-05-01 on Nexus 5 and Nexus 7 (2013) devices allows attackers to gain privileges via a crafted application, aka internal bug 26404525.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:H/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:H/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.0 HIGH",
+        "base_score_v2": "7.6 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "05/09/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2444",
+        "cwe_id": "CWE-264",
+        "description": "The NVIDIA media driver in Android before 2016-05-01 on Nexus 9 devices allows attackers to gain privileges via a crafted application, aka internal bug 27208332.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:H/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:H/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.0 HIGH",
+        "base_score_v2": "7.6 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "05/09/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2445",
+        "cwe_id": "CWE-264",
+        "description": "The NVIDIA media driver in Android before 2016-05-01 on Nexus 9 devices allows attackers to gain privileges via a crafted application, aka internal bug 27253079.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:H/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:H/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.0 HIGH",
+        "base_score_v2": "7.6 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "05/09/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2446",
+        "cwe_id": "CWE-264",
+        "description": "The NVIDIA media driver in Android before 2016-05-01 on Nexus 9 devices allows attackers to gain privileges via a crafted application, aka internal bug 27441354.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:H/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:H/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.0 HIGH",
+        "base_score_v2": "7.6 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html",
+            "http://www.securitytracker.com/id/1036763"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "08/12/2017",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2447",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: CVE-2016-4477.  Reason: This candidate is a reservation duplicate of CVE-2016-4477.  Notes: All CVE users should reference CVE-2016-4477 instead of this candidate.  All references and descriptions in this candidate have been removed to prevent accidental usage.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-2447"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-2447"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "05/09/2016",
+        "modified_date": "05/09/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2448",
+        "cwe_id": "CWE-264",
+        "description": "media/libmediaplayerservice/nuplayer/NuPlayerStreamListener.cpp in mediaserver in Android 4.x before 4.4.4, 5.0.x before 5.0.2, 5.1.x before 5.1.1, and 6.x before 2016-05-01 does not properly validate entry data structures, which allows attackers to gain privileges via a crafted application, as demonstrated by obtaining Signature or SignatureOrSystem access, aka internal bug 27533704.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html",
+            "https://android.googlesource.com/platform/frameworks/av/+/a2d1d85726aa2a3126e9c331a8e00a8c319c9e2b"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.4.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:androi"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "05/10/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2449",
+        "cwe_id": "CWE-264",
+        "description": "services/camera/libcameraservice/device3/Camera3Device.cpp in mediaserver in Android 4.x before 4.4.4, 5.0.x before 5.0.2, 5.1.x before 5.1.1, and 6.x before 2016-05-01 does not validate template IDs, which allows attackers to gain privileges via a crafted application, as demonstrated by obtaining Signature or SignatureOrSystem access, aka internal bug 27568958.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html",
+            "https://android.googlesource.com/platform/frameworks/av/+/b04aee833c5cfb6b31b8558350feb14bb1a0f353"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.4.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:androi"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "05/10/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2450",
+        "cwe_id": "CWE-264",
+        "description": "codecs/on2/enc/SoftVPXEncoder.cpp in libstagefright in mediaserver in Android 4.x before 4.4.4, 5.0.x before 5.0.2, 5.1.x before 5.1.1, and 6.x before 2016-05-01 does not validate OMX buffer sizes, which allows attackers to gain privileges via a crafted application, as demonstrated by obtaining Signature or SignatureOrSystem access, aka internal bug 27569635.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html",
+            "https://android.googlesource.com/platform/frameworks/av/+/7fd96ebfc4c9da496c59d7c45e1f62be178e626d"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.4.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:androi"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "05/10/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2451",
+        "cwe_id": "CWE-264",
+        "description": "codecs/on2/dec/SoftVPX.cpp in libstagefright in mediaserver in Android 4.x before 4.4.4, 5.0.x before 5.0.2, 5.1.x before 5.1.1, and 6.x before 2016-05-01 does not validate VPX output buffer sizes, which allows attackers to gain privileges via a crafted application, as demonstrated by obtaining Signature or SignatureOrSystem access, aka internal bug 27597103.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html",
+            "https://android.googlesource.com/platform/frameworks/av/+/f9ed2fe6d61259e779a37d4c2d7edb33a1c1f8ba"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.4.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:androi"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "05/10/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2452",
+        "cwe_id": "CWE-264",
+        "description": "codecs/amrnb/dec/SoftAMR.cpp in libstagefright in mediaserver in Android 4.x before 4.4.4, 5.0.x before 5.0.2, 5.1.x before 5.1.1, and 6.x before 2016-05-01 does not validate buffer sizes, which allows attackers to gain privileges via a crafted application, as demonstrated by obtaining Signature or SignatureOrSystem access, aka internal bugs 27662364 and 27843673.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html",
+            "https://android.googlesource.com/platform/frameworks/av/+/44749eb4f273f0eb681d0fa013e3beef754fa687",
+            "https://android.googlesource.com/platform/frameworks/av/+/65756b4082cd79a2d99b2ccb5b392291fd53703f",
+            "https://android.googlesource.com/platform/frameworks/av/+/daa85dac2055b22dabbb3b4e537597e6ab73a866"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.4.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:androi"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "05/10/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2453",
+        "cwe_id": "CWE-264",
+        "description": "The MediaTek Wi-Fi driver in Android before 2016-05-01 on Android One devices allows attackers to gain privileges via a crafted application, aka internal bug 27549705.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:H/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:H/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.0 HIGH",
+        "base_score_v2": "7.6 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html"
+        ],
+        "cpe": [
+            "cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "05/09/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2454",
+        "cwe_id": "CWE-20",
+        "description": "The Qualcomm hardware video codec in Android before 2016-05-01 on Nexus 5 devices allows remote attackers to cause a denial of service (reboot) via a crafted file, aka internal bug 26221024.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "7.1 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html"
+        ],
+        "cpe": [
+            "cpe:2.3:h:google:nexus_5:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "05/09/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2456",
+        "cwe_id": "CWE-264",
+        "description": "The MediaTek Wi-Fi driver in Android before 2016-05-01 on Android One devices allows attackers to gain privileges via a crafted application, aka internal bug 27275187.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:H/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:H/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.0 HIGH",
+        "base_score_v2": "5.1 MEDIUM",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "05/16/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2457",
+        "cwe_id": "CWE-264",
+        "description": "server/pm/UserManagerService.java in Wi-Fi in Android 5.0.x before 5.0.2, 5.1.x before 5.1.1, and 6.x before 2016-05-01 allows attackers to bypass intended restrictions on Wi-Fi configuration changes by leveraging guest access, aka internal bug 27411179.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html",
+            "http://source.android.com/security/bulletin/2016-07-01.html",
+            "https://android.googlesource.com/platform/frameworks/base/+/12332e05f632794e18ea8c4ac52c98e82532e5db"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "07/12/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2458",
+        "cwe_id": "CWE-200",
+        "description": "The compose functionality in AOSP Mail in Android 5.0.x before 5.0.2, 5.1.x before 5.1.1, and 6.x before 2016-05-01 does not properly restrict attachments, which allows attackers to obtain sensitive information via a crafted application, related to ComposeActivity.java and ComposeActivityEmail.java, aka internal bug 27335139.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html",
+            "https://android.googlesource.com/platform/packages/apps/Email/+/2791f0b33b610247ef87278862e66c6045f89693",
+            "https://android.googlesource.com/platform/packages/apps/UnifiedEmail/+/a55168330d9326ff2120285763c818733590266a"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "05/10/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2459",
+        "cwe_id": "CWE-200",
+        "description": "mediaserver in Android 4.x before 4.4.4, 5.0.x before 5.0.2, 5.1.x before 5.1.1, and 6.x before 2016-05-01 does not initialize certain data structures, which allows attackers to obtain sensitive information via a crafted application, related to IGraphicBufferConsumer.cpp and IGraphicBufferProducer.cpp, aka internal bug 27556038.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html",
+            "https://android.googlesource.com/platform/frameworks/native/+/a30d7d90c4f718e46fb41a99b3d52800e1011b73"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.4.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "05/09/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2460",
+        "cwe_id": "CWE-200",
+        "description": "mediaserver in Android 4.x before 4.4.4, 5.0.x before 5.0.2, 5.1.x before 5.1.1, and 6.x before 2016-05-01 does not initialize certain data structures, which allows attackers to obtain sensitive information via a crafted application, related to IGraphicBufferConsumer.cpp and IGraphicBufferProducer.cpp, aka internal bug 27555981.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html",
+            "https://android.googlesource.com/platform/frameworks/native/+/a30d7d90c4f718e46fb41a99b3d52800e1011b73"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:4.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:4.0.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:4.0.2:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:4.0.3:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:4.0.4:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:4.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:4.1.2:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:4.2:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:4.2.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:4.2.2:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.2.2:*:*:*:*",
+            "cpe:2.3:h:google:pixel_c:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:google:nexus_player:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:google:android_one:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:google:nexus_9:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:google:nexus_7_\\(2013\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:google:nexus_6p:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:google:nexus_6:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:google:nexus_5x:-:*:*:*:*:"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "07/11/2019",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2461",
+        "cwe_id": "CWE-264",
+        "description": "OpenSSLCipher.java in Conscrypt in Android 6.x before 2016-05-01 mishandles resets of the Additional Authenticated Data (AAD) array, which allows attackers to spoof message authentication via unspecified vectors, aka internal bugs 27324690 and 27696681.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:H/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:H/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.0 HIGH",
+        "base_score_v2": "7.6 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html",
+            "https://android.googlesource.com/platform/external/conscrypt/+/1638945d4ed9403790962ec7abed1b7a232a9ff8",
+            "https://android.googlesource.com/platform/external/conscrypt/+/50d0447566db4a77d78d592f1c1b5d31096fac8f"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:6.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "05/10/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-2462",
+        "cwe_id": "CWE-264",
+        "description": "OpenSSLCipher.java in Conscrypt in Android 6.x before 2016-05-01 mishandles updates of the Additional Authenticated Data (AAD) array, which allows attackers to spoof message authentication via unspecified vectors, aka internal bug 27371173.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:H/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:H/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.0 HIGH",
+        "base_score_v2": "7.6 HIGH",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html",
+            "https://android.googlesource.com/platform/external/conscrypt/+/8bec47d2184fca7e8b7337d2a65b2b75a9bc8f54"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:6.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "05/10/2016",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-4476",
+        "cwe_id": "CWE-20",
+        "description": "hostapd 0.6.7 through 2.5 and wpa_supplicant 0.6.7 through 2.5 do not reject \\n and \\r characters in passphrase parameters, which allows remote attackers to cause a denial of service (daemon outage) via a crafted WPS operation.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/05/03/12",
+            "http://www.ubuntu.com/usn/USN-3455-1"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:17.04:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:esm:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:17.04:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:w1.fi:hostapd:0.6.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:w1.fi:hostapd:0.7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:w1.fi:hostapd:0.7.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:w1.fi:hostapd:0.7.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:w1.fi:hostapd:0.7.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:w1.fi:hostapd:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:w1.fi:hostapd:1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:w1.fi:hostapd:2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:w1.fi:hostapd:2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:w1.fi:hostapd:2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:w1.fi:hostapd:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:w1.fi:wpa_supplicant:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:w1.fi:hostapd:2.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:w1.fi:hostapd:2.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:w1.fi:hostapd:2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:w1.fi:hostapd:2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:w1.fi:hostapd:2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:w1.fi:hostapd:2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:w1.fi:hostapd:1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:w1.fi:hostapd:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:w1.fi:hostapd:0.7.3:*:*:*:*:*:*"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "08/12/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-4477",
+        "cwe_id": "CWE-19",
+        "description": "wpa_supplicant 0.4.0 through 2.5 does not reject \\n and \\r characters in passphrase parameters, which allows local users to trigger arbitrary library loading and consequently gain privileges, or cause a denial of service (daemon outage), via a crafted (1) SET, (2) SET_CRED, or (3) SET_NETWORK command.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.4 MEDIUM",
+        "hyperlinks": [
+            "http://source.android.com/security/bulletin/2016-05-01.html",
+            "http://www.openwall.com/lists/oss-security/2016/05/03/12",
+            "http://www.ubuntu.com/usn/USN-3455-1"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:5.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.4.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "10/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2015-5207",
+        "cwe_id": "CWE-254",
+        "description": "Apache Cordova iOS before 4.0.0 might allow attackers to bypass a URL whitelist protection mechanism in an app and load arbitrary resources by leveraging unspecified methods.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://jvn.jp/en/jp/JVN35341085/index.html",
+            "http://jvndb.jvn.jp/en/contents/2016/JVNDB-2016-000058.html",
+            "http://packetstormsecurity.com/files/136840/Apache-Cordova-iOS-3.9.1-Access-Bypass.html",
+            "http://www.securityfocus.com/archive/1/538211/100/0/threaded",
+            "http://www.securityfocus.com/bid/88764",
+            "https://cordova.apache.org/announcements/2016/04/27/security.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apache:cordova:3.9.1:*:*:*:*:iphone_os:*:*"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "10/09/2018",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2015-5208",
+        "cwe_id": "CWE-20",
+        "description": "Apache Cordova iOS before 4.0.0 allows remote attackers to execute arbitrary plugins via a link.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.4 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://jvn.jp/en/jp/JVN41772178/index.html",
+            "http://jvndb.jvn.jp/en/contents/2016/JVNDB-2016-000059.html",
+            "http://packetstormsecurity.com/files/136839/Apache-Cordova-iOS-3.9.1-Arbitrary-Plugin-Execution.html",
+            "http://www.securityfocus.com/archive/1/538210/100/0/threaded",
+            "http://www.securityfocus.com/bid/88797",
+            "https://cordova.apache.org/announcements/2016/04/27/security.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apache:cordova:3.9.1:*:*:*:*:iphone_os:*:*"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "10/09/2018",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-3105",
+        "cwe_id": "CWE-284",
+        "description": "The convert extension in Mercurial before 3.8 might allow context-dependent attackers to execute arbitrary code via a crafted git repository name.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-updates/2016-05/msg00082.html",
+            "http://www.debian.org/security/2016/dsa-3570",
+            "http://www.securityfocus.com/bid/90536",
+            "http://www.slackware.com/security/viewer.php?l=slackware-security&y=2016&m=slackware-security.533255",
+            "https://security.gentoo.org/glsa/201612-19",
+            "https://selenic.com/hg/rev/a56296f55a5e",
+            "https://www.mercurial-scm.org/wiki/WhatsNew#Mercurial_3.8_.2F_3.8.1_.282016-5-1.29"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mercurial:mercurial:3.7.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "06/30/2017",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-4350",
+        "cwe_id": "CWE-89",
+        "description": "Multiple SQL injection vulnerabilities in the Web Services web server in SolarWinds Storage Resource Monitor (SRM) Profiler (formerly Storage Manager (STM)) before 6.2.3 allow remote attackers to execute arbitrary SQL commands via the (1) ScriptSchedule parameter in the ScriptServlet servlet; the (2) winEventId or (3) winEventLog parameter in the WindowsEventLogsServlet servlet; the (4) processOS parameter in the ProcessesServlet servlet; the (5) group, (6) groupName, or (7) clientName parameter in the BackupExceptionsServlet servlet; the (8) valDB or (9) valFS parameter in the BackupAssociationServlet servlet; the (10) orderBy or (11) orderDir parameter in the HostStorageServlet servlet; the (12) fileName, (13) sortField, or (14) sortDirection parameter in the DuplicateFilesServlet servlet; the (15) orderFld or (16) orderDir parameter in the QuantumMonitorServlet servlet; the (17) exitCode parameter in the NbuErrorMessageServlet servlet; the (18) udfName, (19) displayName, (20) udfDescription, (21) udfDataValue, (22) udfSectionName, or (23) udfId parameter in the UserDefinedFieldConfigServlet servlet; the (24) sortField or (25) sortDirection parameter in the XiotechMonitorServlet servlet; the (26) sortField or (27) sortDirection parameter in the BexDriveUsageSummaryServlet servlet; the (28) state parameter in the ScriptServlet servlet; the (29) assignedNames parameter in the FileActionAssignmentServlet servlet; the (30) winEventSource parameter in the WindowsEventLogsServlet servlet; or the (31) name, (32) ipOne, (33) ipTwo, or (34) ipThree parameter in the XiotechMonitorServlet servlet.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.solarwinds.com/documentation/storage/storagemanager/docs/ReleaseNotes/releaseNotes.htm",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-249",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-250",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-251",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-252",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-253",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-254",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-255",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-256",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-257",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-258",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-259",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-260",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-261",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-262",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-263",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-264",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-265",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-266",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-267",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-268",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-269",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-270",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-271",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-272"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:solarwinds:storage_resource_monitor:6.2.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/09/2016",
+        "modified_date": "05/16/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-4553",
+        "cwe_id": "CWE-345",
+        "description": "client_side.cc in Squid before 3.5.18 and 4.x before 4.0.10 does not properly ignore the Host header when absolute-URI is provided, which allows remote attackers to conduct cache-poisoning attacks via an HTTP request.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "8.6 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://bugs.squid-cache.org/show_bug.cgi?id=4501",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-08/msg00010.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-08/msg00040.html",
+            "http://lists.opensuse.org/opensuse-updates/2016-08/msg00069.html",
+            "http://www.debian.org/security/2016/dsa-3625",
+            "http://www.oracle.com/technetwork/topics/security/linuxbulletinapr2016-2952096.html",
+            "http://www.securitytracker.com/id/1035768",
+            "http://www.squid-cache.org/Advisories/SQUID-2016_7.txt",
+            "http://www.squid-cache.org/Versions/v3/3.5/changesets/squid-3.5-14039.patch",
+            "http://www.ubuntu.com/usn/USN-2995-1",
+            "https://access.redhat.com/errata/RHSA-2016:1139",
+            "https://access.redhat.com/errata/RHSA-2016:1140",
+            "https://security.gentoo.org/glsa/201607-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:oracle:linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:linux:7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache",
+            "*cpe:2.3:a:squid-cache:squid:4.0.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache",
+            "*cpe:2.3:a:squid-cache:squid:4.0.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache",
+            "*cpe:2.3:a:squid-cache:squid:4.0.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:sq",
+            "*cpe:2.3:a:squid-cache:squid:4.0.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache",
+            "*cpe:2.3:a:squid-cache:squid:4.0.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "12/27/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-4554",
+        "cwe_id": "CWE-345",
+        "description": "mime_header.cc in Squid before 3.5.18 allows remote attackers to bypass intended same-origin restrictions and possibly conduct cache-poisoning attacks via a crafted HTTP Host header, aka a \"header smuggling\" issue.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "8.6 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2016-08/msg00010.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-08/msg00040.html",
+            "http://lists.opensuse.org/opensuse-updates/2016-08/msg00069.html",
+            "http://www.debian.org/security/2016/dsa-3625",
+            "http://www.oracle.com/technetwork/topics/security/linuxbulletinapr2016-2952096.html",
+            "http://www.securitytracker.com/id/1035769",
+            "http://www.squid-cache.org/Advisories/SQUID-2016_8.txt",
+            "http://www.squid-cache.org/Versions/v3/3.1/changesets/SQUID-2016_8.patch",
+            "http://www.squid-cache.org/Versions/v3/3.2/changesets/SQUID-2016_8.patch",
+            "http://www.squid-cache.org/Versions/v3/3.3/changesets/SQUID-2016_8.patch",
+            "http://www.squid-cache.org/Versions/v3/3.4/changesets/SQUID-2016_8.patch",
+            "http://www.squid-cache.org/Versions/v3/3.5/changesets/SQUID-2016_8.patch",
+            "http://www.ubuntu.com/usn/USN-2995-1",
+            "https://access.redhat.com/errata/RHSA-2016:1138",
+            "https://access.redhat.com/errata/RHSA-2016:1139",
+            "https://access.redhat.com/errata/RHSA-2016:1140",
+            "https://security.gentoo.org/glsa/201607-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:oracle:linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:linux:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:linux:7:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:linux:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:linux:6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:15.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:15.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:15.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:oracle:linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:linux:6.0:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.17:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:15.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.17:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "12/27/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-4555",
+        "cwe_id": "CWE-20",
+        "description": "client_side_request.cc in Squid 3.x before 3.5.18 and 4.x before 4.0.10 allows remote servers to cause a denial of service (crash) via crafted Edge Side Includes (ESI) responses.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://bugs.squid-cache.org/show_bug.cgi?id=4455",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-08/msg00010.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-08/msg00040.html",
+            "http://lists.opensuse.org/opensuse-updates/2016-08/msg00069.html",
+            "http://www.debian.org/security/2016/dsa-3625",
+            "http://www.openwall.com/lists/oss-security/2016/05/06/3",
+            "http://www.openwall.com/lists/oss-security/2016/05/06/5",
+            "http://www.oracle.com/technetwork/topics/security/linuxbulletinapr2016-2952096.html",
+            "http://www.securitytracker.com/id/1035770",
+            "http://www.squid-cache.org/Advisories/SQUID-2016_9.txt",
+            "http://www.squid-cache.org/Versions/v3/3.4/changesets/SQUID-2016_9.patch",
+            "http://www.squid-cache.org/Versions/v3/3.5/changesets/SQUID-2016_9.patch",
+            "http://www.ubuntu.com/usn/USN-2995-1",
+            "https://access.redhat.com/errata/RHSA-2016:1139",
+            "https://access.redhat.com/errata/RHSA-2016:1140",
+            "https://security.gentoo.org/glsa/201607-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:oracle:linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:linux:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:linux:7:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:linux:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:linux:6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.17:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.16:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.15:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.17:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.16:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.15:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.14:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.13:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.12:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.11:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.10:*:*:*:*:*:",
+            "*cpe:2.3:a:squid-cache:squid:3.5.17:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.16:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.15:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.14:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.13:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.12:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.11:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.10:*:*:*:*:*:",
+            "*cpe:2.3:a:squid-cache:squid:4.0.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.17:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.16:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.15:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.14:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.13:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.12:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.11:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.10:*:*:*:*:*:",
+            "*cpe:2.3:a:squid-cache:squid:3.5.17:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.16:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.15:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.17:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.16:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.15:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.14:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.13:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.12:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.11:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.10:*:*:*:*:*:"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "12/27/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-4556",
+        "cwe_id": null,
+        "description": "Double free vulnerability in Esi.cc in Squid 3.x before 3.5.18 and 4.x before 4.0.10 allows remote servers to cause a denial of service (crash) via a crafted Edge Side Includes (ESI) response.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2016-08/msg00010.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-08/msg00040.html",
+            "http://lists.opensuse.org/opensuse-updates/2016-08/msg00069.html",
+            "http://www.debian.org/security/2016/dsa-3625",
+            "http://www.openwall.com/lists/oss-security/2016/05/06/3",
+            "http://www.openwall.com/lists/oss-security/2016/05/06/5",
+            "http://www.oracle.com/technetwork/topics/security/linuxbulletinapr2016-2952096.html",
+            "http://www.securitytracker.com/id/1035770",
+            "http://www.squid-cache.org/Advisories/SQUID-2016_9.txt",
+            "http://www.squid-cache.org/Versions/v3/3.4/changesets/SQUID-2016_9.patch",
+            "http://www.squid-cache.org/Versions/v3/3.5/changesets/SQUID-2016_9.patch",
+            "http://www.ubuntu.com/usn/USN-2995-1",
+            "https://access.redhat.com/errata/RHSA-2016:1138",
+            "https://access.redhat.com/errata/RHSA-2016:1139",
+            "https://access.redhat.com/errata/RHSA-2016:1140",
+            "https://security.gentoo.org/glsa/201607-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:oracle:linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:linux:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:linux:7:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:linux:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:oracle:linux:6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.17:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.16:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.15:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.17:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.16:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.15:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.14:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.13:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.12:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.11:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.10:*:*:*:*:*:",
+            "*cpe:2.3:a:squid-cache:squid:4.0.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.17:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.16:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.15:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.14:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.13:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.12:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.11:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.10:*:*:*:*:*:",
+            "*cpe:2.3:a:squid-cache:squid:4.0.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.17:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.16:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:3.5.15:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:squid-cache:squid:4.0.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "12/27/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-4561",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in the cgierror function in CGI.pm in ikiwiki before 3.20160506 might allow remote attackers to inject arbitrary web script or HTML via unspecified vectors involving an error message.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://ikiwiki.info/security/#index43h2",
+            "http://source.ikiwiki.branchable.com/?p=source.git;a=commitdiff;h=32ef584dc5abb6ddb9f794f94ea0b2934967bba7",
+            "http://www.debian.org/security/2016/dsa-3571"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "05/16/2016",
+        "vulnerability_source": "Debian GNU/Linux",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0126",
+        "cwe_id": "CWE-119",
+        "description": "Microsoft Office 2013 SP1, 2013 RT SP1, and 2016 allows remote attackers to execute arbitrary code via a crafted Office document, aka \"Microsoft Office Memory Corruption Vulnerability.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/89938",
+            "http://www.securitytracker.com/id/1035819",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-054"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:microsoft:office:2013:sp1:*:*:*:rt:*:*",
+            "*cpe:2.3:a:microsoft:office:2013:sp1:*:*:*:rt:*:*",
+            "*cpe:2.3:a:microsoft:office:2013:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:office:2016:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:office:2013:sp1:*:*:*:rt:*:*",
+            "*cpe:2.3:a:microsoft:office:2013:sp1:*:*:*:*:*:*"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "10/30/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0140",
+        "cwe_id": "CWE-119",
+        "description": "Microsoft Office 2007 SP3, Office 2010 SP2, Word Automation Services on SharePoint Server 2010 SP2, and Office Web Apps 2010 SP2 allow remote attackers to execute arbitrary code via a crafted Office document, aka \"Microsoft Office Memory Corruption Vulnerability.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/89953",
+            "http://www.securitytracker.com/id/1035819",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-054"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:microsoft:office_web_apps:2010:sp2:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:sharepoint_server:2010:sp2:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:office:2010:sp2:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:office:2007:sp3:*:*:*:*:*:*"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0149",
+        "cwe_id": "CWE-200",
+        "description": "Microsoft .NET Framework 2.0 SP2, 3.0 SP2, 3.5, 3.5.1, 4.5.2, 4.6, and 4.6.1 allows man-in-the-middle attackers to obtain sensitive cleartext information via vectors involving injection of cleartext data into the client-server data stream, aka \"TLS/SSL Information Disclosure Vulnerability.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/90026",
+            "http://www.securitytracker.com/id/1035842",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-065"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:microsoft:.net_framework:4.6.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:.net_framework:4.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:.net_framework:4.5.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:.net_framework:3.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:.net_framework:3.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:.net_framework:3.0:sp2:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:.net_framework:2.0:sp2:*:*:*:*:*:*"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0152",
+        "cwe_id": "CWE-264",
+        "description": "Internet Information Services (IIS) in Microsoft Windows Vista SP2 and Server 2008 SP2 mishandles library loading, which allows local users to gain privileges via a crafted application, aka \"Windows DLL Loading Remote Code Execution Vulnerability.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/90020",
+            "http://www.securitytracker.com/id/1035834",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-058"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:microsoft:windows_server_2008:*:sp2:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_vista:*:sp2:*:*:*:*:*:*"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0168",
+        "cwe_id": "CWE-200",
+        "description": "GDI in Microsoft Windows Vista SP2, Windows Server 2008 SP2 and R2 SP1, Windows 7 SP1, Windows 8.1, Windows Server 2012 Gold and R2, Windows RT 8.1, and Windows 10 Gold and 1511 allows remote attackers to obtain sensitive information via a crafted document, aka \"Windows Graphics Component Information Disclosure Vulnerability,\" a different vulnerability than CVE-2016-0169.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/137094/Microsoft-Windows-gdi32.dll-Information-Disclosure.html",
+            "http://www.securityfocus.com/bid/89862",
+            "http://www.securitytracker.com/id/1035823",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-055"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_rt_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:r2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_7:*:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_ser"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0169",
+        "cwe_id": "CWE-200",
+        "description": "GDI in Microsoft Windows Vista SP2, Windows Server 2008 SP2 and R2 SP1, Windows 7 SP1, Windows 8.1, Windows Server 2012 Gold and R2, Windows RT 8.1, and Windows 10 Gold and 1511 allows remote attackers to obtain sensitive information via a crafted document, aka \"Windows Graphics Component Information Disclosure Vulnerability,\" a different vulnerability than CVE-2016-0168.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/137095/Microsoft-Windows-gdi32.dll-Data-Copy.html",
+            "http://www.securityfocus.com/bid/89863",
+            "http://www.securitytracker.com/id/1035823",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-055"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:x86:*",
+            "*cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:x64:*",
+            "*cpe:2.3:o:microsoft:windows_10:-:gold:*:*:*:*:x86:*",
+            "*cpe:2.3:o:microsoft:windows_10:-:gold:*:*:*:*:x64:*",
+            "*cpe:2.3:o:microsoft:windows_rt_8.1:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:r2:-:-:*:standard:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:r2:-:-:*:essentials:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_rt_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:r2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_7:*:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_ser",
+            "*cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:x86:*",
+            "*cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:x64:*",
+            "*cpe:2.3:o:microsoft:windows_10:-:gold:*:*:*:*:x86:*",
+            "*cpe:2.3:o:microsoft:windows_10:-:gold:*:*:*:*:x64:*",
+            "*cpe:2.3:o:microsoft:windows_rt_8.1:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:r2:-:-:*:standard:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:r2:-:-:*:essentials:*:*:*"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0170",
+        "cwe_id": "CWE-284",
+        "description": "GDI in Microsoft Windows Vista SP2, Windows Server 2008 SP2 and R2 SP1, Windows 7 SP1, Windows 8.1, Windows Server 2012 Gold and R2, Windows RT 8.1, and Windows 10 Gold and 1511 allows remote attackers to execute arbitrary code via a crafted document, aka \"Windows Graphics Component RCE Vulnerability.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/137096/Microsoft-Windows-gdi32.dll-ExtEscape-Buffer-Overflow.html",
+            "http://www.securityfocus.com/bid/89864",
+            "http://www.securitytracker.com/id/1035823",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-055"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_rt_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:r2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_7:-:sp1:x86:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_7"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0171",
+        "cwe_id": "CWE-264",
+        "description": "The kernel-mode drivers in Microsoft Windows Vista SP2, Windows Server 2008 SP2 and R2 SP1, Windows 7 SP1, Windows 8.1, Windows Server 2012 Gold and R2, Windows RT 8.1, and Windows 10 Gold and 1511 allow local users to gain privileges via a crafted application, aka \"Win32k Elevation of Privilege Vulnerability,\" a different vulnerability than CVE-2016-0173, CVE-2016-0174, and CVE-2016-0196.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/137502/Windows-7-win32k-Bitmap-Use-After-Free.html",
+            "http://www.securityfocus.com/bid/89860",
+            "http://www.securitytracker.com/id/1035841",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-062",
+            "https://www.exploit-db.com/exploits/39959/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_rt_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:r2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_7:*:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_ser"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0173",
+        "cwe_id": "CWE-264",
+        "description": "The kernel-mode drivers in Microsoft Windows Vista SP2, Windows Server 2008 SP2 and R2 SP1, Windows 7 SP1, Windows 8.1, Windows Server 2012 Gold and R2, Windows RT 8.1, and Windows 10 Gold and 1511 allow local users to gain privileges via a crafted application, aka \"Win32k Elevation of Privilege Vulnerability,\" a different vulnerability than CVE-2016-0171, CVE-2016-0174, and CVE-2016-0196.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/137503/Windows-7-win32k-Bitmap-Use-After-Free.html",
+            "http://www.securityfocus.com/bid/90064",
+            "http://www.securitytracker.com/id/1035841",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-279",
+            "https://bugs.chromium.org/p/project-zero/issues/detail?id=747",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-062",
+            "https://www.exploit-db.com/exploits/39960/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_rt_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:r2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_7:*:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_ser"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0174",
+        "cwe_id": "CWE-264",
+        "description": "The kernel-mode drivers in Microsoft Windows Vista SP2, Windows Server 2008 SP2 and R2 SP1, Windows 7 SP1, Windows 8.1, Windows Server 2012 Gold and R2, Windows RT 8.1, and Windows 10 Gold and 1511 allow local users to gain privileges via a crafted application, aka \"Win32k Elevation of Privilege Vulnerability,\" a different vulnerability than CVE-2016-0171, CVE-2016-0173, and CVE-2016-0196.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/90065",
+            "http://www.securitytracker.com/id/1035841",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-280",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-062"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_rt_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:r2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_7:*:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_ser"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0175",
+        "cwe_id": "CWE-200",
+        "description": "The kernel-mode drivers in Microsoft Windows Vista SP2, Windows Server 2008 SP2 and R2 SP1, Windows 7 SP1, Windows 8.1, Windows Server 2012 Gold and R2, Windows RT 8.1, and Windows 10 Gold and 1511 allow local users to obtain sensitive information about kernel-object addresses, and consequently bypass the KASLR protection mechanism, via a crafted application, aka \"Win32k Information Disclosure Vulnerability.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "3.3 LOW",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/90027",
+            "http://www.securitytracker.com/id/1035841",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-281",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-062"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_rt_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:r2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_7:*:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_7:-"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0176",
+        "cwe_id": "CWE-264",
+        "description": "dxgkrnl.sys in the DirectX Graphics kernel subsystem in the kernel-mode drivers in Microsoft Windows 7 SP1, Windows Server 2008 R2 SP1, Windows 8.1, Windows Server 2012 Gold and R2, Windows RT 8.1, and Windows 10 Gold and 1511 allows local users to gain privileges via a crafted application, aka \"Microsoft DirectX Graphics Kernel Subsystem Elevation of Privilege Vulnerability.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/90052",
+            "http://www.securitytracker.com/id/1035841",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-284",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-062"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_rt_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:r2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_7:*:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_ser"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0178",
+        "cwe_id": "CWE-264",
+        "description": "The RPC NDR Engine in Microsoft Windows Vista SP2, Windows Server 2008 SP2 and R2 SP1, Windows 7 SP1, Windows 8.1, Windows Server 2012 Gold and R2, Windows RT 8.1, and Windows 10 Gold and 1511 mishandles free operations, which allows remote attackers to execute arbitrary code via malformed RPC requests, aka \"RPC Network Data Representation Engine Elevation of Privilege Vulnerability.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/90032",
+            "http://www.securitytracker.com/id/1035837",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-061"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:x86:*",
+            "*cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:x64:*",
+            "*cpe:2.3:o:microsoft:windows_10:-:gold:*:*:*:*:x86:*",
+            "*cpe:2.3:o:microsoft:windows_10:-:gold:*:*:*:*:x64:*",
+            "*cpe:2.3:o:microsoft:windows_rt_8.1:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:r2:-:-:*:standard:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:r2:-:-:*:essentials:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_rt_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:r2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_7:*:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_ser",
+            "*cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:x86:*",
+            "*cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:x64:*",
+            "*cpe:2.3:o:microsoft:windows_10:-:gold:*:*:*:*:x86:*",
+            "*cpe:2.3:o:microsoft:windows_10:-:gold:*:*:*:*:x64:*",
+            "*cpe:2.3:o:microsoft:windows_rt_8.1:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:r2:-:-:*:standard:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:r2:-:-:*:essentials:*:*:*"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0179",
+        "cwe_id": "CWE-284",
+        "description": "Windows Shell in Microsoft Windows 8.1, Windows Server 2012 R2, Windows RT 8.1, and Windows 10 Gold and 1511 allows remote attackers to execute arbitrary code via a crafted web site, aka \"Windows Shell Remote Code Execution Vulnerability.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/89868",
+            "http://www.securitytracker.com/id/1035825",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-057"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_rt_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:r2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_8.1:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0180",
+        "cwe_id": "CWE-264",
+        "description": "The kernel in Microsoft Windows Vista SP2, Windows Server 2008 SP2 and R2 SP1, Windows 7 SP1, Windows 8.1, Windows Server 2012 Gold and R2, Windows RT 8.1, and Windows 10 Gold and 1511 mishandles symbolic links, which allows local users to gain privileges via a crafted application, aka \"Windows Kernel Elevation of Privilege Vulnerability.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/90028",
+            "http://www.securitytracker.com/id/1035833",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-060"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_rt_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:r2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_7:-:sp1:x86:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_7"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0181",
+        "cwe_id": "CWE-254",
+        "description": "Microsoft Windows 10 Gold and 1511 allows local users to bypass the Virtual Secure Mode Hypervisor Code Integrity (HVCI) protection mechanism and perform RWX markings of kernel-mode pages via a crafted application, aka \"Hypervisor Code Integrity Security Feature Bypass.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/90048",
+            "http://www.securitytracker.com/id/1035843",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-066"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0182",
+        "cwe_id": "CWE-284",
+        "description": "Windows Journal in Microsoft Windows Vista SP2, Windows 7 SP1, Windows 8.1, Windows RT 8.1, and Windows 10 Gold and 1511 allows remote attackers to execute arbitrary code via a crafted Journal (aka .jnt) file, aka \"Windows Journal Memory Corruption Vulnerability.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/89867",
+            "http://www.securitytracker.com/id/1035824",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-056",
+            "https://www.verisign.com/en_US/security-services/security-intelligence/vulnerability-reports/articles/index.xhtml?id=1225"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_rt_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_7:*:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_vista:*:sp2:*:*:*:*:*:*"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0183",
+        "cwe_id": "CWE-284",
+        "description": "The Windows font library in Microsoft Office 2010 SP2, Word 2010 SP2, Word Automation Services on SharePoint Server 2010 SP2, and Office Web Apps 2010 SP2 allows remote attackers to execute arbitrary code via a crafted embedded font, aka \"Microsoft Office Graphics RCE Vulnerability.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1035819",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-054"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:microsoft:office_web_apps:2010:sp2:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:sharepoint_server:2010:sp2:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:word:2010:sp2:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:office:2010:sp2:*:*:*:*:*:*"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0184",
+        "cwe_id": null,
+        "description": "Use-after-free vulnerability in GDI in Microsoft Windows Vista SP2, Windows Server 2008 SP2 and R2 SP1, Windows 7 SP1, Windows 8.1, Windows Server 2012 Gold and R2, Windows RT 8.1, and Windows 10 Gold and 1511 allows remote attackers to execute arbitrary code via a crafted document, aka \"Direct3D Use After Free Vulnerability.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/89892",
+            "http://www.securitytracker.com/id/1035823",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-055"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_rt_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:r2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_7:*:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_ser"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0185",
+        "cwe_id": "CWE-20",
+        "description": "Media Center in Microsoft Windows Vista SP2, Windows 7 SP1, and Windows 8.1 allows remote attackers to execute arbitrary code via a crafted Media Center link (aka .mcl) file, aka \"Windows Media Center Remote Code Execution Vulnerability.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/90023",
+            "http://www.securitytracker.com/id/1035832",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-277",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-059",
+            "https://www.exploit-db.com/exploits/39805/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:microsoft:windows_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_7:*:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_vista:*:sp2:*:*:*:*:*:*"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0186",
+        "cwe_id": "CWE-119",
+        "description": "The Chakra JavaScript engine in Microsoft Edge allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption) via a crafted web site, aka \"Scripting Engine Memory Corruption Vulnerability,\" a different vulnerability than CVE-2016-0191 and CVE-2016-0193.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:H/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:H/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "7.6 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/90008",
+            "http://www.securitytracker.com/id/1035821",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-338",
+            "http://www.zerodayinitiative.com/advisories/ZDI-16-355",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-052"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:microsoft:edge:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0187",
+        "cwe_id": "CWE-119",
+        "description": "The Microsoft (1) JScript 5.8 and (2) VBScript 5.8 engines, as used in Internet Explorer 9 through 11 and other products, allow remote attackers to execute arbitrary code or cause a denial of service (memory corruption) via a crafted web site, aka \"Scripting Engine Memory Corruption Vulnerability,\" a different vulnerability than CVE-2016-0189.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:H/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:H/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "7.6 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/90011",
+            "http://www.securitytracker.com/id/1035820",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-051",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-053"
+        ],
+        "cpe": [
+            "cpe:2.3:a:microsoft:internet_explorer:9:*:*:*:*:*:*:*",
+            "cpe:2.3:a:microsoft:internet_explorer:11:*:*:*:*:*:*:*",
+            "cpe:2.3:a:microsoft:internet_explorer:10:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0188",
+        "cwe_id": "CWE-284",
+        "description": "The User Mode Code Integrity (UMCI) implementation in Device Guard in Microsoft Internet Explorer 11 allows remote attackers to bypass a code-signing protection mechanism via unspecified vectors, aka \"Internet Explorer Security Feature Bypass.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/90003",
+            "http://www.securitytracker.com/id/1035820",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-051"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:microsoft:internet_explorer:11:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0189",
+        "cwe_id": "CWE-119",
+        "description": "The Microsoft (1) JScript 5.8 and (2) VBScript 5.7 and 5.8 engines, as used in Internet Explorer 9 through 11 and other products, allow remote attackers to execute arbitrary code or cause a denial of service (memory corruption) via a crafted web site, aka \"Scripting Engine Memory Corruption Vulnerability,\" a different vulnerability than CVE-2016-0187.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:H/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:H/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "7.6 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/90012",
+            "http://www.securitytracker.com/id/1035820",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-051",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-053",
+            "https://www.exploit-db.com/exploits/40118/",
+            "https://www.virusbulletin.com/virusbulletin/2017/01/journey-and-evolution-god-mode-2016-cve-2016-0189/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:microsoft:vbscript:5.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:vbscript:5.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:jscript:5.8:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2016",
+        "month": "5"
+    },
+    {
+        "cve_id": "CVE-2016-0190",
+        "cwe_id": "CWE-200",
+        "description": "Volume Manager Driver in Microsoft Windows 8.1, Windows Server 2012 Gold and R2, and Windows RT 8.1 does not properly check whether RemoteFX RDP USB disk accesses originate from the user who mounted a disk, which allows local users to read arbitrary files on these disks via RemoteFX requests, aka \"Remote Desktop Protocol Drive Redirection Information Disclosure Vulnerability.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/90075",
+            "http://www.securitytracker.com/id/1035844",
+            "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-067"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:microsoft:windows_rt_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:r2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server_2012:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_8.1:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "05/10/2016",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2016",
+        "month": "5"
+    }
+]

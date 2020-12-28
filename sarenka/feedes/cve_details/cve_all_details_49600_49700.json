@@ -1,0 +1,3408 @@
+[
+    {
+        "cve_id": "CVE-2015-9261",
+        "cwe_id": "CWE-476",
+        "description": "huft_build in archival/libarchive/decompress_gunzip.c in BusyBox before 1.27.2 misuses a pointer, causing segfaults and an application crash during an unzip operation on a specially crafted ZIP file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/153278/WAGO-852-Industrial-Managed-Switch-Series-Code-Execution-Hardcoded-Credentials.html",
+            "http://packetstormsecurity.com/files/154361/Cisco-Device-Hardcoded-Credentials-GNU-glibc-BusyBox.html",
+            "http://seclists.org/fulldisclosure/2019/Jun/18",
+            "http://seclists.org/fulldisclosure/2019/Sep/7",
+            "http://seclists.org/fulldisclosure/2020/Aug/20",
+            "http://www.openwall.com/lists/oss-security/2015/10/25/3",
+            "https://bugs.debian.org/803097",
+            "https://git.busybox.net/busybox/commit/?id=1de25a6e87e0e627aa34298105a3d17c60a1f44e",
+            "https://lists.debian.org/debian-lts-announce/2018/07/msg00037.html",
+            "https://seclists.org/bugtraq/2019/Jun/14",
+            "https://seclists.org/bugtraq/2019/Sep/7",
+            "https://usn.ubuntu.com/3935-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:a:busybox:busybox:*:*:*:*:*:*:*:* versions up to (excluding) 1.27.2",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:busybox:busybox:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/26/2018",
+        "modified_date": "08/27/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-18344",
+        "cwe_id": "CWE-125",
+        "description": "The timer_create syscall implementation in kernel/time/posix-timers.c in the Linux kernel before 4.14.8 doesn't properly validate the sigevent->sigev_notify field, which leads to out-of-bounds access in the show_timer function (called when /proc/$PID/timers is read). This allows userspace applications to read arbitrary kernel memory (on a kernel built with CONFIG_POSIX_TIMERS and CONFIG_CHECKPOINT_RESTORE).",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/104909",
+            "http://www.securitytracker.com/id/1041414",
+            "https://access.redhat.com/errata/RHSA-2018:2948",
+            "https://access.redhat.com/errata/RHSA-2018:3083",
+            "https://access.redhat.com/errata/RHSA-2018:3096",
+            "https://access.redhat.com/errata/RHSA-2018:3459",
+            "https://access.redhat.com/errata/RHSA-2018:3540",
+            "https://access.redhat.com/errata/RHSA-2018:3586",
+            "https://access.redhat.com/errata/RHSA-2018:3590",
+            "https://access.redhat.com/errata/RHSA-2018:3591",
+            "https://cdn.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.14.8",
+            "https://github.com/torvalds/linux/commit/cef31d9af908243421258f1df35a4a644604efbe",
+            "https://usn.ubuntu.com/3742-1/",
+            "https://usn.ubuntu.com/3742-2/",
+            "https://www.exploit-db.com/exploits/45175/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:redhat:virtualization:4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:mrg_realtime:2.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_server_aus:7.2:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_server_aus:7.3:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_server_eus:7.3:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_li",
+            "*cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:redhat:virtualization:4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:virtualization:4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:mrg_realtime:2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_eus:7.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_li",
+            "*cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/26/2018",
+        "modified_date": "10/15/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-9068",
+        "cwe_id": "CWE-798",
+        "description": "The IMM2 First Failure Data Capture function collects management module logs and diagnostic information when a hardware error is detected. This information is made available for download through an SFTP server hosted on the IMM2 management network interface. In versions earlier than 4.90 for Lenovo System x and earlier than 6.80 for IBM System x, the credentials to access the SFTP server are hard-coded and described in the IMM2 documentation, allowing an attacker with management network access to obtain the collected FFDC data. After applying the update, the IMM2 will create random SFTP credentials for use with OneCLI.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://support.lenovo.com/us/en/solutions/LEN-20227"
+        ],
+        "cpe": [
+            "cpe:2.3:h:ibm:bladecenter_hs22:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:bladecenter_hs23:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:bladecenter_hs23e:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:flex_system_x220_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:flex_system_x222_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:flex_system_x240_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:flex_system_x280_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:flex_system_x440_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:flex_system_x480_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:flex_system_x880_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:idataplex_dx360_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:idataplex_dx360_m4_water_cooled:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:nextscale_nx360_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3100_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3100_m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3250_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3250_m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3300_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3500_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3530_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3550_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3630_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3650_m4_bd:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3650_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3650_m4_hd:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3750_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3850_x6:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:ibm:system_x3950_x6:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:flex_system_x240_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:flex_system_x240_m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:flex_system_x280_x6:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:flex_system_x440_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:flex_system_x480_x6:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:flex_system_x880:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:nextscale_nx360_m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:system_x3250_m6:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:system_x3500_m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:system_x3550_m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:system_x3650_m5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:system_x3750_m4:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:system_x3850_x6:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:lenovo:system_x3950_x6:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/26/2018",
+        "modified_date": "09/28/2018",
+        "vulnerability_source": "Lenovo Group Ltd.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2016-7470",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2016.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-7470"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-7470"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "07/26/2018",
+        "modified_date": "07/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2016-7471",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2016.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-7471"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-7471"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "07/26/2018",
+        "modified_date": "07/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2016-7473",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2016.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-7473"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-7473"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "07/26/2018",
+        "modified_date": "07/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2016-9246",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2016.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-9246"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-9246"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "07/26/2018",
+        "modified_date": "07/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2016-9248",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2016.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-9248"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-9248"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "07/26/2018",
+        "modified_date": "07/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2016-9254",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2016.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-9254"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-9254"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "07/26/2018",
+        "modified_date": "07/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2016-9255",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2016.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-9255"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-9255"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "07/26/2018",
+        "modified_date": "07/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2016-9258",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2016.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-9258"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-9258"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "07/26/2018",
+        "modified_date": "07/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-6146",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was withdrawn by its CNA due to an erroneous publication.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-6146"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-6146"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "07/26/2018",
+        "modified_date": "07/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-6149",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2017.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-6149"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-6149"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "07/26/2018",
+        "modified_date": "07/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-6170",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2017.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-6170"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-6170"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "07/26/2018",
+        "modified_date": "07/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-6171",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2017.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-6171"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-6171"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "07/26/2018",
+        "modified_date": "07/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-6172",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2017.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-6172"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-6172"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "07/26/2018",
+        "modified_date": "07/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-6173",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2017.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-6173"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-6173"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "07/26/2018",
+        "modified_date": "07/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-6174",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2017.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-6174"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-6174"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "07/26/2018",
+        "modified_date": "07/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-6175",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2017.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-6175"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-6175"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "07/26/2018",
+        "modified_date": "07/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-6176",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2017.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-6176"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-6176"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "07/26/2018",
+        "modified_date": "07/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-6177",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was in a CNA pool that was not assigned to any issues during 2017.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-6177"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-6177"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "07/26/2018",
+        "modified_date": "07/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14607",
+        "cwe_id": "CWE-311",
+        "description": "Thomson Reuters UltraTax CS 2017 on Windows, in a client/server configuration, transfers customer records and bank account numbers in cleartext over SMBv2, which allows attackers to (1) obtain sensitive information by sniffing the network or (2) conduct man-in-the-middle (MITM) attacks via unspecified vectors. The customer record transferred in cleartext contains: Client ID, Full Name, Spouse's Full Name, Social Security Number, Spouse's Social Security Number, Occupation, Spouse's Occupation, Daytime Phone, Home Phone, Tax Preparer, Federal and State Taxes to File, Bank Name, Bank Account Number, and possibly other sensitive information.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://corporateblue.com/ultratax-cs-data-exposure-vulnerability/",
+            "https://www.themikewylie.com/ultratax-cs-data-exposure-vulnerability-cve-2018-14608-cve-2018-14607/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:thomsonreuters:ultratax_cs_2017:-:*:*:*:*:windows:*:*",
+            "*cpe:2.3:a:thomsonreuters:ultratax_cs_2017:-:*:*:*:*:windows:*:*"
+        ],
+        "published_date": "07/26/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14608",
+        "cwe_id": "CWE-311",
+        "description": "Thomson Reuters UltraTax CS 2017 on Windows has a password protection option; however, the level of protection might be inconsistent with some customers' expectations because the data is directly accessible in cleartext. Specifically, it stores customer data in unique directories (%install_path%\\WinCSI\\UT17DATA\\client_ID\\file_name.XX17) that can be bypassed without authentication by examining the strings of the .XX17 file. The strings stored in the .XX17 file contain each customer's: Full Name, Spouse's Name, Social Security Number, Date of Birth, Occupation, Home Address, Daytime Phone Number, Home Phone Number, Spouse's Address, Spouse's Daytime Phone Number, Spouse's Social Security Number, Spouse's Home Phone Number, Spouse's Occupation, Spouse's Date of Birth, and Spouse's Filing Status.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://corporateblue.com/ultratax-cs-data-exposure-vulnerability/",
+            "https://www.themikewylie.com/ultratax-cs-data-exposure-vulnerability-cve-2018-14608-cve-2018-14607/"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/26/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14601",
+        "cwe_id": null,
+        "description": "An issue was discovered in GitLab Community and Enterprise Edition 11.1.x before 11.1.2. A Denial of Service can occur because Markdown rendering times are slow.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://about.gitlab.com/2018/07/26/security-release-gitlab-11-dot-1-dot-2-released/",
+            "https://gitlab.com/gitlab-org/gitlab-ce/issues/49409"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 11.1.0 up to (excluding) 11.1.2\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 11.1.0 up to (excluding) 11.1.2",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "07/26/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14602",
+        "cwe_id": "CWE-200",
+        "description": "An issue was discovered in GitLab Community and Enterprise Edition before 10.8.7, 11.0.x before 11.0.5, and 11.1.x before 11.1.2. Information Disclosure can occur because the Prometheus metrics feature discloses private project pathnames.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://about.gitlab.com/2018/07/26/security-release-gitlab-11-dot-1-dot-2-released/",
+            "https://gitlab.com/gitlab-com/infrastructure/issues/4423"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions up to (excluding) 10.8.7\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions up to (excluding) 10.8.7\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 11.0.0 up to (excluding) 11.0.5\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 11.0.0 up to (excluding) 11.0.5\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 11.1.0 up to (e",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/26/2018",
+        "modified_date": "09/18/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14603",
+        "cwe_id": "CWE-352",
+        "description": "An issue was discovered in GitLab Community and Enterprise Edition before 10.8.7, 11.0.x before 11.0.5, and 11.1.x before 11.1.2. CSRF can occur in the Test feature of the System Hooks component.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://about.gitlab.com/2018/07/26/security-release-gitlab-11-dot-1-dot-2-released/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions up to (excluding) 10.8.7\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions up to (excluding) 10.8.7\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 11.0.0 up to (excluding) 11.0.5\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 11.0.0 up to (excluding) 11.0.5\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 11.1.0 up to (e",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/26/2018",
+        "modified_date": "09/18/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14604",
+        "cwe_id": "CWE-79",
+        "description": "An issue was discovered in GitLab Community and Enterprise Edition before 10.8.7, 11.0.x before 11.0.5, and 11.1.x before 11.1.2. XSS can occur in the tooltip of the job inside the CI/CD pipeline.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://about.gitlab.com/2018/07/26/security-release-gitlab-11-dot-1-dot-2-released/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions up to (excluding) 10.8.7\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions up to (excluding) 10.8.7\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 11.0.0 up to (excluding) 11.0.5\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 11.0.0 up to (excluding) 11.0.5\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 11.1.0 up to (e",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/26/2018",
+        "modified_date": "09/18/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14605",
+        "cwe_id": "CWE-79",
+        "description": "An issue was discovered in GitLab Community and Enterprise Edition before 10.8.7, 11.0.x before 11.0.5, and 11.1.x before 11.1.2. XSS can occur in the branch name during a Web IDE file commit.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://about.gitlab.com/2018/07/26/security-release-gitlab-11-dot-1-dot-2-released/",
+            "https://gitlab.com/gitlab-org/gitlab-ce/issues/47793"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions up to (excluding) 10.8.7\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions up to (excluding) 10.8.7\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 11.0.0 up to (excluding) 11.0.5\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 11.0.0 up to (excluding) 11.0.5\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 11.1.0 up to (e",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/26/2018",
+        "modified_date": "09/18/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14606",
+        "cwe_id": "CWE-79",
+        "description": "An issue was discovered in GitLab Community and Enterprise Edition before 10.8.7, 11.0.x before 11.0.5, and 11.1.x before 11.1.2. XSS can occur via a Milestone name during a promotion.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://about.gitlab.com/2018/07/26/security-release-gitlab-11-dot-1-dot-2-released/",
+            "https://gitlab.com/gitlab-org/gitlab-ce/issues/48617"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions up to (excluding) 10.8.7\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions up to (excluding) 10.8.7\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 11.0.0 up to (excluding) 11.0.5\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:* versions from (including) 11.0.0 up to (excluding) 11.0.5\n     *cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:* versions from (including) 11.1.0 up to (e",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/26/2018",
+        "modified_date": "09/18/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14609",
+        "cwe_id": "CWE-476",
+        "description": "An issue was discovered in the Linux kernel through 4.17.10. There is an invalid pointer dereference in __del_reloc_root() in fs/btrfs/relocation.c when mounting a crafted btrfs image, related to removing reloc rb_trees when reloc control has not been initialized.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "7.1 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/104917",
+            "https://bugzilla.kernel.org/show_bug.cgi?id=199833",
+            "https://lists.debian.org/debian-lts-announce/2018/10/msg00003.html",
+            "https://patchwork.kernel.org/patch/10500521/",
+            "https://usn.ubuntu.com/3821-1/",
+            "https://usn.ubuntu.com/3821-2/",
+            "https://usn.ubuntu.com/4094-1/",
+            "https://usn.ubuntu.com/4118-1/",
+            "https://www.debian.org/security/2018/dsa-4308"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:* versions up to (including) 4.17.10",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "08/13/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14610",
+        "cwe_id": "CWE-787",
+        "description": "An issue was discovered in the Linux kernel through 4.17.10. There is out-of-bounds access in write_extent_buffer() when mounting and operating a crafted btrfs image, because of a lack of verification that each block group has a corresponding chunk at mount time, within btrfs_read_block_groups in fs/btrfs/extent-tree.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "7.1 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/104917",
+            "https://bugzilla.kernel.org/show_bug.cgi?id=199837",
+            "https://lists.debian.org/debian-lts-announce/2019/03/msg00017.html",
+            "https://lists.debian.org/debian-lts-announce/2020/06/msg00011.html",
+            "https://lists.debian.org/debian-lts-announce/2020/06/msg00013.html",
+            "https://patchwork.kernel.org/patch/10503415/",
+            "https://usn.ubuntu.com/3932-1/",
+            "https://usn.ubuntu.com/3932-2/",
+            "https://usn.ubuntu.com/4094-1/",
+            "https://usn.ubuntu.com/4118-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:* versions up to (including) 4.17.10",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "06/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14611",
+        "cwe_id": "CWE-416",
+        "description": "An issue was discovered in the Linux kernel through 4.17.10. There is a use-after-free in try_merge_free_space() when mounting a crafted btrfs image, because of a lack of chunk type flag checks in btrfs_check_chunk_valid in fs/btrfs/volumes.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "7.1 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/104917",
+            "https://bugzilla.kernel.org/show_bug.cgi?id=199839",
+            "https://lists.debian.org/debian-lts-announce/2019/03/msg00017.html",
+            "https://lists.debian.org/debian-lts-announce/2020/06/msg00011.html",
+            "https://lists.debian.org/debian-lts-announce/2020/06/msg00013.html",
+            "https://patchwork.kernel.org/patch/10503099/",
+            "https://usn.ubuntu.com/3932-1/",
+            "https://usn.ubuntu.com/3932-2/",
+            "https://usn.ubuntu.com/4094-1/",
+            "https://usn.ubuntu.com/4118-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:* versions up to (including) 4.17.10",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "06/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14612",
+        "cwe_id": "CWE-476",
+        "description": "An issue was discovered in the Linux kernel through 4.17.10. There is an invalid pointer dereference in btrfs_root_node() when mounting a crafted btrfs image, because of a lack of chunk block group mapping validation in btrfs_read_block_groups in fs/btrfs/extent-tree.c, and a lack of empty-tree checks in check_leaf in fs/btrfs/tree-checker.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "7.1 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/104917",
+            "https://bugzilla.kernel.org/show_bug.cgi?id=199847",
+            "https://lists.debian.org/debian-lts-announce/2019/03/msg00017.html",
+            "https://lists.debian.org/debian-lts-announce/2020/06/msg00011.html",
+            "https://lists.debian.org/debian-lts-announce/2020/06/msg00013.html",
+            "https://patchwork.kernel.org/patch/10503403/",
+            "https://patchwork.kernel.org/patch/10503413/",
+            "https://usn.ubuntu.com/3932-1/",
+            "https://usn.ubuntu.com/3932-2/",
+            "https://usn.ubuntu.com/4094-1/",
+            "https://usn.ubuntu.com/4118-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:* versions up to (including) 4.17.10",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "06/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14613",
+        "cwe_id": "CWE-476",
+        "description": "An issue was discovered in the Linux kernel through 4.17.10. There is an invalid pointer dereference in io_ctl_map_page() when mounting and operating a crafted btrfs image, because of a lack of block group item validation in check_leaf_item in fs/btrfs/tree-checker.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "7.1 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/104917",
+            "https://bugzilla.kernel.org/show_bug.cgi?id=199849",
+            "https://lists.debian.org/debian-lts-announce/2019/03/msg00017.html",
+            "https://lists.debian.org/debian-lts-announce/2020/06/msg00011.html",
+            "https://lists.debian.org/debian-lts-announce/2020/06/msg00013.html",
+            "https://patchwork.kernel.org/patch/10503147/",
+            "https://usn.ubuntu.com/3932-1/",
+            "https://usn.ubuntu.com/3932-2/",
+            "https://usn.ubuntu.com/4094-1/",
+            "https://usn.ubuntu.com/4118-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:* versions up to (including) 4.17.10",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "06/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14614",
+        "cwe_id": "CWE-476",
+        "description": "An issue was discovered in the Linux kernel through 4.17.10. There is an out-of-bounds access in __remove_dirty_segment() in fs/f2fs/segment.c when mounting an f2fs image.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "7.1 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/104917",
+            "https://bugzilla.kernel.org/show_bug.cgi?id=200419",
+            "https://lists.debian.org/debian-lts-announce/2019/03/msg00017.html",
+            "https://usn.ubuntu.com/3932-1/",
+            "https://usn.ubuntu.com/3932-2/",
+            "https://usn.ubuntu.com/4094-1/",
+            "https://usn.ubuntu.com/4118-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:* versions up to (including) 4.17.10",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "04/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14615",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in the Linux kernel through 4.17.10. There is a buffer overflow in truncate_inline_inode() in fs/f2fs/inline.c when umounting an f2fs image, because a length value may be negative.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "7.1 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/104917",
+            "https://bugzilla.kernel.org/show_bug.cgi?id=200421",
+            "https://usn.ubuntu.com/4094-1/",
+            "https://usn.ubuntu.com/4118-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:* versions up to (including) 4.17.10",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "08/13/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14616",
+        "cwe_id": "CWE-476",
+        "description": "An issue was discovered in the Linux kernel through 4.17.10. There is a NULL pointer dereference in fscrypt_do_page_crypto() in fs/crypto/crypto.c when operating on a file in a corrupted f2fs image.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "7.1 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/104917",
+            "https://bugzilla.kernel.org/show_bug.cgi?id=200465",
+            "https://lists.debian.org/debian-lts-announce/2019/03/msg00017.html",
+            "https://usn.ubuntu.com/3932-1/",
+            "https://usn.ubuntu.com/3932-2/",
+            "https://usn.ubuntu.com/4094-1/",
+            "https://usn.ubuntu.com/4118-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:* versions up to (including) 4.17.10",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "04/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14617",
+        "cwe_id": "CWE-476",
+        "description": "An issue was discovered in the Linux kernel through 4.17.10. There is a NULL pointer dereference and panic in hfsplus_lookup() in fs/hfsplus/dir.c when opening a file (that is purportedly a hard link) in an hfs+ filesystem that has malformed catalog data, and is mounted read-only without a metadata directory.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "7.1 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/104917",
+            "https://bugzilla.kernel.org/show_bug.cgi?id=200297",
+            "https://lists.debian.org/debian-lts-announce/2018/10/msg00003.html",
+            "https://usn.ubuntu.com/3821-1/",
+            "https://usn.ubuntu.com/3821-2/",
+            "https://usn.ubuntu.com/4094-1/",
+            "https://usn.ubuntu.com/4118-1/",
+            "https://www.debian.org/security/2018/dsa-4308",
+            "https://www.spinics.net/lists/linux-fsdevel/msg130021.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:* versions up to (including) 4.17.10",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "08/13/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-12151",
+        "cwe_id": "CWE-310",
+        "description": "A flaw was found in the way samba client before samba 4.4.16, samba 4.5.14 and samba 4.6.8 used encryption with the max protocol set as SMB3. The connection could lose the requirement for signing and encrypting to any DFS redirects, allowing an attacker to read or alter the contents of the connection via a man-in-the-middle attack.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-12151"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100917",
+            "http://www.securitytracker.com/id/1039401",
+            "https://access.redhat.com/errata/RHSA-2017:2790",
+            "https://access.redhat.com/errata/RHSA-2017:2858",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-12151",
+            "https://security.netapp.com/advisory/ntap-20170921-0001/",
+            "https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbux03817en_us",
+            "https://www.debian.org/security/2017/dsa-3983",
+            "https://www.samba.org/samba/security/CVE-2017-12151.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:cifs_server:b.04.05.11.00:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:cifs_server:b.04.05.11.00:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:samba:samba:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-7464",
+        "cwe_id": "CWE-611",
+        "description": "It was found that the JAXP implementation used in JBoss EAP 7.0 for SAX and DOM parsing is vulnerable to certain XXE flaws. An attacker could use this flaw to cause DoS, SSRF, or information disclosure if they are able to provide XML content for parsing.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/98450",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-7464"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:jboss_enterprise_application_platform:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:jboss_enterprise_application_platform:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2622",
+        "cwe_id": "CWE-200",
+        "description": "An accessibility flaw was found in the OpenStack Workflow (mistral) service where a service log directory was improperly made world readable. A malicious system user could exploit this flaw to access sensitive information.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://access.redhat.com/errata/RHSA-2017:1584",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2622"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:openstack:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:10.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2639",
+        "cwe_id": "CWE-295",
+        "description": "It was found that CloudForms does not verify that the server hostname matches the domain name in the certificate when using a custom CA and communicating with Red Hat Virtualization (RHEV) and OpenShift. This would allow an attacker to spoof RHEV or OpenShift systems and potentially harvest sensitive information from CloudForms.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/98769",
+            "http://www.securitytracker.com/id/1038599",
+            "https://access.redhat.com/errata/RHSA-2017:1367",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2639"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:cloudforms:4.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:cloudforms:4.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:cloudforms_management_engine:5.8:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-7470",
+        "cwe_id": "CWE-863",
+        "description": "It was found that spacewalk-channel can be used by a non-admin user or disabled users to perform administrative tasks due to an incorrect authorization check in backend/server/rhnChannel.py.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/98569",
+            "https://access.redhat.com/errata/RHSA-2017:1259",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-7470"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:satellite:5.6:*:*:*:*:*:*:*\n     *cpe:2.3:a:redhat:satellite:5.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:satellite:5.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:satellite:5.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:spacewalk:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-6686",
+        "cwe_id": "CWE-287",
+        "description": "Authentication Bypass vulnerability in TPM autoboot in McAfee Drive Encryption (MDE) 7.1.0 and above allows physically proximate attackers to bypass local security protection via specific set of circumstances.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:P/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:P/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "6.6 MEDIUM",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://kc.mcafee.com/corporate/index?page=content&id=SB10242"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mcafee:drive_encryption:*:*:*:*:*:*:*:* versions from (including) 7.1.0",
+            "*cpe:2.3:a:mcafee:drive_encryption:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "McAfee",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2666",
+        "cwe_id": "CWE-444",
+        "description": "It was discovered in Undertow that the code that parsed the HTTP request line permitted invalid characters. This could be exploited, in conjunction with a proxy that also permitted the invalid characters but with a different interpretation, to inject data into the HTTP response. By manipulating the HTTP response the attacker could poison a web-cache, perform an XSS attack, or obtain sensitive information from requests other than their own.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-2666"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.4 MEDIUM",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2017-1409.html",
+            "http://www.securityfocus.com/bid/98966",
+            "https://access.redhat.com/errata/RHSA-2017:1410",
+            "https://access.redhat.com/errata/RHSA-2017:1411",
+            "https://access.redhat.com/errata/RHSA-2017:1412",
+            "https://access.redhat.com/errata/RHSA-2017:3454",
+            "https://access.redhat.com/errata/RHSA-2017:3455",
+            "https://access.redhat.com/errata/RHSA-2017:3456",
+            "https://access.redhat.com/errata/RHSA-2017:3458",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2666",
+            "https://www.debian.org/security/2017/dsa-3906"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:redhat:enterprise_linux:6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*",
+            "cpe:2.3:o:redhat:enterprise_linux:6:*:*:*:*:*:*:*",
+            "cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:undertow:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-7519",
+        "cwe_id": "CWE-134",
+        "description": "In Ceph, a format string flaw was found in the way libradosstriper parses input from user. A user could crash an application or service using the libradosstriper library.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "4.4 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/99075",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-7519",
+            "https://www.debian.org/security/2018/dsa-4339"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ceph:ceph:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ceph:ceph:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-10862",
+        "cwe_id": "CWE-22",
+        "description": "WildFly Core before version 6.0.0.Alpha3 does not properly validate file paths in .war archives, allowing for the extraction of crafted .war archives to overwrite arbitrary files. This is an instance of the 'Zip Slip' vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "https://access.redhat.com/errata/RHSA-2018:2276",
+            "https://access.redhat.com/errata/RHSA-2018:2277",
+            "https://access.redhat.com/errata/RHSA-2018:2279",
+            "https://access.redhat.com/errata/RHSA-2018:2423",
+            "https://access.redhat.com/errata/RHSA-2018:2424",
+            "https://access.redhat.com/errata/RHSA-2018:2425",
+            "https://access.redhat.com/errata/RHSA-2018:2428",
+            "https://access.redhat.com/errata/RHSA-2018:2643",
+            "https://access.redhat.com/errata/RHSA-2019:0877",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-10862",
+            "https://snyk.io/research/zip-slip-vulnerability"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:redhat:enterprise_linux:6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*",
+            "cpe:2.3:o:redhat:enterprise_linux:6:*:*:*:*:*:*:*",
+            "cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:virtualization:4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:wildfly_core:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:redhat:wildfly_core:6.0.0:alpha1:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:wildfly_core:6.0.0:alpha2:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "04/26/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-12165",
+        "cwe_id": "CWE-444",
+        "description": "It was discovered that Undertow before 1.4.17, 1.3.31 and 2.0.0 processes http request headers with unusual whitespaces which can cause possible http request smuggling.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://access.redhat.com/errata/RHSA-2017:3454",
+            "https://access.redhat.com/errata/RHSA-2017:3455",
+            "https://access.redhat.com/errata/RHSA-2017:3456",
+            "https://access.redhat.com/errata/RHSA-2017:3458",
+            "https://access.redhat.com/errata/RHSA-2018:0002",
+            "https://access.redhat.com/errata/RHSA-2018:0003",
+            "https://access.redhat.com/errata/RHSA-2018:0004",
+            "https://access.redhat.com/errata/RHSA-2018:0005",
+            "https://access.redhat.com/errata/RHSA-2018:1322",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-12165"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:jboss_enterprise_application_platform:7.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:redhat:jboss_enterprise_application_platform:7.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:jboss_enterprise_application_platform:7.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:jboss_enterprise_application_platform:7.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:undertow:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:redhat:undertow:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:redhat:undertow:2.0.0:alpha_1:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-12195",
+        "cwe_id": "CWE-295",
+        "description": "A flaw was found in all Openshift Enterprise versions using the openshift elasticsearch plugin. An attacker with knowledge of the given name used to authenticate and access Elasticsearch can later access it without the token, bypassing authentication. This attack also requires that the Elasticsearch be configured with an external route, and the data accessed is limited to the indices.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "4.8 MEDIUM",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "https://access.redhat.com/errata/RHSA-2017:3188",
+            "https://access.redhat.com/errata/RHSA-2017:3389",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-12195"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:openshift_container_platform:3.4:*:*:*:*:*:*:*\n     *cpe:2.3:a:redhat:openshift_container_platform:3.5:*:*:*:*:*:*:*\n     *cpe:2.3:a:redhat:openshift_container_platform:3.6:*:*:*:*:*:*:*\n     *cpe:2.3:a:redhat:openshift_container_platform:3.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openshift_container_platform:3.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openshift_container_platform:3.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openshift_container_platform:3.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openshift_container_platform:3.7:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-15120",
+        "cwe_id": "CWE-476",
+        "description": "An issue has been found in the parsing of authoritative answers in PowerDNS Recursor before 4.0.8, leading to a NULL pointer dereference when parsing a specially crafted answer containing a CNAME of a different class than IN. An unauthenticated remote attacker could cause a denial of service.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-15120"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/oss-sec/2017/q4/382",
+            "http://www.securityfocus.com/bid/106335",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-15120",
+            "https://doc.powerdns.com/recursor/security-advisories/powerdns-advisory-2017-08.html",
+            "https://www.debian.org/security/2017/dsa-4063"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:powerdns:recursor:*:*:*:*:*:*:*:* versions up to (excluding) 4.0.8",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:powerdns:recursor:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-15125",
+        "cwe_id": "CWE-79",
+        "description": "A flaw was found in CloudForms before 5.9.0.22 in the self-service UI snapshot feature where the name field is not properly sanitized for HTML and JavaScript input. An attacker could use this flaw to execute a stored XSS attack on an application administrator using CloudForms. Please note that CSP (Content Security Policy) prevents exploitation of this XSS however not all browsers support CSP.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/102287",
+            "https://access.redhat.com/errata/RHSA-2018:0380",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-15125"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:cloudforms_management_engine:*:*:*:*:*:*:*:* versions up to (excluding) 5.9.0.22",
+            "*cpe:2.3:a:redhat:cloudforms_management_engine:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2595",
+        "cwe_id": "CWE-22",
+        "description": "It was found that the log file viewer in Red Hat JBoss Enterprise Application 6 and 7 allows arbitrary file read to authenticated user via path traversal.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2017-1409.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-1551.html",
+            "http://www.securityfocus.com/bid/98967",
+            "http://www.securitytracker.com/id/1038757",
+            "https://access.redhat.com/errata/RHSA-2017:1410",
+            "https://access.redhat.com/errata/RHSA-2017:1411",
+            "https://access.redhat.com/errata/RHSA-2017:1412",
+            "https://access.redhat.com/errata/RHSA-2017:1548",
+            "https://access.redhat.com/errata/RHSA-2017:1549",
+            "https://access.redhat.com/errata/RHSA-2017:1550",
+            "https://access.redhat.com/errata/RHSA-2017:1552",
+            "https://access.redhat.com/errata/RHSA-2017:3454",
+            "https://access.redhat.com/errata/RHSA-2017:3455",
+            "https://access.redhat.com/errata/RHSA-2017:3456",
+            "https://access.redhat.com/errata/RHSA-2017:3458",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2595"
+        ],
+        "cpe": [
+            "cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*",
+            "cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2670",
+        "cwe_id": "CWE-835",
+        "description": "It was found in Undertow before 1.3.28 that with non-clean TCP close, the Websocket server gets into infinite loop on every IO thread, effectively causing DoS.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-2670"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2017-1409.html",
+            "http://www.securityfocus.com/bid/98965",
+            "https://access.redhat.com/errata/RHSA-2017:1410",
+            "https://access.redhat.com/errata/RHSA-2017:1411",
+            "https://access.redhat.com/errata/RHSA-2017:1412",
+            "https://access.redhat.com/errata/RHSA-2017:3454",
+            "https://access.redhat.com/errata/RHSA-2017:3455",
+            "https://access.redhat.com/errata/RHSA-2017:3456",
+            "https://access.redhat.com/errata/RHSA-2017:3458",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2670",
+            "https://www.debian.org/security/2017/dsa-3906"
+        ],
+        "cpe": [
+            "cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*",
+            "cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:undertow:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-7497",
+        "cwe_id": "CWE-284",
+        "description": "The dialog for creating cloud volumes (cinder provider) in CloudForms does not filter cloud tenants by user. An attacker with the ability to create storage volumes could use this to create storage volumes for any other tenant.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://access.redhat.com/errata/RHSA-2017:1601",
+            "https://access.redhat.com/errata/RHSA-2017:1758",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-7497"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:cloudforms_management_engine:5.7.2:*:*:*:*:*:*:*\n     *cpe:2.3:a:redhat:cloudforms_management_engine:5.8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:cloudforms_management_engine:5.7.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:cloudforms_management_engine:5.8.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-12148",
+        "cwe_id": "CWE-20",
+        "description": "A flaw was found in Ansible Tower's interface before 3.1.5 and 3.2.0 with SCM repositories. If a Tower project (SCM repository) definition does not have the 'delete before update' flag set, an attacker with commit access to the upstream playbook source repository could create a Trojan playbook that, when executed by Tower, modifies the checked out SCM repository to add git hooks. These git hooks could, in turn, cause arbitrary command and code execution as the user Tower runs as.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.2 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "https://access.redhat.com/errata/RHSA-2017:3005",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-12148"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:ansible_tower:*:*:*:*:*:*:*:* versions up to (excluding) 3.1.5\n     *cpe:2.3:a:redhat:ansible_tower:*:*:*:*:scm_repositories:*:*:* versions up to (excluding) 3.2.0\n     *cpe:2.3:a:redhat:cloudforms:4.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:ansible_tower:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:redhat:ansible_tower:*:*:*:*:scm_repositories:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:redhat:cloudforms:4.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-12173",
+        "cwe_id": "CWE-20",
+        "description": "It was found that sssd's sysdb_search_user_by_upn_res() function before 1.16.0 did not sanitize requests when querying its local cache and was vulnerable to injection. In a centralized login environment, if a password hash was locally cached for a given user, an authenticated attacker could use this flaw to retrieve it.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://access.redhat.com/errata/RHSA-2017:3379",
+            "https://access.redhat.com/errata/RHSA-2018:1877",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-12173"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fedoraproject:sssd:*:*:*:*:*:*:*:* versions up to (excluding) 1.16.0",
+            "*cpe:2.3:a:fedoraproject:sssd:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enter"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-15113",
+        "cwe_id": "CWE-532",
+        "description": "ovirt-engine before version 4.1.7.6 with log level set to DEBUG includes passwords in the log file without masking. Only administrators can change the log level and only administrators can access the logs. This presents a risk when debug-level logs are shared with vendors or other parties to troubleshoot issues.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.6 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/101933",
+            "https://access.redhat.com/errata/RHEA-2017:3138",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-15113",
+            "https://gerrit.ovirt.org/gitweb?p=ovirt-engine.git;a=commitdiff;h=f4a5d0cc772127dbfe40789e26c4633ceea07d14;hp=e6e8704ac9eb115624ff66e2965877d8e63a45f4"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ovirt:ovirt:*:*:*:*:*:*:*:* versions up to (excluding) 4.1.7.6",
+            "*cpe:2.3:a:ovirt:ovirt:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:redhat:virtualization:4.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-15119",
+        "cwe_id": "CWE-400",
+        "description": "The Network Block Device (NBD) server in Quick Emulator (QEMU) before 2.11 is vulnerable to a denial of service issue. It could occur if a client sent large option requests, making the server waste CPU time on reading up to 4GB per request. A client could use this flaw to keep the NBD server from serving other requests, resulting in DoS.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "8.6 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2017/11/28/9",
+            "http://www.securityfocus.com/bid/102011",
+            "https://access.redhat.com/errata/RHSA-2018:1104",
+            "https://access.redhat.com/errata/RHSA-2018:1113",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-15119",
+            "https://lists.gnu.org/archive/html/qemu-devel/2017-11/msg05044.html",
+            "https://usn.ubuntu.com/3575-1/",
+            "https://www.debian.org/security/2018/dsa-4213"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:* versions up to (excluding) 2.11.0",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:redhat:virtualization:4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2016-9595",
+        "cwe_id": "CWE-59",
+        "description": "A flaw was found in katello-debug before 3.4.0 where certain scripts and log files used insecure temporary files. A local user could exploit this flaw to conduct a symbolic-link attack, allowing them to overwrite the contents of arbitrary files.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:P/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "3.6 LOW",
+        "hyperlinks": [
+            "https://access.redhat.com/errata/RHSA-2018:0336",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-9595"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:satellite:6.3:*:*:*:*:*:*:*\n     *cpe:2.3:a:redhat:satellite_capsule:6.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:satellite:6.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:satellite_capsule:6.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:theforeman:katello:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2579",
+        "cwe_id": "CWE-125",
+        "description": "An out-of-bounds read vulnerability was found in netpbm before 10.61. The expandCodeOntoStack() function has an insufficient code value check, so that a maliciously crafted file could cause the application to crash or possibly allows code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00056.html",
+            "http://www.securityfocus.com/bid/96714",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2579"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:netpbm_project:netpbm:10.61.00:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:netpbm_project:netpbm:10.61.00:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "06/24/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2580",
+        "cwe_id": "CWE-787",
+        "description": "An out-of-bounds write vulnerability was found in netpbm before 10.61. A maliciously crafted file could cause the application to crash or possibly allow code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00056.html",
+            "http://www.securityfocus.com/bid/96712",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2580"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:netpbm_project:netpbm:10.61.00:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:netpbm_project:netpbm:10.61.00:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "06/24/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2581",
+        "cwe_id": "CWE-787",
+        "description": "An out-of-bounds write vulnerability was found in netpbm before 10.61. A maliciously crafted file could cause the application to crash or possibly allow code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/96710",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2581"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:netpbm_project:netpbm:*:*:*:*:*:*:*:* versions up to (excluding) 10.61.00",
+            "*cpe:2.3:a:netpbm_project:netpbm:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2586",
+        "cwe_id": "CWE-476",
+        "description": "A null pointer dereference vulnerability was found in netpbm before 10.61. A maliciously crafted SVG file could cause the application to crash.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/96708",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2586"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:netpbm_project:netpbm:*:*:*:*:*:*:*:* versions up to (excluding) 10.61.00",
+            "*cpe:2.3:a:netpbm_project:netpbm:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2587",
+        "cwe_id": "CWE-770",
+        "description": "A memory allocation vulnerability was found in netpbm before 10.61. A maliciously crafted SVG file could cause the application to crash.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/96702",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2587"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:netpbm_project:netpbm:*:*:*:*:*:*:*:* versions up to (excluding) 10.61.00",
+            "*cpe:2.3:a:netpbm_project:netpbm:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2590",
+        "cwe_id": "CWE-275",
+        "description": "A vulnerability was found in ipa before 4.4. IdM's ca-del, ca-disable, and ca-enable commands did not properly check the user's permissions while modifying CAs in Dogtag. An authenticated, unauthorized attacker could use this flaw to delete, disable, or enable CAs causing various denial of service problems with certificate issuance, OCSP signing, and deletion of secret keys.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-2590"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.5 MEDIUM",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2017-0388.html",
+            "http://www.securityfocus.com/bid/96557",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2590"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:freeipa:freeipa:*:*:*:*:*:*:*:* versions up to (excluding) 4.4.0",
+            "*cpe:2.3:a:freeipa:freeipa:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_eus:7.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterpris"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2614",
+        "cwe_id": "CWE-640",
+        "description": "When updating a password in the rhvm database the ovirt-aaa-jdbc-tool tools before 1.1.3 fail to correctly check for the current password if it is expired. This would allow access to an attacker with access to change the password on accounts with expired passwords, gaining access to those accounts.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.3 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2017-0257.html",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2614"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:enterprise_virtualization:4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:enterprise_virtualization:4.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2621",
+        "cwe_id": "CWE-532",
+        "description": "An access-control flaw was found in the OpenStack Orchestration (heat) service before 8.0.0, 6.1.0 and 7.0.2 where a service log directory was improperly made world readable. A malicious system user could exploit this flaw to access sensitive information.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/96280",
+            "https://access.redhat.com/errata/RHSA-2017:1243",
+            "https://access.redhat.com/errata/RHSA-2017:1464",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2621"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:openstack:heat:*:*:*:*:*:*:*:* versions up to (excluding) 8.0.0\n     *cpe:2.3:a:redhat:openstack:9.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:redhat:openstack:10.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openstack:heat:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:redhat:openstack:9.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:10.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2623",
+        "cwe_id": "CWE-295",
+        "description": "It was discovered that rpm-ostree and rpm-ostree-client before 2017.3 fail to properly check GPG signatures on packages when doing layering. Packages with unsigned or badly signed content could fail to be rejected as expected. This issue is partially mitigated on RHEL Atomic Host, where certificate pinning is used by default.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-2623"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/96558",
+            "https://access.redhat.com/errata/RHSA-2017:0444",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2623"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:rpm-ostree:rpm-ostree:*:*:*:*:*:*:*:* versions up to (excluding) 2017.3\n     *cpe:2.3:a:rpm-ostree:rpm-ostree-client:*:*:*:*:*:*:*:* versions up to (excluding) 2017.3",
+            "*cpe:2.3:a:rpm-ostree:rpm-ostree:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:rpm-ostree:rpm-ostree-client:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2624",
+        "cwe_id": "CWE-200",
+        "description": "It was found that xorg-x11-server before 1.19.0 including uses memcmp() to check the received MIT cookie against a series of valid cookies. If the cookie is correct, it is allowed to attach to the Xorg session. Since most memcmp() implementations return after an invalid byte is seen, this causes a time difference between a valid and invalid byte, which could allow an efficient brute force attack.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.0 HIGH",
+        "base_score_v2": "1.9 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/96480",
+            "http://www.securitytracker.com/id/1037919",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2624",
+            "https://gitlab.freedesktop.org/xorg/xserver/commit/d7ac755f0b618eb1259d93c8a16ec6e39a18627c",
+            "https://lists.debian.org/debian-lts-announce/2017/11/msg00032.html",
+            "https://security.gentoo.org/glsa/201704-03",
+            "https://security.gentoo.org/glsa/201710-30",
+            "https://www.x41-dsec.de/lab/advisories/x41-2017-001-xorg/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:x.org:xorg-server:*:*:*:*:*:*:*:* versions up to (including) 1.19.4",
+            "*cpe:2.3:a:x.org:xorg-server:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2625",
+        "cwe_id": "CWE-320",
+        "description": "It was discovered that libXdmcp before 1.1.2 including used weak entropy to generate session keys. On a multi-user system using xdmcp, a local attacker could potentially use information available from the process list to brute force the key, allowing them to hijack other users' sessions.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/96480",
+            "http://www.securitytracker.com/id/1037919",
+            "https://access.redhat.com/errata/RHSA-2017:1865",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2625",
+            "https://cgit.freedesktop.org/xorg/lib/libXdmcp/commit/?id=0554324ec6bbc2071f5d1f8ad211a1643e29eb1f",
+            "https://lists.debian.org/debian-lts-announce/2019/11/msg00024.html",
+            "https://security.gentoo.org/glsa/201704-03",
+            "https://www.x41-dsec.de/lab/advisories/x41-2017-001-xorg/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:x.org:libxdmcp:*:*:*:*:*:*:*:* versions up to (excluding) 1.1.2",
+            "*cpe:2.3:a:x.org:libxdmcp:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2630",
+        "cwe_id": "CWE-119",
+        "description": "A stack buffer overflow flaw was found in the Quick Emulator (QEMU) before 2.9 built with the Network Block Device (NBD) client support. The flaw could occur while processing server's response to a 'NBD_OPT_LIST' request. A malicious NBD server could use this issue to crash a remote NBD client resulting in DoS or potentially execute arbitrary code on client host with privileges of the QEMU process.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2017/02/15/2",
+            "http://www.securityfocus.com/bid/96265",
+            "https://access.redhat.com/errata/RHSA-2017:2392",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2630",
+            "https://lists.gnu.org/archive/html/qemu-devel/2017-02/msg01246.html",
+            "https://security.gentoo.org/glsa/201704-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:* versions up to (excluding) 2.9",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2640",
+        "cwe_id": "CWE-787",
+        "description": "An out-of-bounds write flaw was found in the way Pidgin before 2.12.0 processed XML content. A malicious remote server could potentially use this flaw to crash Pidgin or execute arbitrary code in the context of the pidgin process.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/96775",
+            "https://access.redhat.com/errata/RHSA-2017:1854",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2640",
+            "https://security.gentoo.org/glsa/201706-10",
+            "https://www.debian.org/security/2017/dsa-3806"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:pidgin:pidgin:*:*:*:*:*:*:*:* versions up to (excluding) 2.12.0",
+            "*cpe:2.3:a:pidgin:pidgin:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2646",
+        "cwe_id": "CWE-835",
+        "description": "It was found that when Keycloak before 2.5.5 receives a Logout request with a Extensions in the middle of the request, the SAMLSloRequestParser.parse() method ends in a infinite loop. An attacker could use this flaw to conduct denial of service attacks.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-2646"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/96882",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2646"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:keycloak:*:*:*:*:*:*:*:* versions up to (excluding) 2.5.5",
+            "*cpe:2.3:a:redhat:keycloak:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2651",
+        "cwe_id": "CWE-200",
+        "description": "jenkins-mailer-plugin before version 1.20 is vulnerable to an information disclosure while using the feature to send emails to a dynamically created list of users based on the changelogs. This could in some cases result in emails being sent to people who have no user account in Jenkins, and in rare cases even people who were not involved in whatever project was being built, due to some mapping based on the local-part of email addresses.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-2651"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/96984",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2651",
+            "https://jenkins.io/security/advisory/2017-03-20/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:mailer:*:*:*:*:*:jenkins:*:* versions up to (excluding) 1.20",
+            "*cpe:2.3:a:jenkins:mailer:*:*:*:*:*:jenkins:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2653",
+        "cwe_id": "CWE-20",
+        "description": "A number of unused delete routes are present in CloudForms before 5.7.2.1 which can be accessed via GET requests instead of just POST requests. This could allow an attacker to bypass the protect_from_forgery XSRF protection causing the routes to be used. This attack would require additional cross-site scripting or similar attacks in order to execute.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/96964",
+            "https://access.redhat.com/errata/RHSA-2017:0898",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2653"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:cloudforms:4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:cloudforms:4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:cloudforms_management_engine:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2658",
+        "cwe_id": "CWE-20",
+        "description": "It was discovered that the Dashbuilder login page as used in Red Hat JBoss BPM Suite before 6.4.2 and Red Hat JBoss Data Virtualization & Services before 6.4.3 could be opened in an IFRAME, which made it possible to intercept and manipulate requests. An attacker could use this flaw to trick a user into performing arbitrary actions in the Console (clickjacking).",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2017-0557.html",
+            "http://www.securityfocus.com/bid/97025",
+            "https://access.redhat.com/errata/RHSA-2018:2243",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2658"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:jboss_bpm_suite:*:*:*:*:*:*:*:* versions up to (excluding) 6.4.2\n     *cpe:2.3:a:redhat:jboss_data_virtualization_\\&_services:*:*:*:*:*:*:*:* versions up to (excluding) 6.4.3",
+            "*cpe:2.3:a:redhat:jboss_bpm_suite:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:redhat:jboss_data_virtualization_\\&_services:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2674",
+        "cwe_id": "CWE-79",
+        "description": "JBoss BRMS 6 and BPM Suite 6 before 6.4.3 are vulnerable to a stored XSS via several lists in Business Central. The flaw is due to lack of sanitation of user input when creating new lists. Remote, authenticated attackers that have privileges to create lists can store scripts in them, which are not properly sanitized before showing to other users, including admins.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/98390",
+            "https://access.redhat.com/errata/RHSA-2017:1217",
+            "https://access.redhat.com/errata/RHSA-2017:1218",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2674"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:jboss_bpm_suite:*:*:*:*:*:*:*:* versions from (including) 6.0.0 up to (excluding) 6.4.3",
+            "*cpe:2.3:a:redhat:jboss_bpm_suite:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-7463",
+        "cwe_id": "CWE-79",
+        "description": "JBoss BRMS 6 and BPM Suite 6 before 6.4.3 are vulnerable to a reflected XSS via artifact upload. A malformed XML file, if uploaded, causes an error message to appear that includes part of the bad XML code verbatim without filtering out scripts. Successful exploitation would allow execution of script code within the context of the affected user.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-7463"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/98385",
+            "https://access.redhat.com/errata/RHSA-2017:1217",
+            "https://access.redhat.com/errata/RHSA-2017:1218",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-7463"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:jboss_bpm_suite:*:*:*:*:*:*:*:* versions from (including) 6.0.0 up to (excluding) 6.4.3",
+            "*cpe:2.3:a:redhat:jboss_bpm_suite:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-1056",
+        "cwe_id": "CWE-125",
+        "description": "An out-of-bounds heap buffer read flaw was found in the way advancecomp before 2.1-2018/02 handled processing of ZIP files. An attacker could potentially use this flaw to crash the advzip utility by tricking it into processing crafted ZIP files.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=889270",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-1056",
+            "https://lists.debian.org/debian-lts-announce/2018/02/msg00016.html",
+            "https://lists.debian.org/debian-lts-announce/2019/03/msg00004.html",
+            "https://sourceforge.net/p/advancemame/bugs/259/",
+            "https://usn.ubuntu.com/3570-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:advancemame:advancecomp:*:*:*:*:*:*:*:* versions up to (excluding) 2.1",
+            "*cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:advancemame:advancecomp:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-10882",
+        "cwe_id": "CWE-787",
+        "description": "A flaw was found in the Linux kernel's ext4 filesystem. A local user can cause an out-of-bound write in in fs/jbd2/transaction.c code, a denial of service, and a system crash by unmounting a crafted ext4 filesystem image.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/106503",
+            "https://access.redhat.com/errata/RHSA-2018:2948",
+            "https://bugzilla.kernel.org/show_bug.cgi?id=200069",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-10882",
+            "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=c37e9e013469521d9adb932d17a1795c139b36db",
+            "https://lists.debian.org/debian-lts-announce/2018/07/msg00020.html",
+            "https://usn.ubuntu.com/3753-1/",
+            "https://usn.ubuntu.com/3753-2/",
+            "https://usn.ubuntu.com/3871-1/",
+            "https://usn.ubuntu.com/3871-3/",
+            "https://usn.ubuntu.com/3871-4/",
+            "https://usn.ubuntu.com/3871-5/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2616",
+        "cwe_id": "CWE-362",
+        "description": "A race condition was found in util-linux before 2.32.1 in the way su handled the management of child processes. A local authenticated attacker could use this flaw to kill other processes with root privileges under specific conditions.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "4.7 MEDIUM",
+        "base_score_v2": "4.7 MEDIUM",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2017-0654.html",
+            "http://www.securityfocus.com/bid/96404",
+            "http://www.securitytracker.com/id/1038271",
+            "https://access.redhat.com/errata/RHSA-2017:0907",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2616",
+            "https://github.com/karelzak/util-linux/commit/dffab154d29a288aa171ff50263ecc8f2e14a891",
+            "https://security.gentoo.org/glsa/201706-02",
+            "https://www.debian.org/security/2017/dsa-3793"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:util-linux_project:util-linux:*:*:*:*:*:*:*:* versions up to (excluding) 2.32.1",
+            "*cpe:2.3:a:util-linux_project:util-linux:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_ser"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2618",
+        "cwe_id": "CWE-682",
+        "description": "A flaw was found in the Linux kernel's handling of clearing SELinux attributes on /proc/pid/attr files before 4.9.10. An empty (null) write to this file can crash the system by causing the system to attempt to access unmapped kernel memory.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-2618"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/96272",
+            "https://access.redhat.com/errata/RHSA-2017:0931",
+            "https://access.redhat.com/errata/RHSA-2017:0932",
+            "https://access.redhat.com/errata/RHSA-2017:0933",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2618",
+            "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=0c461cb727d146c9ef2d3e86214f498b78b7d125",
+            "https://marc.info/?l=selinux&m=148588165923772&w=2",
+            "https://www.debian.org/security/2017/dsa-3791"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_server_aus:7.3:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_server_eus:7.3:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_server_",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_eus:7.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2620",
+        "cwe_id": "CWE-787",
+        "description": "Quick emulator (QEMU) before 2.8 built with the Cirrus CLGD 54xx VGA Emulator support is vulnerable to an out-of-bounds access issue. The issue could occur while copying VGA data in cirrus_bitblt_cputovideo. A privileged user inside guest could use this flaw to crash the QEMU process OR potentially execute arbitrary code on host with privileges of the QEMU process.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.9 CRITICAL",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2017-0328.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0329.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0330.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0331.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0332.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0333.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0334.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0350.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0351.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0352.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0396.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0454.html",
+            "http://www.openwall.com/lists/oss-security/2017/02/21/1",
+            "http://www.securityfocus.com/bid/96378",
+            "http://www.securitytracker.com/id/1037870",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2620",
+            "https://lists.debian.org/debian-lts-announce/2018/02/msg00005.html",
+            "https://lists.debian.org/debian-lts-announce/2018/09/msg00007.html",
+            "https://lists.gnu.org/archive/html/qemu-devel/2017-02/msg04700.html",
+            "https://security.gentoo.org/glsa/201703-07",
+            "https://security.gentoo.org/glsa/201704-01",
+            "https://support.citrix.com/article/CTX220771",
+            "https://xenbits.xen.org/xsa/advisory-209.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:citrix:xenserver:6.0.2:*:*:*:*:*:*:*\n     *cpe:2.3:a:citrix:xenserver:6.2.0:sp1:*:*:*:*:*:*\n     *cpe:2.3:a:citrix:xenserver:6.5:sp1:*:*:*:*:*:*\n     *cpe:2.3:a:citrix:xenserver:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:citrix:xenserver:7.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:redhat:openstack:5.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:redhat:openstack:6.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:redhat:openstack:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:redhat:openstack:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:redhat:opensta",
+            "*cpe:2.3:a:citrix:xenserver:6.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:citrix:xenserver:6.2.0:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:a:citrix:xenserver:6.5:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:a:citrix:xenserver:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:citrix:xenserver:7.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:opensta",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "09/07/2018",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2626",
+        "cwe_id": "CWE-331",
+        "description": "It was discovered that libICE before 1.0.9-8 used a weak entropy to generate keys. A local attacker could potentially use this flaw for session hijacking using the information available from the process list.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2019/07/14/3",
+            "http://www.securityfocus.com/bid/96480",
+            "http://www.securitytracker.com/id/1037919",
+            "https://access.redhat.com/errata/RHSA-2017:1865",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2626",
+            "https://cgit.freedesktop.org/xorg/lib/libICE/commit/?id=ff5e59f32255913bb1cdf51441b98c9107ae165b",
+            "https://lists.debian.org/debian-lts-announce/2019/11/msg00022.html",
+            "https://security.gentoo.org/glsa/201704-03",
+            "https://www.x41-dsec.de/lab/advisories/x41-2017-001-xorg/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:freedesktop:libice:*:*:*:*:*:*:*:* versions up to (including) 1.0.9",
+            "*cpe:2.3:a:freedesktop:libice:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "07/14/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2629",
+        "cwe_id": "CWE-295",
+        "description": "curl before 7.53.0 has an incorrect TLS Certificate Status Request extension feature that asks for a fresh proof of the server's certificate's validity in the code that checks for a test success or failure. It ends up always thinking there's valid proof, even when there is none or if the server doesn't support the TLS extension in question. This could lead to users not detecting when a server's certificate goes invalid or otherwise be mislead that the server is in a better shape than it is in reality. This flaw also exists in the command line tool (--cert-status).",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/96382",
+            "http://www.securitytracker.com/id/1037871",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2629",
+            "https://curl.haxx.se/docs/adv_20170222.html",
+            "https://security.gentoo.org/glsa/201703-04",
+            "https://www.tenable.com/security/tns-2017-09"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:haxx:curl:*:*:*:*:*:*:*:* versions up to (excluding) 7.53.0",
+            "*cpe:2.3:a:haxx:curl:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2632",
+        "cwe_id": "CWE-863",
+        "description": "A logic error in valid_role() in CloudForms role validation before 5.7.1.3 could allow a tenant administrator to create groups with a higher privilege level than the tenant administrator should have. This would allow an attacker with tenant administration access to elevate privileges.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-2632"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2017-0320.html",
+            "http://www.securityfocus.com/bid/96478",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2632"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:cloudforms:4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:cloudforms:4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:cloudforms_management_engine:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2633",
+        "cwe_id": "CWE-125",
+        "description": "An out-of-bounds memory access issue was found in Quick Emulator (QEMU) before 1.7.2 in the VNC display driver. This flaw could occur while refreshing the VNC display surface area in the 'vnc_refresh_server_surface'. A user inside a guest could use this flaw to crash the QEMU process.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2017/02/23/1",
+            "http://www.securityfocus.com/bid/96417",
+            "https://access.redhat.com/errata/RHSA-2017:1205",
+            "https://access.redhat.com/errata/RHSA-2017:1206",
+            "https://access.redhat.com/errata/RHSA-2017:1441",
+            "https://access.redhat.com/errata/RHSA-2017:1856",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2633",
+            "https://git.qemu.org/?p=qemu.git;a=commitdiff;h=9f64916da20eea67121d544698676295bbb105a7",
+            "https://git.qemu.org/?p=qemu.git;a=commitdiff;h=bea60dd7679364493a0d7f5b54316c767cf894ef"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:* versions up to (excluding) 1.7.2",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enter"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2634",
+        "cwe_id": "CWE-119",
+        "description": "It was found that the Linux kernel's Datagram Congestion Control Protocol (DCCP) implementation before 2.6.22.17 used the IPv4-only inet_sk_rebuild_header() function for both IPv4 and IPv6 DCCP connections, which could result in memory corruptions. A remote attacker could use this flaw to crash the system.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-2634"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2017-0323.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0346.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0347.html",
+            "http://www.securityfocus.com/bid/96529",
+            "http://www.securitytracker.com/id/1037909",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2634",
+            "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=f53dc67c5e7babafe239b93a11678b0e05bead51"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:* versions up to (excluding) 2.6.22.17",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:5.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:5.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_workstation:5.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2016-9577",
+        "cwe_id": "CWE-119",
+        "description": "A vulnerability was discovered in SPICE before 0.13.90 in the server's protocol handling. An authenticated attacker could send crafted messages to the SPICE server causing a heap overflow leading to a crash or possible code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2017-0253.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0549.html",
+            "http://www.securityfocus.com/bid/96040",
+            "https://access.redhat.com/errata/RHSA-2017:0254",
+            "https://access.redhat.com/errata/RHSA-2017:0552",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-9577",
+            "https://www.debian.org/security/2017/dsa-3790"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:spice_project:spice:*:*:*:*:*:*:*:* versions up to (excluding) 0.13.90",
+            "*cpe:2.3:a:spice_project:spice:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_ser"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-15097",
+        "cwe_id": "CWE-59",
+        "description": "Privilege escalation flaws were found in the Red Hat initialization scripts of PostgreSQL. An attacker with access to the postgres user account could use these flaws to obtain root access on the server machine.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "6.7 MEDIUM",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1039983",
+            "https://access.redhat.com/errata/RHSA-2017:3402",
+            "https://access.redhat.com/errata/RHSA-2017:3403",
+            "https://access.redhat.com/errata/RHSA-2017:3404",
+            "https://access.redhat.com/errata/RHSA-2017:3405",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-15097"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-15101",
+        "cwe_id": "CWE-119",
+        "description": "A missing patch for a stack-based buffer overflow in findTable() was found in Red Hat version of liblouis before 2.5.4. An attacker could cause a denial of service condition or potentially even arbitrary code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://access.redhat.com/errata/RHSA-2017:3384",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-15101"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:liblouis:liblouis:*:*:*:*:*:*:*:* versions up to (excluding) 2.5.4",
+            "*cpe:2.3:a:liblouis:liblouis:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2648",
+        "cwe_id": "CWE-295",
+        "description": "It was found that jenkins-ssh-slaves-plugin before version 1.15 did not perform host key verification, thereby enabling Man-in-the-Middle attacks.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "5.6 MEDIUM",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/96985",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2648",
+            "https://jenkins.io/security/advisory/2017-03-20/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:ssh_slaves:*:*:*:*:*:jenkins:*:* versions up to (excluding) 1.15",
+            "*cpe:2.3:a:jenkins:ssh_slaves:*:*:*:*:*:jenkins:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2649",
+        "cwe_id": "CWE-295",
+        "description": "It was found that the Active Directory Plugin for Jenkins up to and including version 2.2 did not verify certificates of the Active Directory server, thereby enabling Man-in-the-Middle attacks.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/96986",
+            "https://jenkins.io/security/advisory/2017-03-20/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:active_directory:*:*:*:*:*:jenkins:*:* versions up to (including) 2.2",
+            "*cpe:2.3:a:jenkins:active_directory:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2650",
+        "cwe_id": "CWE-592",
+        "description": "It was found that the use of Pipeline: Classpath Step Jenkins plugin enables a bypass of the Script Security sandbox for users with SCM commit access, as well as users with e.g. Job/Configure permission in Jenkins.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.5 HIGH",
+        "base_score_v2": "6.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/96981",
+            "https://jenkins.io/security/advisory/2017-03-20/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:pipeline_classpath_step:0.1.0:*:*:*:*:jenkins:*:*",
+            "*cpe:2.3:a:jenkins:pipeline_classpath_step:0.1.0:*:*:*:*:jenkins:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2652",
+        "cwe_id": "CWE-287",
+        "description": "It was found that there were no permission checks performed in the Distributed Fork plugin before and including 1.5.0 for Jenkins that provides the dist-fork CLI command beyond the basic check for Overall/Read permission, allowing anyone with that permission to run arbitrary shell commands on all connected nodes.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/96980",
+            "https://jenkins.io/security/advisory/2017-03-20/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:distributed_fork:*:*:*:*:*:jenkins:*:* versions up to (including) 1.5.0",
+            "*cpe:2.3:a:jenkins:distributed_fork:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-2663",
+        "cwe_id": "CWE-270",
+        "description": "It was found that subscription-manager's DBus interface before 1.19.4 let unprivileged user access the com.redhat.RHSM1.Facts.GetFacts and com.redhat.RHSM1.Config.Set methods. An unprivileged local attacker could use these methods to gain access to private information, or launch a privilege escalation attack.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/97015",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-2663",
+            "https://github.com/candlepin/subscription-manager/commit/2aa48ef65"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:subscription-manager:*:*:*:*:*:*:*:* versions up to (excluding) 1.19.4",
+            "*cpe:2.3:a:redhat:subscription-manager:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2016-9578",
+        "cwe_id": "CWE-20",
+        "description": "A vulnerability was discovered in SPICE before 0.13.90 in the server's protocol handling. An attacker able to connect to the SPICE server could send crafted messages which would cause the process to crash.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-9578"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-9578"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2017-0253.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0549.html",
+            "http://www.securityfocus.com/bid/96118",
+            "https://access.redhat.com/errata/RHSA-2017:0254",
+            "https://access.redhat.com/errata/RHSA-2017:0552",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-9578",
+            "https://www.debian.org/security/2017/dsa-3790"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:spice_project:spice:*:*:*:*:*:*:*:* versions up to (excluding) 1.13.90",
+            "*cpe:2.3:a:spice_project:spice:*:*:*:*:*:*:*:* versions up to (excluding) 1.13.90",
+            "*cpe:2.3:a:spice_project:spice:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:spice_project:spice:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:spice_project:spice:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_ser"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2016-9603",
+        "cwe_id": "CWE-119",
+        "description": "A heap buffer overflow flaw was found in QEMU's Cirrus CLGD 54xx VGA emulator's VNC display driver support before 2.9; the issue could occur when a VNC client attempted to update its display after a VGA operation is performed by a guest. A privileged user/process inside a guest could use this flaw to crash the QEMU process or, potentially, execute arbitrary code on the host with privileges of the QEMU process.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.9 CRITICAL",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/96893",
+            "http://www.securitytracker.com/id/1038023",
+            "https://access.redhat.com/errata/RHSA-2017:0980",
+            "https://access.redhat.com/errata/RHSA-2017:0981",
+            "https://access.redhat.com/errata/RHSA-2017:0982",
+            "https://access.redhat.com/errata/RHSA-2017:0983",
+            "https://access.redhat.com/errata/RHSA-2017:0984",
+            "https://access.redhat.com/errata/RHSA-2017:0985",
+            "https://access.redhat.com/errata/RHSA-2017:0987",
+            "https://access.redhat.com/errata/RHSA-2017:0988",
+            "https://access.redhat.com/errata/RHSA-2017:1205",
+            "https://access.redhat.com/errata/RHSA-2017:1206",
+            "https://access.redhat.com/errata/RHSA-2017:1441",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-9603",
+            "https://lists.debian.org/debian-lts-announce/2018/02/msg00005.html",
+            "https://lists.debian.org/debian-lts-announce/2018/09/msg00007.html",
+            "https://security.gentoo.org/glsa/201706-03",
+            "https://support.citrix.com/article/CTX221578"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:citrix:xenserver:6.0.2:*:*:*:*:*:*:*\n     *cpe:2.3:a:citrix:xenserver:6.2.0:sp1:*:*:*:*:*:*\n     *cpe:2.3:a:citrix:xenserver:6.5:sp1:*:*:*:*:*:*\n     *cpe:2.3:a:citrix:xenserver:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:citrix:xenserver:7.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:redhat:openstack:5.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:redhat:openstack:6.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:redhat:openstack:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:redhat:openstack:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:redhat:opensta",
+            "*cpe:2.3:a:citrix:xenserver:6.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:citrix:xenserver:6.2.0:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:a:citrix:xenserver:6.5:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:a:citrix:xenserver:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:citrix:xenserver:7.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:opensta",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "09/07/2018",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-15118",
+        "cwe_id": "CWE-787",
+        "description": "A stack-based buffer overflow vulnerability was found in NBD server implementation in qemu before 2.11 allowing a client to request an export name of size up to 4096 bytes, which in fact should be limited to 256 bytes, causing an out-of-bounds stack write in the qemu process. If NBD server requires TLS, the attacker cannot trigger the buffer overflow without first successfully negotiating TLS.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-15118"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": null,
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2017/11/28/8",
+            "http://www.securityfocus.com/bid/101975",
+            "https://access.redhat.com/errata/RHSA-2018:1104",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-15118",
+            "https://lists.gnu.org/archive/html/qemu-devel/2017-11/msg05045.html",
+            "https://usn.ubuntu.com/3575-1/",
+            "https://www.exploit-db.com/exploits/43194/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:* versions up to (excluding) 2.11",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/27/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-0497",
+        "cwe_id": null,
+        "description": "ARM mbed TLS before 2.12.0, before 2.7.5, and before 2.1.14 allows remote attackers to achieve partial plaintext recovery (for a CBC based ciphersuite) via a timing-based side-channel attack. This vulnerability exists because of an incorrect fix (with a wrong SHA-384 calculation) for CVE-2013-0169.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://lists.debian.org/debian-lts-announce/2018/09/msg00029.html",
+            "https://tls.mbed.org/tech-updates/security-advisories/mbedtls-security-advisory-2018-02",
+            "https://usn.ubuntu.com/4267-1/",
+            "https://www.debian.org/security/2018/dsa-4296"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:arm:mbed_tls:*:*:*:*:*:*:*:* versions up to (excluding) 2.1.14\n     *cpe:2.3:a:arm:mbed_tls:*:*:*:*:*:*:*:* versions from (including) 2.2.0 up to (excluding) 2.7.5\n     *cpe:2.3:a:arm:mbed_tls:*:*:*:*:*:*:*:* versions from (including) 2.8.0 up to (excluding) 2.12.0",
+            "*cpe:2.3:a:arm:mbed_tls:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:arm:mbed_tls:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:arm:mbed_tls:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/28/2018",
+        "modified_date": "02/10/2020",
+        "vulnerability_source": "Debian GNU/Linux",
+        "year": "2018",
+        "month": "7"
+    }
+]
