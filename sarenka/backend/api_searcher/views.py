@@ -2,6 +2,7 @@ from rest_framework import views
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
+from rest_framework.reverse import reverse
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 import logging
@@ -249,7 +250,7 @@ class CensysHostSearchView(views.APIView):
             response = connector.search_by_ip(ip_address) #
             return Response(response.to_json)
         except CredentialsNotFoundError:
-            settings_url = self.get_server_address(request)
+            settings_url = self.get_server_address(request) + reverse('settings')
             return Response({"Error": "please create censys.io account and add it to settings", "url": settings_url})
 
 
@@ -406,11 +407,8 @@ class CWEDetailsAllView(views.APIView):
 
 
 
-
-
 ######################################################
 class AddCWEandCVE(views.APIView):
-
     def get(self, request):
         # nist_cve_scraper = NISTCVEScraper("CVE-2013-3621") CWE_NONE
         nist_cve_scraper = NISTCVEScraper("CVE-2019-4570")
