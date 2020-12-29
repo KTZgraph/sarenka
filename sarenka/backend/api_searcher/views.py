@@ -1,5 +1,6 @@
 from rest_framework import views
 from rest_framework.response import Response
+from rest_framework import status
 from rest_framework.views import APIView
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
@@ -7,7 +8,7 @@ import logging
 import ipaddress
 import socket
 
-from connectors.credential import Credential
+from connectors.credential import Credential, CredentialsNotFoundError
 from connectors.cve_search.connector import Connector as CVEConnector
 from connectors.censys.connector import Connector as CensysConnector
 from .cve_and_cwe.mitre_cwe_scrapers import CWETableTop25Scraper, CWEDataScraper
@@ -19,7 +20,7 @@ from .cve_and_cwe.cwe_details_all import CWEDetailsAll
 
 from .models import CWEModel, TechnicalImpactModel, CausedByModel, CVEModel
 from .cwe_crud import CWECRUD
-from .serializers import CWEModelSerializer
+from .serializers import CWEModelSerializer, SettingsSerializer
 
 from .dns.dns_searcher import DNSSearcher, DNSSearcherFQDNError
 from .windows.registry import WindowsRegistry
@@ -30,6 +31,29 @@ from .searcher import Searcher
 
 
 logger = logging.getLogger('django')
+
+
+###################################################
+class SettingsView(views.APIView):
+    serializer_class = SettingsSerializer
+
+    def post(self, request):
+        """Tworzy plik z danymi użytkownika do serwisów trzecich."""
+        serializer = SettingsSerializer(data=request.data)
+
+        # walidacja danych
+        if serializer.is_valid():
+            details = {
+                "censys_API_ID": serializer.data.get("censys_API_ID"),
+                "censys_Secret": serializer.data.get("censys_Secret"),
+                "shodan_user": serializer.data.get("shodan_user"),
+                "shodan_api_key": serializer.data.get("shodan_api_key"),
+            }
+
+            return Response({"message": "Settings added.", "details": details})
+        else:
+            return Response({"message": "Given settings are not valid.", "details": serializer.errors},
+                            status=status.HTTP_400_BAD_REQUEST)
 
 
 class CVESearchView(views.APIView):
@@ -204,11 +228,29 @@ class CensysHostSearchView(views.APIView):
         - TLS
         - ataki "heartbleed", "logjam_attack", "freak_attack", "poodle_attack"
     """
+    @staticmethod
+    def get_server_address(request):
+        """
+        Zwraca adres do serwera aplikacji z uwzglednieniem protokołu np: http://127.0.0.1:8000/.
+        Użycie - generpowanie urli do wewnątrz aplikacji.
+        """
+        host_address = request.get_host()
+        # TODO: refaktor - milion kopii jes ttej funkcji
+        if request.is_secure():
+            address = "https://" + host_address
+        else:
+            address = "http://"+ host_address
+        return address
+
     def get(self, request, ip_address):
-        credentials = Credential().censys
-        connector = CensysConnector(credentials)
-        response = connector.search_by_ip(ip_address) #
-        return Response(response.to_json)
+        try:
+            credentials = Credential().censys
+            connector = CensysConnector(credentials)
+            response = connector.search_by_ip(ip_address) #
+            return Response(response.to_json)
+        except CredentialsNotFoundError:
+            settings_url = self.get_server_address(request)
+            return Response({"Error": "please create censys.io account and add it to settings", "url": settings_url})
 
 
 class ListVendors(views.APIView):

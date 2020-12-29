@@ -16,7 +16,7 @@ class TestConnectorShodan(unittest.TestCase):
         dir_path = os.path.dirname(os.path.realpath(__file__))
         path = Path(dir_path)
         connectors_path = path.parent.parent
-        cls.credentials_file_path = os.path.join(connectors_path, "credentials.json")
+        cls.credentials_file_path = os.path.join(connectors_path, "credentials.example.json")
 
     def setUp(self):
         self.shodan_credentials = Credential(self.credentials_file_path).shodan

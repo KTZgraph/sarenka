@@ -15,9 +15,13 @@ from .views import (AddCWEandCVE,
                     WindowsHardwareView,
                     WindowsRegistryView,
                     NetworkLocalView,
-                    SearcherView)
+                    SearcherView,
+                    SettingsView)
 
 urlpatterns = [
+    # dodanie kluczy użytkownika do serwisów trzeich
+    path('settings', SettingsView.as_view(), name="settings"),
+
     path('cve/all/<str:page>', CVEDetailsAllView.as_view(), name="cve_all"),
     path('cve/<str:code>', CVESearchView.as_view(), name="get_by_cve"),
 

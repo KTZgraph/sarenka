@@ -1,13 +1,15 @@
 from typing import Dict, Tuple, Sequence
 import json
 
+
 class CredentialsNotFoundError(Exception):
     """
-    Zgłoszenie wyjąktu gdy plik z ustawieniami użytkownika credentials.json nie istnieje
+    Zgłoszenie wyjąktu gdy plik z ustawieniami użytkownika credentials.example.json nie istnieje
     """
     def __init__(self, message=None, errors=None):
         super().__init__(message)
         self.errors = errors
+
 
 class CredentialData:
     def __init__(self, data):
