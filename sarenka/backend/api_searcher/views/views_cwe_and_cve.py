@@ -5,14 +5,14 @@ from rest_framework.response import Response
 from rest_framework.reverse import reverse
 from rest_framework.views import APIView
 
-from .cve_and_cwe.cve_details_all import CVEDetailsAll
-from .cve_and_cwe.cwe_all import CWEAll
-from .cve_and_cwe.cwe_details_all import CWEDetailsAll
-from .cve_and_cwe.mitre_cwe_scrapers import CWETableTop25Scraper, CWEDataScraper
-from .cve_and_cwe.nist_cve_scrapers import NISTCVEScraper
-from .cwe_crud import CWECRUD
-from .views_common import Common
-from .views_search_engines import logger
+from api_searcher.cve_and_cwe.cve_details_all import CVEDetailsAll
+from api_searcher.cve_and_cwe.cwe_all import CWEAll
+from api_searcher.cve_and_cwe.cwe_details_all import CWEDetailsAll
+from api_searcher.cve_and_cwe.mitre_cwe_scrapers import CWETableTop25Scraper, CWEDataScraper
+from api_searcher.cve_and_cwe.nist_cve_scrapers import NISTCVEScraper
+from api_searcher.cwe_crud import CWECRUD
+from api_searcher.views.views_common import Common
+from api_searcher.views.views_search_engines import logger
 
 
 class CVESearchView(views.APIView):
@@ -113,12 +113,14 @@ class CVEDetailsAllView(views.APIView):
         """Metoda zwracajaca szczegółowe informacje o podantościach CVE z stronnicowaniem.
         Partia danych zwrócona jest na podstawie danych z żadania GET HTTP użytkownika"""
         try:
-            if isinstance(page, int):
-                server_address = Common(request).host_address
-                response = CVEDetailsAll(page).render_output(server_address) #render_output(server_address)
-                return Response(response)
+            page = int(page)
+            server_address = Common(request).host_address
+            response = CVEDetailsAll(page).render_output(server_address) #render_output(server_address)
+            return Response(response)
+        except ValueError:
             return Response({"message": "Unsupported type of user input data."}, status=status.HTTP_400_BAD_REQUEST)
         except Exception as ex:
+            print(type(ex))
             return Response({"error": "Unable to get CVE details data - check is files "
                                       "in folder sarenka\feedes\cve_details exist",
                              "details": str(ex)}, status=status.HTTP_404_NOT_FOUND)
@@ -130,10 +132,11 @@ class CWEDetailsAllView(views.APIView):
 
     def get(self, request, page):
         try:
-            if isinstance(page, int):
-                server_address = Common(request).host_address
-                response = CWEDetailsAll(page).render_output(server_address)  # render_output(server_address)
-                return Response(response)
+            page = int(page)
+            server_address = Common(request).host_address
+            response = CWEDetailsAll(page).render_output(server_address)  # render_output(server_address)
+            return Response(response)
+        except ValueError:
             return Response({"message": "Unsupported type of user input data."}, status=status.HTTP_400_BAD_REQUEST)
         except Exception as ex:
             return Response({"error": "Unable to get all CWE details data - check is files "

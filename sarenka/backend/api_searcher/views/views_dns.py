@@ -2,7 +2,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .dns.dns_searcher import DNSSearcher, DNSSearcherError
+from api_searcher.dns.dns_searcher import DNSSearcher, DNSSearcherError
 
 
 class DNSSearcherView(APIView):

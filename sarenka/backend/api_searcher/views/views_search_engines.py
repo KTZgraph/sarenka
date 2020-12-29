@@ -7,10 +7,9 @@ from django.http import JsonResponse
 import logging
 
 # refaktorowanie censysa
-from .censys_data import censys_host_search
-
-from .searcher import Searcher
-from .views_common import Common
+from api_searcher.censys_data import censys_host_search
+from api_searcher.searcher import Searcher
+from api_searcher.views.views_common import Common
 
 logger = logging.getLogger('django')
 
