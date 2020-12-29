@@ -17,8 +17,8 @@ class DNSSearcherView(APIView):
         :example: host='renmich.faculty.wmi.amu.edu.pl'
         """
         try:
-            data = DNSSearcher(host).values
-            return Response(data)
+            data = DNSSearcher(host).get_data()
+            return Response({"dns_data" : data})
         except DNSSearcherError as ex:
             return Response({"error": f"Host doesn't exists", "details": str(ex)},
                      status=status.HTTP_400_BAD_REQUEST)

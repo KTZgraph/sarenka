@@ -1,60 +1,25 @@
-from rest_framework import views
-from rest_framework.response import Response
-from rest_framework import status
-from rest_framework.views import APIView
-from rest_framework.reverse import reverse
-from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse
-import logging
-
 from connectors.credential import Credential, CredentialsNotFoundError
 from connectors.cve_search.connector import Connector as CVEConnector
+from rest_framework import views, status
+from rest_framework.response import Response
+from rest_framework.reverse import reverse
+from rest_framework.views import APIView
 
-# refaktorowanie censysa
-from .censys_data import censys_host_search
-
-
-from .cve_and_cwe.mitre_cwe_scrapers import CWETableTop25Scraper, CWEDataScraper
-from .cve_and_cwe.nist_cve_scrapers import  NISTCVEScraper
-from .cve_and_cwe.cwe_all import CWEAll
 from .cve_and_cwe.cve_details_all import CVEDetailsAll
+from .cve_and_cwe.cwe_all import CWEAll
 from .cve_and_cwe.cwe_details_all import CWEDetailsAll
-
+from .cve_and_cwe.mitre_cwe_scrapers import CWETableTop25Scraper, CWEDataScraper
+from .cve_and_cwe.nist_cve_scrapers import NISTCVEScraper
 from .cwe_crud import CWECRUD
-
-from .searcher import Searcher
 from .views_common import Common
-
-logger = logging.getLogger('django')
-
-
-class CensysHostSearchView(views.APIView):
-    """
-    Wyszukiwanie danych po IP
-    opakowane protokoyły:
-        - DNS
-        - HTTPS
-        - TLS
-        - ataki "heartbleed", "logjam_attack", "freak_attack", "poodle_attack"
-    """
-    def get(self, request, ip_address):
-        """Zwraca informacje uzyskane za pośrednictwem serwisu https://censys.io/."""
-        try:
-            response = censys_host_search.CensysHostSearch.response(ip_address)
-            return Response(response)
-        except censys_host_search.CensysHostSearchError as ex:
-            host_address = Common(request).host_address
-            settings_url = host_address + reverse('settings')
-            return Response({"message": "Please create account on https://censys.io/ and add valid credentials "
-                                        "to SARENKA's settings",
-                             "details": str(ex),
-                             "url": settings_url})
+from .views_search_engines import logger
 
 
 class CVESearchView(views.APIView):
-    def get(self, request, code):
+    """Widok Django zwracajacy szczegółowe informacje o jednej podatności Common Vulnerabilities and Exposures (CVE)."""
+    def get(self, request, cve_id):
         """
-        Zwraca infromacje o konkrentje podatności po id CVE
+        Metoda zwracająca szczegółowe infromacje o konkretnej podatności po podaniu identyfikatora CVE
 
         """
         print("CVESearchView")
@@ -64,11 +29,14 @@ class CVESearchView(views.APIView):
         logger.error("Logger at CVESearchView test message")
         try:
             server_address = Common(request).host_address
-            nist_cve_scraper = NISTCVEScraper(code, server_address)
+            nist_cve_scraper = NISTCVEScraper(cve_id, server_address)
             return Response(nist_cve_scraper.get_data())
-        except Exception as ex:
-            return Response({code: "Unable to get information - probably this CVE doesn't exists.", "details": str(ex)},
+        except AttributeError as ex:
+            return Response({cve_id: "Unable to get information - probably this CVE doesn't exists."},
                             status=status.HTTP_400_BAD_REQUEST)
+        except Exception as ex:
+            return Response({"error": f"Unable to get information about CVE={cve_id}", "details": str(ex)},
+                            status=status.HTTP_404_NOT_FOUND)
 
 
 class CWETop25(APIView):
@@ -115,21 +83,91 @@ class CWEData(APIView):
                              "details": str(ex)},
                             status=status.HTTP_404_NOT_FOUND)
 
-class SearcherView(views.APIView):
-    """
-    Widok Django zwracajacy wszystkie dane dla hostu podanego przez użytkownika.
-    Zawiera dane ze wszsytkich serwisów trzecich, informacje o DNS oraz banner.
-    """
-    def get(self, request, host):
+
+class CWEAllView(views.APIView):
+    """Widok Django zwracający wszystkie kody CWE z podstawowywmi danymi takimi jak datę pobrania danych, źródło danych,
+    identyfikator slabości, opis słabości, url do serwisu https://cwe.mitre.org ze szczegółowymi danymi,
+    url do aplikacji SARENKA z najważniejszymi informacjami o konkretnej słabości."""
+
+    def get(self, request):
         """
-        Metoda zwracajace wszystkie dane o podanym przez użytkownika hoście na zapytanie GET HTTP.
+        Metoda zwracajaca podstawowe dane o wszystkich słabościach CWE z oficjalnego serwisu https://cwe.mitre.org.
         :param request: obiekt dla widoku Django z informacjami od użytkownika
-        :param host: string mający adres ip lub domenę np.: python.org
-        :return: dane w postaci json zawierajace ingormacje o hoście
+        :return: podstawowe dane w formacie json o wszystkich słabościach CWE zawartych w feedach
         """
-        ip_address = Common.get_ip_addres(host=host)
-        searcher = Searcher(ip_address)
-        return Response(searcher.values)
+        try:
+            server_address = Common(request).host_address
+            response = CWEAll().render_output(server_address)
+            return Response(response)
+        except Exception as ex:
+            Response({"error": "Unable to get all Common Weakness Enumeration data. "
+                               "Please check is file sarenka/feedes/cwe_ids/cwe_all.json exists",
+                      "details": str(ex)}, status=status.HTTP_404_NOT_FOUND)
+
+
+class CVEDetailsAllView(views.APIView):
+    """Widok Django zwracającyh szczegółowe dane o wszystkich podatnościach
+    Common Vulnerabilities and Exposures (CVE) pobranych z serwisu https://nvd.nist.gov/ """
+
+    def get(self, request, page):
+        """Metoda zwracajaca szczegółowe informacje o podantościach CVE z stronnicowaniem.
+        Partia danych zwrócona jest na podstawie danych z żadania GET HTTP użytkownika"""
+        try:
+            if isinstance(page, int):
+                server_address = Common(request).host_address
+                response = CVEDetailsAll(page).render_output(server_address) #render_output(server_address)
+                return Response(response)
+            return Response({"message": "Unsupported type of user input."}, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as ex:
+            return Response({"error": "Unable to get CVE details data - check is files in folder sarenka\feedes\cve_details exist",
+                             "details": str(ex)}, status=status.HTTP_404_NOT_FOUND)
+
+
+
+class CWEDetailsAllView(views.APIView):
+    """Zwraca wszystkei kody CWE z dokładdnymi informacjami
+    - dlatego stronnicowanie / pojedyncze pliko po 100
+    na podstawie pliku który został wygenerowany przez nas w innym narzędziu"""
+
+    @staticmethod
+    def get_server_address(request):
+        """
+        Zwraca adres do serwera aplikacji z uwzglednieniem protokołu np: http://127.0.0.1:8000/.
+        Użycie - generpowanie urli do wewnątrz aplikacji.
+        """
+        host_address = request.get_host()
+        # TODO: refaktor - milion kopii jes ttej funkcji
+        if request.is_secure():
+            address = "https://" + host_address
+        else:
+            address = "http://"+ host_address
+        return address
+
+    def get(self, request, page):
+        server_address = self.get_server_address(request)
+        response = CWEDetailsAll(page).render_output(server_address) #render_output(server_address)
+        return Response(response)
+
+
+class AddCWEandCVE(views.APIView):
+    def get(self, request):
+        # nist_cve_scraper = NISTCVEScraper("CVE-2013-3621") CWE_NONE
+        nist_cve_scraper = NISTCVEScraper("CVE-2019-4570")
+        cve = nist_cve_scraper.get_data()
+
+        cwe = cve["cwe"]
+
+        # zapisz do bazy obiekt CWE
+        cwe_crud = CWECRUD(cwe)
+        cwe_crud.add()
+        cwe_db_obj = cwe_crud.get()
+
+        return Response({"message": "Żyjemy",
+                         "cve": cve,
+                         "cwe": cwe,
+                         # "cwe_response": CWEModelSerializer(instance=cwe_db_obj).data,
+                         "cwe_response": cwe_db_obj,
+                         })
 
 
 class ListVendors(views.APIView):
@@ -157,105 +195,3 @@ class ListVendors(views.APIView):
         except BaseException as ex:
             return Response({"error": "Unable to get vendor list.",
                              "details": str(ex)}, status=status.HTTP_400_BAD_REQUEST)
-
-
-class CWEAllView(views.APIView):
-    """Widok Django zwracający wszystkie kody CWE z podstawowywmi danymi takimi jak datę pobrania danych, źródło danych,
-    identyfikator slabości, opis słabości, url do serwisu https://cwe.mitre.org ze szczegółowymi danymi,
-    url do aplikacji SARENKA z najważniejszymi informacjami o konkretnej słabości."""
-
-    def get(self, request):
-        """
-        Metoda zwracajaca podstawowe dane o wszystkich słabościach CWE z oficjalnego serwisu https://cwe.mitre.org.
-        :param request: obiekt dla widoku Django z informacjami od użytkownika
-        :return: podstawowe dane w formacie json o wszystkich słabościach CWE zawartych w feedach
-        """
-        try:
-            server_address = Common(request).host_address
-            response = CWEAll().render_output(server_address)
-            return Response(response)
-        except Exception as ex:
-            Response({"error": "Unable to get all Common Weakness Enumeration data. "
-                               "Please check is file sarenka/feedes/cwe_ids/cwe_all.json exists",
-                      "details": str(ex)}, status=status.HTTP_404_NOT_FOUND)
-
-
-class CVEDetailsAllView(views.APIView):
-    """Zwraca wszystkei kody CWE na podstawie pliku który został wygenerowany przez nas w innym narzędziu"""
-
-    @staticmethod
-    def get_server_address(request):
-        """
-        Zwraca adres do serwera aplikacji z uwzglednieniem protokołu np: http://127.0.0.1:8000/.
-        Użycie - generpowanie urli do wewnątrz aplikacji.
-        """
-        host_address = request.get_host()
-        # TODO: refaktor - milion kopii jes ttej funkcji
-        if request.is_secure():
-            address = "https://" + host_address
-        else:
-            address = "http://"+ host_address
-        return address
-
-    def get(self, request, page):
-        server_address = self.get_server_address(request)
-        response = CVEDetailsAll(page).render_output(server_address) #render_output(server_address)
-        return Response(response)
-
-################## CWE ##########################
-class CWEDetailsAllView(views.APIView):
-    """Zwraca wszystkei kody CWE z dokładdnymi informacjami
-    - dlatego stronnicowanie / pojedyncze pliko po 100
-    na podstawie pliku który został wygenerowany przez nas w innym narzędziu"""
-
-    @staticmethod
-    def get_server_address(request):
-        """
-        Zwraca adres do serwera aplikacji z uwzglednieniem protokołu np: http://127.0.0.1:8000/.
-        Użycie - generpowanie urli do wewnątrz aplikacji.
-        """
-        host_address = request.get_host()
-        # TODO: refaktor - milion kopii jes ttej funkcji
-        if request.is_secure():
-            address = "https://" + host_address
-        else:
-            address = "http://"+ host_address
-        return address
-
-    def get(self, request, page):
-        server_address = self.get_server_address(request)
-        response = CWEDetailsAll(page).render_output(server_address) #render_output(server_address)
-        return Response(response)
-
-
-
-######################################################
-class AddCWEandCVE(views.APIView):
-    def get(self, request):
-        # nist_cve_scraper = NISTCVEScraper("CVE-2013-3621") CWE_NONE
-        nist_cve_scraper = NISTCVEScraper("CVE-2019-4570")
-        cve = nist_cve_scraper.get_data()
-
-        cwe = cve["cwe"]
-
-        # zapisz do bazy obiekt CWE
-        cwe_crud = CWECRUD(cwe)
-        cwe_crud.add()
-        cwe_db_obj = cwe_crud.get()
-
-        return Response({"message": "Żyjemy",
-                         "cve": cve,
-                         "cwe": cwe,
-                         # "cwe_response": CWEModelSerializer(instance=cwe_db_obj).data,
-                         "cwe_response": cwe_db_obj,
-                         })
-
-
-
-
-
-@login_required
-def login_required_view(request, cve_code):
-    # cve = get_object_or_404() #jakby testowac z bazy
-    cve = {"key": cve_code, "value": "test value"}
-    return JsonResponse(cve)

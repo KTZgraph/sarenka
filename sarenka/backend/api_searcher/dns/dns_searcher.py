@@ -84,7 +84,7 @@ import pprint
 
 class DNSSearcherError(Exception):
     """
-    zgłasza wyjątki gdy podany dres jest nieprawidłowy
+    Zgłasza wyjątki gdy nie można pobrć danych o rekordach DNS.
     """
     def __init__(self, message=None, errors=None):
         super().__init__(message)
@@ -93,7 +93,7 @@ class DNSSearcherError(Exception):
 
 class DNSSearcher:
     """
-    DNS wyszukiwanie informacji o rekordach domeny "A", "AAAA", "CNAME", "MX", "NS"
+    Klasa odpowiedzialna za wyszukiwanie informacji o rekordach DNS.
     """
 
     def __init__(self, host:str):
@@ -105,7 +105,12 @@ class DNSSearcher:
         self.host = DNSSearcher.change_to_domain_addres(host)
 
     @staticmethod
-    def is_ipv4(host):
+    def is_ipv4(host:str)->bool:
+        """
+        Metoda pomocnicza sprawdzająca czy podany host to adres ip czy domenowy.
+        :param host: adres ip lub nazwa domenowa hosta
+        :return: True jeśli argument host to adres ip, w przeciwnym wypadku zwraca False
+        """
         try:
             ipaddress.IPv4Network(host)
             return True
@@ -113,22 +118,24 @@ class DNSSearcher:
             return False
 
     @staticmethod
-    def change_to_domain_addres(host):
+    def change_to_domain_addres(host:str):
+        """Metoda pomocnicza zwraca adres ip w postaci reverse-map nazwy domenowej.
+        :param host: adres ip lub nazwa domenowa hosta
+        :return: reverse-map nazwa domenowa adresu hosta
+        """
         if DNSSearcher.is_ipv4(host):
-            return dns.reversename.from_address("216.58.201.142")
+            return dns.reversename.from_address(host)
         return host
 
     @staticmethod
-    def all_records():
+    def all_records()->List:
         """
-        Wyciąga wszystkie rekordy DNS domeny jakie obsługuje biblioteka dns
-        :return:
+        Atrybut klasy zwracający informacje wybranych rekordów DNS w postaci listy.
         """
         return [str(i).split(".")[1] for i in RdataType]
 
-    def get_data(self):
+    def get_data(self)->List:
         result = []
-        # for qtype in ["A", "AAAA", "CNAME", "MX", "NS"]:
         for qtype in DNSSearcher.all_records():
             try:
                 answers = dns.resolver.resolve(self.host, qtype, raise_on_no_answer=False)
@@ -140,37 +147,9 @@ class DNSSearcher:
                             "answers_rrset": answers.rrset.__str__()
                         }
                     })
-                # elif answers:
-                #     result.append({
-                #         qtype:{
-                #             "answers": [answer.__str__() for answer in answers],
-                #             "answers_rrset": "Unable to detect"
-                #         }
-                #     })
-                # else:
-                #     result.append({
-                #         qtype:{
-                #             "answers": "Unable to detect",
-                #             "answers_rrset": "Unable to detect"
-                #         }
-                #     })
 
             except dns.exception.DNSException:
                 result.append({qtype: "Unable to detect.", "answers_rrset": "Unable to detect"})
 
         return result
 
-    @property
-    def values(self)->List[Dict]:
-        print(type(self.get_data()))
-        # zwrotka lepiej jak jest listą
-        return {"dns_data" : self.get_data()}
-
-
-if __name__ == "__main__":
-    # HOST = "python.org"
-    HOST = "wmi.amu.edu.pl"
-    # a = DNSSearcher("216.58.201.142")
-    # pprint.pprint(a.values)
-    a = DNSSearcher(HOST)
-    pprint.pprint(a.values)

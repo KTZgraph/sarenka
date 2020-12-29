@@ -27,11 +27,28 @@ http://127.0.0.1:8000/api/cwe/all/-1 # zwróci bład
 http://127.0.0.1:8000/api/cwe/1 # nie istnieje
 http://127.0.0.1:8000/api/cwe/79
 
-# lista dostawców
-http://127.0.0.1:8000/api/list_vendors #wymaga credentiali
+
+# CVE pojedyncze
+http://127.0.0.1:8000/api/cve/CVE-2017-1719 # zwróci bład - taki CVe nie istnieje
+http://127.0.0.1:8000/api/cve/CVE-2019-4570 # zwróci dane
+
+
+# CVE wszystkie z feedów
+http://127.0.0.1:8000/api/cve/all/1
+http://127.0.0.1:8000/api/cve/all/1548 # bląd - tu juz nie ma danych
+http://127.0.0.1:8000/api/cve/all/fsdf # zwróci błąd bp złe dane dał user
 
 # DNS
 http://127.0.0.1:8000/api/dns/python.org #dużo danych
 http://127.0.0.1:8000/api/dns/renmich.faculty.wmi.amu.edu.pl # mało danych
-http://127.0.0.1:8000/api/dns/Orang.saved.my.life # wszystko jest na unable to detect
+http://127.0.0.1:8000/api/dns/Orang.saved.my.life # powinno zwrócić błąd
+http://127.0.0.1:8000/api/dns/8.8.8.8
 
+
+
+# Censys
+http://127.0.0.1:8000/api/censys/8.8.8.8 # bład jeśli nie ma credentiali
+
+
+# lista dostawców
+http://127.0.0.1:8000/api/list_vendors #wymaga credentiali

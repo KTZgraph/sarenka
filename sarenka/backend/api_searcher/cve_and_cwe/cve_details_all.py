@@ -56,7 +56,7 @@ class CVEDetailsAll:
                 cve_id = cve["cve_id"]
 
                 cve["nist_cve_url"] = f"{self.nist_url}{cve_id}"
-                cve["sarenka_cve_url"] = host_address + reverse('get_by_cve', kwargs={"code": cve_id})
+                cve["sarenka_cve_url"] = host_address + reverse('get_by_cve', kwargs={"cve_id": cve_id})
 
                 if cve["cwe_id"]:
                     cwe_id = cve["cwe_id"].split("-")[-1]  # oólne np.: SQLi

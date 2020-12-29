@@ -1,16 +1,10 @@
 
 from django.urls import path
-from .views import (AddCWEandCVE,
-                    CVESearchView,
-                    CensysHostSearchView,
-                    ListVendors,
-                    login_required_view,
-                    CWETop25,
-                    CWEData,
-                    CWEAllView,
-                    CWEDetailsAllView,
-                    CVEDetailsAllView,
-                    SearcherView)
+from .views_search_engines import (CensysHostSearchView,
+                                   login_required_view,
+                                   SearcherView)
+from .views_cwe_and_cve import CVESearchView, CWETop25, CWEData, CWEAllView, CVEDetailsAllView, CWEDetailsAllView, \
+    AddCWEandCVE, ListVendors
 from .views_dns import DNSSearcherView
 from .views_settings import SettingsView
 from .views_windows import NetworkLocalView, LocalView, HardwareView, RegistryView
@@ -20,7 +14,7 @@ urlpatterns = [
     path('settings', SettingsView.as_view(), name="settings"),
 
     path('cve/all/<str:page>', CVEDetailsAllView.as_view(), name="cve_all"),
-    path('cve/<str:code>', CVESearchView.as_view(), name="get_by_cve"),
+    path('cve/<str:cve_id>', CVESearchView.as_view(), name="get_by_cve"),
 
     path('cwe', CWETop25.as_view(), name="cwe_top_25"),
     path('cwe/all', CWEAllView.as_view(), name="cwe_all"),
