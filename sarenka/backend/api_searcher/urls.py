@@ -1,13 +1,13 @@
 
 from django.urls import path
-from .views.views_search_engines import (CensysHostSearchView,
-                                                                     login_required_view,
-                                                                     SearcherView)
-from .views.views_cwe_and_cve import CVESearchView, CWETop25, CWEData, CWEAllView, CVEDetailsAllView, CWEDetailsAllView, \
+from .views.search_engines import (CensysHostSearchView,
+                                   login_required_view,
+                                   SearcherView)
+from .views.cwe_and_cve import CVESearchView, CWETop25, CWEData, CWEAllView, CVEDetailsAllView, CWEDetailsAllView, \
     AddCWEandCVE, ListVendors
-from .views.views_dns import DNSSearcherView
-from .views.views_settings import SettingsView
-from .views.views_windows import NetworkLocalView, LocalView, HardwareView, RegistryView
+from .views.dns import DNSSearcherView
+from .views.settings import SettingsView
+from .views.windows import NetworkLocalView, LocalView, HardwareView, RegistryView
 
 urlpatterns = [
     # dodanie kluczy użytkownika do serwisów trzeich

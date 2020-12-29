@@ -11,8 +11,8 @@ from api_searcher.cve_and_cwe.cwe_details_all import CWEDetailsAll
 from api_searcher.cve_and_cwe.mitre_cwe_scrapers import CWETableTop25Scraper, CWEDataScraper
 from api_searcher.cve_and_cwe.nist_cve_scrapers import NISTCVEScraper
 from api_searcher.cwe_crud import CWECRUD
-from api_searcher.views.views_common import Common
-from api_searcher.views.views_search_engines import logger
+from api_searcher.views.common import Common
+from api_searcher.views.search_engines import logger
 
 
 class CVESearchView(views.APIView):
