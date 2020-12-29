@@ -117,36 +117,28 @@ class CVEDetailsAllView(views.APIView):
                 server_address = Common(request).host_address
                 response = CVEDetailsAll(page).render_output(server_address) #render_output(server_address)
                 return Response(response)
-            return Response({"message": "Unsupported type of user input."}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"message": "Unsupported type of user input data."}, status=status.HTTP_400_BAD_REQUEST)
         except Exception as ex:
-            return Response({"error": "Unable to get CVE details data - check is files in folder sarenka\feedes\cve_details exist",
+            return Response({"error": "Unable to get CVE details data - check is files "
+                                      "in folder sarenka\feedes\cve_details exist",
                              "details": str(ex)}, status=status.HTTP_404_NOT_FOUND)
 
 
-
 class CWEDetailsAllView(views.APIView):
-    """Zwraca wszystkei kody CWE z dokładdnymi informacjami
-    - dlatego stronnicowanie / pojedyncze pliko po 100
-    na podstawie pliku który został wygenerowany przez nas w innym narzędziu"""
-
-    @staticmethod
-    def get_server_address(request):
-        """
-        Zwraca adres do serwera aplikacji z uwzglednieniem protokołu np: http://127.0.0.1:8000/.
-        Użycie - generpowanie urli do wewnątrz aplikacji.
-        """
-        host_address = request.get_host()
-        # TODO: refaktor - milion kopii jes ttej funkcji
-        if request.is_secure():
-            address = "https://" + host_address
-        else:
-            address = "http://"+ host_address
-        return address
+    """Widok Django zwracajacy wszystkie słabości Common Weakness Enumeration ze szczegółowymi danymi.
+    Wszystki identyfikatory CWE pochodza z https://cwe.mitre.org/data/published/cwe_latest.pdf"""
 
     def get(self, request, page):
-        server_address = self.get_server_address(request)
-        response = CWEDetailsAll(page).render_output(server_address) #render_output(server_address)
-        return Response(response)
+        try:
+            if isinstance(page, int):
+                server_address = Common(request).host_address
+                response = CWEDetailsAll(page).render_output(server_address)  # render_output(server_address)
+                return Response(response)
+            return Response({"message": "Unsupported type of user input data."}, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as ex:
+            return Response({"error": "Unable to get all CWE details data - check is files "
+                                      "in folder sarenka\feedes\cwe_details",
+                             "details": str(ex)}, status=status.HTTP_404_NOT_FOUND)
 
 
 class AddCWEandCVE(views.APIView):
