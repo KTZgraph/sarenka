@@ -78,11 +78,11 @@ import dns.exception
 import dns.reversename
 from dns.rdatatype import RdataType
 import ipaddress
-from nslookup import Nslookup
 import socket
 import pprint
 
-class DNSSearcherFQDNError(Exception):
+
+class DNSSearcherError(Exception):
     """
     zgłasza wyjątki gdy podany dres jest nieprawidłowy
     """
@@ -90,12 +90,18 @@ class DNSSearcherFQDNError(Exception):
         super().__init__(message)
         self.errors= errors
 
+
 class DNSSearcher:
     """
     DNS wyszukiwanie informacji o rekordach domeny "A", "AAAA", "CNAME", "MX", "NS"
     """
 
     def __init__(self, host:str):
+        try:
+            socket.gethostbyname(host)
+        except socket.gaierror as ex:
+            raise DNSSearcherError(f"Unable to find host {host}")
+
         self.host = DNSSearcher.change_to_domain_addres(host)
 
     @staticmethod

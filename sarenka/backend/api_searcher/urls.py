@@ -1,22 +1,19 @@
 
 from django.urls import path
 from .views import (AddCWEandCVE,
-                    DNSSearcherView,
                     CVESearchView,
                     CensysHostSearchView,
                     ListVendors,
-                    LocalView,
                     login_required_view,
                     CWETop25,
                     CWEData,
                     CWEAllView,
                     CWEDetailsAllView,
                     CVEDetailsAllView,
-                    WindowsHardwareView,
-                    WindowsRegistryView,
-                    NetworkLocalView,
-                    SearcherView,
-                    SettingsView)
+                    SearcherView)
+from .views_dns import DNSSearcherView
+from .views_settings import SettingsView
+from .views_windows import NetworkLocalView, LocalView, HardwareView, RegistryView
 
 urlpatterns = [
     # dodanie kluczy użytkownika do serwisów trzeich
@@ -41,7 +38,7 @@ urlpatterns = [
     path("dns/<str:host>", DNSSearcherView.as_view(), name="dns_record"),
 
     path('local', LocalView.as_view(), name="local_windows"),
-    path('local/registry', WindowsRegistryView.as_view(), name="registry_windows"),
-    path('local/hardware', WindowsHardwareView.as_view(), name="hardware_windows"),
+    path('local/registry', RegistryView.as_view(), name="registry_windows"),
+    path('local/hardware', HardwareView.as_view(), name="hardware_windows"),
     path('local/network', NetworkLocalView.as_view(), name="network_windows"),
 ]
