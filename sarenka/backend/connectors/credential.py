@@ -4,7 +4,7 @@ import json
 
 class CredentialsNotFoundError(Exception):
     """
-    Zgłoszenie wyjąktu gdy plik z ustawieniami użytkownika credentials.example.json nie istnieje
+    Zgłoszenie wyjąktu gdy plik z ustawieniami użytkownika settings.example.json nie istnieje
     """
     def __init__(self, message=None, errors=None):
         super().__init__(message)
@@ -91,13 +91,13 @@ class Credential:
     """Credentials for shodan, censys, etc"""
     __instance = None
     
-    def __init__(self, config_file="connectors/credentials.json")->None:
+    def __init__(self, config_file="connectors/settings.json")->None:
         if not Credential.__instance:
             try:
                 with open(config_file) as f:
                     data = json.load(f)
             except FileNotFoundError:
-                raise CredentialsNotFoundError(f"User credentials file {config_file} does not exists.")
+                raise CredentialsNotFoundError(f"User settings file {config_file} does not exists.")
             
             
             self.__binaryedge = CredentialData(data["binaryedge"])

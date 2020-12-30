@@ -48,7 +48,7 @@ class Searcher:
             return {
                 "censys": {
                     "error": "Unable to get data from service http://censys.io/. "
-                             "Please create account on https://censys.io/ and add valid credentials "
+                             "Please create account on https://censys.io/ and add valid settings "
                              f"for SARENKA app on {settings_url}"
                     }
                 }
