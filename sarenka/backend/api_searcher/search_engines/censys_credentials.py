@@ -24,7 +24,7 @@ class CensysCredentials:
         if self.data.get(info_tag, None):
             return self.data[info_tag]
         else:
-            raise CensysCredentialsError(f'No data in "{info_tag}" for service http://censys.io/ service. Please check '
+            raise CensysCredentialsError(f'No data in "{info_tag}" for http://censys.io/ service. Please check '
                                          f'sarenka\\backend\\api_searcher\\search_engines\\user_credentials.json file.')
 
     @property

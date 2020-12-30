@@ -23,7 +23,7 @@ class ShodanCredentials:
         if self.data.get(info_tag, None):
             return self.data[info_tag]
         else:
-            raise ShodanCredentialsError(f'No data in "{info_tag}" for service https://shodan.io/service. Please check '
+            raise ShodanCredentialsError(f'No data in "{info_tag}" for https://shodan.io/ service. Please check '
                                          f'sarenka\\backend\\api_searcher\\search_engines\\user_credentials.json file.')
 
     @property
