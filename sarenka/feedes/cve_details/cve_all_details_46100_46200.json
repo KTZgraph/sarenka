@@ -1,0 +1,3077 @@
+[
+    {
+        "cve_id": "CVE-2017-16022",
+        "cwe_id": "CWE-79",
+        "description": "Morris.js creates an svg graph, with labels that appear when hovering over a point. The hovering label names are not escaped in versions 0.5.0 and earlier. If control over the labels is obtained, script can be injected. The script will run on the client side whenever that specific graph is loaded.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/morrisjs/morris.js/pull/464",
+            "https://nodesecurity.io/advisories/307"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:morris.js_project:morris.js:*:*:*:*:*:node.js:*:* versions up to (including) 0.5.0",
+            "*cpe:2.3:a:morris.js_project:morris.js:*:*:*:*:*:node.js:*:*",
+            "(including)"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16023",
+        "cwe_id": "CWE-20",
+        "description": "Decamelize is used to convert a dash/dot/underscore/space separated string to camelCase. Decamelize 1.1.0 through 1.1.1 uses regular expressions to evaluate a string and takes unescaped separator values, which can be used to create a denial of service attack.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/sindresorhus/decamelize/issues/5",
+            "https://nodesecurity.io/advisories/308"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:decamelize_project:decamelize:1.1.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:decamelize_project:decamelize:1.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:decamelize_project:decamelize:1.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:decamelize_project:decamelize:1.1.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16024",
+        "cwe_id": "CWE-200",
+        "description": "The sync-exec module is used to simulate child_process.execSync in node versions <0.11.9. Sync-exec uses tmp directories as a buffer before returning values. Other users on the server have read access to the tmp directory, possibly allowing an attacker on the server to obtain confidential information from the buffer/tmp file, while it exists.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://cwe.mitre.org/data/definitions/377.html",
+            "https://github.com/gvarsanyi/sync-exec/issues/17",
+            "https://nodesecurity.io/advisories/310",
+            "https://www.owasp.org/index.php/Insecure_Temporary_File"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nodejs:node.js:*:*:*:*:*:*:*:* versions up to (excluding) 0.11.9",
+            "*cpe:2.3:a:nodejs:node.js:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:sync-exec_project:sync-exec:*:*:*:*:*:node.js:*:*",
+            "(including)"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16025",
+        "cwe_id": "CWE-287",
+        "description": "Nes is a websocket extension library for hapi. Hapi is a webserver framework. Versions below and including 6.4.0 have a denial of service vulnerability via an invalid Cookie header. This is only present when websocket authentication is set to `cookie`. Submitting an invalid cookie on the websocket upgrade request will cause the node process to error out.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/hapijs/nes/commit/249ba1755ed6977fbc208463c87364bf884ad655",
+            "https://github.com/hapijs/nes/issues/171",
+            "https://nodesecurity.io/advisories/331"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hapijs:nes:*:*:*:*:*:node.js:*:* versions up to (including) 6.4.0",
+            "*cpe:2.3:a:hapijs:nes:*:*:*:*:*:node.js:*:*",
+            "(including)"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16026",
+        "cwe_id": "CWE-20",
+        "description": "Request is an http client. If a request is made using ```multipart```, and the body type is a ```number```, then the specified number of non-zero memory is passed in the body. This affects Request >=2.2.6 <2.47.0 || >2.51.0 <=2.67.0.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:N/A:N)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "7.1 HIGH",
+        "hyperlinks": [
+            "https://github.com/request/request/issues/1904",
+            "https://github.com/request/request/pull/2018",
+            "https://nodesecurity.io/advisories/309"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:request_project:request:*:*:*:*:*:node.js:*:* versions from (including) 2.2.6 up to (excluding) 2.47.0\n     *cpe:2.3:a:request_project:request:*:*:*:*:*:node.js:*:* versions from (excluding) 2.51.0 up to (including) 2.67.0",
+            "*cpe:2.3:a:request_project:request:*:*:*:*:*:node.js:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:request_project:request:*:*:*:*:*:node.js:*:*",
+            "(excluding)",
+            "(including)"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16028",
+        "cwe_id": "CWE-338",
+        "description": "react-native-meteor-oauth is a library for Oauth2 login to a Meteor server in React Native. The oauth Random Token is generated using a non-cryptographically strong RNG (Math.random()).",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/tableflip/react-native-meteor-oauth/blob/a7eb738b74c469f5db20296b44b7cae4e2337435/src/meteor-oauth.js#L66",
+            "https://nodesecurity.io/advisories/157"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:randomatic_project:randomatic:*:*:*:*:*:node.js:*:* versions up to (excluding) 3.0.0",
+            "*cpe:2.3:a:randomatic_project:randomatic:*:*:*:*:*:node.js:*:*",
+            "(excluding)"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16029",
+        "cwe_id": "CWE-22",
+        "description": "hostr is a simple web server that serves up the contents of the current directory. There is a directory traversal vulnerability in hostr 2.3.5 and earlier that allows an attacker to read files outside the current directory by sending `../` in the url path for GET requests.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/henrytseng/hostr/issues/8",
+            "https://nodesecurity.io/advisories/303"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hostr_project:hostr:*:*:*:*:*:node.js:*:* versions up to (including) 2.3.5",
+            "*cpe:2.3:a:hostr_project:hostr:*:*:*:*:*:node.js:*:*",
+            "(including)"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16030",
+        "cwe_id": "CWE-400",
+        "description": "Useragent is used to parse useragent headers. It uses several regular expressions to accomplish this. An attacker could edit their own headers, creating an arbitrarily long useragent string, causing the event loop and server to block. This affects Useragent 2.1.12 and earlier.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://nodesecurity.io/advisories/312"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:useragent_project:useragent:*:*:*:*:*:node.js:*:* versions up to (including) 2.1.12",
+            "*cpe:2.3:a:useragent_project:useragent:*:*:*:*:*:node.js:*:*",
+            "(including)"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16031",
+        "cwe_id": "CWE-330",
+        "description": "Socket.io is a realtime application framework that provides communication via websockets. Because socket.io 0.9.6 and earlier depends on `Math.random()` to create socket IDs, the IDs are predictable. An attacker is able to guess the socket ID and gain access to socket.io servers, potentially obtaining sensitive information.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/socketio/socket.io/commit/67b4eb9abdf111dfa9be4176d1709374a2b4ded8",
+            "https://github.com/socketio/socket.io/issues/856",
+            "https://github.com/socketio/socket.io/pull/857",
+            "https://nodesecurity.io/advisories/321"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:socket:socket.io:*:*:*:*:*:node.js:*:* versions up to (including) 0.9.6",
+            "*cpe:2.3:a:socket:socket.io:*:*:*:*:*:node.js:*:*",
+            "(including)"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "07/31/2018",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16035",
+        "cwe_id": "CWE-319",
+        "description": "The hubl-server module is a wrapper for the HubL Development Server. During installation hubl-server downloads a set of dependencies from api.hubapi.com. It appears in the code that these files are downloaded over HTTPS however the api.hubapi.com endpoint redirects to a HTTP url. Because of this behavior an attacker with the ability to man-in-the-middle a developer or system performing a package installation could compromise the integrity of the installation.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "https://nodesecurity.io/advisories/334"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hubspot:hubl-server:*:*:*:*:*:node.js:*:* versions up to (including) 1.1.5",
+            "*cpe:2.3:a:hubspot:hubl-server:*:*:*:*:*:node.js:*:*",
+            "(including)"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16036",
+        "cwe_id": "CWE-22",
+        "description": "`badjs-sourcemap-server` receives files sent by `badjs-sourcemap`. `badjs-sourcemap-server` is vulnerable to a directory traversal issue, giving an attacker access to the filesystem by placing \"../\" in the url.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/JacksonGL/NPM-Vuln-PoC/tree/master/directory-traversal/badjs-sourcemap-server",
+            "https://nodesecurity.io/advisories/349"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:badjs-sourcemap-server_project:badjs-sourcemap-server:*:*:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:badjs-sourcemap-server_project:badjs-sourcemap-server:*:*:*:*:*:node.js:*:*"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16037",
+        "cwe_id": "CWE-22",
+        "description": "`gomeplus-h5-proxy` is vulnerable to a directory traversal issue, allowing attackers to access any file in the system by placing '../' in the URL.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/JacksonGL/NPM-Vuln-PoC/tree/master/directory-traversal/gomeplus-h5-proxy",
+            "https://nodesecurity.io/advisories/350"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gomeplus-h5-proxy_project:gomeplus-h5-proxy:*:*:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:gomeplus-h5-proxy_project:gomeplus-h5-proxy:*:*:*:*:*:node.js:*:*"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16038",
+        "cwe_id": "CWE-22",
+        "description": "`f2e-server` 1.12.11 and earlier is vulnerable to a directory traversal issue, giving an attacker access to the filesystem by placing \"../\" in the url. This is compounded by `f2e-server` requiring elevated privileges to run.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/shy2850/node-server/issues/10",
+            "https://github.com/shy2850/node-server/pull/12/files",
+            "https://nodesecurity.io/advisories/346"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:f2e-server_project:f2e-server:*:*:*:*:*:node.js:*:* versions up to (including) 1.12.11",
+            "*cpe:2.3:a:f2e-server_project:f2e-server:*:*:*:*:*:node.js:*:*",
+            "(including)"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "07/19/2018",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16039",
+        "cwe_id": "CWE-22",
+        "description": "`hftp` is a static http or ftp server `hftp` is vulnerable to a directory traversal issue, giving an attacker access to the filesystem by placing \"../\" in the url.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/JacksonGL/NPM-Vuln-PoC/tree/master/directory-traversal/hftp",
+            "https://nodesecurity.io/advisories/384"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hftp_project:hftp:*:*:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:hftp_project:hftp:*:*:*:*:*:node.js:*:*"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16040",
+        "cwe_id": "CWE-319",
+        "description": "gfe-sass is a library for promises (CommonJS/Promises/A,B,D) gfe-sass downloads resources over HTTP, which leaves it vulnerable to MITM attacks. It may be possible to cause remote code execution (RCE) by swapping out the requested resources with an attacker controlled copy if the attacker is on the network or positioned in between the user and the remote server.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "https://nodesecurity.io/advisories/291"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gfe-sass_project:gfe-sass:*:*:*:*:*:node.js:*:* versions up to (including) 1.0.19",
+            "*cpe:2.3:a:gfe-sass_project:gfe-sass:*:*:*:*:*:node.js:*:*",
+            "(including)"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16041",
+        "cwe_id": "CWE-319",
+        "description": "ikst versions before 1.1.2 download resources over HTTP, which leaves it vulnerable to MITM attacks.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://nodesecurity.io/advisories/249"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ikst_project:ikst:*:*:*:*:*:node.js:*:* versions up to (excluding) 1.1.2",
+            "*cpe:2.3:a:ikst_project:ikst:*:*:*:*:*:node.js:*:*",
+            "(excluding)"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16042",
+        "cwe_id": "CWE-78",
+        "description": "Growl adds growl notification support to nodejs. Growl before 1.10.2 does not properly sanitize input before passing it to exec, allowing for arbitrary command execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/tj/node-growl/issues/60",
+            "https://github.com/tj/node-growl/pull/61",
+            "https://nodesecurity.io/advisories/146"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:growl_project:growl:*:*:*:*:*:node.js:*:* versions up to (excluding) 1.10.2",
+            "*cpe:2.3:a:growl_project:growl:*:*:*:*:*:node.js:*:*",
+            "(excluding)"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16043",
+        "cwe_id": "CWE-74",
+        "description": "Shout is an IRC client. Because the `/topic` command in messages is unescaped, attackers have the ability to inject HTML scripts that will run in the victim's browser. Affects shout >=0.44.0 <=0.49.3.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/erming/shout/pull/344",
+            "https://nodesecurity.io/advisories/322"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:shout-irc:shout:*:*:*:*:*:node.js:*:* versions up to (excluding) 0.50.0",
+            "*cpe:2.3:a:shout-irc:shout:*:*:*:*:*:node.js:*:* versions up to (excluding) 0.50.0",
+            "*cpe:2.3:a:shout-irc:shout:*:*:*:*:*:node.js:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:shout_project:shout:*:*:*:*:*:node.js:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:shout-irc:shout:*:*:*:*:*:node.js:*:*",
+            "(excluding)"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16044",
+        "cwe_id": "CWE-200",
+        "description": "`d3.js` was a malicious module published with the intent to hijack environment variables. It has been unpublished by npm.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://nodesecurity.io/advisories/497"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:d3.js_project:d3.js:*:*:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:d3.js_project:d3.js:*:*:*:*:*:node.js:*:*"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16045",
+        "cwe_id": "CWE-200",
+        "description": "`jquery.js` was a malicious module published with the intent to hijack environment variables. It has been unpublished by npm.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://nodesecurity.io/advisories/496"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jquery.js_project:jquery.js:*:*:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:jquery.js_project:jquery.js:*:*:*:*:*:node.js:*:*"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16046",
+        "cwe_id": "CWE-506",
+        "description": "`mariadb` was a malicious module published with the intent to hijack environment variables. It has been unpublished by npm.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://nodesecurity.io/advisories/495"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mariadb:mariadb:*:*:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:mariadb_project:mariadb:*:*:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:mariadb_project:mariadb:*:*:*:*:*:*:node.js:*",
+            "*cpe:2.3:a:mariadb_project:mariadb:*:*:*:*:*:*:node.js:*",
+            "*cpe:2.3:a:mariadb:mariadb:*:*:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:mariadb:mariadb:2.13.0:*:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:mariadb_project:mariadb:*:*:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:mariadb:mariadb:*:*:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:mariadb_project:mariadb:*:*:*:*:*:*:node.js:*",
+            "*cpe:2.3:a:mariadb_project:mariadb:*:*:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:mariadb_project:mariadb:*:*:*:*:*:*:node.js:*"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "11/16/2020",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16048",
+        "cwe_id": "CWE-200",
+        "description": "`node-sqlite` was a malicious module published with the intent to hijack environment variables. It has been unpublished by npm.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://nodesecurity.io/advisories/493"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:node-sqlite_project:node-sqlite:*:*:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:node-sqlite_project:node-sqlite:*:*:*:*:*:node.js:*:*"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16049",
+        "cwe_id": "CWE-200",
+        "description": "`nodesqlite` was a malicious module published with the intent to hijack environment variables. It has been unpublished by npm.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://nodesecurity.io/advisories/492"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nodesqlite_project:nodesqlite:*:*:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:nodesqlite_project:nodesqlite:*:*:*:*:*:node.js:*:*"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16050",
+        "cwe_id": "CWE-200",
+        "description": "`sqlite.js` was a malicious module published with the intent to hijack environment variables. It has been unpublished by npm.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://nodesecurity.io/advisories/491"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:sqlite.js_project:sqlite.js:*:*:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:sqlite.js_project:sqlite.js:*:*:*:*:*:node.js:*:*"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16051",
+        "cwe_id": "CWE-200",
+        "description": "`sqliter` was a malicious module published with the intent to hijack environment variables. It has been unpublished by npm.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://nodesecurity.io/advisories/490"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:sqliter_project:sqliter:*:*:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:sqliter_project:sqliter:*:*:*:*:*:node.js:*:*"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16052",
+        "cwe_id": "CWE-200",
+        "description": "`node-fabric` was a malicious module published with the intent to hijack environment variables. It has been unpublished by npm.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://nodesecurity.io/advisories/489"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:node-fabric_project:node-fabric:*:*:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:node-fabric_project:node-fabric:*:*:*:*:*:node.js:*:*"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16053",
+        "cwe_id": "CWE-200",
+        "description": "`fabric-js` was a malicious module published with the intent to hijack environment variables. It has been unpublished by npm.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://nodesecurity.io/advisories/487"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fabric-js_project:fabric-js:*:*:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:fabric-js_project:fabric-js:*:*:*:*:*:node.js:*:*"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16054",
+        "cwe_id": "CWE-200",
+        "description": "`nodefabric` was a malicious module published with the intent to hijack environment variables. It has been unpublished by npm.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://nodesecurity.io/advisories/488"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nodefabric_project:nodefabric:*:*:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:nodefabric_project:nodefabric:*:*:*:*:*:node.js:*:*"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-16055",
+        "cwe_id": "CWE-200",
+        "description": "`sqlserver` was a malicious module published with the intent to hijack environment variables. It has been unpublished by npm.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://nodesecurity.io/advisories/486"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:sqlserver_project:sqlserver:*:*:*:*:*:node.js:*:*",
+            "*cpe:2.3:a:sqlserver_project:sqlserver:*:*:*:*:*:node.js:*:*"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2016-9042",
+        "cwe_id": "CWE-20",
+        "description": "An exploitable denial of service vulnerability exists in the origin timestamp check functionality of ntpd 4.2.8p9. A specially crafted unauthenticated network packet can be used to reset the expected origin timestamp for target peers. Legitimate replies from targeted peers will fail the origin timestamp check (TEST2) causing the reply to be dropped and creating a denial of service condition.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/97046",
+            "http://www.securitytracker.com/id/1038123",
+            "http://www.securitytracker.com/id/1039427",
+            "https://security.FreeBSD.org/advisories/FreeBSD-SA-17:03.ntp.asc",
+            "https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbux03962en_us",
+            "https://www.talosintelligence.com/vulnerability_reports/TALOS-2016-0260"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ntp:ntp:4.2.8:p9:*:*:*:*:*:*",
+            "*cpe:2.3:a:ntp:ntp:4.2.8:p9:*:*:*:*:*:*",
+            "*cpe:2.3:o:freebsd:freebsd:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:freebsd:freebsd:11.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/31/2019",
+        "vulnerability_source": "Talos",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-12092",
+        "cwe_id": "CWE-200",
+        "description": "An exploitable file write vulnerability exists in the memory module functionality of Allen Bradley Micrologix 1400 Series B FRN 21.2 and before. A specially crafted packet can cause a file write resulting in a new program being written to the memory module. An attacker can send an unauthenticated packet to trigger this vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://www.talosintelligence.com/vulnerability_reports/TALOS-2017-0444"
+        ],
+        "cpe": [
+            "cpe:2.3:h:rockwellautomation:micrologix_1400:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "08/01/2018",
+        "vulnerability_source": "Talos",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-3853",
+        "cwe_id": "CWE-416",
+        "description": "An exploitable use-after-free vulnerability exists in the JavaScript engine of Foxit Software Foxit PDF Reader version 9.0.1.1049. A specially crafted PDF document can trigger a previously freed object in memory to be reused resulting in arbitrary code execution. An attacker needs to trick the user to open the malicious file to trigger this vulnerability. If the browser plugin extension is enabled, visiting a malicious site can also trigger the vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103942",
+            "http://www.securitytracker.com/id/1040733",
+            "https://www.talosintelligence.com/vulnerability_reports/TALOS-2018-0536"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:foxitsoftware:foxit_reader:9.0.1.1049:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:foxitsoftware:foxit_reader:9.0.1.1049:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "07/31/2018",
+        "vulnerability_source": "Talos",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2016-1000344",
+        "cwe_id": "CWE-310",
+        "description": "In the Bouncy Castle JCE Provider version 1.55 and earlier the DHIES implementation allowed the use of ECB mode. This mode is regarded as unsafe and support for it has been removed from the provider.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "7.4 HIGH",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "https://access.redhat.com/errata/RHSA-2018:2669",
+            "https://access.redhat.com/errata/RHSA-2018:2927",
+            "https://github.com/bcgit/bc-java/commit/9385b0ebd277724b167fe1d1456e3c112112be1f",
+            "https://security.netapp.com/advisory/ntap-20181127-0004/",
+            "https://www.oracle.com/security-alerts/cpuoct2020.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:bouncycastle:legion-of-the-bouncy-castle-java-crytography-api:*:*:*:*:*:*:*:* versions up to (including) 1.55",
+            "*cpe:2.3:a:bouncycastle:legion-of-the-bouncy-castle-java-crytography-api:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/20/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2016-1000345",
+        "cwe_id": "CWE-361",
+        "description": "In the Bouncy Castle JCE Provider version 1.55 and earlier the DHIES/ECIES CBC mode vulnerable to padding oracle attack. For BC 1.55 and older, in an environment where timings can be easily observed, it is possible with enough observations to identify when the decryption is failing due to padding.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://access.redhat.com/errata/RHSA-2018:2669",
+            "https://access.redhat.com/errata/RHSA-2018:2927",
+            "https://github.com/bcgit/bc-java/commit/21dcb3d9744c83dcf2ff8fcee06dbca7bfa4ef35#diff-4439ce586bf9a13bfec05c0d113b8098",
+            "https://lists.debian.org/debian-lts-announce/2018/07/msg00009.html",
+            "https://security.netapp.com/advisory/ntap-20181127-0004/",
+            "https://usn.ubuntu.com/3727-1/",
+            "https://www.oracle.com/security-alerts/cpuoct2020.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:bouncycastle:legion-of-the-bouncy-castle-java-crytography-api:*:*:*:*:*:*:*:* versions up to (including) 1.55",
+            "*cpe:2.3:a:bouncycastle:legion-of-the-bouncy-castle-java-crytography-api:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/20/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2016-1000346",
+        "cwe_id": "CWE-320",
+        "description": "In the Bouncy Castle JCE Provider version 1.55 and earlier the other party DH public key is not fully validated. This can cause issues as invalid keys can be used to reveal details about the other party's private key where static Diffie-Hellman is in use. As of release 1.56 the key parameters are checked on agreement calculation.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "3.7 LOW",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://access.redhat.com/errata/RHSA-2018:2669",
+            "https://access.redhat.com/errata/RHSA-2018:2927",
+            "https://github.com/bcgit/bc-java/commit/1127131c89021612c6eefa26dbe5714c194e7495#diff-d525a20b8acaed791ae2f0f770eb5937",
+            "https://lists.debian.org/debian-lts-announce/2018/07/msg00009.html",
+            "https://security.netapp.com/advisory/ntap-20181127-0004/",
+            "https://usn.ubuntu.com/3727-1/",
+            "https://www.oracle.com/security-alerts/cpuoct2020.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:bouncycastle:legion-of-the-bouncy-castle-java-crytography-api:*:*:*:*:*:*:*:* versions up to (including) 1.55",
+            "*cpe:2.3:a:bouncycastle:legion-of-the-bouncy-castle-java-crytography-api:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/20/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2016-1000352",
+        "cwe_id": "CWE-310",
+        "description": "In the Bouncy Castle JCE Provider version 1.55 and earlier the ECIES implementation allowed the use of ECB mode. This mode is regarded as unsafe and support for it has been removed from the provider.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "7.4 HIGH",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "https://access.redhat.com/errata/RHSA-2018:2669",
+            "https://access.redhat.com/errata/RHSA-2018:2927",
+            "https://github.com/bcgit/bc-java/commit/9385b0ebd277724b167fe1d1456e3c112112be1f",
+            "https://security.netapp.com/advisory/ntap-20181127-0004/",
+            "https://www.oracle.com/security-alerts/cpuoct2020.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:bouncycastle:legion-of-the-bouncy-castle-java-crytography-api:*:*:*:*:*:*:*:* versions up to (including) 1.55",
+            "*cpe:2.3:a:bouncycastle:legion-of-the-bouncy-castle-java-crytography-api:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "06/04/2018",
+        "modified_date": "10/20/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-18286",
+        "cwe_id": "CWE-79",
+        "description": "nZEDb v0.7.3.3 has XSS in the 404 error page.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/143725/nZEDb-0.7.3.3-Cross-Site-Scripting.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nzedb:nzedb:0.7.3.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:nzedb:nzedb:0.7.3.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/31/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-11735",
+        "cwe_id": "CWE-79",
+        "description": "index.php?action=createaccount in Ximdex 4.0 has XSS via the sname or fname parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/XIMDEX/ximdex/issues/146"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ximdex:ximdex:4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ximdex:ximdex:4.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/23/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-11736",
+        "cwe_id": "CWE-434",
+        "description": "An issue was discovered in Pluck before 4.7.7-dev2. /data/inc/images.php allows remote attackers to upload and execute arbitrary PHP code by using the image/jpeg content type for a .htaccess file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/pluck-cms/pluck/issues/61",
+            "https://github.com/pluck-cms/pluck/releases/tag/4.7.7-dev2"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:pluck-cms:pluck:*:*:*:*:*:*:*:* versions up to (including) 4.7.7",
+            "*cpe:2.3:a:pluck-cms:pluck:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:pluck-cms:pluck:4.7.7:dev1:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/23/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-11554",
+        "cwe_id": "CWE-200",
+        "description": "The forgotten-password feature in index.php/member/reset/reset_email.html in YzmCMS v3.2 through v3.7 has a Response Discrepancy Information Exposure issue and an unexpectedly long lifetime for a verification code, which makes it easier for remote attackers to hijack accounts via a brute-force approach.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/littleheary/-YzmCMS-User-Traversal-Vulnerability/blob/master/README.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:yzmcms:yzmcms:*:*:*:*:*:*:*:* versions from (including) 3.2 up to (including) 3.7",
+            "*cpe:2.3:a:yzmcms:yzmcms:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/31/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-11678",
+        "cwe_id": "CWE-20",
+        "description": "plugins/box/users/users.plugin.php in Monstra CMS 3.0.4 allows Login Rate Limiting Bypass via manipulation of the login_attempts cookie.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://abdilahrf.github.io/login-rate-limiting-bypass"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:monstra:monstra_cms:3.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:monstra:monstra_cms:3.0.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/20/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-11737",
+        "cwe_id": "CWE-125",
+        "description": "An issue was discovered in libtskfs.a in The Sleuth Kit (TSK) from release 4.0.2 through to 4.6.1. An out-of-bounds read of a memory region was found in the function ntfs_fix_idxrec in tsk/fs/ntfs_dent.cpp which could be leveraged by an attacker to disclose information or manipulated to read from unmapped memory causing a denial of service.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:P)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/sleuthkit/sleuthkit/issues/1266"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:sleuthkit:the_sleuth_kit:*:*:*:*:*:*:*:* versions from (including) 4.0.2 up to (including) 4.6.1",
+            "*cpe:2.3:a:sleuthkit:the_sleuth_kit:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/13/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-11738",
+        "cwe_id": "CWE-125",
+        "description": "An issue was discovered in libtskfs.a in The Sleuth Kit (TSK) from release 4.0.2 through to 4.6.1. An out-of-bounds read of a memory region was found in the function ntfs_make_data_run in tsk/fs/ntfs.c which could be leveraged by an attacker to disclose information or manipulated to read from unmapped memory causing a denial of service attack.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:P)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/sleuthkit/sleuthkit/issues/1265"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:sleuthkit:the_sleuth_kit:*:*:*:*:*:*:*:* versions from (including) 4.0.2 up to (including) 4.6.1",
+            "*cpe:2.3:a:sleuthkit:the_sleuth_kit:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/13/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-11739",
+        "cwe_id": "CWE-125",
+        "description": "An issue was discovered in libtskimg.a in The Sleuth Kit (TSK) from release 4.0.2 through to 4.6.1. An out-of-bounds read of a memory region was found in the function raw_read in tsk/img/raw.c which could be leveraged by an attacker to disclose information or manipulated to read from unmapped memory causing a denial of service attack.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:P)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/sleuthkit/sleuthkit/issues/1267"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:sleuthkit:the_sleuth_kit:*:*:*:*:*:*:*:* versions from (including) 4.0.2 up to (including) 4.6.1",
+            "*cpe:2.3:a:sleuthkit:the_sleuth_kit:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/13/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-11740",
+        "cwe_id": "CWE-125",
+        "description": "An issue was discovered in libtskbase.a in The Sleuth Kit (TSK) from release 4.0.2 through to 4.6.1. An out-of-bounds read of a memory region was found in the function tsk_UTF16toUTF8 in tsk/base/tsk_unicode.c which could be leveraged by an attacker to disclose information or manipulated to read from unmapped memory causing a denial of service attack.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:P)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/sleuthkit/sleuthkit/issues/1264"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:sleuthkit:the_sleuth_kit:*:*:*:*:*:*:*:* versions from (including) 4.0.2 up to (including) 4.6.1",
+            "*cpe:2.3:a:sleuthkit:the_sleuth_kit:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/13/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-11722",
+        "cwe_id": "CWE-89",
+        "description": "WUZHI CMS 4.1.0 has a SQL Injection in api/uc.php via the 'code' parameter, because 'UC_KEY' is hard coded.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/wuzhicms/wuzhicms/issues/141"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:wuzhicms:wuzhicms:4.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:wuzhicms:wuzhicms:4.1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/23/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-1252",
+        "cwe_id": "CWE-89",
+        "description": "RSA Web Threat Detection versions prior to 6.4, contain an SQL injection vulnerability in the Administration and Forensics applications. An authenticated malicious user with low privileges could potentially exploit this vulnerability to execute SQL commands on the back-end database to gain unauthorized access to the tool's monitoring and user information by supplying specially crafted input data to the affected application.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2018/Jun/4",
+            "http://www.securityfocus.com/bid/104396",
+            "http://www.securitytracker.com/id/1041026"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:rsa:threat_detection:*:*:*:*:*:*:*:* versions up to (excluding) 6.4",
+            "*cpe:2.3:a:rsa:threat_detection:*:*:*:*:*:*:*:* versions up to (excluding) 6.4",
+            "*cpe:2.3:a:rsa:threat_detection:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:rsa:web_threat_detection:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:rsa:threat_detection:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/15/2019",
+        "vulnerability_source": "Dell",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-1000180",
+        "cwe_id": "CWE-327",
+        "description": "Bouncy Castle BC 1.54 - 1.59, BC-FJA 1.0.0, BC-FJA 1.0.1 and earlier have a flaw in the Low-level interface to RSA key pair generator, specifically RSA Key Pairs generated in low-level API with added certainty may have less M-R tests than expected. This appears to be fixed in versions BC 1.60 beta 4 and later, BC-FJA 1.0.2 and later.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/106567",
+            "https://access.redhat.com/errata/RHSA-2018:2423",
+            "https://access.redhat.com/errata/RHSA-2018:2424",
+            "https://access.redhat.com/errata/RHSA-2018:2425",
+            "https://access.redhat.com/errata/RHSA-2018:2428",
+            "https://access.redhat.com/errata/RHSA-2018:2643",
+            "https://access.redhat.com/errata/RHSA-2018:2669",
+            "https://access.redhat.com/errata/RHSA-2019:0877",
+            "https://github.com/bcgit/bc-java/commit/22467b6e8fe19717ecdf201c0cf91bacf04a55ad",
+            "https://github.com/bcgit/bc-java/commit/73780ac522b7795fc165630aba8d5f5729acc839",
+            "https://github.com/bcgit/bc-java/wiki/CVE-2018-1000180",
+            "https://lists.apache.org/thread.html/708d94141126eac03011144a971a6411fcac16d9c248d1d535a39451@%3Csolr-user.lucene.apache.org%3E",
+            "https://security.netapp.com/advisory/ntap-20190204-0003/",
+            "https://www.bountysource.com/issues/58293083-rsa-key-generation-computation-of-iterations-for-mr-primality-test",
+            "https://www.debian.org/security/2018/dsa-4233",
+            "https://www.oracle.com/security-alerts/cpuapr2020.html",
+            "https://www.oracle.com/security-alerts/cpuoct2020.html",
+            "https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html",
+            "https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html",
+            "https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:redhat:virtualization:4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:bouncycastle:fips_java_api:*:*:*:*:*:*:*:* versions up to (including) 1.0.1\n     *cpe:2.3:a:bouncycastle:legion-of-the-bouncy-castle-java-crytography-api:*:*:*:*:*:*:*:* versions from (including) 1.54 up to (including) 1.59",
+            "*cpe:2.3:o:redhat:virtualization:4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:virtualization:4.0:*:*:*:*:*:*:*",
+            "cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*",
+            "cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:netapp:oncommand_workflow_automation:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:api_gateway:11.1.2.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:business_process_management_suite:11.1.1.9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:business_process_management_suite:12.1.3.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:business_process_management_suite:12.2.1.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:business_transaction_management:12.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:communications_application_session_controller:3.7.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:com",
+            "*cpe:2.3:o:redhat:virtualization:4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:virtualization:4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:bouncycastle:fips_java_api:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:bouncycastle:legion-of-the-bouncy-castle-java-crytography-api:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "10/20/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-1000181",
+        "cwe_id": "CWE-200",
+        "description": "Kitura 2.3.0 and earlier have an unintended read access to unauthorised files and folders that can be exploited by a crafted URL resulting in information disclosure.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/IBM-Swift/Kitura/pull/1278"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:kitura:kitura:*:*:*:*:*:*:*:* versions up to (including) 2.3.0",
+            "*cpe:2.3:a:kitura:kitura:*:*:*:*:*:*:*:* versions up to (including) 2.3.0",
+            "*cpe:2.3:a:kitura:kitura:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:ibm:kitura:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:kitura:kitura:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "06/03/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-1000200",
+        "cwe_id": "CWE-476",
+        "description": "The Linux Kernel versions 4.14, 4.15, and 4.16 has a null pointer dereference which can result in an out of memory (OOM) killing of large mlocked processes. The issue arises from an oom killed process's final thread calling exit_mmap(), which calls munlock_vma_pages_all() for mlocked vmas.This can happen synchronously with the oom reaper's unmap_page_range() since the vma's VM_LOCKED bit is cleared before munlocking (to determine if any other vmas share the memory and are mlocked).",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/oss-sec/2018/q2/67",
+            "http://www.securityfocus.com/bid/104397",
+            "https://access.redhat.com/errata/RHSA-2018:2948",
+            "https://access.redhat.com/security/cve/cve-2018-1000200",
+            "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=27ae357fa82be5ab73b2ef8d39dcb8ca2563483a",
+            "https://marc.info/?l=linux-kernel&m=152400522806945",
+            "https://marc.info/?l=linux-kernel&m=152460926619256",
+            "https://usn.ubuntu.com/3752-1/",
+            "https://usn.ubuntu.com/3752-2/",
+            "https://usn.ubuntu.com/3752-3/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.14:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:4.15:*:*:*:*:*:*:*\n     *cpe:2.3:o:linux:linux_kernel:4.16:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.14:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.15:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:4.16:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "10/31/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-11743",
+        "cwe_id": "CWE-824",
+        "description": "The init_copy function in kernel.c in mruby 1.4.1 makes initialize_copy calls for TT_ICLASS objects, which allows attackers to cause a denial of service (mrb_hash_keys uninitialized pointer and application crash) or possibly have unspecified other impact.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/mruby/mruby/commit/b64ce17852b180dfeea81cf458660be41a78974d",
+            "https://github.com/mruby/mruby/issues/4027"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mruby:mruby:1.4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:mruby:mruby:1.4.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/20/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2016-9488",
+        "cwe_id": "CWE-89",
+        "description": "ManageEngine Applications Manager versions 12 and 13 before build 13200 suffer from remote SQL injection vulnerabilities. An unauthenticated attacker is able to access the URL /servlet/MenuHandlerServlet, which is vulnerable to SQL injection. The attacker could extract users' password hashes, which are MD5 hashes without salt, and, depending on the database type and its configuration, could also execute operating system commands using SQL queries.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/158554/ManageEngine-Applications-Manager-13-SQL-Injection.html",
+            "http://seclists.org/fulldisclosure/2017/Apr/9",
+            "http://www.securityfocus.com/bid/97394",
+            "https://packetstormsecurity.com/files/142022/ManageEngine-Applications-Manager-12-13-XSS-SQL-Injection-Code-Execution.html",
+            "https://www.manageengine.com/products/applications_manager/security-updates/security-updates-cve-2016-9488.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:manageengine:applications_manager:12.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:manageengine:applications_manager:13.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:manageengine:applications_manager:12.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:manageengine:applications_manager:13.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/27/2020",
+        "vulnerability_source": "CERT/CC",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2016-9490",
+        "cwe_id": "CWE-79",
+        "description": "ManageEngine Applications Manager versions 12 and 13 before build 13200 suffer from a Reflected Cross-Site Scripting vulnerability. Applications Manager is prone to a Cross-Site Scripting vulnerability in parameter LIMIT, in URL path /DiagAlertAction.do?REQTYPE=AJAX&LIMIT=1233. The URL is also available without authentication.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2017/Apr/9",
+            "http://www.securityfocus.com/bid/97394",
+            "https://packetstormsecurity.com/files/142022/ManageEngine-Applications-Manager-12-13-XSS-SQL-Injection-Code-Execution.html",
+            "https://www.manageengine.com/products/applications_manager/security-updates/security-updates-cve-2016-9490.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:manageengine:applications_manager:12.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:manageengine:applications_manager:13.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:manageengine:applications_manager:12.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:manageengine:applications_manager:13.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "08/06/2018",
+        "vulnerability_source": "CERT/CC",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-6662",
+        "cwe_id": "CWE-78",
+        "description": "Privilege Escalation vulnerability in McAfee Management of Native Encryption (MNE) before 4.1.4 allows local users to gain elevated privileges via a crafted user input.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/104009",
+            "https://kc.mcafee.com/corporate/index?page=content&id=SB10232"
+        ],
+        "cpe": [
+            "cpe:2.3:o:apple:mac_os_x:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "McAfee",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-8923",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in Attachment Preview in Synology File Station before 1.1.4-0122 allows remote authenticated users to inject arbitrary web script or HTML via malicious attachments.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://www.synology.com/zh-tw/support/security/Synology_SA_18_09"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:synology:file_station:*:*:*:*:*:*:*:* versions up to (excluding) 1.1.4-0122",
+            "*cpe:2.3:a:synology:file_station:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "1.1.4-0122"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Synology Inc.",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-8924",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in Title Tootip in Synology Office before 3.0.3-2143 allows remote authenticated users to inject arbitrary web script or HTML via the malicious file name.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://www.synology.com/zh-tw/support/security/Synology_SA_18_12"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:synology:office:*:*:*:*:*:*:*:* versions up to (excluding) 3.0.3-2143",
+            "*cpe:2.3:a:synology:office:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "3.0.3-2143"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Synology Inc.",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-1350",
+        "cwe_id": null,
+        "description": "IBM InfoSphere Information Server 9.1, 11.3, 11.5, and 11.7 could allow a user to escalate their privileges to administrator due to improper access controls. IBM X-Force ID: 126526.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.ibm.com/support/docview.wss?uid=swg22005503",
+            "http://www.securityfocus.com/bid/104550",
+            "http://www.securitytracker.com/id/1041042",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/126526"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:infosphere_information_server:9.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:infosphere_information_server:11.3:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:infosphere_information_server:11.5:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:infosphere_information_server:11.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:infosphere_information_server:9.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:infosphere_information_server:11.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:infosphere_information_server:11.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:infosphere_information_server:11.7:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-10813",
+        "cwe_id": "CWE-798",
+        "description": "In Dedos-web 1.0, the cookie and session secrets used in the Express.js application have hardcoded values that are visible in the source code published on GitHub. An attacker can edit the contents of the session cookie and re-sign it using the hardcoded secret. Due to the use of Passport.js, this could lead to privilege escalation.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.3 HIGH",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/aprendecondedos/dedos-web/pull/1",
+            "https://www.digitalinterruption.com/single-post/2018/06/04/Are-Your-Cookies-Telling-Your-Fortune"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:aprendecondedos:dedos-web:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:aprendecondedos:dedos-web:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/20/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-10966",
+        "cwe_id": "CWE-798",
+        "description": "An issue was discovered in GamerPolls 0.4.6, related to config/environments/all.js and config/initializers/02_passport.js. An attacker can edit the Passport.js contents of the session cookie to contain the ID number of the account they wish to take over, and re-sign it using the hard coded secret.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.3 HIGH",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/GamerPolls/gamerpolls.com/blob/03ccbaf219410e0a45390d0efc12017f08a25282/config/environments/all.js#L58",
+            "https://github.com/GamerPolls/gamerpolls.com/pull/56",
+            "https://www.digitalinterruption.com/single-post/2018/06/04/Are-Your-Cookies-Telling-Your-Fortune"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gamerpolls:gamerpolls:0.4.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:gamerpolls:gamerpolls:0.4.6:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/20/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-1432",
+        "cwe_id": "CWE-1021",
+        "description": "IBM InfoSphere Information Server 9.1, 11.3, 11.5, and 11.7 is vulnerable to cross-frame scripting which is a vulnerability that allows an attacker to load Information Server components inside an HTML iframe tag on a malicious page. The attacker could use this weakness to devise a Clickjacking attack to conduct phishing, frame sniffing, social engineering or Cross-Site Request Forgery attacks. IBM X-Force ID: 139360.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-1432"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.ibm.com/support/docview.wss?uid=swg22014911",
+            "http://www.securitytracker.com/id/1041039",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/139360"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:infosphere_information_server:9.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:infosphere_information_server:11.3:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:infosphere_information_server:11.5:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:infosphere_information_server:11.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:infosphere_information_server:9.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:infosphere_information_server:11.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:infosphere_information_server:11.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:infosphere_information_server:11.7:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-1454",
+        "cwe_id": "CWE-319",
+        "description": "IBM InfoSphere Information Server 11.3, 11.5, and 11.7 could allow a remote attacker to obtain sensitive information, caused by the failure to properly enable HTTP Strict Transport Security. An attacker could exploit this vulnerability to obtain sensitive information using man in the middle techniques. IBM X-Force ID: 140089.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-1454"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.ibm.com/support/docview.wss?uid=swg22015222",
+            "http://www.securitytracker.com/id/1041038",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/140089"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:infosphere_information_server:11.3:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:infosphere_information_server:11.5:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:infosphere_information_server:11.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:infosphere_information_server:11.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:infosphere_information_server:11.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:infosphere_information_server:11.7:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-7943",
+        "cwe_id": "CWE-287",
+        "description": "There is an authentication bypass vulnerability in some Huawei servers. A remote attacker with low privilege may bypass the authentication by some special operations. Due to insufficient authentication, an attacker may exploit the vulnerability to get some sensitive information and high-level users' privilege.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20180530-01-server-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:1288h_v5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:2288h_v5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:2488_v5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ch121_v3:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ch121_v5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ch121l_v3:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ch121l_v5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ch140_v3:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ch140l_v3:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ch220_v3:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ch222_v3:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ch242_v3:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ch242_v5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:rh1288_v3:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:rh2288_v3:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:rh2288h_v3:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:xh310_v3:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:xh321_v3:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:xh321_v5:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:xh620_v3:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/20/2018",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-1332",
+        "cwe_id": "CWE-200",
+        "description": "Apache Storm version 1.0.6 and earlier, 1.2.1 and earlier, and version 1.1.2 and earlier expose a vulnerability that could allow a user to impersonate another user when communicating with some Storm Daemons.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/104399",
+            "https://lists.apache.org/thread.html/50f1d6a7af27f49d2e498a9ab2975685302cd8ca47000b7c38f339a4@%3Cdev.storm.apache.org%3E"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apache:storm:*:*:*:*:*:*:*:* versions up to (including) 1.0.6",
+            "*cpe:2.3:a:apache:storm:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:apache:storm:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:apache:storm:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/13/2018",
+        "vulnerability_source": "Apache Software Foundation",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-8008",
+        "cwe_id": "CWE-22",
+        "description": "Apache Storm version 1.0.6 and earlier, 1.2.1 and earlier, and version 1.1.2 and earlier expose an arbitrary file write vulnerability, that can be achieved using a specially crafted zip archive (affects other archives as well, bzip2, tar, xz, war, cpio, 7z), that holds path traversal filenames. So when the filename gets concatenated to the target extraction directory, the final path ends up outside of the target folder.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/104418",
+            "https://lists.apache.org/thread.html/613b2fca8bcd0a3b12c0b763ea8f7cf62e422e9f79fce6cfa5b08a58@%3Cdev.storm.apache.org%3E"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:pivotal_software:spring_integration_zip:*:*:*:*:*:*:*:* versions up to (including) 1.0.6",
+            "*cpe:2.3:a:pivotal_software:spring_integration_zip:*:*:*:*:*:*:*:* versions up to (including) 1.0.6",
+            "*cpe:2.3:a:pivotal_software:spring_integration_zip:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:apache:storm:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:pivotal_software:spring_integration_zip:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:apache:storm:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:pivotal_software:spring_integration_zip:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:apache:storm:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:pivotal_software:spring_integration_zip:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:pivotal_software:spring_integration_zip:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:pivotal_software:spring_integration_zip:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/20/2018",
+        "vulnerability_source": "Apache Software Foundation",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-7653",
+        "cwe_id": "CWE-20",
+        "description": "The Eclipse Mosquitto broker up to version 1.4.15 does not reject strings that are not valid UTF-8. A malicious client could cause other clients that do reject invalid UTF-8 strings to disconnect themselves from the broker by sending a topic string which is not valid UTF-8, and so cause a denial of service for the clients.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://docs.oasis-open.org/mqtt/disallowed-chars/v1.0/disallowed-chars-v1.0.pdf",
+            "https://bugs.eclipse.org/bugs/show_bug.cgi?id=532113",
+            "https://lists.debian.org/debian-lts-announce/2018/09/msg00036.html",
+            "https://usn.ubuntu.com/4023-1/",
+            "https://www.debian.org/security/2018/dsa-4325"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:mosquitto:*:*:*:*:*:*:*:* versions up to (including) 1.4.15",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:mosquitto:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "06/20/2019",
+        "vulnerability_source": "Eclipse Foundation",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-7654",
+        "cwe_id": "CWE-772",
+        "description": "In Eclipse Mosquitto 1.4.15 and earlier, a Memory Leak vulnerability was found within the Mosquitto Broker. Unauthenticated clients can send crafted CONNECT packets which could cause a denial of service in the Mosquitto Broker.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://bugs.eclipse.org/bugs/show_bug.cgi?id=533493",
+            "https://lists.debian.org/debian-lts-announce/2018/09/msg00036.html",
+            "https://usn.ubuntu.com/4023-1/",
+            "https://www.debian.org/security/2018/dsa-4325"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:mosquitto:*:*:*:*:*:*:*:* versions up to (including) 1.4.15",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:eclipse:mosquitto:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Eclipse Foundation",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-1000182",
+        "cwe_id": "CWE-918",
+        "description": "A server-side request forgery vulnerability exists in Jenkins Git Plugin 3.9.0 and older in AssemblaWeb.java, GitBlitRepositoryBrowser.java, Gitiles.java, TFS2013GitRepositoryBrowser.java, ViewGitWeb.java that allows attackers with Overall/Read access to cause Jenkins to send a GET request to a specified URL.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "6.4 MEDIUM",
+        "base_score_v2": "5.5 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2018-06-04/#SECURITY-810"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:git:*:*:*:*:*:jenkins:*:* versions up to (including) 3.9.0",
+            "*cpe:2.3:a:jenkins:git:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/18/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-1000183",
+        "cwe_id": "CWE-200",
+        "description": "A exposure of sensitive information vulnerability exists in Jenkins GitHub Plugin 1.29.0 and older in GitHubServerConfig.java that allows attackers with Overall/Read access to connect to an attacker-specified URL using attacker-specified credentials IDs obtained through another method, capturing credentials stored in Jenkins.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2018-06-04/#SECURITY-804"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:github:*:*:*:*:*:jenkins:*:* versions up to (including) 1.29.0",
+            "*cpe:2.3:a:jenkins:github:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/18/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-1000184",
+        "cwe_id": "CWE-918",
+        "description": "A server-side request forgery vulnerability exists in Jenkins GitHub Plugin 1.29.0 and older in GitHubPluginConfig.java that allows attackers with Overall/Read access to cause Jenkins to send a GET request to a specified URL.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "5.5 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2018-06-04/#SECURITY-799"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:github:*:*:*:*:*:jenkins:*:* versions up to (including) 1.29.0",
+            "*cpe:2.3:a:jenkins:github:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/18/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-1000185",
+        "cwe_id": "CWE-918",
+        "description": "A server-side request forgery vulnerability exists in Jenkins GitHub Branch Source Plugin 2.3.4 and older in Endpoint.java that allows attackers with Overall/Read access to cause Jenkins to send a GET request to a specified URL.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2018-06-04/#SECURITY-806"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:github_branch_source:*:*:*:*:*:jenkins:*:* versions up to (including) 2.3.4",
+            "*cpe:2.3:a:jenkins:github_branch_source:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/18/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-1000186",
+        "cwe_id": "CWE-200",
+        "description": "A exposure of sensitive information vulnerability exists in Jenkins GitHub Pull Request Builder Plugin 1.41.0 and older in GhprbGitHubAuth.java that allows attackers with Overall/Read access to connect to an attacker-specified URL using attacker-specified credentials IDs obtained through another method, capturing credentials stored in Jenkins.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2018-06-04/#SECURITY-805"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:github_pull_request_builder:*:*:*:*:*:jenkins:*:* versions up to (including) 1.41.0",
+            "*cpe:2.3:a:jenkins:github_pull_request_builder:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/18/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-1000187",
+        "cwe_id": "CWE-200",
+        "description": "A exposure of sensitive information vulnerability exists in Jenkins Kubernetes Plugin 1.7.0 and older in ContainerExecDecorator.java that results in sensitive variables such as passwords being written to logs.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2018-06-04/#SECURITY-883"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:kubernetes:*:*:*:*:*:jenkins:*:* versions up to (including) 1.7.0",
+            "*cpe:2.3:a:jenkins:kubernetes:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/18/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-1000188",
+        "cwe_id": "CWE-918",
+        "description": "A server-side request forgery vulnerability exists in Jenkins CAS Plugin 1.4.1 and older in CasSecurityRealm.java that allows attackers with Overall/Read access to cause Jenkins to send a GET request to a specified URL.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "5.5 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2018-06-04/#SECURITY-809"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:cas:*:*:*:*:*:jenkins:*:* versions up to (including) 1.4.1",
+            "*cpe:2.3:a:jenkins:cas:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/18/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-1000189",
+        "cwe_id": null,
+        "description": "A command execution vulnerability exists in Jenkins Absint Astree Plugin 1.0.5 and older in AstreeBuilder.java that allows attackers with Overall/Read access to execute a command on the Jenkins master.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2018-06-04/#SECURITY-807"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:absint_astree:*:*:*:*:*:jenkins:*:* versions up to (including) 1.0.5",
+            "*cpe:2.3:a:jenkins:absint_astree:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-1000190",
+        "cwe_id": "CWE-200",
+        "description": "A exposure of sensitive information vulnerability exists in Jenkins Black Duck Hub Plugin 4.0.0 and older in PostBuildScanDescriptor.java that allows attackers with Overall/Read access to connect to an attacker-specified URL using attacker-specified credentials IDs obtained through another method, capturing credentials stored in Jenkins.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2018-06-04/#SECURITY-865"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:black_duck_hub:*:*:*:*:*:jenkins:*:* versions up to (including) 4.0.0",
+            "*cpe:2.3:a:jenkins:black_duck_hub:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/18/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-1000191",
+        "cwe_id": "CWE-200",
+        "description": "A exposure of sensitive information vulnerability exists in Jenkins Black Duck Detect Plugin 1.4.0 and older in DetectPostBuildStepDescriptor.java that allows attackers with Overall/Read access to connect to an attacker-specified URL using attacker-specified credentials IDs obtained through another method, capturing credentials stored in Jenkins.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2018-06-04/#SECURITY-866"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:black_duck_detect:*:*:*:*:*:jenkins:*:* versions up to (including) 1.4.0",
+            "*cpe:2.3:a:jenkins:black_duck_detect:*:*:*:*:*:jenkins:*:* versions up to (including) 1.4.0",
+            "*cpe:2.3:a:jenkins:black_duck_detect:*:*:*:*:*:jenkins:*:*",
+            "(including)",
+            "*cpe:2.3:a:jenkins:synopsys_detect:*:*:*:*:*:jenkins:*:*",
+            "(including)",
+            "*cpe:2.3:a:jenkins:black_duck_detect:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "04/16/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-10597",
+        "cwe_id": "CWE-787",
+        "description": "IntelliVue Patient Monitors MP Series (including MP2/X2/MP30/MP50/MP70/NP90/MX700/800) Rev B-M, IntelliVue Patient Monitors MX (MX400-550) Rev J-M and (X3/MX100 for Rev M only), and Avalon Fetal/Maternal Monitors FM20/FM30/FM40/FM50 with software Revisions F.0, G.0 and J.3 have a vulnerability that allows an unauthenticated attacker to access memory (\"write-what-where\") from an attacker-chosen device address within the same subnet.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.3 HIGH",
+        "base_score_v2": "5.4 MEDIUM",
+        "hyperlinks": [
+            "https://ics-cert.us-cert.gov/advisories/ICSMA-18-156-01"
+        ],
+        "cpe": [
+            "cpe:2.3:h:philips:avalon_fetal\\/maternal_monitors_fm20:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:avalon_fetal\\/maternal_monitors_fm30:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:avalon_fetal\\/maternal_monitors_fm40:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:avalon_fetal\\/maternal_monitors_fm50:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mp2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mp30:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mp50:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mp70:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mx100:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mx400:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mx450:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mx500:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mx550:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mx700:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mx800:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_np90:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_x2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_x3:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "09/04/2020",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-10599",
+        "cwe_id": "CWE-200",
+        "description": "IntelliVue Patient Monitors MP Series (including MP2/X2/MP30/MP50/MP70/NP90/MX700/800) Rev B-M, IntelliVue Patient Monitors MX (MX400-550) Rev J-M and (X3/MX100 for Rev M only), and Avalon Fetal/Maternal Monitors FM20/FM30/FM40/FM50 with software Revisions F.0, G.0 and J.3 have a vulnerability that allows an unauthenticated attacker to read memory from an attacker-chosen device address within the same subnet.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:A/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:A/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "2.9 LOW",
+        "hyperlinks": [
+            "https://ics-cert.us-cert.gov/advisories/ICSMA-18-156-01"
+        ],
+        "cpe": [
+            "cpe:2.3:h:philips:avalon_fetal\\/maternal_monitors_fm20:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:avalon_fetal\\/maternal_monitors_fm30:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:avalon_fetal\\/maternal_monitors_fm40:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:avalon_fetal\\/maternal_monitors_fm50:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mp2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mp30:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mp50:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mp70:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mx100:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mx400:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mx450:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mx500:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mx550:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mx700:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mx800:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_np90:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_x2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_x3:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-10601",
+        "cwe_id": "CWE-787",
+        "description": "IntelliVue Patient Monitors MP Series (including MP2/X2/MP30/MP50/MP70/NP90/MX700/800) Rev B-M, IntelliVue Patient Monitors MX (MX400-550) Rev J-M and (X3/MX100 for Rev M only), and Avalon Fetal/Maternal Monitors FM20/FM30/FM40/FM50 with software Revisions F.0, G.0 and J.3 have a vulnerability that exposes an \"echo\" service, in which an attacker-sent buffer to an attacker-chosen device address within the same subnet is copied to the stack with no boundary checks, hence resulting in stack overflow.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:C/C:H/I:L/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:C/C:H/I:L/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.2 HIGH",
+        "base_score_v2": "5.4 MEDIUM",
+        "hyperlinks": [
+            "https://ics-cert.us-cert.gov/advisories/ICSMA-18-156-01"
+        ],
+        "cpe": [
+            "cpe:2.3:h:philips:avalon_fetal\\/maternal_monitors_fm20:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:avalon_fetal\\/maternal_monitors_fm30:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:avalon_fetal\\/maternal_monitors_fm40:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:avalon_fetal\\/maternal_monitors_fm50:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mp2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mp30:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mp50:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mp70:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mx100:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mx400:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mx450:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mx500:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mx550:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mx700:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_mx800:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_np90:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_x2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:philips:intellivue_patient_monitors_x3:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "09/04/2020",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-7635",
+        "cwe_id": "CWE-352",
+        "description": "QNAP NAS application Proxy Server through version 1.2.0 does not utilize CSRF protections.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1041025",
+            "https://www.qnap.com/en/security-advisory/nas-201806-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:qnap:nas_proxy_server:*:*:*:*:*:*:*:* versions up to (excluding) 1.3.0",
+            "*cpe:2.3:a:qnap:nas_proxy_server:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/12/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-7636",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in QNAP NAS application Proxy Server through version 1.2.0 allows remote attackers to inject arbitrary web script or HTML.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1041025",
+            "https://www.qnap.com/en/security-advisory/nas-201806-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:qnap:nas_proxy_server:*:*:*:*:*:*:*:* versions up to (excluding) 1.3.0",
+            "*cpe:2.3:a:qnap:nas_proxy_server:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/12/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-7637",
+        "cwe_id": "CWE-78",
+        "description": "QNAP NAS application Proxy Server through version 1.2.0 allows remote attackers to run arbitrary OS commands against the system with root privileges.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1041025",
+            "https://www.qnap.com/en/security-advisory/nas-201806-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:qnap:nas_proxy_server:*:*:*:*:*:*:*:* versions up to (excluding) 1.3.0",
+            "*cpe:2.3:a:qnap:nas_proxy_server:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/12/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-7639",
+        "cwe_id": "CWE-287",
+        "description": "QNAP NAS application Proxy Server through version 1.2.0 does not authenticate requests properly. Successful exploitation can lead to change of the settings of Proxy Server.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1041025",
+            "https://www.qnap.com/en/security-advisory/nas-201806-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:qnap:nas_proxy_server:*:*:*:*:*:*:*:* versions up to (excluding) 1.3.0",
+            "*cpe:2.3:a:qnap:nas_proxy_server:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/12/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-1000192",
+        "cwe_id": "CWE-200",
+        "description": "A information exposure vulnerability exists in Jenkins 2.120 and older, LTS 2.107.2 and older in AboutJenkins.java, ListPluginsCommand.java that allows users with Overall/Read access to enumerate all installed plugins.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2018-05-09/#SECURITY-771"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:jenkins:*:*:*:*:*:*:*:* versions up to (including) 2.120",
+            "*cpe:2.3:a:jenkins:jenkins:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:jenkins:jenkins:*:*:*:*:lts:*:*:*",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/27/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-1000193",
+        "cwe_id": "CWE-74",
+        "description": "A improper neutralization of control sequences vulnerability exists in Jenkins 2.120 and older, LTS 2.107.2 and older in HudsonPrivateSecurityRealm.java that allows users to sign up using user names containing control characters that can then appear to have the same name as other users, and cannot be deleted via the UI.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2018-05-09/#SECURITY-786"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:jenkins:*:*:*:*:*:*:*:* versions up to (including) 2.120",
+            "*cpe:2.3:a:jenkins:jenkins:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:jenkins:jenkins:*:*:*:*:lts:*:*:*",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-1000194",
+        "cwe_id": "CWE-22",
+        "description": "A path traversal vulnerability exists in Jenkins 2.120 and older, LTS 2.107.2 and older in FilePath.java, SoloFilePathFilter.java that allows malicious agents to read and write arbitrary files on the Jenkins master, bypassing the agent-to-master security subsystem protection.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "5.5 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2018-05-09/#SECURITY-788"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:jenkins:*:*:*:*:*:*:*:* versions up to (including) 2.120",
+            "*cpe:2.3:a:jenkins:jenkins:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:jenkins:jenkins:*:*:*:*:lts:*:*:*",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/27/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-1000195",
+        "cwe_id": "CWE-352",
+        "description": "A server-side request forgery vulnerability exists in Jenkins 2.120 and older, LTS 2.107.2 and older in ZipExtractionInstaller.java that allows users with Overall/Read permission to have Jenkins submit a HTTP GET request to an arbitrary URL and learn whether the response is successful (200) or not.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2018-05-09/#SECURITY-794"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:jenkins:*:*:*:*:*:*:*:* versions up to (including) 2.120",
+            "*cpe:2.3:a:jenkins:jenkins:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:jenkins:jenkins:*:*:*:*:lts:*:*:*",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/27/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-1000196",
+        "cwe_id": "CWE-200",
+        "description": "A exposure of sensitive information vulnerability exists in Jenkins Gitlab Hook Plugin 1.4.2 and older in gitlab_notifier.rb, views/gitlab_notifier/global.erb that allows attackers with local Jenkins master file system access or control of a Jenkins administrator's web browser (e.g. malicious extension) to retrieve the configured Gitlab token.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2018-05-09/#SECURITY-263"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:gitlab_hook:*:*:*:*:*:jenkins:*:* versions up to (including) 1.4.2",
+            "*cpe:2.3:a:jenkins:gitlab_hook:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/18/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-1000197",
+        "cwe_id": "CWE-863",
+        "description": "An improper authorization vulnerability exists in Jenkins Black Duck Hub Plugin 3.0.3 and older in PostBuildScanDescriptor.java that allows users with Overall/Read permission to read and write the Black Duck Hub plugin configuration.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "5.5 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2018-05-09/#SECURITY-670"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:black_duck_hub:*:*:*:*:*:jenkins:*:* versions up to (including) 3.0.3",
+            "*cpe:2.3:a:jenkins:black_duck_hub:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-1000198",
+        "cwe_id": "CWE-611",
+        "description": "A XML external entity processing vulnerability exists in Jenkins Black Duck Hub Plugin 3.1.0 and older in PostBuildScanDescriptor.java that allows attackers with Overall/Read permission to make Jenkins process XML eternal entities in an XML document.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2018-05-09/#SECURITY-671"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:black_duck_hub:*:*:*:*:*:jenkins:*:* versions up to (including) 3.1.0",
+            "*cpe:2.3:a:jenkins:black_duck_hub:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/18/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-1000202",
+        "cwe_id": "CWE-79",
+        "description": "A persisted cross-site scripting vulnerability exists in Jenkins Groovy Postbuild Plugin 2.3.1 and older in various Jelly files that allows attackers able to control build badge content to define JavaScript that would be executed in another user's browser when that other user performs some UI actions.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://jenkins.io/security/advisory/2018-05-09/#SECURITY-821"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jenkins:groovy_postbuild:*:*:*:*:*:jenkins:*:* versions up to (including) 2.3.1",
+            "*cpe:2.3:a:jenkins:groovy_postbuild:*:*:*:*:*:jenkins:*:*",
+            "(including)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/18/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-10057",
+        "cwe_id": "CWE-22",
+        "description": "The remote management interface of cgminer 4.10.0 and bfgminer 5.5.0 allows an authenticated remote attacker to write the miner configuration file to arbitrary locations on the server due to missing basedir restrictions (absolute directory traversal).",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2018/06/03/1",
+            "https://github.com/tintinweb/pub/tree/master/pocs/cve-2018-10057"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:bfgminer:bfgminer:5.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:bfgminer:bfgminer:5.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cgminer_project:cgminer:4.10.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/27/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-10058",
+        "cwe_id": "CWE-787",
+        "description": "The remote management interface of cgminer 4.10.0 and bfgminer 5.5.0 allows an authenticated remote attacker to execute arbitrary code due to a stack-based buffer overflow in the addpool, failover-only, poolquota, and save command handlers.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2018/06/03/1",
+            "https://github.com/tintinweb/pub/tree/master/pocs/cve-2018-10058"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:bfgminer:bfgminer:5.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:bfgminer:bfgminer:5.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cgminer_project:cgminer:4.10.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-11586",
+        "cwe_id": "CWE-611",
+        "description": "XML external entity (XXE) vulnerability in api/rest/status in SearchBlox 8.6.7 allows remote unauthenticated users to read arbitrary files or conduct server-side request forgery (SSRF) attacks via a crafted DTD in an XML request.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/148032/SearchBlox-8.6.7-XML-External-Entity-Injection.html",
+            "https://gurelahmet.com/searchblox-8-6-7-out-of-band-xml-external-entity-oob-xxe-cve-2018-11586/",
+            "https://www.exploit-db.com/exploits/44827/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:searchblox:searchblox:8.6.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:searchblox:searchblox:8.6.7:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/31/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-3691",
+        "cwe_id": null,
+        "description": "Some implementations in Intel Integrated Performance Primitives Cryptography Library before version 2018 U3.1 do not properly ensure constant execution time.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.7 MEDIUM",
+        "base_score_v2": "1.9 LOW",
+        "hyperlinks": [
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00106.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:intel:integrated_performance_primitives_cryptography:*:*:*:*:*:*:*:* versions up to (excluding) 2018_u3.1",
+            "*cpe:2.3:a:intel:integrated_performance_primitives_cryptography:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-7884",
+        "cwe_id": "CWE-426",
+        "description": "An issue was discovered in DisplayLink Core Software Cleaner Application 8.2.1956. When the drivers are updated to a newer version, the product launches a process as SYSTEM to uninstall the old version: cl_1956.exe is run as SYSTEM on the %systemroot%\\Temp folder, where any user can write a DLL (e.g., version.dll) to perform DLL Hijacking and elevate privileges to SYSTEM.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2018/Jun/1"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:displaylink:core_software_cleaner:8.2.1956:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:displaylink:core_software_cleaner:8.2.1956:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "08/01/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-11553",
+        "cwe_id": "CWE-79",
+        "description": "SGIN.CN xiangyun platform V9.4.10 has XSS via the login_url parameter to /login.php.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/helloheary/SGIN.CN-V9.4.10-product-has-XSS-in-login-page/blob/master/README.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:sgin:xiangyun_platform:9.4.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:sgin:xiangyun_platform:9.4.10:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "07/31/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-11808",
+        "cwe_id": "CWE-20",
+        "description": "Incorrect Access Control in CustomFieldsFeedServlet in Zoho ManageEngine Applications Manager Version 13 before build 13740 allows an attacker to delete any file and read certain files on the server in the context of the user (which by default is \"NT AUTHORITY / SYSTEM\") by sending a specially crafted request to the server.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.1 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/104467",
+            "https://github.com/kactrosN/publicdisclosures",
+            "https://www.manageengine.com/products/applications_manager/issues.html",
+            "https://www.manageengine.com/products/applications_manager/security-updates/security-updates-cve-2018-11808.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:zohocorp:manageengine_applications_manager:13:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:zohocorp:manageengine_applications_manager:13:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "08/06/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2018-11813",
+        "cwe_id": "CWE-834",
+        "description": "libjpeg 9c has a large loop because read_pixel in rdtarga.c mishandles EOF.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2019-04/msg00015.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2019-05/msg00015.html",
+            "http://www.ijg.org/files/jpegsrc.v9d.tar.gz",
+            "https://access.redhat.com/errata/RHSA-2019:2052",
+            "https://bugs.gentoo.org/727908",
+            "https://github.com/ChijinZ/security_advisories/blob/master/libjpeg-v9c/mail.pdf",
+            "https://github.com/ChijinZ/security_advisories/tree/master/libjpeg-v9c"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ijg:libjpeg:9c:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ijg:libjpeg:9c:*:*:*:*:*:*:*"
+        ],
+        "published_date": "06/05/2018",
+        "modified_date": "06/25/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "6"
+    },
+    {
+        "cve_id": "CVE-2017-1474",
+        "cwe_id": "CWE-200",
+        "description": "IBM Security Access Manager Appliance 7.0.0, 8.0.0 through 8.0.1.6, and 9.0.0 through 9.0.3.1 discloses sensitive information to unauthorized users. The information can be used to mount further attacks on the system. IBM X-Force ID: 128606.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-1474"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.ibm.com/support/docview.wss?uid=swg22012329",
+            "http://www.securityfocus.com/bid/104476",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/128606"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:security_access_manager:*:*:*:*:*:*:*:* versions from (including) 9.0.0 up to (including) 9.0.3.1",
+            "*cpe:2.3:a:ibm:security_access_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:ibm:security_access_manager_for_mobile:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:ibm:security_access_manager_for_web:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:ibm:security_access_manager_for_web:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "06/06/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "6"
+    }
+]

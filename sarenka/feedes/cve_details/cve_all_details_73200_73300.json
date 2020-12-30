@@ -1,0 +1,2998 @@
+[
+    {
+        "cve_id": "CVE-2017-11927",
+        "cwe_id": "CWE-200",
+        "description": "Windows 7 SP1, Windows 8.1 and RT 8.1, Windows Server 2008 SP2 and R2 SP1, Windows Server 2012 and R2, Windows 10 Gold, 1511, 1607, 1703 and 1709, Windows Server 2016 and Windows Server, version 1709 allow an information vulnerability due to the way the Windows its:// protocol handler determines the zone of a request, aka \"Microsoft Windows Information Disclosure Vulnerability\".",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/102095",
+            "http://www.securitytracker.com/id/1039997",
+            "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-11927"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:microsoft:windows_10:-:*:*:*:*:*:*:*\n     *cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:*:*\n     *cpe:2.3:o:microsoft:windows_10:1607:*:*:*:*:*:*:*\n     *cpe:2.3:o:microsoft:windows_10:1703:*:*:*:*:*:*:*\n     *cpe:2.3:o:microsoft:windows_10:1709:*:*:*:*:*:*:*\n     *cpe:2.3:o:microsoft:windows_7:-:sp1:*:*:*:*:*:*\n     *cpe:2.3:o:microsoft:windows_8.1:*:*:*:*:*:*:*:*\n     *cpe:2.3:o:microsoft:windows_rt_8.1:*:*:*:*:*:*:*:*\n     *cpe:2.3:o:microsoft:windows_server:1709:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:windows_10:-:*:*:*:*:*:*:*\n     *cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:*:*\n     *cpe:2.3:o:microsoft:windows_10:1607:*:*:*:*:*:*:*\n     *cpe:2.3:o:microsoft:windows_10:1703:*:*:*:*:*:*:*\n     *cpe:2.3:o:microsoft:windows_10:1709:*:*:*:*:*:*:*\n     *cpe:2.3:o:microsoft:windows_7:-:sp1:*:*:*:*:*:*\n     *cpe:2.3:o:microsoft:windows_8.1:*:*:*:*:*:*:*:*\n     *cpe:2.3:o:microsoft:windows_rt_8.1:*:*:*:*:*:*:*:*\n     *cpe:2.3:o:microsoft:windows_server:1709:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:windows_10:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:1607:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:1703:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:1709:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_7:-:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_rt_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server:1709:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:1607:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:1703:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:1709:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_7:-:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_rt_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server:1709:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:windows_10:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:1607:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:1703:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_10:1709:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_7:-:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_rt_8.1:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:microsoft:windows_server:1709:*:*:*:*:*"
+        ],
+        "published_date": "12/12/2017",
+        "modified_date": "12/29/2017",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-11930",
+        "cwe_id": "CWE-119",
+        "description": "ChakraCore, and Internet Explorer in Microsoft Windows 7 SP1, Windows Server 2008 R2 SP1, Windows 8.1 and Windows RT 8.1, Windows Server 2012 R2, Windows 10 Gold, 1511, 1607, 1703, 1709, and Windows Server 2016 allows an attacker to execute arbitrary code in the context of the current user, due to how the scripting engine handles objects in memory, aka \"Scripting Engine Memory Corruption Vulnerability\". This CVE ID is unique from CVE-2017-11886, CVE-2017-11889, CVE-2017-11890, CVE-2017-11893, CVE-2017-11894, CVE-2017-11895, CVE-2017-11901, CVE-2017-11903, CVE-2017-11905, CVE-2017-11905, CVE-2017-11907, CVE-2017-11908, CVE-2017-11909, CVE-2017-11910, CVE-2017-11911, CVE-2017-11912, CVE-2017-11913, CVE-2017-11914, and CVE-2017-11916.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:H/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:H/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "7.6 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/102058",
+            "http://www.securitytracker.com/id/1039991",
+            "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-11930"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows_10:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows_10:1511:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows_10:1607:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows_10:1703:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows_10:1709:*:*:*:*:*:*:*",
+            "cpe:2.3:o:micros"
+        ],
+        "published_date": "12/12/2017",
+        "modified_date": "12/21/2017",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-11932",
+        "cwe_id": "CWE-20",
+        "description": "Microsoft Exchange Server 2016 CU5 and Microsoft Exchange Server 2016 CU5 allow a spoofing vulnerability due to the way Outlook Web Access (OWA) validates web requests, aka \"Microsoft Exchange Spoofing Vulnerability\".",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/102060",
+            "http://www.securitytracker.com/id/1039996",
+            "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-11932"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:microsoft:exchange_server:2016:cumulative_update_6:*:*:*:*:*:*\n     *cpe:2.3:a:microsoft:exchange_server:2016:cumulative_update_7:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:exchange_server:2016:cumulative_update_6:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:exchange_server:2016:cumulative_update_7:*:*:*:*:*:*"
+        ],
+        "published_date": "12/12/2017",
+        "modified_date": "01/02/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-11934",
+        "cwe_id": "CWE-200",
+        "description": "Microsoft Office 2013 RT SP1, Microsoft Office 2013 SP1, and Microsoft Office 2016 allow an information disclosure vulnerability due to the way certain functions handle objects in memory, aka \"Microsoft Office Information Disclosure Vulnerability\".",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/102064",
+            "http://www.securitytracker.com/id/1039998",
+            "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-11934"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:microsoft:office:2013:sp1:*:*:*:rt:*:*",
+            "*cpe:2.3:a:microsoft:office:2013:sp1:*:*:*:*:*:*\n     *cpe:2.3:a:microsoft:office:2013:sp1:*:*:*:rt:*:*\n     *cpe:2.3:a:microsoft:office:2016:*:*:*:*:*:*:*\n     *cpe:2.3:a:microsoft:office:2016:*:*:*:*:mac_os_x:*:*\n     *cpe:2.3:a:microsoft:office:2016:c2r:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:office:2013:sp1:*:*:*:rt:*:*",
+            "*cpe:2.3:a:microsoft:office:2013:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:office:2013:sp1:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:office:2013:sp1:*:*:*:rt:*:*",
+            "*cpe:2.3:a:microsoft:office:2016:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:office:2016:*:*:*:*:mac_os_x:*:*",
+            "*cpe:2.3:a:microsoft:office:2016:c2r:*:*:*:*:*:*"
+        ],
+        "published_date": "12/12/2017",
+        "modified_date": "10/30/2018",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-11935",
+        "cwe_id": "CWE-119",
+        "description": "Microsoft Office 2016 Click-to-Run (C2R) allows a remote code execution vulnerability due to the way files are handled in memory, aka \"Microsoft Excel Remote Code Execution Vulnerability\".",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/102067",
+            "http://www.securitytracker.com/id/1039989",
+            "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-11935"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:microsoft:office:2016:c2r:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:office:2016:c2r:*:*:*:*:*:*"
+        ],
+        "published_date": "12/12/2017",
+        "modified_date": "12/27/2017",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-11936",
+        "cwe_id": "CWE-20",
+        "description": "Microsoft SharePoint Enterprise Server 2016 allows an elevation of privilege vulnerability due to the way web requests are handled, aka \"Microsoft SharePoint Elevation of Privilege Vulnerability\".",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/102068",
+            "http://www.securitytracker.com/id/1039995",
+            "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-11936"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:microsoft:sharepoint_enterprise_server:2016:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:sharepoint_enterprise_server:2016:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/12/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-11939",
+        "cwe_id": "CWE-200",
+        "description": "Microsoft Office 2016 Click-to-Run (C2R) allows an information disclosure vulnerability due to the way Microsoft Office enforces DRM copy/paste permissions, aka \"Microsoft Office Information Disclosure Vulnerability\".",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/102105",
+            "http://www.securitytracker.com/id/1039994",
+            "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-11939"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:microsoft:office:2016:c2r:*:*:*:*:*:*",
+            "*cpe:2.3:a:microsoft:office:2016:c2r:*:*:*:*:*:*"
+        ],
+        "published_date": "12/12/2017",
+        "modified_date": "12/27/2017",
+        "vulnerability_source": "Microsoft Corporation",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17563",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in Xen through 4.9.x allowing guest OS users to cause a denial of service (host OS crash) or gain host OS privileges by leveraging an incorrect mask for reference-count overflow checking in shadow mode.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.9 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2017/12/12/2",
+            "http://www.securityfocus.com/bid/102169",
+            "http://www.securitytracker.com/id/1040769",
+            "https://lists.debian.org/debian-lts-announce/2018/01/msg00003.html",
+            "https://lists.debian.org/debian-lts-announce/2018/10/msg00009.html",
+            "https://security.gentoo.org/glsa/201801-14",
+            "https://support.citrix.com/article/CTX232096",
+            "https://www.debian.org/security/2018/dsa-4112",
+            "https://xenbits.xen.org/xsa/advisory-249.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:xen:xen:*:*:*:*:*:*:*:* versions up to (including) 4.9.1",
+            "*cpe:2.3:o:xen:xen:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "12/12/2017",
+        "modified_date": "10/19/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17564",
+        "cwe_id": "CWE-388",
+        "description": "An issue was discovered in Xen through 4.9.x allowing guest OS users to cause a denial of service (host OS crash) or gain host OS privileges by leveraging incorrect error handling for reference counting in shadow mode.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.9 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2017/12/12/3",
+            "http://www.securityfocus.com/bid/102172",
+            "http://www.securitytracker.com/id/1040770",
+            "https://lists.debian.org/debian-lts-announce/2018/01/msg00003.html",
+            "https://lists.debian.org/debian-lts-announce/2018/10/msg00009.html",
+            "https://security.gentoo.org/glsa/201801-14",
+            "https://support.citrix.com/article/CTX232096",
+            "https://www.debian.org/security/2018/dsa-4112",
+            "https://xenbits.xen.org/xsa/advisory-250.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:xen:xen:*:*:*:*:*:*:*:* versions up to (including) 4.9.1",
+            "*cpe:2.3:o:xen:xen:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "12/12/2017",
+        "modified_date": "10/19/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17565",
+        "cwe_id": "CWE-20",
+        "description": "An issue was discovered in Xen through 4.9.x allowing PV guest OS users to cause a denial of service (host OS crash) if shadow mode and log-dirty mode are in place, because of an incorrect assertion related to M2P.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.6 MEDIUM",
+        "base_score_v2": "4.7 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2017/12/12/5",
+            "http://www.securityfocus.com/bid/102175",
+            "http://www.securitytracker.com/id/1040771",
+            "https://lists.debian.org/debian-lts-announce/2018/01/msg00003.html",
+            "https://lists.debian.org/debian-lts-announce/2018/10/msg00009.html",
+            "https://security.gentoo.org/glsa/201801-14",
+            "https://support.citrix.com/article/CTX232096",
+            "https://www.debian.org/security/2018/dsa-4112",
+            "https://xenbits.xen.org/xsa/advisory-251.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:xen:xen:*:*:*:*:*:*:*:* versions up to (including) 4.9.1",
+            "*cpe:2.3:o:xen:xen:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "12/12/2017",
+        "modified_date": "10/19/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17566",
+        "cwe_id": null,
+        "description": "An issue was discovered in Xen through 4.9.x allowing PV guest OS users to cause a denial of service (host OS crash) or gain host OS privileges in shadow mode by mapping a certain auxiliary page.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.9 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2017/12/12/4",
+            "http://www.securityfocus.com/bid/102167",
+            "http://www.securitytracker.com/id/1040768",
+            "https://lists.debian.org/debian-lts-announce/2018/01/msg00003.html",
+            "https://lists.debian.org/debian-lts-announce/2018/10/msg00009.html",
+            "https://security.gentoo.org/glsa/201801-14",
+            "https://support.citrix.com/article/CTX232096",
+            "https://www.debian.org/security/2018/dsa-4112",
+            "https://xenbits.xen.org/xsa/advisory-248.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:xen:xen:*:*:*:*:*:*:*:* versions up to (including) 4.9.1",
+            "*cpe:2.3:o:xen:xen:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "12/12/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-13098",
+        "cwe_id": "CWE-203",
+        "description": "BouncyCastle TLS prior to version 1.0.3, when configured to use the JCE (Java Cryptography Extension) for cryptographic functions, provides a weak Bleichenbacher oracle when any TLS cipher suite using RSA key exchange is negotiated. An attacker can recover the private key from a vulnerable application. This vulnerability is referred to as \"ROBOT.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-05/msg00011.html",
+            "http://www.kb.cert.org/vuls/id/144389",
+            "http://www.securityfocus.com/bid/102195",
+            "https://github.com/bcgit/bc-java/commit/a00b684465b38d722ca9a3543b8af8568e6bad5c",
+            "https://robotattack.org/",
+            "https://security.netapp.com/advisory/ntap-20171222-0001/",
+            "https://www.debian.org/security/2017/dsa-4072",
+            "https://www.oracle.com/security-alerts/cpuoct2020.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:bouncycastle:legion-of-the-bouncy-castle-c\\#-cryptography-api:*:*:*:*:*:*:*:* versions up to (excluding) 1.0.3",
+            "*cpe:2.3:a:bouncycastle:legion-of-the-bouncy-castle-c\\#-cryptography-api:*:*:*:*:*:*:*:* versions up to (excluding) 1.0.3",
+            "*cpe:2.3:a:bouncycastle:legion-of-the-bouncy-castle-c\\#-cryptography-api:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:bouncycastle:legion-of-the-bouncy-castle-java-crytography-api:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:bouncycastle:legion-of-the-bouncy-castle-c\\#-cryptography-api:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/12/2017",
+        "modified_date": "10/20/2020",
+        "vulnerability_source": "CERT/CC",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-13099",
+        "cwe_id": "CWE-203",
+        "description": "wolfSSL prior to version 3.12.2 provides a weak Bleichenbacher oracle when any TLS cipher suite using RSA key exchange is negotiated. An attacker can recover the private key from a vulnerable wolfSSL application. This vulnerability is referred to as \"ROBOT.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.arubanetworks.com/assets/alert/ARUBA-PSA-2018-002.txt",
+            "http://www.kb.cert.org/vuls/id/144389",
+            "http://www.securityfocus.com/bid/102174",
+            "https://cert-portal.siemens.com/productcert/pdf/ssa-464260.pdf",
+            "https://github.com/wolfSSL/wolfssl/pull/1229",
+            "https://robotattack.org/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:wolfssl:wolfssl:*:*:*:*:*:*:*:* versions up to (excluding) 3.12.2",
+            "cpe:2.3:h:siemens:scalance_w1750d:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:arubanetworks:instant:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:wolfssl:wolfssl:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/12/2017",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "CERT/CC",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-14361",
+        "cwe_id": null,
+        "description": "Man-In-The-Middle vulnerability in Micro Focus Project and Portfolio Management Center, version 9.32. This vulnerability could be exploited to allow a Man-in-the-middle attack.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-14361"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1040088",
+            "https://softwaresupport.softwaregrp.com/document/-/facetsearch/document/KM03014426"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:microfocus:project_and_portfolio_management:9.32:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microfocus:project_and_portfolio_management:9.32:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/12/2017",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "SUSE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-14362",
+        "cwe_id": "CWE-352",
+        "description": "Cross-Site Request Forgery vulnerability in Micro Focus Project and Portfolio Management Center, version 9.32. This vulnerability could be exploited to allow a Cross-Site Forgery attack.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-14362"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1040088",
+            "https://softwaresupport.softwaregrp.com/document/-/facetsearch/document/KM03014426"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:microfocus:project_and_portfolio_management:9.32:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:microfocus:project_and_portfolio_management:9.32:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/12/2017",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "SUSE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-4942",
+        "cwe_id": null,
+        "description": "VMware AirWatch Console (AWC) contains a Broken Access Control vulnerability. Successful exploitation of this issue could result in end-user device details being disclosed to an unauthorized administrator.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.9 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/102171",
+            "http://www.securitytracker.com/id/1040003",
+            "https://www.vmware.com/security/advisories/VMSA-2017-0020.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:vmware:airwatch_console:*:*:*:*:*:*:*:* versions from (including) 9.0 up to (excluding) 9.2.2",
+            "*cpe:2.3:a:vmware:airwatch_console:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "12/12/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "VMware",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-5530",
+        "cwe_id": null,
+        "description": "The tibbr web server components of tibbr Community, and tibbr Enterprise contain SAML protocol handling errors which may allow authorized users to impersonate other users, and therefore escalate their access privileges. Affected releases are tibbr Community 5.2.1 and below; 6.0.0; 6.0.1; 7.0.0, tibbr Enterprise 5.2.1 and below; 6.0.0; 6.0.1; 7.0.0.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-5530"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.5 MEDIUM",
+        "hyperlinks": [
+            "https://www.tibco.com/support/advisories/2017/12/tibco-security-advisory-december-12-2017-tibbr-2017-5530"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:tibco:tibbr:*:*:*:*:community:*:*:* versions up to (including) 5.2.1\n     *cpe:2.3:a:tibco:tibbr:6.0.0:*:*:*:community:*:*:*\n     *cpe:2.3:a:tibco:tibbr:6.0.1:*:*:*:community:*:*:*\n     *cpe:2.3:a:tibco:tibbr:7.0.0:*:*:*:community:*:*:*",
+            "*cpe:2.3:a:tibco:tibbr:*:*:*:*:community:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:tibco:tibbr:6.0.0:*:*:*:community:*:*:*",
+            "*cpe:2.3:a:tibco:tibbr:6.0.1:*:*:*:community:*:*:*",
+            "*cpe:2.3:a:tibco:tibbr:7.0.0:*:*:*:community:*:*:*",
+            "*cpe:2.3:a:tibco:tibbr:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:tibco:tibbr:6.0.0:*:*:*:enterprise:*:*:*",
+            "*cpe:2.3:a:tibco:tibbr:6.0.1:*:*:*:enterprise:*:*:*",
+            "*cpe:2.3:a:tibco:tibbr:7.0.0:*:*:*:enterprise:*:*:*"
+        ],
+        "published_date": "12/12/2017",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "TIBCO Software Inc.",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-5534",
+        "cwe_id": null,
+        "description": "The tibbr user profiles components of tibbr Community, and tibbr Enterprise expose a weakness in an improperly sandboxed third-party component. Affected releases are TIBCO Software Inc. tibbr Community 5.2.1 and below; 6.0.0; 6.0.1; 7.0.0, tibbr Enterprise 5.2.1 and below; 6.0.0; 6.0.1; 7.0.0.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-5534"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "https://www.tibco.com/support/advisories/2017/12/tibco-security-advisory-december-12-2017-tibbr-2017-5534"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:tibco:tibbr:*:*:*:*:community:*:*:* versions up to (including) 5.2.1\n     *cpe:2.3:a:tibco:tibbr:6.0.0:*:*:*:community:*:*:*\n     *cpe:2.3:a:tibco:tibbr:6.0.1:*:*:*:community:*:*:*\n     *cpe:2.3:a:tibco:tibbr:7.0.0:*:*:*:community:*:*:*",
+            "*cpe:2.3:a:tibco:tibbr:*:*:*:*:community:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:tibco:tibbr:6.0.0:*:*:*:community:*:*:*",
+            "*cpe:2.3:a:tibco:tibbr:6.0.1:*:*:*:community:*:*:*",
+            "*cpe:2.3:a:tibco:tibbr:7.0.0:*:*:*:community:*:*:*",
+            "*cpe:2.3:a:tibco:tibbr:*:*:*:*:enterprise:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:tibco:tibbr:6.0.0:*:*:*:enterprise:*:*:*",
+            "*cpe:2.3:a:tibco:tibbr:6.0.1:*:*:*:enterprise:*:*:*",
+            "*cpe:2.3:a:tibco:tibbr:7.0.0:*:*:*:enterprise:*:*:*"
+        ],
+        "published_date": "12/12/2017",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "TIBCO Software Inc.",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17538",
+        "cwe_id": null,
+        "description": "MikroTik v6.40.5 devices allow remote attackers to cause a denial of service via a flood of ICMP packets.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "https://www.exploit-db.com/exploits/43317/"
+        ],
+        "cpe": [
+            "cpe:2.3:h:mikrotik:router:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17567",
+        "cwe_id": "CWE-89",
+        "description": "Scubez Posty Readymade Classifieds has SQL Injection via the admin/user_activate_submit.php ID parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/Readymade%20Classifieds%20Script.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:scubez:posty_readymade_classifieds:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:scubez:posty_readymade_classifieds:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17568",
+        "cwe_id": "CWE-732",
+        "description": "Scubez Posty Readymade Classifieds has Incorrect Access Control for visiting admin/user_activate_submit.php (aka the backend PHP script), which might allow remote attackers to obtain sensitive information via a direct request.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/Readymade%20Classifieds%20Script.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:scubez:posty_readymade_classifieds:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:scubez:posty_readymade_classifieds:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17569",
+        "cwe_id": "CWE-79",
+        "description": "Scubez Posty Readymade Classifieds has XSS via the admin/user_activate_submit.php ID parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/Readymade%20Classifieds%20Script.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:scubez:posty_readymade_classifieds:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:scubez:posty_readymade_classifieds:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/21/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17570",
+        "cwe_id": "CWE-89",
+        "description": "FS Expedia Clone 1.0 has SQL Injection via the pages.php or content.php id parameter, or the show-flight-result.php fl_orig or fl_dest parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145297/FS-Expedia-Clone-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43261/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fortunescripts:expedia_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:expedia_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:expedia_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:expedia_clone_project:expedia_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:expedia_clone:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "09/29/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17571",
+        "cwe_id": "CWE-89",
+        "description": "FS Foodpanda Clone 1.0 has SQL Injection via the /food keywords parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145298/FS-Foodpanda-Clone-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43262/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fortunescripts:foodpanda_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:foodpanda_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:foodpanda_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:foodpanda_clone_project:foodpanda_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:foodpanda_clone:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "09/29/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17572",
+        "cwe_id": "CWE-89",
+        "description": "FS Amazon Clone 1.0 has SQL Injection via the PATH_INFO to /VerAyari.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145303/FS-Amazon-Clone-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43259/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fortunescripts:amazon_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:amazon_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:amazon_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:amazon_clone_project:amazon_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:amazon_clone:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "09/29/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17573",
+        "cwe_id": "CWE-89",
+        "description": "FS Ebay Clone 1.0 has SQL Injection via the product.php id parameter, or the search.php category_id or sub_category_id parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145319/FS-Ebay-Clone-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43256/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fortunescripts:ebay_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:ebay_clone:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/20/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17574",
+        "cwe_id": "CWE-89",
+        "description": "FS Care Clone 1.0 has SQL Injection via the searchJob.php jobType or jobFrequency parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145302/FS-Care-Clone-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43258/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fortunescripts:care_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:care_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:care_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:care_clone_project:care_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:care_clone:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "09/29/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17575",
+        "cwe_id": "CWE-89",
+        "description": "FS Groupon Clone 1.0 has SQL Injection via the item_details.php id parameter or the vendor_details.php id parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145315/FS-Groupon-Clone-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43253/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fortunescripts:groupon_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:groupon_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:groupon_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:groupon_clone_project:groupon_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:groupon_clone:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "09/29/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17576",
+        "cwe_id": "CWE-89",
+        "description": "FS Gigs Script 1.0 has SQL Injection via the browse-category.php cat parameter, browse-scategory.php sc parameter, or service-provider.php ser parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145316/FS-Gigs-Script-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43254/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fortunescripts:gigs_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:gigs_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:gigs_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:gigs_script_project:gigs_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:gigs_script:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "09/29/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17577",
+        "cwe_id": "CWE-89",
+        "description": "FS Trademe Clone 1.0 has SQL Injection via the search_item.php search parameter or the general_item_details.php id parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145296/FS-Trademe-Clone-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43260/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fortunescripts:trademe_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:trademe_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:trademe_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:trademe_clone_project:trademe_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:trademe_clone:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "09/29/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17578",
+        "cwe_id": "CWE-89",
+        "description": "FS Crowdfunding Script 1.0 has SQL Injection via the latest_news_details.php id parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145301/FS-Crowdfunding-Script-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43257/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fortunescripts:crowdfunding_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:crowdfunding_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:crowdfunding_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:crowdfunding_script_project:crowdfunding_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:crowdfunding_script:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "09/29/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17579",
+        "cwe_id": "CWE-89",
+        "description": "FS Freelancer Clone 1.0 has SQL Injection via the profile.php u parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145317/FS-Freelancer-Clone-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43255/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fortunescripts:freelancer_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:freelancer_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:freelancer_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:freelancer_clone_project:freelancer_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:freelancer_clone:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "09/29/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17580",
+        "cwe_id": "CWE-89",
+        "description": "FS Linkedin Clone 1.0 has SQL Injection via the group.php grid parameter, profile.php fid parameter, or company_details.php id parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145307/FS-Linkedin-Clone-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43249/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fortunescripts:linkedin_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:linkedin_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:linkedin_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:linkedin_clone_project:linkedin_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:linkedin_clone:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "09/29/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17581",
+        "cwe_id": "CWE-89",
+        "description": "FS Quibids Clone 1.0 has SQL Injection via the itechd.php productid parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145253/FS-Quibids-Clone-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43243/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fortunescripts:quibids_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:quibids_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:quibids_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:quibids_clone_project:quibids_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:quibids_clone:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "09/29/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17582",
+        "cwe_id": "CWE-89",
+        "description": "FS Grubhub Clone 1.0 has SQL Injection via the /food keywords parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145314/FS-Grubhub-Clone-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43252/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fortunescripts:grubhub_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:grubhub_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:grubhub_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:grubhub_clone_project:grubhub_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:grubhub_clone:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "09/29/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17583",
+        "cwe_id": "CWE-89",
+        "description": "FS Shutterstock Clone 1.0 has SQL Injection via the /Category keywords parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145252/FS-Shutterstock-Clone-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43242/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fortunescripts:shutterstock_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:shutterstock_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:shutterstock_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:shutterstock_clone_project:shutterstock_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:shutterstock_clone:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "09/29/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17584",
+        "cwe_id": "CWE-89",
+        "description": "FS Makemytrip Clone 1.0 has SQL Injection via the show-flight-result.php fl_orig or fl_dest parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145289/FS-Makemytrip-Clone-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43246/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fortunescripts:makemytrip_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:makemytrip_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:makemytrip_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:makemytrip_clone_project:makemytrip_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:makemytrip_clone:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "09/29/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17585",
+        "cwe_id": "CWE-89",
+        "description": "FS Monster Clone 1.0 has SQL Injection via the Employer_Details.php id parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145255/FS-Monster-Clone-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43245/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fortunescripts:monster_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:monster_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:monster_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:monster_clone_project:monster_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:monster_clone:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "09/29/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17586",
+        "cwe_id": "CWE-89",
+        "description": "FS Olx Clone 1.0 has SQL Injection via the subpage.php scat parameter or the message.php pid parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145254/FS-Olx-Clone-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43244/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fortunescripts:olx_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:olx_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:olx_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:olx_clone_project:olx_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:olx_clone:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "09/29/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17587",
+        "cwe_id": "CWE-89",
+        "description": "FS Indiamart Clone 1.0 has SQL Injection via the catcompany.php token parameter, buyleads-details.php id parameter, or company/index.php c parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145308/FS-Indiamart-Clone-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43250/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fortunescripts:indiamart_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:indiamart_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:indiamart_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:indiamart_clone_project:indiamart_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:indiamart_clone:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "09/29/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17588",
+        "cwe_id": "CWE-89",
+        "description": "FS IMDB Clone 1.0 has SQL Injection via the movie.php f parameter, tvshow.php s parameter, or show_misc_video.php id parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145313/FS-IMDB-Clone-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43251/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fortunescripts:imdb_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:imdb_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:imdb_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:imdb_clone_project:imdb_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:imdb_clone:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "09/29/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17589",
+        "cwe_id": "CWE-89",
+        "description": "FS Thumbtack Clone 1.0 has SQL Injection via the browse-category.php cat parameter or the browse-scategory.php sc parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145250/FS-Thumbtack-Clone-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43240/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fortunescripts:thumbtack_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:thumbtack_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:thumbtack_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:thumbtack_clone_project:thumbtack_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:thumbtack_clone:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "09/29/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17590",
+        "cwe_id": "CWE-89",
+        "description": "FS Stackoverflow Clone 1.0 has SQL Injection via the /question keywords parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145251/FS-Stackoverflow-Clone-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43241/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fortunescripts:stackoverflow_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:stackoverflow_clone:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/20/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17591",
+        "cwe_id": "CWE-89",
+        "description": "Realestate Crowdfunding Script 2.7.2 has SQL Injection via the single-cause.php pid parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145249/Realestate-Crowdfunding-Script-2.7.2-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43239/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:realestate_crowdfunding_script_project:realestate_crowdfunding_script:2.7.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:realestate_crowdfunding_script_project:realestate_crowdfunding_script:2.7.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/21/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17592",
+        "cwe_id": "CWE-89",
+        "description": "Website Auction Marketplace 2.0.5 has SQL Injection via the search.php cat_id parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145248/Website-Auction-Marketplace-2.0.5-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43238/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:website_auction_marketplace_project:website_auction_marketplace:2.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:website_auction_marketplace_project:website_auction_marketplace:2.0.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/21/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17593",
+        "cwe_id": "CWE-434",
+        "description": "Simple Chatting System 1.0 allows Arbitrary File Upload via view/my_profile.php, which places files under uploads/.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145247/Simple-Chatting-System-1.0.0-Arbitrary-File-Upload.html",
+            "https://www.exploit-db.com/exploits/43237/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:simple_chatting_system_project:simple_chatting_system:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:simple_chatting_system_project:simple_chatting_system:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17594",
+        "cwe_id": "CWE-89",
+        "description": "DomainSale PHP Script 1.0 has SQL Injection via the domain.php id parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145246/DomainSale-PHP-Script-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43235/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:domainsale_php_script_project:domainsale_php_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:domainsale_php_script_project:domainsale_php_script:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17595",
+        "cwe_id": "CWE-89",
+        "description": "Beauty Parlour Booking Script 1.0 has SQL Injection via the /list gender or city parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145309/Beauty-Parlour-Booking-Script-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43267/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:beauty_parlour_booking_script_project:beauty_parlour_booking_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:beauty_parlour_booking_script_project:beauty_parlour_booking_script:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17596",
+        "cwe_id": "CWE-89",
+        "description": "Entrepreneur Job Portal Script 2.0.6 has SQL Injection via the jobsearch_all.php rid1 parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145311/Entrepreneur-Job-Portal-Script-2.0.6-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43275/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:entrepreneur_job_portal_script_project:entrepreneur_job_portal_script:2.0.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:entrepreneur_job_portal_script_project:entrepreneur_job_portal_script:2.0.6:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17597",
+        "cwe_id": "CWE-89",
+        "description": "Nearbuy Clone Script 3.2 has SQL Injection via the category_list.php search parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145290/Nearbuy-Clone-Script-3.2-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43268/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nearbuy_clone_script_project:nearbuy_clone_script:3.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:nearbuy_clone_script_project:nearbuy_clone_script:3.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17598",
+        "cwe_id": "CWE-89",
+        "description": "Affiliate MLM Script 1.0 has SQL Injection via the product-category.php key parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145304/Affiliate-MLM-Script-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43265/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:affiliate_mlm_script_project:affiliate_mlm_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:affiliate_mlm_script_project:affiliate_mlm_script:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17599",
+        "cwe_id": "CWE-89",
+        "description": "Advance Online Learning Management Script 3.1 has SQL Injection via the courselist.php subcatid or popcourseid parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145300/Advance-Online-Learning-Management-Script-3.1-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43264/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:advance_online_learning_management_script_project:advance_online_learning_management_script:3.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:advance_online_learning_management_script_project:advance_online_learning_management_script:3.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17600",
+        "cwe_id": "CWE-89",
+        "description": "Basic B2B Script 2.0.8 has SQL Injection via the product_details.php id parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145318/Basic-B2B-Script-2.0.8-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43266/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:basic_b2b_script_project:basic_b2b_script:2.0.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:basic_b2b_script_project:basic_b2b_script:2.0.8:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17601",
+        "cwe_id": "CWE-89",
+        "description": "Cab Booking Script 1.0 has SQL Injection via the /service-list city parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145291/Cab-Booking-Script-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43269/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:cab_booking_script_project:cab_booking_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cab_booking_script_project:cab_booking_script:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17602",
+        "cwe_id": "CWE-89",
+        "description": "Advance B2B Script 2.1.3 has SQL Injection via the tradeshow-list-detail.php show_id or view-product.php pid parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145299/Advance-B2B-Script-2.1.3-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43263/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:advance_b2b_script_project:advance_b2b_script:2.1.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:advance_b2b_script_project:advance_b2b_script:2.1.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/26/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17603",
+        "cwe_id": "CWE-89",
+        "description": "Advanced Real Estate Script 4.0.7 has SQL Injection via the search-results.php Projectmain, proj_type, searchtext, sell_price, or maxprice parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145345/Advanced-Real-Estate-Script-4.0.7-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43304/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:advanced_real_estate_script_project:advanced_real_estate_script:4.0.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:advanced_real_estate_script_project:advanced_real_estate_script:4.0.7:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17604",
+        "cwe_id": "CWE-89",
+        "description": "Entrepreneur Bus Booking Script 3.0.4 has SQL Injection via the booker_details.php sourcebus parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145346/Entrepreneur-Bus-Booking-Script-3.0.4-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43305/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:entrepreneur_bus_booking_script_project:entrepreneur_bus_booking_script:3.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:entrepreneur_bus_booking_script_project:entrepreneur_bus_booking_script:3.0.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17605",
+        "cwe_id": "CWE-89",
+        "description": "Consumer Complaints Clone Script 1.0 has SQL Injection via the other-user-profile.php id parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145310/Consumer-Complaints-Clone-Script-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43274/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:consumer_complaints_clone_script_project:consumer_complaints_clone_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:consumer_complaints_clone_script_project:consumer_complaints_clone_script:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17606",
+        "cwe_id": "CWE-89",
+        "description": "Co-work Space Search Script 1.0 has SQL Injection via the /list city parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145292/Co-work-Space-Search-Script-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43273/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:co-work_space_search_script_project:co-work_space_search_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:co-work_space_search_script_project:co-work_space_search_script:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17607",
+        "cwe_id": "CWE-89",
+        "description": "CMS Auditor Website 1.0 has SQL Injection via the PATH_INFO to /news-detail.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145293/CMS-Auditor-Website-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43272/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:cms_auditor_website_project:cms_auditor_website:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cms_auditor_website_project:cms_auditor_website:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17608",
+        "cwe_id": "CWE-89",
+        "description": "Child Care Script 1.0 has SQL Injection via the /list city parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145294/Child-Care-Script-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43271/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:kindergarten_-_elementary_school_listing_script_project:kindergarten_-_elementary_school_listing_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:kindergarten_-_elementary_school_listing_script_project:kindergarten_-_elementary_school_listing_script:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/26/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17609",
+        "cwe_id": "CWE-89",
+        "description": "Chartered Accountant Booking Script 1.0 has SQL Injection via the /service-list city parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145295/Chartered-Accountant-Booking-Script-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43270/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:chartered_accountant_booking_script_project:chartered_accountant_booking_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:chartered_accountant_booking_script_project:chartered_accountant_booking_script:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/26/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17610",
+        "cwe_id": "CWE-89",
+        "description": "E-commerce MLM Software 1.0 has SQL Injection via the service_detail.php pid parameter, event_detail.php eventid parameter, or news_detail.php newid parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145305/E-commerce-MLM-Software-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43277/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:e-commerce_mlm_software_project:e-commerce_mlm_software:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:e-commerce_mlm_software_project:e-commerce_mlm_software:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/26/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17611",
+        "cwe_id": "CWE-89",
+        "description": "Doctor Search Script 1.0 has SQL Injection via the /list city parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145312/Doctor-Search-Script-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43276/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:doctor_search_script_project:doctor_search_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:doctor_search_script_project:doctor_search_script:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17612",
+        "cwe_id": "CWE-89",
+        "description": "Hot Scripts Clone 3.1 has SQL Injection via the /categories subctid or mctid parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145324/Hot-Scripts-Clone-3.1-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43284/",
+            "https://www.exploit-db.com/exploits/43916/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hot_scripts_clone_project:hot_scripts_clone:3.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hot_scripts_clone_project:hot_scripts_clone:3.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "04/26/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17613",
+        "cwe_id": "CWE-89",
+        "description": "Freelance Website Script 2.0.6 has SQL Injection via the jobdetails.php pr_id parameter or the searchbycat_list.php catid parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145323/Freelance-Website-Script-2.0.6-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43283/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:freelance_website_script_project:freelance_website_script:2.0.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:freelance_website_script_project:freelance_website_script:2.0.6:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/26/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17614",
+        "cwe_id": "CWE-89",
+        "description": "Food Order Script 1.0 has SQL Injection via the /list city parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145321/Food-Order-Script-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43281/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hotel_restaurant_reviews_and_feedback_script_project:hotel_restaurant_reviews_and_feedback_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hotel_restaurant_reviews_and_feedback_script_project:hotel_restaurant_reviews_and_feedback_script:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/26/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17615",
+        "cwe_id": "CWE-89",
+        "description": "Facebook Clone Script 1.0 has SQL Injection via the friend-profile.php id parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145320/Facebook-Clone-Script-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43280/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:facebook_clone_script_project:facebook_clone_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:facebook_clone_script_project:facebook_clone_script:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/26/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17616",
+        "cwe_id": "CWE-89",
+        "description": "Event Search Script 1.0 has SQL Injection via the /event-list city parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145306/Event-Search-Script-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43279/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:event_calendar_category_script_project:event_calendar_category_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:event_calendar_category_script_project:event_calendar_category_script:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17617",
+        "cwe_id": "CWE-89",
+        "description": "Foodspotting Clone Script 1.0 has SQL Injection via the quicksearch.php q parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145325/Foodspotting-Clone-Script-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43285/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:foodspotting_clone_script_project:foodspotting_clone_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:foodspotting_clone_script_project:foodspotting_clone_script:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/26/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17618",
+        "cwe_id": "CWE-89",
+        "description": "Kickstarter Clone Script 2.0 has SQL Injection via the investcalc.php projid parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145326/Kickstarter-Clone-Script-2.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43286/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:kickstarter_clone_script_project:kickstarter_clone_script:2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:kickstarter_clone_script_project:kickstarter_clone_script:2.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/26/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17619",
+        "cwe_id": "CWE-89",
+        "description": "Laundry Booking Script 1.0 has SQL Injection via the /list city parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145328/Laundry-Booking-Script-1.0-SQL-Injection.html",
+            "https://packetstormsecurity.com/files/145330/Laundry-Booking-Script-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43288/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:laundry_booking_script_project:laundry_booking_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:laundry_booking_script_project:laundry_booking_script:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/26/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17620",
+        "cwe_id": "CWE-89",
+        "description": "Lawyer Search Script 1.1 has SQL Injection via the /lawyer-list city parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145332/Lawyer-Search-Script-1.1-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43289/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:lawyer_search_script_project:lawyer_search_script:1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:lawyer_search_script_project:lawyer_search_script:1.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/26/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17621",
+        "cwe_id": "CWE-89",
+        "description": "Multivendor Penny Auction Clone Script 1.0 has SQL Injection via the PATH_INFO to the /detail URI.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145331/Multivendor-Penny-Auction-Clone-Script-1.0-SQL-Injection.html",
+            "https://packetstormsecurity.com/files/145333/Multivendor-Penny-Auction-Clone-Script-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43290/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:multivendor_penny_auction_clone_script_project:multivendor_penny_auction_clone_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:multivendor_penny_auction_clone_script_project:multivendor_penny_auction_clone_script:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/26/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17622",
+        "cwe_id": "CWE-89",
+        "description": "Online Exam Test Application Script 1.6 has SQL Injection via the exams.php sort parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145329/Online-Exam-Test-Application-Script-1.6-SQL-Injection.html",
+            "https://packetstormsecurity.com/files/145334/Online-Exam-Test-Application-Script-1.6-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43291/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:online_exam_test_application_script_project:online_exam_test_application_script:1.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:online_exam_test_application_script_project:online_exam_test_application_script:1.6:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/26/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17623",
+        "cwe_id": "CWE-89",
+        "description": "Opensource Classified Ads Script 3.2 has SQL Injection via the advance_result.php keyword parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145335/Opensource-Classified-Ads-Script-3.2-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43292/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:opensource_classified_ads_script_project:opensource_classified_ads_script:3.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:opensource_classified_ads_script_project:opensource_classified_ads_script:3.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/29/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17624",
+        "cwe_id": "CWE-89",
+        "description": "PHP Multivendor Ecommerce 1.0 has SQL Injection via the single_detail.php sid parameter, or the category.php searchcat or chid1 parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145336/PHP-Multivendor-Ecommerce-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43293/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:php_multivendor_ecommerce_project:php_multivendor_ecommerce:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:php_multivendor_ecommerce_project:php_multivendor_ecommerce:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "01/02/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17625",
+        "cwe_id": "CWE-89",
+        "description": "Professional Service Script 1.0 has SQL Injection via the service-list city parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145337/Professional-Service-Script-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43294/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:professional_service_script_project:professional_service_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:professional_service_script_project:professional_service_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:professional_service_script_project:professional_service_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:on_demand_marketplace_script_project:on_demand_marketplace_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:professional_service_script_project:professional_service_script:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "03/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17626",
+        "cwe_id": "CWE-89",
+        "description": "Readymade PHP Classified Script 3.3 has SQL Injection via the /categories subctid or mctid parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145338/Readymade-PHP-Classified-Script-3.3-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43295/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:readymade_php_classified_script_project:readymade_php_classified_script:3.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:readymade_php_classified_script_project:readymade_php_classified_script:3.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/26/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17627",
+        "cwe_id": "CWE-89",
+        "description": "Readymade Video Sharing Script 3.2 has SQL Injection via the single-video-detail.php report_videos array parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145339/Readymade-Video-Sharing-Script-3.2-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43296/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:readymade_video_sharing_script_project:readymade_video_sharing_script:3.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:readymade_video_sharing_script_project:readymade_video_sharing_script:3.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/26/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17628",
+        "cwe_id": "CWE-89",
+        "description": "Responsive Realestate Script 3.2 has SQL Injection via the property-list tbud parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145340/Responsive-Realestate-Script-3.2-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43297/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:responsive_realestate_script_project:responsive_realestate_script:3.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:responsive_realestate_script_project:responsive_realestate_script:3.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/26/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17629",
+        "cwe_id": "CWE-89",
+        "description": "Secure E-commerce Script 2.0.1 has SQL Injection via the category.php searchmain or searchcat parameter, or the single_detail.php sid parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145327/Secure-E-commerce-Script-2.0.1-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43287/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:secure_e-commerce_script_project:secure_e-commerce_script:2.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:secure_e-commerce_script_project:secure_e-commerce_script:2.0.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17630",
+        "cwe_id": "CWE-89",
+        "description": "Yoga Class Script 1.0 has SQL Injection via the /list city parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145322/Yoga-Class-Script-1.0-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43282/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:yoga_class_script_project:yoga_class_script:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:yoga_class_script_project:yoga_class_script:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17631",
+        "cwe_id": "CWE-89",
+        "description": "Multireligion Responsive Matrimonial 4.7.2 has SQL Injection via the success-story.php succid parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145341/Multireligion-Responsive-Matrimonial-4.7.2-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43299/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:multireligion_responsive_matrimonial_project:multireligion_responsive_matrimonial:4.7.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:multireligion_responsive_matrimonial_project:multireligion_responsive_matrimonial:4.7.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/29/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17632",
+        "cwe_id": "CWE-89",
+        "description": "Responsive Events And Movie Ticket Booking Script 3.2.1 has SQL Injection via the findcity.php q parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145342/Responsive-Events-And-Movie-Ticket-Booking-Script-3.2.1-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43300/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:responsive_events_and_movie_ticket_booking_script_project:responsive_events_and_movie_ticket_booking_script:3.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:responsive_events_and_movie_ticket_booking_script_project:responsive_events_and_movie_ticket_booking_script:3.2.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/29/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17633",
+        "cwe_id": "CWE-89",
+        "description": "Multiplex Movie Theater Booking Script 3.1.5 has SQL Injection via the trailer-detail.php moid parameter, show-time.php moid parameter, or event-detail.php eid parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145343/Multiplex-Movie-Theater-Booking-Script-3.1.5-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43301/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:multiplex_movie_theater_booking_script_project:multiplex_movie_theater_booking_script:3.1.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:multiplex_movie_theater_booking_script_project:multiplex_movie_theater_booking_script:3.1.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/29/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17634",
+        "cwe_id": "CWE-89",
+        "description": "Single Theater Booking Script 3.2.1 has SQL Injection via the findcity.php q parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145344/Single-Theater-Booking-Script-3.2.1-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43302/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:single_theater_booking_script_project:single_theater_booking_script:3.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:single_theater_booking_script_project:single_theater_booking_script:3.2.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/29/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17635",
+        "cwe_id": "CWE-89",
+        "description": "MLM Forex Market Plan Script 2.0.4 has SQL Injection via the news_detail.php newid parameter or the event_detail.php eventid parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145347/MLM-Forex-Market-Plan-Script-2.0.4-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43306/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mlm_forex_market_plan_script_project:mlm_forex_market_plan_script:2.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:mlm_forex_market_plan_script_project:mlm_forex_market_plan_script:2.0.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/29/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17636",
+        "cwe_id": "CWE-89",
+        "description": "MLM Forced Matrix 2.0.9 has SQL Injection via the news-detail.php newid parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145348/MLM-Forced-Matrix-2.0.9-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43307/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mlm_forced_matrix_project:mlm_forced_matrix:2.0.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:mlm_forced_matrix_project:mlm_forced_matrix:2.0.9:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/29/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17637",
+        "cwe_id": "CWE-89",
+        "description": "Car Rental Script 2.0.4 has SQL Injection via the countrycode1.php val parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145349/Car-Rental-Script-2.0.4-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43308/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:car_rental_script_project:car_rental_script:2.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:car_rental_script_project:car_rental_script:2.0.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/29/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17638",
+        "cwe_id": "CWE-89",
+        "description": "Groupon Clone Script 3.01 has SQL Injection via the city_ajax.php state_id parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145350/Groupon-Clone-Script-3.01-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43309/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:groupon_clone_script_project:groupon_clone_script:3.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:groupon_clone_script_project:groupon_clone_script:3.01:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/26/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17639",
+        "cwe_id": "CWE-89",
+        "description": "Muslim Matrimonial Script 3.02 has SQL Injection via the success-story.php succid parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145351/Muslim-Matrimonial-Script-3.02-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43310/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:muslim_matrimonial_script_project:muslim_matrimonial_script:3.02:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:muslim_matrimonial_script_project:muslim_matrimonial_script:3.02:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/26/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17640",
+        "cwe_id": "CWE-89",
+        "description": "Advanced World Database 2.0.5 has SQL Injection via the city.php country or state parameter, or the state.php country parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145352/Advanced-World-Database-2.0.5-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43311/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:advanced_world_database_project:advanced_world_database:2.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:advanced_world_database_project:advanced_world_database:2.0.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/26/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17641",
+        "cwe_id": "CWE-89",
+        "description": "Resume Clone Script 2.0.5 has SQL Injection via the preview.php id parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145353/Resume-Clone-Script-2.0.5-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43312/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:resume_clone_script_project:resume_clone_script:2.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:resume_clone_script_project:resume_clone_script:2.0.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/26/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17642",
+        "cwe_id": "CWE-89",
+        "description": "Basic Job Site Script 2.0.5 has SQL Injection via the keyword parameter to /job.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/145354/Basic-Job-Site-Script-2.0.5-SQL-Injection.html",
+            "https://www.exploit-db.com/exploits/43314/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:basic_job_site_script_project:basic_job_site_script:2.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:basic_job_site_script_project:basic_job_site_script:2.0.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "12/26/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-14589",
+        "cwe_id": "CWE-20",
+        "description": "It was possible for double OGNL evaluation in FreeMarker templates through Struts FreeMarker tags to occur. An attacker who has restricted administration rights to Bamboo or who hosts a website that a Bamboo administrator visits, is able to exploit this vulnerability to execute Java code of their choice on systems that run a vulnerable version of Bamboo. All versions of Bamboo before 6.1.6 (the fixed version for 6.1.x) and from 6.2.0 before 6.2.5 (the fixed version for 6.2.x) are affected by this vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.6 CRITICAL",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/102188",
+            "https://confluence.atlassian.com/bamboo/bamboo-security-advisory-2017-12-13-939939816.html",
+            "https://jira.atlassian.com/browse/BAM-18842"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:atlassian:bamboo:*:*:*:*:*:*:*:* versions up to (excluding) 6.1.6\n     *cpe:2.3:a:atlassian:bamboo:*:*:*:*:*:*:*:* versions from (including) 6.2.0 up to (excluding) 6.2.5",
+            "*cpe:2.3:a:atlassian:bamboo:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:bamboo:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "01/10/2018",
+        "vulnerability_source": "Atlassian",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-14590",
+        "cwe_id": null,
+        "description": "Bamboo did not check that the name of a branch in a Mercurial repository contained argument parameters. An attacker who has permission to create a repository in Bamboo, edit an existing plan that has a non-linked Mercurialrepository, create or edit a plan when there is at least one linked Mercurial repository that the attacker has permission to use, or commit to a Mercurial repository used by a Bamboo plan which has branch detection enabled can execute code of their choice on systems that run a vulnerable version of Bamboo Server. Versions of Bamboo starting with 2.7.0 before 6.1.6 (the fixed version for 6.1.x) and from 6.2.0 before 6.2.5 (the fixed version for 6.2.x) are affected by this vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.1 CRITICAL",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/102193",
+            "https://confluence.atlassian.com/bamboo/bamboo-security-advisory-2017-12-13-939939816.html",
+            "https://jira.atlassian.com/browse/BAM-18843"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:atlassian:bamboo:*:*:*:*:*:*:*:* versions from (including) 2.7.0 up to (excluding) 6.1.6\n     *cpe:2.3:a:atlassian:bamboo:*:*:*:*:*:*:*:* versions from (including) 6.2.0 up to (excluding) 6.2.5",
+            "*cpe:2.3:a:atlassian:bamboo:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:atlassian:bamboo:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Atlassian",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17382",
+        "cwe_id": "CWE-327",
+        "description": "Citrix NetScaler Application Delivery Controller (ADC) and NetScaler Gateway 10.5 before build 67.13, 11.0 before build 71.22, 11.1 before build 56.19, and 12.0 before build 53.22 might allow remote attackers to decrypt TLS ciphertext data by leveraging a Bleichenbacher RSA padding oracle, aka a ROBOT attack.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/102173",
+            "http://www.securitytracker.com/id/1039985",
+            "https://robotattack.org/",
+            "https://support.citrix.com/article/ctx230238",
+            "https://www.kb.cert.org/vuls/id/144389"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:citrix:application_delivery_controller_firmware:10.5:*:*:*:*:*:*:*\n     *cpe:2.3:o:citrix:application_delivery_controller_firmware:11.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:citrix:application_delivery_controller_firmware:11.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:citrix:application_delivery_controller_firmware:12.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:citrix:application_delivery_controller_firmware:10.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:citrix:application_delivery_controller_firmware:11.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:citrix:application_delivery_controller_firmware:11.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:citrix:application_delivery_controller_firmware:12.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:citrix:netscaler_gateway_firmware:10.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:citrix:netscaler_gateway_firmware:11.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:citrix:netscaler_gateway_firmware:11.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:citrix:netscaler_gateway_firmware:12.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17427",
+        "cwe_id": "CWE-203",
+        "description": "Radware Alteon devices with a firmware version between 31.0.0.0-31.0.3.0 are vulnerable to an adaptive-chosen ciphertext attack (\"Bleichenbacher attack\"). This allows an attacker to decrypt observed traffic that has been encrypted with the RSA cipher and to perform other private key operations.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/102199",
+            "https://robotattack.org/",
+            "https://support.radware.com/app/answers/answer_view/a_id/1010361/~/cve-2017-17427-adaptive-chosen-ciphertext-attack-vulnerability",
+            "https://www.kb.cert.org/vuls/id/144389"
+        ],
+        "cpe": [
+            "cpe:2.3:h:radware:alteon:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17537",
+        "cwe_id": "CWE-20",
+        "description": "MikroTik RouterBOARD v6.39.2 and v6.40.5 allows an unauthenticated remote attacker to cause a denial of service by connecting to TCP port 53 and sending data that begins with many '\\0' characters, possibly related to DNS.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://www.exploit-db.com/exploits/43200/"
+        ],
+        "cpe": [
+            "cpe:2.3:h:mikrotik:routerboard:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/13/2017",
+        "modified_date": "01/12/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    }
+]

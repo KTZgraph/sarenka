@@ -1,0 +1,3577 @@
+[
+    {
+        "cve_id": "CVE-2016-9911",
+        "cwe_id": "CWE-772",
+        "description": "Quick Emulator (Qemu) built with the USB EHCI Emulation support is vulnerable to a memory leakage issue. It could occur while processing packet data in 'ehci_init_transfer'. A guest user/process could use this issue to leak host memory, resulting in DoS for a host.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/12/08/5",
+            "http://www.securityfocus.com/bid/94762",
+            "https://access.redhat.com/errata/RHSA-2017:2392",
+            "https://access.redhat.com/errata/RHSA-2017:2408",
+            "https://lists.debian.org/debian-lts-announce/2018/09/msg00007.html",
+            "https://security.gentoo.org/glsa/201701-49"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:qemu:qemu:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:11:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:qemu:qemu:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/23/2016",
+        "modified_date": "12/14/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9912",
+        "cwe_id": "CWE-772",
+        "description": "Quick Emulator (Qemu) built with the Virtio GPU Device emulator support is vulnerable to a memory leakage issue. It could occur while destroying gpu resource object in 'virtio_gpu_resource_destroy'. A guest user/process could use this flaw to leak host memory bytes, resulting in DoS for a host.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/12/08/6",
+            "http://www.securityfocus.com/bid/94760",
+            "https://security.gentoo.org/glsa/201701-49"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:qemu:qemu:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:qemu:qemu:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/23/2016",
+        "modified_date": "12/14/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9921",
+        "cwe_id": "CWE-369",
+        "description": "Quick emulator (Qemu) built with the Cirrus CLGD 54xx VGA Emulator support is vulnerable to a divide by zero issue. It could occur while copying VGA data when cirrus graphics mode was set to be VGA. A privileged user inside guest could use this flaw to crash the Qemu process instance on the host, resulting in DoS.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/12/09/1",
+            "http://www.securityfocus.com/bid/94803",
+            "https://access.redhat.com/errata/RHSA-2017:2392",
+            "https://access.redhat.com/errata/RHSA-2017:2408",
+            "https://lists.debian.org/debian-lts-announce/2018/09/msg00007.html",
+            "https://security.gentoo.org/glsa/201701-49"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:qemu:qemu:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:11:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:qemu:qemu:2.8.0:rc0:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:2.8.0:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:2.8.0:rc2:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/23/2016",
+        "modified_date": "12/14/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9923",
+        "cwe_id": "CWE-416",
+        "description": "Quick Emulator (Qemu) built with the 'chardev' backend support is vulnerable to a use after free issue. It could occur while hotplug and unplugging the device in the guest. A guest user/process could use this flaw to crash a Qemu process on the host resulting in DoS.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/12/09/2",
+            "http://www.securityfocus.com/bid/94827",
+            "https://security.gentoo.org/glsa/201701-49"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:qemu:qemu:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:qemu:qemu:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/23/2016",
+        "modified_date": "12/14/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-10037",
+        "cwe_id": "CWE-22",
+        "description": "Directory traversal in /connectors/index.php in MODX Revolution before 2.5.2-pl allows remote attackers to perform local file inclusion/traversal/manipulation via a crafted id (aka dir) parameter, related to browser/directory/getlist.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.3 HIGH",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/95127",
+            "https://github.com/modxcms/revolution/pull/13177",
+            "https://raw.githubusercontent.com/modxcms/revolution/v2.5.2-pl/core/docs/changelog.txt"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:modx:modx_revolution:*:*:*:*:*:*:*:* versions up to (including) 2.5.1-pl",
+            "*cpe:2.3:a:modx:modx_revolution:2.5.1-pl:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:modx:modx_revolution:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:modx:modx_revolution:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:modx:modx_revolution:2.5.1-pl:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/24/2016",
+        "modified_date": "11/14/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-10038",
+        "cwe_id": "CWE-22",
+        "description": "Directory traversal in /connectors/index.php in MODX Revolution before 2.5.2-pl allows remote attackers to perform local file inclusion/traversal/manipulation via a crafted dir parameter, related to browser/directory/remove.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.3 HIGH",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/95097",
+            "https://github.com/modxcms/revolution/pull/13177",
+            "https://raw.githubusercontent.com/modxcms/revolution/v2.5.2-pl/core/docs/changelog.txt"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:modx:modx_revolution:2.5.1-pl:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:modx:modx_revolution:2.5.1-pl:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/24/2016",
+        "modified_date": "12/29/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-10039",
+        "cwe_id": "CWE-22",
+        "description": "Directory traversal in /connectors/index.php in MODX Revolution before 2.5.2-pl allows remote attackers to perform local file inclusion/traversal/manipulation via a crafted dir parameter, related to browser/directory/getfiles.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.3 HIGH",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/95096",
+            "https://github.com/modxcms/revolution/pull/13177",
+            "https://raw.githubusercontent.com/modxcms/revolution/v2.5.2-pl/core/docs/changelog.txt"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:modx:modx_revolution:*:*:*:*:*:*:*:* versions up to (including) 2.5.1-pl",
+            "*cpe:2.3:a:modx:modx_revolution:2.5.1-pl:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:modx:modx_revolution:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:modx:modx_revolution:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:modx:modx_revolution:2.5.1-pl:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/24/2016",
+        "modified_date": "11/14/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-10006",
+        "cwe_id": "CWE-79",
+        "description": "In OWASP AntiSamy before 1.5.5, by submitting a specially crafted input (a tag that supports style with active content), you could bypass the library protections and supply executable code. The impact is XSS.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/95101",
+            "http://www.securitytracker.com/id/1037532",
+            "https://github.com/nahsra/antisamy/issues/2"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:antisamy_project:antisamy:*:*:*:*:*:*:*:* versions up to (including) 1.5.4",
+            "*cpe:2.3:a:antisamy_project:antisamy:1.5.4:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:antisamy_project:antisamy:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:antisamy_project:antisamy:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:antisamy_project:antisamy:1.5.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/24/2016",
+        "modified_date": "11/14/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-10041",
+        "cwe_id": "CWE-264",
+        "description": "An issue was discovered in Sprecher Automation SPRECON-E Service Program before 3.43 SP0. Under certain preconditions, it is possible to execute telegram simulation as a non-admin user. As prerequisites, a user must have created an online-connection, validly authenticated and authorized as administrator, and executed telegram simulation. After that, the online-connection must have been closed. Incorrect caching of client data then may lead to privilege escalation, where a subsequently acting non-admin user is permitted to do telegram simulation. In order to exploit this vulnerability, a potential attacker would need to have both a valid engineering-account in the SPRECON RBAC system as well as access to a service/maintenance computer with SPRECON-E Service Program running. Additionally, a valid admin-user must have closed the service connection beforehand without closing the program, having executed telegram simulation; the attacker then has access to the running software instance. Hence, there is no risk from external attackers.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:H/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:H/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/95296",
+            "https://www.sprecher-automation.com/en/it-security/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:sprecher-automation:sprecon-e_service_program:3.42:sp0:*:*:*:*:*:*",
+            "*cpe:2.3:a:sprecher-automation:sprecon-e_service_program:3.42:sp0:*:*:*:*:*:*"
+        ],
+        "published_date": "12/25/2016",
+        "modified_date": "01/06/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9681",
+        "cwe_id": "CWE-79",
+        "description": "Multiple cross-site scripting (XSS) vulnerabilities in Serendipity before 2.0.5 allow remote authenticated users to inject arbitrary web script or HTML via a category or directory name.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/95095",
+            "https://github.com/s9y/Serendipity/commit/e2a665e13b7de82a71c9bbb77575d15131b722be",
+            "https://smarterbitbybit.com/cve-2016-9681-serendipity-cms-xss-vulnerability-in-version-2-0-4/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:s9y:serendipity:2.0.4:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:s9y:serendipity:2.0.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/25/2016",
+        "modified_date": "12/30/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9217",
+        "cwe_id": "CWE-285",
+        "description": "A vulnerability in Cisco Intercloud Fabric for Business and Cisco Intercloud Fabric for Providers could allow an unauthenticated, remote attacker to connect to the database used by these products. More Information: CSCus99394. Known Affected Releases: 7.3(0)ZN(0.99).",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/95023",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161221-icf"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:cisco:intercloud_fabric:2.2.1_base:*:*:*:*:*:*:*\n     *cpe:2.3:a:cisco:intercloud_fabric:2.3.1_base:*:*:*:*:*:*:*\n     *cpe:2.3:a:cisco:intercloud_fabric:3.1.1_base:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cisco:intercloud_fabric:2.2.1_base:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cisco:intercloud_fabric:2.3.1_base:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cisco:intercloud_fabric:3.1.1_base:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/26/2016",
+        "modified_date": "12/29/2016",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9223",
+        "cwe_id": "CWE-264",
+        "description": "A vulnerability in the Docker Engine configuration of Cisco CloudCenter Orchestrator (CCO; formerly CliQr) could allow an unauthenticated, remote attacker to install Docker containers with high privileges on the affected system. Affected Products: This vulnerability affect all releases of Cisco CloudCenter Orchestrator (CCO) deployments where the Docker Engine TCP port 2375 is open on the system and bound to local address 0.0.0.0 (any interface).",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/95024",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161221-cco"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:cisco:cloudcenter_orchestrator:4.4.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:cisco:cloudcenter_orchestrator:4.5.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:cisco:cloudcenter_orchestrator:4.6.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:cisco:cloudcenter_orchestrator:4.6.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cisco:cloudcenter_orchestrator:4.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cisco:cloudcenter_orchestrator:4.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cisco:cloudcenter_orchestrator:4.6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cisco:cloudcenter_orchestrator:4.6.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/26/2016",
+        "modified_date": "01/03/2017",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9224",
+        "cwe_id": "CWE-20",
+        "description": "A vulnerability in the Cisco Jabber Guest Server could allow an unauthenticated, remote attacker to initiate connections to arbitrary hosts. More Information: CSCvc31635. Known Affected Releases: 10.6(9). Known Fixed Releases: 11.0(0).",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "6.4 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/95016",
+            "http://www.securitytracker.com/id/1037516",
+            "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161221-jabber"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:cisco:jabber_guest:10.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:cisco:jabber_guest:10.0.2:*:*:*:*:*:*:*\n     *cpe:2.3:a:cisco:jabber_guest:10.5.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:cisco:jabber_guest:10.6.8:*:*:*:*:*:*:*\n     *cpe:2.3:a:cisco:jabber_guest:10.6.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cisco:jabber_guest:10.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cisco:jabber_guest:10.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cisco:jabber_guest:10.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cisco:jabber_guest:10.6.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cisco:jabber_guest:10.6.9:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/26/2016",
+        "modified_date": "01/03/2017",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-10031",
+        "cwe_id": "CWE-264",
+        "description": "** DISPUTED ** WampServer 3.0.6 installs two services called 'wampapache' and 'wampmysqld' with weak file permissions, running with SYSTEM privileges. This could potentially allow an authorized but non-privileged local user to execute arbitrary code with elevated privileges on the system. To properly exploit this vulnerability, the local attacker must insert an executable file called mysqld.exe or httpd.exe and replace the original files. The next time the service starts, the malicious file will get executed as SYSTEM. NOTE: the vendor disputes the relevance of this report, taking the position that a configuration in which \"'someone' (an attacker) is able to replace files on a PC\" is not \"the fault of WampServer.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:R/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:R/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "6.9 MEDIUM",
+        "hyperlinks": [
+            "http://forum.wampserver.com/read.php?2,144473",
+            "https://packetstormsecurity.com/files/140279/Wampserver-3.0.6-Privilege-Escalation.html",
+            "https://sourceforge.net/p/wampserver/bugs/52/",
+            "https://www.exploit-db.com/exploits/40967/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:wampserver:wampserver:3.0.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:wampserver:wampserver:3.0.6:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2016",
+        "modified_date": "12/30/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-10072",
+        "cwe_id": "CWE-264",
+        "description": "** DISPUTED ** WampServer 3.0.6 has two files called 'wampmanager.exe' and 'unins000.exe' with a weak ACL for Modify. This could potentially allow an authorized but non-privileged local user to execute arbitrary code with elevated privileges on the system. To properly exploit this vulnerability, the local attacker must insert an executable file called wampmanager.exe or unins000.exe and replace the original files. The next time one of these programs is launched by a more privileged user, malicious code chosen by the local attacker will run. NOTE: the vendor disputes the relevance of this report, taking the position that a configuration in which \"'someone' (an attacker) is able to replace files on a PC\" is not \"the fault of WampServer.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:R/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:R/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "6.9 MEDIUM",
+        "hyperlinks": [
+            "http://forum.wampserver.com/read.php?2,144473",
+            "https://packetstormsecurity.com/files/138948/wampserver306-insecure.txt"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:wampserver:wampserver:3.0.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:wampserver:wampserver:3.0.6:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2016",
+        "modified_date": "12/28/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2012-6704",
+        "cwe_id": "CWE-119",
+        "description": "The sock_setsockopt function in net/core/sock.c in the Linux kernel before 3.5 mishandles negative values of sk_sndbuf and sk_rcvbuf, which allows local users to cause a denial of service (memory corruption and system crash) or possibly have unspecified other impact by leveraging the CAP_NET_ADMIN capability for a crafted setsockopt system call with the (1) SO_SNDBUF or (2) SO_RCVBUF option.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=82981930125abfd39d7c8378a9cfdf5e1be2002b",
+            "http://www.openwall.com/lists/oss-security/2016/12/03/1",
+            "http://www.securityfocus.com/bid/95135",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1402024",
+            "https://github.com/torvalds/linux/commit/82981930125abfd39d7c8378a9cfdf5e1be2002b"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:3.4.99:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:linux:linux_kernel:3.4.99:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/28/2016",
+        "modified_date": "12/30/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-6213",
+        "cwe_id": "CWE-400",
+        "description": "fs/namespace.c in the Linux kernel before 4.9 does not restrict how many mounts may exist in a mount namespace, which allows local users to cause a denial of service (memory consumption and deadlock) via MS_BIND mount system calls, as demonstrated by a loop that triggers exponential growth in the number of mounts.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "4.7 MEDIUM",
+        "base_score_v2": "4.7 MEDIUM",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=d29216842a85c7970c536108e093963f02714498",
+            "http://www.openwall.com/lists/oss-security/2016/07/13/8",
+            "http://www.securityfocus.com/bid/91754",
+            "https://access.redhat.com/errata/RHSA-2017:1842",
+            "https://access.redhat.com/errata/RHSA-2017:2077",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1356471",
+            "https://github.com/torvalds/linux/commit/d29216842a85c7970c536108e093963f02714498"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.8.15:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:linux:linux_kernel:4.8.15:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/28/2016",
+        "modified_date": "01/04/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-6786",
+        "cwe_id": "CWE-264",
+        "description": "kernel/events/core.c in the performance subsystem in the Linux kernel before 4.0 mismanages locks during certain migrations, which allows local users to gain privileges via a crafted application, aka Android internal bug 30955111.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.0 HIGH",
+        "base_score_v2": "6.9 MEDIUM",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=f63a8daa5812afef4f06c962351687e1ff9ccb2b",
+            "http://source.android.com/security/bulletin/2016-12-01.html",
+            "http://www.debian.org/security/2017/dsa-3791",
+            "http://www.securityfocus.com/bid/94679",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1403842",
+            "https://github.com/torvalds/linux/commit/f63a8daa5812afef4f06c962351687e1ff9ccb2b"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:3.19.8:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.8:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/28/2016",
+        "modified_date": "11/03/2017",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-6787",
+        "cwe_id": "CWE-264",
+        "description": "kernel/events/core.c in the performance subsystem in the Linux kernel before 4.0 mismanages locks during certain migrations, which allows local users to gain privileges via a crafted application, aka Android internal bug 31095224.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.0 HIGH",
+        "base_score_v2": "6.9 MEDIUM",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=f63a8daa5812afef4f06c962351687e1ff9ccb2b",
+            "http://source.android.com/security/bulletin/2016-12-01.html",
+            "http://www.debian.org/security/2017/dsa-3791",
+            "http://www.securityfocus.com/bid/94679",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1403842",
+            "https://github.com/torvalds/linux/commit/f63a8daa5812afef4f06c962351687e1ff9ccb2b"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:3.19.8:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:linux:linux_kernel:3.19.8:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/28/2016",
+        "modified_date": "11/03/2017",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9576",
+        "cwe_id": "CWE-416",
+        "description": "The blk_rq_map_user_iov function in block/blk-map.c in the Linux kernel before 4.8.14 does not properly restrict the type of iterator, which allows local users to read or write to arbitrary kernel memory locations or cause a denial of service (use-after-free) by leveraging access to a /dev/sg device.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=a0ac402cfcdc904f9772e1762b3fda112dcc56a0",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00040.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00041.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00057.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00062.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00072.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00075.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00081.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00088.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00091.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0817.html",
+            "http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.14",
+            "http://www.openwall.com/lists/oss-security/2016/12/08/19",
+            "http://www.securityfocus.com/bid/94821",
+            "https://access.redhat.com/errata/RHSA-2017:1842",
+            "https://access.redhat.com/errata/RHSA-2017:2077",
+            "https://access.redhat.com/errata/RHSA-2017:2669",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1403145",
+            "https://github.com/torvalds/linux/commit/a0ac402cfcdc904f9772e1762b3fda112dcc56a0"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.8.13:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:linux:linux_kernel:4.8.13:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/28/2016",
+        "modified_date": "01/04/2018",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9588",
+        "cwe_id": "CWE-388",
+        "description": "arch/x86/kvm/vmx.c in the Linux kernel through 4.9 mismanages the #BP and #OF exceptions, which allows guest OS users to cause a denial of service (guest OS crash) by declining to handle an exception thrown by an L2 guest.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=ef85b67385436ddc1998f45f1d6a210f935b3388",
+            "http://www.debian.org/security/2017/dsa-3804",
+            "http://www.openwall.com/lists/oss-security/2016/12/15/3",
+            "http://www.securityfocus.com/bid/94933",
+            "https://access.redhat.com/errata/RHSA-2017:1842",
+            "https://access.redhat.com/errata/RHSA-2017:2077",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1404924",
+            "https://github.com/torvalds/linux/commit/ef85b67385436ddc1998f45f1d6a210f935b3388",
+            "https://usn.ubuntu.com/3822-1/",
+            "https://usn.ubuntu.com/3822-2/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.9:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:linux:linux_kernel:4.9:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/28/2016",
+        "modified_date": "11/28/2018",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9685",
+        "cwe_id": "CWE-400",
+        "description": "Multiple memory leaks in error paths in fs/xfs/xfs_attr_list.c in the Linux kernel before 4.5.1 allow local users to cause a denial of service (memory consumption) via crafted XFS filesystem operations.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=2e83b79b2d6c78bf1b4aa227938a214dcbddc83f",
+            "http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.5.1",
+            "http://www.openwall.com/lists/oss-security/2016/11/30/1",
+            "http://www.securityfocus.com/bid/94593",
+            "https://access.redhat.com/errata/RHSA-2017:1842",
+            "https://access.redhat.com/errata/RHSA-2017:2077",
+            "https://access.redhat.com/errata/RHSA-2017:2669",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1396941",
+            "https://github.com/torvalds/linux/commit/2e83b79b2d6c78bf1b4aa227938a214dcbddc83f"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.5.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:linux:linux_kernel:4.5.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/28/2016",
+        "modified_date": "01/04/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9755",
+        "cwe_id": "CWE-787",
+        "description": "The netfilter subsystem in the Linux kernel before 4.9 mishandles IPv6 reassembly, which allows local users to cause a denial of service (integer overflow, out-of-bounds write, and GPF) or possibly have unspecified other impact via a crafted application that makes socket, connect, and writev system calls, related to net/ipv6/netfilter/nf_conntrack_reasm.c and net/ipv6/netfilter/nf_defrag_ipv6_hooks.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=9b57da0630c9fd36ed7a20fc0f98dc82cc0777fa",
+            "http://www.openwall.com/lists/oss-security/2016/12/01/10",
+            "http://www.securityfocus.com/bid/94626",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1400904",
+            "https://github.com/torvalds/linux/commit/9b57da0630c9fd36ed7a20fc0f98dc82cc0777fa",
+            "https://groups.google.com/forum/#!topic/syzkaller/GFbGpX7nTEo",
+            "https://www.spinics.net/lists/netdev/msg407525.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.8.15:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:linux:linux_kernel:4.8.15:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/28/2016",
+        "modified_date": "08/13/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9756",
+        "cwe_id": "CWE-200",
+        "description": "arch/x86/kvm/emulate.c in the Linux kernel before 4.8.12 does not properly initialize Code Segment (CS) in certain error cases, which allows local users to obtain sensitive information from kernel stack memory via a crafted application.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=2117d5398c81554fbf803f5fd1dc55eb78216c0c",
+            "http://lists.opensuse.org/opensuse-security-announce/2017-01/msg00000.html",
+            "http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.12",
+            "http://www.openwall.com/lists/oss-security/2016/12/01/1",
+            "http://www.securityfocus.com/bid/94615",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1400468",
+            "https://github.com/torvalds/linux/commit/2117d5398c81554fbf803f5fd1dc55eb78216c0c"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.8.11:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:linux:linux_kernel:4.8.11:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/28/2016",
+        "modified_date": "01/06/2017",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9777",
+        "cwe_id": "CWE-125",
+        "description": "KVM in the Linux kernel before 4.8.12, when I/O APIC is enabled, does not properly restrict the VCPU index, which allows guest OS users to gain host OS privileges or cause a denial of service (out-of-bounds array access and host OS crash) via a crafted interrupt request, related to arch/x86/kvm/ioapic.c and arch/x86/kvm/ioapic.h.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.9 MEDIUM",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=81cdb259fb6d8c1c4ecfeea389ff5a73c07f5755",
+            "http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.12",
+            "http://www.openwall.com/lists/oss-security/2016/12/02/2",
+            "http://www.securityfocus.com/bid/94640",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1400804",
+            "https://github.com/torvalds/linux/commit/81cdb259fb6d8c1c4ecfeea389ff5a73c07f5755"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.8.11:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:linux:linux_kernel:4.8.11:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/28/2016",
+        "modified_date": "12/30/2016",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9793",
+        "cwe_id": "CWE-119",
+        "description": "The sock_setsockopt function in net/core/sock.c in the Linux kernel before 4.8.14 mishandles negative values of sk_sndbuf and sk_rcvbuf, which allows local users to cause a denial of service (memory corruption and system crash) or possibly have unspecified other impact by leveraging the CAP_NET_ADMIN capability for a crafted setsockopt system call with the (1) SO_SNDBUFFORCE or (2) SO_RCVBUFFORCE option.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=b98b0bc8c431e3ceb4b26b0dfc8db509518fb290",
+            "http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.14",
+            "http://www.openwall.com/lists/oss-security/2016/12/03/1",
+            "http://www.securityfocus.com/bid/94655",
+            "http://www.securitytracker.com/id/1037968",
+            "https://access.redhat.com/errata/RHSA-2017:0931",
+            "https://access.redhat.com/errata/RHSA-2017:0932",
+            "https://access.redhat.com/errata/RHSA-2017:0933",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1402013",
+            "https://github.com/torvalds/linux/commit/b98b0bc8c431e3ceb4b26b0dfc8db509518fb290",
+            "https://github.com/xairy/kernel-exploits/tree/master/CVE-2016-9793",
+            "https://source.android.com/security/bulletin/2017-03-01.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.8.13:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:linux:linux_kernel:4.8.13:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/28/2016",
+        "modified_date": "01/04/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9794",
+        "cwe_id": "CWE-416",
+        "description": "Race condition in the snd_pcm_period_elapsed function in sound/core/pcm_lib.c in the ALSA subsystem in the Linux kernel before 4.7 allows local users to cause a denial of service (use-after-free) or possibly have unspecified other impact via a crafted SNDRV_PCM_TRIGGER_START command.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=3aa02cb664c5fb1042958c8d1aa8c35055a2ebc4",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00057.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00062.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00072.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00075.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00081.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00088.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2016-12/msg00091.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2574.html",
+            "http://www.openwall.com/lists/oss-security/2016/12/03/2",
+            "http://www.securityfocus.com/bid/94654",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1401494",
+            "https://github.com/torvalds/linux/commit/3aa02cb664c5fb1042958c8d1aa8c35055a2ebc4",
+            "https://patchwork.kernel.org/patch/8752621/",
+            "https://source.android.com/security/bulletin/2017-05-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.6.7:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:linux:linux_kernel:4.6.7:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/28/2016",
+        "modified_date": "01/04/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9806",
+        "cwe_id": "CWE-362",
+        "description": "Race condition in the netlink_dump function in net/netlink/af_netlink.c in the Linux kernel before 4.6.3 allows local users to cause a denial of service (double free) or possibly have unspecified other impact via a crafted application that makes sendmsg system calls, leading to a free operation associated with a new dump that started earlier than anticipated.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=92964c79b357efd980812c4de5c1fd2ec8bb5520",
+            "http://lists.openwall.net/netdev/2016/05/15/69",
+            "http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.6.3",
+            "http://www.openwall.com/lists/oss-security/2016/12/03/4",
+            "http://www.securityfocus.com/bid/94653",
+            "http://www.securitytracker.com/id/1037968",
+            "https://access.redhat.com/errata/RHSA-2017:1842",
+            "https://access.redhat.com/errata/RHSA-2017:2077",
+            "https://access.redhat.com/errata/RHSA-2017:2669",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1401502",
+            "https://github.com/torvalds/linux/commit/92964c79b357efd980812c4de5c1fd2ec8bb5520",
+            "https://source.android.com/security/bulletin/2017-03-01.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.6.2:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:linux:linux_kernel:4.6.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/28/2016",
+        "modified_date": "01/04/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-2246",
+        "cwe_id": "CWE-264",
+        "description": "HP ThinPro 4.4 through 6.1 mishandles the keyboard layout control panel and virtual keyboard application, which allows local users to bypass intended access restrictions and gain privileges via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://h20564.www2.hp.com/hpsc/doc/public/display?docId=emr_na-c05291676",
+            "http://www.securityfocus.com/bid/93904"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:hp:thinpro:4.4:*:*:*:*:*:*:*\n     *cpe:2.3:o:hp:thinpro:5.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:hp:thinpro:5.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:hp:thinpro:5.2:*:*:*:*:*:*:*\n     *cpe:2.3:o:hp:thinpro:5.2.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:hp:thinpro:6.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:hp:thinpro:6.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:hp:thinpro:4.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:hp:thinpro:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:hp:thinpro:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:hp:thinpro:5.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:hp:thinpro:5.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:hp:thinpro:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:hp:thinpro:6.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HP Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-5328",
+        "cwe_id": "CWE-254",
+        "description": "VMware Tools 9.x and 10.x before 10.1.0 on OS X, when System Integrity Protection (SIP) is enabled, allows local users to determine kernel memory addresses and bypass the kASLR protection mechanism via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93886",
+            "http://www.securitytracker.com/id/1037102",
+            "http://www.vmware.com/security/advisories/VMSA-2016-0017.html"
+        ],
+        "cpe": [
+            "cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.11:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.12:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.13:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.15:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.16:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.17:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-5329",
+        "cwe_id": "CWE-200",
+        "description": "VMware Fusion 8.x before 8.5 on OS X, when System Integrity Protection (SIP) is enabled, allows local users to determine kernel memory addresses and bypass the kASLR protection mechanism via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93888",
+            "http://www.securitytracker.com/id/1037103",
+            "http://www.vmware.com/security/advisories/VMSA-2016-0017.html"
+        ],
+        "cpe": [
+            "cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-5334",
+        "cwe_id": "CWE-284",
+        "description": "VMware Identity Manager 2.x before 2.7.1 and vRealize Automation 7.x before 7.2.0 allow remote attackers to read /SAAS/WEB-INF and /SAAS/META-INF files via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94482",
+            "http://www.securitytracker.com/id/1037326",
+            "http://www.vmware.com/security/advisories/VMSA-2016-0021.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:vmware:identity_manger:2.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:identity_manger:2.1.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:identity_manger:2.1.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:identity_manger:2.4:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:identity_manger:2.6:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:identity_manger:2.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:identity_manger:2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:identity_manger:2.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:identity_manger:2.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:identity_manger:2.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:identity_manger:2.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:identity_manger:2.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vrealize_automation:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vrealize_automation:7.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vrealize_automation:7.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "07/27/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-7079",
+        "cwe_id": "CWE-476",
+        "description": "The graphic acceleration functions in VMware Tools 9.x and 10.x before 10.0.9 on OS X allow local users to gain privileges or cause a denial of service (NULL pointer dereference) via unspecified vectors, a different vulnerability than CVE-2016-7080.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/92938",
+            "http://www.securitytracker.com/id/1036804",
+            "http://www.vmware.com/security/advisories/VMSA-2016-0014.html"
+        ],
+        "cpe": [
+            "cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.11:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.12:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.13:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.15:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.16:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.17:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "07/29/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-7080",
+        "cwe_id": "CWE-476",
+        "description": "The graphic acceleration functions in VMware Tools 9.x and 10.x before 10.0.9 on OS X allow local users to gain privileges or cause a denial of service (NULL pointer dereference) via unspecified vectors, a different vulnerability than CVE-2016-7079.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/92938",
+            "http://www.securitytracker.com/id/1036804",
+            "http://www.vmware.com/security/advisories/VMSA-2016-0014.html"
+        ],
+        "cpe": [
+            "cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.11:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.12:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.13:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.15:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.16:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:tools:9.0.17:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "07/29/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-7081",
+        "cwe_id": "CWE-119",
+        "description": "Multiple heap-based buffer overflows in VMware Workstation Pro 12.x before 12.5.0 and VMware Workstation Player 12.x before 12.5.0 on Windows, when Cortado ThinPrint virtual printing is enabled, allow guest OS users to execute arbitrary code on the host OS via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.9 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/92935",
+            "http://www.securitytracker.com/id/1036805",
+            "http://www.vmware.com/security/advisories/VMSA-2016-0014.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:vmware:workstation_player:12.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_player:12.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_player:12.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_player:12.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_pro:12.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_pro:12.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_pro:12.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "07/29/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-7082",
+        "cwe_id": "CWE-119",
+        "description": "VMware Workstation Pro 12.x before 12.5.0 and VMware Workstation Player 12.x before 12.5.0 on Windows, when Cortado ThinPrint virtual printing is enabled, allow guest OS users to execute arbitrary code on the host OS or cause a denial of service (host OS memory corruption) via an EMF file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:P/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:P/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "5.9 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/92934",
+            "http://www.securitytracker.com/id/1036805",
+            "http://www.vmware.com/security/advisories/VMSA-2016-0014.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:vmware:workstation_player:12.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_player:12.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_player:12.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_player:12.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_pro:12.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_pro:12.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_pro:12.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "07/29/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-7083",
+        "cwe_id": "CWE-119",
+        "description": "VMware Workstation Pro 12.x before 12.5.0 and VMware Workstation Player 12.x before 12.5.0 on Windows, when Cortado ThinPrint virtual printing is enabled, allow guest OS users to execute arbitrary code on the host OS or cause a denial of service (host OS memory corruption) via TrueType fonts embedded in EMFSPOOL.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:P/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:P/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "5.9 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/92934",
+            "http://www.securitytracker.com/id/1036805",
+            "http://www.vmware.com/security/advisories/VMSA-2016-0014.html",
+            "https://www.exploit-db.com/exploits/40398/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:vmware:workstation_player:12.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_player:12.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_player:12.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_player:12.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_pro:12.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_pro:12.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_pro:12.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "09/02/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-7084",
+        "cwe_id": "CWE-119",
+        "description": "tpview.dll in VMware Workstation Pro 12.x before 12.5.0 and VMware Workstation Player 12.x before 12.5.0 on Windows, when Cortado ThinPrint virtual printing is enabled, allows guest OS users to execute arbitrary code on the host OS or cause a denial of service (host OS memory corruption) via a JPEG 2000 image.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.9 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/92934",
+            "http://www.securitytracker.com/id/1036805",
+            "http://www.vmware.com/security/advisories/VMSA-2016-0014.html",
+            "https://www.exploit-db.com/exploits/40399/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:vmware:workstation_player:12.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_player:12.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_player:12.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_player:12.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_pro:12.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_pro:12.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_pro:12.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "09/02/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-7085",
+        "cwe_id": "CWE-426",
+        "description": "Untrusted search path vulnerability in the installer in VMware Workstation Pro 12.x before 12.5.0 and VMware Workstation Player 12.x before 12.5.0 on Windows allows local users to gain privileges via a Trojan horse DLL in an unspecified directory.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/92940",
+            "http://www.securitytracker.com/id/1036805",
+            "http://www.vmware.com/security/advisories/VMSA-2016-0014.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:vmware:workstation_player:12.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_player:12.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_player:12.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_player:12.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_pro:12.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_pro:12.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_pro:12.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "07/29/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-7086",
+        "cwe_id": "CWE-264",
+        "description": "The installer in VMware Workstation Pro 12.x before 12.5.0 and VMware Workstation Player 12.x before 12.5.0 on Windows allows local users to gain privileges via a Trojan horse setup64.exe file in the installation directory.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/92941",
+            "http://www.securitytracker.com/id/1036805",
+            "http://www.vmware.com/security/advisories/VMSA-2016-0014.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:vmware:workstation_player:12.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_player:12.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_player:12.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_player:12.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_pro:12.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_pro:12.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:workstation_pro:12.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "07/29/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-7087",
+        "cwe_id": "CWE-22",
+        "description": "Directory traversal vulnerability in the Connection Server in VMware Horizon View 5.x before 5.3.7, 6.x before 6.2.3, and 7.x before 7.0.1 allows remote attackers to obtain sensitive information via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93455",
+            "http://www.securitytracker.com/id/1036972",
+            "http://www.vmware.com/security/advisories/VMSA-2016-0015.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:vmware:horizon_view:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:horizon_view:5.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:horizon_view:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:horizon_view:5.1.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:horizon_view:5.2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:horizon_view:5.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:horizon_view:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:horizon_view:6.0.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "07/29/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-7456",
+        "cwe_id": "CWE-255",
+        "description": "VMware vSphere Data Protection (VDP) 5.5.x though 6.1.x has an SSH private key with a publicly known password, which makes it easier for remote attackers to obtain login access via an SSH session.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94990",
+            "http://www.securitytracker.com/id/1037502",
+            "http://www.vmware.com/security/advisories/VMSA-2016-0024.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:vmware:vsphere_data_protection:5.5.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vsphere_data_protection:5.5.10:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vsphere_data_protection:5.5.11:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vsphere_data_protection:5.5.5:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vsphere_data_protection:5.5.6:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vsphere_data_protection:5.5.7:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vsphere_data_protection:5.5.8:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vsp",
+            "*cpe:2.3:a:vmware:vsphere_data_protection:5.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vsphere_data_protection:5.5.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vsphere_data_protection:5.5.11:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vsphere_data_protection:5.5.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vsphere_data_protection:5.5.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vsphere_data_protection:5.5.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vsphere_data_protection:5.5.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vsp"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "01/03/2017",
+        "vulnerability_source": "VMware",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-7457",
+        "cwe_id": "CWE-264",
+        "description": "VMware vRealize Operations (aka vROps) 6.x before 6.4.0 allows remote authenticated users to gain privileges, or halt and remove virtual machines, via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:C)"
+        },
+        "base_score_v3": "10.0 CRITICAL",
+        "base_score_v2": "8.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93499",
+            "http://www.securitytracker.com/id/1036999",
+            "http://www.vmware.com/security/advisories/VMSA-2016-0016.html",
+            "https://h20566.www2.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbgn03707en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:vmware:vrealize_operations:6.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vrealize_operations:6.1.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vrealize_operations:6.2.0a:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vrealize_operations:6.2.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vrealize_operations:6.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vrealize_operations:6.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vrealize_operations:6.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vrealize_operations:6.2.0a:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vrealize_operations:6.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vrealize_operations:6.3.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "07/29/2017",
+        "vulnerability_source": "VMware",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-7458",
+        "cwe_id": "CWE-611",
+        "description": "VMware vSphere Client 5.5 before U3e and 6.0 before U2a allows remote vCenter Server and ESXi instances to read arbitrary files via an XML document containing an external entity declaration in conjunction with an entity reference, related to an XML External Entity (XXE) issue.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.8 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94483",
+            "http://www.securitytracker.com/id/1037328",
+            "http://www.vmware.com/security/advisories/VMSA-2016-0022.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:vmware:vsphere_client:5.5:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vsphere_client:5.5:u1:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vsphere_client:5.5:u2:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vsphere_client:5.5:u3a:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vsphere_client:5.5:u3b:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vsphere_client:6.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vsphere_client:6.0:2:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vsphere_client:6.0:2m:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vsphere_client:6.0:",
+            "*cpe:2.3:a:vmware:vsphere_client:5.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vsphere_client:5.5:u1:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vsphere_client:5.5:u2:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vsphere_client:5.5:u3a:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vsphere_client:5.5:u3b:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vsphere_client:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vsphere_client:6.0:2:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vsphere_client:6.0:2m:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vsphere_client:6.0:"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "07/27/2017",
+        "vulnerability_source": "VMware",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-7459",
+        "cwe_id": "CWE-611",
+        "description": "VMware vCenter Server 5.5 before U3e and 6.0 before U2a allows remote authenticated users to read arbitrary files via a (1) Log Browser, (2) Distributed Switch setup, or (3) Content Library XML document containing an external entity declaration in conjunction with an entity reference, related to an XML External Entity (XXE) issue.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.7 HIGH",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94486",
+            "http://www.securitytracker.com/id/1037329",
+            "http://www.vmware.com/security/advisories/VMSA-2016-0022.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:vmware:vcenter_server:6.0:u1b:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vcenter_server:6.0:u1:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vcenter_server:5.5:u3b:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vcenter_server:5.5:u3a:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vcenter_server:5.5:u2:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vcenter_server:5.5:u1:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vcenter_server:5.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vcenter_server:5.5:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vcenter_server:5.5:u1:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vcenter_server:5.5:u2:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vcenter_server:5.5:u3a:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vcenter_server:5.5:u3b:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vcenter_server:6.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vcenter_server:6.0:2:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vcenter_server:6.0:2",
+            "*cpe:2.3:a:vmware:vcenter_server:6.0:u1b:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vcenter_server:6.0:1b:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vcenter_server:6.0:u1:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vcenter_server:6.0:1:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vcenter_server:5.5:u3b:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vcenter_server:5.5:3b:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vcenter_server:5.5:u3a:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vcenter_server:5.5:3a:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vcenter_server:5.5:u2:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vcenter_server:5.5:2:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vcenter_server:5.5:u1:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vcenter_server:5.5:1:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vcenter_server:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vcenter_server:5.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vcenter_server:5.5:u1:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vcenter_server:5.5:u2:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vcenter_server:5.5:u3a:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vcenter_server:5.5:u3b:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vcenter_server:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vcenter_server:6.0:2:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vcenter_server:6.0:2"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "10/30/2018",
+        "vulnerability_source": "VMware",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-7460",
+        "cwe_id": "CWE-611",
+        "description": "The Single Sign-On feature in VMware vCenter Server 5.5 before U3e and 6.0 before U2a and vRealize Automation 6.x before 6.2.5 allows remote attackers to read arbitrary files or cause a denial of service via an XML document containing an external entity declaration in conjunction with an entity reference, related to an XML External Entity (XXE) issue.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:P)"
+        },
+        "base_score_v3": "9.1 CRITICAL",
+        "base_score_v2": "6.4 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94485",
+            "http://www.securitytracker.com/id/1037327",
+            "http://www.securitytracker.com/id/1037329",
+            "http://www.vmware.com/security/advisories/VMSA-2016-0022.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:vmware:vrealize_automation:6.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vrealize_automation:6.0.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vrealize_automation:6.0.1.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vrealize_automation:6.0.1.2:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vrealize_automation:6.1.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vrealize_automation:6.1.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vrealize_automation:6.2.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vrealize_automation:6.2.1:*:*",
+            "*cpe:2.3:a:vmware:vrealize_automation:6.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vrealize_automation:6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vrealize_automation:6.0.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vrealize_automation:6.0.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vrealize_automation:6.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vrealize_automation:6.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vrealize_automation:6.2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vrealize_automation:6.2.1:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "07/27/2017",
+        "vulnerability_source": "VMware",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-7461",
+        "cwe_id": "CWE-119",
+        "description": "The drag-and-drop (aka DnD) function in VMware Workstation Pro 12.x before 12.5.2 and VMware Workstation Player 12.x before 12.5.2 and VMware Fusion and Fusion Pro 8.x before 8.5.2 allows guest OS users to execute arbitrary code on the host OS or cause a denial of service (out-of-bounds memory access on the host OS) via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94280",
+            "http://www.securitytracker.com/id/1037282",
+            "http://www.vmware.com/security/advisories/VMSA-2016-0019.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:vmware:fusion:8.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:fusion:8.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:fusion:8.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:fusion:8.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:fusion:8.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:fusion:8.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:fusion:8.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:fusion_pro:8.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:fusion_pro:8.0.1"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "07/27/2017",
+        "vulnerability_source": "VMware",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-7462",
+        "cwe_id": "CWE-264",
+        "description": "The Suite REST API in VMware vRealize Operations (aka vROps) 6.x before 6.4.0 allows remote authenticated users to write arbitrary content to files or rename files via a crafted DiskFileItem in a relay-request payload that is mishandled during deserialization.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:L/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:L/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:C)"
+        },
+        "base_score_v3": "8.5 HIGH",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94351",
+            "http://www.securitytracker.com/id/1037297",
+            "http://www.vmware.com/security/advisories/VMSA-2016-0020.html",
+            "https://www.tenable.com/security/research/tra-2016-34"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:vmware:vrealize_operations:6.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vrealize_operations:6.1.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vrealize_operations:6.2.0a:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vrealize_operations:6.2.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:vmware:vrealize_operations:6.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vrealize_operations:6.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vrealize_operations:6.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vrealize_operations:6.2.0a:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vrealize_operations:6.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vmware:vrealize_operations:6.3.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "07/27/2017",
+        "vulnerability_source": "VMware",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-7463",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in the Host Client in VMware vSphere Hypervisor (aka ESXi) 5.5 and 6.0 allows remote authenticated users to inject arbitrary web script or HTML via a crafted VM.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94998",
+            "http://www.securitytracker.com/id/1037501",
+            "http://www.vmware.com/security/advisories/VMSA-2016-0023.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:vmware:esxi:5.5:*:*:*:*:*:*:*\n     *cpe:2.3:o:vmware:esxi:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:vmware:esxi:5.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:vmware:esxi:6.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "12/30/2016",
+        "vulnerability_source": "VMware",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9877",
+        "cwe_id": "CWE-284",
+        "description": "An issue was discovered in Pivotal RabbitMQ 3.x before 3.5.8 and 3.6.x before 3.6.6 and RabbitMQ for PCF 1.5.x before 1.5.20, 1.6.x before 1.6.12, and 1.7.x before 1.7.7. MQTT (MQ Telemetry Transport) connection authentication with a username/password pair succeeds if an existing username is provided but the password is omitted from the connection request. Connections that use TLS with a client-provided certificate are not affected.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.debian.org/security/2017/dsa-3761",
+            "http://www.securityfocus.com/bid/95065",
+            "https://pivotal.io/security/cve-2016-9877",
+            "https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbst03880en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:pivotal_software:rabbitmq:1.5.0:*:*:*:*:pivotal_cloud_foundry:*:*\n     *cpe:2.3:a:pivotal_software:rabbitmq:1.5.1:*:*:*:*:pivotal_cloud_foundry:*:*\n     *cpe:2.3:a:pivotal_software:rabbitmq:1.5.10:*:*:*:*:pivotal_cloud_foundry:*:*\n     *cpe:2.3:a:pivotal_software:rabbitmq:1.5.11:*:*:*:*:pivotal_cloud_foundry:*:*\n     *cpe:2.3:a:pivotal_software:rabbitmq:1.5.12:*:*:*:*:pivotal_cloud_foundry:*:*\n     *cpe:2.3:a:pivotal_software:rabbitmq:1.5.13:*:*:*:*:pivotal_cloud_foundry:*:*",
+            "*cpe:2.3:a:pivotal_software:rabbitmq:1.5.0:*:*:*:*:pivotal_cloud_foundry:*:*",
+            "*cpe:2.3:a:pivotal_software:rabbitmq:1.5.1:*:*:*:*:pivotal_cloud_foundry:*:*",
+            "*cpe:2.3:a:pivotal_software:rabbitmq:1.5.10:*:*:*:*:pivotal_cloud_foundry:*:*",
+            "*cpe:2.3:a:pivotal_software:rabbitmq:1.5.11:*:*:*:*:pivotal_cloud_foundry:*:*",
+            "*cpe:2.3:a:pivotal_software:rabbitmq:1.5.12:*:*:*:*:pivotal_cloud_foundry:*:*",
+            "*cpe:2.3:a:pivotal_software:rabbitmq:1.5.13:*:*:*:*:pivotal_cloud_foundry:*:*",
+            "*cpe:2.3:a:pivotal_software:rabbitmq:3.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:pivotal_software:rabbitmq:3.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:pivotal_software:rabbitmq:3.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:pivotal_software:rabbitmq:3.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:pivotal_software:rabbitmq:3.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:pivotal_software:rabbitmq:3.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:pivotal_software:rabbitmq:3.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:pivotal_software:rabbitmq:3.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "09/21/2018",
+        "vulnerability_source": "Dell",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9878",
+        "cwe_id": "CWE-22",
+        "description": "An issue was discovered in Pivotal Spring Framework before 3.2.18, 4.2.x before 4.2.9, and 4.3.x before 4.3.5. Paths provided to the ResourceServlet were not properly sanitized and as a result exposed to directory traversal attacks.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/security-advisory/cpuapr2018-3678067.html",
+            "http://www.oracle.com/technetwork/security-advisory/cpujan2018-3236628.html",
+            "http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html",
+            "http://www.securityfocus.com/bid/95072",
+            "http://www.securitytracker.com/id/1040698",
+            "https://access.redhat.com/errata/RHSA-2017:3115",
+            "https://lists.debian.org/debian-lts-announce/2019/07/msg00012.html",
+            "https://pivotal.io/security/cve-2016-9878",
+            "https://security.netapp.com/advisory/ntap-20180419-0002/",
+            "https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:pivotal_software:spring_framework:3.2.0:*:*:*:*:*:*:* (and previous)\n     *cpe:2.3:a:pivotal_software:spring_framework:3.2.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:pivotal_software:spring_framework:3.2.10:*:*:*:*:*:*:*\n     *cpe:2.3:a:pivotal_software:spring_framework:3.2.11:*:*:*:*:*:*:*\n     *cpe:2.3:a:pivotal_software:spring_framework:3.2.12:*:*:*:*:*:*:*\n     *cpe:2.3:a:pivotal_software:spring_framework:3.2.13:*:*:*:*:*:*:*\n     *cpe:2.3:a:pivotal_software:spring_framework:3.2.14:*",
+            "*cpe:2.3:a:pivotal_software:spring_framework:3.2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:pivotal_software:spring_framework:3.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:pivotal_software:spring_framework:3.2.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:pivotal_software:spring_framework:3.2.11:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:pivotal_software:spring_framework:3.2.12:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:pivotal_software:spring_framework:3.2.13:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:pivotal_software:spring_framework:3.2.14:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "07/18/2018",
+        "vulnerability_source": "Dell",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2015-0854",
+        "cwe_id": "CWE-19",
+        "description": "App/HelperFunctions.pm in Shutter through 0.93.1 allows user-assisted remote attackers to execute arbitrary commands via a crafted image name that is mishandled during a \"Show in Folder\" action.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "https://bugs.launchpad.net/shutter/+bug/1495163"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:shutter-project:shutter:0.93.1:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:shutter-project:shutter:0.93.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "01/03/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-10081",
+        "cwe_id": "CWE-19",
+        "description": "/usr/bin/shutter in Shutter through 0.93.1 allows user-assisted remote attackers to execute arbitrary commands via a crafted image name that is mishandled during a \"Run a plugin\" action.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/95351",
+            "https://bugs.launchpad.net/shutter/+bug/1652600",
+            "https://www.exploit-db.com/exploits/41435/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:shutter-project:shutter:0.93.1:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:shutter-project:shutter:0.93.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "08/31/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9891",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in admin/media.php and admin/media_item.php in Dotclear before 2.11 allows remote authenticated users to inject arbitrary web script or HTML via the upfiletitle or media_title parameter (aka the media title).",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/95156",
+            "https://dev.dotclear.org/2.0/changeset/5536ac77e915",
+            "https://dev.dotclear.org/2.0/ticket/2224",
+            "https://dotclear.org/blog/post/2016/12/28/Dotclear-2.11",
+            "https://hg.dotclear.org/dotclear/rev/712559193a6e",
+            "https://smarterbitbybit.com/cve-2016-9891-dotclear-xss-vulnerability-in-version-2-10-4/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:dotclear:dotclear:2.10.4:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:dotclear:dotclear:2.10.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "01/03/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2015-8701",
+        "cwe_id": "CWE-193",
+        "description": "QEMU (aka Quick Emulator) built with the Rocker switch emulation support is vulnerable to an off-by-one error. It happens while processing transmit (tx) descriptors in 'tx_consume' routine, if a descriptor was to have more than allowed (ROCKER_TX_FRAGS_MAX=16) fragments. A privileged user inside guest could use this flaw to cause memory leakage on the host or crash the QEMU process instance resulting in DoS issue.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2015/12/28/6",
+            "http://www.openwall.com/lists/oss-security/2015/12/29/1",
+            "http://www.securityfocus.com/bid/79706",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1286971",
+            "https://lists.gnu.org/archive/html/qemu-devel/2015-12/msg04629.html",
+            "https://security.gentoo.org/glsa/201602-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "11/10/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2015-8743",
+        "cwe_id": "CWE-125",
+        "description": "QEMU (aka Quick Emulator) built with the NE2000 device emulation support is vulnerable to an OOB r/w access issue. It could occur while performing 'ioport' r/w operations. A privileged (CAP_SYS_RAWIO) user/process could use this flaw to leak or corrupt QEMU memory bytes.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "7.1 HIGH",
+        "base_score_v2": "3.6 LOW",
+        "hyperlinks": [
+            "http://www.debian.org/security/2016/dsa-3469",
+            "http://www.debian.org/security/2016/dsa-3470",
+            "http://www.debian.org/security/2016/dsa-3471",
+            "http://www.openwall.com/lists/oss-security/2016/01/04/1",
+            "http://www.openwall.com/lists/oss-security/2016/01/04/2",
+            "http://www.securityfocus.com/bid/79820",
+            "http://www.securitytracker.com/id/1034574",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1264929",
+            "https://lists.gnu.org/archive/html/qemu-devel/2016-01/msg00050.html",
+            "https://security.gentoo.org/glsa/201602-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "10/29/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2015-8744",
+        "cwe_id": "CWE-20",
+        "description": "QEMU (aka Quick Emulator) built with a VMWARE VMXNET3 paravirtual NIC emulator support is vulnerable to crash issue. It occurs when a guest sends a Layer-2 packet smaller than 22 bytes. A privileged (CAP_SYS_RAWIO) guest user could use this flaw to crash the QEMU process instance resulting in DoS.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://git.qemu.org/?p=qemu.git;a=commitdiff;h=a7278b36fcab9af469563bd7b",
+            "http://www.debian.org/security/2016/dsa-3471",
+            "http://www.openwall.com/lists/oss-security/2016/01/04/3",
+            "http://www.openwall.com/lists/oss-security/2016/01/04/6",
+            "http://www.securityfocus.com/bid/79821",
+            "http://www.securitytracker.com/id/1034576",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1270871",
+            "https://security.gentoo.org/glsa/201602-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "11/10/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2015-8745",
+        "cwe_id": "CWE-617",
+        "description": "QEMU (aka Quick Emulator) built with a VMWARE VMXNET3 paravirtual NIC emulator support is vulnerable to crash issue. It could occur while reading Interrupt Mask Registers (IMR). A privileged (CAP_SYS_RAWIO) guest user could use this flaw to crash the QEMU process instance resulting in DoS.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://git.qemu.org/?p=qemu.git;a=commit;h=c6048f849c7e3f009786df76206e895",
+            "http://www.debian.org/security/2016/dsa-3471",
+            "http://www.openwall.com/lists/oss-security/2016/01/04/4",
+            "http://www.openwall.com/lists/oss-security/2016/01/04/7",
+            "http://www.securityfocus.com/bid/79822",
+            "http://www.securitytracker.com/id/1034575",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1270876",
+            "https://security.gentoo.org/glsa/201602-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "11/10/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2015-8817",
+        "cwe_id": "CWE-787",
+        "description": "QEMU (aka Quick Emulator) built to use 'address_space_translate' to map an address to a MemoryRegionSection is vulnerable to an OOB r/w access issue. It could occur while doing pci_dma_read/write calls. Affects QEMU versions >= 1.6.0 and <= 2.3.1. A privileged user inside guest could use this flaw to crash the guest instance resulting in DoS.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://git.qemu.org/?p=qemu.git;a=commit;h=23820dbfc79d1c9dce090b4c555994f2bb6a69b3",
+            "http://git.qemu.org/?p=qemu.git;a=commit;h=c3c1bb99d1c11978d9ce94d1bdcf0705378c1459",
+            "http://rhn.redhat.com/errata/RHSA-2016-2670.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2671.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2704.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2705.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2706.html",
+            "http://www.openwall.com/lists/oss-security/2016/03/01/1",
+            "http://www.openwall.com/lists/oss-security/2016/03/01/10",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1300771",
+            "https://lists.gnu.org/archive/html/qemu-stable/2016-01/msg00060.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:qemu:qemu:1.6.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:qemu:qemu:1.6.0:rc1:*:*:*:*:*:*\n     *cpe:2.3:a:qemu:qemu:1.6.0:rc2:*:*:*:*:*:*\n     *cpe:2.3:a:qemu:qemu:1.6.0:rc3:*:*:*:*:*:*\n     *cpe:2.3:a:qemu:qemu:1.6.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:qemu:qemu:1.6.2:*:*:*:*:*:*:*\n     *cpe:2.3:a:qemu:qemu:1.7.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:qemu:qemu:2.0.0:-:*:*:*:*:*:*\n     *cpe:2.3:a:qemu:qemu:2.0.0:rc0:*:*:*:*:*:*\n     *cpe:2.3:a:qemu:qemu:2.0.0:rc1:*:*:*:*:*:*\n     *cpe:2.3:a:qemu:qemu:2",
+            "*cpe:2.3:a:qemu:qemu:1.6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:1.6.0:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:1.6.0:rc2:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:1.6.0:rc3:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:1.6.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:1.6.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:1.7.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:2.0.0:-:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:2.0.0:rc0:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:2.0.0:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:2"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "01/04/2018",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2015-8818",
+        "cwe_id": null,
+        "description": "The cpu_physical_memory_write_rom_internal function in exec.c in QEMU (aka Quick Emulator) does not properly skip MMIO regions, which allows local privileged guest users to cause a denial of service (guest crash) via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://git.qemu.org/?p=qemu.git;a=commit;h=b242e0e0e2969c044a318e56f7988bbd84de1f63",
+            "http://rhn.redhat.com/errata/RHSA-2016-2670.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2671.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2704.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2705.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2706.html",
+            "http://www.openwall.com/lists/oss-security/2016/03/01/1",
+            "http://www.openwall.com/lists/oss-security/2016/03/01/10",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1300771"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "11/10/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-1922",
+        "cwe_id": "CWE-476",
+        "description": "QEMU (aka Quick Emulator) built with the TPR optimization for 32-bit Windows guests support is vulnerable to a null pointer dereference flaw. It occurs while doing I/O port write operations via hmp interface. In that, 'current_cpu' remains null, which leads to the null pointer dereference. A user or process could use this flaw to crash the QEMU instance, resulting in DoS issue.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.debian.org/security/2016/dsa-3469",
+            "http://www.debian.org/security/2016/dsa-3470",
+            "http://www.debian.org/security/2016/dsa-3471",
+            "http://www.openwall.com/lists/oss-security/2016/01/16/1",
+            "http://www.openwall.com/lists/oss-security/2016/01/16/6",
+            "http://www.securityfocus.com/bid/81058",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1283934",
+            "https://lists.gnu.org/archive/html/qemu-devel/2016-01/msg02812.html",
+            "https://security.gentoo.org/glsa/201604-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "11/10/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-1981",
+        "cwe_id": "CWE-835",
+        "description": "QEMU (aka Quick Emulator) built with the e1000 NIC emulation support is vulnerable to an infinite loop issue. It could occur while processing data via transmit or receive descriptors, provided the initial receive/transmit descriptor head (TDH/RDH) is set outside the allocated descriptor buffer. A privileged user inside guest could use this flaw to crash the QEMU instance resulting in DoS.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2016-2585.html",
+            "http://www.debian.org/security/2016/dsa-3469",
+            "http://www.debian.org/security/2016/dsa-3470",
+            "http://www.debian.org/security/2016/dsa-3471",
+            "http://www.openwall.com/lists/oss-security/2016/01/19/10",
+            "http://www.openwall.com/lists/oss-security/2016/01/22/1",
+            "http://www.securityfocus.com/bid/81549",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1298570",
+            "https://lists.gnu.org/archive/html/qemu-devel/2016-01/msg03454.html",
+            "https://security.gentoo.org/glsa/201604-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "11/10/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-2197",
+        "cwe_id": "CWE-476",
+        "description": "QEMU (aka Quick Emulator) built with an IDE AHCI emulation support is vulnerable to a null pointer dereference flaw. It occurs while unmapping the Frame Information Structure (FIS) and Command List Block (CLB) entries. A privileged user inside guest could use this flaw to crash the QEMU process instance resulting in DoS.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/01/29/2",
+            "http://www.openwall.com/lists/oss-security/2016/01/30/1",
+            "http://www.securityfocus.com/bid/82235",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1302057",
+            "https://lists.gnu.org/archive/html/qemu-devel/2016-01/msg05742.html",
+            "https://security.gentoo.org/glsa/201604-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "11/10/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-2198",
+        "cwe_id": "CWE-476",
+        "description": "QEMU (aka Quick Emulator) built with the USB EHCI emulation support is vulnerable to a null pointer dereference flaw. It could occur when an application attempts to write to EHCI capabilities registers. A privileged user inside quest could use this flaw to crash the QEMU process instance resulting in DoS.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/01/29/6",
+            "http://www.openwall.com/lists/oss-security/2016/01/30/2",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1301643",
+            "https://lists.debian.org/debian-lts-announce/2018/09/msg00007.html",
+            "https://lists.gnu.org/archive/html/qemu-devel/2016-01/msg05899.html",
+            "https://security.gentoo.org/glsa/201604-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:qemu:qemu:2.6.0:rc0:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:2.6.0:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:2.6.0:rc2:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:2.6.0:rc3:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:2.6.0:rc4:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "11/10/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9776",
+        "cwe_id": "CWE-835",
+        "description": "QEMU (aka Quick Emulator) built with the ColdFire Fast Ethernet Controller emulator support is vulnerable to an infinite loop issue. It could occur while receiving packets in 'mcf_fec_receive'. A privileged user/process inside guest could use this issue to crash the QEMU process on the host leading to DoS.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/12/02/3",
+            "http://www.openwall.com/lists/oss-security/2016/12/02/8",
+            "http://www.securityfocus.com/bid/94638",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1400829",
+            "https://lists.debian.org/debian-lts-announce/2018/09/msg00007.html",
+            "https://lists.gnu.org/archive/html/qemu-devel/2016-11/msg05324.html",
+            "https://security.gentoo.org/glsa/201701-49"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:qemu:qemu:2.8.0:rc0:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:2.8.0:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:2.8.0:rc2:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "11/10/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9845",
+        "cwe_id": "CWE-200",
+        "description": "QEMU (aka Quick Emulator) built with the Virtio GPU Device emulator support is vulnerable to an information leakage issue. It could occur while processing 'VIRTIO_GPU_CMD_GET_CAPSET_INFO' command. A guest user/process could use this flaw to leak contents of the host memory bytes.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/12/05/15",
+            "http://www.openwall.com/lists/oss-security/2016/12/05/22",
+            "http://www.securityfocus.com/bid/94763",
+            "https://lists.nongnu.org/archive/html/qemu-devel/2016-11/msg00019.html",
+            "https://security.gentoo.org/glsa/201701-49"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:qemu:qemu:2.8.0:rc0:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:2.8.0:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:2.8.0:rc2:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "11/10/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9846",
+        "cwe_id": "CWE-119",
+        "description": "QEMU (aka Quick Emulator) built with the Virtio GPU Device emulator support is vulnerable to a memory leakage issue. It could occur while updating the cursor data in update_cursor_data_virgl. A guest user/process could use this flaw to leak host memory bytes, resulting in DoS for a host.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/12/05/18",
+            "http://www.openwall.com/lists/oss-security/2016/12/05/23",
+            "http://www.securityfocus.com/bid/94765",
+            "https://lists.gnu.org/archive/html/qemu-devel/2016-11/msg00029.html",
+            "https://security.gentoo.org/glsa/201701-49"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:qemu:qemu:2.8.0:rc0:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:2.8.0:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:2.8.0:rc2:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "11/10/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9913",
+        "cwe_id": "CWE-401",
+        "description": "Memory leak in the v9fs_device_unrealize_common function in hw/9pfs/9p.c in QEMU (aka Quick Emulator) allows local privileged guest OS users to cause a denial of service (host memory consumption and possibly QEMU process crash) via vectors involving the order of resource cleanup.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://git.qemu.org/?p=qemu.git;a=commit;h=4774718e5c194026ba5ee7a28d9be49be3080e42",
+            "http://www.openwall.com/lists/oss-security/2016/12/06/11",
+            "http://www.openwall.com/lists/oss-security/2016/12/08/7",
+            "http://www.securityfocus.com/bid/94729",
+            "https://lists.gnu.org/archive/html/qemu-devel/2016-11/msg03278.html",
+            "https://security.gentoo.org/glsa/201701-49"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:qemu:qemu:2.8.0:rc0:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:2.8.0:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "11/10/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9914",
+        "cwe_id": "CWE-401",
+        "description": "Memory leak in hw/9pfs/9p.c in QEMU (aka Quick Emulator) allows local privileged guest OS users to cause a denial of service (host memory consumption and possibly QEMU process crash) by leveraging a missing cleanup operation in FileOperations.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://git.qemu.org/?p=qemu.git;a=commit;h=702dbcc274e2ca43be20ba64c758c0ca57dab91d",
+            "http://www.openwall.com/lists/oss-security/2016/12/06/11",
+            "http://www.openwall.com/lists/oss-security/2016/12/08/7",
+            "http://www.securityfocus.com/bid/94729",
+            "https://lists.debian.org/debian-lts-announce/2018/09/msg00007.html",
+            "https://lists.gnu.org/archive/html/qemu-devel/2016-11/msg03278.html",
+            "https://security.gentoo.org/glsa/201701-49"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:qemu:qemu:2.8.0:rc0:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:2.8.0:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "11/10/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9915",
+        "cwe_id": "CWE-401",
+        "description": "Memory leak in hw/9pfs/9p-handle.c in QEMU (aka Quick Emulator) allows local privileged guest OS users to cause a denial of service (host memory consumption and possibly QEMU process crash) by leveraging a missing cleanup operation in the handle backend.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://git.qemu.org/?p=qemu.git;a=commit;h=971f406b77a6eb84e0ad27dcc416b663765aee30",
+            "http://www.openwall.com/lists/oss-security/2016/12/06/11",
+            "http://www.openwall.com/lists/oss-security/2016/12/08/7",
+            "http://www.securityfocus.com/bid/94729",
+            "https://lists.debian.org/debian-lts-announce/2018/09/msg00007.html",
+            "https://lists.gnu.org/archive/html/qemu-devel/2016-11/msg03278.html",
+            "https://security.gentoo.org/glsa/201701-49"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:qemu:qemu:2.8.0:rc0:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:2.8.0:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "11/10/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9916",
+        "cwe_id": "CWE-401",
+        "description": "Memory leak in hw/9pfs/9p-proxy.c in QEMU (aka Quick Emulator) allows local privileged guest OS users to cause a denial of service (host memory consumption and possibly QEMU process crash) by leveraging a missing cleanup operation in the proxy backend.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://git.qemu.org/?p=qemu.git;a=commit;h=898ae90a44551d25b8e956fd87372d303c82fe68",
+            "http://www.openwall.com/lists/oss-security/2016/12/06/11",
+            "http://www.openwall.com/lists/oss-security/2016/12/08/7",
+            "http://www.securityfocus.com/bid/94729",
+            "https://lists.debian.org/debian-lts-announce/2018/09/msg00007.html",
+            "https://lists.gnu.org/archive/html/qemu-devel/2016-11/msg03278.html",
+            "https://security.gentoo.org/glsa/201701-49"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:qemu:qemu:2.8.0:rc0:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:2.8.0:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/29/2016",
+        "modified_date": "11/10/2020",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-10082",
+        "cwe_id": "CWE-284",
+        "description": "include/functions_installer.inc.php in Serendipity through 2.0.5 is vulnerable to File Inclusion and a possible Code Execution attack during a first-time installation because it fails to sanitize the dbType POST parameter before adding it to an include() call in the bundled-libs/serendipity_generateFTPChecksums.php file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/95165",
+            "https://github.com/s9y/Serendipity/commit/bba6a840f4d53cbaf62971a3078a98c8ddf92b85",
+            "https://github.com/s9y/Serendipity/issues/433"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:s9y:serendipity:2.0.5:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:s9y:serendipity:2.0.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/30/2016",
+        "modified_date": "01/03/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-10083",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in admin/plugin.php in Piwigo through 2.8.3 allows remote attackers to inject arbitrary web script or HTML via a crafted filename that is mishandled in a certain error case.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/95166",
+            "https://github.com/Piwigo/Piwigo/commit/7df3830c81716b959a2d0d3a0d8216b860ae0dc7",
+            "https://github.com/Piwigo/Piwigo/issues/575"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:piwigo:piwigo:2.8.3:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:piwigo:piwigo:2.8.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/30/2016",
+        "modified_date": "01/03/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-10084",
+        "cwe_id": "CWE-284",
+        "description": "admin/batch_manager.php in Piwigo through 2.8.3 allows remote authenticated administrators to conduct File Inclusion attacks via the $page['tab'] variable (aka the mode parameter).",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.2 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/95164",
+            "https://github.com/Piwigo/Piwigo/commit/9dd92959f6975099e0c62163a846a4648a6a920f",
+            "https://github.com/Piwigo/Piwigo/issues/572#issuecomment-268252202"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:piwigo:piwigo:2.8.3:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:piwigo:piwigo:2.8.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/30/2016",
+        "modified_date": "01/03/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-10085",
+        "cwe_id": "CWE-284",
+        "description": "admin/languages.php in Piwigo through 2.8.3 allows remote authenticated administrators to conduct File Inclusion attacks via the tab parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.2 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/95167",
+            "https://github.com/Piwigo/Piwigo/commit/4b33a0fd199fd445b15a49927ea6a9a153e3877d",
+            "https://github.com/Piwigo/Piwigo/issues/573#issuecomment-267974558"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:piwigo:piwigo:2.8.3:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:piwigo:piwigo:2.8.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/30/2016",
+        "modified_date": "01/03/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-10088",
+        "cwe_id": "CWE-416",
+        "description": "The sg implementation in the Linux kernel through 4.9 does not properly restrict write operations in situations where the KERNEL_DS option is set, which allows local users to read or write to arbitrary kernel memory locations or cause a denial of service (use-after-free) by leveraging access to a /dev/sg device, related to block/bsg.c and drivers/scsi/sg.c.  NOTE: this vulnerability exists because of an incomplete fix for CVE-2016-9576.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.0 HIGH",
+        "base_score_v2": "6.9 MEDIUM",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=128394eff343fc6d2f32172f03e24829539c5835",
+            "http://rhn.redhat.com/errata/RHSA-2017-0817.html",
+            "http://www.openwall.com/lists/oss-security/2016/12/30/1",
+            "http://www.securityfocus.com/bid/95169",
+            "http://www.securitytracker.com/id/1037538",
+            "https://access.redhat.com/errata/RHSA-2017:1842",
+            "https://access.redhat.com/errata/RHSA-2017:2077",
+            "https://access.redhat.com/errata/RHSA-2017:2669",
+            "https://github.com/torvalds/linux/commit/128394eff343fc6d2f32172f03e24829539c5835"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.9:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:linux:linux_kernel:4.9:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/30/2016",
+        "modified_date": "01/04/2018",
+        "vulnerability_source": "Debian GNU/Linux",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-10033",
+        "cwe_id": "CWE-77",
+        "description": "The mailSend function in the isMail transport in PHPMailer before 5.2.18 might allow remote attackers to pass extra parameters to the mail command and consequently execute arbitrary code via a \\\" (backslash double quote) in a crafted Sender property.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/140291/PHPMailer-Remote-Code-Execution.html",
+            "http://packetstormsecurity.com/files/140350/PHPMailer-Sendmail-Argument-Injection.html",
+            "http://seclists.org/fulldisclosure/2016/Dec/78",
+            "http://www.rapid7.com/db/modules/exploit/multi/http/phpmailer_arg_injection",
+            "http://www.securityfocus.com/archive/1/539963/100/0/threaded",
+            "http://www.securityfocus.com/bid/95108",
+            "http://www.securitytracker.com/id/1037533",
+            "https://developer.joomla.org/security-centre/668-20161205-phpmailer-security-advisory.html",
+            "https://github.com/PHPMailer/PHPMailer/releases/tag/v5.2.18",
+            "https://github.com/PHPMailer/PHPMailer/wiki/About-the-CVE-2016-10033-and-CVE-2016-10045-vulnerabilities",
+            "https://legalhackers.com/advisories/PHPMailer-Exploit-Remote-Code-Exec-CVE-2016-10033-Vuln.html",
+            "https://www.drupal.org/psa-2016-004",
+            "https://www.exploit-db.com/exploits/40968/",
+            "https://www.exploit-db.com/exploits/40969/",
+            "https://www.exploit-db.com/exploits/40970/",
+            "https://www.exploit-db.com/exploits/40974/",
+            "https://www.exploit-db.com/exploits/40986/",
+            "https://www.exploit-db.com/exploits/41962/",
+            "https://www.exploit-db.com/exploits/41996/",
+            "https://www.exploit-db.com/exploits/42024/",
+            "https://www.exploit-db.com/exploits/42221/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:phpmailer_project:phpmailer:5.2.17:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:phpmailer_project:phpmailer:5.2.17:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/30/2016",
+        "modified_date": "10/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-10034",
+        "cwe_id": "CWE-77",
+        "description": "The setFrom function in the Sendmail adapter in the zend-mail component before 2.4.11, 2.5.x, 2.6.x, and 2.7.x before 2.7.2, and Zend Framework before 2.4.11 might allow remote attackers to pass extra parameters to the mail command and consequently execute arbitrary code via a \\\" (backslash double quote) in a crafted e-mail address.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/95144",
+            "http://www.securitytracker.com/id/1037539",
+            "https://framework.zend.com/security/advisory/ZF2016-04",
+            "https://legalhackers.com/advisories/ZendFramework-Exploit-ZendMail-Remote-Code-Exec-CVE-2016-10034-Vuln.html",
+            "https://security.gentoo.org/glsa/201804-10",
+            "https://www.exploit-db.com/exploits/40979/",
+            "https://www.exploit-db.com/exploits/40986/",
+            "https://www.exploit-db.com/exploits/42221/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:zend:zend-mail:2.4.10:*:*:*:*:*:*:* (and previous)\n     *cpe:2.3:a:zend:zend-mail:2.5.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:zend:zend-mail:2.5.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:zend:zend-mail:2.5.2:*:*:*:*:*:*:*\n     *cpe:2.3:a:zend:zend-mail:2.6.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:zend:zend-mail:2.6.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:zend:zend-mail:2.6.2:*:*:*:*:*:*:*\n     *cpe:2.3:a:zend:zend-mail:2.7.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:zend:zend-mail:2.7.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:zend:zend-mail:2.4.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:zend:zend-mail:2.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:zend:zend-mail:2.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:zend:zend-mail:2.5.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:zend:zend-mail:2.6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:zend:zend-mail:2.6.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:zend:zend-mail:2.6.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:zend:zend-mail:2.7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:zend:zend-mail:2.7.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:zend:zend_framework:2.4.10:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/30/2016",
+        "modified_date": "10/21/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-10045",
+        "cwe_id": "CWE-77",
+        "description": "The isMail transport in PHPMailer before 5.2.20 might allow remote attackers to pass extra parameters to the mail command and consequently execute arbitrary code by leveraging improper interaction between the escapeshellarg function and internal escaping performed in the mail function in PHP. NOTE: this vulnerability exists because of an incorrect fix for CVE-2016-10033.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://openwall.com/lists/oss-security/2016/12/28/1",
+            "http://packetstormsecurity.com/files/140286/PHPMailer-Remote-Code-Execution.html",
+            "http://packetstormsecurity.com/files/140350/PHPMailer-Sendmail-Argument-Injection.html",
+            "http://seclists.org/fulldisclosure/2016/Dec/81",
+            "http://www.rapid7.com/db/modules/exploit/multi/http/phpmailer_arg_injection",
+            "http://www.securityfocus.com/archive/1/539967/100/0/threaded",
+            "http://www.securityfocus.com/bid/95130",
+            "http://www.securitytracker.com/id/1037533",
+            "https://developer.joomla.org/security-centre/668-20161205-phpmailer-security-advisory.html",
+            "https://github.com/PHPMailer/PHPMailer/releases/tag/v5.2.20",
+            "https://github.com/PHPMailer/PHPMailer/wiki/About-the-CVE-2016-10033-and-CVE-2016-10045-vulnerabilities",
+            "https://legalhackers.com/advisories/PHPMailer-Exploit-Remote-Code-Exec-CVE-2016-10045-Vuln-Patch-Bypass.html",
+            "https://www.exploit-db.com/exploits/40969/",
+            "https://www.exploit-db.com/exploits/40986/",
+            "https://www.exploit-db.com/exploits/42221/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:phpmailer_project:phpmailer:5.2.19:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:phpmailer_project:phpmailer:5.2.19:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:phpmailer_project:phpmailer:5.2.19:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:phpmailer_project:phpmailer:5.2.19:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:phpmailer_project:phpmailer:5.2.19:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/30/2016",
+        "modified_date": "10/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-10074",
+        "cwe_id": "CWE-77",
+        "description": "The mail transport (aka Swift_Transport_MailTransport) in Swift Mailer before 5.4.5 might allow remote attackers to pass extra parameters to the mail command and consequently execute arbitrary code via a \\\" (backslash double quote) in a crafted e-mail address in the (1) From, (2) ReturnPath, or (3) Sender header.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/140290/SwiftMailer-Remote-Code-Execution.html",
+            "http://seclists.org/fulldisclosure/2016/Dec/86",
+            "http://www.debian.org/security/2017/dsa-3769",
+            "http://www.securityfocus.com/bid/95140",
+            "https://github.com/swiftmailer/swiftmailer/blob/5.x/CHANGES",
+            "https://legalhackers.com/advisories/SwiftMailer-Exploit-Remote-Code-Exec-CVE-2016-10074-Vuln.html",
+            "https://www.exploit-db.com/exploits/40972/",
+            "https://www.exploit-db.com/exploits/40986/",
+            "https://www.exploit-db.com/exploits/42221/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:swiftmailer:swiftmailer:5.4.4:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:swiftmailer:swiftmailer:5.4.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/30/2016",
+        "modified_date": "11/03/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-1003",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: CVE-2016-10033. Reason: This candidate is a duplicate of CVE-2016-10033.  A typo caused the wrong ID to be used.  Notes: All CVE users should reference CVE-2016-10033 instead of this candidate.  All references and descriptions in this candidate have been removed to prevent accidental usage.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-1003"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-1003"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "12/30/2016",
+        "modified_date": "12/30/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-1004",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: The CNA or individual who requested this candidate did not associate it with any vulnerability during 2016.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-1004"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-1004"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "12/30/2016",
+        "modified_date": "12/30/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-6856",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in the Inbox Search feature in Hybris Management Console (HMC) in SAP Hybris before 6.0 allows remote attackers to inject arbitrary web script or HTML via the itemsperpage parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93954",
+            "https://www.compass-security.com/fileadmin/Datein/Research/Advisories/CVE-2016-685X_SAP-Hybris_XSS.txt"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hybris:hybris:5.6.0.10:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:hybris:hybris:5.6.0.10:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:hybris:hybris:5.6.0.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:sap:hybris:5.6.0.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hybris:hybris:5.6.0.10:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/31/2016",
+        "modified_date": "08/24/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-6857",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in the Create Catalogue feature in Hybris Management Console (HMC) in SAP Hybris before 5.2.0.13, 5.3.x before 5.3.0.11, 5.4.x before 5.4.0.11, 5.5.0.x before 5.5.0.10, 5.5.1.x before 5.5.1.11, 5.6.x before 5.6.0.11, and 5.7.x before 5.7.0.15 allows remote authenticated users to inject arbitrary web script or HTML via the ID field.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93960",
+            "https://www.compass-security.com/fileadmin/Datein/Research/Advisories/CVE-2016-685X_SAP-Hybris_XSS.txt"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:* versions up to (including) 5.2.0.12\n     *cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:* versions up to (including) 5.3.0.10\n     *cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:* versions up to (including) 5.4.0.10\n     *cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:* versions up to (including) 5.5.0.9\n     *cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:* versions up to (including) 5.5.1.10\n     *cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:* versions up to (including) 5.6.0.10\n     *cpe:2.3:a:sap:hybr",
+            "*cpe:2.3:a:sap:hybris:5.2.0.12:*:*:*:*:*:*:* (and previous)\n     *cpe:2.3:a:sap:hybris:5.3.0.10:*:*:*:*:*:*:* (and previous)\n     *cpe:2.3:a:sap:hybris:5.4.0.10:*:*:*:*:*:*:* (and previous)\n     *cpe:2.3:a:sap:hybris:5.5.0.9:*:*:*:*:*:*:* (and previous)\n     *cpe:2.3:a:sap:hybris:5.5.1.10:*:*:*:*:*:*:* (and previous)\n     *cpe:2.3:a:sap:hybris:5.6.0.10:*:*:*:*:*:*:* (and previous)\n     *cpe:2.3:a:sap:hybris:5.7.0.14:*:*:*:*:*:*:* (and previous)\n     *cpe:2.3:a:sap:hybris:6.0:*:*:*:*:*:*:",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:sap:hybr",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:sap:hybris:5.2.0.12:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:sap:hybris:5.3.0.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:sap:hybris:5.4.0.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:sap:hybris:5.5.0.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:sap:hybris:5.5.1.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:sap:hybris:5.6.0.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:sap:hybris:5.7.0.14:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:sap:hybris:6.0:*:*:*:*:*:*:"
+        ],
+        "published_date": "12/31/2016",
+        "modified_date": "03/07/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-6858",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in the Create Employee feature in Hybris Management Console (HMC) in SAP Hybris before 5.0.4.11, 5.1.0.x before 5.1.0.11, 5.1.1.x before 5.1.1.12, 5.2.0.x and 5.3.0.x before 5.3.0.10, 5.4.x before 5.4.0.9, 5.5.0.x before 5.5.0.9, 5.5.1.x before 5.5.1.10, 5.6.x before 5.6.0.8, and 5.7.x before 5.7.0.9 allows remote authenticated users to inject arbitrary web script or HTML via the Name field.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93966",
+            "https://www.compass-security.com/fileadmin/Datein/Research/Advisories/CVE-2016-685X_SAP-Hybris_XSS.txt"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:* versions from (including) 5.0.4 up to (excluding) 5.0.4.11\n     *cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:* versions from (including) 5.1.0 up to (excluding) 5.1.0.11\n     *cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:* versions from (including) 5.1.1 up to (excluding) 5.1.1.12\n     *cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:* versions from (including) 5.2.0 up to (excluding) 5.2.0.10\n     *cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:* versions from (including) 5.3.0 up to (excludi",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:* versions up to (including) 5.0.4.10\n     *cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:* versions up to (including) 5.1.0.10\n     *cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:* versions up to (including) 5.1.1.11\n     *cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:* versions up to (including) 5.2.0.13\n     *cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:* versions up to (including) 5.3.0.9\n     *cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:* versions up to (including) 5.5.0.8\n     *cpe:2.3:a:sap:hybri",
+            "*cpe:2.3:a:sap:hybris:5.0.4.10:*:*:*:*:*:*:* (and previous)\n     *cpe:2.3:a:sap:hybris:5.1.0.10:*:*:*:*:*:*:* (and previous)\n     *cpe:2.3:a:sap:hybris:5.1.1.11:*:*:*:*:*:*:* (and previous)\n     *cpe:2.3:a:sap:hybris:5.2.0.13:*:*:*:*:*:*:* (and previous)\n     *cpe:2.3:a:sap:hybris:5.3.0.9:*:*:*:*:*:*:* (and previous)\n     *cpe:2.3:a:sap:hybris:5.5.0.8:*:*:*:*:*:*:* (and previous)\n     *cpe:2.3:a:sap:hybris:5.5.1.9:*:*:*:*:*:*:* (and previous)\n     *cpe:2.3:a:sap:hybris:5.6.0.7:*:*:*:*:*:",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:sap:hybri",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:sap:hybris:5.0.4.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:sap:hybris:5.1.0.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:sap:hybris:5.1.1.11:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:sap:hybris:5.2.0.13:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:sap:hybris:5.3.0.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:sap:hybris:5.5.0.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:sap:hybris:5.5.1.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:sap:hybris:5.6.0.7:*:*:*:*:*:"
+        ],
+        "published_date": "12/31/2016",
+        "modified_date": "08/27/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-6859",
+        "cwe_id": "CWE-200",
+        "description": "Hybris Management Console (HMC) in SAP Hybris before 6.0 allows remote attackers to obtain sensitive information by triggering an error and then reading a Java stack trace.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93959",
+            "https://www.compass-security.com/fileadmin/Datein/Research/Advisories/CVE-2016-6859_SAP-Hybris_InformationDisclosure.txt"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/31/2016",
+        "modified_date": "01/04/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9941",
+        "cwe_id": "CWE-119",
+        "description": "Heap-based buffer overflow in rfbproto.c in LibVNCClient in LibVNCServer before 0.9.11 allows remote servers to cause a denial of service (application crash) or possibly execute arbitrary code via a crafted FramebufferUpdate message containing a subrectangle outside of the client drawing area.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.debian.org/security/2017/dsa-3753",
+            "http://www.securityfocus.com/bid/95170",
+            "https://github.com/LibVNC/libvncserver/pull/137",
+            "https://github.com/LibVNC/libvncserver/releases/tag/LibVNCServer-0.9.11",
+            "https://lists.debian.org/debian-lts-announce/2019/10/msg00042.html",
+            "https://security.gentoo.org/glsa/201702-24",
+            "https://usn.ubuntu.com/4587-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libvncserver_project:libvncserver:0.9.10:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:libvncserver_project:libvncserver:0.9.10:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/31/2016",
+        "modified_date": "10/23/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-9942",
+        "cwe_id": "CWE-119",
+        "description": "Heap-based buffer overflow in ultra.c in LibVNCClient in LibVNCServer before 0.9.11 allows remote servers to cause a denial of service (application crash) or possibly execute arbitrary code via a crafted FramebufferUpdate message with the Ultra type tile, such that the LZO payload decompressed length exceeds what is specified by the tile dimensions.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.debian.org/security/2017/dsa-3753",
+            "http://www.securityfocus.com/bid/95170",
+            "https://github.com/LibVNC/libvncserver/pull/137",
+            "https://github.com/LibVNC/libvncserver/releases/tag/LibVNCServer-0.9.11",
+            "https://lists.debian.org/debian-lts-announce/2019/10/msg00042.html",
+            "https://security.gentoo.org/glsa/201702-24",
+            "https://usn.ubuntu.com/4587-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libvncserver_project:libvncserver:0.9.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:libvncserver_project:libvncserver:0.9.10:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/31/2016",
+        "modified_date": "10/23/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2016",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-2598",
+        "cwe_id": "CWE-352",
+        "description": "Cross-site request forgery (CSRF) vulnerability in the Quick Page/Post Redirect plugin before 5.0.5 for WordPress allows remote attackers to hijack the authentication of administrators for requests that conduct cross-site scripting (XSS) attacks via the quickppr_redirects[request][] parameter in the redirect-updates page to wp-admin/admin.php.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-2598"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/126127",
+            "http://seclists.org/fulldisclosure/2014/Apr/171",
+            "http://www.exploit-db.com/exploits/32867",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/92528",
+            "https://security.dxw.com/advisories/csrf-and-stored-xss-in-quick-pagepost-redirect-plugin/",
+            "https://wordpress.org/plugins/quick-pagepost-redirect-plugin/changelog/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:quick_page\\/post_redirect_project:quick_page\\/post_redirect:5.0.4:*:*:*:*:wordpress:*:*"
+        ],
+        "published_date": "01/05/2015",
+        "modified_date": "08/28/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2015",
+        "month": "1"
+    },
+    {
+        "cve_id": "CVE-2014-4279",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in the PeopleSoft Enterprise PeopleTools component in Oracle PeopleSoft Products 8.53 allows remote authenticated users to affect integrity via vectors related to PIA Core Technology.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-4279"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/topics/security/cpujan2015-1972971.html",
+            "http://www.securitytracker.com/id/1031577"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:peoplesoft_products:8.53:*:*:*:*:*:*:*"
+        ],
+        "published_date": "01/21/2015",
+        "modified_date": "06/24/2016",
+        "vulnerability_source": "Oracle",
+        "year": "2015",
+        "month": "1"
+    },
+    {
+        "cve_id": "CVE-2014-4259",
+        "cwe_id": null,
+        "description": "Unspecified vulnerability in the Solaris Cluster component in Oracle Sun Systems Products Suite 3.3 and 4.1 allows remote authenticated users to affect confidentiality, integrity, and availability via unknown vectors related to System management.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-4259"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.oracle.com/technetwork/topics/security/cpujan2015-1972971.html",
+            "http://www.securitytracker.com/id/1031583"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:oracle:oracle_and_sun_systems_product_suite:3.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:oracle:oracle_and_sun_systems_product_suite:4.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "01/21/2015",
+        "modified_date": "12/06/2016",
+        "vulnerability_source": "Oracle",
+        "year": "2015",
+        "month": "1"
+    },
+    {
+        "cve_id": "CVE-2014-2355",
+        "cwe_id": "CWE-119",
+        "description": "The (1) CimView and (2) CimEdit components in GE Proficy HMI/SCADA-CIMPLICITY 8.2 and earlier allow remote attackers to gain privileges via a crafted CIMPLICITY screen (aka .CIM) file.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-2355"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.9 MEDIUM",
+        "hyperlinks": [
+            "https://ics-cert.us-cert.gov/advisories/ICSA-14-289-02"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ge:intelligent_platforms_proficy_hmi\\/scada_cimplicity:8.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "01/16/2015",
+        "modified_date": "01/21/2015",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2015",
+        "month": "1"
+    },
+    {
+        "cve_id": "CVE-2015-0552",
+        "cwe_id": "CWE-22",
+        "description": "Directory traversal vulnerability in the gcab_folder_extract function in libgcab/gcab-folder.c in gcab 0.4 allows remote attackers to write to arbitrary files via crafted path in a CAB file, as demonstrated by \"\\tmp\\moo.\"",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2015-0552"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.4 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-updates/2015-01/msg00018.html",
+            "http://www.openwall.com/lists/oss-security/2015/01/05/7",
+            "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=774580",
+            "https://bugzilla.gnome.org/show_bug.cgi?id=742331"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:novell:opensuse:13.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:novell:opensuse:13.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:novell:opensuse:13.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:opensuse:13.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:novell:opensuse:13.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:opensuse:13.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:novell:opensuse:13.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:novell:opensuse:13.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:novell:opensuse:13.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:novell:opensuse:13.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:novell:opensuse:13.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:novell:opensuse:13.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "01/15/2015",
+        "modified_date": "10/30/2018",
+        "vulnerability_source": "Debian GNU/Linux",
+        "year": "2015",
+        "month": "1"
+    },
+    {
+        "cve_id": "CVE-2014-6197",
+        "cwe_id": "CWE-20",
+        "description": "IBM Security Network Protection 5.1.x and 5.2.x before 5.2.0.0 FP5 and 5.3.x before 5.3.0.0 FP1 allows remote attackers to conduct clickjacking attacks via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6197"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21693542",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/98609"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:ibm:security_network_protection_xgs_firmware:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:ibm:security_network_protection_xgs_firmware:5.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:ibm:security_network_protection_xgs_firmware:5.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:ibm:security_network_protection_xgs_firmware:5.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:ibm:security_network_protection_xgs_firmware:5.1.2.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "01/17/2015",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2015",
+        "month": "1"
+    },
+    {
+        "cve_id": "CVE-2014-6199",
+        "cwe_id": "CWE-399",
+        "description": "The HTTP Server Adapter in IBM Sterling B2B Integrator 5.1 and 5.2.x and Sterling File Gateway 2.1 and 2.2 allows remote attackers to cause a denial of service (connection-slot exhaustion) via a crafted HTTP request.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6199"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IT05121",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21693131",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/98650"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:sterling_b2b_integrator:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:sterling_b2b_integrator:5.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:sterling_b2b_integrator:5.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:sterling_b2b_integrator:5.2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:sterling_b2b_integrator:5.2.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:sterling_b2b_integrator:5.2.4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:sterling_b2b_integrator:5.2.4.2:*:*:*:*"
+        ],
+        "published_date": "01/09/2015",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2015",
+        "month": "1"
+    },
+    {
+        "cve_id": "CVE-2013-2603",
+        "cwe_id": null,
+        "description": "The RACInstaller.StateCtrl.1 ActiveX control in InstallerDlg.dll in RealNetworks GameHouse RealArcade Installer 2.6.0.481 performs unexpected type conversions for invalid parameter types, which allows remote attackers to execute arbitrary code or cause a denial of service (use-after-free) via crafted arguments to the (1) AddTag, (2) Ping, (3) QueuePause, (4) QueueRemove, (5) QueueTop, (6) RemoveTag, (7) TagRemoved, or (8) message method.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2013-2603"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.riskbasedsecurity.com/reports/RBS-GameHouseAnalysis-Sept2013.pdf",
+            "https://www.riskbasedsecurity.com/research/RBS-2013-006.pdf"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:realnetworks:realarcade_installer:2.6.0.481:*:*:*:*:*:*:*"
+        ],
+        "published_date": "01/12/2015",
+        "modified_date": "01/13/2015",
+        "vulnerability_source": "MITRE",
+        "year": "2015",
+        "month": "1"
+    },
+    {
+        "cve_id": "CVE-2013-2604",
+        "cwe_id": "CWE-264",
+        "description": "RealNetworks GameHouse RealArcade Installer (aka ActiveMARK Game Installer) 2.6.0.481 and 3.0.7 uses weak permissions (Create Files/Write Data) for the GameHouse Games directory tree, which allows local users to gain privileges via a Trojan horse DLL in an individual game's directory, as demonstrated by DDRAW.DLL in the Zuma Deluxe directory.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2013-2604"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.riskbasedsecurity.com/reports/RBS-GameHouseAnalysis-Sept2013.pdf",
+            "https://www.riskbasedsecurity.com/research/RBS-2013-005.pdf"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:realnetworks:realarcade_installer:2.6.0.481:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:realnetworks:realarcade_installer:3.0.7:*:*:*:*:*:*:*"
+        ],
+        "published_date": "01/12/2015",
+        "modified_date": "01/13/2015",
+        "vulnerability_source": "MITRE",
+        "year": "2015",
+        "month": "1"
+    },
+    {
+        "cve_id": "CVE-2014-8920",
+        "cwe_id": "CWE-119",
+        "description": "Buffer overflow in the Data Transfer Program in IBM i Access 5770-XE1 5R4, 6.1, and 7.1 on Windows allows local users to gain privileges via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-8920"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=nas8N1020518",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/99311"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:i_access:5r4:*:*:*:*:windows:*:*",
+            "*cpe:2.3:a:ibm:i_access:6.1:*:*:*:*:windows:*:*",
+            "*cpe:2.3:a:ibm:i_access:7.1:*:*:*:*:windows:*:*"
+        ],
+        "published_date": "01/28/2015",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2015",
+        "month": "1"
+    },
+    {
+        "cve_id": "CVE-2012-6684",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in the RedCloth library 4.2.9 for Ruby and earlier allows remote attackers to inject arbitrary web script or HTML via a javascript: URI.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2012-6684"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://co3k.org/blog/redcloth-unfixed-xss-en",
+            "http://jgarber.lighthouseapp.com/projects/13054-redcloth/tickets/243-xss",
+            "http://seclists.org/fulldisclosure/2014/Dec/50",
+            "http://www.debian.org/security/2015/dsa-3168",
+            "https://gist.github.com/co3k/75b3cb416c342aa1414c"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redcloth:redcloth_library:4.2.9:*:*:*:*:ruby:*:*",
+            "*cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redcloth:redcloth_library:4.2.9:*:*:*:*:ruby:*:*"
+        ],
+        "published_date": "01/07/2015",
+        "modified_date": "09/02/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2015",
+        "month": "1"
+    },
+    {
+        "cve_id": "CVE-2014-6268",
+        "cwe_id": "CWE-399",
+        "description": "The evtchn_fifo_set_pending function in Xen 4.4.x allows local guest users to cause a denial of service (host crash) via vectors involving an uninitialized FIFO-based event channel control block when (1) binding or (2) moving an event to a different VCPU.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6268"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/69753",
+            "http://www.securitytracker.com/id/1030829",
+            "http://xenbits.xen.org/xsa/advisory-107.html",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/95837"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:xen:xen:4.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.4.0:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:a:xen:xen:4.4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.4.0:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:a:xen:xen:4.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.4.0:rc1:*:*:*:*:*:*",
+            "*cpe:2.3:a:xen:xen:4.4.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "01/12/2015",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2015",
+        "month": "1"
+    }
+]

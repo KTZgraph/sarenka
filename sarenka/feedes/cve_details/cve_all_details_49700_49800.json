@@ -1,0 +1,3198 @@
+[
+    {
+        "cve_id": "CVE-2018-0498",
+        "cwe_id": null,
+        "description": "ARM mbed TLS before 2.12.0, before 2.7.5, and before 2.1.14 allows local users to achieve partial plaintext recovery (for a CBC based ciphersuite) via a cache-based side-channel attack.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.7 MEDIUM",
+        "base_score_v2": "1.9 LOW",
+        "hyperlinks": [
+            "https://lists.debian.org/debian-lts-announce/2018/09/msg00029.html",
+            "https://tls.mbed.org/tech-updates/security-advisories/mbedtls-security-advisory-2018-02",
+            "https://usn.ubuntu.com/4267-1/",
+            "https://www.debian.org/security/2018/dsa-4296"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:arm:mbed_tls:*:*:*:*:*:*:*:* versions up to (excluding) 2.1.14\n     *cpe:2.3:a:arm:mbed_tls:*:*:*:*:*:*:*:* versions from (including) 2.2.0 up to (excluding) 2.7.5\n     *cpe:2.3:a:arm:mbed_tls:*:*:*:*:*:*:*:* versions from (including) 2.8.0 up to (excluding) 2.12.0",
+            "*cpe:2.3:a:arm:mbed_tls:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:arm:mbed_tls:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:arm:mbed_tls:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/28/2018",
+        "modified_date": "02/10/2020",
+        "vulnerability_source": "Debian GNU/Linux",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14678",
+        "cwe_id": "CWE-665",
+        "description": "An issue was discovered in the Linux kernel through 4.17.11, as used in Xen through 4.11.x. The xen_failsafe_callback entry point in arch/x86/entry/entry_64.S does not properly maintain RBX, which allows local users to cause a denial of service (uninitialized memory usage and system crash). Within Xen, 64-bit x86 PV Linux guest OS users can trigger a guest OS crash or possibly gain privileges.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/104924",
+            "http://www.securitytracker.com/id/1041397",
+            "https://lists.debian.org/debian-lts-announce/2018/10/msg00003.html",
+            "https://usn.ubuntu.com/3931-1/",
+            "https://usn.ubuntu.com/3931-2/",
+            "https://www.debian.org/security/2018/dsa-4308",
+            "https://xenbits.xen.org/xsa/advisory-274.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:* versions up to (including) 4.17.11",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:xen:xen:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/28/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14679",
+        "cwe_id": "CWE-193",
+        "description": "An issue was discovered in mspack/chmd.c in libmspack before 0.7alpha. There is an off-by-one error in the CHM PMGI/PMGL chunk number validity checks, which could lead to denial of service (uninitialized data dereference and application crash).",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2018/07/26/1",
+            "http://www.securitytracker.com/id/1041410",
+            "https://access.redhat.com/errata/RHSA-2018:3327",
+            "https://access.redhat.com/errata/RHSA-2018:3505",
+            "https://bugs.debian.org/904802",
+            "https://github.com/kyz/libmspack/commit/72e70a921f0f07fee748aec2274b30784e1d312a",
+            "https://lists.debian.org/debian-lts-announce/2018/08/msg00007.html",
+            "https://security.gentoo.org/glsa/201903-20",
+            "https://usn.ubuntu.com/3728-1/",
+            "https://usn.ubuntu.com/3728-2/",
+            "https://usn.ubuntu.com/3728-3/",
+            "https://usn.ubuntu.com/3789-2/",
+            "https://www.debian.org/security/2018/dsa-4260"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:ansible_tower:3.3:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:libmspack_project:libmspack:0.6:alpha:*:*:*:*:*:*\n     *cpe:2.3:a:libmspack_project:libmspack:*:*:*:*:*:*:*:* versions up to (including) 1.5",
+            "*cpe:2.3:a:libmspack_project:libmspack:0.6:alpha:*:*:*:*:*:*\n     *cpe:2.3:a:libmspack_project:libmspack:*:*:*:*:*:*:*:* versions up to (including) 1.5",
+            "*cpe:2.3:a:redhat:ansible_tower:3.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*",
+            "*cpe:2.3:a:libmspack_project:libmspack:0.6:alpha:*:*:*:*:*:*",
+            "*cpe:2.3:a:libmspack_project:libmspack:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:cabextract:cabextract:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:cabextract:libmspack:0.0.20060920:alpha:*:*:*:*:*:*",
+            "*cpe:2.3:a:cabextract:libmspack:0.3:alpha:*:*:*:*:*:*",
+            "*cpe:2.3:a:cabextract:libmspack:0.4:alpha:*:*:*:*:*:*",
+            "*cpe:2.3:a:cabextract:libmspack:0.5:alpha:*:*:*:*:*:*",
+            "*cpe:2.3:a:cabextract:libmspack:0.6:alpha:*:*:*:*:*:*",
+            "*cpe:2.3:a:libmspack_project:libmspack:0.6:alpha:*:*:*:*:*:*",
+            "*cpe:2.3:a:libmspack_project:libmspack:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/28/2018",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14680",
+        "cwe_id": "CWE-20",
+        "description": "An issue was discovered in mspack/chmd.c in libmspack before 0.7alpha. It does not reject blank CHM filenames.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2018/07/26/1",
+            "http://www.securitytracker.com/id/1041410",
+            "https://access.redhat.com/errata/RHSA-2018:3327",
+            "https://access.redhat.com/errata/RHSA-2018:3505",
+            "https://bugs.debian.org/904801",
+            "https://github.com/kyz/libmspack/commit/72e70a921f0f07fee748aec2274b30784e1d312a",
+            "https://lists.debian.org/debian-lts-announce/2018/08/msg00007.html",
+            "https://security.gentoo.org/glsa/201903-20",
+            "https://usn.ubuntu.com/3728-1/",
+            "https://usn.ubuntu.com/3728-2/",
+            "https://usn.ubuntu.com/3728-3/",
+            "https://usn.ubuntu.com/3789-2/",
+            "https://www.debian.org/security/2018/dsa-4260"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:ansible_tower:3.3:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:libmspack_project:libmspack:0.6:alpha:*:*:*:*:*:*\n     *cpe:2.3:a:libmspack_project:libmspack:*:*:*:*:*:*:*:* versions up to (including) 1.5",
+            "*cpe:2.3:a:libmspack_project:libmspack:0.6:alpha:*:*:*:*:*:*\n     *cpe:2.3:a:libmspack_project:libmspack:*:*:*:*:*:*:*:* versions up to (including) 1.5",
+            "*cpe:2.3:a:redhat:ansible_tower:3.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:libmspack_project:libmspack:0.6:alpha:*:*:*:*:*:*",
+            "*cpe:2.3:a:libmspack_project:libmspack:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:cabextract:cabextract:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:cabextract:libmspack:0.0.20060920:alpha:*:*:*:*:*:*",
+            "*cpe:2.3:a:cabextract:libmspack:0.3:alpha:*:*:*:*:*:*",
+            "*cpe:2.3:a:cabextract:libmspack:0.4:alpha:*:*:*:*:*:*",
+            "*cpe:2.3:a:cabextract:libmspack:0.5:alpha:*:*:*:*:*:*",
+            "*cpe:2.3:a:cabextract:libmspack:0.6:alpha:*:*:*:*:*:*",
+            "*cpe:2.3:a:libmspack_project:libmspack:0.6:alpha:*:*:*:*:*:*",
+            "*cpe:2.3:a:libmspack_project:libmspack:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/28/2018",
+        "modified_date": "03/28/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14681",
+        "cwe_id": "CWE-787",
+        "description": "An issue was discovered in kwajd_read_headers in mspack/kwajd.c in libmspack before 0.7alpha. Bad KWAJ file header extensions could cause a one or two byte overwrite.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2018/07/26/1",
+            "http://www.securitytracker.com/id/1041410",
+            "https://access.redhat.com/errata/RHSA-2018:3327",
+            "https://access.redhat.com/errata/RHSA-2018:3505",
+            "https://bugs.debian.org/904799",
+            "https://github.com/kyz/libmspack/commit/0b0ef9344255ff5acfac6b7af09198ac9c9756c8",
+            "https://lists.debian.org/debian-lts-announce/2018/08/msg00007.html",
+            "https://security.gentoo.org/glsa/201903-20",
+            "https://usn.ubuntu.com/3728-1/",
+            "https://usn.ubuntu.com/3728-2/",
+            "https://usn.ubuntu.com/3728-3/",
+            "https://usn.ubuntu.com/3789-2/",
+            "https://www.debian.org/security/2018/dsa-4260"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:ansible_tower:3.3:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cabextract:cabextract:*:*:*:*:*:*:*:* versions up to (including) 1.5\n     *cpe:2.3:a:cabextract:libmspack:0.0.20060920:alpha:*:*:*:*:*:*\n     *cpe:2.3:a:cabextract:libmspack:0.3:alpha:*:*:*:*:*:*\n     *cpe:2.3:a:cabextract:libmspack:0.4:alpha:*:*:*:*:*:*\n     *cpe:2.3:a:cabextract:libmspack:0.5:alpha:*:*:*:*:*:*\n     *cpe:2.3:a:cabextract:libmspack:0.6:alpha:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:ansible_tower:3.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cabextract:cabextract:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:cabextract:libmspack:0.0.20060920:alpha:*:*:*:*:*:*",
+            "*cpe:2.3:a:cabextract:libmspack:0.3:alpha:*:*:*:*:*:*",
+            "*cpe:2.3:a:cabextract:libmspack:0.4:alpha:*:*:*:*:*:*",
+            "*cpe:2.3:a:cabextract:libmspack:0.5:alpha:*:*:*:*:*:*",
+            "*cpe:2.3:a:cabextract:libmspack:0.6:alpha:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/28/2018",
+        "modified_date": "03/28/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14682",
+        "cwe_id": "CWE-193",
+        "description": "An issue was discovered in mspack/chmd.c in libmspack before 0.7alpha. There is an off-by-one error in the TOLOWER() macro for CHM decompression.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2018/07/26/1",
+            "http://www.securitytracker.com/id/1041410",
+            "https://access.redhat.com/errata/RHSA-2018:3327",
+            "https://access.redhat.com/errata/RHSA-2018:3505",
+            "https://bugs.debian.org/904800",
+            "https://github.com/kyz/libmspack/commit/4fd9ccaa54e1aebde1e4b95fb0163b699fd7bcc8",
+            "https://lists.debian.org/debian-lts-announce/2018/08/msg00007.html",
+            "https://security.gentoo.org/glsa/201903-20",
+            "https://usn.ubuntu.com/3728-1/",
+            "https://usn.ubuntu.com/3728-2/",
+            "https://usn.ubuntu.com/3728-3/",
+            "https://usn.ubuntu.com/3789-2/",
+            "https://www.debian.org/security/2018/dsa-4260"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:ansible_tower:3.3:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cabextract:cabextract:*:*:*:*:*:*:*:* versions up to (including) 1.5\n     *cpe:2.3:a:cabextract:libmspack:0.0.20060920:alpha:*:*:*:*:*:*\n     *cpe:2.3:a:cabextract:libmspack:0.3:alpha:*:*:*:*:*:*\n     *cpe:2.3:a:cabextract:libmspack:0.4:alpha:*:*:*:*:*:*\n     *cpe:2.3:a:cabextract:libmspack:0.5:alpha:*:*:*:*:*:*\n     *cpe:2.3:a:cabextract:libmspack:0.6:alpha:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:ansible_tower:3.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cabextract:cabextract:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:cabextract:libmspack:0.0.20060920:alpha:*:*:*:*:*:*",
+            "*cpe:2.3:a:cabextract:libmspack:0.3:alpha:*:*:*:*:*:*",
+            "*cpe:2.3:a:cabextract:libmspack:0.4:alpha:*:*:*:*:*:*",
+            "*cpe:2.3:a:cabextract:libmspack:0.5:alpha:*:*:*:*:*:*",
+            "*cpe:2.3:a:cabextract:libmspack:0.6:alpha:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/28/2018",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14685",
+        "cwe_id": "CWE-200",
+        "description": "The add function in www/Lib/Lib/Action/Admin/TplAction.class.php in Gxlcms v1.1.4 allows remote attackers to read arbitrary files via a crafted index.php?s=Admin-Tpl-ADD-id request, related to Lib/Common/Admin/function.php.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/TonyKentClark/MyCodeAudit/blob/master/gxlcms1.1.4"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gxlcms:gxlcms:1.1.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:gxlcms:gxlcms:1.1.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/28/2018",
+        "modified_date": "09/28/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14686",
+        "cwe_id": "CWE-79",
+        "description": "system/edit_book.php in XYCMS 1.7 has stored XSS via a crafted add_do.php request, related to add_book.php.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/TonyKentClark/MyCodeAudit/blob/master/xycms%20%20v1.7"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:xycms_project:xycms:1.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:xycms_project:xycms:1.7:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/28/2018",
+        "modified_date": "09/28/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14734",
+        "cwe_id": "CWE-416",
+        "description": "drivers/infiniband/core/ucma.c in the Linux kernel through 4.17.11 allows ucma_leave_multicast to access a certain data structure after a cleanup step in ucma_process_join, which allows attackers to cause a denial of service (use-after-free).",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.1 MEDIUM",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=cb2595c1393b4a5211534e6f0a0fbad369e21ad8",
+            "https://access.redhat.com/errata/RHSA-2019:0831",
+            "https://access.redhat.com/errata/RHSA-2019:2029",
+            "https://access.redhat.com/errata/RHSA-2019:2043",
+            "https://github.com/torvalds/linux/commit/cb2595c1393b4a5211534e6f0a0fbad369e21ad8",
+            "https://lists.debian.org/debian-lts-announce/2018/10/msg00003.html",
+            "https://usn.ubuntu.com/3797-1/",
+            "https://usn.ubuntu.com/3797-2/",
+            "https://usn.ubuntu.com/3847-1/",
+            "https://usn.ubuntu.com/3847-2/",
+            "https://usn.ubuntu.com/3847-3/",
+            "https://usn.ubuntu.com/3849-1/",
+            "https://usn.ubuntu.com/3849-2/",
+            "https://www.debian.org/security/2018/dsa-4308"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:* versions up to (including) 4.17.11",
+            "*cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "07/29/2018",
+        "modified_date": "04/23/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14736",
+        "cwe_id": "CWE-125",
+        "description": "An issue was discovered in libpbc.a in cloudwu PBC through 2017-03-02. A buffer over-read can occur in pbc_wmessage_string in wmessage.c for PTYPE_ENUM.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/cloudwu/pbc/issues/123#issue-343906084"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:pbc_project:pbc:*:*:*:*:*:*:*:* versions up to (including) 2017-03-02",
+            "*cpe:2.3:a:pbc_project:pbc:*:*:*:*:*:*:*:*",
+            "(including)",
+            "2017-03-02"
+        ],
+        "published_date": "07/29/2018",
+        "modified_date": "09/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14737",
+        "cwe_id": "CWE-476",
+        "description": "An issue was discovered in libpbc.a in cloudwu PBC through 2017-03-02. A NULL pointer dereference can occur in pbc_wmessage_string in wmessage.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/cloudwu/pbc/issues/122#issuecomment-407303005"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:pbc_project:pbc:*:*:*:*:*:*:*:* versions up to (including) 2017-03-02",
+            "*cpe:2.3:a:pbc_project:pbc:*:*:*:*:*:*:*:*",
+            "(including)",
+            "2017-03-02"
+        ],
+        "published_date": "07/29/2018",
+        "modified_date": "09/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14738",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in libpbc.a in cloudwu PBC through 2017-03-02. A SEGV can occur in pbc_rmessage_message in rmessage.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/cloudwu/pbc/issues/122#issuecomment-407309546"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:pbc_project:pbc:*:*:*:*:*:*:*:* versions up to (including) 2017-03-02",
+            "*cpe:2.3:a:pbc_project:pbc:*:*:*:*:*:*:*:*",
+            "(including)",
+            "2017-03-02"
+        ],
+        "published_date": "07/29/2018",
+        "modified_date": "09/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14739",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in libpbc.a in cloudwu PBC through 2017-03-02. A SEGV can occur in pbc_pattern_set_default in pattern.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/cloudwu/pbc/issues/122#issuecomment-407323971"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:pbc_project:pbc:*:*:*:*:*:*:*:* versions up to (including) 2017-03-02",
+            "*cpe:2.3:a:pbc_project:pbc:*:*:*:*:*:*:*:*",
+            "(including)",
+            "2017-03-02"
+        ],
+        "published_date": "07/29/2018",
+        "modified_date": "09/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14740",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in libpbc.a in cloudwu PBC through 2017-03-02. A SEGV can occur in set_field_one in bootstrap.c while making a query.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/cloudwu/pbc/issues/122#issuecomment-407363750"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:pbc_project:pbc:*:*:*:*:*:*:*:* versions up to (including) 2017-03-02",
+            "*cpe:2.3:a:pbc_project:pbc:*:*:*:*:*:*:*:*",
+            "(including)",
+            "2017-03-02"
+        ],
+        "published_date": "07/29/2018",
+        "modified_date": "09/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14741",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in libpbc.a in cloudwu PBC through 2017-03-02. A SEGV can occur in pbc_pattern_pack in pattern.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/cloudwu/pbc/issues/122#issuecomment-407367289"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:pbc_project:pbc:*:*:*:*:*:*:*:* versions up to (including) 2017-03-02",
+            "*cpe:2.3:a:pbc_project:pbc:*:*:*:*:*:*:*:*",
+            "(including)",
+            "2017-03-02"
+        ],
+        "published_date": "07/29/2018",
+        "modified_date": "09/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14742",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in libpbc.a in cloudwu PBC through 2017-03-02. A SEGV can occur in set_field_one in bootstrap.c during a memcpy.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/cloudwu/pbc/issues/122#issuecomment-407368019"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:pbc_project:pbc:*:*:*:*:*:*:*:* versions up to (including) 2017-03-02",
+            "*cpe:2.3:a:pbc_project:pbc:*:*:*:*:*:*:*:*",
+            "(including)",
+            "2017-03-02"
+        ],
+        "published_date": "07/29/2018",
+        "modified_date": "09/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14743",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in libpbc.a in cloudwu PBC through 2017-03-02. A SEGV can occur in wiretype_decode in context.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/cloudwu/pbc/issues/122#issuecomment-407367002"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:pbc_project:pbc:*:*:*:*:*:*:*:* versions up to (including) 2017-03-02",
+            "*cpe:2.3:a:pbc_project:pbc:*:*:*:*:*:*:*:*",
+            "(including)",
+            "2017-03-02"
+        ],
+        "published_date": "07/29/2018",
+        "modified_date": "09/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14744",
+        "cwe_id": "CWE-416",
+        "description": "An issue was discovered in libpbc.a in cloudwu PBC through 2017-03-02. A use-after-free can occur in _pbcM_sp_query in map.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/cloudwu/pbc/issues/125#issue-343980779"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:pbc_project:pbc:*:*:*:*:*:*:*:* versions up to (including) 2017-03-02",
+            "*cpe:2.3:a:pbc_project:pbc:*:*:*:*:*:*:*:*",
+            "(including)",
+            "2017-03-02"
+        ],
+        "published_date": "07/29/2018",
+        "modified_date": "09/26/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2016-9597",
+        "cwe_id": "CWE-119",
+        "description": "It was found that Red Hat JBoss Core Services erratum RHSA-2016:2957 for CVE-2016-3705 did not actually include the fix for the issue found in libxml2, making it vulnerable to a Denial of Service attack due to a Stack Overflow. This is a regression CVE for the same issue as CVE-2016-3705.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/98567",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-9597"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:novell:leap:42.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:icewall_federation_agent:3.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:hp:icewall_file_manager:3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:novell:leap:42.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:leap:42.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:icewall_federation_agent:3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:icewall_file_manager:3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:xmlsoft:libxml2:2.9.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:15.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:novell:leap:42.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/30/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-7482",
+        "cwe_id": "CWE-190",
+        "description": "In the Linux kernel before version 4.12, Kerberos 5 tickets decoded when using the RXRPC keys incorrectly assumes the size of a field. This could lead to the size-remaining variable wrapping and the data pointer going over the end of the buffer. This could possibly lead to memory corruption and possible privilege escalation.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://seclists.org/oss-sec/2017/q2/602",
+            "http://www.securityfocus.com/bid/99299",
+            "http://www.securitytracker.com/id/1038787",
+            "https://access.redhat.com/errata/RHSA-2019:0641",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-7482",
+            "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=5f2f97656ada8d811d3c1bef503ced266fcd53a0",
+            "https://www.debian.org/security/2017/dsa-3927",
+            "https://www.debian.org/security/2017/dsa-3945"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:enterprise_mrg:2.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:enterprise_mrg:2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/30/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-13280",
+        "cwe_id": "CWE-330",
+        "description": "Use of insufficiently random values vulnerability in SYNO.Encryption.GenRandomKey in Synology DiskStation Manager (DSM) before 6.2-23739 allows man-in-the-middle attackers to compromise non-HTTPS sessions via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://www.synology.com/en-global/support/security/Synology_SA_18_39"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:synology:diskstation_manager:*:*:*:*:*:*:*:* versions up to (excluding) 6.2-23739",
+            "*cpe:2.3:a:synology:diskstation_manager:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/30/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Synology Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-7514",
+        "cwe_id": "CWE-79",
+        "description": "A cross-site scripting (XSS) flaw was found in how the failed action entry is processed in Red Hat Satellite before version 5.8.0. A user able to specify a failed action could exploit this flaw to perform XSS attacks against other Satellite users.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://access.redhat.com/errata/RHSA-2017:1558",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-7514"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:satellite:*:*:*:*:*:*:*:* versions up to (excluding) 5.8.0",
+            "*cpe:2.3:a:redhat:satellite:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/30/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-7518",
+        "cwe_id": "CWE-755",
+        "description": "A flaw was found in the Linux kernel before version 4.12 in the way the KVM module processed the trap flag(TF) bit in EFLAGS during emulation of the syscall instruction, which leads to a debug exception(#DB) being raised in the guest stack. A user/process inside a guest could use this flaw to potentially escalate their privileges inside the guest. Linux guests are not affected by this.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2017/06/23/5",
+            "http://www.securityfocus.com/bid/99263",
+            "http://www.securitytracker.com/id/1038782",
+            "https://access.redhat.com/articles/3290921",
+            "https://access.redhat.com/errata/RHSA-2018:0395",
+            "https://access.redhat.com/errata/RHSA-2018:0412",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-7518",
+            "https://usn.ubuntu.com/3619-1/",
+            "https://usn.ubuntu.com/3619-2/",
+            "https://usn.ubuntu.com/3754-1/",
+            "https://www.debian.org/security/2017/dsa-3981",
+            "https://www.spinics.net/lists/kvm/msg151817.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_eus:7.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_eus:7.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/30/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-10883",
+        "cwe_id": "CWE-787",
+        "description": "A flaw was found in the Linux kernel's ext4 filesystem. A local user can cause an out-of-bounds write in jbd2_journal_dirty_metadata(), a denial of service, and a system crash by mounting and operating on a crafted ext4 filesystem image.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "https://access.redhat.com/errata/RHSA-2018:2948",
+            "https://access.redhat.com/errata/RHSA-2018:3083",
+            "https://access.redhat.com/errata/RHSA-2018:3096",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-10883",
+            "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=8bc1379b82b8e809eef77a9fedbb75c6c297be19",
+            "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=e09463f220ca9a1a1ecfda84fcda658f99a1f12a",
+            "https://lists.debian.org/debian-lts-announce/2018/07/msg00020.html",
+            "https://support.f5.com/csp/article/K94735334?utm_source=f5support&amp;utm_medium=RSS",
+            "https://usn.ubuntu.com/3871-1/",
+            "https://usn.ubuntu.com/3871-3/",
+            "https://usn.ubuntu.com/3871-4/",
+            "https://usn.ubuntu.com/3871-5/",
+            "https://usn.ubuntu.com/3879-1/",
+            "https://usn.ubuntu.com/3879-2/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/30/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-10903",
+        "cwe_id": "CWE-20",
+        "description": "A flaw was found in python-cryptography versions between >=1.9.0 and <2.3. The finalize_with_tag API did not enforce a minimum tag length. If a user did not validate the input length prior to passing it to finalize_with_tag an attacker could craft an invalid payload with a shortened tag (e.g. 1 byte) such that they would have a 1 in 256 chance of passing the MAC check. GCM tag forgeries can cause key leakage.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-10903"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://access.redhat.com/errata/RHSA-2018:3600",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-10903",
+            "https://github.com/pyca/cryptography/pull/4342/commits/688e0f673bfbf43fa898994326c6877f00ab19ef",
+            "https://usn.ubuntu.com/3720-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:cryptography:python-cryptography:*:*:*:*:*:*:*:* versions from (including) 1.9.0 up to (excluding) 2.3",
+            "*cpe:2.3:a:cryptography:python-cryptography:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:redhat:openstack:13.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*"
+        ],
+        "published_date": "07/30/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-9064",
+        "cwe_id": null,
+        "description": "In Lenovo xClarity Administrator versions earlier than 2.1.0, an authenticated LXCA user may abuse a web API debug call to retrieve the credentials for the System Manager user.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://support.lenovo.com/us/en/solutions/LEN-22168"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:lenovo:xclarity_administrator:*:*:*:*:*:*:*:* versions up to (excluding) 2.1.0",
+            "*cpe:2.3:a:lenovo:xclarity_administrator:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/30/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Lenovo Group Ltd.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-9065",
+        "cwe_id": "CWE-312",
+        "description": "In Lenovo xClarity Administrator versions earlier than 2.1.0, an attacker that gains access to the underlying LXCA file system user may be able to retrieve a credential store containing the service processor user names and passwords for servers previously managed by that LXCA instance, and potentially decrypt those credentials more easily than intended.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://support.lenovo.com/us/en/solutions/LEN-22168"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:lenovo:xclarity_administrator:*:*:*:*:*:*:*:* versions up to (excluding) 2.1.0",
+            "*cpe:2.3:a:lenovo:xclarity_administrator:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/30/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Lenovo Group Ltd.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-9066",
+        "cwe_id": "CWE-20",
+        "description": "In Lenovo xClarity Administrator versions earlier than 2.1.0, an authenticated LXCA user can, under specific circumstances, inject additional parameters into a specific web API call which can result in privileged command execution within LXCA's underlying operating system.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "https://support.lenovo.com/us/en/solutions/LEN-22168"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:lenovo:xclarity_administrator:*:*:*:*:*:*:*:* versions up to (excluding) 2.1.0",
+            "*cpe:2.3:a:lenovo:xclarity_administrator:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/30/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Lenovo Group Ltd.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-10847",
+        "cwe_id": "CWE-287",
+        "description": "prosody before versions 0.10.2, 0.9.14 is vulnerable to an Authentication Bypass. Prosody did not verify that the virtual host associated with a user session remained the same across stream restarts. A user may authenticate to XMPP host A and migrate their authenticated session to XMPP host B of the same Prosody instance.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://blog.prosody.im/prosody-0-10-2-security-release/",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-10847",
+            "https://issues.prosody.im/1147",
+            "https://prosody.im/security/advisory_20180531/",
+            "https://www.debian.org/security/2018/dsa-4216"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:prosody:prosody:*:*:*:*:*:*:*:* versions up to (excluding) 0.9.14\n     *cpe:2.3:a:prosody:prosody:0.10.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:prosody:prosody:0.10.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:prosody:prosody:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:prosody:prosody:0.10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:prosody:prosody:0.10.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/30/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-10898",
+        "cwe_id": "CWE-798",
+        "description": "A vulnerability was found in openstack-tripleo-heat-templates before version 8.0.2-40. When deployed using Director using default configuration, Opendaylight in RHOSP13 is configured with easily guessable default credentials.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-10898"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "https://access.redhat.com/errata/RHSA-2018:2214",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-10898"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:openstack:tripleo_heat_templates:*:*:*:*:*:*:*:* versions up to (excluding) 8.0.2-40",
+            "*cpe:2.3:a:openstack:tripleo_heat_templates:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:redhat:openstack:13.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/30/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-3772",
+        "cwe_id": "CWE-20",
+        "description": "Concatenating unsanitized user input in the `whereis` npm module < 0.4.1 allowed an attacker to execute arbitrary commands. The `whereis` module is deprecated and it is recommended to use the `which` npm module instead.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://hackerone.com/reports/319476"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:whereis_project:whereis:*:*:*:*:*:node.js:*:* versions up to (excluding) 0.4.1",
+            "*cpe:2.3:a:whereis_project:whereis:*:*:*:*:*:node.js:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/30/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-3773",
+        "cwe_id": "CWE-79",
+        "description": "There is a stored Cross-Site Scripting vulnerability in Open Graph meta properties read by the `metascrape` npm module <= 3.9.2.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://hackerone.com/reports/309367"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:metascraper_project:metascraper:*:*:*:*:*:node.js:*:* versions up to (including) 3.9.2",
+            "*cpe:2.3:a:metascraper_project:metascraper:*:*:*:*:*:node.js:*:*",
+            "(including)"
+        ],
+        "published_date": "07/30/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HackerOne",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14767",
+        "cwe_id": "CWE-20",
+        "description": "In Kamailio before 5.0.7 and 5.1.x before 5.1.4, a crafted SIP message with a double \"To\" header and an empty \"To\" tag causes a segmentation fault and crash. The reason is missing input validation in the \"build_res_buf_from_sip_req\" core function. This could result in denial of service and potentially the execution of arbitrary code.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://lists.debian.org/debian-lts-announce/2018/08/msg00018.html",
+            "https://skalatan.de/blog/advisory-hw-2018-05",
+            "https://www.debian.org/security/2018/dsa-4267"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:kamailio:kamailio:*:*:*:*:*:*:*:* versions up to (excluding) 5.0.7\n     *cpe:2.3:a:kamailio:kamailio:*:*:*:*:*:*:*:* versions from (including) 5.1.0 up to (excluding) 5.1.4",
+            "*cpe:2.3:a:kamailio:kamailio:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:kamailio:kamailio:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/04/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-1638",
+        "cwe_id": "CWE-287",
+        "description": "IBM API Connect 5.0.0.0-5.0.8.3 Developer Portal does not enforce Two Factor Authentication (TFA) while resetting a user password but enforces it for all other login scenarios. IBM X-Force ID: 144483.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/144483",
+            "https://www.ibm.com/support/docview.wss?uid=ibm10718415"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:api_connect:*:*:*:*:*:*:*:* versions from (including) 5.0.0.0 up to (including) 5.0.8.3",
+            "*cpe:2.3:a:ibm:api_connect:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-1718",
+        "cwe_id": "CWE-79",
+        "description": "IBM Sterling B2B Integrator Standard Edition 5.2.0.1 - 5.2.6.3 is vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 147166.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-1718"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/104938",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/147166",
+            "https://www.ibm.com/support/docview.wss?uid=ibm10718863"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:sterling_b2b_integrator:*:*:*:*:*:*:*:* versions from (including) 5.2.0.1 up to (including) 5.2.6.3",
+            "*cpe:2.3:a:ibm:sterling_b2b_integrator:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-8019",
+        "cwe_id": "CWE-295",
+        "description": "When using an OCSP responder Apache Tomcat Native 1.2.0 to 1.2.16 and 1.1.23 to 1.1.34 did not correctly handle invalid responses. This allowed for revoked client certificates to be incorrectly identified. It was therefore possible for users to authenticate with revoked certificates when using mutual TLS. Users not using OCSP checks are not affected by this vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "7.4 HIGH",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://mail-archives.apache.org/mod_mbox/www-announce/201807.mbox/%3C20180721095943.GA24320%40minotaur.apache.org%3E",
+            "http://www.securityfocus.com/bid/104936",
+            "http://www.securitytracker.com/id/1041507",
+            "https://access.redhat.com/errata/RHSA-2018:2469",
+            "https://access.redhat.com/errata/RHSA-2018:2470",
+            "https://lists.apache.org/thread.html/ba661b0edd913b39ff129a32d855620dd861883ade05fd88a8ce517d@%3Cdev.tomcat.apache.org%3E",
+            "https://lists.apache.org/thread.html/f8e0814e11c7f21f42224b6de111cb3f5e5ab5c15b78924c516d4ec2@%3Cdev.tomcat.apache.org%3E",
+            "https://lists.apache.org/thread.html/re3b72cbb13e1dfe85c4a06959a3b6ca6d939b407ecca80db12b54220@%3Cdev.tomcat.apache.org%3E",
+            "https://lists.apache.org/thread.html/rf8e8c091182b45daa50d3557cad9b10bb4198e3f08cf8f1c66a1b08d@%3Cdev.tomcat.apache.org%3E",
+            "https://lists.debian.org/debian-lts-announce/2018/08/msg00023.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apache:tomcat_native:*:*:*:*:*:*:*:* versions from (including) 1.1.23 up to (including) 1.1.34\n     *cpe:2.3:a:apache:tomcat_native:*:*:*:*:*:*:*:* versions from (including) 1.2.0 up to (including) 1.2.16",
+            "*cpe:2.3:a:apache:tomcat_native:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:apache:tomcat_native:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "02/03/2020",
+        "vulnerability_source": "Apache Software Foundation",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-8020",
+        "cwe_id": "CWE-295",
+        "description": "Apache Tomcat Native 1.2.0 to 1.2.16 and 1.1.23 to 1.1.34 has a flaw that does not properly check OCSP pre-produced responses, which are lists (multiple entries) of certificate statuses. Subsequently, revoked client certificates may not be properly identified, allowing for users to authenticate with revoked certificates to connections that require mutual TLS. Users not using OCSP checks are not affected by this vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "7.4 HIGH",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://mail-archives.us.apache.org/mod_mbox/www-announce/201807.mbox/%3C20180721101944.GA45239@minotaur.apache.org%3E",
+            "http://www.securityfocus.com/bid/104934",
+            "http://www.securitytracker.com/id/1041507",
+            "https://access.redhat.com/errata/RHSA-2018:2469",
+            "https://access.redhat.com/errata/RHSA-2018:2470",
+            "https://lists.apache.org/thread.html/ba661b0edd913b39ff129a32d855620dd861883ade05fd88a8ce517d@%3Cdev.tomcat.apache.org%3E",
+            "https://lists.apache.org/thread.html/f8e0814e11c7f21f42224b6de111cb3f5e5ab5c15b78924c516d4ec2@%3Cdev.tomcat.apache.org%3E",
+            "https://lists.apache.org/thread.html/re3b72cbb13e1dfe85c4a06959a3b6ca6d939b407ecca80db12b54220@%3Cdev.tomcat.apache.org%3E",
+            "https://lists.apache.org/thread.html/rf8e8c091182b45daa50d3557cad9b10bb4198e3f08cf8f1c66a1b08d@%3Cdev.tomcat.apache.org%3E",
+            "https://lists.debian.org/debian-lts-announce/2018/08/msg00023.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apache:tomcat_native:*:*:*:*:*:*:*:* versions from (including) 1.1.23 up to (including) 1.1.34\n     *cpe:2.3:a:apache:tomcat_native:*:*:*:*:*:*:*:* versions from (including) 1.2.0 up to (including) 1.2.16",
+            "*cpe:2.3:a:apache:tomcat_native:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:apache:tomcat_native:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "02/03/2020",
+        "vulnerability_source": "Apache Software Foundation",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-8027",
+        "cwe_id": "CWE-611",
+        "description": "Apache Camel 2.20.0 to 2.20.3 and 2.21.0 Core is vulnerable to XXE in XSD validation processor.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://camel.apache.org/security-advisories.data/CVE-2018-8027.txt.asc",
+            "http://www.securityfocus.com/bid/104933",
+            "https://lists.apache.org/thread.html/2318d7f7d87724d8716cd650c21b31cb06e4d34f6d0f5ee42f28fdaf@%3Ccommits.camel.apache.org%3E",
+            "https://lists.apache.org/thread.html/77f596fc63e63c2e9adcff3c34759b32c225cf0b582aedb755adaade@%3Cdev.camel.apache.org%3E",
+            "https://lists.apache.org/thread.html/b4014ea7c5830ca1fc28edd5cafedfe93ad4af2d9e69c961c5def31d@%3Ccommits.camel.apache.org%3E"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apache:camel:*:*:*:*:*:*:*:* versions from (including) 2.20.0 up to (including) 2.20.3\n     *cpe:2.3:a:apache:camel:2.21.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apache:camel:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:apache:camel:2.21.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "05/24/2019",
+        "vulnerability_source": "Apache Software Foundation",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-17174",
+        "cwe_id": "CWE-310",
+        "description": "Some Huawei products RSE6500 V500R002C00; SoftCo V200R003C20SPCb00; VP9660 V600R006C10; eSpace U1981 V100R001C20; V200R003C20; V200R003C30; V200R003C50 have a weak algorithm vulnerability. To exploit the vulnerability, a remote, unauthenticated attacker has to capture TLS traffic between clients and the affected products. The attacker may launch the Bleichenbacher attack on RSA key exchange to decrypt the session key and the previously captured sessions by some cryptanalytic operations. Successful exploit may cause information leak.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20180703-01-algorithm-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:espace_u1981:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:rse6500:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:softco:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:vp9660:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-17707",
+        "cwe_id": "CWE-862",
+        "description": "Due to missing authorization checks, any authenticated user is able to list, upload, or delete attachments to password safe entries in Pleasant Password Server before 7.8.3. To perform those actions on an entry, the user needs to know the corresponding \"CredentialId\" value, which uniquely identifies a password safe entry. Since \"CredentialId\" values are implemented as GUIDs, they are hard to guess. However, if for example an entry's owner grants read-only access to a malicious user, the value gets exposed to the malicious user. The same holds true for temporary grants.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://www.profundis-labs.com/advisories/CVE-2017-17707.txt"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:pleasantsolutions:pleasant_password_server:*:*:*:*:*:*:*:* versions up to (excluding) 7.8.3",
+            "*cpe:2.3:a:pleasantsolutions:pleasant_password_server:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-17708",
+        "cwe_id": "CWE-863",
+        "description": "Because of insufficient authorization checks it is possible for any authenticated user to change profile data of other users in Pleasant Password Server before 7.8.3.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://www.profundis-labs.com/advisories/CVE-2017-17708.txt"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:pleasantsolutions:pleasant_password_server:*:*:*:*:*:*:*:* versions up to (excluding) 7.8.3",
+            "*cpe:2.3:a:pleasantsolutions:pleasant_password_server:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-11338",
+        "cwe_id": "CWE-319",
+        "description": "Intuit Lacerte 2017 for Windows in a client/server environment transfers the entire customer list in cleartext over SMB, which allows attackers to (1) obtain sensitive information by sniffing the network or (2) conduct man-in-the-middle (MITM) attacks via unspecified vectors. The customer list contains each customer's full name, social security number (SSN), address, job title, phone number, Email address, spouse's phone/Email address, and other sensitive information. After the client software authenticates to the server database, the server sends the customer list. There is no need for further exploitation as all sensitive data is exposed. This vulnerability was validated on Intuit Lacerte 2017, however older versions of Lacerte may be vulnerable.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://corporateblue.com/your-taxes-are-being-leaked/",
+            "https://www.themikewylie.com/intuit-lacerte-vulnerability-and-data-exposure-cve-2018-11338-cve-2018-14833/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:intuit:lacerte:*:*:*:*:*:windows:*:* versions up to (including) 2017",
+            "*cpe:2.3:a:intuit:lacerte:*:*:*:*:*:windows:*:*",
+            "(including)"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-12939",
+        "cwe_id": "CWE-22",
+        "description": "A directory traversal flaw in SeedDMS (formerly LetoDMS and MyDMS) before 5.1.8 allows an authenticated attacker to write to (or potentially delete) arbitrary files via a .. (dot dot) in the \"op/op.UploadChunks.php\" \"qquuid\" parameter.  NOTE: this can be leveraged to execute arbitrary code by using CVE-2018-12940.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "5.5 MEDIUM",
+        "hyperlinks": [
+            "https://sourceforge.net/p/seeddms/code/ci/seeddms-5.1.x/tree/CHANGELOG",
+            "https://www.contextis.com/resources/advisories/cve-2018-12939"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:seeddms:seeddms:*:*:*:*:*:*:*:* versions up to (excluding) 5.1.8",
+            "*cpe:2.3:a:seeddms:seeddms:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "09/28/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-12940",
+        "cwe_id": "CWE-434",
+        "description": "Unrestricted file upload vulnerability in \"op/op.UploadChunks.php\" in SeedDMS (formerly LetoDMS and MyDMS) before 5.1.8 allows remote attackers to execute arbitrary code by uploading a file with an executable extension specified by the \"qqfile\" parameter. This allows an authenticated attacker to upload a malicious file containing PHP code to execute operating system commands to the web root of the application.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://sourceforge.net/p/seeddms/code/ci/seeddms-5.1.x/tree/CHANGELOG",
+            "https://www.contextis.com/resources/advisories/cve-2018-12940"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:seeddms:seeddms:*:*:*:*:*:*:*:* versions up to (excluding) 5.1.8",
+            "*cpe:2.3:a:seeddms:seeddms:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/01/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-12941",
+        "cwe_id": "CWE-20",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code in SeedDMS (formerly LetoDMS and MyDMS) before 5.1.8 by adding a system command at the end of the \"cacheDir\" path and following usage of the \"Clear Cache\" functionality. This allows an authenticated attacker, with permission to the Settings functionality, to inject arbitrary system commands within the application by manipulating the \"Cache directory\" path. An attacker can use it to perform malicious tasks such as to extract, change, or delete sensitive information or run system commands on the underlying operating system.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "https://sourceforge.net/p/seeddms/code/ci/seeddms-5.1.x/tree/CHANGELOG",
+            "https://www.contextis.com/resources/advisories/cve-2018-12941"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:seeddms:seeddms:*:*:*:*:*:*:*:* versions up to (excluding) 5.1.8",
+            "*cpe:2.3:a:seeddms:seeddms:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-12942",
+        "cwe_id": "CWE-89",
+        "description": "SQL injection vulnerability in the \"Users management\" functionality in SeedDMS (formerly LetoDMS and MyDMS) before 5.1.8 allows authenticated attackers to manipulate an SQL query within the application by sending additional SQL commands to the application server. An attacker can use this vulnerability to perform malicious tasks such as to extract, change, or delete sensitive information within the database supporting the application, and potentially run system commands on the underlying operating system.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "https://sourceforge.net/p/seeddms/code/ci/seeddms-5.1.x/tree/CHANGELOG",
+            "https://www.contextis.com/resources/advisories/cve-2018-12942"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:seeddms:seeddms:*:*:*:*:*:*:*:* versions up to (excluding) 5.1.8",
+            "*cpe:2.3:a:seeddms:seeddms:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "09/28/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-12943",
+        "cwe_id": "CWE-79",
+        "description": "Cross-Site Scripting (XSS) vulnerability in every page that includes the \"action\" URL parameter in SeedDMS (formerly LetoDMS and MyDMS) before 5.1.8 allows remote attackers to inject arbitrary web script or HTML via the action parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://sourceforge.net/p/seeddms/code/ci/seeddms-5.1.x/tree/CHANGELOG",
+            "https://www.contextis.com/resources/advisories/cve-2018-12943"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:seeddms:seeddms:*:*:*:*:*:*:*:* versions up to (excluding) 5.1.8",
+            "*cpe:2.3:a:seeddms:seeddms:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/04/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-12944",
+        "cwe_id": "CWE-79",
+        "description": "Persistent Cross-Site Scripting (XSS) vulnerability in the \"Categories\" feature in SeedDMS (formerly LetoDMS and MyDMS) before 5.1.8 allows remote attackers to inject arbitrary web script or HTML via the name field.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://sourceforge.net/p/seeddms/code/ci/seeddms-5.1.x/tree/CHANGELOG",
+            "https://www.contextis.com/resources/advisories/cve-2018-12944"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:seeddms:seeddms:*:*:*:*:*:*:*:* versions up to (excluding) 5.1.8",
+            "*cpe:2.3:a:seeddms:seeddms:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "09/28/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14432",
+        "cwe_id": "CWE-200",
+        "description": "In the Federation component of OpenStack Keystone before 11.0.4, 12.0.0, and 13.0.0, an authenticated \"GET /v3/OS-FEDERATION/projects\" request may bypass intended access restrictions on listing projects. An authenticated user may discover projects they have no authority to access, leaking all projects in the deployment and their attributes. Only Keystone with the /v3/OS-FEDERATION endpoint enabled via policy.json is affected.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2018/07/25/2",
+            "http://www.securityfocus.com/bid/104930",
+            "https://access.redhat.com/errata/RHSA-2018:2523",
+            "https://access.redhat.com/errata/RHSA-2018:2533",
+            "https://access.redhat.com/errata/RHSA-2018:2543",
+            "https://www.debian.org/security/2018/dsa-4275"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:openstack:keystone:*:*:*:*:*:*:*:* versions up to (excluding) 11.0.4\n     *cpe:2.3:a:openstack:keystone:12.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:openstack:keystone:13.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openstack:keystone:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:openstack:keystone:12.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openstack:keystone:13.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:12.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redhat:openstack:13.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/12/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14533",
+        "cwe_id": null,
+        "description": "read_tmp and write_tmp in Inteno IOPSYS allow attackers to gain privileges after writing to /tmp/etc/smb.conf because /var is a symlink to /tmp.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://neonsea.uk/blog/2018/07/21/tmp-to-rce.html",
+            "https://www.exploit-db.com/exploits/45089/"
+        ],
+        "cpe": [
+            "cpe:2.3:h:intenogroup:iopsys:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14581",
+        "cwe_id": "CWE-20",
+        "description": "Redgate .NET Reflector before 10.0.7.774 and SmartAssembly before 6.12.5 allow attackers to execute code by decompiling a compiled .NET object (such as a DLL or EXE file) with a specific embedded resource file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://documentation.red-gate.com/ref10/release-notes-and-other-versions/net-reflector-10-0-release-notes",
+            "https://documentation.red-gate.com/sa6/release-notes-and-other-versions/smartassembly-6-12-release-notes",
+            "https://www.nccgroup.trust/us/our-research/technical-advisory-code-execution-by-viewing-resource-files-in-.net-reflector/?research=Technical+advisories"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:red-gate:.net_reflector:*:*:*:*:*:*:*:* versions up to (excluding) 10.0.7.774\n     *cpe:2.3:a:red-gate:smartassembly:*:*:*:*:*:*:*:* versions up to (excluding) 6.12.5",
+            "*cpe:2.3:a:red-gate:.net_reflector:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "10.0.7.774",
+            "*cpe:2.3:a:red-gate:smartassembly:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/05/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5543",
+        "cwe_id": "CWE-522",
+        "description": "The F5 BIG-IP Controller for Kubernetes 1.0.0-1.5.0 (k8s-bigip-crtl) passes BIG-IP username and password as command line parameters, which may lead to disclosure of the credentials used by the container.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/104944",
+            "https://support.f5.com/csp/article/K58935003"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:f5:big-ip_controller:*:*:*:*:*:kubernetes:*:* versions from (including) 1.0.0 up to (including) 1.5.0",
+            "*cpe:2.3:a:f5:big-ip_controller:*:*:*:*:*:kubernetes:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "F5 Networks",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-5544",
+        "cwe_id": "CWE-200",
+        "description": "When the F5 BIG-IP APM 13.0.0-13.1.1 or 12.1.0-12.1.3 renders certain pages (pages with a logon agent or a confirm box), the BIG-IP APM may disclose configuration information such as partition and agent names via URI parameters.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/104932",
+            "http://www.securitytracker.com/id/1041398",
+            "https://support.f5.com/csp/article/K23024812"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:f5:big-ip_access_policy_manager:*:*:*:*:*:*:*:* versions from (including) 12.1.0 up to (including) 12.1.3\n     *cpe:2.3:a:f5:big-ip_access_policy_manager:*:*:*:*:*:*:*:* versions from (including) 13.0.0 up to (including) 13.1.1",
+            "*cpe:2.3:a:f5:big-ip_access_policy_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:f5:big-ip_access_policy_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/10/2018",
+        "vulnerability_source": "F5 Networks",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-7934",
+        "cwe_id": "CWE-20",
+        "description": "Some Huawei mobile phone with the versions before BLA-L29 8.0.0.145(C432) have a denial of service (DoS) vulnerability because they do not adapt to specific screen gestures. An attacker may trick users into installing a malicious app. As a result, apps running on the frontend crash after the users make specific screen gestures.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "7.1 HIGH",
+        "hyperlinks": [
+            "http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20180705-01-smartphone-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:mate_10_pro:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/04/2018",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-7947",
+        "cwe_id": "CWE-287",
+        "description": "Huawei mobile phones with versions earlier before Emily-AL00A 8.1.0.153(C00) have an authentication bypass vulnerability. An attacker could trick the user to connect to a malicious device. In the debug mode, the malicious software in the device may exploit the vulnerability to bypass some specific function. Successful exploit may cause some malicious applications to be installed in the mobile phones.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:P/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:P/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "3.9 LOW",
+        "base_score_v2": "4.4 MEDIUM",
+        "hyperlinks": [
+            "http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20180720-01-mobile-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:emily-al00a:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/04/2018",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-7957",
+        "cwe_id": "CWE-863",
+        "description": "Huawei smartphones with software Victoria-AL00 8.0.0.336a(C00) have an information leakage vulnerability. Because an interface does not verify authorization correctly, attackers can exploit an application with the authorization of phone state to obtain user location additionally.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "3.3 LOW",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20180704-01-smartphone-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:victoria-al00:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-7992",
+        "cwe_id": "CWE-119",
+        "description": "Mdapt Driver of Huawei MediaPad M3 BTV-W09C128B353CUSTC128D001; Mate 9 Pro versions earlier than 8.0.0.356(C00); P10 Plus versions earlier than 8.0.0.357(C00) has a buffer overflow vulnerability. The driver does not sufficiently validate the input, an attacker could trick the user to install a malicious application which would send crafted parameters to the driver. Successful exploit could cause a denial of service condition.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20180725-01-dos-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:mate_9:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:mate_9_pro:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:mediapad_m3:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:p10_plus:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/04/2018",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-7993",
+        "cwe_id": "CWE-416",
+        "description": "HUAWEI Mate 10 smartphones with versions earlier than ALP-AL00 8.1.0.311 have a use after free vulnerability on mediaserver component. An attacker tricks the user install a malicious application, which make the software to reference memory after it has been freed. Successful exploit could cause execution of arbitrary code.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20180711-01-smartphone-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:mate_10:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/04/2018",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-7994",
+        "cwe_id": "CWE-772",
+        "description": "Some Huawei products IPS Module V500R001C50; NGFW Module V500R001C50; V500R002C10; NIP6300 V500R001C50; NIP6600 V500R001C50; NIP6800 V500R001C50; Secospace USG6600 V500R001C50; USG9500 V500R001C50 have a memory leak vulnerability. The software does not release allocated memory properly when processing Protal questionnaire. A remote attacker could send a lot questionnaires to the device, successful exploit could cause the device to reboot since running out of memory.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20180704-01-firewall-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:ips_module:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ngfw_module:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:nip6300:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:nip6600:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:nip6800:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:secospace_usg6600:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:usg9500:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-13652",
+        "cwe_id": "CWE-20",
+        "description": "NetApp OnCommand Insight version 7.3.0 and versions prior to 7.2.0 are susceptible to clickjacking attacks which could cause a user to perform an unintended action in the user interface.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://security.netapp.com/advisory/ntap-20180731-0001/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:netapp:oncommand_insight:*:*:*:*:*:*:*:* versions up to (excluding) 7.2.0\n     *cpe:2.3:a:netapp:oncommand_insight:7.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:netapp:oncommand_insight:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:netapp:oncommand_insight:7.3.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/05/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-10592",
+        "cwe_id": "CWE-798",
+        "description": "Yokogawa STARDOM FCJ controllers R4.02 and prior, FCN-100 controllers R4.02 and prior, FCN-RTU controllers R4.02 and prior, and FCN-500 controllers R4.02 and prior utilize hard-coded credentials that could allow an attacker to gain unauthorized administrative access to the device, which could result in remote code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/104376",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-151-03",
+            "https://web-material3.yokogawa.com/1/6712/details/YSAR-18-0004-E.pdf"
+        ],
+        "cpe": [
+            "cpe:2.3:h:yokogawa:fcj:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:fcn-100:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:fcn-500:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:yokogawa:fcn-rtu:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-10603",
+        "cwe_id": "CWE-287",
+        "description": "Martem TELEM GW6 and GWM devices with firmware 2018.04.18-linux_4-01-601cb47 and prior do not perform authentication of IEC-104 control commands, which may allow a rogue node a remote control of the industrial process.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/104286",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-142-01"
+        ],
+        "cpe": [
+            "cpe:2.3:h:martem:telem_gw6:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:martem:telem_gwm:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-10607",
+        "cwe_id": "CWE-400",
+        "description": "Martem TELEM GW6 and GWM devices with firmware 2018.04.18-linux_4-01-601cb47 and prior allow the creation of new connections to one or more IOAs, without closing them properly, which may cause a denial of service within the industrial process control channel.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://martem.eu/csa/Martem_CSA_Telem_1805184.pdf",
+            "http://www.securityfocus.com/bid/104286",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-142-01"
+        ],
+        "cpe": [
+            "cpe:2.3:h:martem:telem_gw6:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:martem:telem_gwm:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-10609",
+        "cwe_id": "CWE-79",
+        "description": "Martem TELEM GW6 and GWM devices with firmware 2018.04.18-linux_4-01-601cb47 and prior allow improper sanitization of data over a Websocket which may allow cross-site scripting and client-side code execution with target user privileges.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://martem.eu/csa/Martem_CSA_Telem_1805181.pdf",
+            "http://www.securityfocus.com/bid/104286",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-142-01"
+        ],
+        "cpe": [
+            "cpe:2.3:h:martem:telem_gw6:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:martem:telem_gwm:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2016-8626",
+        "cwe_id": "CWE-20",
+        "description": "A flaw was found in Red Hat Ceph before 0.94.9-8. The way Ceph Object Gateway handles POST object requests permits an authenticated attacker to launch a denial of service attack by sending null or specially crafted POST object requests.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-8626"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:N/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2016-2815.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2816.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2847.html",
+            "http://rhn.redhat.com/errata/RHSA-2016-2848.html",
+            "http://tracker.ceph.com/issues/17635",
+            "http://www.securityfocus.com/bid/94488",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-8626"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:ceph:*:*:*:*:*:*:*:* versions up to (excluding) 0.94.3.9-8",
+            "*cpe:2.3:a:redhat:ceph:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "0.94.3.9-8",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2016-8657",
+        "cwe_id": "CWE-264",
+        "description": "It was discovered that EAP packages in certain versions of Red Hat Enterprise Linux use incorrect permissions for /etc/sysconfig/jbossas configuration files. The file is writable to jboss group (root:jboss, 664). On systems using classic /etc/init.d init scripts (i.e. on Red Hat Enterprise Linux 6 and earlier), the file is sourced by the jboss init script and its content executed with root privileges when jboss service is started, stopped, or restarted.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2017-0826.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0827.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0828.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0829.html",
+            "http://www.securityfocus.com/bid/96896",
+            "https://access.redhat.com/errata/RHSA-2018:1609",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-8657"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:redhat:enterprise_linux:6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:6.0:*:*:*:*:*:*:*",
+            "cpe:2.3:o:redhat:enterprise_linux:5:*:*:*:*:*:*:*",
+            "cpe:2.3:o:redhat:enterprise_linux:6:*:*:*:*:*:*:*",
+            "cpe:2.3:o:redhat:enterprise_linux:5:*:*:*:*:*:*:*",
+            "cpe:2.3:o:redhat:enterprise_linux:6:*:*:*:*:*:*:*",
+            "cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "04/22/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2017-5693",
+        "cwe_id": "CWE-400",
+        "description": "Firmware in the Intel Puma 5, 6, and 7 Series might experience resource depletion or timeout, which allows a network attacker to create a denial of service via crafted network traffic.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/104941",
+            "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-000097.html"
+        ],
+        "cpe": [
+            "cpe:2.3:h:intel:puma:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:puma:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:intel:puma:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/03/2018",
+        "vulnerability_source": "Intel Corporation",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2016-8611",
+        "cwe_id": "CWE-20",
+        "description": "A vulnerability was found in Openstack Glance. No limits are enforced within the Glance image service for both v1 and v2 `/images` API POST method for authenticated users, resulting in possible denial of service attacks through database table saturation.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/oss-sec/2016/q4/266",
+            "http://www.securityfocus.com/bid/94378",
+            "http://www.securitytracker.com/id/1037312",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-8611",
+            "https://h20566.www2.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-c05333384"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:openstack:glance:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openstack:glance:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2016-8613",
+        "cwe_id": "CWE-79",
+        "description": "A flaw was found in foreman 1.5.1. The remote execution plugin runs commands on hosts over SSH from the Foreman web UI. When a job is submitted that contains HTML tags, the console output shown in the web UI does not escape the output causing any HTML or JavaScript to run in the user's browser. The output of the job is stored, making this a stored XSS vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-8613"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": null,
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93859",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-8613",
+            "https://github.com/theforeman/foreman_remote_execution/pull/208",
+            "https://projects.theforeman.org/issues/17066/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:theforeman:foreman:1.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:theforeman:foreman:1.5.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2016-8628",
+        "cwe_id": "CWE-77",
+        "description": "Ansible before version 2.2.0 fails to properly sanitize fact variables sent from the Ansible controller. An attacker with the ability to create special variables on the controller could execute arbitrary commands on Ansible clients as the user Ansible runs as.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.1 CRITICAL",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94109",
+            "https://access.redhat.com/errata/RHSA-2016:2778",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-8628"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:ansible:*:*:*:*:*:*:*:* versions up to (excluding) 2.2.0",
+            "*cpe:2.3:a:redhat:ansible:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2016-8631",
+        "cwe_id": "CWE-20",
+        "description": "The OpenShift Enterprise 3 router does not properly sort routes when processing newly added routes. An attacker with access to create routes can potentially overwrite existing routes and redirect network traffic for other users to their own site.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "7.7 HIGH",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94110",
+            "https://access.redhat.com/errata/RHSA-2016:2696",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-8631"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redhat:openshift:3.0:*:*:*:enterprise:*:*:*\n     *cpe:2.3:a:redhat:openshift:3.3:*:*:*:enterprise:*:*:*",
+            "*cpe:2.3:a:redhat:openshift:3.0:*:*:*:enterprise:*:*:*",
+            "*cpe:2.3:a:redhat:openshift:3.3:*:*:*:enterprise:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-11617",
+        "cwe_id": "CWE-416",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.0.29935. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the handling of Format events for ComboBox fields. The issue results from the lack of validating the existence of an object prior to performing operations on the object. An attacker can leverage this vulnerability to execute code under the context of the current process. Was ZDI-CAN-5415.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-694"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-11618",
+        "cwe_id": "CWE-416",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.0.29935. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the handling of the resetForm method. The issue results from the lack of validating the existence of an object prior to performing operations on the object. An attacker can leverage this vulnerability to execute code under the context of the current process. Was ZDI-CAN-5416.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-695"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-11619",
+        "cwe_id": "CWE-416",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.0.29935. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the handling of the setFocus method. The issue results from the lack of validating the existence of an object prior to performing operations on the object. An attacker can leverage this vulnerability to execute code under the context of the current process. Was ZDI-CAN-5417.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-696"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-11620",
+        "cwe_id": "CWE-125",
+        "description": "This vulnerability allows remote attackers to disclose sensitive information on vulnerable installations of Foxit Reader 9.0.1.1049. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within ConvertToPDF_x86.dll. The issue results from the lack of proper validation of user-supplied data, which can result in a read past the end of an allocated object. An attacker can leverage this in conjunction with other vulnerabilities to execute arbitrary code in the context of the current process. Was ZDI-CAN-5756.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-697"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-11621",
+        "cwe_id": "CWE-125",
+        "description": "This vulnerability allows remote attackers to disclose sensitive information on vulnerable installations of Foxit Reader 9.0.1.1049. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within ConvertToPDF_x86.dll. The issue results from the lack of proper validation of user-supplied data, which can result in a read past the end of an allocated object. An attacker can leverage this in conjunction with other vulnerabilities to execute arbitrary code in the context of the current process. Was ZDI-CAN-5896.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-698"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-11622",
+        "cwe_id": "CWE-787",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.1.1049. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within ConvertToPDF_x86.dll. The issue results from the lack of proper validation of user-supplied data, which can result in a write past the end of an allocated object. An attacker can leverage this vulnerability to execute code in the context of the current process. Was ZDI-CAN-5873.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-699"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-11623",
+        "cwe_id": "CWE-704",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.1.1049. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the addAdLayer method. By performing actions in JavaScript, an attacker can trigger a type confusion condition. The attacker can leverage this vulnerability to execute code under the context of the current process. Was ZDI-CAN-6003.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-700"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14241",
+        "cwe_id": "CWE-704",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.1.1049. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the addAnnot method. By performing actions in JavaScript, an attacker can trigger a type confusion condition. An attacker can leverage this vulnerability to execute code under the context of the current process. Was ZDI-CAN-6004.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-701"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14242",
+        "cwe_id": "CWE-704",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.1.1049. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the addField method. By performing actions in JavaScript, an attacker can trigger a type confusion condition. An attacker can leverage this vulnerability to execute code under the context of the current process. Was ZDI-CAN-6005.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-702"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14243",
+        "cwe_id": "CWE-704",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.1.1049. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the addPageOpenJSMessage method. By performing actions in JavaScript, an attacker can trigger a type confusion condition. The attacker can leverage this vulnerability to execute code under the context of the current process. Was ZDI-CAN-6006.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-703"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14244",
+        "cwe_id": "CWE-704",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.1.1049. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the calculateNow method. By performing actions in JavaScript, an attacker can trigger a type confusion condition. An attacker can leverage this vulnerability to execute code under the context of the current process. Was ZDI-CAN-6007.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-704"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14245",
+        "cwe_id": "CWE-704",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.1.1049. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the closeDoc method. By performing actions in JavaScript, an attacker can trigger a type confusion condition. The attacker can leverage this vulnerability to execute code under the context of the current process. Was ZDI-CAN-6008.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-705"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14246",
+        "cwe_id": "CWE-704",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.1.1049. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the convertTocPDF method. By performing actions in JavaScript, an attacker can trigger a type confusion condition. The attacker can leverage this vulnerability to execute code under the context of the current process. Was ZDI-CAN-6009.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-706"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14247",
+        "cwe_id": "CWE-704",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.1.1049. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the exportAsFDF method. By performing actions in JavaScript, an attacker can trigger a type confusion condition. An attacker can leverage this vulnerability to execute code under the context of the current process. Was ZDI-CAN-6010.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-707"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14248",
+        "cwe_id": "CWE-704",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.1.1049. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the exportAsXFDF method. By performing actions in JavaScript, an attacker can trigger a type confusion condition. An attacker can leverage this vulnerability to execute code under the context of the current process. Was ZDI-CAN-6011.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-708"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14249",
+        "cwe_id": "CWE-704",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.1.1049. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the exportDataObject method. By performing actions in JavaScript, an attacker can trigger a type confusion condition. An attacker can leverage this vulnerability to execute code under the context of the current process. Was ZDI-CAN-6012.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-709"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14250",
+        "cwe_id": "CWE-704",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.1.1049. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the getAnnot method. By performing actions in JavaScript, an attacker can trigger a type confusion condition. An attacker can leverage this vulnerability to execute code under the context of the current process. Was ZDI-CAN-6013.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-710"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14251",
+        "cwe_id": "CWE-704",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.1.1049. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the getDataObject method. By performing actions in JavaScript, an attacker can trigger a type confusion condition. An attacker can leverage this vulnerability to execute code under the context of the current process. Was ZDI-CAN-6014.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-711"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14252",
+        "cwe_id": "CWE-704",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.1.1049. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the getField method. By performing actions in JavaScript, an attacker can trigger a type confusion condition. An attacker can leverage this vulnerability to execute code under the context of the current process. Was ZDI-CAN-6015.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-712"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14253",
+        "cwe_id": "CWE-704",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.1.1049. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the getIcon method. By performing actions in JavaScript, an attacker can trigger a type confusion condition. An attacker can leverage this vulnerability to execute code under the context of the current process. Was ZDI-CAN-6016.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-713"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14254",
+        "cwe_id": "CWE-704",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.1.1049. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the getLinks method. By performing actions in JavaScript, an attacker can trigger a type confusion condition. An attacker can leverage this vulnerability to execute code under the context of the current process. Was ZDI-CAN-6017.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-714"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14255",
+        "cwe_id": "CWE-704",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.1.1049. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the getNthFieldName method. By performing actions in JavaScript, an attacker can trigger a type confusion condition. An attacker can leverage this vulnerability to execute code under the context of the current process. Was ZDI-CAN-6018.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-715"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14256",
+        "cwe_id": "CWE-704",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.1.1049. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the getOCGs method. By performing actions in JavaScript, an attacker can trigger a type confusion condition. An attacker can leverage this vulnerability to execute code under the context of the current process. Was ZDI-CAN-6019.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-716"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14257",
+        "cwe_id": "CWE-704",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.1.1049. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the getPageBox method. By performing actions in JavaScript, an attacker can trigger a type confusion condition. An attacker can leverage this vulnerability to execute code under the context of the current process. Was ZDI-CAN-6020.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-717"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14258",
+        "cwe_id": "CWE-704",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.1.1049. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the getPageNthWord method. By performing actions in JavaScript, an attacker can trigger a type confusion condition. An attacker can leverage this vulnerability to execute code under the context of the current process. Was ZDI-CAN-6021.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-718"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14259",
+        "cwe_id": "CWE-704",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.1.1049. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the getPageNthWordQuads method. By performing actions in JavaScript, an attacker can trigger a type confusion condition. An attacker can leverage this vulnerability to execute code under the context of the current process. Was ZDI-CAN-6022.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-719"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14260",
+        "cwe_id": "CWE-704",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.1.1049. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the getPageRotation method. By performing actions in JavaScript, an attacker can trigger a type confusion condition. An attacker can leverage this vulnerability to execute code under the context of the current process. Was ZDI-CAN-6023.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-720"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14261",
+        "cwe_id": "CWE-704",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.1.1049. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the getTemplate method. By performing actions in JavaScript, an attacker can trigger a type confusion condition. An attacker can leverage this vulnerability to execute code under the context of the current process. Was ZDI-CAN-6024.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-721"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    },
+    {
+        "cve_id": "CVE-2018-14262",
+        "cwe_id": "CWE-704",
+        "description": "This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Foxit Reader 9.0.1.1049. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file. The specific flaw exists within the getURL method. By performing actions in JavaScript, an attacker can trigger a type confusion condition. An attacker can leverage this vulnerability to execute code under the context of the current process. Was ZDI-CAN-6025.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.foxitsoftware.com/support/security-bulletins.php",
+            "https://zerodayinitiative.com/advisories/ZDI-18-722"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "07/31/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Zero Day Initiative",
+        "year": "2018",
+        "month": "7"
+    }
+]

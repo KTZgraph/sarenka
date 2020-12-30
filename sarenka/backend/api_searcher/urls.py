@@ -1,25 +1,20 @@
 
 from django.urls import path
-from .views import (AddCWEandCVE,
-                    DNSSearcherView,
-                    CVESearchView,
-                    CensysHostSearchView,
-                    ListVendors,
-                    LocalView,
-                    login_required_view,
-                    CWETop25,
-                    CWEData,
-                    CWEAllView,
-                    CWEDetailsAllView,
-                    CVEDetailsAllView,
-                    WindowsHardwareView,
-                    WindowsRegistryView,
-                    NetworkLocalView,
-                    SearcherView)
+from .views.search_engines import (CensysHostSearchView,
+                                   login_required_view,
+                                   SearcherView)
+from .views.cwe_and_cve import CVESearchView, CWETop25, CWEData, CWEAllView, CVEDetailsAllView, CWEDetailsAllView, \
+    AddCWEandCVE, ListVendors
+from .views.dns import DNSSearcherView
+from .views.settings import SettingsView
+from .views.windows import NetworkLocalView, LocalView, HardwareView, RegistryView
 
 urlpatterns = [
+    # dodanie kluczy użytkownika do serwisów trzeich
+    path('settings', SettingsView.as_view(), name="settings"),
+
     path('cve/all/<str:page>', CVEDetailsAllView.as_view(), name="cve_all"),
-    path('cve/<str:code>', CVESearchView.as_view(), name="get_by_cve"),
+    path('cve/<str:cve_id>', CVESearchView.as_view(), name="get_by_cve"),
 
     path('cwe', CWETop25.as_view(), name="cwe_top_25"),
     path('cwe/all', CWEAllView.as_view(), name="cwe_all"),
@@ -37,7 +32,7 @@ urlpatterns = [
     path("dns/<str:host>", DNSSearcherView.as_view(), name="dns_record"),
 
     path('local', LocalView.as_view(), name="local_windows"),
-    path('local/registry', WindowsRegistryView.as_view(), name="registry_windows"),
-    path('local/hardware', WindowsHardwareView.as_view(), name="hardware_windows"),
+    path('local/registry', RegistryView.as_view(), name="registry_windows"),
+    path('local/hardware', HardwareView.as_view(), name="hardware_windows"),
     path('local/network', NetworkLocalView.as_view(), name="network_windows"),
 ]

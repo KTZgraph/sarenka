@@ -1,0 +1,3496 @@
+[
+    {
+        "cve_id": "CVE-2017-5026",
+        "cwe_id": "CWE-1021",
+        "description": "Google Chrome prior to 56.0.2924.76 for Linux, Windows and Mac, failed to prevent alerts from being displayed by swapped out frames, which allowed a remote attacker to show alerts on a page they don't control via a crafted HTML page.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2017-0206.html",
+            "http://www.debian.org/security/2017/dsa-3776",
+            "http://www.securityfocus.com/bid/95792",
+            "http://www.securitytracker.com/id/1037718",
+            "https://chromereleases.googleblog.com/2017/01/stable-channel-update-for-desktop.html",
+            "https://crbug.com/634108",
+            "https://security.gentoo.org/glsa/201701-66"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:google:chrome:55.0.2883.87:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:google:chrome:55.0.2883.87:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Google Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-5027",
+        "cwe_id": null,
+        "description": "Blink in Google Chrome prior to 56.0.2924.76 for Linux, Windows and Mac, and 56.0.2924.87 for Android, failed to properly enforce unsafe-inline content security policy, which allowed a remote attacker to bypass content security policy via a crafted HTML page.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://chromereleases.googleblog.com/2017/01/stable-channel-update-for-desktop.html",
+            "https://crbug.com/661126"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:google:chrome:55.0.2883.87:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:google:chrome:55.0.2883.87:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Google Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-5344",
+        "cwe_id": "CWE-89",
+        "description": "An issue was discovered in dotCMS through 3.6.1. The findChildrenByFilter() function which is called by the web accessible path /categoriesServlet performs string interpolation and direct SQL query execution. SQL quote escaping and a keyword blacklist were implemented in a new class, SQLUtil (main/java/com/dotmarketing/common/util/SQLUtil.java), as part of the remediation of CVE-2016-8902; however, these can be overcome in the case of the q and inode parameters to the /categoriesServlet path. Overcoming these controls permits a number of blind boolean SQL injection vectors in either parameter. The /categoriesServlet web path can be accessed remotely and without authentication in a default dotCMS deployment.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://dotcms.com/security/SI-39",
+            "http://seclists.org/fulldisclosure/2017/Feb/34",
+            "http://www.securityfocus.com/bid/96259",
+            "https://github.com/xdrr/webapp-exploits/blob/master/vendors/dotcms/2017.01.blind-sqli/dotcms-dump.sh",
+            "https://www.exploit-db.com/exploits/41377/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:dotcms:dotcms:3.6.1:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:dotcms:dotcms:3.6.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "08/31/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-5998",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in InterSect Alliance SNARE Epilog for UNIX version 1.5 allows remote authenticated users to inject arbitrary web script or HTML via the str_log_name parameter in a \"Web Admin Portal > Log Configuration > Add\" action.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://arthrocyber.com/research"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:intersect_alliance:snare_epilog:1.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:intersect_alliance:snare_epilog:1.5.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/23/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-6014",
+        "cwe_id": "CWE-835",
+        "description": "In Wireshark 2.2.4 and earlier, a crafted or malformed STANAG 4607 capture file will cause an infinite loop and memory exhaustion. If the packet size field in a packet header is null, the offset to read from will not advance, causing continuous attempts to read the same zero length packet. This will quickly exhaust all system memory.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "http://www.debian.org/security/2017/dsa-3811",
+            "http://www.securityfocus.com/bid/96284",
+            "https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=13416",
+            "https://security.gentoo.org/glsa/201706-12"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:wireshark:wireshark:2.2.4:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:wireshark:wireshark:2.2.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-6056",
+        "cwe_id": "CWE-835",
+        "description": "It was discovered that a programming error in the processing of HTTPS requests in the Apache Tomcat servlet and JSP engine may result in denial of service via an infinite loop. The denial of service is easily achievable as a consequence of backporting a CVE-2016-6816 fix but not backporting the fix for Tomcat bug 57544. Distributions affected by this backporting issue include Debian (before 7.0.56-3+deb8u8 and 8.0.14-1+deb8u7 in jessie) and Ubuntu.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2017-0517.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0826.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0827.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0828.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0829.html",
+            "http://www.debian.org/security/2017/dsa-3787",
+            "http://www.debian.org/security/2017/dsa-3788",
+            "http://www.securityfocus.com/bid/96293",
+            "http://www.securitytracker.com/id/1037860",
+            "https://bugs.debian.org/851304",
+            "https://bz.apache.org/bugzilla/show_bug.cgi?id=60578",
+            "https://lists.apache.org/thread.html/6b414817c2b0bf351138911c8c922ec5dd577ebc0b9a7f42d705752d@%3Cissues.activemq.apache.org%3E",
+            "https://lists.apache.org/thread.html/ac51944aef91dd5006b8510b0bef337adaccfe962fb90e7af9c22db4@%3Cissues.activemq.apache.org%3E",
+            "https://lists.debian.org/debian-security-announce/2017/msg00038.html",
+            "https://lists.debian.org/debian-security-announce/2017/msg00039.html",
+            "https://security.netapp.com/advisory/ntap-20180731-0002/",
+            "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apache:tomcat:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apache:tomcat:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apache:tomcat:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-6251",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was withdrawn by its CNA.  Further investigation showed that it was not a security issue.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-6251"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2016-6251"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "02/17/2017",
+        "modified_date": "02/17/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2014-9905",
+        "cwe_id": "CWE-79",
+        "description": "Multiple cross-site scripting (XSS) vulnerabilities in the Web Calendar in SOGo before 2.2.0 allow remote attackers to inject arbitrary web script or HTML via the (1) title of an appointment or (2) contact fields.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/07/09/3",
+            "https://github.com/inverse-inc/sogo/commit/1a7fc2a0e90a19dfb1fce292ae5ff53aa513ade9",
+            "https://github.com/inverse-inc/sogo/commit/3a5e44e7eb8b390b67a8f8a83030b49606956501",
+            "https://github.com/inverse-inc/sogo/commit/80a09407652ec04e8c9fb6cb48e1029e69a15765",
+            "https://github.com/inverse-inc/sogo/commit/c94595ea7f0f843c2d7abf25df039b2bbe707625",
+            "https://sogo.nu/bugs/view.php?id=2598"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:inverse-inc:sogo:*:*:*:*:*:*:*:* versions up to (including) 2.1.1",
+            "*cpe:2.3:a:inverse-inc:sogo:2.1.1:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:inverse-inc:sogo:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:inverse:sogo:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:inverse-inc:sogo:2.1.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "11/07/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-5028",
+        "cwe_id": "CWE-476",
+        "description": "The print_frame_inst_bytes function in libdwarf before 20160923 allows remote attackers to cause a denial of service (NULL pointer dereference) via an object file with empty bss-like sections.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/05/24/1",
+            "http://www.openwall.com/lists/oss-security/2016/05/25/1",
+            "https://www.prevanders.net/dwarfbug.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-5029",
+        "cwe_id": "CWE-476",
+        "description": "The create_fullest_file_path function in libdwarf before 20160923 allows remote attackers to cause a denial of service (NULL pointer dereference) via a crafted dwarf file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/05/24/1",
+            "http://www.openwall.com/lists/oss-security/2016/05/25/1",
+            "https://www.prevanders.net/dwarfbug.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-5030",
+        "cwe_id": "CWE-476",
+        "description": "The _dwarf_calculate_info_section_end_ptr function in libdwarf before 20160923 allows remote attackers to cause a denial of service (NULL pointer dereference) via a crafted file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/05/24/1",
+            "http://www.openwall.com/lists/oss-security/2016/05/25/1",
+            "https://www.prevanders.net/dwarfbug.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-5031",
+        "cwe_id": "CWE-125",
+        "description": "The print_frame_inst_bytes function in libdwarf before 20160923 allows remote attackers to cause a denial of service (out-of-bounds read) via a crafted file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/05/24/1",
+            "http://www.openwall.com/lists/oss-security/2016/05/25/1",
+            "https://www.prevanders.net/dwarfbug.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-5032",
+        "cwe_id": "CWE-125",
+        "description": "The dwarf_get_xu_hash_entry function in libdwarf before 20160923 allows remote attackers to cause a denial of service (crash) via a crafted file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/05/24/1",
+            "http://www.openwall.com/lists/oss-security/2016/05/25/1",
+            "https://www.prevanders.net/dwarfbug.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-5033",
+        "cwe_id": "CWE-125",
+        "description": "The print_exprloc_content function in libdwarf before 20160923 allows remote attackers to cause a denial of service (out-of-bounds read) via a crafted file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/05/24/1",
+            "http://www.openwall.com/lists/oss-security/2016/05/25/1",
+            "https://www.prevanders.net/dwarfbug.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-5034",
+        "cwe_id": "CWE-787",
+        "description": "dwarf_elf_access.c in libdwarf before 20160923 allows remote attackers to cause a denial of service (out-of-bounds write) via a crafted file, related to relocation records.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/05/24/1",
+            "http://www.openwall.com/lists/oss-security/2016/05/25/1",
+            "https://www.prevanders.net/dwarfbug.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-5035",
+        "cwe_id": "CWE-125",
+        "description": "The _dwarf_read_line_table_header function in dwarf_line_table_reader.c in libdwarf before 20160923 allows remote attackers to cause a denial of service (out-of-bounds read) via a crafted file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/05/24/1",
+            "http://www.openwall.com/lists/oss-security/2016/05/25/1",
+            "https://www.prevanders.net/dwarfbug.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-5036",
+        "cwe_id": "CWE-125",
+        "description": "The dump_block function in print_sections.c in libdwarf before 20160923 allows remote attackers to cause a denial of service (out-of-bounds read) via crafted frame data.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/05/24/1",
+            "http://www.openwall.com/lists/oss-security/2016/05/25/1",
+            "https://www.prevanders.net/dwarfbug.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-5037",
+        "cwe_id": "CWE-476",
+        "description": "The _dwarf_load_section function in libdwarf before 20160923 allows remote attackers to cause a denial of service (NULL pointer dereference) via a crafted file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/05/24/1",
+            "http://www.openwall.com/lists/oss-security/2016/05/25/1",
+            "https://www.prevanders.net/dwarfbug.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-5038",
+        "cwe_id": "CWE-125",
+        "description": "The dwarf_get_macro_startend_file function in dwarf_macro5.c in libdwarf before 20160923 allows remote attackers to cause a denial of service (out-of-bounds read) via a crafted string offset for .debug_str.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/05/24/1",
+            "http://www.openwall.com/lists/oss-security/2016/05/25/1",
+            "https://www.prevanders.net/dwarfbug.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-5039",
+        "cwe_id": "CWE-125",
+        "description": "The get_attr_value function in libdwarf before 20160923 allows remote attackers to cause a denial of service (out-of-bounds read) via a crafted object with all-bits on.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/05/24/1",
+            "http://www.openwall.com/lists/oss-security/2016/05/25/1",
+            "https://www.prevanders.net/dwarfbug.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-5040",
+        "cwe_id": "CWE-125",
+        "description": "libdwarf before 20160923 allows remote attackers to cause a denial of service (out-of-bounds read and crash) via a large length value in a compilation unit header.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/05/24/1",
+            "http://www.openwall.com/lists/oss-security/2016/05/25/1",
+            "https://www.prevanders.net/dwarfbug.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-5042",
+        "cwe_id": "CWE-399",
+        "description": "The dwarf_get_aranges_list function in libdwarf before 20160923 allows remote attackers to cause a denial of service (infinite loop and crash) via a crafted DWARF section.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/05/24/1",
+            "http://www.openwall.com/lists/oss-security/2016/05/25/1",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1332145",
+            "https://www.prevanders.net/dwarfbug.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-5043",
+        "cwe_id": "CWE-125",
+        "description": "The dwarf_dealloc function in libdwarf before 20160923 allows remote attackers to cause a denial of service (out-of-bounds read and crash) via a crafted DWARF section.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/05/24/1",
+            "http://www.openwall.com/lists/oss-security/2016/05/25/1",
+            "https://www.prevanders.net/dwarfbug.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-5044",
+        "cwe_id": "CWE-787",
+        "description": "The WRITE_UNALIGNED function in dwarf_elf_access.c in libdwarf before 20160923 allows remote attackers to cause a denial of service (out-of-bounds write and crash) via a crafted DWARF section.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/05/24/1",
+            "http://www.openwall.com/lists/oss-security/2016/05/25/1",
+            "https://www.prevanders.net/dwarfbug.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-5364",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in manage_custom_field_edit_page.php in MantisBT 1.2.19 and earlier allows remote attackers to inject arbitrary web script or HTML via the return parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/06/11/5",
+            "https://github.com/mantisbt/mantisbt/commit/11ab3d6c82a1d3a89b1024f77349fb60a83743c5",
+            "https://github.com/mantisbt/mantisbt/commit/5068df2dcf79c34741c746c9b27e0083f2a374da",
+            "https://mantisbt.org/bugs/view.php?id=20956"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mantisbt:mantisbt:1.2.19:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:mantisbt:mantisbt:1.2.19:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-6189",
+        "cwe_id": "CWE-184",
+        "description": "Incomplete blacklist in SOGo before 2.3.12 and 3.x before 3.1.1 allows remote authenticated users to obtain sensitive information by reading the fields in the (1) ics or (2) XML calendar feeds.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/07/09/3",
+            "https://github.com/inverse-inc/sogo/commit/717f45f640a2866b76a8984139391fae64339225",
+            "https://github.com/inverse-inc/sogo/commit/875a4aca3218340fd4d3141950c82c2ff45b343d",
+            "https://sogo.nu/bugs/view.php?id=3695"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:inverse-inc:sogo:*:*:*:*:*:*:*:* versions up to (including) 2.3.11\n     *cpe:2.3:a:inverse-inc:sogo:3.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_1:*:*:*:*:*:*\n     *cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_2:*:*:*:*:*:*\n     *cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_3:*:*:*:*:*:*\n     *cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_4:*:*:*:*:*:*\n     *cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_5:*:*:*:*:*:*\n     *cpe:2.3:a:inverse-inc:sogo:3.0.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:in",
+            "*cpe:2.3:a:inverse-inc:sogo:2.3.11:*:*:*:*:*:*:* (and previous)\n     *cpe:2.3:a:inverse-inc:sogo:3.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_1:*:*:*:*:*:*\n     *cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_2:*:*:*:*:*:*\n     *cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_3:*:*:*:*:*:*\n     *cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_4:*:*:*:*:*:*\n     *cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_5:*:*:*:*:*:*\n     *cpe:2.3:a:inverse-inc:sogo:3.0.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:inverse-inc:sogo",
+            "*cpe:2.3:a:inverse-inc:sogo:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:inverse-inc:sogo:3.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_1:*:*:*:*:*:*",
+            "*cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_2:*:*:*:*:*:*",
+            "*cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_3:*:*:*:*:*:*",
+            "*cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_4:*:*:*:*:*:*",
+            "*cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_5:*:*:*:*:*:*",
+            "*cpe:2.3:a:inverse-inc:sogo:3.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:in",
+            "*cpe:2.3:a:inverse:sogo:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:inverse:sogo:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:inverse-inc:sogo:2.3.11:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:inverse-inc:sogo:3.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_1:*:*:*:*:*:*",
+            "*cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_2:*:*:*:*:*:*",
+            "*cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_3:*:*:*:*:*:*",
+            "*cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_4:*:*:*:*:*:*",
+            "*cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_5:*:*:*:*:*:*",
+            "*cpe:2.3:a:inverse-inc:sogo:3.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:inverse-inc:sogo"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "11/07/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-6190",
+        "cwe_id": "CWE-200",
+        "description": "SOGo before 2.3.12 and 3.x before 3.1.1 does not restrict access to the UID and DTSTAMP attributes, which allows remote authenticated users to obtain sensitive information about appointments with the \"View the Date & Time\" restriction, as demonstrated by correlating UIDs and DTSTAMPs between all users.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/07/09/3",
+            "https://github.com/inverse-inc/sogo/commit/717f45f640a2866b76a8984139391fae64339225",
+            "https://github.com/inverse-inc/sogo/commit/875a4aca3218340fd4d3141950c82c2ff45b343d",
+            "https://sogo.nu/bugs/view.php?id=3696"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:inverse-inc:sogo:2.3.11:*:*:*:*:*:*:* (and previous)\n     *cpe:2.3:a:inverse-inc:sogo:3.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_1:*:*:*:*:*:*\n     *cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_2:*:*:*:*:*:*\n     *cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_3:*:*:*:*:*:*\n     *cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_4:*:*:*:*:*:*\n     *cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_5:*:*:*:*:*:*\n     *cpe:2.3:a:inverse-inc:sogo:3.0.1:*:*:*:*:*:*:*\n     *cpe:2.3:a:inverse-inc:sogo",
+            "*cpe:2.3:a:inverse-inc:sogo:2.3.11:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:inverse-inc:sogo:3.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_1:*:*:*:*:*:*",
+            "*cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_2:*:*:*:*:*:*",
+            "*cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_3:*:*:*:*:*:*",
+            "*cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_4:*:*:*:*:*:*",
+            "*cpe:2.3:a:inverse-inc:sogo:3.0.0:beta_5:*:*:*:*:*:*",
+            "*cpe:2.3:a:inverse-inc:sogo:3.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:inverse-inc:sogo"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-6191",
+        "cwe_id": "CWE-79",
+        "description": "Multiple cross-site scripting (XSS) vulnerabilities in the View Raw Source page in the Web Calendar in SOGo before 3.1.3 allow remote attackers to inject arbitrary web script or HTML via the (1) Description, (2) Location, (3) URL, or (4) Title field.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/07/09/3",
+            "https://github.com/inverse-inc/sogo/commit/64ce3c9c22fd9a28caabf11e76216cd53d0245aa",
+            "https://sogo.nu/bugs/view.php?id=3718"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:inverse-inc:sogo:*:*:*:*:*:*:*:* versions up to (including) 3.1.2",
+            "*cpe:2.3:a:inverse-inc:sogo:3.1.2:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:inverse-inc:sogo:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:inverse:sogo:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:inverse-inc:sogo:3.1.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "11/07/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-6252",
+        "cwe_id": "CWE-190",
+        "description": "Integer overflow in shadow 4.2.1 allows local users to gain privileges via crafted input to newuidmap.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://www.debian.org/security/2017/dsa-3793",
+            "http://www.openwall.com/lists/oss-security/2016/07/19/6",
+            "http://www.openwall.com/lists/oss-security/2016/07/19/7",
+            "http://www.openwall.com/lists/oss-security/2016/07/20/2",
+            "http://www.openwall.com/lists/oss-security/2016/07/25/7",
+            "http://www.securityfocus.com/bid/92055",
+            "https://bugzilla.suse.com/show_bug.cgi?id=979282",
+            "https://github.com/shadow-maint/shadow/issues/27",
+            "https://security.gentoo.org/glsa/201706-02"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:shadow_project:shadow:4.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:shadow_project:shadow:4.2.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "11/03/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-6870",
+        "cwe_id": "CWE-787",
+        "description": "Out-of-bounds write in the (1) mb_detect_encoding, (2) mb_send_mail, and (3) mb_detect_order functions in Facebook HHVM before 3.15.0 allows attackers to have unspecified impact via unknown vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/08/11/1",
+            "http://www.openwall.com/lists/oss-security/2016/08/19/1",
+            "https://github.com/facebook/hhvm/commit/365abe807cab2d60dc9ec307292a06181f77a9c2"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:facebook:hhvm:3.14.5:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:facebook:hhvm:3.14.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-6871",
+        "cwe_id": "CWE-190",
+        "description": "Integer overflow in bcmath in Facebook HHVM before 3.15.0 allows attackers to have unspecified impact via unknown vectors, which triggers a buffer overflow.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/08/11/1",
+            "http://www.openwall.com/lists/oss-security/2016/08/19/1",
+            "https://github.com/facebook/hhvm/commit/c00fc9d3003eb06226b58b6a48555f1456ee2475"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:facebook:hhvm:3.14.5:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:facebook:hhvm:3.14.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-6872",
+        "cwe_id": "CWE-190",
+        "description": "Integer overflow in StringUtil::implode in Facebook HHVM before 3.15.0 allows attackers to have unspecified impact via unknown vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/08/11/1",
+            "http://www.openwall.com/lists/oss-security/2016/08/19/1",
+            "https://github.com/facebook/hhvm/commit/2c9a8fcc73a151608634d3e712973d192027c271"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:facebook:hhvm:3.14.5:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:facebook:hhvm:3.14.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-6873",
+        "cwe_id": null,
+        "description": "Self recursion in compact in Facebook HHVM before 3.15.0 allows attackers to have unspecified impact via unknown vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/08/11/1",
+            "http://www.openwall.com/lists/oss-security/2016/08/19/1",
+            "https://github.com/facebook/hhvm/commit/e264f04ae825a5d97758130cf8eec99862517e7e"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:facebook:hhvm:3.14.5:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:facebook:hhvm:3.14.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-6874",
+        "cwe_id": null,
+        "description": "The array_*_recursive functions in Facebook HHVM before 3.15.0 allows attackers to have unspecified impact via unknown vectors, related to recursion.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/08/11/1",
+            "http://www.openwall.com/lists/oss-security/2016/08/19/1",
+            "https://github.com/facebook/hhvm/commit/05e706d98f748f609b19d8697e490eaab5007d69"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:facebook:hhvm:3.14.5:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:facebook:hhvm:3.14.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-6875",
+        "cwe_id": null,
+        "description": "Infinite recursion in wddx in Facebook HHVM before 3.15.0 allows attackers to have unspecified impact via unknown vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/08/11/1",
+            "http://www.openwall.com/lists/oss-security/2016/08/19/1",
+            "https://github.com/facebook/hhvm/commit/1888810e77b446a79a7674784d5f139fcfa605e2"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:facebook:hhvm:3.14.5:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:facebook:hhvm:3.14.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-7111",
+        "cwe_id": "CWE-79",
+        "description": "MantisBT before 1.3.1 and 2.x before 2.0.0-beta.2 uses a weak Content Security Policy when using the Gravatar plugin, which allows remote attackers to conduct cross-site scripting (XSS) attacks via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:H/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:H/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.7 MEDIUM",
+        "base_score_v2": "2.6 LOW",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2016/08/28/1",
+            "http://www.openwall.com/lists/oss-security/2016/08/29/2",
+            "https://github.com/mantisbt/mantisbt/commit/b3511d2f",
+            "https://mantisbt.org/bugs/view.php?id=21263"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mantisbt:mantisbt:1.3.0:*:*:*:*:*:*:* (and previous)\n     *cpe:2.3:a:mantisbt:mantisbt:2.0.0:beta1:*:*:*:*:*:*",
+            "*cpe:2.3:a:mantisbt:mantisbt:1.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:mantisbt:mantisbt:2.0.0:beta1:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-7510",
+        "cwe_id": "CWE-125",
+        "description": "The read_line_table_program function in dwarf_line_table_reader_common.c in libdwarf before 20160923 allows remote attackers to cause a denial of service (out-of-bounds read) via crafted input.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1377015",
+            "https://sourceforge.net/p/libdwarf/bugs/4/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-7511",
+        "cwe_id": "CWE-190",
+        "description": "Integer overflow in the dwarf_die_deliv.c in libdwarf 20160613 allows remote attackers to cause a denial of service (crash) via a crafted file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://sourceforge.net/p/libdwarf/bugs/3/",
+            "https://www.prevanders.net/dwarfbug.html#DW201609-002"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:libdwarf_project:libdwarf:20160613:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-6055",
+        "cwe_id": "CWE-611",
+        "description": "XML external entity (XXE) vulnerability in eParakstitajs 3 before 1.3.9 and eParaksts Java lib before 2.5.13 allows remote attackers to read arbitrary files or possibly have unspecified other impact via a crafted edoc file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://cert.lv/lv/2017/02/iznakusas-nedelas-zinas-par-drosibas-incidentiem-nr-4-2017",
+            "https://www.eparaksts.lv/en/Assistance/downloads/eparakstitajs-3-0/previous-versions-of-eparakstitajs-3-0/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:eparaksts:eparakstitajs_3:1.3.8:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:eparaksts:eparakstitajs_3:1.3.8:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "03/16/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-6065",
+        "cwe_id": "CWE-89",
+        "description": "SQL injection vulnerability in inc/lib/Control/Backend/menus.control.php in GeniXCMS through 1.0.2 allows remote authenticated users to execute arbitrary SQL commands via the order parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/semplon/GeniXCMS/issues/71"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:metalgenix:genixcms:1.0.1:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:metalgenix:genixcms:1.0.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/17/2017",
+        "modified_date": "02/23/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-5986",
+        "cwe_id": "CWE-617",
+        "description": "Race condition in the sctp_wait_for_sndbuf function in net/sctp/socket.c in the Linux kernel before 4.9.11 allows local users to cause a denial of service (assertion failure and panic) via a multithreaded application that peels off an association in a certain buffer-full state.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "7.1 HIGH",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=2dcab598484185dea7ec22219c76dcdd59e3cb90",
+            "http://www.debian.org/security/2017/dsa-3804",
+            "http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.9.11",
+            "http://www.openwall.com/lists/oss-security/2017/02/14/6",
+            "http://www.securityfocus.com/bid/96222",
+            "https://access.redhat.com/errata/RHSA-2017:1308",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1420276",
+            "https://github.com/torvalds/linux/commit/2dcab598484185dea7ec22219c76dcdd59e3cb90"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.9.11:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:linux:linux_kernel:4.9.11:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/18/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-6001",
+        "cwe_id": "CWE-362",
+        "description": "Race condition in kernel/events/core.c in the Linux kernel before 4.9.7 allows local users to gain privileges via a crafted application that makes concurrent perf_event_open system calls for moving a software group into a hardware context.  NOTE: this vulnerability exists because of an incomplete fix for CVE-2016-6786.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:H/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:H/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.0 HIGH",
+        "base_score_v2": "7.6 HIGH",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=321027c1fe77f892f4ea07846aeae08cefbbb290",
+            "http://www.debian.org/security/2017/dsa-3791",
+            "http://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.9.7",
+            "http://www.openwall.com/lists/oss-security/2017/02/16/1",
+            "http://www.securityfocus.com/bid/96264",
+            "https://access.redhat.com/errata/RHSA-2017:1842",
+            "https://access.redhat.com/errata/RHSA-2017:2077",
+            "https://access.redhat.com/errata/RHSA-2017:2669",
+            "https://access.redhat.com/errata/RHSA-2018:1854",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1422825",
+            "https://github.com/torvalds/linux/commit/321027c1fe77f892f4ea07846aeae08cefbbb290",
+            "https://source.android.com/security/bulletin/pixel/2017-11-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.9.6:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:linux:linux_kernel:4.9.6:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/18/2017",
+        "modified_date": "06/19/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-6074",
+        "cwe_id": "CWE-415",
+        "description": "The dccp_rcv_state_process function in net/dccp/input.c in the Linux kernel through 4.9.11 mishandles DCCP_PKT_REQUEST packet data structures in the LISTEN state, which allows local users to obtain root privileges or cause a denial of service (double free) via an application that makes an IPV6_RECVPKTINFO setsockopt system call.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2017-0293.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0294.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0295.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0316.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0323.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0324.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0345.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0346.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0347.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0365.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0366.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0403.html",
+            "http://rhn.redhat.com/errata/RHSA-2017-0501.html",
+            "http://www.debian.org/security/2017/dsa-3791",
+            "http://www.openwall.com/lists/oss-security/2017/02/22/3",
+            "http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html",
+            "http://www.securityfocus.com/bid/96310",
+            "http://www.securitytracker.com/id/1037876",
+            "https://access.redhat.com/errata/RHSA-2017:0932",
+            "https://access.redhat.com/errata/RHSA-2017:1209",
+            "https://github.com/torvalds/linux/commit/5edabca9d4cff7f1f2b68f0bac55ef99d9798ba4",
+            "https://source.android.com/security/bulletin/2017-07-01",
+            "https://www.exploit-db.com/exploits/41457/",
+            "https://www.exploit-db.com/exploits/41458/",
+            "https://www.tenable.com/security/tns-2017-07"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:linux:linux_kernel:4.9.11:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:linux:linux_kernel:4.9.11:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/18/2017",
+        "modified_date": "07/18/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4613",
+        "cwe_id": "CWE-200",
+        "description": "An issue was discovered in certain Apple products. Safari before 10.0.1 is affected. iCloud before 6.0.1 is affected. iTunes before 12.5.2 is affected. tvOS before 10.0.1 is affected. The issue involves the \"WebKit\" component. It allows remote attackers to obtain sensitive information via a crafted web site.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93949",
+            "http://www.securitytracker.com/id/1037139",
+            "https://support.apple.com/HT207270",
+            "https://support.apple.com/HT207272",
+            "https://support.apple.com/HT207273",
+            "https://support.apple.com/HT207274"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apple:icloud:6.0.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:apple:icloud:6.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:itunes:12.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:safari:10.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4617",
+        "cwe_id": "CWE-264",
+        "description": "An issue was discovered in certain Apple products. macOS before 10.12 is affected. The issue involves a sandbox escape related to launchctl process spawning in the \"libxpc\" component.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/96329",
+            "https://support.apple.com/HT207170"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:mac_os_x:10.11.6:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:mac_os_x:10.11.6:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "03/23/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4660",
+        "cwe_id": "CWE-200",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.1 is affected. macOS before 10.12.1 is affected. tvOS before 10.0.1 is affected. watchOS before 3.1 is affected. The issue involves the \"FontParser\" component. It allows remote attackers to obtain sensitive information or cause a denial of service (out-of-bounds read and application crash) via a crafted font.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:P)"
+        },
+        "base_score_v3": "7.1 HIGH",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93849",
+            "http://www.securitytracker.com/id/1037086",
+            "https://support.apple.com/HT207269",
+            "https://support.apple.com/HT207270",
+            "https://support.apple.com/HT207271",
+            "https://support.apple.com/HT207275"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:* versions from (including) 10.0.0",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:* versions from (including) 3.0.0",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:iphone_os:10.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:watch_os:3.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "03/08/2019",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4661",
+        "cwe_id": "CWE-20",
+        "description": "An issue was discovered in certain Apple products. macOS before 10.12.1 is affected. The issue involves the \"ntfs\" component, which misparses disk images and allows attackers to cause a denial of service via a crafted app.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93852",
+            "http://www.securitytracker.com/id/1037086",
+            "https://support.apple.com/HT207275"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4662",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. macOS before 10.12.1 is affected. The issue involves the \"AppleGraphicsControl\" component. It allows attackers to execute arbitrary code in a privileged context or cause a denial of service (memory corruption) via a crafted app.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93852",
+            "http://www.securitytracker.com/id/1037086",
+            "https://support.apple.com/HT207275"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4663",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. macOS before 10.12.1 is affected. The issue involves the \"NVIDIA Graphics Drivers\" component. It allows attackers to cause a denial of service (memory corruption) via a crafted app.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93852",
+            "http://www.securitytracker.com/id/1037086",
+            "https://support.apple.com/HT207275"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4664",
+        "cwe_id": "CWE-200",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.1 is affected. tvOS before 10.0.1 is affected. watchOS before 3.1 is affected. The issue involves the \"Sandbox Profiles\" component, which allows attackers to read photo-directory metadata via a crafted app.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "3.3 LOW",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93854",
+            "http://www.securitytracker.com/id/1037088",
+            "https://support.apple.com/HT207269",
+            "https://support.apple.com/HT207270",
+            "https://support.apple.com/HT207271"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:* versions from (including) 10.0.0",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:* versions from (including) 3.0.0",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:iphone_os:10.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:watch_os:3.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "03/08/2019",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4665",
+        "cwe_id": "CWE-200",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.1 is affected. tvOS before 10.0.1 is affected. watchOS before 3.1 is affected. The issue involves the \"Sandbox Profiles\" component, which allows attackers to read audio-recording metadata via a crafted app.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "3.3 LOW",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93854",
+            "http://www.securitytracker.com/id/1037088",
+            "https://support.apple.com/HT207269",
+            "https://support.apple.com/HT207270",
+            "https://support.apple.com/HT207271"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:* versions from (including) 10.0.0",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:* versions from (including) 3.0.0",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:iphone_os:10.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:watch_os:3.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "03/08/2019",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4666",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.1 is affected. Safari before 10.0.1 is affected. tvOS before 10.0.1 is affected. The issue involves the \"WebKit\" component. It allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption and application crash) via a crafted web site.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93851",
+            "http://www.securitytracker.com/id/1037087",
+            "https://support.apple.com/HT207270",
+            "https://support.apple.com/HT207271",
+            "https://support.apple.com/HT207272"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apple:safari:*:*:*:*:*:*:*:* versions up to (including) 10.0.0",
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:* versions from (including) 10.0.0",
+            "*cpe:2.3:a:apple:safari:10.0.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:apple:safari:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:apple:safari:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:apple:safari:10.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:iphone_os:10.0.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "03/13/2019",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4667",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. macOS before 10.12.1 is affected. The issue involves the \"ATS\" component. It allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption and application crash) via a crafted font.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93852",
+            "http://www.securitytracker.com/id/1037086",
+            "https://support.apple.com/HT207275"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4669",
+        "cwe_id": "CWE-20",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.1 is affected. macOS before 10.12.1 is affected. tvOS before 10.0.1 is affected. watchOS before 3.1 is affected. The issue involves the \"Kernel\" component. It allows local users to execute arbitrary code in a privileged context or cause a denial of service (MIG code mishandling and system crash) via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/158874/Safari-Webkit-For-iOS-7.1.2-JIT-Optimization-Bug.html",
+            "http://www.securityfocus.com/bid/93849",
+            "http://www.securitytracker.com/id/1037086",
+            "https://support.apple.com/HT207269",
+            "https://support.apple.com/HT207270",
+            "https://support.apple.com/HT207271",
+            "https://support.apple.com/HT207275",
+            "https://www.exploit-db.com/exploits/40654/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (including) 10.0.3",
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:* versions from (including) 10.0.0",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:* versions from (including) 3.0.0",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:iphone_os:10.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:watch_os:3.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "08/14/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4670",
+        "cwe_id": "CWE-255",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.1 is affected. macOS before 10.12.1 is affected. The issue involves the \"Security\" component. It allows local users to discover lengths of arbitrary passwords by reading a log.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "3.3 LOW",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94433",
+            "https://support.apple.com/HT207271",
+            "https://support.apple.com/HT207275"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:iphone_os:10.0.3:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:iphone_os:10.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "02/21/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4671",
+        "cwe_id": "CWE-787",
+        "description": "An issue was discovered in certain Apple products. macOS before 10.12.1 is affected. The issue involves the \"ImageIO\" component. It allows remote attackers to execute arbitrary code or cause a denial of service (out-of-bounds write and application crash) via a crafted PDF file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93852",
+            "http://www.securitytracker.com/id/1037086",
+            "https://support.apple.com/HT207275"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4673",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.1 is affected. macOS before 10.12.1 is affected. tvOS before 10.0.1 is affected. watchOS before 3.1 is affected. The issue involves the \"CoreGraphics\" component. It allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption and application crash) via a crafted JPEG file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93849",
+            "http://www.securitytracker.com/id/1037086",
+            "https://support.apple.com/HT207269",
+            "https://support.apple.com/HT207270",
+            "https://support.apple.com/HT207271",
+            "https://support.apple.com/HT207275"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (including) 10.0.3",
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:* versions from (including) 10.0.0",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:* versions from (including) 3.0.0",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:iphone_os:10.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:watch_os:3.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "03/22/2019",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4674",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. macOS before 10.12.1 is affected. The issue involves the \"ATS\" component. It allows local users to gain privileges or cause a denial of service (memory corruption and application crash) via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93852",
+            "http://www.securitytracker.com/id/1037086",
+            "https://support.apple.com/HT207275"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4675",
+        "cwe_id": "CWE-264",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.1 is affected. macOS before 10.12.1 is affected. tvOS before 10.0.1 is affected. watchOS before 3.1 is affected. The issue involves the \"libxpc\" component. It allows attackers to execute arbitrary code in a privileged context via a crafted app.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93849",
+            "http://www.securitytracker.com/id/1037086",
+            "https://support.apple.com/HT207269",
+            "https://support.apple.com/HT207270",
+            "https://support.apple.com/HT207271",
+            "https://support.apple.com/HT207275"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (including) 10.0.3",
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:* versions from (including) 10.0.0",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:* versions from (including) 3.0.0",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:iphone_os:10.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:watch_os:3.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "03/22/2019",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4677",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.1 is affected. Safari before 10.0.1 is affected. tvOS before 10.0.1 is affected. The issue involves the \"WebKit\" component. It allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption and application crash) via a crafted web site.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93853",
+            "http://www.securitytracker.com/id/1037087",
+            "https://support.apple.com/HT207270",
+            "https://support.apple.com/HT207271",
+            "https://support.apple.com/HT207272"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apple:safari:*:*:*:*:*:*:*:* versions up to (including) 10.0.0",
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:* versions from (including) 10.0.0",
+            "*cpe:2.3:a:apple:safari:10.0.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:apple:safari:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:apple:safari:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:apple:safari:10.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:iphone_os:10.0.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "03/25/2019",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4678",
+        "cwe_id": "CWE-476",
+        "description": "An issue was discovered in certain Apple products. macOS before 10.12.1 is affected. The issue involves the \"AppleSMC\" component. It allows local users to gain privileges or cause a denial of service (NULL pointer dereference) via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93852",
+            "http://www.securitytracker.com/id/1037086",
+            "https://support.apple.com/HT207275"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4679",
+        "cwe_id": "CWE-59",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.1 is affected. macOS before 10.12.1 is affected. tvOS before 10.0.1 is affected. watchOS before 3.1 is affected. The issue involves the \"libarchive\" component, which allows remote attackers to write to arbitrary files via a crafted archive containing a symlink.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93849",
+            "http://www.securitytracker.com/id/1037086",
+            "https://support.apple.com/HT207269",
+            "https://support.apple.com/HT207270",
+            "https://support.apple.com/HT207271",
+            "https://support.apple.com/HT207275"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (including) 10.0.3",
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:* versions from (including) 10.0.0",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:* versions from (including) 3.0.0",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:iphone_os:10.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:watch_os:3.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "03/22/2019",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4680",
+        "cwe_id": "CWE-200",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.1 is affected. tvOS before 10.0.1 is affected. watchOS before 3.1 is affected. The issue involves the \"Kernel\" component. It allows attackers to obtain sensitive information from kernel memory via a crafted app.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93854",
+            "http://www.securitytracker.com/id/1037088",
+            "https://support.apple.com/HT207269",
+            "https://support.apple.com/HT207270",
+            "https://support.apple.com/HT207271"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (including) 10.0.3",
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:* versions from (including) 10.0.0",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:* versions from (including) 3.0.0",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:iphone_os:10.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:watch_os:3.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "03/25/2019",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4681",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. macOS before 10.12.1 is affected. The issue involves the \"Core Image\" component. It allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption and application crash) via a crafted JPEG file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94431",
+            "https://support.apple.com/HT207275"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "02/21/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4682",
+        "cwe_id": "CWE-125",
+        "description": "An issue was discovered in certain Apple products. macOS before 10.12 is affected. macOS before 10.12.1 is affected. The issue involves the \"ImageIO\" component. It allows remote attackers to obtain sensitive information or cause a denial of service (out-of-bounds read and application crash) via a crafted SGI file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:P)"
+        },
+        "base_score_v3": "7.1 HIGH",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93852",
+            "http://www.securitytracker.com/id/1037086",
+            "https://support.apple.com/HT207170",
+            "https://support.apple.com/HT207275"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4683",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. macOS before 10.12.1 is affected. The issue involves the \"ImageIO\" component. It allows remote attackers to execute arbitrary code or cause a denial of service (out-of-bounds memory access and application crash) via a crafted SGI file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94431",
+            "https://support.apple.com/HT207275"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "02/21/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4685",
+        "cwe_id": "CWE-326",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.1 is affected. The issue involves the \"iTunes Backup\" component, which improperly hashes passwords, making it easier to decrypt files.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94432",
+            "https://support.apple.com/HT207271"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:iphone_os:10.0.3:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:iphone_os:10.0.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "02/21/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4686",
+        "cwe_id": "CWE-264",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.1 is affected. The issue involves the \"Contacts\" component, which does not prevent an app's Address Book access after access revocation.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "4.4 MEDIUM",
+        "base_score_v2": "3.6 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93848",
+            "http://www.securitytracker.com/id/1037088",
+            "https://support.apple.com/HT207271"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:iphone_os:10.0.3:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:iphone_os:10.0.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "07/28/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4688",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.1 is affected. macOS before 10.12.1 is affected. tvOS before 10.0.1 is affected. watchOS before 3.1 is affected. watchOS before 3.1.3 is affected. The issue involves the \"FontParser\" component. It allows remote attackers to execute arbitrary code or cause a denial of service (buffer overflow and application crash) via a crafted font.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94572",
+            "http://www.securitytracker.com/id/1037469",
+            "https://support.apple.com/HT207269",
+            "https://support.apple.com/HT207270",
+            "https://support.apple.com/HT207271",
+            "https://support.apple.com/HT207275",
+            "https://support.apple.com/HT207487"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (including) 10.12.0",
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:* versions from (including) 10.0.0",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:* versions from (including) 3.1.1",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:watch_os:3.1.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "03/22/2019",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4689",
+        "cwe_id": "CWE-254",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.2 is affected. The issue involves the \"Mail\" component, which does not alert the user to an S/MIME email signature that used a revoked certificate.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94850",
+            "http://www.securitytracker.com/id/1037429",
+            "https://support.apple.com/HT207422"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "07/26/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4690",
+        "cwe_id": "CWE-20",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.2 is affected. The issue involves the \"Image Capture\" component, which allows attackers to execute arbitrary code via a crafted USB HID device.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "6.8 MEDIUM",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94850",
+            "http://www.securitytracker.com/id/1037429",
+            "https://support.apple.com/HT207422"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "07/26/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4691",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.2 is affected. macOS before 10.12.2 is affected. watchOS before 3.1.3 is affected. The issue involves the \"FontParser\" component. It allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption and application crash) via a crafted font.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94905",
+            "http://www.securitytracker.com/id/1037469",
+            "https://support.apple.com/HT207422",
+            "https://support.apple.com/HT207423",
+            "https://support.apple.com/HT207487"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:* versions from (including) 3.1.1",
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:watch_os:3.1.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "10/30/2018",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4692",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.2 is affected. Safari before 10.0.2 is affected. iCloud before 6.1 is affected. iTunes before 12.5.4 is affected. The issue involves the \"WebKit\" component. It allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption and application crash) via a crafted web site.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94907",
+            "http://www.securitytracker.com/id/1037459",
+            "https://security.gentoo.org/glsa/201706-15",
+            "https://support.apple.com/HT207421",
+            "https://support.apple.com/HT207422",
+            "https://support.apple.com/HT207424",
+            "https://support.apple.com/HT207427"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apple:icloud:6.0.1:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:apple:icloud:6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:itunes:12.5.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:safari:10.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "07/26/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4693",
+        "cwe_id": "CWE-326",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.2 is affected. macOS before 10.12.2 is affected. watchOS before 3.1.3 is affected. The issue involves the \"Security\" component, which makes it easier for attackers to bypass cryptographic protection mechanisms by leveraging use of the 3DES cipher.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94905",
+            "http://www.securitytracker.com/id/1037469",
+            "https://support.apple.com/HT207422",
+            "https://support.apple.com/HT207423",
+            "https://support.apple.com/HT207487"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:* versions from (including) 3.1.1",
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:watch_os:3.1.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "10/30/2018",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4721",
+        "cwe_id": "CWE-254",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.1 is affected. macOS before 10.12.1 is affected. The issue involves the \"IDS - Connectivity\" component, which allows man-in-the-middle attackers to spoof calls via a \"switch caller\" notification.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94429",
+            "https://support.apple.com/HT207271",
+            "https://support.apple.com/HT207275"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:iphone_os:10.0.3:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:iphone_os:10.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "02/21/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4743",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.2 is affected. Safari before 10.0.2 is affected. iCloud before 6.1 is affected. iTunes before 12.5.4 is affected. The issue involves the \"WebKit\" component. It allows remote attackers to obtain sensitive information from process memory or cause a denial of service (memory corruption and application crash) via a crafted web site.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:P)"
+        },
+        "base_score_v3": "7.1 HIGH",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94907",
+            "http://www.securitytracker.com/id/1037459",
+            "https://security.gentoo.org/glsa/201706-15",
+            "https://support.apple.com/HT207421",
+            "https://support.apple.com/HT207422",
+            "https://support.apple.com/HT207424",
+            "https://support.apple.com/HT207427"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apple:icloud:6.0.1:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:apple:icloud:6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:itunes:12.5.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:safari:10.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "07/26/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4764",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. iOS before 10 is affected. Safari before 10 is affected. iTunes before 12.5.1 is affected. tvOS before 10 is affected. The issue involves the \"WebKit\" component. It allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption and application crash) via a crafted web site.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94430",
+            "https://support.apple.com/HT207142",
+            "https://support.apple.com/HT207143",
+            "https://support.apple.com/HT207157",
+            "https://support.apple.com/HT207158"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apple:itunes:*:*:*:*:*:*:*:* versions up to (including) 12.5.0",
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:* versions from (including) 9.2.2",
+            "*cpe:2.3:a:apple:itunes:12.5.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:apple:itunes:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:apple:itunes:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:apple:itunes:12.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:safari:9.1.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:apple_tv:9.2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:iphone_os:9.3.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "01/23/2020",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4780",
+        "cwe_id": "CWE-476",
+        "description": "An issue was discovered in certain Apple products. macOS before 10.12.1 is affected. The issue involves the \"Thunderbolt\" component. It allows attackers to execute arbitrary code in a privileged context or cause a denial of service (NULL pointer dereference) via a crafted app.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "https://support.apple.com/HT207275"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "02/21/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-4781",
+        "cwe_id": "CWE-254",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.2 is affected. The issue involves the \"SpringBoard\" component, which allows physically proximate attackers to bypass the passcode attempt counter and unlock a device via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "6.8 MEDIUM",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94850",
+            "http://www.securitytracker.com/id/1037429",
+            "https://support.apple.com/HT207422"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "07/26/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-7577",
+        "cwe_id": "CWE-200",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.1 is affected. macOS before 10.12.1 is affected. The issue involves the \"FaceTime\" component, which allows remote attackers to trigger memory corruption and obtain audio data from a call that appeared to have ended.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "3.7 LOW",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94429",
+            "https://support.apple.com/HT207271",
+            "https://support.apple.com/HT207275"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:iphone_os:10.0.3:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:iphone_os:10.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "02/21/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-7578",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.1 is affected. Safari before 10.0.1 is affected. iCloud before 6.0.1 is affected. iTunes before 12.5.2 is affected. tvOS before 10.0.1 is affected. The issue involves the \"WebKit\" component. It allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption and application crash) via a crafted web site.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93949",
+            "http://www.securitytracker.com/id/1037139",
+            "https://support.apple.com/HT207270",
+            "https://support.apple.com/HT207271",
+            "https://support.apple.com/HT207272",
+            "https://support.apple.com/HT207273",
+            "https://support.apple.com/HT207274"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apple:icloud:*:*:*:*:*:*:*:* versions up to (including) 6.0.0",
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:* versions from (including) 10.0.0",
+            "*cpe:2.3:a:apple:icloud:6.0.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:apple:icloud:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:apple:icloud:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:apple:itunes:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:apple:itunes:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:apple:safari:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:apple:safari:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:apple:icloud:6.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:itunes:12.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:safari:10.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:iphone_os:10.0.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "03/25/2019",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-7579",
+        "cwe_id": "CWE-200",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.1 is affected. macOS before 10.12.1 is affected. tvOS before 10.0.1 is affected. The issue involves the \"CFNetwork Proxies\" component, which allows man-in-the-middle attackers to spoof a proxy password authentication requirement and obtain sensitive information.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/93856",
+            "http://www.securitytracker.com/id/1037086",
+            "https://support.apple.com/HT207270",
+            "https://support.apple.com/HT207271",
+            "https://support.apple.com/HT207275"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (including) 10.0.3",
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:* versions from (including) 10.0.0",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:iphone_os:10.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "03/25/2019",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-7580",
+        "cwe_id": "CWE-20",
+        "description": "An issue was discovered in certain Apple products. macOS before 10.12 is affected. The issue involves the \"Mail\" component, which allows remote web servers to cause a denial of service via a crafted URL.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94434",
+            "https://support.apple.com/HT207170"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:mac_os_x:10.11.6:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:mac_os_x:10.11.6:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "02/21/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-7581",
+        "cwe_id": "CWE-20",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.1 is affected. The issue involves the \"Safari\" component, which allows remote web servers to cause a denial of service via a crafted URL.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94432",
+            "https://support.apple.com/HT207271"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:iphone_os:10.0.3:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:iphone_os:10.0.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "02/21/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-7582",
+        "cwe_id": "CWE-264",
+        "description": "An issue was discovered in certain Apple products. macOS before 10.12 is affected. The issue involves the \"Intel Graphics Driver\" component. It allows attackers to execute arbitrary code in a privileged context or cause a denial of service (memory corruption) via a crafted app.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94435",
+            "https://support.apple.com/HT207170"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:mac_os_x:10.11.6:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:mac_os_x:10.11.6:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "02/21/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-7583",
+        "cwe_id": "CWE-264",
+        "description": "An issue was discovered in certain Apple products. iCloud before 6.0.1 is affected. The issue involves the setup subsystem in the \"iCloud\" component. It allows local users to gain privileges via a crafted dynamic library in an unspecified directory.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94570",
+            "https://support.apple.com/HT207273"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apple:icloud:6.0.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:apple:icloud:6.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "02/21/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-7584",
+        "cwe_id": "CWE-254",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.1 is affected. macOS before 10.12.1 is affected. tvOS before 10.0.1 is affected. watchOS before 3.1 is affected. The issue involves the \"AppleMobileFileIntegrity\" component, which allows remote attackers to spoof signed code by using a matching team ID.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94571",
+            "https://support.apple.com/HT207269",
+            "https://support.apple.com/HT207270",
+            "https://support.apple.com/HT207271",
+            "https://support.apple.com/HT207275"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:* versions from (including) 10.0.0",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:* versions from (including) 3.0.0",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:apple_tv:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:apple_tv:10.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:iphone_os:10.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:watch_os:3.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "03/08/2019",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-7586",
+        "cwe_id": "CWE-200",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.2 is affected. Safari before 10.0.2 is affected. iCloud before 6.1 is affected. iTunes before 12.5.4 is affected. The issue involves the \"WebKit\" component. It allows remote attackers to obtain sensitive information via a crafted web site.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94907",
+            "http://www.securitytracker.com/id/1037459",
+            "https://security.gentoo.org/glsa/201706-15",
+            "https://support.apple.com/HT207421",
+            "https://support.apple.com/HT207422",
+            "https://support.apple.com/HT207424",
+            "https://support.apple.com/HT207427"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apple:icloud:6.0.1:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:apple:icloud:6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:itunes:12.5.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:safari:10.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "07/26/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-7587",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.2 is affected. Safari before 10.0.2 is affected. iCloud before 6.1 is affected. iTunes before 12.5.4 is affected. The issue involves the \"WebKit\" component. It allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption and application crash) via a crafted web site.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94907",
+            "http://www.securitytracker.com/id/1037459",
+            "https://security.gentoo.org/glsa/201706-15",
+            "https://support.apple.com/HT207421",
+            "https://support.apple.com/HT207422",
+            "https://support.apple.com/HT207424",
+            "https://support.apple.com/HT207427"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apple:icloud:6.0.1:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:apple:icloud:6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:itunes:12.5.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:safari:10.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "07/26/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-7588",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.2 is affected. macOS before 10.12.2 is affected. watchOS before 3.1.3 is affected. The issue involves the \"CoreMedia Playback\" component. It allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption and application crash) via a crafted MP4 file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94905",
+            "http://www.securitytracker.com/id/1037469",
+            "https://support.apple.com/HT207422",
+            "https://support.apple.com/HT207423",
+            "https://support.apple.com/HT207487"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:* versions from (including) 3.1.1",
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:watch_os:3.1.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "10/30/2018",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-7589",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.2 is affected. Safari before 10.0.2 is affected. iCloud before 6.1 is affected. iTunes before 12.5.4 is affected. watchOS before 3.1.3 is affected. The issue involves the \"WebKit\" component. It allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption and application crash) via a crafted web site.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94908",
+            "http://www.securitytracker.com/id/1037459",
+            "https://security.gentoo.org/glsa/201706-15",
+            "https://support.apple.com/HT207421",
+            "https://support.apple.com/HT207422",
+            "https://support.apple.com/HT207424",
+            "https://support.apple.com/HT207427",
+            "https://support.apple.com/HT207487"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:* versions from (including) 3.1.1",
+            "*cpe:2.3:a:apple:icloud:6.0.1:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:apple:icloud:6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:itunes:12.5.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:safari:10.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:watch_os:3.1.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "10/30/2018",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-7591",
+        "cwe_id": "CWE-416",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.2 is affected. macOS before 10.12.2 is affected. watchOS before 3.1.3 is affected. The issue involves the \"IOHIDFamily\" component. It allows attackers to execute arbitrary code in a privileged context or cause a denial of service (use-after-free) via a crafted app.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:H/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:H/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94905",
+            "http://www.securitytracker.com/id/1037469",
+            "https://support.apple.com/HT207422",
+            "https://support.apple.com/HT207423",
+            "https://support.apple.com/HT207487"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:* versions from (including) 3.1.1",
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:watch_os:3.1.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "10/30/2018",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-7592",
+        "cwe_id": "CWE-200",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.2 is affected. Safari before 10.0.2 is affected. iCloud before 6.1 is affected. iTunes before 12.5.4 is affected. The issue involves the \"WebKit\" component, which allows remote attackers to obtain sensitive information via crafted JavaScript prompts on a web site.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94909",
+            "http://www.securitytracker.com/id/1037459",
+            "https://security.gentoo.org/glsa/201706-15",
+            "https://support.apple.com/HT207421",
+            "https://support.apple.com/HT207422",
+            "https://support.apple.com/HT207424",
+            "https://support.apple.com/HT207427"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apple:icloud:6.0.1:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:apple:icloud:6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:itunes:12.5.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:safari:10.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "07/26/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-7594",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.2 is affected. macOS before 10.12.2 is affected. watchOS before 3.1.3 is affected. The issue involves the \"ICU\" component. It allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption and application crash) via a crafted web site.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94905",
+            "http://www.securitytracker.com/id/1037469",
+            "https://support.apple.com/HT207422",
+            "https://support.apple.com/HT207423",
+            "https://support.apple.com/HT207487"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:* versions from (including) 3.1.1",
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:watch_os:3.1.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "10/30/2018",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-7595",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.2 is affected. macOS before 10.12.2 is affected. watchOS before 3.1.3 is affected. The issue involves the \"CoreText\" component. It allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption and application crash) via a crafted font.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94905",
+            "http://www.securitytracker.com/id/1037469",
+            "https://support.apple.com/HT207422",
+            "https://support.apple.com/HT207423",
+            "https://support.apple.com/HT207487"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:* versions from (including) 3.1.1",
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:watch_os:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:watch_os:3.1.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "10/30/2018",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-7596",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. macOS before 10.12.2 is affected. The issue involves the \"Bluetooth\" component. It allows attackers to execute arbitrary code in a privileged context or cause a denial of service (memory corruption) via a crafted app.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94903",
+            "http://www.securitytracker.com/id/1037469",
+            "https://support.apple.com/HT207423"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:mac_os_x:10.12.1:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "07/26/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-7597",
+        "cwe_id": "CWE-254",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.2 is affected. The issue involves the \"SpringBoard\" component, which allows physically proximate attackers to maintain the unlocked state via vectors related to Handoff with Siri.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:P/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:P/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.6 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94850",
+            "http://www.securitytracker.com/id/1037429",
+            "https://support.apple.com/HT207422"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "07/26/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-7598",
+        "cwe_id": "CWE-200",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.2 is affected. Safari before 10.0.2 is affected. iCloud before 6.1 is affected. iTunes before 12.5.4 is affected. The issue involves the \"WebKit\" component. It allows remote attackers to obtain sensitive information from process memory via a crafted web site.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94907",
+            "http://www.securitytracker.com/id/1037459",
+            "https://security.gentoo.org/glsa/201706-15",
+            "https://support.apple.com/HT207421",
+            "https://support.apple.com/HT207422",
+            "https://support.apple.com/HT207424",
+            "https://support.apple.com/HT207427"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apple:icloud:6.0.1:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:apple:icloud:6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:itunes:12.5.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:safari:10.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "07/26/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-7599",
+        "cwe_id": "CWE-200",
+        "description": "An issue was discovered in certain Apple products. iOS before 10.2 is affected. Safari before 10.0.2 is affected. iCloud before 6.1 is affected. iTunes before 12.5.4 is affected. The issue involves the \"WebKit\" component. It allows remote attackers to bypass the Same Origin Policy and obtain sensitive information via a crafted web site that uses HTTP redirects.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94907",
+            "http://www.securitytracker.com/id/1037459",
+            "https://security.gentoo.org/glsa/201706-15",
+            "https://support.apple.com/HT207421",
+            "https://support.apple.com/HT207422",
+            "https://support.apple.com/HT207424",
+            "https://support.apple.com/HT207427"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apple:icloud:6.0.1:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:a:apple:icloud:6.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:itunes:12.5.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:safari:10.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:apple:iphone_os:10.1.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "07/26/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-7600",
+        "cwe_id": "CWE-200",
+        "description": "An issue was discovered in certain Apple products. macOS before 10.12.2 is affected. The issue involves the \"OpenPAM\" component, which allows local users to obtain sensitive information by leveraging mishandling of failed PAM authentication by a sandboxed app.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.2 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94903",
+            "http://www.securitytracker.com/id/1037469",
+            "https://support.apple.com/HT207423"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:mac_os_x:10.12.1:*:*:*:*:*:*:* (and previous)",
+            "*cpe:2.3:o:apple:mac_os_x:10.12.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/20/2017",
+        "modified_date": "07/26/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "2"
+    }
+]

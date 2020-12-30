@@ -1,0 +1,3403 @@
+[
+    {
+        "cve_id": "CVE-2014-8866",
+        "cwe_id": "CWE-17",
+        "description": "The compatibility mode hypercall argument translation in Xen 3.3.x through 4.4.x, when running on a 64-bit hypervisor, allows local 32-bit HVM guests to cause a denial of service (host crash) via vectors involving altering the high halves of registers while in 64-bit mode.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-8866"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.7 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2015-02/msg00005.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2015-02/msg00010.html",
+            "http://support.citrix.com/article/CTX200288",
+            "http://support.citrix.com/article/CTX201794",
+            "http://www.debian.org/security/2015/dsa-3140",
+            "http://www.securityfocus.com/bid/71332",
+            "http://xenbits.xen.org/xsa/advisory-111.html",
+            "https://security.gentoo.org/glsa/201504-04"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:novell:opensuse:13.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:novell:opensuse:13.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:novell:opensuse:13.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:opensuse:13.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:novell:opensuse:13.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:opensuse:13.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.0.1:*:*:*:*:*:*:",
+            "*cpe:2.3:o:xen:xen:3.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:x",
+            "*cpe:2.3:o:xen:xen:3.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.3:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:x",
+            "*cpe:2.3:o:xen:xen:3.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.0.1:",
+            "*cpe:2.3:o:xen:xen:3.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.3:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.0.1:",
+            "*cpe:2.3:o:xen:xen:3.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.0.1:",
+            "*cpe:2.3:o:xen:xen:3.3.0:*:*:*:*:*:x64:*",
+            "*cpe:2.3:o:xen:xen:3.3.1:*:*:*:*:*:x64:*",
+            "*cpe:2.3:o:xen:xen:3.3.2:*:*:*:*:*:x64:*",
+            "*cpe:2.3:o:xen:xen:3.4.0:*:*:*:*:*:x64:*",
+            "*cpe:2.3:o:xen:xen:3.4.1:*:*:*:*:*:x64:*",
+            "*cpe:2.3:o:xen:xen:3.4.2:*:*:*:*:*:x64:*",
+            "*cpe:2.3:o:xen:xen:3.4.3:*:*:*:*:*:x64:*",
+            "*cpe:2.3:o:xen:xen:3.4.4:*:*:*:*:*:x64:*",
+            "*cpe:2.3:o:xen:xen:4.0.0:*:*:*:*:*:x64:*",
+            "*cpe:2.3:o:xen:xen:3.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.3.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.4.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.0.1:",
+            "*cpe:2.3:o:xen:xen:3.3.0:*:*:*:*:*:x64:*",
+            "*cpe:2.3:o:xen:xen:3.3.1:*:*:*:*:*:x64:*",
+            "*cpe:2.3:o:xen:xen:3.3.2:*:*:*:*:*:x64:*",
+            "*cpe:2.3:o:xen:xen:3.4.0:*:*:*:*:*:x64:*",
+            "*cpe:2.3:o:xen:xen:3.4.1:*:*:*:*:*:x64:*",
+            "*cpe:2.3:o:xen:xen:3.4.2:*:*:*:*:*:x64:*",
+            "*cpe:2.3:o:xen:xen:3.4.3:*:*:*:*:*:x64:*",
+            "*cpe:2.3:o:xen:xen:3.4.4:*:*:*:*:*:x64:*",
+            "*cpe:2.3:o:xen:xen:4.0.0:*:*:*:*:*:x64:*"
+        ],
+        "published_date": "12/01/2014",
+        "modified_date": "10/30/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-8867",
+        "cwe_id": "CWE-17",
+        "description": "The acceleration support for the \"REP MOVS\" instruction in Xen 4.4.x, 3.2.x, and earlier lacks properly bounds checking for memory mapped I/O (MMIO) emulated in the hypervisor, which allows local HVM guests to cause a denial of service (host crash) via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-8867"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705",
+            "http://lists.opensuse.org/opensuse-security-announce/2015-02/msg00005.html",
+            "http://lists.opensuse.org/opensuse-security-announce/2015-02/msg00010.html",
+            "http://rhn.redhat.com/errata/RHSA-2015-0783.html",
+            "http://support.citrix.com/article/CTX200288",
+            "http://support.citrix.com/article/CTX201794",
+            "http://www.debian.org/security/2015/dsa-3140",
+            "http://www.securityfocus.com/bid/71331",
+            "http://xenbits.xenproject.org/xsa/advisory-112.html",
+            "https://security.gentoo.org/glsa/201504-04"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:novell:opensuse:13.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:novell:opensuse:13.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:novell:opensuse:13.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:opensuse:13.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:novell:opensuse:13.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:opensuse:13.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:3.2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:xen:xen:4.4.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/01/2014",
+        "modified_date": "10/30/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-8868",
+        "cwe_id": "CWE-264",
+        "description": "EntryPass N5200 Active Network Control Panel does not properly restrict access, which allows remote attackers to obtain the administrator username and password, and possibly other sensitive information, via a request to /4.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-8868"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2014/Dec/2",
+            "http://www.securityfocus.com/archive/1/534128/100/0/threaded",
+            "https://www.redteam-pentesting.de/advisories/rt-sa-2014-011"
+        ],
+        "cpe": [
+            "*cpe:2.3:h:entrypass:n5200_active_network_control_panel:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/07/2014",
+        "modified_date": "10/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-8874",
+        "cwe_id": "CWE-200",
+        "description": "The ke_questionnaire extension 2.5.2 and earlier for TYPO3 uses predictable names for the questionnaire answer forms, which makes it easier for remote attackers to obtain sensitive information via a direct request.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-8874"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2014/Dec/1",
+            "http://www.securityfocus.com/archive/1/534126/100/0/threaded",
+            "https://www.redteam-pentesting.de/advisories/rt-sa-2014-009"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:kennziffer:ke_questionnaire:2.5.2:*:*:*:*:typo3:*:*"
+        ],
+        "published_date": "12/02/2014",
+        "modified_date": "10/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-4633",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in EMC RSA Archer GRC Platform 5.x before 5.5.1.1 allows remote attackers to inject arbitrary web script or HTML via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-4633"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://archives.neohapsis.com/archives/bugtraq/2014-12/0073.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:emc:rsa_archer_grc:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:rsa_archer_grc:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:rsa_archer_grc:5.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:rsa_archer_grc:5.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:rsa_archer_grc:5.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:rsa_archer_grc:5.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:rsa_archer_grc:5.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:rsa_archer_egrc:5.5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:rsa_archer_egrc:5.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:rsa_archer_egrc:5.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:rsa_archer_egrc:5.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:rsa_archer_egrc:5.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:rsa_archer_egrc:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:rsa_archer_egrc:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:rsa_archer_grc:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:rsa_archer_grc:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:rsa_archer_grc:5.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:rsa_archer_grc:5.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:rsa_archer_grc:5.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:rsa_archer_grc:5.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:rsa_archer_grc:5.5.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/12/2014",
+        "modified_date": "12/16/2014",
+        "vulnerability_source": "Dell",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-4634",
+        "cwe_id": null,
+        "description": "Unquoted Windows search path vulnerability in EMC Replication Manager through 5.5.2 and AppSync before 2.1.0 allows local users to gain privileges via a Trojan horse application with a name composed of an initial substring of a path that contains a space character.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-4634"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://archives.neohapsis.com/archives/bugtraq/2014-12/0170.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:emc:replication_manager:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:replication_manager:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:replication_manager:5.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:replication_manager:5.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:replication_manager:5.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:replication_manager:5.4.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:replication_manager:5.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:replicat",
+            "*cpe:2.3:a:emc:replication_manager:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:replication_manager:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:replication_manager:5.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:replication_manager:5.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:replication_manager:5.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:replication_manager:5.4.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:replication_manager:5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:replication_manager:5.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:replication_manager:5.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:replication_manager:5.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:replication_manager:5.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:replication_manager:5.4.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:replication_manager:5.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emc:replicat"
+        ],
+        "published_date": "12/30/2014",
+        "modified_date": "03/24/2015",
+        "vulnerability_source": "Dell",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-7260",
+        "cwe_id": "CWE-94",
+        "description": "The Server Side Includes (SSI) implementation in the File Upload BBS component in ULTRAPOP.JP i-HTTPD allows remote attackers to execute arbitrary commands by uploading files containing commands in SSI directives.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-7260"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://jvn.jp/en/jp/JVN16406395/360573/index.html",
+            "http://jvn.jp/en/jp/JVN16406395/index.html",
+            "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000143"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ultrapop:i-httpd:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/11/2014",
+        "modified_date": "12/12/2014",
+        "vulnerability_source": "JPCERT/CC",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-7261",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in ULTRAPOP.JP i-HTTPD allows remote attackers to inject arbitrary web script or HTML via a crafted string that is improperly rendered during construction of a directory index page, a different vulnerability than CVE-2014-7263.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-7261"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://jvn.jp/en/jp/JVN89613370/360573/index.html",
+            "http://jvn.jp/en/jp/JVN89613370/index.html",
+            "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000144"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ultrapop:i-httpd:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/11/2014",
+        "modified_date": "12/12/2014",
+        "vulnerability_source": "JPCERT/CC",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-7262",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in the Omake BBS component in ULTRAPOP.JP i-HTTPD allows remote attackers to inject arbitrary web script or HTML via a crafted string.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-7262"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://jvn.jp/en/jp/JVN98097877/360573/index.html",
+            "http://jvn.jp/en/jp/JVN98097877/index.html",
+            "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000145"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ultrapop:i-httpd:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/11/2014",
+        "modified_date": "12/12/2014",
+        "vulnerability_source": "JPCERT/CC",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-7263",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in ULTRAPOP.JP i-HTTPD allows remote attackers to inject arbitrary web script or HTML via a crafted HTTP header, a different vulnerability than CVE-2014-7261.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-7263"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://jvn.jp/en/jp/JVN87910097/360573/index.html",
+            "http://jvn.jp/en/jp/JVN87910097/index.html",
+            "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000146"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ultrapop:i-httpd:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/11/2014",
+        "modified_date": "12/12/2014",
+        "vulnerability_source": "JPCERT/CC",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-7264",
+        "cwe_id": "CWE-79",
+        "description": "Multiple cross-site scripting (XSS) vulnerabilities in admin/themes/default/pages/manage_users.twig in the Users Management feature in the admin component in Chyrp before 2.5.1 allow remote authenticated users to inject arbitrary web script or HTML via the (1) user.email or (2) user.website field in a user registration.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-7264"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://chyrp.net/2014/11/18/chyrp-251-security-release/",
+            "http://jvn.jp/en/jp/JVN13160869/index.html",
+            "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000149",
+            "https://github.com/chyrp/chyrp/commit/43d1b6b266363ae7545d5d49851034eaeec7bebb"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:chyrp:chyrp:2.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/11/2014",
+        "modified_date": "12/12/2014",
+        "vulnerability_source": "JPCERT/CC",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-7265",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in LinPHA allows remote attackers to inject arbitrary web script or HTML via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-7265"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://jvn.jp/en/jp/JVN61181790/index.html",
+            "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000150"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:linpha:linpha:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/12/2014",
+        "modified_date": "12/12/2014",
+        "vulnerability_source": "JPCERT/CC",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-7267",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in the output-page generator in the Ricksoft WBS Gantt-Chart add-on 7.8.1 and earlier for JIRA allows remote authenticated users to inject arbitrary web script or HTML via unspecified vectors, a different vulnerability than CVE-2014-7268.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-7267"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://jvn.jp/en/jp/JVN09289074/index.html",
+            "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000151",
+            "https://www.ricksoft.jp/document/pages/viewpage.action?pageId=172425369"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ricksoft:wbs_gantt-chart:7.8.1:*:*:*:*:jira:*:*"
+        ],
+        "published_date": "12/19/2014",
+        "modified_date": "12/19/2014",
+        "vulnerability_source": "JPCERT/CC",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-7268",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in the data-export feature in the Ricksoft WBS Gantt-Chart add-on 7.8.1 and earlier for JIRA allows remote attackers to inject arbitrary web script or HTML via unspecified vectors, a different vulnerability than CVE-2014-7267.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-7268"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://jvn.jp/en/jp/JVN76515134/index.html",
+            "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000152",
+            "https://www.ricksoft.jp/document/pages/viewpage.action?pageId=172425369"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ricksoft:wbs_gantt-chart:7.8.1:*:*:*:*:jira:*:*"
+        ],
+        "published_date": "12/19/2014",
+        "modified_date": "12/19/2014",
+        "vulnerability_source": "JPCERT/CC",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-8272",
+        "cwe_id": null,
+        "description": "The IPMI 1.5 functionality in Dell iDRAC6 modular before 3.65, iDRAC6 monolithic before 1.98, and iDRAC7 before 1.57.57 does not properly select session ID values, which makes it easier for remote attackers to execute arbitrary commands via a brute-force attack.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-8272"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.exploit-db.com/exploits/35770",
+            "http://www.kb.cert.org/vuls/id/843044",
+            "http://www.kb.cert.org/vuls/id/BLUU-9RDQHM"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:dell:idrac6_modular:3.60:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:dell:idrac6_monolithic:1.97:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:dell:idrac6_modular:3.60:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/19/2014",
+        "modified_date": "02/05/2015",
+        "vulnerability_source": "CERT/CC",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-8298",
+        "cwe_id": "CWE-19",
+        "description": "The NVIDIA Linux Discrete GPU drivers before R304.125, R331.x before R331.113, R340.x before R340.65, R343.x before R343.36, and R346.x before R346.22, Linux for Tegra (L4T) driver before R21.2, and Chrome OS driver before R40 allows remote attackers to cause a denial of service (segmentation fault and X server crash) or possibly execute arbitrary code via a crafted GLX indirect rendering protocol request.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-8298"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://nvidia.custhelp.com/app/answers/detail/a_id/3610",
+            "http://www.oracle.com/technetwork/topics/security/bulletinjan2015-2370101.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nvidia:gpu_driver:r304.125:*:*:*:*:linux_kernel:*:*",
+            "*cpe:2.3:a:nvidia:gpu_driver:r331.00:*:*:*:*:linux_kernel:*:*",
+            "*cpe:2.3:a:nvidia:gpu_driver:r331.112:*:*:*:*:linux_kernel:*:*",
+            "*cpe:2.3:a:nvidia:gpu_driver:r3",
+            "*cpe:2.3:a:nvidia:gpu_driver:r304.125:*:*:*:*:linux_kernel:*:*",
+            "*cpe:2.3:a:nvidia:gpu_driver:r331.00:*:*:*:*:linux_kernel:*:*",
+            "*cpe:2.3:a:nvidia:gpu_driver:r331.112:*:*:*:*:linux_kernel:*:*",
+            "*cpe:2.3:a:nvidia:gpu_driver:r340.00:*:*:*:*:linux_kernel:*:*",
+            "*cpe:2.3:a:nvidia:gpu_driver:r340.65:*:*:*:*:linux_kernel:*:*",
+            "*cpe:2.3:a:nvidia:gpu_driver:r343.00:*:*:*:*:linux_kernel:*:*",
+            "*cpe:2.3:a:nvidia:gpu_driver:r34",
+            "*cpe:2.3:a:nvidia:gpu_driver:r304.125:*:*:*:*:linux_kernel:*:*",
+            "*cpe:2.3:a:nvidia:gpu_driver:r331.00:*:*:*:*:linux_kernel:*:*",
+            "*cpe:2.3:a:nvidia:gpu_driver:r331.112:*:*:*:*:linux_kernel:*:*",
+            "*cpe:2.3:a:nvidia:gpu_driver:r3"
+        ],
+        "published_date": "12/10/2014",
+        "modified_date": "10/25/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-8017",
+        "cwe_id": "CWE-200",
+        "description": "The periodic-backup feature in Cisco Identity Services Engine (ISE) allows remote attackers to discover backup-encryption passwords via a crafted request that triggers inclusion of a password in a reply, aka Bug ID CSCur41673.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-8017"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://tools.cisco.com/security/center/content/CiscoSecurityNotice/CVE-2014-8017",
+            "http://www.securityfocus.com/bid/71767",
+            "http://www.securitytracker.com/id/1031425"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:cisco:identity_services_engine_software:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/22/2014",
+        "modified_date": "01/02/2017",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-8018",
+        "cwe_id": "CWE-79",
+        "description": "Multiple cross-site scripting (XSS) vulnerabilities in Business Voice Services Manager (BVSM) pages in the Application Software in Cisco Unified Communications Domain Manager 8 allow remote attackers to inject arbitrary web script or HTML via a crafted URL, aka Bug IDs CSCur19651, CSCur18555, CSCur19630, and CSCur19661.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-8018"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://tools.cisco.com/security/center/content/CiscoSecurityNotice/CVE-2014-8018",
+            "http://www.securityfocus.com/bid/71771",
+            "http://www.securitytracker.com/id/1031424"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:cisco:unified_communications_domain_manager:8.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/22/2014",
+        "modified_date": "01/02/2017",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-8019",
+        "cwe_id": "CWE-22",
+        "description": "Directory traversal vulnerability in Cisco Enterprise Content Delivery System (ECDS) allows remote attackers to read arbitrary files via a crafted URL, aka Bug ID CSCuo90148.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-8019"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://tools.cisco.com/security/center/content/CiscoSecurityNotice/CVE-2014-8019",
+            "http://www.securitytracker.com/id/1031417"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:cisco:enterprise_content_delivery_system:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/19/2014",
+        "modified_date": "01/02/2017",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-8024",
+        "cwe_id": "CWE-200",
+        "description": "The API in the Guest Server in Cisco Jabber, when the HTML5 CORS feature is used, allows remote attackers to obtain sensitive information by sniffing the network during an HTTP (1) GET or (2) POST request, aka Bug ID CSCus19789.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-8024"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://tools.cisco.com/security/center/content/CiscoSecurityNotice/CVE-2014-8024",
+            "http://www.securityfocus.com/bid/71770",
+            "http://www.securitytracker.com/id/1031422",
+            "https://tools.cisco.com/security/center/viewAlert.x?alertId=36870"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:cisco:jabber_guest:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/22/2014",
+        "modified_date": "01/02/2017",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-8025",
+        "cwe_id": "CWE-200",
+        "description": "The API in the Guest Server in Cisco Jabber, when HTML5 is used, allows remote attackers to obtain sensitive information by sniffing the network during an HTTP (1) GET or (2) POST response, aka Bug ID CSCus19801.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-8025"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://tools.cisco.com/security/center/content/CiscoSecurityNotice/CVE-2014-8025",
+            "http://www.securityfocus.com/bid/71768",
+            "http://www.securitytracker.com/id/1031422",
+            "https://tools.cisco.com/security/center/viewAlert.x?alertId=36871"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:cisco:jabber_guest:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/22/2014",
+        "modified_date": "01/02/2017",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-8026",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in the Guest Server in Cisco Jabber allows remote attackers to inject arbitrary web script or HTML via a (1) GET or (2) POST parameter, aka Bug ID CSCus08074.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-8026"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://tools.cisco.com/security/center/content/CiscoSecurityNotice/CVE-2014-8026",
+            "http://www.securityfocus.com/bid/71769",
+            "http://www.securitytracker.com/id/1031422",
+            "https://tools.cisco.com/security/center/viewAlert.x?alertId=36872"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:cisco:jabber_guest:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/22/2014",
+        "modified_date": "01/02/2017",
+        "vulnerability_source": "Cisco Systems, Inc.",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-8601",
+        "cwe_id": "CWE-399",
+        "description": "PowerDNS Recursor before 3.6.2 does not limit delegation chaining, which allows remote attackers to cause a denial of service (\"performance degradations\") via a large or infinite number of referrals, as demonstrated by resolving domains hosted by ezdns.it.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-8601"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "/CERTFR-2014-AVI-512/index.html",
+            "http://doc.powerdns.com/md/security/powerdns-advisory-2014-02/",
+            "http://www.debian.org/security/2014/dsa-3096",
+            "http://www.kb.cert.org/vuls/id/264212",
+            "http://www.securityfocus.com/bid/71545",
+            "http://www.securitytracker.com/id/1031310"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:powerdns:recursor:3.6.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:powerdns:recursor:3.6.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:powerdns:recursor:3.6.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/10/2014",
+        "modified_date": "09/06/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-8602",
+        "cwe_id": "CWE-399",
+        "description": "iterator.c in NLnet Labs Unbound before 1.5.1 does not limit delegation chaining, which allows remote attackers to cause a denial of service (memory and CPU consumption) via a large or infinite number of referrals.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-8602"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "/CERTFR-2014-AVI-512/index.html",
+            "http://unbound.net/downloads/patch_cve_2014_8602.diff",
+            "http://www.debian.org/security/2014/dsa-3097",
+            "http://www.kb.cert.org/vuls/id/264212",
+            "http://www.oracle.com/technetwork/topics/security/linuxbulletinoct2015-2719645.html",
+            "http://www.securityfocus.com/bid/71589",
+            "http://www.ubuntu.com/usn/USN-2484-1",
+            "https://unbound.net/downloads/CVE-2014-8602.txt"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nlnetlabs:unbound:1.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:nlnet_labs:unbound:1.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:nlnetlabs:unbound:1.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:nlnet_labs:unbound:1.5.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/10/2014",
+        "modified_date": "11/28/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-8608",
+        "cwe_id": null,
+        "description": "The K7Sentry.sys kernel mode driver (aka K7AV Sentry Device Driver) before 12.8.0.119, as used in multiple K7 Computing products, allows local users to cause a denial of service (NULL pointer dereference) as demonstrated by a filename containing \"crashme$$\".",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-8608"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/129470/K7-Computing-Multiple-Products-Null-Pointer-Dereference.html",
+            "http://seclists.org/fulldisclosure/2014/Dec/45",
+            "http://www.securityfocus.com/bid/71615",
+            "https://www.portcullis-security.com/security-research-and-downloads/security-advisories/cve-2014-8608/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:k7computing:k7av_sentry_device_driver:12.8.0.118:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/12/2014",
+        "modified_date": "12/15/2016",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-8609",
+        "cwe_id": "CWE-264",
+        "description": "The addAccount method in src/com/android/settings/accounts/AddAccountSettings.java in the Settings application in Android before 5.0.0 does not properly create a PendingIntent, which allows attackers to use the SYSTEM uid for broadcasting an intent with arbitrary component, action, or category information via a third-party authenticator in a crafted application, aka Bug 17356824.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-8609"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/129281/Android-Settings-Pendingintent-Leak.html",
+            "http://seclists.org/fulldisclosure/2014/Nov/81",
+            "http://xteam.baidu.com/?p=158",
+            "https://android.googlesource.com/platform/packages/apps/Settings/+/f5d3e74ecc2b973941d8adbe40c6b23094b5abb7"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:androi"
+        ],
+        "published_date": "12/15/2014",
+        "modified_date": "12/16/2014",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-8610",
+        "cwe_id": "CWE-264",
+        "description": "AndroidManifest.xml in Android before 5.0.0 does not require the SEND_SMS permission for the SmsReceiver receiver, which allows attackers to send stored SMS messages, and consequently transmit arbitrary new draft SMS messages or trigger additional per-message charges from a network operator for old messages, via a crafted application that broadcasts an intent with the com.android.mms.transaction.MESSAGE_SENT action, aka Bug 17671795.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-8610"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.3 LOW",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/129282/Android-SMS-Resend.html",
+            "http://seclists.org/fulldisclosure/2014/Dec/8",
+            "http://seclists.org/fulldisclosure/2014/Nov/85",
+            "http://xteam.baidu.com/?p=164",
+            "https://android.googlesource.com/platform/packages/apps/Mms/+/008d6202fca4002a7dfe333f22377faa73585c67",
+            "https://github.com/joswr1ght/drozer-modules/blob/master/whfs/smsdraftsend.py"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:1.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:1.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:2.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:2.2:re",
+            "*cpe:2.3:o:google:android:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.4.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:4.4.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:1.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:1.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:2.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:go",
+            "*cpe:2.3:o:google:android:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:1.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:1.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:2.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:2.2:re"
+        ],
+        "published_date": "12/15/2014",
+        "modified_date": "12/16/2014",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-6163",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability on the IBM WebSphere DataPower XC10 appliance 2.1 and 2.5 before FP4 allows remote authenticated users to inject arbitrary web script or HTML via a crafted URL.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6163"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IT04614",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21691035",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/97712"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:ibm:websphere_datapower_xc10_appliance_firmware:2.5.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:ibm:websphere_datapower_xc10_appliance_firmware:2.1.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/11/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-6164",
+        "cwe_id": "CWE-200",
+        "description": "IBM WebSphere Application Server 8.0.x before 8.0.0.10 and 8.5.x before 8.5.5.4 allows remote attackers to spoof OpenID and OpenID Connect cookies, and consequently obtain sensitive information, via a crafted URL.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6164"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21690185",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/97713"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:websphere_application_server:8.0.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:8.0.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:8.0.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:8.0.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:8.0.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:8.0.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a"
+        ],
+        "published_date": "12/18/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-6166",
+        "cwe_id": null,
+        "description": "The Communications Enabled Applications (CEA) service in IBM WebSphere Application Server 8.0.x before 8.0.0.10 and 8.5.x before 8.5.5.4, and Feature Pack for CEA 1.x before 1.0.0.15, allows remote attackers to read arbitrary files via an XML external entity declaration in conjunction with an entity reference, related to an XML External Entity (XXE) issue.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6166"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21690185",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/97746"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:websphere_application_server:8.0.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:8.0.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:8.0.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:8.0.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:8.0.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:8.0.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a"
+        ],
+        "published_date": "12/18/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-6167",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in the URL rewriting feature in IBM WebSphere Application Server 7.x before 7.0.0.37, 8.0.x before 8.0.0.10, and 8.5.x before 8.5.5.4 allows remote attackers to inject arbitrary web script or HTML via a crafted URL.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6167"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21690185",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/97748"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:websphere_application_server:8.0.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:8.0.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:8.0.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:8.0.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:8.0.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_application_server:8.0.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a"
+        ],
+        "published_date": "12/18/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-6168",
+        "cwe_id": "CWE-352",
+        "description": "Cross-site request forgery (CSRF) vulnerability in IBM Security Identity Manager 5.1 before 5.1.0.15 IF0056 allows remote authenticated users to hijack the authentication of arbitrary users for requests that insert XSS sequences.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6168"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21692907",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/97752"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:security_identity_manager:5.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_identity_manager:5.1.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_identity_manager:5.1.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_identity_manager:5.1.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_identity_manager:5.1.0.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_identity_manager:5.1.0.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_identi"
+        ],
+        "published_date": "12/28/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-6171",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in IBM WebSphere Portal 6.1.0 through 6.1.0.6 CF27, 6.1.5 through 6.1.5.3 CF27, 7.0.0 through 7.0.0.2 CF29, 8.0.0 through 8.0.0.1 CF14, and 8.5.0 before CF04 allows remote attackers to inject arbitrary web script or HTML via a crafted URL.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6171"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1PI29134",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21692107",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/98383"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:websphere_portal:6.1.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_portal:6.1.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_portal:6.1.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_portal:6.1.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_portal:6.1.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_portal:6.1.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_portal:6.1.0.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:web"
+        ],
+        "published_date": "12/18/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-6173",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in the Process Inspector in IBM Business Process Manager (BPM) 8.0.x through 8.0.1.3 and 8.5.x through 8.5.5 allows remote authenticated users to inject arbitrary web script or HTML via a crafted URL.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6173"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1JR50241",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21690553",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/98418"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:business_process_manager:8.0.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:business_process_manager:8.0.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:business_process_manager:8.0.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:business_process_manager:8.0.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:business_process_manager:8.0.1.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:business_process_manager:8.5.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:business_process_ma"
+        ],
+        "published_date": "12/18/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-6186",
+        "cwe_id": "CWE-264",
+        "description": "IBM WebSphere Service Registry and Repository (WSRR) 6.3.x before 6.3.0.5, 7.0.x through 7.0.0.5, 7.5.x before 7.5.0.3, and 8.0.x before 8.0.0.1 allows remote authenticated users to bypass intended object-access restrictions via the datagraph.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6186"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IV26309",
+            "http://www.ibm.com/support/docview.wss?uid=swg21693379",
+            "http://www.ibm.com/support/docview.wss?uid=swg21693381",
+            "http://www.ibm.com/support/docview.wss?uid=swg21693384",
+            "http://www.ibm.com/support/docview.wss?uid=swg21693387",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/98549"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:websphere_service_registry_and_repository:6.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_service_registry_and_repository:6.3.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_service_registry_and_repository:6.3.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_service_registry_and_repository:6.3.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_service_registry_and_repository:6.3.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:webspher"
+        ],
+        "published_date": "12/24/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-6187",
+        "cwe_id": "CWE-352",
+        "description": "Multiple cross-site request forgery (CSRF) vulnerabilities in IBM WebSphere Service Registry and Repository (WSRR) 6.3.x before 6.3.0.5, 7.0.x before 7.0.0.5, 7.5.x before 7.5.0.3, and 8.0.x before 8.0.0.2 allow remote authenticated users to hijack the authentication of unspecified victims via unknown vectors.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6187"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IV26727",
+            "http://www.ibm.com/support/docview.wss?uid=swg21693379",
+            "http://www.ibm.com/support/docview.wss?uid=swg21693381",
+            "http://www.ibm.com/support/docview.wss?uid=swg21693384",
+            "http://www.ibm.com/support/docview.wss?uid=swg21693387",
+            "http://www.securityfocus.com/bid/71906",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/98553"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:websphere_service_registry_and_repository:6.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_service_registry_and_repository:6.3.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_service_registry_and_repository:6.3.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_service_registry_and_repository:6.3.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_service_registry_and_repository:6.3.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:webspher"
+        ],
+        "published_date": "12/24/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-6188",
+        "cwe_id": "CWE-79",
+        "description": "Multiple cross-site scripting (XSS) vulnerabilities in IBM WebSphere Service Registry and Repository (WSRR) 6.3.x before 6.3.0.5, 7.0.x through 7.0.0.5, 7.5.x before 7.5.0.3, and 8.0.x before 8.0.0.2 allow remote authenticated users to inject arbitrary web script or HTML via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6188"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IV26727",
+            "http://www.ibm.com/support/docview.wss?uid=swg21693379",
+            "http://www.ibm.com/support/docview.wss?uid=swg21693381",
+            "http://www.ibm.com/support/docview.wss?uid=swg21693384",
+            "http://www.ibm.com/support/docview.wss?uid=swg21693387",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/98553"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:websphere_service_registry_and_repository:6.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_service_registry_and_repository:6.3.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_service_registry_and_repository:6.3.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_service_registry_and_repository:6.3.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_service_registry_and_repository:6.3.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:webspher"
+        ],
+        "published_date": "12/24/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-5359",
+        "cwe_id": "CWE-22",
+        "description": "Directory traversal vulnerability in SafeNet Authentication Service (SAS) Outlook Web Access Agent (formerly CRYPTOCard) before 1.03.30109 allows remote attackers to read arbitrary files via a .. (dot dot) in the GetFile parameter to owa/owa.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-5359"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "http://appcheck-ng.com/safenet-sas-owa-agent-directory-traversal-vulnerability/",
+            "http://www.safenet-inc.com/technical-support/security-updates/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:safenet-inc:safenet_authentication_service_outlook_web_access_agent:1.03.20212:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/16/2014",
+        "modified_date": "12/17/2014",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-7879",
+        "cwe_id": "CWE-287",
+        "description": "HP HP-UX B.11.11, B.11.23, and B.11.31, when the PAM configuration includes libpam_updbe, allows remote authenticated users to bypass authentication, and consequently execute arbitrary code, via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-7879"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "8.5 HIGH",
+        "hyperlinks": [
+            "/hpsc/public/kb/docDisplay?docId=emr_na-c04511778"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:hp:hp-ux:b.11.11:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:hp:hp-ux:b.11.23:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:hp:hp-ux:b.11.31:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/10/2014",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "HP Inc.",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-7880",
+        "cwe_id": null,
+        "description": "Multiple unspecified vulnerabilities in the POP implementation in HP OpenVMS TCP/IP 5.7 before ECO5 allow remote attackers to cause a denial of service via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-7880"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1031387",
+            "/hpsc/public/kb/docDisplay?docId=emr_na-c04530570"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:tcp_ip_services_openvms:5.7:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/17/2014",
+        "modified_date": "01/02/2017",
+        "vulnerability_source": "HP Inc.",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9334",
+        "cwe_id": "CWE-352",
+        "description": "Multiple cross-site request forgery (CSRF) vulnerabilities in the Bird Feeder plugin 1.2.3 for WordPress allow remote attackers to hijack the authentication of administrators for requests that conduct cross-site scripting (XSS) attacks via the (1) user or (2) password parameter in the bird-feeder page to wp-admin/options-general.php.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9334"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/129623/WordPress-Bird-Feeder-1.2.3-CSRF-XSS.html",
+            "http://seclists.org/fulldisclosure/2014/Dec/69",
+            "http://www.vulnerability-lab.com/get_content.php?id=1372",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/99474"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:bird_feeder_project:bird_feeder:1.2.3:*:*:*:*:wordpress:*:*"
+        ],
+        "published_date": "12/24/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9335",
+        "cwe_id": "CWE-352",
+        "description": "Multiple cross-site request forgery (CSRF) vulnerabilities in the DandyID Services plugin 1.5.9 and earlier for WordPress allow remote attackers to hijack the authentication of administrators for requests that conduct cross-site scripting (XSS) attacks via the (1) email_address or (2) sidebarTitle parameter in the dandyid-services.php page to wp-admin/options-general.php.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9335"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/129575/WordPress-DandyID-Services-ID-1.5.9-CSRF-XSS.html",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/99502"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:dandyid_services_project:dandyid_services:1.5.9:*:*:*:*:wordpress:*:*"
+        ],
+        "published_date": "12/19/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9336",
+        "cwe_id": "CWE-352",
+        "description": "Multiple cross-site request forgery (CSRF) vulnerabilities in the iTwitter plugin 0.04 and earlier for WordPress allow remote attackers to hijack the authentication of administrators for requests that conduct cross-site scripting (XSS) attacks via the (1) itex_t_twitter_username or (2) itex_t_twitter_userpass parameter in the iTwitter.php page to wp-admin/options-general.php.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9336"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/129576/WordPress-iTwitter-WP-0.04-CSRF-XSS.html",
+            "http://seclists.org/fulldisclosure/2014/Dec/72"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:itwitter_project:itwitter:0.04:*:*:*:*:wordpress:*:*"
+        ],
+        "published_date": "12/19/2014",
+        "modified_date": "12/22/2014",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9337",
+        "cwe_id": "CWE-352",
+        "description": "Multiple cross-site request forgery (CSRF) vulnerabilities in the Mikiurl Wordpress Eklentisi plugin 2.0 and earlier for WordPress allow remote attackers to hijack the authentication of administrators for requests that conduct cross-site scripting (XSS) attacks via the (1) twitter_kullanici or (2) twitter_sifre parameter in a kaydet action in the mikiurl.php page to wp-admin/options-general.php.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9337"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/129577/Mikiurl-WordPress-Eklentisi-2.0-CSRF-XSS.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mikiurl_wordpress_eklentisi_project:mikiurl_wordpress_eklentisi:2.0:*:*:*:*:wordpress:*:*"
+        ],
+        "published_date": "12/19/2014",
+        "modified_date": "12/22/2014",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9338",
+        "cwe_id": "CWE-352",
+        "description": "Multiple cross-site request forgery (CSRF) vulnerabilities in the O2Tweet plugin 0.0.4 and earlier for WordPress allow remote attackers to hijack the authentication of administrators for requests that conduct cross-site scripting (XSS) attacks via the (1) o2t_username or (2) o2t_tags parameter to wp-admin/options-general.php.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9338"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/129578/WordPress-O2Tweet-0.0.4-CSRF-XSS.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:o2tweet_project:o2tweet:0.0.4:*:*:*:*:wordpress:*:*"
+        ],
+        "published_date": "12/19/2014",
+        "modified_date": "12/22/2014",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9339",
+        "cwe_id": "CWE-352",
+        "description": "Multiple cross-site request forgery (CSRF) vulnerabilities in the SPNbabble plugin 1.4.1 and earlier for WordPress allow remote attackers to hijack the authentication of administrators for requests that conduct cross-site scripting (XSS) attacks via the (1) username or (2) password parameter in the spnbabble.php page to wp-admin/options-general.php.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9339"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/129580/WordPress-SPNbabble-1.4.1-CSRF-XSS.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jayde_online:spnbabble:1.4.1:*:*:*:*:wordpress:*:*"
+        ],
+        "published_date": "12/19/2014",
+        "modified_date": "12/22/2014",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9340",
+        "cwe_id": "CWE-352",
+        "description": "Multiple cross-site request forgery (CSRF) vulnerabilities in the wpCommentTwit plugin 0.5 and earlier for WordPress allow remote attackers to hijack the authentication of administrators for requests that conduct cross-site scripting (XSS) attacks via the (1) username or (2) password parameter in the wpCommentTwit.php page to wp-admin/options-general.php.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9340"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/129581/WordPress-wpCommentTwit-0.5-CSRF-XSS.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:wpcommenttwit_project:wpcommenttwit:0.5:*:*:*:*:wordpress:*:*"
+        ],
+        "published_date": "12/19/2014",
+        "modified_date": "12/22/2014",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9341",
+        "cwe_id": "CWE-352",
+        "description": "Multiple cross-site request forgery (CSRF) vulnerabilities in the yURL ReTwitt plugin 1.4 and earlier for WordPress allow remote attackers to hijack the authentication of administrators for requests that conduct cross-site scripting (XSS) attacks via the (1) yurl_login or (2) yurl_anchor parameter in the yurl page to wp-admin/options-general.php.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9341"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/129582/WordPress-yURL-ReTwitt-WP-1.4-CSRF-XSS.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:yurl_retwitt_project:yurl_retwitt:1.4:*:*:*:*:wordpress:*:*"
+        ],
+        "published_date": "12/19/2014",
+        "modified_date": "12/22/2014",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9362",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in the path-based meta tag editing form in the Meta tags quick module 7.x-2.x before 7.x-2.8 for Drupal allows remote authenticated users with the \"Edit path based meta tags\" permission to inject arbitrary web script or HTML via vectors related to deleting a Path-based Metatag.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9362"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://www.drupal.org/node/2295975",
+            "https://www.drupal.org/node/2296511"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:meta_tags_quick_project:meta_tags_quick:7.x-2.7:*:*:*:*:drupal:*:*",
+            "*cpe:2.3:a:meta_tags_quick_project:meta_tags_quick:7.x-2.7:*:*:*:*:drupal:*:*",
+            "*cpe:2.3:a:meta_tags_quick_project:meta_tags_quick:7.x-2.6:*:*:*:*:drupal:*:*",
+            "*cpe:2.3:a:meta_tags_quick_project:meta_tags_quick:7.x-2.5:*:*:*:*:drupal:*:*",
+            "*cpe:2.3:a:meta_tags_quick_project:meta_tags_quick:7.x-2.4:*:*:*:*:drupal:*:*",
+            "*cpe:2.3:a:meta_tags_quick_project:meta_tags_quick:7.x-2.3:*:*:*:*:drupal:*:*",
+            "*cpe:2.3:a:meta_tags_quick",
+            "*cpe:2.3:a:meta_tags_quick_project:meta_tags_quick:7.x-2.7:*:*:*:*:drupal:*:*"
+        ],
+        "published_date": "12/10/2014",
+        "modified_date": "12/11/2014",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9363",
+        "cwe_id": null,
+        "description": "Open redirect vulnerability in the path-based meta tag editing form in the Meta tags quick module 7.x-2.x before 7.x-2.8 for Drupal allows remote authenticated users to redirect users to arbitrary web sites and conduct phishing attacks via the destination parameter.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9363"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.5 MEDIUM",
+        "hyperlinks": [
+            "https://www.drupal.org/node/2295975",
+            "https://www.drupal.org/node/2296511"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:meta_tags_quick_project:meta_tags_quick:7.x-2.7:*:*:*:*:drupal:*:*",
+            "*cpe:2.3:a:meta_tags_quick_project:meta_tags_quick:7.x-2.6:*:*:*:*:drupal:*:*",
+            "*cpe:2.3:a:meta_tags_quick_project:meta_tags_quick:7.x-2.5:*:*:*:*:drupal:*:*",
+            "*cpe:2.3:a:meta_tags_quick_project:meta_tags_quick:7.x-2.4:*:*:*:*:drupal:*:*",
+            "*cpe:2.3:a:meta_tags_quick_project:meta_tags_quick:7.x-2.3:*:*:*:*:drupal:*:*",
+            "*cpe:2.3:a:meta_tags_quick"
+        ],
+        "published_date": "12/10/2014",
+        "modified_date": "12/11/2014",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9364",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in the Unified Login form in the LoginToboggan module 7.x-1.x before 7.x-1.4 for Drupal allows remote attackers to inject arbitrary web script or HTML via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9364"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://www.drupal.org/node/2299467",
+            "https://www.drupal.org/node/2300369"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:logintoboggan_project:logintoboggan:7.x-1.x:x-dev:*:*:*:drupal:*:*",
+            "*cpe:2.3:a:logintoboggan_project:logintoboggan:7.x-1.0:*:*:*:*:drupal:*:*",
+            "*cpe:2.3:a:logintoboggan_project:logintoboggan:7.x-1.0:alpha1:*:*:*:drupal:*:*",
+            "*cpe:2.3:a:logintoboggan_project:logintoboggan:7.x-1.0:alpha2:*:*:*:drupal:*:*",
+            "*cpe:2.3:a:logintoboggan_project:logintoboggan:7.x-1.0:alpha3:*:*:*:drupal:*:*",
+            "*cpe:2.3:a:logintoboggan_pr"
+        ],
+        "published_date": "12/10/2014",
+        "modified_date": "12/11/2014",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9365",
+        "cwe_id": null,
+        "description": "The HTTP clients in the (1) httplib, (2) urllib, (3) urllib2, and (4) xmlrpclib libraries in CPython (aka Python) 2.x before 2.7.9 and 3.x before 3.4.3, when accessing an HTTPS URL, do not (a) check the certificate against a trust store or verify that the server hostname matches a domain name in the subject's (b) Common Name or (c) subjectAltName field of the X.509 certificate, which allows man-in-the-middle attackers to spoof SSL servers via an arbitrary valid certificate.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9365"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "http://bugs.python.org/issue22417",
+            "http://lists.apple.com/archives/security-announce/2015/Aug/msg00001.html",
+            "http://www.openwall.com/lists/oss-security/2014/12/11/1",
+            "http://www.oracle.com/technetwork/topics/security/bulletinjan2015-2370101.html",
+            "http://www.oracle.com/technetwork/topics/security/bulletinoct2015-2511968.html",
+            "http://www.securityfocus.com/bid/71639",
+            "https://access.redhat.com/errata/RHSA-2016:1166",
+            "https://access.redhat.com/errata/RHSA-2017:1162",
+            "https://access.redhat.com/errata/RHSA-2017:1868",
+            "https://security.gentoo.org/glsa/201503-10",
+            "https://support.apple.com/kb/HT205031",
+            "https://www.python.org/dev/peps/pep-0476/",
+            "https://www.python.org/downloads/release/python-279/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:python:python:2.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.7:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.1.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.2.2:*",
+            "*cpe:2.3:a:python:python:2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.1.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.2.2:*",
+            "*cpe:2.3:a:python:python:2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.1.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:python:python:2.2.2:*"
+        ],
+        "published_date": "12/12/2014",
+        "modified_date": "10/25/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9367",
+        "cwe_id": "CWE-79",
+        "description": "Incomplete blacklist vulnerability in the urlEncode function in lib/TWiki.pm in TWiki 6.0.0 and 6.0.1 allows remote attackers to conduct cross-site scripting (XSS) attacks via a \"'\" (single quote) in the scope parameter to do/view/TWiki/WebSearch.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9367"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/129655/TWiki-6.0.0-6.0.1-WebSearch-Cross-Site-Scripting.html",
+            "http://seclists.org/fulldisclosure/2014/Dec/82",
+            "http://twiki.org/cgi-bin/view/Codev/SecurityAlert-CVE-2014-9367",
+            "http://www.securitytracker.com/id/1031400"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:twiki:twiki:6.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:twiki:twiki:6.0.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/31/2014",
+        "modified_date": "01/02/2015",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9368",
+        "cwe_id": "CWE-352",
+        "description": "Cross-site request forgery (CSRF) vulnerability in the twitterDash plugin 2.1 and earlier for WordPress allows remote attackers to hijack the authentication of administrators for requests that conduct cross-site scripting (XSS) attacks via the username_twitterDash parameter in the twitterDash.php page to wp-admin/options-general.php.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9368"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/129579/WordPress-twitterDash-2.1-CSRF-XSS.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:twitterdash_project:twitterdash:2.1:*:*:*:*:wordpress:*:*"
+        ],
+        "published_date": "12/19/2014",
+        "modified_date": "12/22/2014",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9371",
+        "cwe_id": "CWE-20",
+        "description": "The NativeAppServlet in ManageEngine Desktop Central MSP before 90075 allows remote attackers to execute arbitrary code via a crafted JSON object.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9371"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.zerodayinitiative.com/advisories/ZDI-14-420/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:manageengine:desktop_central:9.0:build_90074:*:*:managed_service_providers:*:*:*",
+            "*cpe:2.3:a:zohocorp:manageengine_desktop_central:9.0:*:*:*:managed_service_providers:*:*:*",
+            "*cpe:2.3:a:manageengine:desktop_central:9.0:build_90074:*:*:managed_service_providers:*:*:*"
+        ],
+        "published_date": "12/16/2014",
+        "modified_date": "03/06/2015",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9372",
+        "cwe_id": "CWE-22",
+        "description": "Directory traversal vulnerability in the UploadAccountActivities servlet in ManageEngine Password Manager Pro (PMP) before 7103 allows remote attackers to delete arbitrary files via a .. (dot dot) in a filename.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9372"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.4 MEDIUM",
+        "hyperlinks": [
+            "http://www.manageengine.com/products/passwordmanagerpro/release-notes.html",
+            "http://www.zerodayinitiative.com/advisories/ZDI-14-421/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:manageengine:password_manager_pro:7.1:build_7102:*:*:*:*:*:*",
+            "*cpe:2.3:a:manageengine:password_manager_pro:7.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:manageengine:password_manager_pro:7.1:build_7102:*:*:*:*:*:*"
+        ],
+        "published_date": "12/16/2014",
+        "modified_date": "02/17/2015",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9373",
+        "cwe_id": "CWE-22",
+        "description": "Directory traversal vulnerability in the CollectorConfInfoServlet servlet in ManageEngine NetFlow Analyzer allows remote attackers to execute arbitrary code via a .. (dot dot) in the filename.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9373"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.zerodayinitiative.com/advisories/ZDI-14-422/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:manageengine:netflow_analyzer:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/16/2014",
+        "modified_date": "12/17/2014",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-6119",
+        "cwe_id": "CWE-94",
+        "description": "IBM Security AppScan Enterprise 8.5 before 8.5 IFix 002, 8.6 before 8.6 IFix 004, 8.7 before 8.7 IFix 004, 8.8 before 8.8 iFix 003, 9.0 before 9.0.0.1 iFix 003, and 9.0.1 before 9.0.1 iFix 001 allows remote attackers to execute arbitrary code via a crafted executable file in an archive.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6119"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://secunia.com/advisories/62012",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21693035",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21693183",
+            "http://www.securitytracker.com/id/1031427",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/96720"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:security_appscan:8.5:*:*:*:enterprise:*:*:*",
+            "*cpe:2.3:a:ibm:security_appscan:8.6:*:*:*:enterprise:*:*:*",
+            "*cpe:2.3:a:ibm:security_appscan:8.7:*:*:*:enterprise:*:*:*",
+            "*cpe:2.3:a:ibm:security_appscan:8.8:*:*:*:enterprise:*:*:*",
+            "*cpe:2.3:a:ibm:security_appscan:9.0:*:*:*:enterprise:*:*:*",
+            "*cpe:2.3:a:ibm:security_appscan:9.0.0.1:*:*:*:enterprise:*:*:*",
+            "*cpe:2.3:a:ibm:security_appscan_source:9.0.1:*:*"
+        ],
+        "published_date": "12/22/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-6121",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in IBM Security AppScan Enterprise 8.5 before 8.5 IFix 002, 8.6 before 8.6 IFix 004, 8.7 before 8.7 IFix 004, 8.8 before 8.8 iFix 003, 9.0 before 9.0.0.1 iFix 003, and 9.0.1 before 9.0.1 iFix 001 allows remote authenticated users to inject arbitrary web script or HTML via a crafted URL.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6121"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21693035",
+            "http://www.securitytracker.com/id/1031427",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/96722"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:security_appscan:8.5:*:*:*:enterprise:*:*:*",
+            "*cpe:2.3:a:ibm:security_appscan:8.6:*:*:*:enterprise:*:*:*",
+            "*cpe:2.3:a:ibm:security_appscan:8.7:*:*:*:enterprise:*:*:*",
+            "*cpe:2.3:a:ibm:security_appscan:8.8:*:*:*:enterprise:*:*:*",
+            "*cpe:2.3:a:ibm:security_appscan:9.0:*:*:*:enterprise:*:*:*",
+            "*cpe:2.3:a:ibm:security_appscan:9.0.0.1:*:*:*:enterprise:*:*:*",
+            "*cpe:2.3:a:ibm:security_appscan_source:9.0.1:*:*"
+        ],
+        "published_date": "12/22/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-6122",
+        "cwe_id": "CWE-264",
+        "description": "IBM Security AppScan Enterprise 8.5 before 8.5 IFix 002, 8.6 before 8.6 IFix 004, 8.7 before 8.7 IFix 004, 8.8 before 8.8 iFix 003, 9.0 before 9.0.0.1 iFix 003, and 9.0.1 before 9.0.1 iFix 001 allows remote authenticated users to write to arbitrary folders, and consequently execute arbitrary commands, via a modified argument.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6122"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.5 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21693035",
+            "http://www.securitytracker.com/id/1031427",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/96723"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:security_appscan:8.5:*:*:*:enterprise:*:*:*",
+            "*cpe:2.3:a:ibm:security_appscan:8.6:*:*:*:enterprise:*:*:*",
+            "*cpe:2.3:a:ibm:security_appscan:8.7:*:*:*:enterprise:*:*:*",
+            "*cpe:2.3:a:ibm:security_appscan:8.8:*:*:*:enterprise:*:*:*",
+            "*cpe:2.3:a:ibm:security_appscan:9.0:*:*:*:enterprise:*:*:*",
+            "*cpe:2.3:a:ibm:security_appscan:9.0.0.1:*:*:*:enterprise:*:*:*",
+            "*cpe:2.3:a:ibm:security_appscan_source:9.0.1:*:*"
+        ],
+        "published_date": "12/22/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-6123",
+        "cwe_id": "CWE-200",
+        "description": "IBM Rational AppScan Source 8.0 through 8.0.0.2 and 8.5 through 8.5.0.1 and Security AppScan Source 8.6 through 8.6.0.2, 8.7 through 8.7.0.1, 8.8, 9.0 through 9.0.0.1, and 9.0.1 allow local users to obtain sensitive credential information by reading installation logs.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6123"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21692999",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/96724"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:security_appscan_source:8.6.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:s"
+        ],
+        "published_date": "12/28/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-6132",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in the Web UI in IBM WebSphere Service Registry and Repository (WSRR) 6.3 through 6.3.0.5, 7.0.x through 7.0.0.5, 7.5.x through 7.5.0.4, 8.0.x before 8.0.0.3, and 8.5.x before 8.5.0.1 allows remote authenticated users to inject arbitrary web script or HTML via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6132"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://secunia.com/advisories/61805",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IV64000",
+            "http://www.ibm.com/support/docview.wss?uid=swg21693379",
+            "http://www.ibm.com/support/docview.wss?uid=swg21693381",
+            "http://www.ibm.com/support/docview.wss?uid=swg21693384",
+            "http://www.ibm.com/support/docview.wss?uid=swg21693387",
+            "http://www.ibm.com/support/docview.wss?uid=swg21693389",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/96812"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:websphere_service_registry_and_repository:6.3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_service_registry_and_repository:6.3.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_service_registry_and_repository:6.3.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_service_registry_and_repository:6.3.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_service_registry_and_repository:6.3.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:webspher"
+        ],
+        "published_date": "12/24/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9426",
+        "cwe_id": "CWE-17",
+        "description": "** DISPUTED ** The apprentice_load function in libmagic/apprentice.c in the Fileinfo component in PHP through 5.6.4 attempts to perform a free operation on a stack-based character array, which allows remote attackers to cause a denial of service (memory corruption or application crash) or possibly have unspecified other impact via unknown vectors.  NOTE: this is disputed by the vendor because the standard erealloc behavior makes the free operation unreachable.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9426"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://git.php.net/?p=php-src.git;a=commit;h=a72cd07f2983dc43a6bb35209dc4687852e53c09",
+            "http://git.php.net/?p=php-src.git;a=commit;h=ef89ab2f99fbd9b7b714556d4f1f50644eb54191",
+            "http://lists.opensuse.org/opensuse-updates/2015-02/msg00079.html",
+            "https://bugs.php.net/bug.php?id=68665"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:php:php:5.6.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/30/2014",
+        "modified_date": "03/16/2015",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9429",
+        "cwe_id": "CWE-79",
+        "description": "Multiple cross-site scripting (XSS) vulnerabilities in Smoothwall Express 3.1 and 3.0 SP3 allow remote attackers to inject arbitrary web script or HTML via the (1) PROFILENAME parameter in a Save action to httpd/cgi-bin/pppsetup.cgi or (2) COMMENT parameter in an Add action to httpd/cgi-bin/ddns.cgi.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9429"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/129698/SmoothWall-3.1-Cross-Site-Request-Forgery-Cross-Site-Scripting.html",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/99404"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:smoothwall:smoothwall:3.0:sp3:*:*:express:*:*:*",
+            "*cpe:2.3:o:smoothwall:smoothwall:3.1:*:*:*:express:*:*:*"
+        ],
+        "published_date": "12/31/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9430",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in httpd/cgi-bin/vpn.cgi/vpnconfig.dat in Smoothwall Express 3.0 SP3 allows remote attackers to inject arbitrary web script or HTML via the COMMENT parameter in an Add action.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9430"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/129698/SmoothWall-3.1-Cross-Site-Request-Forgery-Cross-Site-Scripting.html",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/99404"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:smoothwall:smoothwall:3.0:sp3:*:*:express:*:*:*"
+        ],
+        "published_date": "12/31/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9431",
+        "cwe_id": "CWE-352",
+        "description": "Multiple cross-site request forgery (CSRF) vulnerabilities in Smoothwall Express 3.1 and 3.0 SP3 allow remote attackers to hijack the authentication of administrators for requests that change the (1) admin or (2) dial password via a request to httpd/cgi-bin/changepw.cgi.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9431"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/129698/SmoothWall-3.1-Cross-Site-Request-Forgery-Cross-Site-Scripting.html",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/99403"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:smoothwall:smoothwall:3.0:sp3:*:*:express:*:*:*",
+            "*cpe:2.3:o:smoothwall:smoothwall:3.1:*:*:*:express:*:*:*"
+        ],
+        "published_date": "12/31/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9432",
+        "cwe_id": "CWE-79",
+        "description": "Multiple cross-site scripting (XSS) vulnerabilities in templates/2k11/admin/overview.inc.tpl in Serendipity before 2.0-rc2 allow remote attackers to inject arbitrary web script or HTML via a blog comment in the QUERY_STRING to serendipity/index.php.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9432"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://blog.s9y.org/archives/259-Serendipity-2.0-rc2-released.html",
+            "http://packetstormsecurity.com/files/129709/CMS-Serendipity-2.0-rc1-Cross-Site-Scripting.html",
+            "http://seclists.org/fulldisclosure/2014/Dec/108",
+            "http://sroesemann.blogspot.de/2014/12/bericht-zu-sroeadv-2014-02.html",
+            "http://www.securityfocus.com/archive/1/534315/100/0/threaded",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/99464",
+            "https://github.com/s9y/Serendipity/commit/36cde3030aaa27a46bf94086e062dfe56b60230b"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:s9y:serendipity:2.0:rc1:*:*:*:*:*:*"
+        ],
+        "published_date": "12/31/2014",
+        "modified_date": "10/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-6143",
+        "cwe_id": "CWE-200",
+        "description": "The IBM WebSphere DataPower XC10 appliance 2.1 and 2.5 before FP4 allows local users to obtain sensitive information by reading a response.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6143"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg1IT04614",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21691035",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/96913"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:ibm:websphere_datapower_xc10_appliance_firmware:2.5.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:ibm:websphere_datapower_xc10_appliance_firmware:2.1.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/11/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-6145",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in the server in IBM Cognos Business Intelligence 10.1 before IF10, 10.1.1 before IF9, 10.2 before IF11, 10.2.1 before IF8, and 10.2.1.1 before IF7 allows remote authenticated users to inject arbitrary web script or HTML via a crafted URL.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6145"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21692267",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/96915"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:cognos_business_intelligence:10.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:cognos_business_intelligence:10.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:cognos_business_intelligence:10.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:cognos_business_intelligence:10.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:cognos_business_intelligence:10.2.1.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/12/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-6080",
+        "cwe_id": "CWE-89",
+        "description": "SQL injection vulnerability in IBM Security Access Manager for Mobile 8.x before 8.0.1 and Security Access Manager for Web 7.x before 7.0.0 FP10 and 8.x before 8.0.1 allows remote authenticated users to execute arbitrary SQL commands via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6080"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21684475",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/95767"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:security_access_manager_for_web:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_access_manager_for_web:8.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/18/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-6082",
+        "cwe_id": null,
+        "description": "IBM Security Access Manager for Mobile 8.x before 8.0.1 and Security Access Manager for Web 7.x before 7.0.0 FP10 and 8.x before 8.0.1 allow remote authenticated users to cause a denial of service (administration UI outage) via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6082"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://secunia.com/advisories/61945",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21684475",
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21691601",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/95809"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:security_access_manager_for_mobile:8.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/18/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-6083",
+        "cwe_id": "CWE-200",
+        "description": "IBM Security Access Manager for Mobile 8.x before 8.0.1 and Security Access Manager for Web 7.x before 7.0.0 FP10 and 8.x before 8.0.1 allow remote attackers to obtain sensitive cookie information by sniffing the network during an HTTP session.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6083"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21684475",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/95810"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:security_access_manager_for_mobile:8.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/18/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-6084",
+        "cwe_id": "CWE-310",
+        "description": "IBM Security Access Manager for Mobile 8.x before 8.0.1 and Security Access Manager for Web 7.x before 7.0.0 FP10 and 8.x before 8.0.1 make it easier for remote attackers to obtain sensitive information by sniffing the network during use of a weak SSL cipher.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6084"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21684475",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/95811"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:security_access_manager_for_web:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_access_manager_for_web:8.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/18/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-6086",
+        "cwe_id": "CWE-200",
+        "description": "IBM Security Access Manager for Mobile 8.x before 8.0.1 and Security Access Manager for Web 7.x before 7.0.0 FP10 and 8.x before 8.0.1 do not ensure that HTTPS is used, which allows remote attackers to obtain sensitive information by sniffing the network during an HTTP session.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6086"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21684475",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/95813"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:security_access_manager_for_web:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_access_manager_for_web:8.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/18/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-6087",
+        "cwe_id": "CWE-310",
+        "description": "IBM Security Access Manager for Mobile 8.x before 8.0.1 and Security Access Manager for Web 7.x before 7.0.0 FP10 and 8.x before 8.0.1 make it easier for remote attackers to obtain sensitive information by sniffing the network during use of a weak algorithm in an SSL cipher suite.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6087"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21684475",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/95813"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:security_access_manager_for_mobile:8.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/18/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-6088",
+        "cwe_id": "CWE-200",
+        "description": "IBM Security Access Manager for Mobile 8.x before 8.0.1 and Security Access Manager for Web 7.x before 7.0.0 FP10 and 8.x before 8.0.1 allow remote attackers to obtain sensitive information by sniffing the network during use of the null SSL cipher.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6088"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21684475",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/95860"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:security_access_manager_for_mobile:8.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/18/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-6089",
+        "cwe_id": "CWE-19",
+        "description": "IBM Security Access Manager for Mobile 8.x before 8.0.1 and Security Access Manager for Web 7.x before 7.0.0 FP10 and 8.x before 8.0.1 allow remote authenticated users to cause a denial of service (disrupted system operations) by uploading a file to a protected area.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-6089"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www-01.ibm.com/support/docview.wss?uid=swg21684475",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/95860"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:security_access_manager_for_mobile:8.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/18/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9162",
+        "cwe_id": "CWE-200",
+        "description": "Adobe Flash Player before 13.0.0.259 and 14.x through 16.x before 16.0.0.235 on Windows and OS X and before 11.2.202.425 on Linux allows attackers to obtain sensitive information via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9162"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://helpx.adobe.com/security/products/flash-player/apsb14-27.html"
+        ],
+        "cpe": [
+            "cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.182:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.201:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.206:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.214:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.223:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:*:*:*:*:*:*:*:*",
+            "(including)",
+            "13.0.0.258",
+            "*cpe:2.3:a:adobe:flash_player:14.0.0.125:*:*:*:*:*:*:*",
+            "cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.223:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.228:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.233:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.235:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.236:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.238:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.243:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.258:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.223:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.214:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.206:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.201:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.182:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:a"
+        ],
+        "published_date": "12/10/2014",
+        "modified_date": "12/20/2018",
+        "vulnerability_source": "Adobe Systems Incorporated",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9163",
+        "cwe_id": null,
+        "description": "Stack-based buffer overflow in Adobe Flash Player before 13.0.0.259 and 14.x and 15.x before 15.0.0.246 on Windows and OS X and before 11.2.202.425 on Linux allows attackers to execute arbitrary code via unspecified vectors, as exploited in the wild in December 2014.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9163"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://helpx.adobe.com/security/products/flash-player/apsb14-27.html"
+        ],
+        "cpe": [
+            "cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.223:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.228:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.233:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.235:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.236:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.238:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.243:*:*:*:*:*:*:*",
+            "cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.182:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.201:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.206:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.214:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.223:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:*:*:*:*:*:*:*:*",
+            "(including)",
+            "13.0.0.258",
+            "*cpe:2.3:a:adobe:flash_player:14.0.0.125:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.425:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.394:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.378:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.359:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.356:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.350:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/10/2014",
+        "modified_date": "12/20/2018",
+        "vulnerability_source": "Adobe Systems Incorporated",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9164",
+        "cwe_id": "CWE-94",
+        "description": "Adobe Flash Player before 13.0.0.259 and 14.x through 16.x before 16.0.0.235 on Windows and OS X and before 11.2.202.425 on Linux allows attackers to execute arbitrary code or cause a denial of service (memory corruption) via unspecified vectors, a different vulnerability than CVE-2014-0587.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9164"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://helpx.adobe.com/security/products/flash-player/apsb14-27.html"
+        ],
+        "cpe": [
+            "cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.182:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.201:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.206:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.214:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.223:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:*:*:*:*:*:*:*:*",
+            "(including)",
+            "13.0.0.258",
+            "*cpe:2.3:a:adobe:flash_player:14.0.0.125:*:*:*:*:*:*:*",
+            "cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.223:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.228:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.233:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.235:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.236:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.238:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:11.2.202.243:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.258:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.223:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.214:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.206:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.201:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:flash_player:13.0.0.182:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:a"
+        ],
+        "published_date": "12/10/2014",
+        "modified_date": "12/20/2018",
+        "vulnerability_source": "Adobe Systems Incorporated",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9165",
+        "cwe_id": null,
+        "description": "Use-after-free vulnerability in Adobe Reader and Acrobat 10.x before 10.1.13 and 11.x before 11.0.10 on Windows and OS X allows attackers to execute arbitrary code via unspecified vectors, a different vulnerability than CVE-2014-8454 and CVE-2014-8455.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9165"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://helpx.adobe.com/security/products/reader/apsb14-28.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:adobe:acrobat_reader:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:acrobat_reader:10.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:acrobat_reader:10.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:acrobat_reader:10.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:acrobat_reader:10.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:acrobat_reader:10.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:acrobat_reader:10.1.2:*:*:"
+        ],
+        "published_date": "12/10/2014",
+        "modified_date": "12/11/2014",
+        "vulnerability_source": "Adobe Systems Incorporated",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9166",
+        "cwe_id": null,
+        "description": "Adobe ColdFusion 10 before Update 15 and 11 before Update 3 allows attackers to cause a denial of service (resource consumption) via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9166"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://helpx.adobe.com/security/products/coldfusion/apsb14-29.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:adobe:coldfusion:11.0:update_2:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:11.0:update_1:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_9:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_8:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_7:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_6:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_5:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_4:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_3:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_2:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_14:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_13:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_12:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_11:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_10:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_1:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:11.0:update_2:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:11.0:update2:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:11.0:update_1:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:11.0:update1:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_9:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update9:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_8:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update8:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_7:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update7:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_6:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update6:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_5:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update5:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_4:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update4:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_3:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update3:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_2:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update2:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_14:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update14:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_13:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update13:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_12:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update12:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_11:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update11:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_10:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update10:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_1:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update1:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_10:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_9:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_8:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_7:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_6:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_5:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:coldfusion:10.0:update_4:*:*:*:*:*:*",
+            "*cpe:2.3:a:adobe:"
+        ],
+        "published_date": "12/10/2014",
+        "modified_date": "09/04/2020",
+        "vulnerability_source": "Adobe Systems Incorporated",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9173",
+        "cwe_id": "CWE-89",
+        "description": "SQL injection vulnerability in view.php in the Google Doc Embedder plugin before 2.5.15 for WordPress allows remote attackers to execute arbitrary SQL commands via the gpid parameter.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9173"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://security.szurek.pl/google-doc-embedder-2514-sql-injection.html",
+            "http://www.exploit-db.com/exploits/35371",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/98944",
+            "https://plugins.trac.wordpress.org/changeset/1023572/google-document-embedder"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:google_doc_embedder_project:google_doc_embedder:2.5.14:*:*:*:*:wordpress:*:*"
+        ],
+        "published_date": "12/02/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9174",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in the Google Analytics by Yoast (google-analytics-for-wordpress) plugin before 5.1.3 for WordPress allows remote attackers to inject arbitrary web script or HTML via the \"Manually enter your UA code\" (manual_ua_code_field) field in the General Settings.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9174"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/71330",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/99053",
+            "https://twitter.com/yoast/status/537569224307511296",
+            "https://wordpress.org/plugins/google-analytics-for-wordpress/changelog/",
+            "https://wpvulndb.com/vulnerabilities/7692"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:yoast:google_analytics:5.1.2:*:*:*:*:wordpress:*:*",
+            "*cpe:2.3:a:yoast:google_analytics:5.1.1:*:*:*:*:wordpress:*:*",
+            "*cpe:2.3:a:yoast:google_analytics:5.1:*:*:*:*:wordpress:*:*"
+        ],
+        "published_date": "12/02/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9175",
+        "cwe_id": "CWE-89",
+        "description": "SQL injection vulnerability in wpdatatables.php in the wpDataTables plugin 1.5.3 and earlier for WordPress allows remote attackers to execute arbitrary SQL commands via the table_id parameter in a get_wdtable action to wp-admin/admin-ajax.php.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9175"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/129232/WordPress-wpDataTables-1.5.3-SQL-Injection.html",
+            "http://www.exploit-db.com/exploits/35340",
+            "http://www.homelab.it/index.php/2014/11/23/wordpress-wpdatatables-sql-injection-vulnerability",
+            "http://www.securityfocus.com/bid/71271",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/98928"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:wpdatatables:wpdata_tables:1.5.3:*:*:*:*:wordpress:*:*",
+            "*cpe:2.3:a:wpdatatables:wpdatatables:1.5.3:*:*:*:*:wordpress:*:*",
+            "*cpe:2.3:a:wpdatatables:wpdata_tables:1.5.3:*:*:*:*:wordpress:*:*"
+        ],
+        "published_date": "12/02/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9176",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in the InstaSqueeze Sexy Squeeze Pages plugin for WordPress allows remote attackers to inject arbitrary web script or HTML via the id parameter to lp/index.php.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9176"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://h4x0resec.blogspot.com/2014/11/wordpress-sexy-squeeze-pages-plugin.html",
+            "http://packetstormsecurity.com/files/129285/WordPress-Sexy-Squeeze-Pages-Cross-Site-Scripting.html",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/98986"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:instasqueeze:sexy_squeeze_pages:-:*:*:*:*:wordpress:*:*"
+        ],
+        "published_date": "12/02/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9212",
+        "cwe_id": "CWE-79",
+        "description": "Multiple cross-site scripting (XSS) vulnerabilities in Altitude uAgent in Altitude uCI (Unified Customer Interaction) 7.5 allow remote attackers to inject arbitrary web script or HTML via (1) an email hyperlink or the (2) style parameter in the image attribute section.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9212"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/129372/Altitude-uAgent-Altitude-uCI-7.5-XSS.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:altitude:altitude_unified_customer_interaction:7.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/05/2014",
+        "modified_date": "12/05/2014",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9215",
+        "cwe_id": "CWE-89",
+        "description": "SQL injection vulnerability in the CheckEmail function in includes/functions.class.php in PBBoard 3.0.1 before 20141128 allows remote attackers to execute arbitrary SQL commands via the email parameter in the register page to index.php.  NOTE: the email parameter in the forget page vector is already covered by CVE-2012-4034.2.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9215"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.itas.vn/news/ITAS-Team-discovered-SQL-Injection-in-PBBoard-CMS-68.html",
+            "http://www.securityfocus.com/archive/1/534149/100/0/threaded",
+            "https://www.youtube.com/watch?v=AQiGvH5xrJg"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:pbboard:pbboard:3.0.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/05/2014",
+        "modified_date": "10/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9217",
+        "cwe_id": "CWE-287",
+        "description": "Graylog2 before 0.92 allows remote attackers to bypass LDAP authentication via crafted wildcards.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9217"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/oss-sec/2014/q4/1130",
+            "http://www.graylog2.org/news/post/0010-graylog2-v0-92",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/99571"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:torch_gmbh:graylog2:0.91.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/08/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9218",
+        "cwe_id": "CWE-399",
+        "description": "libraries/common.inc.php in phpMyAdmin 4.0.x before 4.0.10.7, 4.1.x before 4.1.14.8, and 4.2.x before 4.2.13.1 allows remote attackers to cause a denial of service (resource consumption) via a long password.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9218"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.debian.org/security/2015/dsa-3382",
+            "http://www.mandriva.com/security/advisories?name=MDVSA-2014:243",
+            "http://www.phpmyadmin.net/home_page/security/PMASA-2014-17.php",
+            "http://www.securityfocus.com/bid/71434",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/99140",
+            "https://github.com/phpmyadmin/phpmyadmin/commit/095729d81205f15f40d216d25917017da4c2fff8",
+            "https://github.com/phpmyadmin/phpmyadmin/commit/1ac863c7573d12012374d5d41e5c7dc5505ea6e1",
+            "https://github.com/phpmyadmin/phpmyadmin/commit/62b2c918d26cc78d1763945e3d44d1a63294a819"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:phpmyadmin:phpmyadmin:4.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:phpmyadmin:phpmyadmin:4.0.0:rc2:*:*:*:*:*:*",
+            "*cpe:2.3:a:phpmyadmin:phpmyadmin:4.0.0:rc3:*:*:*:*:*:*",
+            "*cpe:2.3:a:phpmyadmin:phpmyadmin:4.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:phpmyadmin:phpmyadmin:4.0.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:phpmyadmin:phpmyadmin:4.0.10.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:phpmyadmin:phpmyadmin:4.0.10.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:php"
+        ],
+        "published_date": "12/08/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9219",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in the redirection feature in url.php in phpMyAdmin 4.2.x before 4.2.13.1 allows remote attackers to inject arbitrary web script or HTML via the url parameter.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9219"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.mandriva.com/security/advisories?name=MDVSA-2014:243",
+            "http://www.phpmyadmin.net/home_page/security/PMASA-2014-18.php",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/99137",
+            "https://github.com/phpmyadmin/phpmyadmin/commit/9b2479b7216dd91a6cc2f231c0fd6b85d457f6e2"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:phpmyadmin:phpmyadmin:4.2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:phpmyadmin:phpmyadmin:4.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:phpmyadmin:phpmyadmin:4.2.11:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:phpmyadmin:phpmyadmin:4.2.12:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:phpmyadmin:phpmyadmin:4.2.13:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:phpmyadmin:phpmyadmin:4.2.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:phpmyadmin:phpmyadmin:4.2.10.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:phpmyad"
+        ],
+        "published_date": "12/08/2014",
+        "modified_date": "09/07/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9220",
+        "cwe_id": "CWE-89",
+        "description": "SQL injection vulnerability in OpenVAS Manager before 4.0.6 and 5.x before 5.0.7 allows remote attackers to execute arbitrary SQL commands via the timezone parameter in a modify_schedule OMP command.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9220"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://lists.fedoraproject.org/pipermail/package-announce/2015-January/147753.html",
+            "http://lists.opensuse.org/opensuse-updates/2015-02/msg00039.html",
+            "http://openwall.com/lists/oss-security/2014/11/30/2",
+            "http://www.openvas.org/OVSA20141128.html",
+            "https://www.alienvault.com/forums/discussion/4415/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:novell:opensuse:13.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:novell:opensuse:13.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:opensuse:opensuse:13.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:4.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:4.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.2:*:",
+            "*cpe:2.3:a:openvas:openvas_manager:4.0.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:4.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:4.0.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:openvas:openvas_manager:5.0.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/02/2014",
+        "modified_date": "10/30/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-9222",
+        "cwe_id": "CWE-17",
+        "description": "AllegroSoft RomPager 4.34 and earlier, as used in Huawei Home Gateway products and other vendors and products, allows remote attackers to gain privileges via a crafted cookie that triggers memory corruption, aka the \"Misfortune Cookie\" vulnerability.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2014-9222"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://mis.fortunecook.ie/",
+            "http://seclists.org/fulldisclosure/2014/Dec/87",
+            "http://www.huawei.com/en/security/psirt/security-bulletins/security-advisories/hw-407666.htm",
+            "http://www.kb.cert.org/vuls/id/561444",
+            "http://www.securityfocus.com/bid/105173",
+            "https://www.allegrosoft.com/allegro-software-urges-manufacturers-to-maintain-firmware-for-highest-level-of-embedded-device-security/news-press.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:allegrosoft:rompager:4.07:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/24/2014",
+        "modified_date": "08/31/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2014",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2012-4555",
+        "cwe_id": null,
+        "description": "The token processing system (pki-tps) in Red Hat Certificate System (RHCS) before 8.1.3 does not properly handle interruptions of token format operations, which allows remote attackers to cause a denial of service (NULL pointer dereference and Apache httpd web server child process crash) via unspecified vectors.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2012-4555"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2012-1550.html",
+            "http://www.securityfocus.com/bid/56843",
+            "http://www.securitytracker.com/id?1027846",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=869570"
+        ],
+        "cpe": [],
+        "published_date": "01/04/2013",
+        "modified_date": "01/07/2013",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2013",
+        "month": "1"
+    },
+    {
+        "cve_id": "CVE-2012-4556",
+        "cwe_id": "CWE-20",
+        "description": "The token processing system (pki-tps) in Red Hat Certificate System (RHCS) before 8.1.3 allows remote attackers to cause a denial of service (Apache httpd web server child process restart) via certain unspecified empty search fields in a user certificate search query.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2012-4556"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:N/A:P)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://rhn.redhat.com/errata/RHSA-2012-1550.html",
+            "http://www.securityfocus.com/bid/56843",
+            "http://www.securitytracker.com/id?1027846",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=869579"
+        ],
+        "cpe": [],
+        "published_date": "01/04/2013",
+        "modified_date": "01/15/2013",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2013",
+        "month": "1"
+    },
+    {
+        "cve_id": "CVE-2012-6276",
+        "cwe_id": "CWE-22",
+        "description": "Directory traversal vulnerability in the web-based management interface on the TP-LINK TL-WR841N router with firmware 3.13.9 build 120201 Rel.54965n and earlier allows remote attackers to read arbitrary files via the URL parameter.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2012-6276"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.kb.cert.org/vuls/id/185100"
+        ],
+        "cpe": [],
+        "published_date": "01/26/2013",
+        "modified_date": "01/28/2013",
+        "vulnerability_source": "CERT/CC",
+        "year": "2013",
+        "month": "1"
+    },
+    {
+        "cve_id": "CVE-2012-6510",
+        "cwe_id": "CWE-79",
+        "description": "Multiple cross-site scripting (XSS) vulnerabilities in NetArt Media Car Portal 3.0 allow remote attackers to inject arbitrary web script or HTML via the (1) PWRS or (2) Description field when posting a new vehicle; (3) news title when creating news; (4) Name when creating a sub user; (5) group name when creating a group; or (6) dealer name, (7) first name, or (8) last name when changing a profile.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2012-6510"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.org/files/112226/Car-Portal-CMS-3.0-CSRF-XSS-Shell-Upload.html",
+            "http://www.securityfocus.com/bid/53267",
+            "http://www.vulnerability-lab.com/get_content.php?id=502"
+        ],
+        "cpe": [],
+        "published_date": "01/23/2013",
+        "modified_date": "01/29/2013",
+        "vulnerability_source": "MITRE",
+        "year": "2013",
+        "month": "1"
+    },
+    {
+        "cve_id": "CVE-2012-6511",
+        "cwe_id": "CWE-79",
+        "description": "Multiple cross-site scripting (XSS) vulnerabilities in organizer/page/users.php in the Organizer plugin 1.2.1 for WordPress allow remote attackers to inject arbitrary web script or HTML via the (1) delete_id parameter or (2) extension parameter in an \"Update Setting\" action to wp-admin/admin.php.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2012-6511"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.org/files/112086/WordPress-Organizer-1.2.1-Cross-Site-Scripting-Path-Disclosure.html",
+            "http://websecurity.com.ua/5782",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/75105",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/75106"
+        ],
+        "cpe": [
+            "cpe:2.3:a:wordpress:wordpress:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:organizer_project:organizer:*:*:*:*:*:wordpress:*:*",
+            "(including)"
+        ],
+        "published_date": "01/23/2013",
+        "modified_date": "11/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2013",
+        "month": "1"
+    },
+    {
+        "cve_id": "CVE-2012-6512",
+        "cwe_id": "CWE-200",
+        "description": "The Organizer plugin 1.2.1 for WordPress allows remote attackers to obtain the installation path via unspecified vectors to (1) plugin_hook.php, (2) page/index.php, (3) page/dir.php (4) page/options.php, (5) page/resize.php, (6) page/upload.php, (7) page/users.php, or (8) page/view.php.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2012-6512"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.org/files/112086/WordPress-Organizer-1.2.1-Cross-Site-Scripting-Path-Disclosure.html",
+            "http://websecurity.com.ua/5782",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/75107"
+        ],
+        "cpe": [
+            "cpe:2.3:a:wordpress:wordpress:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:organizer_project:organizer:*:*:*:*:*:wordpress:*:*",
+            "(including)"
+        ],
+        "published_date": "01/23/2013",
+        "modified_date": "11/22/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2013",
+        "month": "1"
+    },
+    {
+        "cve_id": "CVE-2012-6513",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in index.php/Admin_Preferences in gpEasy CMS 2.3.3 allows remote attackers to inject arbitrary web script or HTML via the jsoncallback parameter.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2012-6513"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://hauntit.blogspot.com/2012/03/en-gpeasy-233-html-injection-xss.html",
+            "http://www.securityfocus.com/bid/53269"
+        ],
+        "cpe": [],
+        "published_date": "01/23/2013",
+        "modified_date": "01/29/2013",
+        "vulnerability_source": "MITRE",
+        "year": "2013",
+        "month": "1"
+    }
+]

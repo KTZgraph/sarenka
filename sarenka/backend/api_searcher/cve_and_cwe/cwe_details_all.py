@@ -59,7 +59,7 @@ class CWEDetailsAll:
                     cve_example_id = cve_example.get("cve_id", None)
                     if cve_example_id:
                         cve_example["nist_cve_url"] = f"{self.nist_url}{cve_example_id}"
-                        cve_example["sarenka_cve_url"] = host_address + reverse('get_by_cve', kwargs={"code": cve_example_id})
+                        cve_example["sarenka_cve_url"] = host_address + reverse('get_by_cve', kwargs={"cve_id": cve_example_id})
 
             return all_cwes
 

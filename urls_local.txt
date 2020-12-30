@@ -1,0 +1,59 @@
+### Windows:
+
+# ogólne informacje o lokalnej maszynie
+http://127.0.0.1:8000/api/local
+
+# informacje o sieci lokalnej
+http://127.0.0.1:8000/api/local/network
+
+# iformacje o hardware
+http://127.0.0.1:8000/api/local/hardware
+
+# dane o lokalnie zainstalowanym sofcie
+http://127.0.0.1:8000/api/local/registry
+
+
+
+### CWE
+
+#lista wszystkich CWE bez szczegółów
+http://127.0.0.1:8000/api/cwe/all
+
+# lista wszystkich CWE (ze stronnicowaniem)
+http://127.0.0.1:8000/api/cwe/all/1
+http://127.0.0.1:8000/api/cwe/all/-1 # zwróci bład
+
+# pojedynczy cwe
+http://127.0.0.1:8000/api/cwe/1 # nie istnieje
+http://127.0.0.1:8000/api/cwe/79
+http://127.0.0.1:8000/api/cwe/CWE-79
+http://127.0.0.1:8000/api/cwe/all/fdsf # zwróci dane bo argument musi być intem
+
+
+# CVE pojedyncze
+http://127.0.0.1:8000/api/cve/CVE-2017-1719 # zwróci bład - taki CVe nie istnieje
+http://127.0.0.1:8000/api/cve/CVE-2019-4570 # zwróci dane
+
+
+
+# CVE wszystkie z feedów
+http://127.0.0.1:8000/api/cve/all/1
+http://127.0.0.1:8000/api/cve/all/1548 # bląd - tu juz nie ma danych
+http://127.0.0.1:8000/api/cve/all/fsdf # zwróci błąd bp złe dane dał user
+
+# DNS
+http://127.0.0.1:8000/api/dns/python.org #dużo danych
+http://127.0.0.1:8000/api/dns/renmich.faculty.wmi.amu.edu.pl # mało danych
+http://127.0.0.1:8000/api/dns/Orang.saved.my.life # powinno zwrócić błąd
+http://127.0.0.1:8000/api/dns/8.8.8.8 # będą błędy bo zwraca ('dns.google', [], ['8.8.8.8']) a nie google.com
+http://127.0.0.1:8000/api/search/45.55.99.72 # to jest python ale nie potrafi z ip zrobić domenowej - bład
+http://127.0.0.1:8000/api/search/google.pl # mało danych
+http://127.0.0.1:8000/api/search/google.com # dużo danych
+
+
+# Censys
+http://127.0.0.1:8000/api/censys/8.8.8.8 # bład jeśli nie ma credentiali
+
+
+# lista dostawców
+http://127.0.0.1:8000/api/list_vendors #wymaga credentiali

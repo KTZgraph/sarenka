@@ -1,0 +1,3290 @@
+[
+    {
+        "cve_id": "CVE-2017-17296",
+        "cwe_id": "CWE-772",
+        "description": "Huawei AR120-S V200R006C10, V200R007C00, V200R008C20, V200R008C30, AR1200 V200R006C10, V200R006C13, V200R007C00, V200R007C01, V200R007C02, V200R008C20, V200R008C30, AR1200-S V200R006C10, V200R007C00, V200R008C20, V200R008C30, AR150 V200R006C10, V200R007C00, V200R007C01, V200R007C02, V200R008C20, V200R008C30, AR150-S V200R006C10, V200R007C00, V200R008C20, V200R008C30, AR160 V200R006C10, V200R006C12, V200R007C00, V200R007C01, V200R007C02, V200R008C20, V200R008C30, AR200 V200R006C10, V200R007C00, V200R007C01, V200R008C20, V200R008C30, AR200-S V200R006C10, V200R007C00, V200R008C20, V200R008C30, AR2200 V200R006C10, V200R006C13, V200R006C16, V200R007C00, V200R007C01, V200R007C02, V200R008C20, V200R008C30, AR2200-S V200R006C10, V200R007C00, V200R008C20, V200R008C30, AR3200 V200R006C10, V200R006C11, V200R007C00, V200R007C01, V200R007C02, V200R008C00, V200R008C10, V200R008C20, V200R008C30, AR3600 V200R006C10, V200R007C00, V200R007C01, V200R008C20, AR510 V200R006C10, V200R006C12, V200R006C13, V200R006C15, V200R006C16, V200R006C17, V200R007C00, V200R008C20, V200R008C30, DP300 V500R002C00, IPS Module V100R001C10, V100R001C30, V500R001C00, V500R001C20, V500R001C30, V500R001C50, NGFW Module V100R001C10, V100R001C20, V100R001C30, V500R001C00, V500R001C20, V500R002C00, V500R002C10, NIP6300 V500R001C00, V500R001C20, V500R001C30, V500R001C50, NIP6600 V500R001C00, V500R001C20, V500R001C30, V500R001C50, NIP6800 V500R001C50, NetEngine16EX V200R006C10, V200R007C00, V200R008C20, V200R008C30, RP200 V500R002C00, V600R006C00, RSE6500 V500R002C00, SRG1300 V200R006C10, V200R007C00, V200R007C02, V200R008C20, V200R008C30, SRG2300 V200R006C10, V200R007C00, V200R007C02, V200R008C20, V200R008C30, SRG3300 V200R006C10, V200R007C00, V200R008C20, V200R008C30, SVN5600 V200R003C00, V200R003C10, SVN5800 V200R003C10, SVN5800-C V200R003C00, V200R003C10, SeMG9811 V300R001C01, Secospace USG6300 V100R001C10, V100R001C20, V100R001C30, V500R001C00, V500R001C20, V500R001C30, V500R001C50, Secospace USG6500 V100R001C10, V100R001C20, V100R001C30, V500R001C00, V500R001C20, V500R001C30, V500R001C50, Secospace USG6600 V100R001C00, V100R001C10, V100R001C20, V100R001C30, V500R001C00, V500R001C20, V500R001C30, V500R001C50, TE30 V100R001C02, V100R001C10, V500R002C00, V600R006C00, TE40 V500R002C00, V600R006C00, TE50 V500R002C00, V600R006C00, TE60 V100R001C01, V100R001C10, V500R002C00, V600R006C00, TP3106 V100R002C00, TP3206 V100R002C00, V100R002C10, USG9500 V500R001C00, V500R001C20, V500R001C30, V500R001C50, USG9520 V300R001C01, V300R001C20, USG9560 V300R001C01, V300R001C20, USG9580 V300R001C01, V300R001C20, ViewPoint 9030 V100R011C02, V100R011C03, eSpace U1981 V200R003C20SPC900, V200R003C30SPC200 have a memory leak vulnerability. An unauthenticated, remote attacker may send specially crafted H323 packages to the affected products. Due to not release the allocated memory properly to handle the packets, successful exploit may cause memory leak and some services abnormal.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20171215-01-buffer-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:ar120-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar1200-s:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r006c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r006c13:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r007c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r007c01:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r007c02:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r008c20:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r008c30:*:*:*:*:*:*:",
+            "cpe:2.3:h:huawei:ar150-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar150:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar160_firmware:v200r006c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar160_firmware:v200r006c12:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar160_firmware:v200r007c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar160_firmware:v200r007c01:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar160_firmware:v200r007c02:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar160_firmware:v200r008c20:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar160_firmware:v200r008c30:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar200-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar200:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar2200-s:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r006c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r006c13:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r006c16:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r007c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r007c01:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r007c02:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r008c20:*:*:*:*:*:*:",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r006c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r006c11:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r007c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r007c01:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r007c02:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r008c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r008c10:*:*:*:*:*:*:",
+            "cpe:2.3:h:huawei:ar3600:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar510_firmware:v200r006c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar510_firmware:v200r006c12:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar510_firmware:v200r006c13:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar510_firmware:v200r006c15:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar510_firmware:v200r006c16:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar510_firmware:v200r006c17:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar510_firmware:v200r007c00:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:dp300:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:espace_u1981:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ips_modul",
+            "cpe:2.3:h:huawei:netengine16ex:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ngfw_module_firmware:v100r001c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ngfw_module_firmware:v100r001c20:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ngfw_module_firmware:v100r001c30:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ngfw_module_firmware:v500r001c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ngfw_module_firmware:v500r001c20:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ngfw_module_firmware:v500r002c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ngfw_modul",
+            "cpe:2.3:h:huawei:nip6300:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:nip6600:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:nip6800:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:rp200:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:rse6500:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6300_firmware:v100r001c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6300_firmware:v100r001c20:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6300_firmware:v100r001c30:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6300_firmware:v500r001c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6300_firmware:v500r001c20:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6300_firmware:v500r001c30:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6500_firmware:v100r001c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6500_firmware:v100r001c20:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6500_firmware:v100r001c30:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6500_firmware:v500r001c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6500_firmware:v500r001c20:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6500_firmware:v500r001c30:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6600_firmware:v100r001c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6600_firmware:v100r001c20:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6600_firmware:v100r001c30:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6600_firmware:v500r001c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6600_firmware:v500r001c20:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6600_firmware:v500r001c30:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:semg9811:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:srg1300:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:srg2300:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:srg3300:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:svn5600:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:svn5800-c:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:svn5800:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:te30:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:te40:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:te50:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:tp3106:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:tp3206:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:usg9500:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:usg9520:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:usg9560:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:usg9580:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:viewpoint_9030:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-17297",
+        "cwe_id": "CWE-119",
+        "description": "Huawei AR120-S V200R006C10, V200R007C00, V200R008C20, V200R008C30, AR1200 V200R006C10, V200R006C13, V200R007C00, V200R007C01, V200R007C02, V200R008C20, V200R008C30, AR1200-S V200R006C10, V200R007C00, V200R008C20, V200R008C30, AR150 V200R006C10, V200R007C00, V200R007C01, V200R007C02, V200R008C20, V200R008C30, AR150-S V200R006C10, V200R007C00, V200R008C20, V200R008C30, AR160 V200R006C10, V200R006C12, V200R007C00, V200R007C01, V200R007C02, V200R008C20, V200R008C30, AR200 V200R006C10, V200R007C00, V200R007C01, V200R008C20, V200R008C30, AR200-S V200R006C10, V200R007C00, V200R008C20, V200R008C30, AR2200 V200R006C10, V200R006C13, V200R006C16, V200R007C00, V200R007C01, V200R007C02, V200R008C20, V200R008C30, AR2200-S V200R006C10, V200R007C00, V200R008C20, V200R008C30, AR3200 V200R006C10, V200R006C11, V200R007C00, V200R007C01, V200R007C02, V200R008C00, V200R008C10, V200R008C20, V200R008C30, AR3600 V200R006C10, V200R007C00, V200R007C01, V200R008C20, AR510 V200R006C10, V200R006C12, V200R006C13, V200R006C15, V200R006C16, V200R006C17, V200R007C00, V200R008C20, V200R008C30, DP300 V500R002C00, IPS Module V100R001C10, V100R001C30, V500R001C00, V500R001C20, V500R001C30, V500R001C50, NGFW Module V100R001C10, V100R001C20, V100R001C30, V500R001C00, V500R001C20, V500R002C00, V500R002C10, NIP6300 V500R001C00, V500R001C20, V500R001C30, V500R001C50, NIP6600 V500R001C00, V500R001C20, V500R001C30, V500R001C50, NIP6800 V500R001C50, NetEngine16EX V200R006C10, V200R007C00, V200R008C20, V200R008C30, RP200 V500R002C00, V600R006C00, RSE6500 V500R002C00, SRG1300 V200R006C10, V200R007C00, V200R007C02, V200R008C20, V200R008C30, SRG2300 V200R006C10, V200R007C00, V200R007C02, V200R008C20, V200R008C30, SRG3300 V200R006C10, V200R007C00, V200R008C20, V200R008C30, SVN5600 V200R003C00, V200R003C10, SVN5800 V200R003C10, SVN5800-C V200R003C00, V200R003C10, SeMG9811 V300R001C01, Secospace USG6300 V100R001C10, V100R001C20, V100R001C30, V500R001C00, V500R001C20, V500R001C30, V500R001C50, Secospace USG6500 V100R001C10, V100R001C20, V100R001C30, V500R001C00, V500R001C20, V500R001C30, V500R001C50, Secospace USG6600 V100R001C00, V100R001C10, V100R001C20, V100R001C30, V500R001C00, V500R001C20, V500R001C30, V500R001C50, TE30 V100R001C02, V100R001C10, V500R002C00, V600R006C00, TE40 V500R002C00, V600R006C00, TE50 V500R002C00, V600R006C00, TE60 V100R001C01, V100R001C10, V500R002C00, V600R006C00, TP3106 V100R002C00, TP3206 V100R002C00, V100R002C10, USG9500 V500R001C00, V500R001C20, V500R001C30, V500R001C50, USG9520 V300R001C01, V300R001C20, USG9560 V300R001C01, V300R001C20, USG9580 V300R001C01, V300R001C20, ViewPoint 9030 V100R011C02, V100R011C03, eSpace U1981 V200R003C20SPC900, V200R003C30SPC200 have a buffer overflow vulnerability. An unauthenticated, remote attacker may send specially crafted SIP packages to the affected products. Due to the insufficient validation of some values for SIP packages, successful exploit may cause services abnormal.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20171215-01-buffer-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:ar120-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar1200-s:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r006c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r006c13:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r007c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r007c01:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r007c02:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r008c20:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r008c30:*:*:*:*:*:*:",
+            "cpe:2.3:h:huawei:ar150-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar150:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar160_firmware:v200r006c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar160_firmware:v200r006c12:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar160_firmware:v200r007c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar160_firmware:v200r007c01:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar160_firmware:v200r007c02:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar160_firmware:v200r008c20:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar160_firmware:v200r008c30:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar200-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar200:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar2200-s:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r006c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r006c13:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r006c16:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r007c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r007c01:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r007c02:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r008c20:*:*:*:*:*:*:",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r006c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r006c11:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r007c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r007c01:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r007c02:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r008c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r008c10:*:*:*:*:*:*:",
+            "cpe:2.3:h:huawei:ar3600:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar510_firmware:v200r006c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar510_firmware:v200r006c12:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar510_firmware:v200r006c13:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar510_firmware:v200r006c15:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar510_firmware:v200r006c16:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar510_firmware:v200r006c17:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar510_firmware:v200r007c00:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:dp300:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:espace_u1981:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ips_modul",
+            "cpe:2.3:h:huawei:netengine16ex:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ngfw_module_firmware:v100r001c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ngfw_module_firmware:v100r001c20:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ngfw_module_firmware:v100r001c30:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ngfw_module_firmware:v500r001c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ngfw_module_firmware:v500r001c20:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ngfw_module_firmware:v500r002c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ngfw_modul",
+            "cpe:2.3:h:huawei:nip6300:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:nip6600:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:nip6800:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:rp200:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:rse6500:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6300_firmware:v100r001c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6300_firmware:v100r001c20:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6300_firmware:v100r001c30:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6300_firmware:v500r001c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6300_firmware:v500r001c20:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6300_firmware:v500r001c30:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6500_firmware:v100r001c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6500_firmware:v100r001c20:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6500_firmware:v100r001c30:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6500_firmware:v500r001c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6500_firmware:v500r001c20:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6500_firmware:v500r001c30:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6600_firmware:v100r001c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6600_firmware:v100r001c20:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6600_firmware:v100r001c30:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6600_firmware:v500r001c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6600_firmware:v500r001c20:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:secospace_usg6600_firmware:v500r001c30:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:semg9811:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:srg1300:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:srg2300:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:srg3300:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:svn5600:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:svn5800-c:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:svn5800:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:te30:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:te40:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:te50:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:tp3106:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:tp3206:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:usg9500:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:usg9520:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:usg9560:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:usg9580:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:viewpoint_9030:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/09/2018",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-17298",
+        "cwe_id": "CWE-119",
+        "description": "Huawei AR120-S V200R006C10, V200R007C00, V200R008C20, V200R008C30, AR1200 V200R006C10, V200R006C13, V200R007C00, V200R007C01, V200R007C02, V200R008C20, V200R008C30, AR1200-S V200R006C10, V200R007C00, V200R008C20, V200R008C30, AR150 V200R006C10, V200R007C00, V200R007C01, V200R007C02, V200R008C20, V200R008C30, AR150-S V200R006C10, V200R007C00, V200R008C20, V200R008C30, AR160 V200R006C10, V200R006C12, V200R007C00, V200R007C01, V200R007C02, V200R008C20, V200R008C30, AR200 V200R006C10, V200R007C00, V200R007C01, V200R008C20, V200R008C30, AR200-S V200R006C10, V200R007C00, V200R008C20, V200R008C30, AR2200 V200R006C10, V200R006C13, V200R006C16, V200R007C00, V200R007C01, V200R007C02, V200R008C20, V200R008C30, AR2200-S V200R006C10, V200R007C00, V200R008C20, V200R008C30, AR3200 V200R006C10, V200R006C11, V200R007C00, V200R007C01, V200R007C02, V200R008C00, V200R008C10, V200R008C20, V200R008C30, AR3600 V200R006C10, V200R007C00, V200R007C01, V200R008C20, AR510 V200R006C10, V200R006C12, V200R006C13, V200R006C15, V200R006C16, V200R006C17, V200R007C00, V200R008C20, V200R008C30, DP300 V500R002C00, NetEngine16EX V200R006C10, V200R007C00, V200R008C20, V200R008C30, RP200 V500R002C00, V600R006C00, SRG1300 V200R006C10, V200R007C00, V200R007C02, V200R008C20, V200R008C30, SRG2300 V200R006C10, V200R007C00, V200R007C02, V200R008C20, V200R008C30, SRG3300 V200R006C10, V200R007C00, V200R008C20, V200R008C30, TE30 V100R001C02, V100R001C10, V500R002C00, V600R006C00, TE40 V500R002C00, V600R006C00, TE50 V500R002C00, V600R006C00, TE60 V100R001C01, V100R001C10, V500R002C00, V600R006C00, TP3106 V100R002C00, TP3206 V100R002C00, V100R002C10, ViewPoint 9030 V100R011C02, V100R011C03 have a buffer overflow vulnerability. An unauthenticated, remote attacker may send specially crafted certificates to the affected products. Due to insufficient validation of the certificates, successful exploit may cause buffer overflow and some service abnormal.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20171215-01-overflow-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:ar120-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar1200-s:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r006c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r006c13:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r007c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r007c01:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r007c02:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r008c20:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r008c30:*:*:*:*:*:*:",
+            "cpe:2.3:h:huawei:ar150-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar150:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar160_firmware:v200r006c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar160_firmware:v200r006c12:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar160_firmware:v200r007c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar160_firmware:v200r007c01:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar160_firmware:v200r007c02:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar160_firmware:v200r008c20:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar160_firmware:v200r008c30:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar200-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar200:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar2200-s:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r006c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r006c13:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r006c16:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r007c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r007c01:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r007c02:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r008c20:*:*:*:*:*:*:",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r006c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r006c11:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r007c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r007c01:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r007c02:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r008c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r008c10:*:*:*:*:*:*:",
+            "cpe:2.3:h:huawei:ar3600:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar510_firmware:v200r006c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar510_firmware:v200r006c12:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar510_firmware:v200r006c13:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar510_firmware:v200r006c15:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar510_firmware:v200r006c16:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar510_firmware:v200r006c17:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar510_firmware:v200r007c00:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:dp300:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:netengine16ex:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:rp200:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:srg1300:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:srg2300:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:srg3300:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:te30:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:te40:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:te50:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:te60:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:tp3106:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:tp3206:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:viewpoint_9030:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/09/2018",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-17299",
+        "cwe_id": "CWE-20",
+        "description": "Huawei AR120-S V200R006C10, V200R007C00, AR1200 V200R006C10, V200R006C13, V200R007C00, V200R007C02, AR1200-S V200R006C10, V200R007C00, V200R008C20, AR150 V200R006C10, V200R007C00, V200R007C02, AR150-S V200R006C10, V200R007C00, AR160 V200R006C10, V200R006C12, V200R007C00S, V200R007C02, AR200 V200R006C10, V200R007C00, AR200-S V200R006C10, V200R007C00, AR2200 V200R006C10, V200R006C13, V200R006C16, V200R007C00, V200R007C02, AR2200-S V200R006C10, V200R007C00, V200R008C20, AR3200 V200R006C10, V200R006C11, V200R007C00, V200R007C02, AR3600 V200R006C10, V200R007C00, AR510 V200R006C12, V200R006C13, V200R006C15, V200R006C16, V200R006C17, V200R007C00, IPS Module V500R001C30, NIP6300 V500R001C30, NetEngine16EX V200R006C10, V200R007C00 have an insufficient input validation vulnerability. An unauthenticated, remote attacker may send crafted IKE V2 messages to the affected products. Due to the insufficient validation of the messages, successful exploit will cause invalid memory access and result in a denial of service on the affected products.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20171215-01-ike-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:ar120-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar1200-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar1200:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar150-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar150:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar160:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar200-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar200:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar2200-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar2200:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar3200:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar3600:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar510:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ips_module:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:netengine16ex:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:nip6300:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/09/2018",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-17300",
+        "cwe_id": "CWE-20",
+        "description": "Huawei S12700 V200R008C00, V200R009C00, S5700 V200R007C00, V200R008C00, V200R009C00, S6700 V200R008C00, V200R009C00, S7700 V200R008C00, V200R009C00, S9700 V200R008C00, V200R009C00 have a numeric errors vulnerability. An unauthenticated, remote attacker may send specific TCP messages with keychain authentication option to the affected products. Due to the improper validation of the messages, it will cause numeric errors when handling the messages. Successful exploit will cause the affected products to reset.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20171215-01-router-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:s12700:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:s5700:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:s6700:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:s7700:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:s9700:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-17301",
+        "cwe_id": "CWE-295",
+        "description": "Huawei AR120-S V200R005C32, V200R006C10, V200R007C00, V200R008C20, AR1200 V200R005C20, V200R005C32, V200R006C10, V200R007C00, V200R007C01, V200R007C02, V200R008C20, AR1200-S V200R005C32, V200R006C10, V200R007C00, V200R008C20, AR150 V200R006C10, V200R007C00, V200R007C01, V200R007C02, V200R008C20, AR160 V200R005C32, V200R006C10, V200R007C00, V200R007C01, V200R007C02, V200R008C20, AR200 V200R005C32, V200R006C10, V200R007C00, V200R007C01, V200R008C20, AR200-S V200R005C32, V200R006C10, V200R007C00, V200R008C20, AR2200 V200R005C20, V200R005C32, V200R006C10, V200R007C00, V200R007C01, V200R007C02, V200R008C20, AR2200-S V200R005C32, V200R006C10, V200R007C00, V200R008C20, AR3200 V200R005C32, V200R006C10, V200R006C11, V200R007C00, V200R007C01, V200R007C02, V200R008C00, V200R008C10, V200R008C20, V200R008C30, AR3600 V200R006C10, V200R007C00, V200R007C01, V200R008C20, AR510 V200R005C32, V200R006C10, V200R007C00, V200R008C20, CloudEngine 12800 V100R003C00, V100R003C10, V100R005C00, V100R005C10, V100R006C00, V200R001C00, CloudEngine 5800 V100R003C00, V100R003C10, V100R005C00, V100R005C10, V100R006C00, V200R001C00, CloudEngine 6800 V100R003C00, V100R003C10, V100R005C00, V100R005C10, V100R006C00, V200R001C00, CloudEngine 7800 V100R003C00, V100R003C10, V100R005C00, V100R005C10, V100R006C00, V200R001C00, DP300 V500R002C00, SMC2.0 V100R003C10, V100R005C00, V500R002C00, SRG1300 V200R005C32, V200R006C10, V200R007C00, V200R007C02, V200R008C20, SRG2300 V200R005C32, V200R006C10, V200R007C00, V200R007C02, V200R008C20, SRG3300 V200R005C32, V200R006C10, V200R007C00, V200R008C20, TE30 V100R001C10, TE60 V100R003C00, V500R002C00, VP9660 V200R001C02, V200R001C30, V500R002C00, ViewPoint 8660 V100R008C02, V100R008C03, eSpace IAD V300R002C01, eSpace U1981 V200R003C20, V200R003C30, eSpace USM V100R001C01, V300R001C00 have a weak cryptography vulnerability. Due to not properly some values in the certificates, an unauthenticated remote attacker could forges a specific RSA certificate and exploits the vulnerability to pass identity authentication and logs into the target device to obtain permissions configured for the specific user name.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20171222-01-cryptography-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:ar120-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar1200-s:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r005c20:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r005c32:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r006c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r007c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r007c01:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r007c02:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar1200_firmware:v200r008c20:*:*:*:*:*:*:",
+            "cpe:2.3:h:huawei:ar150:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar160:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar200-s:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar200:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar2200-s:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r005c20:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r005c32:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r006c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r007c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r007c01:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r007c02:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar2200_firmware:v200r008c20:*:*:*:*:*:*:",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r005c32:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r006c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r006c11:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r007c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r007c01:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r007c02:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:ar3200_firmware:v200r008c00:*:*:*:*:*:*:",
+            "cpe:2.3:h:huawei:ar3600:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:ar510:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:cloudengine_12800_firmware:v100r003c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:cloudengine_12800_firmware:v100r003c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:cloudengine_12800_firmware:v100r005c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:cloudengine_12800_firmware:v100r005c10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:cloudengine_12800_firmware:v100r006c00:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:huawei:cloudengine_12800_firmware:v200r001c00:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:dp300:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:espace_iad:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:espace_u1981:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:espace_usm:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:smc2.0:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:srg1300:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:srg2300:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:srg3300:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:te30:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:te60:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:viewpoint_8660:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:vp9660:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-17302",
+        "cwe_id": "CWE-772",
+        "description": "Huawei DP300 V500R002C00, RP200 V600R006C00, TE30 V100R001C10, V500R002C00, V600R006C00, TE40 V500R002C00, V600R006C00, TE50 V500R002C00, V600R006C00, TE60 V100R001C10, V500R002C00, V600R006C00 have a memory leak vulnerability. An authenticated, local attacker may craft and load some specific Certificate Revocation List(CRL) configuration files to the devices repeatedly. Due to not release allocated memory properly, successful exploit may result in memory leak and services abnormal.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "3.3 LOW",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20180124-01-memory-en"
+        ],
+        "cpe": [
+            "cpe:2.3:h:huawei:dp300:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:rp200:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:te30:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:te40:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:te50:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:huawei:te60:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Huawei Technologies",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-15089",
+        "cwe_id": "CWE-502",
+        "description": "It was found that the Hotrod client in Infinispan before 9.2.0.CR1 would unsafely read deserialized data on information from the cache. An authenticated attacker could inject a malicious object into the data cache and attain deserialization on the client, and possibly conduct further attacks.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1040360",
+            "https://access.redhat.com/errata/RHSA-2018:0294",
+            "https://access.redhat.com/errata/RHSA-2018:0478",
+            "https://access.redhat.com/errata/RHSA-2018:0479",
+            "https://access.redhat.com/errata/RHSA-2018:0480",
+            "https://access.redhat.com/errata/RHSA-2018:0481",
+            "https://access.redhat.com/errata/RHSA-2018:0501",
+            "https://access.redhat.com/errata/RHSA-2019:1326",
+            "https://github.com/infinispan/infinispan/pull/5639"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:infinispan:infinispan:*:*:*:*:*:*:*:* versions up to (including) 9.1.6\n     *cpe:2.3:a:infinispan:infinispan:9.2.0:alpha1:*:*:*:*:*:*\n     *cpe:2.3:a:infinispan:infinispan:9.2.0:alpha2:*:*:*:*:*:*\n     *cpe:2.3:a:infinispan:infinispan:9.2.0:beta1:*:*:*:*:*:*\n     *cpe:2.3:a:infinispan:infinispan:9.2.0:beta2:*:*:*:*:*:*\n     *cpe:2.3:a:infinispan:infinispan:9.2.0:cr1:*:*:*:*:*:*",
+            "*cpe:2.3:a:infinispan:infinispan:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:infinispan:infinispan:9.2.0:alpha1:*:*:*:*:*:*",
+            "*cpe:2.3:a:infinispan:infinispan:9.2.0:alpha2:*:*:*:*:*:*",
+            "*cpe:2.3:a:infinispan:infinispan:9.2.0:beta1:*:*:*:*:*:*",
+            "*cpe:2.3:a:infinispan:infinispan:9.2.0:beta2:*:*:*:*:*:*",
+            "*cpe:2.3:a:infinispan:infinispan:9.2.0:cr1:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "06/04/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2018-1041",
+        "cwe_id": "CWE-835",
+        "description": "A vulnerability was found in the way RemoteMessageChannel, introduced in jboss-remoting versions 3.3.10, reads from an empty buffer. An attacker could use this flaw to cause denial of service via high CPU caused by an infinite loop.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1040323",
+            "https://access.redhat.com/errata/RHSA-2018:0268",
+            "https://access.redhat.com/errata/RHSA-2018:0269",
+            "https://access.redhat.com/errata/RHSA-2018:0270",
+            "https://access.redhat.com/errata/RHSA-2018:0271",
+            "https://access.redhat.com/errata/RHSA-2018:0275",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1530457",
+            "https://www.exploit-db.com/exploits/44099/"
+        ],
+        "cpe": [
+            "cpe:2.3:o:redhat:linux:5.0:*:*:*:*:*:*:*",
+            "cpe:2.3:o:redhat:linux:6.0:*:*:*:*:*:*:*",
+            "cpe:2.3:o:redhat:linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:jboss:jboss-remoting:3.3.10:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2018-7050",
+        "cwe_id": "CWE-476",
+        "description": "An issue was discovered in Irssi before 1.0.7 and 1.1.x before 1.1.1. A NULL pointer dereference occurs for an \"empty\" nick.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://openwall.com/lists/oss-security/2018/02/15/1",
+            "https://irssi.org/security/irssi_sa_2018_02.txt",
+            "https://usn.ubuntu.com/3590-1/",
+            "https://www.debian.org/security/2018/dsa-4162"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:irssi:irssi:*:*:*:*:*:*:*:* versions up to (excluding) 1.0.7\n     *cpe:2.3:a:irssi:irssi:1.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:irssi:irssi:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:irssi:irssi:1.1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/28/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2018-7051",
+        "cwe_id": "CWE-125",
+        "description": "An issue was discovered in Irssi before 1.0.7 and 1.1.x before 1.1.1. Certain nick names could result in out-of-bounds access when printing theme strings.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://openwall.com/lists/oss-security/2018/02/15/1",
+            "https://irssi.org/security/irssi_sa_2018_02.txt",
+            "https://lists.debian.org/debian-lts-announce/2018/03/msg00021.html",
+            "https://usn.ubuntu.com/3590-1/",
+            "https://www.debian.org/security/2018/dsa-4162"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:irssi:irssi:*:*:*:*:*:*:*:* versions up to (excluding) 1.0.7\n     *cpe:2.3:a:irssi:irssi:1.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:irssi:irssi:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:irssi:irssi:1.1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/28/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2018-7052",
+        "cwe_id": "CWE-476",
+        "description": "An issue was discovered in Irssi before 1.0.7 and 1.1.x before 1.1.1. When the number of windows exceeds the available space, a crash due to a NULL pointer dereference would occur.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://openwall.com/lists/oss-security/2018/02/15/1",
+            "https://irssi.org/security/irssi_sa_2018_02.txt",
+            "https://usn.ubuntu.com/3590-1/",
+            "https://www.debian.org/security/2018/dsa-4162"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:irssi:irssi:*:*:*:*:*:*:*:* versions up to (excluding) 1.0.7\n     *cpe:2.3:a:irssi:irssi:1.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:irssi:irssi:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:irssi:irssi:1.1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/28/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2018-7053",
+        "cwe_id": "CWE-416",
+        "description": "An issue was discovered in Irssi before 1.0.7 and 1.1.x before 1.1.1. There is a use-after-free when SASL messages are received in an unexpected order.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://openwall.com/lists/oss-security/2018/02/15/1",
+            "https://irssi.org/security/irssi_sa_2018_02.txt",
+            "https://usn.ubuntu.com/3590-1/",
+            "https://www.debian.org/security/2018/dsa-4162"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:irssi:irssi:*:*:*:*:*:*:*:* versions up to (excluding) 1.0.7\n     *cpe:2.3:a:irssi:irssi:1.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:irssi:irssi:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:irssi:irssi:1.1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/28/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2018-7054",
+        "cwe_id": "CWE-416",
+        "description": "An issue was discovered in Irssi before 1.0.7 and 1.1.x before 1.1.1. There is a use-after-free when a server is disconnected during netsplits. NOTE: this issue exists because of an incomplete fix for CVE-2017-7191.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://openwall.com/lists/oss-security/2018/02/15/1",
+            "https://irssi.org/security/irssi_sa_2018_02.txt",
+            "https://usn.ubuntu.com/3590-1/",
+            "https://usn.ubuntu.com/4046-1/",
+            "https://www.debian.org/security/2018/dsa-4162"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:irssi:irssi:*:*:*:*:*:*:*:* versions up to (excluding) 1.0.7\n     *cpe:2.3:a:irssi:irssi:1.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:irssi:irssi:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:irssi:irssi:1.1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "07/04/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2018-7169",
+        "cwe_id": "CWE-732",
+        "description": "An issue was discovered in shadow 4.5. newgidmap (in shadow-utils) is setuid and allows an unprivileged user to be placed in a user namespace where setgroups(2) is permitted. This allows an attacker to remove themselves from a supplementary group, which may allow access to certain filesystem paths if the administrator has used \"group blacklisting\" (e.g., chmod g-rwx) to restrict access to paths. This flaw effectively reverts a security feature in the kernel (in particular, the /proc/self/setgroups knob) to prevent this sort of privilege escalation.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://bugs.launchpad.net/ubuntu/+source/shadow/+bug/1729357",
+            "https://security.gentoo.org/glsa/201805-09"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:shadow_project:shadow:4.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:shadow_project:shadow:4.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2011-4973",
+        "cwe_id": "CWE-287",
+        "description": "Authentication bypass vulnerability in mod_nss 1.0.8 allows remote attackers to assume the identity of a valid user by using their certificate and entering 'password' as the password.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://bugzilla.redhat.com/show_bug.cgi?id=1017197",
+            "https://www.redhat.com/archives/mod_nss-list/2011-May/msg00001.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mod_nss_project:mod_nss:1.0.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:mod_nss_project:mod_nss:1.0.8:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/15/2018",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2014-0013",
+        "cwe_id": "CWE-79",
+        "description": "Ember.js 1.0.x before 1.0.1, 1.1.x before 1.1.3, 1.2.x before 1.2.1, 1.3.x before 1.3.1, and 1.4.x before 1.4.0-beta.2 allows remote attackers to conduct cross-site scripting (XSS) attacks by leveraging an application that contains templates whose context is set to a user-supplied primitive value and also contain the `{{this}}` special Handlebars variable.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://emberjs.com/blog/2014/01/14/ember-security-releases.html",
+            "https://groups.google.com/forum/#!topic/ember-security/2kpXXCxISS4"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:emberjs:ember.js:1.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:emberjs:ember.js:1.0.0:pre.2:*:*:*:*:*:*\n     *cpe:2.3:a:emberjs:ember.js:1.0.0:pre.3:*:*:*:*:*:*\n     *cpe:2.3:a:emberjs:ember.js:1.0.0:pre.4:*:*:*:*:*:*\n     *cpe:2.3:a:emberjs:ember.js:1.0.0:rc.1:*:*:*:*:*:*\n     *cpe:2.3:a:emberjs:ember.js:1.0.0:rc.1.1:*:*:*:*:*:*\n     *cpe:2.3:a:emberjs:ember.js:1.0.0:rc.2:*:*:*:*:*:*\n     *cpe:2.3:a:emberjs:ember.js:1.0.0:rc.2.1:*:*:*:*:*:*\n     *cpe:2.3:a:emberjs:ember.js:1.0.0:rc.3:*",
+            "*cpe:2.3:a:emberjs:ember.js:1.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emberjs:ember.js:1.0.0:pre.2:*:*:*:*:*:*",
+            "*cpe:2.3:a:emberjs:ember.js:1.0.0:pre.3:*:*:*:*:*:*",
+            "*cpe:2.3:a:emberjs:ember.js:1.0.0:pre.4:*:*:*:*:*:*",
+            "*cpe:2.3:a:emberjs:ember.js:1.0.0:rc.1:*:*:*:*:*:*",
+            "*cpe:2.3:a:emberjs:ember.js:1.0.0:rc.1.1:*:*:*:*:*:*",
+            "*cpe:2.3:a:emberjs:ember.js:1.0.0:rc.2:*:*:*:*:*:*",
+            "*cpe:2.3:a:emberjs:ember.js:1.0.0:rc.2.1:*:*:*:*:*:*",
+            "*cpe:2.3:a:emberjs:ember.js:1.0.0:rc.3:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "08/13/2018",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2014-0014",
+        "cwe_id": "CWE-79",
+        "description": "Ember.js 1.0.x before 1.0.1, 1.1.x before 1.1.3, 1.2.x before 1.2.1, 1.3.x before 1.3.1, and 1.4.x before 1.4.0-beta.2 allows remote attackers to conduct cross-site scripting (XSS) attacks by leveraging an application using the \"{{group}}\" Helper and a crafted payload.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://emberjs.com/blog/2014/01/14/ember-security-releases.html",
+            "http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html",
+            "https://groups.google.com/forum/#!topic/ember-security/PSE4RzTi6l4"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:emberjs:ember.js:1.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:emberjs:ember.js:1.0.0:pre.2:*:*:*:*:*:*\n     *cpe:2.3:a:emberjs:ember.js:1.0.0:pre.3:*:*:*:*:*:*\n     *cpe:2.3:a:emberjs:ember.js:1.0.0:pre.4:*:*:*:*:*:*\n     *cpe:2.3:a:emberjs:ember.js:1.0.0:rc.1:*:*:*:*:*:*\n     *cpe:2.3:a:emberjs:ember.js:1.0.0:rc.1.1:*:*:*:*:*:*\n     *cpe:2.3:a:emberjs:ember.js:1.0.0:rc.2:*:*:*:*:*:*\n     *cpe:2.3:a:emberjs:ember.js:1.0.0:rc.2.1:*:*:*:*:*:*\n     *cpe:2.3:a:emberjs:ember.js:1.0.0:rc.3:*",
+            "*cpe:2.3:a:emberjs:ember.js:1.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:emberjs:ember.js:1.0.0:pre.2:*:*:*:*:*:*",
+            "*cpe:2.3:a:emberjs:ember.js:1.0.0:pre.3:*:*:*:*:*:*",
+            "*cpe:2.3:a:emberjs:ember.js:1.0.0:pre.4:*:*:*:*:*:*",
+            "*cpe:2.3:a:emberjs:ember.js:1.0.0:rc.1:*:*:*:*:*:*",
+            "*cpe:2.3:a:emberjs:ember.js:1.0.0:rc.1.1:*:*:*:*:*:*",
+            "*cpe:2.3:a:emberjs:ember.js:1.0.0:rc.2:*:*:*:*:*:*",
+            "*cpe:2.3:a:emberjs:ember.js:1.0.0:rc.2.1:*:*:*:*:*:*",
+            "*cpe:2.3:a:emberjs:ember.js:1.0.0:rc.3:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "10/16/2018",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2018-7173",
+        "cwe_id": "CWE-172",
+        "description": "A large loop in JBIG2Stream::readSymbolDictSeg in xpdf 4.00 allows an attacker to cause denial of service via a specific file due to inappropriate decoding.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://forum.xpdfreader.com/viewtopic.php?f=3&t=607"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:xpdfreader:xpdf:4.00:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:xpdfreader:xpdf:4.00:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2018-7174",
+        "cwe_id": "CWE-835",
+        "description": "An issue was discovered in xpdf 4.00. An infinite loop in XRef::Xref allows an attacker to cause denial of service because loop detection exists only for tables, not streams.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://forum.xpdfreader.com/viewtopic.php?f=3&t=605"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:xpdfreader:xpdf:4.00:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:xpdfreader:xpdf:4.00:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2018-7175",
+        "cwe_id": "CWE-476",
+        "description": "An issue was discovered in xpdf 4.00. A NULL pointer dereference in readCodestream allows an attacker to cause denial of service via a JPX image with zero components.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://forum.xpdfreader.com/viewtopic.php?f=3&t=613"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:xpdfreader:xpdf:4.00:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:xpdfreader:xpdf:4.00:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/06/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-8511",
+        "cwe_id": "CWE-502",
+        "description": "A Remote Code Execution vulnerability in HPE Network Automation using RPCServlet and Java Deserialization version v9.1x, v9.2x, v10.00, v10.00.01, v10.00.02, v10.10, v10.11, v10.11.01, v10.20 was found.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94610",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-c05344849",
+            "https://www.tenable.com/security/research/tra-2016-39"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:network_automation:9.10:*:*:*:*:*:*:*\n     *cpe:2.3:a:hp:network_automation:9.20:*:*:*:*:*:*:*\n     *cpe:2.3:a:hp:network_automation:9.22:*:*:*:*:*:*:*\n     *cpe:2.3:a:hp:network_automation:9.22.01:*:*:*:*:*:*:*\n     *cpe:2.3:a:hp:network_automation:9.22.02:*:*:*:*:*:*:*\n     *cpe:2.3:a:hp:network_automation:10.00:*:*:*:*:*:*:*\n     *cpe:2.3:a:hp:network_automation:10.00.01:*:*:*:*:*:*:*\n     *cpe:2.3:a:hp:network_automation:10.00.02:*:*:*:*:*:*:*\n     *cpe:2.3:a:hp:network",
+            "*cpe:2.3:a:hp:network_automation:9.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_automation:9.20:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_automation:9.22:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_automation:9.22.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_automation:9.22.02:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_automation:10.00:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_automation:10.00.01:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network_automation:10.00.02:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:network"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/13/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-8512",
+        "cwe_id": "CWE-119",
+        "description": "A Remote Code Execution vulnerability in all versions of HPE LoadRunner and Performance Center was found.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-c05354136"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:loadrunner:-:*:*:*:*:*:*:*\n     *cpe:2.3:a:hp:performance_center:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:loadrunner:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:performance_center:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/09/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-8513",
+        "cwe_id": "CWE-352",
+        "description": "A Cross-Site Request Forgery (CSRF) vulnerability in HPE Version Control Repository Manager (VCRM) was found. The problem impacts all versions prior to 7.6.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.0 HIGH",
+        "base_score_v2": "6.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94949",
+            "http://www.securitytracker.com/id/1037485",
+            "/hpsc/public/kb/docDisplay?docId=emr_na-c05390722",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-c05356363"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:version_control_repository_manager:*:*:*:*:*:*:*:* versions up to (excluding) 7.6",
+            "*cpe:2.3:a:hp:version_control_repository_manager:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/07/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-8514",
+        "cwe_id": "CWE-200",
+        "description": "A remote information disclosure in HPE Version Control Repository Manager (VCRM) was found. The problem impacts all versions prior to 7.6.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94949",
+            "http://www.securitytracker.com/id/1037485",
+            "/hpsc/public/kb/docDisplay?docId=emr_na-c05390722",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-c05356363"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:version_control_repository_manager:*:*:*:*:*:*:*:* versions up to (excluding) 7.6",
+            "*cpe:2.3:a:hp:version_control_repository_manager:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/06/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-8515",
+        "cwe_id": "CWE-434",
+        "description": "A remote malicious file upload vulnerability in HPE Version Control Repository Manager (VCRM) was found. The problem impacts all versions prior to 7.6.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/94949",
+            "http://www.securitytracker.com/id/1037485",
+            "/hpsc/public/kb/docDisplay?docId=emr_na-c05390722",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-c05356363"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:version_control_repository_manager:*:*:*:*:*:*:*:* versions up to (excluding) 7.6",
+            "*cpe:2.3:a:hp:version_control_repository_manager:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/06/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-8516",
+        "cwe_id": null,
+        "description": "A remote denial of service vulnerability in HPE Systems Insight Manager in all versions prior to 7.6 was found.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1037492",
+            "/hpsc/public/kb/docDisplay?docId=emr_na-c05385680",
+            "/hpsc/public/kb/docDisplay?docId=emr_na-c05390722",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-c05356388"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:systems_insight_manager:*:*:*:*:*:*:*:* versions up to (excluding) 7.6",
+            "*cpe:2.3:a:hp:systems_insight_manager:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/05/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-8517",
+        "cwe_id": "CWE-79",
+        "description": "A cross site scripting vulnerability in HPE Systems Insight Manager in all versions prior to 7.6 was found.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1037492",
+            "/hpsc/public/kb/docDisplay?docId=emr_na-c05385680",
+            "/hpsc/public/kb/docDisplay?docId=emr_na-c05390722",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-c05356388"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:systems_insight_manager:*:*:*:*:*:*:*:* versions up to (excluding) 7.6",
+            "*cpe:2.3:a:hp:systems_insight_manager:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/05/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-8518",
+        "cwe_id": null,
+        "description": "A remote denial of service vulnerability in HPE Systems Insight Manager in all versions prior to 7.6 was found.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1037492",
+            "/hpsc/public/kb/docDisplay?docId=emr_na-c05385680",
+            "/hpsc/public/kb/docDisplay?docId=emr_na-c05390722",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-c05356388"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:systems_insight_manager:*:*:*:*:*:*:*:* versions up to (excluding) 7.6",
+            "*cpe:2.3:a:hp:systems_insight_manager:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/05/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-8519",
+        "cwe_id": "CWE-502",
+        "description": "A remote code execution vulnerability in HPE Operations Orchestration Community edition and Enterprise edition prior to v10.70 was found.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/95225",
+            "http://www.securitytracker.com/id/1037552",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-c05361944",
+            "https://www.tenable.com/security/research/tra-2017-05"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:operations_orchestration:*:*:*:*:community:*:*:* versions up to (excluding) 10.70\n     *cpe:2.3:a:hp:operations_orchestration:*:*:*:*:enterprise:*:*:* versions up to (excluding) 10.70",
+            "*cpe:2.3:a:hp:operations_orchestration:*:*:*:*:community:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:hp:operations_orchestration:*:*:*:*:enterprise:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/05/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-8520",
+        "cwe_id": "CWE-275",
+        "description": "HPE Helion Eucalyptus v4.3.0 and earlier does not correctly check IAM user's permissions for accessing versioned objects and ACLs. In some cases, authenticated users with S3 permissions could also access versioned data.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/95369",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-c05363782"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:eucalyptus:eucalyptus:*:*:*:*:*:*:*:* versions up to (including) 4.3.0",
+            "*cpe:2.3:a:eucalyptus:eucalyptus:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/13/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-8521",
+        "cwe_id": "CWE-20",
+        "description": "A Remote click jacking vulnerability in HPE Diagnostics version 9.24 IP1, 9.26 , 9.26IP1 was found.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/95427",
+            "http://www.securitytracker.com/id/1037602",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-c05370100"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:diagnostics:9.24:ip1:*:*:*:*:*:*\n     *cpe:2.3:a:hp:diagnostics:9.26:*:*:*:*:*:*:*\n     *cpe:2.3:a:hp:diagnostics:9.26:ip1:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:diagnostics:9.24:ip1:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:diagnostics:9.26:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:diagnostics:9.26:ip1:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/05/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-8522",
+        "cwe_id": "CWE-79",
+        "description": "A cross-site scripting vulnerability in HPE Diagnostics version 9.24 IP1, 9.26 , 9.26IP1 was found.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/95427",
+            "http://www.securitytracker.com/id/1037602",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-c05370100"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:diagnostics:9.24:ip1:*:*:*:*:*:*\n     *cpe:2.3:a:hp:diagnostics:9.26:*:*:*:*:*:*:*\n     *cpe:2.3:a:hp:diagnostics:9.26:ip1:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:diagnostics:9.24:ip1:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:diagnostics:9.26:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:diagnostics:9.26:ip1:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/05/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-8523",
+        "cwe_id": "CWE-77",
+        "description": "A Remote Arbitrary Code Execution vulnerability in HPE Smart Storage Administrator version before v2.60.18.0 was found.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/95868",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-c05382349",
+            "https://www.exploit-db.com/exploits/41297/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:smart_storage_administrator:*:*:*:*:*:*:*:* versions up to (excluding) 2.60.18.0",
+            "*cpe:2.3:a:hp:smart_storage_administrator:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/05/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-8525",
+        "cwe_id": "CWE-200",
+        "description": "A Remote Disclosure of Information vulnerability in HPE iMC PLAT version v7.2 E0403P06 and earlier was found. The problem was resolved in iMC PLAT 7.3 E0504 or subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/95912",
+            "http://www.securitytracker.com/id/1037756",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-c05382418",
+            "https://www.tenable.com/security/research/tra-2017-09"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:*:*:*:*:*:*:*:* versions up to (including) 7.2\n     *cpe:2.3:a:hp:intelligent_management_center:7.2:e0403p06:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.2:e0403p06:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/07/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-8528",
+        "cwe_id": "CWE-264",
+        "description": "A Remote Escalation of Privilege vulnerability in HPE Helion Eucalyptus version 3.3.0 through 4.3.1 was found.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/95910",
+            "http://www.securitytracker.com/id/1037757",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-c05382868"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:eucalyptus:eucalyptus:*:*:*:*:*:*:*:* versions from (including) 3.3.0 up to (including) 4.3.1",
+            "*cpe:2.3:a:eucalyptus:eucalyptus:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/07/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-8529",
+        "cwe_id": "CWE-284",
+        "description": "A Remote Arbitrary Command Execution vulnerability in HPE StoreVirtual 4000 Storage and StoreVirtual VSA Software running LeftHand OS version v12.5 and earlier was found. The problem was resolved in LeftHand OS v12.6 or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:P/I:P/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:P/I:P/A:C)"
+        },
+        "base_score_v3": "7.6 HIGH",
+        "base_score_v2": "7.3 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/95970",
+            "http://www.securitytracker.com/id/1037762",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-c05382958"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:hp:lefthand:*:*:*:*:*:*:*:* versions up to (including) 12.5",
+            "*cpe:2.3:o:hp:lefthand:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/12/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-8530",
+        "cwe_id": "CWE-20",
+        "description": "A remote denial of service vulnerability in HPE iMC PLAT version v7.2 E0403P06 and earlier was found. The problem was resolved in iMC PLAT 7.3 E0504 or subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-c05382418",
+            "https://www.tenable.com/security/research/tra-2017-09"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:*:*:*:*:*:*:*:* versions up to (including) 7.2\n     *cpe:2.3:a:hp:intelligent_management_center:7.2:e0403p06:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.2:e0403p06:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/12/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-8531",
+        "cwe_id": "CWE-200",
+        "description": "A remote information disclosure vulnerability in HPE Matrix Operating Environment version 7.6 was found.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-c05385680"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:matrix_operating_environment:7.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:matrix_operating_environment:7.6:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/02/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-8532",
+        "cwe_id": "CWE-79",
+        "description": "A cross site scripting vulnerability in HPE Matrix Operating Environment version 7.6 was found.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-c05385680"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:matrix_operating_environment:7.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:matrix_operating_environment:7.6:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/01/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-8533",
+        "cwe_id": "CWE-264",
+        "description": "A remote priviledge escalation vulnerability in HPE Matrix Operating Environment version 7.6 was found.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-c05385680"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:matrix_operating_environment:7.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:matrix_operating_environment:7.6:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/02/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-8534",
+        "cwe_id": "CWE-264",
+        "description": "A remote privilege elevation vulnerability in HPE Matrix Operating Environment version 7.6 was found.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-c05385680"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:matrix_operating_environment:7.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:matrix_operating_environment:7.6:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/02/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2016-8535",
+        "cwe_id": "CWE-20",
+        "description": "A remote HTTP parameter Pollution vulnerability in HPE Matrix Operating Environment version 7.6 was found.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "3.5 LOW",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-c05385680"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:matrix_operating_environment:7.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:matrix_operating_environment:7.6:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/02/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12487",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12488",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12489",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12490",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12491",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12492",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12493",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12494",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12495",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12496",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12497",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12498",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12499",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12500",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us",
+            "https://www.exploit-db.com/exploits/44648/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/08/2019",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12501",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12502",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12503",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12504",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12505",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12506",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12507",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12508",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12509",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12510",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12511",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12512",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12513",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12514",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12515",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12516",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12517",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12518",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12519",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12520",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:*:*:*:*:*:*:*:* versions up to (including) 7.3\n     *cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/06/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12521",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12522",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12523",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12524",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12525",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12526",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12527",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12528",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12529",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12530",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12531",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12532",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12533",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12534",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12535",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12536",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12537",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12538",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12539",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12540",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12541",
+        "cwe_id": "CWE-20",
+        "description": "A Remote Code Execution vulnerability in HPE Intelligent Management Center (iMC) PLAT version PLAT 7.3 (E0504) was found. The problem was resolved in HPE Intelligent Management Center PLAT v7.3 (E0506) or any subsequent version.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100367",
+            "http://www.securitytracker.com/id/1039152",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03768en_us"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:intelligent_management_center:7.3:e0504:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "02/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12542",
+        "cwe_id": null,
+        "description": "A authentication bypass and execution of code vulnerability in HPE Integrated Lights-out 4 (iLO 4) version prior to 2.53 was found.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "10.0 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/100467",
+            "http://www.securitytracker.com/id/1039222",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03769en_us",
+            "https://www.exploit-db.com/exploits/44005/"
+        ],
+        "cpe": [
+            "cpe:2.3:h:hp:integrated_lights-out_4:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "07/23/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    },
+    {
+        "cve_id": "CVE-2017-12543",
+        "cwe_id": "CWE-200",
+        "description": "A remote disclosure of information vulnerability in Moonshot Remote Console Administrator Prior to 2.50, iLO4 prior to v2.53, iLO3 prior to v1.89 and iLO2 prior to v2.30 was found.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/101944",
+            "https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-hpesbhf03705en_us"
+        ],
+        "cpe": [
+            "cpe:2.3:h:hp:integrated_lights-out:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hp:moonshot_remote_console_administrator:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "02/15/2018",
+        "modified_date": "03/12/2018",
+        "vulnerability_source": "Hewlett Packard Enterprise (HPE)",
+        "year": "2018",
+        "month": "2"
+    }
+]

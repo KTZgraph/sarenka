@@ -1,0 +1,3127 @@
+[
+    {
+        "cve_id": "CVE-2018-17825",
+        "cwe_id": "CWE-415",
+        "description": "An issue was discovered in AdPlug 2.3.1. There are several double-free vulnerabilities in the CEmuopl class in emuopl.cpp because of a destructor's two OPLDestroy calls, each of which frees TL_TABLE, SIN_TABLE, AMS_TABLE, and VIB_TABLE.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/adplug/adplug/issues/67"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:adplug:adplug:2.3.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adplug:adplug:2.3.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adplug:adplug:2.3.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adplug_project:adplug:2.3.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:adplug:adplug:2.3.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "08/13/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17826",
+        "cwe_id": "CWE-352",
+        "description": "HisiPHP 1.0.8 allows CSRF via admin.php/admin/user/adduser.html to add an administrator account. The attacker can then use that account to execute arbitrary PHP code by leveraging app/common/model/AdminAnnex.php to add .php to the default list of allowable file-upload types (.jpg, .png, .gif, .jpeg, and .ico).",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/rakjong/vuln/blob/master/hisiphp_getshell.pdf"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hisiphp:hisiphp:1.0.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hisiphp:hisiphp:1.0.8:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "11/16/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17827",
+        "cwe_id": "CWE-94",
+        "description": "HisiPHP 1.0.8 allows remote attackers to execute arbitrary PHP code by editing a plugin's name to contain that code. This name is then injected into app/admin/model/AdminPlugins.php.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.2 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/rakjong/vuln/blob/master/hisiphp_hetshell_2.pdf"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hisiphp:hisiphp:1.0.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:hisiphp:hisiphp:1.0.8:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "01/08/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17828",
+        "cwe_id": "CWE-22",
+        "description": "Directory traversal vulnerability in ZZIPlib 0.13.69 allows attackers to overwrite arbitrary files via a .. (dot dot) in a zip file, because of the function unzzip_cat in the bins/unzzipcat-mem.c file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/gdraheim/zziplib/issues/62"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:zziplib_project:zziplib:0.13.69:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:zziplib_project:zziplib:0.13.69:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "11/28/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17830",
+        "cwe_id": "CWE-79",
+        "description": "The $args variable in addons/mediapool/pages/index.php in REDAXO 5.6.2 is not effectively filtered, because names are not restricted (only values are restricted). The attacker can insert XSS payloads via an index.php?page=mediapool/media&opener_input_field=&args[ substring.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://github.com/redaxo/redaxo4/issues/421"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redaxo:redaxo:5.6.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:redaxo:redaxo:5.6.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "11/15/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17831",
+        "cwe_id": "CWE-89",
+        "description": "In REDAXO before 5.6.3, a critical SQL injection vulnerability has been discovered in the rex_list class because of the prepareQuery function in core/lib/list.php, via the index.php?page=users/users sort parameter. Endangered was the backend and the frontend only if rex_list were used.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/redaxo/redaxo/issues/2043",
+            "https://github.com/redaxo/redaxo/releases/tag/5.6.3",
+            "https://redaxo.org/cms/news/sicherheitsluecke-und-neue-yform-version/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:redaxo:redaxo:*:*:*:*:*:*:*:* versions up to (excluding) 5.6.3",
+            "*cpe:2.3:a:redaxo:redaxo:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "11/21/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17832",
+        "cwe_id": "CWE-79",
+        "description": "XSS exists in WUZHI CMS 2.0 via the index.php v or f parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://cxsecurity.com/issue/WLB-2018050139",
+            "https://www.exploit-db.com/exploits/45514/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:wuzhicms:wuzhi_cms:2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:wuzhicms:wuzhi_cms:2.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "11/15/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17835",
+        "cwe_id": "CWE-79",
+        "description": "An issue was discovered in GetSimple CMS 3.3.15. An administrator can insert stored XSS via the admin/settings.php Custom Permalink Structure parameter, which injects the XSS payload into any page created at the admin/pages.php URI.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.8 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://github.com/GetSimpleCMS/GetSimpleCMS/issues/1298"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:get-simple:getsimple_cms:3.3.15:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:get-simple:getsimple_cms:3.3.15:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "11/15/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17836",
+        "cwe_id": "CWE-22",
+        "description": "An issue was discovered in JTBC(PHP) 3.0.1.6. It allows remote attackers to execute arbitrary PHP code by using a /console/file/manage.php?type=action&action=addfile&path=..%2F substring to upload, in conjunction with a multipart/form-data PHP payload.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/AvaterXXX/JTBC/blob/master/README.md#getshell"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jtbc:jtbc_php:3.0.1.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:jtbc:jtbc_php:3.0.1.6:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17837",
+        "cwe_id": "CWE-22",
+        "description": "An issue was discovered in JTBC(PHP) 3.0.1.6. Arbitrary file deletion is possible via a /console/file/manage.php?type=action&action=delete&path=c%3A%2F substring.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "6.4 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/AvaterXXX/JTBC/blob/master/README.md#arbitrary-file-deletion"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jtbc:jtbc_php:3.0.1.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:jtbc:jtbc_php:3.0.1.6:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17838",
+        "cwe_id": "CWE-22",
+        "description": "An issue was discovered in JTBC(PHP) 3.0.1.6. Arbitrary file read operations are possible via a /console/#/console/file/manage.php?type=list&path=c:/ substring.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/AvaterXXX/JTBC/blob/master/README.md#arbitrary-file-read"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jtbc:jtbc_php:3.0.1.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:jtbc:jtbc_php:3.0.1.6:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "11/28/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17846",
+        "cwe_id": "CWE-835",
+        "description": "The html package (aka x/net/html) through 2018-09-25 in Go mishandles <table><math><select><mi><select></table>, leading to an infinite loop during an html.Parse call because inSelectIM and inSelectInTableIM do not comply with a specification.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/golang/go/issues/27842",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LREEWY6KNLHRWFZ7OT4HVLMVVCGGUHON/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UKRCI7WIOCOCD3H7NXWRGIRABTQOZOBK/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:golang:go:*:*:*:*:*:*:*:* versions up to (including) 2018-09-25",
+            "*cpe:2.3:o:fedoraproject:fedora:28:*:*:*:*:*:*:*\n     *cpe:2.3:o:fedoraproject:fedora:29:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:golang:go:*:*:*:*:*:*:*:* versions up to (including) 2018-09-25",
+            "*cpe:2.3:a:golang:go:*:*:*:*:*:*:*:*",
+            "(including)",
+            "2018-09-25",
+            "*cpe:2.3:a:golang:net:*:*:*:*:*:*:*:*",
+            "(including)",
+            "2018-09-25",
+            "*cpe:2.3:o:fedoraproject:fedora:28:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:fedoraproject:fedora:29:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:golang:go:*:*:*:*:*:*:*:*",
+            "(including)",
+            "2018-09-25"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "06/02/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17847",
+        "cwe_id": "CWE-119",
+        "description": "The html package (aka x/net/html) through 2018-09-25 in Go mishandles <svg><template><desc><t><svg></template>, leading to a \"panic: runtime error\" (index out of range) in (*nodeStack).pop in node.go, called from (*parser).clearActiveFormattingElements, during an html.Parse call.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/golang/go/issues/27846",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LREEWY6KNLHRWFZ7OT4HVLMVVCGGUHON/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UKRCI7WIOCOCD3H7NXWRGIRABTQOZOBK/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:golang:go:*:*:*:*:*:*:*:* versions up to (including) 2018-09-25",
+            "*cpe:2.3:o:fedoraproject:fedora:28:*:*:*:*:*:*:*\n     *cpe:2.3:o:fedoraproject:fedora:29:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:golang:go:*:*:*:*:*:*:*:* versions up to (including) 2018-09-25",
+            "*cpe:2.3:a:golang:go:*:*:*:*:*:*:*:*",
+            "(including)",
+            "2018-09-25",
+            "*cpe:2.3:a:golang:net:*:*:*:*:*:*:*:*",
+            "(including)",
+            "2018-09-25",
+            "*cpe:2.3:o:fedoraproject:fedora:28:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:fedoraproject:fedora:29:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:golang:go:*:*:*:*:*:*:*:*",
+            "(including)",
+            "2018-09-25"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17848",
+        "cwe_id": "CWE-129",
+        "description": "The html package (aka x/net/html) through 2018-09-25 in Go mishandles <math><template><mn><b></template>, leading to a \"panic: runtime error\" (index out of range) in (*insertionModeStack).pop in node.go, called from inHeadIM, during an html.Parse call.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/golang/go/issues/27846",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LREEWY6KNLHRWFZ7OT4HVLMVVCGGUHON/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UKRCI7WIOCOCD3H7NXWRGIRABTQOZOBK/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:golang:go:*:*:*:*:*:*:*:* versions up to (including) 2018-09-25",
+            "*cpe:2.3:o:fedoraproject:fedora:28:*:*:*:*:*:*:*\n     *cpe:2.3:o:fedoraproject:fedora:29:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:golang:go:*:*:*:*:*:*:*:* versions up to (including) 2018-09-25",
+            "*cpe:2.3:a:golang:go:*:*:*:*:*:*:*:*",
+            "(including)",
+            "2018-09-25",
+            "*cpe:2.3:a:golang:net:*:*:*:*:*:*:*:*",
+            "(including)",
+            "2018-09-25",
+            "*cpe:2.3:o:fedoraproject:fedora:28:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:fedoraproject:fedora:29:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:golang:go:*:*:*:*:*:*:*:*",
+            "(including)",
+            "2018-09-25"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "06/02/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17850",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was withdrawn by its CNA.  Further investigation showed that it was not a security issue.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-17850"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-17850"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "10/01/2018",
+        "modified_date": "10/02/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17851",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was withdrawn by its CNA.  Further investigation showed that it was not a security issue.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-17851"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-17851"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "10/01/2018",
+        "modified_date": "10/02/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17852",
+        "cwe_id": "CWE-89",
+        "description": "A SQL injection was discovered in WUZHI CMS 4.1.0 in coreframe/app/coupon/admin/card.php via the groupname parameter to the /index.php?m=coupon&f=card&v=detail_listing URI.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/wuzhicms/wuzhicms/issues/155"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:wuzhi_cms_project:wuzhi_cms:4.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:wuzhi_cms_project:wuzhi_cms:4.1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "11/21/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17854",
+        "cwe_id": "CWE-125",
+        "description": "SIMDComp before 0.1.1 allows remote attackers to cause a denial of service (heap-based buffer over-read and application crash) because it can read (and then discard) extra bytes. NOTE: this issue exists because of an incomplete fix for CVE-2018-17427.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/lemire/simdcomp/issues/21"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:simdcomp_project:simdcomp:*:*:*:*:*:*:*:* versions up to (excluding) 0.1.1",
+            "*cpe:2.3:a:simdcomp_project:simdcomp:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "02/01/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-14788",
+        "cwe_id": "CWE-120",
+        "description": "Fuji Electric Alpha5 Smart Loader Versions 3.7 and prior. A buffer overflow information disclosure vulnerability occurs when parsing certain file types.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105411",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-270-02"
+        ],
+        "cpe": [
+            "cpe:2.3:h:fujielectric:alpha5_smart_loader:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-14790",
+        "cwe_id": "CWE-125",
+        "description": "Fuji Electric FRENIC LOADER v3.3 v7.3.4.1a of FRENIC-Mini (C1), FRENIC-Mini (C2), FRENIC-Eco, FRENIC-Multi, FRENIC-MEGA, FRENIC-Ace. A buffer over-read vulnerability may allow remote code execution on the device.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105408",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-270-03"
+        ],
+        "cpe": [
+            "cpe:2.3:h:fujielectric:frenic-ace:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:fujielectric:frenic-eco:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:fujielectric:frenic-mega:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:fujielectric:frenic-mini\\(c1\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:fujielectric:frenic-mini\\(c2\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:fujielectric:frenic-multi:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-14794",
+        "cwe_id": "CWE-119",
+        "description": "Fuji Electric Alpha5 Smart Loader Versions 3.7 and prior. The device does not perform a check on the length/size of a project file before copying the entire contents of the file to a heap-based buffer.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105411",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-270-02"
+        ],
+        "cpe": [
+            "cpe:2.3:h:fujielectric:alpha5_smart_loader:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-14798",
+        "cwe_id": "CWE-125",
+        "description": "Fuji Electric FRENIC LOADER v3.3 v7.3.4.1a of FRENIC-Mini (C1), FRENIC-Mini (C2), FRENIC-Eco, FRENIC-Multi, FRENIC-MEGA, FRENIC-Ace. The program does not properly parse FNC files that may allow for information disclosure.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105408",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-270-03"
+        ],
+        "cpe": [
+            "cpe:2.3:h:fujielectric:frenic-ace:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:fujielectric:frenic-eco:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:fujielectric:frenic-mega:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:fujielectric:frenic-mini\\(c1\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:fujielectric:frenic-mini\\(c2\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:fujielectric:frenic-multi:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-14802",
+        "cwe_id": "CWE-119",
+        "description": "Fuji Electric FRENIC LOADER v3.3 v7.3.4.1a of FRENIC-Mini (C1), FRENIC-Mini (C2), FRENIC-Eco, FRENIC-Multi, FRENIC-MEGA, FRENIC-Ace. The program does not properly check user-supplied comments which may allow for arbitrary remote code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105408",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-270-03"
+        ],
+        "cpe": [
+            "cpe:2.3:h:fujielectric:frenic-ace:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:fujielectric:frenic-eco:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:fujielectric:frenic-mega:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:fujielectric:frenic-mini\\(c1\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:fujielectric:frenic-mini\\(c2\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:fujielectric:frenic-multi:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-1420",
+        "cwe_id": "CWE-732",
+        "description": "IBM WebSphere Portal 7.0, 8.0, 8.5, and 9.0 resets access control settings to the out of the box configuration during Combined Cumulative Fix (CF) installation. This can lead to security miss-configuration of the installation. IBM X-Force ID: 138950.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1041767",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/138950",
+            "https://www.ibm.com/support/docview.wss?uid=swg22014276"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:websphere_portal:7.0.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:websphere_portal:7.0.0.1:-:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:websphere_portal:7.0.0.1:cf011:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:websphere_portal:7.0.0.1:cf012:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:websphere_portal:7.0.0.1:cf013:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:websphere_portal:7.0.0.1:cf014:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:websphere_portal:7.0.0.1:cf015:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:websphere_portal:7.0.0.1:cf016:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_portal:7.0.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_portal:7.0.0.1:-:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_portal:7.0.0.1:cf011:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_portal:7.0.0.1:cf012:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_portal:7.0.0.1:cf013:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_portal:7.0.0.1:cf014:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_portal:7.0.0.1:cf015:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_portal:7.0.0.1:cf016:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-1672",
+        "cwe_id": "CWE-287",
+        "description": "IBM WebSphere Portal 7.0, 8.0, 8.5, and 9.0 may fail to set the correct user context in certain impersonation scenarios, which can allow a user to act with the identity of a different user. IBM X-Force ID: 144958.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "6.3 MEDIUM",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1041766",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/144958",
+            "https://www.ibm.com/support/docview.wss?uid=ibm10716981"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:websphere_portal:7.0.0.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:websphere_portal:7.0.0.1:-:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:websphere_portal:7.0.0.1:cf011:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:websphere_portal:7.0.0.1:cf012:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:websphere_portal:7.0.0.1:cf013:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:websphere_portal:7.0.0.1:cf014:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:websphere_portal:7.0.0.1:cf015:*:*:*:*:*:*\n     *cpe:2.3:a:ibm:websphere_portal:7.0.0.1:cf016:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_portal:7.0.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_portal:7.0.0.1:-:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_portal:7.0.0.1:cf011:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_portal:7.0.0.1:cf012:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_portal:7.0.0.1:cf013:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_portal:7.0.0.1:cf014:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_portal:7.0.0.1:cf015:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:websphere_portal:7.0.0.1:cf016:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-14804",
+        "cwe_id": "CWE-94",
+        "description": "Emerson AMS Device Manager v12.0 to v13.5.  A specially crafted script may be run that allows arbitrary remote code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105406",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-270-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:emerson:ams_device_manager:*:*:*:*:*:*:*:* versions from (including) 12.0 up to (including) 13.5",
+            "*cpe:2.3:a:emerson:ams_device_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-14808",
+        "cwe_id": "CWE-269",
+        "description": "Emerson AMS Device Manager v12.0 to v13.5.  Non-administrative users are able to change executable and library files on the affected products.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105406",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-270-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:emerson:ams_device_manager:*:*:*:*:*:*:*:* versions from (including) 12.0 up to (including) 13.5",
+            "*cpe:2.3:a:emerson:ams_device_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-10605",
+        "cwe_id": "CWE-1188",
+        "description": "Martem TELEM GW6/GWM versions prior to 2.0.87-4018403-k4 may allow unprivileged users to modify/upload a new system configuration or take the full control over the RTU using default credentials to connect to the RTU.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-142-01",
+            "https://martem.eu/csa/Martem_CSA_Telem_1805183.pdf"
+        ],
+        "cpe": [
+            "cpe:2.3:h:martem:telem-gw6:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:martem:telem-gwm:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-15700",
+        "cwe_id": "CWE-20",
+        "description": "The web interface in TP-Link TL-WRN841N 0.9.1 4.16 v0348.0 is vulnerable to a denial of service when an unauthenticated LAN user sends a crafted HTTP header containing an unexpected Referer field.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "6.1 MEDIUM",
+        "hyperlinks": [
+            "https://www.tenable.com/security/research/tra-2018-27"
+        ],
+        "cpe": [
+            "cpe:2.3:h:tp-link:tl-wrn841n:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "11/27/2018",
+        "vulnerability_source": "Tenable Network Security, Inc.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-15701",
+        "cwe_id": "CWE-20",
+        "description": "The web interface in TP-Link TL-WRN841N 0.9.1 4.16 v0348.0 is vulnerable to a denial of service when an unauthenticated LAN user sends a crafted HTTP header containing an unexpected Cookie field.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "3.3 LOW",
+        "hyperlinks": [
+            "https://www.tenable.com/security/research/tra-2018-27"
+        ],
+        "cpe": [
+            "cpe:2.3:h:tp-link:tl-wrn841n:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "11/27/2018",
+        "vulnerability_source": "Tenable Network Security, Inc.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-15702",
+        "cwe_id": "CWE-352",
+        "description": "The web interface in TP-Link TL-WRN841N 0.9.1 4.16 v0348.0 is vulnerable to CSRF due to insufficient validation of the referer field.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.tenable.com/security/research/tra-2018-27"
+        ],
+        "cpe": [
+            "cpe:2.3:h:tp-link:tl-wrn841n:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "11/27/2018",
+        "vulnerability_source": "Tenable Network Security, Inc.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-3975",
+        "cwe_id": "CWE-908",
+        "description": "An exploitable uninitialized variable vulnerability exists in the RTF-parsing functionality of Atlantis Word Processor 3.2.6 version. A specially crafted RTF file can leverage an uninitialized stack address, resulting in an out-of-bounds write, which in turn could lead to code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://talosintelligence.com/vulnerability_reports/TALOS-2018-0641"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.2.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.2.6:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "Talos",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-3978",
+        "cwe_id": "CWE-787",
+        "description": "An exploitable out-of-bounds write vulnerability exists in the Word Document parser of the Atlantis Word Processor 3.0.2.3, 3.0.2.5. A specially crafted document can cause Atlantis to write a value outside the bounds of a heap allocation, resulting in a buffer overflow. An attacker must convince a victim to open a document in order to trigger this vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://talosintelligence.com/vulnerability_reports/TALOS-2018-0646"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.0.2.3:*:*:*:*:*:*:*\n     *cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.0.2.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.0.2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.0.2.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "11/23/2018",
+        "vulnerability_source": "Talos",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-3981",
+        "cwe_id": "CWE-787",
+        "description": "An exploitable out-of-bounds write exists in the TIFF-parsing functionality of Canvas Draw version 5.0.0. An attacker can deliver a TIFF image to trigger this vulnerability and gain code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/106809",
+            "https://talosintelligence.com/vulnerability_reports/TALOS-2018-0649",
+            "https://talosintelligence.com/vulnerability_reports/TALOS-2018-0651"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.0.2.3:*:*:*:*:*:*:*\n     *cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.0.2.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.0.2.3:*:*:*:*:*:*:*\n     *cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.0.2.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.0.2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.0.2.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:canvasgfx:canvas_draw:5.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.0.2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.0.2.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "02/25/2019",
+        "vulnerability_source": "Talos",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-3982",
+        "cwe_id": "CWE-787",
+        "description": "An exploitable arbitrary write vulnerability exists in the Word document parser of the Atlantis Word Processor 3.0.2.3 and 3.0.2.5. A specially crafted document can prevent Atlas from adding elements to an array that is indexed by a loop. When reading from this array, the application will use an out-of-bounds index which can result in arbitrary data being read as a pointer. Later, when the application attempts to write to said pointer, an arbitrary write will occur. This can allow an attacker to further corrupt memory, which leads to code execution under the context of the application. An attacker must convince a victim to open a document in order to trigger this vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://talosintelligence.com/vulnerability_reports/TALOS-2018-0650"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.0.2.3:*:*:*:*:*:*:*\n     *cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.0.2.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.0.2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.0.2.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "11/23/2018",
+        "vulnerability_source": "Talos",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-3984",
+        "cwe_id": "CWE-119",
+        "description": "An exploitable uninitialized length vulnerability exists within the Word document-parser of the Atlantis Word Processor 3.0.2.3 and 3.0.2.5. A specially crafted document can cause Atlantis to skip initializing a value representing the number of columns of a table. Later, the application will use this as a length within a loop that will write to a pointer on the heap. Due to this value being controlled, a buffer overflow will occur, which can lead to code execution under the context of the application. An attacker must convince a victim to open a document in order to trigger this vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://talosintelligence.com/vulnerability_reports/TALOS-2018-0652"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.0.2.3:*:*:*:*:*:*:*\n     *cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.0.2.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.0.2.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.0.2.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "11/23/2018",
+        "vulnerability_source": "Talos",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-3998",
+        "cwe_id": "CWE-787",
+        "description": "An exploitable heap-based buffer overflow vulnerability exists in the Windows enhanced metafile parser of Atlantis Word Processor, version 3.2.5.0. A specially crafted image embedded within a document can cause an undersized allocation, resulting in an overflow when the application tries to copy data into it. An attacker must convince a victim to open a document in order to trigger this vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://talosintelligence.com/vulnerability_reports/TALOS-2018-0666"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.2.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.2.5.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "Talos",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-3999",
+        "cwe_id": "CWE-191",
+        "description": "An exploitable stack-based buffer overflow vulnerability exists in the JPEG parser of Atlantis Word Processor, version 3.2.5.0. A specially crafted image embedded within a document can cause a length to be miscalculated and underflow. This length is then treated as unsigned and then used in a copying operation. Due to the length underflow, the application will then write outside the bounds of a stack buffer, resulting in a buffer overflow. An attacker must convince a victim to open a document in order to trigger this vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://talosintelligence.com/vulnerability_reports/TALOS-2018-0667"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.2.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.2.5.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "Talos",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-4000",
+        "cwe_id": "CWE-415",
+        "description": "An exploitable double-free vulnerability exists in the Office Open XML parser of Atlantis Word Processor, version 3.2.5.0. A specially crafted document can cause a TTableRow instance to be referenced twice, resulting in a double-free vulnerability when both the references go out of scope. An attacker must convince a victim to open a document in order to trigger this vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://talosintelligence.com/vulnerability_reports/TALOS-2018-0668"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.2.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.2.5.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "11/23/2018",
+        "vulnerability_source": "Talos",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-4001",
+        "cwe_id": "CWE-824",
+        "description": "An exploitable uninitialized pointer vulnerability exists in the Office Open XML parser of Atlantis Word Processor, version 3.2.5.0. A specially crafted document can cause an uninitialized pointer representing a TTableRow to be assigned to a variable on the stack. This variable is later dereferenced and then written to allow for controlled heap corruption, which can lead to code execution under the context of the application. An attacker must convince a victim to open a document in order to trigger this vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://talosintelligence.com/vulnerability_reports/TALOS-2018-0669"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.2.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.2.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.2.5.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.2.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:atlantiswordprocessor:atlantis_word_processor:3.2.5.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "Talos",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2015-9269",
+        "cwe_id": "CWE-200",
+        "description": "The export/content.php exportarticle feature in the wordpress-mobile-pack plugin before 2.1.3 2015-06-03 for WordPress allows remote attackers to obtain sensitive information because the content of a privately published post is sent in JSON format.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://seclists.org/fulldisclosure/2015/Jul/97",
+            "https://wordpress.org/plugins/wordpress-mobile-pack/#developers",
+            "https://www.openwall.com/lists/oss-security/2015/07/19/1"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:wpmobilepack:wordpress_mobile_pack:*:*:*:*:*:wordpress:*:* versions up to (excluding) 2.1.3",
+            "*cpe:2.3:a:wpmobilepack:wordpress_mobile_pack:*:*:*:*:*:wordpress:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "11/23/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2015-9270",
+        "cwe_id": "CWE-79",
+        "description": "XSS exists in the the-holiday-calendar plugin before 1.11.3 for WordPress via the thc-month parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://seclists.org/fulldisclosure/2015/Jul/125",
+            "https://wordpress.org/plugins/the-holiday-calendar/#developers"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:theholidaycalendar:holiday_calendar:*:*:*:*:*:wordpress:*:* versions up to (excluding) 1.11.3",
+            "*cpe:2.3:a:theholidaycalendar:holiday_calendar:*:*:*:*:*:wordpress:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "11/14/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17867",
+        "cwe_id": "CWE-78",
+        "description": "The Port Forwarding functionality on DASAN H660GW devices allows remote attackers to execute arbitrary code via shell metacharacters in the cgi-bin/adv_nat_virsvr.asp Addr parameter (aka the Local IP Address field).",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.2 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "https://wojciechregula.blog/authenticated-rce-in-dasan-routers/"
+        ],
+        "cpe": [
+            "cpe:2.3:h:dasannetworks:h660gw:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17868",
+        "cwe_id": "CWE-79",
+        "description": "DASAN H660GW devices have Stored XSS in the Port Forwarding functionality.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.8 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://wojciechregula.blog/authenticated-rce-in-dasan-routers/"
+        ],
+        "cpe": [
+            "cpe:2.3:h:dasan:h660gw:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "11/16/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17869",
+        "cwe_id": "CWE-352",
+        "description": "DASAN H660GW devices do not implement any CSRF protection mechanism.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://wojciechregula.blog/authenticated-rce-in-dasan-routers/"
+        ],
+        "cpe": [
+            "cpe:2.3:h:dasan:h660gw:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "11/27/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17870",
+        "cwe_id": "CWE-601",
+        "description": "An issue was discovered in BTITeam XBTIT 2.5.4. The \"returnto\" parameter of account_change.php is vulnerable to an open redirect, a different vulnerability than CVE-2018-15683.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/btiteam/xbtit/pull/59"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:btiteam:xbtit:2.54:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:btiteam:xbtit:2.54:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "01/08/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17874",
+        "cwe_id": "CWE-79",
+        "description": "ExpressionEngine before 4.3.5 has reflected XSS.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://docs.expressionengine.com/latest/about/changelog.html#version-4-3-5"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ellislab:expressionengine:*:*:*:*:*:*:*:* versions from (excluding) 4.3.5",
+            "*cpe:2.3:a:ellislab:expressionengine:*:*:*:*:*:*:*:* versions up to (excluding) 4.3.5",
+            "*cpe:2.3:a:ellislab:expressionengine:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:expressionengine:expressionengine:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:ellislab:expressionengine:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/01/2018",
+        "modified_date": "07/06/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-11072",
+        "cwe_id": "CWE-427",
+        "description": "Dell Digital Delivery versions prior to 3.5.1 contain a DLL Injection Vulnerability. A local authenticated malicious user with advance knowledge of the application workflow could potentially load and execute a malicious DLL with administrator privileges.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://www.dell.com/support/article/us/en/04/sln313559/dell-digital-delivery-dll-injection-vulnerability?lang=en"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:dell:digital_delivery:*:*:*:*:*:*:*:* versions up to (excluding) 3.5.1",
+            "*cpe:2.3:a:dell:digital_delivery:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "Dell",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-9069",
+        "cwe_id": "CWE-362",
+        "description": "In some Lenovo IdeaPad consumer notebook models, a race condition in the BIOS flash device locking mechanism is not adequately protected against, potentially allowing an attacker with administrator access to alter the contents of BIOS.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:C)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "7.0 HIGH",
+        "hyperlinks": [
+            "https://support.lenovo.com/us/en/solutions/LEN-20184"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:hp:zhaoyang_k42-80_firmware:*:*:*:*:*:*:*:* versions from (excluding) 2.12",
+            "*cpe:2.3:o:hp:yoga_520-14ikb_firmware:*:*:*:*:*:*:*:* versions from (excluding) 2.09",
+            "*cpe:2.3:o:hp:xx_chao5000-ikbra_firmware:*:*:*:*:*:*:*:* versions from (excluding) 6jcn26ww",
+            "*cpe:2.3:o:hp:v510-15ikb_firmware:*:*:*:*:*:*:*:* versions from (excluding) 2wcn38ww",
+            "*cpe:2.3:o:hp:v510-14ikb_firmware:*:*:*:*:*:*:*:* versions from (excluding) 2wcn38ww",
+            "*cpe:2.3:o:hp:v310-15isk_firmware:*:*:*:*:*:*:*:* versions from (excluding) 0zcn47ww",
+            "*cpe:2.3:o:hp:v310-15ikb_firmware:*:*:*:*:*:*:*:* versions from (excluding) 2wcn38ww",
+            "*cpe:2.3:o:hp:v310-14isk_firmware:*:*:*:*:*:*:*:* versions from (excluding) 4.07",
+            "*cpe:2.3:o:hp:v310-14ikb_firmware:*:*:*:*:*:*:*:* versions from (excluding) 2wcn38ww",
+            "*cpe:2.3:o:hp:e52-80_firmware:*:*:*:*:*:*:*:* versions from (excluding) 2wcn38ww",
+            "*cpe:2.3:o:hp:e42-80_firmware:*:*:*:*:*:*:*:* versions from (excluding) 2wcn38ww",
+            "*cpe:2.3:o:hp:720s-14ikbr_firmware:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:h:hp:zhaoyang_k42-80:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:h:hp:yoga_520-14ikb:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:h:hp:xx_chao5000-ikbra:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:h:hp:720s-14ikbr:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:lenovo:xx_chao5000-ikbra_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:lenovo:yoga_520-14ikb_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:lenovo:zhaoyang_k42-80_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:hp:zhaoyang_k42-80_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:lenovo:zhaoyang_k42-80_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:hp:yoga_520-14ikb_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:lenovo:yoga_520-14ikb_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:hp:xx_chao5000-ikbra_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:lenovo:xx_chao5000-ikbra_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:hp:v510-15ikb_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:lenovo:v510-15ikb_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:hp:v510-14ikb_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:lenovo:v510-14ikb_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:hp:v310-15isk_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:lenovo:v310-15isk_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:hp:v310-15ikb_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:lenovo:v310-15ikb_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:hp:v310-14isk_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:lenovo:v310-14isk_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:hp:v310-14ikb_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:lenovo:v310-14ikb_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:hp:e52-80_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:lenovo:e52-80_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:hp:e42-80_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:lenovo:e42-80_firmware:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:hp:720s-14ikbr_firmware:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:lenovo:720s-14ikbr_firmware:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:h:hp:zhaoyang_k42-80:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:h:lenovo:zhaoyang_k42-80:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:h:hp:yoga_520-14ikb:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:h:lenovo:yoga_520-14ikb:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:h:hp:xx_chao5000-ikbra:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:h:lenovo:xx_chao5000-ikbra:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:h:hp:720s-14ikbr:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:h:lenovo:720s-14ikbr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:320-17ikbrn:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:320s-14ikb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:miix_720-12ikb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:310s-14isk:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:320-15ikbra:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:320-15ikbrn:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:320-15ikbrn_touch:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:320s-15ikb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:320s-15isk:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:510s-14isk:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:520-15ikbrn:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:520s-14ikb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:7000-15_u42:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:7000_u42:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:710s_plus-13ikb_16g:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:710s_plus-3ikb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:710s_plus_touch-13ikb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:720s-13ikb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:720s-14ikbr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:b320-14ikb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:e42-80:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:e43-80_kbl:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:e52-80:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:flex_4-1470:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:flex_5-1470:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:flex_5-1570:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:ideapad_2in1_14:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:lenovo_ideapad_320-14ikb\\(i\\+a\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:lenovo_ideapad_320-14ikb\\(i\\+n\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:lenovo_ideapad_320-15abr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:lenovo_ideapad_320-15ikb\\(i\\+n\\):-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:lenovo_ideapad_320s-14ikbr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:lenovo_ideapad_320s-15ikbr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:lenovo_ideapad_520s-14ikbr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:lenovo_ideapad_720s-14ikb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:lenovo_ideapad_flex_5-1470:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:lenovo_ideapad_flex_5-1570:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:lenovo_ideapad_y520-15ikbn:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:lenovo_tianyi_310-14ikb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:lenovo_tianyi_310-15ikb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:lenovo_v720-14:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:lenovo_y520-15ikba:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:lenovo_y520-15ikbm:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:lenovo_y720-15ikb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:lenovo_yoga_520-14ikb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:lenovo_yoga_520-15ikb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:nano110-14ikb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:nano110-15ikb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:r720-15ikba:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:r720-15ikbn:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:rescuer_r720-15ikbm:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:rescuer_y520-15ikbm:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:v310-14ikb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:v310-14isk:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:v310-15ikb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:v310-15isk:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:v330-14ikb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:v330-14isk:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:v510-14ikb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:v510-15ikb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:xiaoxinair13ikbpro:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:xx_chao5000-ikbra:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:y520-15ikba:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:y520-15ikbn:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:y720-15ikb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:yoga_310-11iap:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:yoga_510-14isk:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:yoga_520-14ikb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:yoga_720-13ikb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:yoga_720-13ikbr:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:yoga_720-15ikb:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:hp:zhaoyang_k42-80:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "02/18/2020",
+        "vulnerability_source": "Lenovo Group Ltd.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2017-1649",
+        "cwe_id": "CWE-79",
+        "description": "IBM Rational Quality Manager (RQM) 5.0 through 5.02 and 6.0 through 6.0.6 are vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 133259.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-1649"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.ibm.com/support/docview.wss?uid=ibm10733078",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/133259"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:* versions from (including) 5.0 up to (including) 5.0.2\n     *cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:* versions from (including) 6.0 up to (including) 6.0.6",
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-12473",
+        "cwe_id": "CWE-22",
+        "description": "A path traversal traversal vulnerability in obs-service-tar_scm of Open Build Service allows remote attackers to cause access files not in the current build. On the server itself this is prevented by confining the worker via KVM. Affected releases are openSUSE Open Build Service: versions prior to 70d1aa4cc4d7b940180553a63805c22fc62e2cf0.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://bugzilla.suse.com/show_bug.cgi?id=1105361",
+            "https://github.com/openSUSE/obs-service-tar_scm/pull/248"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:opensuse:open_build_service:*:*:*:*:*:*:*:* versions up to (including) 0.9.1",
+            "*cpe:2.3:a:opensuse:open_build_service:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "SUSE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-1395",
+        "cwe_id": "CWE-79",
+        "description": "IBM Rational Quality Manager (RQM) 5.0 through 5.02 and 6.0 through 6.0.6 are vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 138427.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-1395"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.ibm.com/support/docview.wss?uid=ibm10733078",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/138427"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:* versions from (including) 5.0 up to (including) 5.0.2\n     *cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:* versions from (including) 6.0 up to (including) 6.0.6",
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-1403",
+        "cwe_id": "CWE-79",
+        "description": "IBM Rational Quality Manager (RQM) 5.0 through 5.02 and 6.0 through 6.0.6 are vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 138439.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-1403"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.ibm.com/support/docview.wss?uid=ibm10733078",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/138439"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:* versions from (including) 5.0 up to (including) 5.0.2\n     *cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:* versions from (including) 6.0 up to (including) 6.0.6",
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-1404",
+        "cwe_id": "CWE-79",
+        "description": "IBM Rational Quality Manager (RQM) 5.0 through 5.02 and 6.0 through 6.0.6 are vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 138440.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-1404"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.ibm.com/support/docview.wss?uid=ibm10733078",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/138440"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:* versions from (including) 5.0 up to (including) 5.0.2\n     *cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:* versions from (including) 6.0 up to (including) 6.0.6",
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-1405",
+        "cwe_id": "CWE-79",
+        "description": "IBM Rational Quality Manager (RQM) 5.0 through 5.02 and 6.0 through 6.0.6 are vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 138441.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-1405"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.ibm.com/support/docview.wss?uid=ibm10733078",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/138441"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:* versions from (including) 5.0 up to (including) 5.0.2\n     *cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:* versions from (including) 6.0 up to (including) 6.0.6",
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-1439",
+        "cwe_id": "CWE-79",
+        "description": "IBM Rational Quality Manager (RQM) 5.0 through 5.02 and 6.0 through 6.0.6 are vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 139589.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-1439"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.ibm.com/support/docview.wss?uid=ibm10733078",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/139589"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:* versions from (including) 5.0 up to (including) 5.0.2\n     *cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:* versions from (including) 6.0 up to (including) 6.0.6",
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-1440",
+        "cwe_id": "CWE-79",
+        "description": "IBM Rational Quality Manager (RQM) 5.0 through 5.02 and 6.0 through 6.0.6 are vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 139595.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-1440"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.ibm.com/support/docview.wss?uid=ibm10733078",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/139595"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:* versions from (including) 5.0 up to (including) 5.0.2\n     *cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:* versions from (including) 6.0 up to (including) 6.0.6",
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-1498",
+        "cwe_id": "CWE-522",
+        "description": "IBM Security Guardium EcoSystem 10.5 stores user credentials in plain in clear text which can be read by a local user. IBM X-Force ID: 141223.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1041763",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/141223",
+            "https://www.ibm.com/support/docview.wss?uid=ibm10730317"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:security_guardium:10.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:10.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-1509",
+        "cwe_id": "CWE-295",
+        "description": "IBM Security Guardium EcoSystem 10.5 does not validate, or incorrectly validates, a certificate.This weakness might allow an attacker to spoof a trusted entity by using a man-in-the-middle (MITM) attack. The software might connect to a malicious host while believing it is a trusted host, or the software might be deceived into accepting spoofed data that appears to originate from a trusted host. IBM X-Force ID: 141417.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:N)"
+        },
+        "base_score_v3": "7.4 HIGH",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.ibm.com/support/docview.wss?uid=ibm10730321",
+            "http://www.securitytracker.com/id/1041759",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/141417"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:security_guardium:10.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ibm:security_guardium:10.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-1522",
+        "cwe_id": "CWE-79",
+        "description": "IBM Rational Quality Manager (RQM) 5.0 through 5.02 and 6.0 through 6.0.6 are vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 141803.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-1522"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.ibm.com/support/docview.wss?uid=ibm10733078",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/141803"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:* versions from (including) 5.0 up to (including) 5.0.2\n     *cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:* versions from (including) 6.0 up to (including) 6.0.6",
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-1557",
+        "cwe_id": "CWE-79",
+        "description": "IBM Rational Quality Manager (RQM) 5.0 through 5.02 and 6.0 through 6.0.6 are vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 142955.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-1557"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.ibm.com/support/docview.wss?uid=ibm10733078",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/142955"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:* versions from (including) 5.0 up to (including) 5.0.2\n     *cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:* versions from (including) 6.0 up to (including) 6.0.6",
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-1558",
+        "cwe_id": "CWE-79",
+        "description": "IBM Rational Collaborative Lifecycle Management 5.0 through 5.02 and 6.0 through 6.0.6 are vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 142956.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-1558"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.ibm.com/support/docview.wss?uid=ibm10732477",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/142956"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:rational_collaborative_lifecycle_management:*:*:*:*:*:*:*:* versions from (including) 5.0 up to (including) 6.0.6\n     *cpe:2.3:a:ibm:rational_doors_next_generation:*:*:*:*:*:*:*:* versions from (including) 5.0 up to (including) 5.0.2\n     *cpe:2.3:a:ibm:rational_doors_next_generation:*:*:*:*:*:*:*:* versions from (including) 6.0.0 up to (including) 6.0.6\n     *cpe:2.3:a:ibm:rational_engineering_lifecycle_manager:*:*:*:*:*:*:*:* versions from (including) 5.0 up to (includi",
+            "*cpe:2.3:a:ibm:rational_collaborative_lifecycle_management:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:ibm:rational_doors_next_generation:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:ibm:rational_doors_next_generation:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:ibm:rational_engineering_lifecycle_manager:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-1593",
+        "cwe_id": "CWE-326",
+        "description": "IBM Multi-Cloud Data Encryption (MDE) 2.1 could allow an unauthorized user to manipulate data due to missing file checksums. IBM X-Force ID: 143568.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/143568",
+            "https://www-01.ibm.com/support/docview.wss?uid=swg22016681"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:multi-cloud_data_encryption:*:*:*:*:*:*:*:* versions from (including) 2.1 up to (including) 2.1.0.1",
+            "*cpe:2.3:a:ibm:multi-cloud_data_encryption:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-1601",
+        "cwe_id": "CWE-79",
+        "description": "IBM Rational Quality Manager (RQM) 5.0 through 5.02 and 6.0 through 6.0.6 are vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 143791.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-1601"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.ibm.com/support/docview.wss?uid=ibm10733078",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/143791"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:* versions from (including) 5.0 up to (including) 5.0.2\n     *cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:* versions from (including) 6.0 up to (including) 6.0.6",
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-1605",
+        "cwe_id": "CWE-79",
+        "description": "IBM Rational Quality Manager (RQM) 5.0 through 5.02 and 6.0 through 6.0.6 are vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 143795.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-1605"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.ibm.com/support/docview.wss?uid=ibm10733078",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/143795"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:* versions from (including) 5.0 up to (including) 5.0.2\n     *cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:* versions from (including) 6.0 up to (including) 6.0.6",
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-1691",
+        "cwe_id": "CWE-79",
+        "description": "IBM Rational Quality Manager (RQM) 5.0 through 5.02 and 6.0 through 6.0.6 are vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 145582.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-1691"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.ibm.com/support/docview.wss?uid=ibm10733078",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/145582"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:* versions from (including) 5.0 up to (including) 5.0.2\n     *cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:* versions from (including) 6.0 up to (including) 6.0.6",
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-1692",
+        "cwe_id": "CWE-79",
+        "description": "IBM Rational Quality Manager (RQM) 5.0 through 5.02 and 6.0 through 6.0.6 are vulnerable to cross-site scripting. This vulnerability allows users to embed arbitrary JavaScript code in the Web UI thus altering the intended functionality potentially leading to credentials disclosure within a trusted session. IBM X-Force ID: 145583.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2018-1692"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": null,
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.ibm.com/support/docview.wss?uid=ibm10733078",
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/145583"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:* versions from (including) 5.0 up to (including) 5.0.2\n     *cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:* versions from (including) 6.0 up to (including) 6.0.6",
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)",
+            "*cpe:2.3:a:ibm:rational_quality_manager:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "IBM Corporation",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-6261",
+        "cwe_id": "CWE-732",
+        "description": "NVIDIA GeForce Experience prior to 3.15 contains a vulnerability when GameStream is enabled which sets incorrect permissions on a file, which may to code execution, denial of service, or escalation of privileges by users with system access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.0 HIGH",
+        "base_score_v2": "4.4 MEDIUM",
+        "hyperlinks": [
+            "https://nvidia.custhelp.com/app/answers/detail/a_id/4725"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nvidia:geforce_experience:*:*:*:*:*:*:*:* versions up to (excluding) 3.15",
+            "*cpe:2.3:a:nvidia:geforce_experience:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "NVIDIA Corporation",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-6262",
+        "cwe_id": "CWE-200",
+        "description": "NVIDIA GeForce Experience prior to 3.15 contains a vulnerability when GameStream is enabled where limited sensitive user information may be available to users with system access, which may lead to information disclosure.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "2.5 LOW",
+        "base_score_v2": "1.9 LOW",
+        "hyperlinks": [
+            "https://nvidia.custhelp.com/app/answers/detail/a_id/4725"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nvidia:geforce_experience:*:*:*:*:*:*:*:* versions up to (excluding) 3.15",
+            "*cpe:2.3:a:nvidia:geforce_experience:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "11/23/2018",
+        "vulnerability_source": "NVIDIA Corporation",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-15563",
+        "cwe_id": "CWE-79",
+        "description": "_core/admin/pages/add/ in Subrion CMS 4.2.1 has XSS via the titles[en] parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://cxsecurity.com/issue/WLB-2018090261"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:subrion:cms:4.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:subrion:cms:4.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:subrion:cms:4.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:intelliants:subrion:4.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:subrion:cms:4.2.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "11/08/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-15752",
+        "cwe_id": "CWE-319",
+        "description": "An issue was discovered in the MensaMax (aka com.breustedt.mensamax) application 4.3 for Android. Cleartext Transmission of Sensitive Information allows man-in-the-middle attackers to eavesdrop authentication information between the application and the server.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://advisories.e2security.de/2018/E2SA-2018-01.txt",
+            "https://seclists.org/bugtraq/2018/Oct/3"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mensamax:mensamax:4.3:*:*:*:*:android:*:*",
+            "*cpe:2.3:a:mensamax:mensamax:4.3:*:*:*:*:android:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-15753",
+        "cwe_id": "CWE-798",
+        "description": "An issue was discovered in the MensaMax (aka com.breustedt.mensamax) application 4.3 for Android. The use of a Hard-coded DES Cryptographic Key allows an attacker who decodes the application to decrypt transmitted data such as the login username and password.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://advisories.e2security.de/2018/E2SA-2018-01.txt",
+            "https://seclists.org/bugtraq/2018/Oct/3"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mensamax:mensamax:4.3:*:*:*:*:android:*:*",
+            "*cpe:2.3:a:mensamax:mensamax:4.3:*:*:*:*:android:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "11/25/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-16984",
+        "cwe_id": "CWE-522",
+        "description": "An issue was discovered in Django 2.1 before 2.1.2, in which unprivileged users can read the password hashes of arbitrary accounts. The read-only password widget used by the Django Admin to display an obfuscated password hash was bypassed if a user has only the \"view\" permission (new in Django 2.1), resulting in display of the entire password hash to those users. This may result in a vulnerability for sites with legacy user accounts using insecure hashes.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.9 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1041749",
+            "https://security.netapp.com/advisory/ntap-20190502-0009/",
+            "https://www.djangoproject.com/weblog/2018/oct/01/security-release/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:djangoproject:django:*:*:*:*:*:*:*:* versions from (including) 2.1 up to (excluding) 2.1.2",
+            "*cpe:2.3:a:djangoproject:django:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17587",
+        "cwe_id": "CWE-79",
+        "description": "AirTies Air 5750 devices with software 1.0.0.18 have XSS via the top.html productboardtype parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/149600/Airties-AIR5750-1.0.0.18-Cross-Site-Scripting.html",
+            "https://www.exploit-db.com/exploits/45525/"
+        ],
+        "cpe": [
+            "cpe:2.3:h:airties:air_5750:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "11/15/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17588",
+        "cwe_id": "CWE-79",
+        "description": "AirTies Air 5021 devices with software 1.0.0.18 have XSS via the top.html productboardtype parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/149598/Airties-AIR5021-1.0.0.18-Cross-Site-Scripting.html",
+            "https://www.exploit-db.com/exploits/45525/"
+        ],
+        "cpe": [
+            "cpe:2.3:h:airties:air_5021:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "11/15/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17589",
+        "cwe_id": "CWE-79",
+        "description": "AirTies Air 5650 devices with software 1.0.0.18 have XSS via the top.html productboardtype parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/149599/Airties-AIR5650-1.0.0.18-Cross-Site-Scripting.html"
+        ],
+        "cpe": [
+            "cpe:2.3:h:airties:air_5650:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "11/15/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17590",
+        "cwe_id": "CWE-79",
+        "description": "AirTies Air 5442 devices with software 1.0.0.18 have XSS via the top.html productboardtype parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/149594/Airties-AIR5443v2-1.0.0.18-Cross-Site-Scripting.html",
+            "https://www.exploit-db.com/exploits/45525/"
+        ],
+        "cpe": [
+            "cpe:2.3:h:airties:air_5442:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "11/15/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17591",
+        "cwe_id": "CWE-79",
+        "description": "AirTies Air 5343v2 devices with software 1.0.0.18 have XSS via the top.html productboardtype parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/149592/Airties-AIR5343v2-1.0.0.18-Cross-Site-Scripting.html",
+            "https://www.exploit-db.com/exploits/45525/"
+        ],
+        "cpe": [
+            "cpe:2.3:h:airties:air_5343v2:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "11/15/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17593",
+        "cwe_id": "CWE-79",
+        "description": "AirTies Air 5453 devices with software 1.0.0.18 have XSS via the top.html productboardtype parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/149595/Airties-AIR5453-1.0.0.18-Cross-Site-Scripting.html",
+            "https://www.exploit-db.com/exploits/45525/"
+        ],
+        "cpe": [
+            "cpe:2.3:h:airties:air_5453:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "11/15/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17594",
+        "cwe_id": "CWE-79",
+        "description": "AirTies Air 5443v2 devices with software 1.0.0.18 have XSS via the top.html productboardtype parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/149593/Airties-AIR5442-1.0.0.18-Cross-Site-Scripting.html"
+        ],
+        "cpe": [
+            "cpe:2.3:h:airties:air_5443v2:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "11/15/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17595",
+        "cwe_id": "CWE-79",
+        "description": "In the 5.4.0 version of the Fork CMS software, HTML Injection and Stored XSS vulnerabilities were discovered via the /backend/ajax URI.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/149596/CVE-2018-17595.txt"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fork-cms:fork_cms:5.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fork-cms:fork_cms:5.4.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "11/16/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17596",
+        "cwe_id": "CWE-79",
+        "description": "In Zoho ManageEngine AssetExplorer, a Stored XSS vulnerability was discovered in the 6.2.0 version via the /AssetDef.do ciName or assetName parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/149597/ManageEngine-AssetExplorer-6.2.0-Cross-Site-Scripting.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:zohocorp:manageengine_assetexplorer:6.2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:zohocorp:manageengine_assetexplorer:6.2.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "11/16/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17786",
+        "cwe_id": "CWE-287",
+        "description": "On D-Link DIR-823G devices, ExportSettings.sh, upload_settings.cgi, GetDownLoadSyslog.sh, and upload_firmware.cgi do not require authentication, which allows remote attackers to execute arbitrary code.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://xz.aliyun.com/t/2834"
+        ],
+        "cpe": [
+            "cpe:2.3:h:d-link:dir-823g:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17787",
+        "cwe_id": "CWE-78",
+        "description": "On D-Link DIR-823G devices, the GoAhead configuration allows /HNAP1 Command Injection via shell metacharacters in the POST data, because this data is sent directly to the \"system\" library function.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://xz.aliyun.com/t/2834"
+        ],
+        "cpe": [
+            "cpe:2.3:h:d-link:dir-823g:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17884",
+        "cwe_id": "CWE-79",
+        "description": "XSS exists in admin/gb-dashboard-widget.php in the Gwolle Guestbook (gwolle-gb) plugin before 2.5.4 for WordPress via the PATH_INFO to wp-admin/index.php",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.defensecode.com/advisories/DC-2018-05-008_WordPress_Gwolle_Guestbook_Plugin_Advisory.pdf",
+            "https://seclists.org/bugtraq/2018/Jul/74",
+            "https://wordpress.org/plugins/gwolle-gb/#developers"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gwolle_guestbook_project:gwolle_guestbook:*:*:*:*:*:wordpress:*:* versions up to (excluding) 2.5.4",
+            "*cpe:2.3:a:gwolle_guestbook_project:gwolle_guestbook:*:*:*:*:*:wordpress:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "11/16/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17886",
+        "cwe_id": "CWE-79",
+        "description": "An issue was discovered in JEESNS 1.3. The XSS filter in com.lxinet.jeesns.core.utils.XssHttpServletRequestWrapper.java could be bypassed, as demonstrated by a <svg/onLoad=confirm substring. NOTE: this vulnerability exists because of an incomplete fix for CVE-2018-12429.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://github.com/Jayl1n/CVE/blob/master/jeesns/jeesns-1.3-xss-filter-bypass.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jeesns:jeesns:1.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:jeesns:jeesns:1.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "11/16/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-11748",
+        "cwe_id": "CWE-522",
+        "description": "Previous releases of the Puppet device_manager module creates configuration files containing credentials that are world readable. This issue has been resolved as of device_manager 2.7.0.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://puppet.com/security/cve/CVE-2018-11748"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:puppet:device_manager:*:*:*:*:*:puppet:*:* versions up to (excluding) 2.7.0",
+            "*cpe:2.3:a:puppet:device_manager:*:*:*:*:*:puppet:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Puppet",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-11750",
+        "cwe_id": "CWE-20",
+        "description": "Previous releases of the Puppet cisco_ios module did not validate a host's identity before starting a SSH connection. As of the 0.4.0 release of cisco_ios, host key checking is enabled by default.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/150978",
+            "https://puppet.com/security/cve/CVE-2018-11750"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:puppet:cisco_ios_module:*:*:*:*:*:puppet:*:* versions up to (excluding) 0.4.0",
+            "*cpe:2.3:a:puppet:cisco_ios_module:*:*:*:*:*:puppet:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "01/02/2019",
+        "vulnerability_source": "Puppet",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-11752",
+        "cwe_id": "CWE-522",
+        "description": "Previous releases of the Puppet cisco_ios module output SSH session debug information including login credentials to a world readable file on every run. These issues have been resolved in the 0.4.0 release.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://puppet.com/security/cve/CVE-2018-11752"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:puppet:cisco_ios_module:*:*:*:*:*:puppet:*:* versions up to (excluding) 0.4.0",
+            "*cpe:2.3:a:puppet:cisco_ios_module:*:*:*:*:*:puppet:*:* versions up to (excluding) 0.4.0",
+            "*cpe:2.3:a:puppet:cisco_ios_module:*:*:*:*:*:puppet:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:puppet:cisco_ios:*:*:*:*:*:puppet:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:puppet:cisco_ios_module:*:*:*:*:*:puppet:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "05/01/2020",
+        "vulnerability_source": "Puppet",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-9452",
+        "cwe_id": "CWE-20",
+        "description": "In getOffsetForHorizontal of Layout.java, there is a possible application hang due to a slow width calculation. This could lead to remote denial of service if a contact with many hidden unicode characters were sent to the device and used by a local app, with no additional execution privileges needed. User interaction is needed for exploitation. Product: Android Versions: Android-7.0 Android-7.1.1 Android-7.1.2 Android-8.0 Android-8.1 Android-9.0 Android ID: A-78464361",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105484",
+            "https://android.googlesource.com/platform/frameworks/base/+/3b6f84b77c30ec0bab5147b0cffc192c86ba2634",
+            "https://android.googlesource.com/platform/frameworks/base/+/54f661b16b308cf38d1b9703214591c0f83df64d,",
+            "https://source.android.com/security/bulletin/2018-10-01,"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:7.1.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:7.1.2:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:7.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:7.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "12/28/2018",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-9473",
+        "cwe_id": "CWE-787",
+        "description": "In ihevcd_parse_sei_payload of ihevcd_parse_headers.c, there is a possible out-of-bounds write due to an integer overflow. This could lead to remote code execution with no additional execution privileges needed. User interaction is needed for exploitation. Product: Android Versions: Android-8.0 Android ID: A-65484460",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105481",
+            "https://android.googlesource.com/platform/external/libhevc/+/9f0fb67540d2259e4930d9bd5f1a1a6fb95af862",
+            "https://source.android.com/security/bulletin/2018-10-01,"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-9476",
+        "cwe_id": "CWE-416",
+        "description": "In avrc_pars_browsing_cmd of avrc_pars_tg.cc, there is a possible use-after-free due to improper locking. This could lead to remote escalation of privilege in the Bluetooth service with no additional execution privileges needed. User interaction is not needed for exploitation. Product: Android Versions: Android-8.0 Android-8.1 Android ID: A-109699112",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105482",
+            "https://android.googlesource.com/platform/system/bt/+/dd28d8ddf2985d654781770c691c60b45d7f32b4",
+            "https://source.android.com/security/bulletin/2018-10-01,"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "12/28/2018",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-9490",
+        "cwe_id": "CWE-704",
+        "description": "In CollectValuesOrEntriesImpl of elements.cc, there is possible remote code execution due to type confusion. This could lead to remote escalation of privilege with no additional execution privileges needed. User interaction is needed for exploitation. Product: Android. Versions: Android-7.0 Android-7.1.1 Android-7.1.2 Android-8.0 Android-8.1 Android-9.0 Android ID: A-111274046",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105484",
+            "https://android.googlesource.com/platform/external/chromium-libpac/+/948d4753664cc4e6b33cc3de634ac8fd5f781382,",
+            "https://android.googlesource.com/platform/external/v8/+/a24543157ae2cdd25da43e20f4e48a07481e6ceb",
+            "https://source.android.com/security/bulletin/2018-10-01,"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:7.1.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:7.1.2:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:7.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:7.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "12/28/2018",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-9491",
+        "cwe_id": "CWE-190",
+        "description": "In AMediaCodecCryptoInfo_new of NdkMediaCodec.cpp, there is a possible out-of-bounds write due to an integer overflow. This could lead to remote code execution in external apps with no additional execution privileges needed. User interaction is needed for exploitation. Product: Android Versions: Android-7.0 Android-7.1.1 Android-7.1.2 Android-8.0 Android-8.1 Android-9.0 Android ID: A-111603051",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105484",
+            "https://android.googlesource.com/platform/frameworks/av/+/2b4667baa5a2badbdfec1794156ee17d4afef37c",
+            "https://source.android.com/security/bulletin/2018-10-01,"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:7.1.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:7.1.2:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:7.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:7.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-9492",
+        "cwe_id": "CWE-863",
+        "description": "In checkGrantUriPermissionLocked of ActivityManagerService.java, there is a possible permissions bypass. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation. Product: Android Versions: Android-8.0 Android-8.1 Android-9.0 Android ID: A-111934948",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105484",
+            "https://android.googlesource.com/platform/frameworks/base/+/962fb40991f15be4f688d960aa00073683ebdd20",
+            "https://source.android.com/security/bulletin/2018-10-01,"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-9493",
+        "cwe_id": "CWE-89",
+        "description": "In the content provider of the download manager, there is a possible SQL injection due to improper input validation. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation. Product: Android Versions: Android-7.0 Android-7.1.1 Android-7.1.2 Android-8.0 Android-8.1 Android-9.0 Android ID: A-111085900",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105484",
+            "https://android.googlesource.com/platform/frameworks/base/+/462aaeaa616e0bb1342e8ef7b472acc0cbc93deb,",
+            "https://android.googlesource.com/platform/frameworks/base/+/ebc250d16c747f4161167b5ff58b3aea88b37acf",
+            "https://android.googlesource.com/platform/packages/providers/DownloadProvider/+/e7364907439578ce5334bce20bb03fef2e88b107,",
+            "https://source.android.com/security/bulletin/2018-10-01,"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:7.1.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:7.1.2:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:7.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:7.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "11/21/2018",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-9496",
+        "cwe_id": "CWE-787",
+        "description": "In ixheaacd_real_synth_fft_p3 of ixheaacd_esbr_fft.c there is a possible out of bounds write due to a missing bounds check. This could lead to remote code execution with no additional execution privileges needed. User interaction is needed for exploitation. Product: Android Versions: Android-9.0 Android ID: A-110769924",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105481",
+            "https://android.googlesource.com/platform/external/libxaac/+/04e8cd58f075bec5892e369c8deebca9c67e855c",
+            "https://source.android.com/security/bulletin/2018-10-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "11/20/2018",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-9497",
+        "cwe_id": "CWE-787",
+        "description": "In impeg2_fmt_conv_yuv420p_to_yuv420sp_uv_av8 of impeg2_format_conv.s there is a possible out of bounds write due to missing bounds check. This could lead to remote code execution with no additional execution privileges needed. User interaction is needed for exploitation. Product: Android Versions: Android-7.0 Android-7.1.1 Android-7.1.2 Android-8.0 Android-8.1 Android-9.0 Android ID: A-74078669",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105481",
+            "https://android.googlesource.com/platform/external/libmpeg2/+/bef16671c891e16f25a7b174bc528eea109357be",
+            "https://source.android.com/security/bulletin/2018-10-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:7.1.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:7.1.2:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:7.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:7.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "11/20/2018",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-9498",
+        "cwe_id": "CWE-787",
+        "description": "In SkSampler::Fill of SkSampler.cpp, there is a possible out of bounds write due to an integer overflow. This could lead to remote code execution with no additional execution privileges needed. User interaction is needed for exploitation. Product: Android Versions: Android-7.0 Android-7.1.1 Android-7.1.2 Android-8.0 Android-8.1 Android ID: A-78354855",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105481",
+            "https://android.googlesource.com/platform/external/skia/+/77c955200ddd1761d6ed7a6c1578349fedbb55e4",
+            "https://source.android.com/security/bulletin/2018-10-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:7.1.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:7.1.2:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:7.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:7.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "11/20/2018",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-9499",
+        "cwe_id": "CWE-908",
+        "description": "In readVector of iCrypto.cpp, there is a possible invalid read due to uninitialized data. This could lead to local information disclosure from the DRM server with no additional execution privileges needed. User interaction is not needed for exploitation. Product: Android Versions: Android-7.0 Android-7.1.1 Android-7.1.2 Android-8.0 Android-8.1 Android-9.0 Android ID: A-79218474",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105481",
+            "https://android.googlesource.com/platform/frameworks/av/+/bf7a67c33c0f044abeef3b9746f434b7f3295bb1",
+            "https://source.android.com/security/bulletin/2018-10-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:google:android:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:7.1.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:7.1.2:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*\n     *cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:7.1.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:7.1.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:8.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:google:android:9.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/02/2018",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "Android (associated with Google Inc. or Open Handset Alliance)",
+        "year": "2018",
+        "month": "10"
+    }
+]

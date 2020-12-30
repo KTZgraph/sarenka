@@ -1,0 +1,3319 @@
+[
+    {
+        "cve_id": "CVE-2018-11785",
+        "cwe_id": "CWE-862",
+        "description": "Missing authorization check in Apache Impala before 3.0.1 allows a Kerberos-authenticated but unauthorized user to inject random data into a running query, leading to wrong results for a query.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105742",
+            "https://lists.apache.org/thread.html/cba8f18df15af862aa07c584d8dc85c44a199fb8f460edd498059247@%3Cdev.impala.apache.org%3E"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apache:impala:*:*:*:*:*:*:*:* versions up to (excluding) 3.0.1",
+            "*cpe:2.3:a:apache:impala:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Apache Software Foundation",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-11792",
+        "cwe_id": "CWE-732",
+        "description": "In Apache Impala before 3.0.1, ALTER TABLE/VIEW RENAME required ALTER on the old table. This may pose a potential security risk, such as having ALTER on a table and ALL on a particular database allows a user to move the table to a database with ALL, which will automatically grant that user with ALL privilege on that table due to the privilege inherited from the database.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105739",
+            "https://lists.apache.org/thread.html/cba8f18df15af862aa07c584d8dc85c44a199fb8f460edd498059247@%3Cdev.impala.apache.org%3E"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apache:impala:*:*:*:*:*:*:*:* versions up to (excluding) 3.0.1",
+            "*cpe:2.3:a:apache:impala:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Apache Software Foundation",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-10729",
+        "cwe_id": "CWE-77",
+        "description": "An issue was discovered in Amanda 3.3.1. A user with backup privileges can trivially compromise a client installation. The \"runtar\" setuid root binary does not check for additional arguments supplied after --create, allowing users to manipulate commands and perform command injection as root.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://www.exploit-db.com/exploits/39217/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:zmanda:amanda:3.3.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:zmanda:amanda:3.3.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:10.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "01/09/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-10730",
+        "cwe_id": "CWE-264",
+        "description": "An issue was discovered in Amanda 3.3.1. A user with backup privileges can trivially compromise a client installation. Amstar is an Amanda Application API script. It should not be run by users directly. It uses star to backup and restore data. It runs binaries with root permissions when parsing the command line argument --star-path.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://www.exploit-db.com/exploits/39244/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:zmanda:amanda:3.3.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:zmanda:amanda:3.3.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "01/09/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-12650",
+        "cwe_id": "CWE-79",
+        "description": "Adrenalin HRMS version 5.4.0 contains a Reflected Cross Site Scripting (XSS) vulnerability in the ApplicationtEmployeeSearch page via 'prntDDLCntrlName' and 'prntFrmName'.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/155232/Adrenalin-Core-HCM-5.4.0-Cross-Site-Scripting.html",
+            "https://www.knowcybersec.com/2018/10/CVE-2018-12650-reflected-XSS.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:myadrenalin:human_resource_management_software:5.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:myadrenalin:human_resource_management_software:5.4.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "11/12/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-14812",
+        "cwe_id": "CWE-427",
+        "description": "An uncontrolled search path element (DLL Hijacking) vulnerability has been identified in Fuji Electric Energy Savings Estimator versions V.1.0.2.0 and prior. Exploitation of this vulnerability could give an attacker access to the system with the same level of privilege as the application that utilizes the malicious DLL.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105543",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-282-07"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fujielectric:energy_savings_estimator:1.0.2.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fujielectric:energy_savings_estimator:1.0.2.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18013",
+        "cwe_id": "CWE-502",
+        "description": "** DISPUTED *** Xen Mobile through 10.8.0 includes a service listening on port 5001 within its firewall that accepts unauthenticated input. If this service is supplied with raw serialised Java objects, it deserialises them back into Java objects in memory, giving rise to a remote code execution vulnerability.  NOTE: the vendor disputes that this is a vulnerability, stating it is \"already mitigated by the internal firewall that limits access to configuration services to localhost.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://advisories.dxw.com/advisories/xen-mobile-vulnerable-to-code-execution-via-object-serialisation/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:citrix:xenmobile_server:*:*:*:*:*:*:*:* versions up to (including) 10.8.0",
+            "*cpe:2.3:a:citrix:xenmobile_server:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "01/28/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18014",
+        "cwe_id": "CWE-287",
+        "description": "** DISPUTED *** Lack of authentication in Citrix Xen Mobile through 10.8 allows low-privileged local users to execute system commands as root by making requests to private services listening on ports 8000, 30000 and 30001.  NOTE: the vendor disputes that this is a vulnerability, stating it is \"already mitigated by the internal firewall that limits access to configuration services to localhost.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://advisories.dxw.com/advisories/xen-mobile-backing-service-allows-unauthenticated-local-users-to-execute-system-commands-as-root/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:citrix:xenmobile_server:*:*:*:*:*:*:*:* versions up to (including) 10.8.0",
+            "*cpe:2.3:a:citrix:xenmobile_server:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18476",
+        "cwe_id": "CWE-89",
+        "description": "mysql-binuuid-rails 1.1.0 and earlier allows SQL Injection because it removes default string escaping for affected database columns.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://gist.github.com/viraptor/881276ea61e8d56bac6e28454c79f1e6",
+            "https://github.com/nedap/mysql-binuuid-rails/pull/18"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:nedap:mysql-binuuid-rails:*:*:*:*:*:*:*:* versions up to (including) 1.1.0",
+            "*cpe:2.3:a:nedap:mysql-binuuid-rails:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "12/13/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18517",
+        "cwe_id": "CWE-79",
+        "description": "Citrix NetScaler Gateway 10.5.x before 10.5.69.003, 11.1.x before 11.1.59.004, 12.0.x before 12.0.58.7, and 12.1.x before 12.1.49.1 has XSS.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.8 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105725",
+            "http://www.securitytracker.com/id/1042023",
+            "https://support.citrix.com/article/CTX239002"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:citrix:netscaler_gateway_firmware:*:*:*:*:*:*:*:* versions from (including) 10.5.0 up to (excluding) 10.5.69.003\n     *cpe:2.3:o:citrix:netscaler_gateway_firmware:*:*:*:*:*:*:*:* versions from (including) 11.1.0 up to (excluding) 11.1.59.004\n     *cpe:2.3:o:citrix:netscaler_gateway_firmware:*:*:*:*:*:*:*:* versions from (including) 12.0.0 up to (excluding) 12.0.58.7\n     *cpe:2.3:o:citrix:netscaler_gateway_firmware:*:*:*:*:*:*:*:* versions from (including) 12.1.0 up to (exclud",
+            "*cpe:2.3:o:citrix:netscaler_gateway_firmware:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "10.5.69.003",
+            "*cpe:2.3:o:citrix:netscaler_gateway_firmware:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "11.1.59.004",
+            "*cpe:2.3:o:citrix:netscaler_gateway_firmware:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:o:citrix:netscaler_gateway_firmware:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "12/06/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18547",
+        "cwe_id": "CWE-79",
+        "description": "Vesta Control Panel through 0.9.8-22 has XSS via the edit/web/ domain parameter, the list/backup/ backup parameter, the list/rrd/ period parameter, the list/directory/ dir_a parameter, or the filename to the list/directory/ URI.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/149897/VestaCP-0.9.8-22-Cross-Site-Scripting.html",
+            "https://numanozdemir.com/vesta-vulns.txt"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:vestacp:control_panel:*:*:*:*:*:*:*:* versions up to (including) 0.9.8-22",
+            "*cpe:2.3:a:vestacp:control_panel:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "12/04/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18548",
+        "cwe_id": "CWE-79",
+        "description": "ajenticp (aka Ajenti Docker control panel) for Ajenti through v1.2.23.13 has XSS via a filename that is mishandled in File Manager.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/149898/AjentiCP-1.2.23.13-Cross-Site-Scripting.html",
+            "https://numanozdemir.com/ajenti-xss.txt",
+            "https://www.exploit-db.com/exploits/45691/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ajenti:ajenticp:*:*:*:*:*:*:*:* versions up to (including) 1.2.23.13",
+            "*cpe:2.3:a:ajenti:ajenticp:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "12/06/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18635",
+        "cwe_id": "CWE-79",
+        "description": "www/guis/admin/application/controllers/UserController.php in the administration login interface in MailCleaner CE 2018.08 and 2018.09 allows XSS via the admin/login/user/message/ PATH_INFO.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/MailCleaner/MailCleaner/commit/5f90a52785672fc688c1f85e472e84b8a0d008d8",
+            "https://github.com/MailCleaner/MailCleaner/issues/53"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mailcleaner:mailcleaner:2018.08:*:*:*:community:*:*:*\n     *cpe:2.3:a:mailcleaner:mailcleaner:2018.09:*:*:*:community:*:*:*",
+            "*cpe:2.3:a:mailcleaner:mailcleaner:2018.08:*:*:*:community:*:*:*",
+            "*cpe:2.3:a:mailcleaner:mailcleaner:2018.09:*:*:*:community:*:*:*"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "12/06/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18636",
+        "cwe_id": "CWE-79",
+        "description": "XSS exists in cgi-bin/webcm on D-link DSL-2640T routers via the var:RelaodHref or var:conid parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://cxsecurity.com/issue/WLB-2018100107",
+            "https://packetstormsecurity.com/files/149785/D-Link-DSL-2640T-Cross-Site-Scripting.html"
+        ],
+        "cpe": [
+            "cpe:2.3:h:d-link:dsl-2640t:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "12/04/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-9279",
+        "cwe_id": "CWE-522",
+        "description": "An issue was discovered on Eaton UPS 9PX 8000 SP devices. The appliance discloses the user's password. The web page displayed by the appliance contains the password in cleartext. Passwords could be retrieved by browsing the source code of the webpage.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.9 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://www.bishopfox.com/news/2018/10/eaton-ups-9px-8000-sp-multiple-vulnerabilities/"
+        ],
+        "cpe": [
+            "cpe:2.3:h:eaton:9px_ups:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-9280",
+        "cwe_id": "CWE-522",
+        "description": "An issue was discovered on Eaton UPS 9PX 8000 SP devices. The appliance discloses the SNMP version 3 user's password. The web page displayed by the appliance contains the password in cleartext. Passwords of the read and write users could be retrieved by browsing the source code of the webpage.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.9 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://www.bishopfox.com/news/2018/10/eaton-ups-9px-8000-sp-multiple-vulnerabilities/"
+        ],
+        "cpe": [
+            "cpe:2.3:h:eaton:9px_ups:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-9281",
+        "cwe_id": "CWE-352",
+        "description": "An issue was discovered on Eaton UPS 9PX 8000 SP devices. The administration panel is vulnerable to a CSRF attack on the change-password functionality. This vulnerability could be used to force a logged-in administrator to perform a silent password update. The affected forms are also vulnerable to Reflected Cross-Site Scripting vulnerabilities. This flaw could be triggered by driving an administrator logged into the Eaton application to a specially crafted web page. This attack could be done silently.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://www.bishopfox.com/news/2018/10/eaton-ups-9px-8000-sp-multiple-vulnerabilities/"
+        ],
+        "cpe": [
+            "cpe:2.3:h:eaton:9px_ups:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-13342",
+        "cwe_id": "CWE-798",
+        "description": "The server API in the Anda app relies on hardcoded credentials.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://gustavosilva.me/blog/2018/10/23/How-I-hacked-Anda-the-public-transportation-app-of-Porto-CVE-2018-13342.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:linhandante:anda:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:linhandante:anda:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "01/09/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-15750",
+        "cwe_id": "CWE-22",
+        "description": "Directory Traversal vulnerability in salt-api in SaltStack Salt before 2017.7.8 and 2018.3.x before 2018.3.3 allows remote attackers to determine which files exist on the server.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00070.html",
+            "https://docs.saltstack.com/en/2017.7/topics/releases/2017.7.8.html",
+            "https://docs.saltstack.com/en/latest/topics/releases/2018.3.3.html",
+            "https://groups.google.com/d/msg/salt-users/L9xqcJ0UXxs/qgDj42obBQAJ",
+            "https://groups.google.com/d/msg/salt-users/dimVF7rpphY/jn3Xv3MbBQAJ",
+            "https://lists.debian.org/debian-lts-announce/2020/07/msg00024.html",
+            "https://usn.ubuntu.com/4459-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:saltstack:salt:*:*:*:*:*:*:*:* versions up to (excluding) 2017.7.8\n     *cpe:2.3:a:saltstack:salt:*:*:*:*:*:*:*:* versions from (including) 2018.3.0 up to (excluding) 2018.3.3",
+            "*cpe:2.3:a:saltstack:salt:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:saltstack:salt:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-15751",
+        "cwe_id": "CWE-287",
+        "description": "SaltStack Salt before 2017.7.8 and 2018.3.x before 2018.3.3 allow remote attackers to bypass authentication and execute arbitrary commands via salt-api(netapi).",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://lists.opensuse.org/opensuse-security-announce/2020-07/msg00070.html",
+            "https://docs.saltstack.com/en/2017.7/topics/releases/2017.7.8.html",
+            "https://docs.saltstack.com/en/latest/topics/releases/2018.3.3.html",
+            "https://groups.google.com/d/msg/salt-users/L9xqcJ0UXxs/qgDj42obBQAJ",
+            "https://groups.google.com/d/msg/salt-users/dimVF7rpphY/jn3Xv3MbBQAJ",
+            "https://lists.debian.org/debian-lts-announce/2020/07/msg00024.html",
+            "https://usn.ubuntu.com/4459-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:saltstack:salt:*:*:*:*:*:*:*:* versions up to (excluding) 2017.7.8\n     *cpe:2.3:a:saltstack:salt:*:*:*:*:*:*:*:* versions from (including) 2018.3.0 up to (excluding) 2018.3.3",
+            "*cpe:2.3:a:saltstack:salt:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:saltstack:salt:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "08/19/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17903",
+        "cwe_id": "CWE-294",
+        "description": "SAGA1-L8B with any firmware versions prior to A0.10 are vulnerable to a replay attack and command forgery.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:P/A:P)"
+        },
+        "base_score_v3": "9.1 CRITICAL",
+        "base_score_v2": "6.4 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105729",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-296-02"
+        ],
+        "cpe": [
+            "cpe:2.3:h:sagaradio:saga1-l8b:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "09/18/2020",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17921",
+        "cwe_id": "CWE-284",
+        "description": "SAGA1-L8B with any firmware versions prior to A0.10 are vulnerable to an attack that may allow an attacker to force-pair the device without human interaction.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:A/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:A/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "5.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105729",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-296-02"
+        ],
+        "cpe": [
+            "cpe:2.3:h:sagaradio:saga1-l8b:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "09/18/2020",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17923",
+        "cwe_id": "CWE-287",
+        "description": "SAGA1-L8B with any firmware versions prior to A0.10 are vulnerable to an attack that an attacker with physical access to the product may able to reprogram it.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:P/AC:H/PR:H/UI:N/S:C/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:P/AC:H/PR:H/UI:N/S:C/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "6.9 MEDIUM",
+        "base_score_v2": "6.9 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105729",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-296-02"
+        ],
+        "cpe": [
+            "cpe:2.3:h:sagaradio:saga1-l8b:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18551",
+        "cwe_id": "CWE-79",
+        "description": "ServersCheck Monitoring Software through 14.3.3 has Persistent and Reflected XSS via the sensors.html status parameter, sensors.html type parameter, sensors.html device parameter, report.html location parameter, group_delete.html group parameter, report_save.html query parameter, sensors.html location parameter, or group_delete.html group parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://hyp3rlinx.altervista.org/advisories/CVE-2018-18551-SERVERSCHECK-MONITORING-SOFTWARE-CROSS-SITE-SCRIPTING.txt",
+            "http://packetstormsecurity.com/files/149914/ServersCheck-Monitoring-Software-14.3.3-Cross-Site-Scripting.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:serverscheck:monitoring_software:*:*:*:*:*:*:*:* versions up to (including) 14.3.3",
+            "*cpe:2.3:a:serverscheck:monitoring_software:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "12/06/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18552",
+        "cwe_id": "CWE-22",
+        "description": "ServersCheck Monitoring Software through 14.3.3 allows local users to cause a denial of service (menu functionality loss) by creating an LNK file that points to a second LNK file, if this second LNK file is associated with a Start menu. Ultimately, this behavior comes from a Directory Traversal bug (via the sensor_details.html id parameter) that allows creating empty files in arbitrary directories.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://hyp3rlinx.altervista.org/advisories/CVE-2018-18552-SERVERSCHECK-MONITORING-SOFTWARE-ARBITRARY-FILE-WRITE-DOS.txt",
+            "http://packetstormsecurity.com/files/149907/ServersCheck-Monitoring-Software-14.3.3-Arbitrary-File-Write-DoS.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:serverscheck:monitoring_software:*:*:*:*:*:*:*:* versions up to (including) 14.3.3",
+            "*cpe:2.3:a:serverscheck:monitoring_software:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "12/06/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18566",
+        "cwe_id": "CWE-200",
+        "description": "The SIP service in Polycom VVX 500 and 601 devices 5.8.0.12848 and earlier allow remote attackers to obtain sensitive phone configuration information by leveraging use with an on-premise installation with Skype for Business.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105746",
+            "https://seclists.org/bugtraq/2018/Oct/33",
+            "https://www.syss.de/fileadmin/dokumente/Publikationen/Advisories/SYSS-2018-028.txt"
+        ],
+        "cpe": [
+            "cpe:2.3:h:polycom:vvx_500:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:polycom:vvx_601:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:polycom:uc_software:*:*:*:*:*:*:*:*",
+            "(including)",
+            "5.8.0.12848"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "12/06/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18567",
+        "cwe_id": "CWE-295",
+        "description": "AudioCodes 440HD and 450HD devices 3.1.2.89 and earlier allows man-in-the-middle attackers to obtain sensitive credential information by leveraging failure to validate X.509 certificates when used with an on-premise installation with Skype for Business.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1041956",
+            "https://seclists.org/bugtraq/2018/Oct/32",
+            "https://www.syss.de/fileadmin/dokumente/Publikationen/Advisories/SYSS-2018-026.txt"
+        ],
+        "cpe": [
+            "cpe:2.3:h:audiocodes:440hd:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:audiocodes:450hd:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "12/07/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18568",
+        "cwe_id": "CWE-295",
+        "description": "Polycom VVX 500 and 601 devices 5.8.0.12848 and earlier allows man-in-the-middle attackers to obtain sensitive credential information by leveraging failure to validate X.509 certificates when used with an on-premise installation with Skype for Business.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.9 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://seclists.org/bugtraq/2018/Oct/36",
+            "https://www.syss.de/fileadmin/dokumente/Publikationen/Advisories/SYSS-2018-027.txt"
+        ],
+        "cpe": [
+            "cpe:2.3:h:polycom:vvx_500:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:polycom:vvx_601:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:polycom:uc_software:*:*:*:*:*:*:*:*",
+            "(including)",
+            "5.8.0.12848"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "12/06/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18621",
+        "cwe_id": "CWE-79",
+        "description": "CommuniGate Pro 6.2 allows stored XSS via a message body in Pronto! Mail Composer, which is mishandled in /MIME/INBOX-MM-1/ if the raw email link (in .txt format) is modified and then renamed with a .html or .wssp extension.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/149916/CommuniGatePro-Pronto-Webmail-6.2-Cross-Site-Scripting.html",
+            "https://drive.google.com/drive/folders/1irWaVi-AySHFFMap5pF1_7hk6mTeemDT"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:communigate:communigate_pro:6.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:communigate:communigate_pro:6.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "12/04/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18638",
+        "cwe_id": "CWE-78",
+        "description": "A command injection vulnerability in the setup API in the Neato Botvac Connected 2.2.0 allows network attackers to execute arbitrary commands via shell metacharacters in the ntp field within JSON data to the /robot/initialize endpoint.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "https://www.nccgroup.trust/us/about-us/newsroom-and-events/blog/2018/march/security-in-a-vacuum-hacking-the-neato-botvac-connected-part-1/"
+        ],
+        "cpe": [
+            "cpe:2.3:h:neatorobotics:botvac_connected:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-8955",
+        "cwe_id": "CWE-347",
+        "description": "The installer for BitDefender GravityZone relies on an encoded string in a filename to determine the URL for installation metadata, which allows remote attackers to execute arbitrary code by changing the filename while leaving the file's digital signature unchanged.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/149900/Bitdefender-GravityZone-Installer-Signature-Bypass-Code-Execution.html",
+            "http://seclists.org/fulldisclosure/2018/Oct/44",
+            "http://www.securitytracker.com/id/1041940",
+            "https://labs.nettitude.com/blog/cve-2018-8955-bitdefender-gravityzone-arbitrary-code-execution/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:bitdefender:gravityzone:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:bitdefender:gravityzone:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/24/2018",
+        "modified_date": "01/25/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18650",
+        "cwe_id": "CWE-190",
+        "description": "An issue was discovered in Xpdf 4.00. XRef::readXRefStream in XRef.cc allows attackers to launch a denial of service (Integer Overflow) via a crafted /Size value in a pdf file, as demonstrated by pdftohtml. This is mainly caused by the program attempting a malloc operation for a large amount of memory.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/152006",
+            "https://forum.xpdfreader.com/viewtopic.php?f=3&t=41219&p=41747#p41747"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:xpdfreader:xpdf:4.00:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:xpdfreader:xpdf:4.00:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2018",
+        "modified_date": "12/06/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18651",
+        "cwe_id": "CWE-834",
+        "description": "An issue was discovered in Xpdf 4.00. catalog->getNumPages() in AcroForm.cc allows attackers to launch a denial of service (hang caused by large loop) via a specific pdf file, as demonstrated by pdftohtml. This is mainly caused by a large number after the /Count field in the file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/152005",
+            "https://forum.xpdfreader.com/viewtopic.php?f=3&t=41219&p=41747#p41747"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:xpdfreader:xpdf:4.00:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:xpdfreader:xpdf:4.00:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-3970",
+        "cwe_id": "CWE-908",
+        "description": "An exploitable memory disclosure vulnerability exists in the 0x222000 IOCTL handler functionality of Sophos HitmanPro.Alert 3.7.6.744. A specially crafted IRP request can cause the driver to return uninitialized memory, resulting in kernel memory disclosure. An attacker can send an IRP request to trigger this vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105743",
+            "https://www.talosintelligence.com/vulnerability_reports/TALOS-2018-0635"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:sophos:hitmanpro.alert:3.7.6.744:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:sophos:hitmanpro.alert:3.7.6.744:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2018",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "Talos",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-3971",
+        "cwe_id": "CWE-123",
+        "description": "An exploitable arbitrary write vulnerability exists in the 0x2222CC IOCTL handler functionality of Sophos HitmanPro.Alert 3.7.6.744. A specially crafted IRP request can cause the driver to write data under controlled by an attacker address, resulting in memory corruption. An attacker can send IRP request to trigger this vulnerability.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105743",
+            "https://www.talosintelligence.com/vulnerability_reports/TALOS-2018-0636"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:sophos:hitmanpro.alert:3.7.6.744:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:sophos:hitmanpro.alert:3.7.6.744:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2018",
+        "modified_date": "01/25/2019",
+        "vulnerability_source": "Talos",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-14665",
+        "cwe_id": "CWE-863",
+        "description": "A flaw was found in xorg-x11-server before 1.20.3. An incorrect permission check for -modulepath and -logfile options when starting Xorg. X server allows unprivileged users with the ability to log in to the system via physical console to escalate their privileges and run arbitrary code under root privileges.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:P/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:P/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "6.6 MEDIUM",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/154942/Xorg-X11-Server-SUID-modulepath-Privilege-Escalation.html",
+            "http://packetstormsecurity.com/files/155276/Xorg-X11-Server-Local-Privilege-Escalation.html",
+            "http://www.securityfocus.com/bid/105741",
+            "http://www.securitytracker.com/id/1041948",
+            "https://access.redhat.com/errata/RHSA-2018:3410",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2018-14665",
+            "https://gitlab.freedesktop.org/xorg/xserver/commit/50c0cf885a6e91c0ea71fb49fa8f1b7c86fe330e",
+            "https://gitlab.freedesktop.org/xorg/xserver/commit/8a59e3b7dbb30532a7c3769c555e00d7c4301170",
+            "https://lists.x.org/archives/xorg-announce/2018-October/002927.html",
+            "https://security.gentoo.org/glsa/201810-09",
+            "https://usn.ubuntu.com/3802-1/",
+            "https://www.debian.org/security/2018/dsa-4328",
+            "https://www.exploit-db.com/exploits/45697/",
+            "https://www.exploit-db.com/exploits/45742/",
+            "https://www.exploit-db.com/exploits/45832/",
+            "https://www.exploit-db.com/exploits/45908/",
+            "https://www.exploit-db.com/exploits/45922/",
+            "https://www.exploit-db.com/exploits/45938/",
+            "https://www.exploit-db.com/exploits/46142/",
+            "https://www.securepatterns.com/2018/10/cve-2018-14665-xorg-x-server.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:x.org:xorg-server:*:*:*:*:*:*:*:* versions up to (excluding) 1.20.3",
+            "*cpe:2.3:a:x.org:xorg-server:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_eus:7.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_tus:7.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2018",
+        "modified_date": "10/22/2019",
+        "vulnerability_source": "Red Hat, Inc.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-17904",
+        "cwe_id": "CWE-79",
+        "description": "Reliance 4 SCADA/HMI, Version 4.7.3 Update 3 and prior. This vulnerability could allow an unauthorized attacker to inject arbitrary code.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105738",
+            "https://ics-cert.us-cert.gov/advisories/ICSA-18-298-01"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:geovap:reliance_4:*:*:*:*:*:*:*:* versions up to (including) 4.7.3\n     *cpe:2.3:a:geovap:reliance_4:4.7.3:update_1:*:*:*:*:*:*\n     *cpe:2.3:a:geovap:reliance_4:4.7.3:update_2:*:*:*:*:*:*\n     *cpe:2.3:a:geovap:reliance_4:4.7.3:update_3:*:*:*:*:*:*",
+            "*cpe:2.3:a:geovap:reliance_4:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:a:geovap:reliance_4:4.7.3:update_1:*:*:*:*:*:*",
+            "*cpe:2.3:a:geovap:reliance_4:4.7.3:update_2:*:*:*:*:*:*",
+            "*cpe:2.3:a:geovap:reliance_4:4.7.3:update_3:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "ICS-CERT",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18652",
+        "cwe_id": null,
+        "description": "A remote command execution vulnerability in Veritas NetBackup Appliance before 3.1.2 allows authenticated administrators to execute arbitrary commands as root. This issue was caused by insufficient filtering of user provided input.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.2 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105737",
+            "https://www.veritas.com/content/support/en_US/security/VTS18-003.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:veritas:netbackup_appliance:*:*:*:*:*:*:*:* versions up to (excluding) 3.1.2",
+            "*cpe:2.3:a:veritas:netbackup_appliance:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/25/2018",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18653",
+        "cwe_id": "CWE-347",
+        "description": "The Linux kernel, as used in Ubuntu 18.10 and when booted with UEFI Secure Boot enabled, allows privileged local users to bypass intended Secure Boot restrictions and execute untrusted code by loading arbitrary kernel modules. This occurs because a modified kernel/module.c, in conjunction with certain configuration options, leads to mishandling of the result of signature verification.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://launchpad.net/bugs/1798863",
+            "https://usn.ubuntu.com/3832-1/",
+            "https://usn.ubuntu.com/3835-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18654",
+        "cwe_id": "CWE-732",
+        "description": "Crossroads 2.81 does not properly handle the /tmp directory during a build of xr. A local attacker can first create a world-writable subdirectory in a certain location under the /tmp directory, wait until a user process copies xr there, and then replace the entire contents of this subdirectory to include a Trojan horse xr.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://bugs.debian.org/911877"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:debian:crossroads:2.81:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:debian:crossroads:2.81:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/25/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18655",
+        "cwe_id": "CWE-200",
+        "description": "Prayer through 1.3.5 sends a Referer header, containing a user's username, when a user clicks on a link in their email because header.t lacks a no-referrer setting.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://bugs.debian.org/911842"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:prayer_project:prayer:*:*:*:*:*:*:*:* versions up to (including) 1.3.5",
+            "*cpe:2.3:a:prayer_project:prayer:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "10/25/2018",
+        "modified_date": "10/30/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18656",
+        "cwe_id": "CWE-522",
+        "description": "The PureVPN client before 6.1.0 for Windows stores Login Credentials (username and password) in cleartext. The location of such files is %PROGRAMDATA%\\purevpn\\config\\login.conf. Additionally, all local users can read this file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "https://www.trustwave.com/Resources/SpiderLabs-Blog/Credential-Leak-Flaws-in-Windows-PureVPN-Client/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:purevpn:purevpn:*:*:*:*:*:windows:*:* versions up to (excluding) 6.1.0",
+            "*cpe:2.3:a:purevpn:purevpn:*:*:*:*:*:windows:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2017-18124",
+        "cwe_id": "CWE-119",
+        "description": "During secure boot, addition is performed on uint8 ptrs which led to overflow issue in Small Cell SoC, Snapdragon Automobile, Snapdragon Mobile, Snapdragon Wear in version FSM9055, IPQ4019, MDM9206, MDM9607, MDM9625, MDM9635M, MDM9640, MDM9645, MDM9650, MDM9655, MSM8909W, MSM8996AU, SD 210/SD 212/SD 205, SD 410/12, SD 425, SD 430, SD 450, SD 615/16/SD 415, SD 617, SD 625, SD 650/52, SD 800, SD 810, SD 820, SD 820A, SD 835, SD 845, SD 850, SDA660, SDX20",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:fsm9055:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:ipq4019:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9206:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9607:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9625:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9635m:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9640:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9645:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9655:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8909w:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8996au:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_410:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_412:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_415:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_425:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_430:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_450:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_615:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_616:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_617:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_625:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_652:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_800:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_810:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_850:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sda660:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdx20:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "12/20/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2017-18308",
+        "cwe_id": null,
+        "description": "Modem segments are unlocked after authentication, leaving modem segments open to all in Snapdragon Mobile, Snapdragon Wear in version MDM9607, MSM8909W, SD 210/SD 212/SD 205, SD 425, SD 430",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1041432",
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:mdm9607:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8909w:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_425:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_430:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2017-18309",
+        "cwe_id": "CWE-129",
+        "description": "A micro-core of QMP transportation may cause a macro-core to read from or write to arbitrary memory in Snapdragon Mobile in version SD 845, SD 850.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:N)"
+        },
+        "base_score_v3": "7.1 HIGH",
+        "base_score_v2": "6.6 MEDIUM",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1041432",
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_850:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "12/11/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2017-18310",
+        "cwe_id": null,
+        "description": "ClientEnv exposes services 0-32 to HLOS in Snapdragon Automobile, Snapdragon Mobile, Snapdragon Wear in version MSM8909W, MSM8996AU, SD 210/SD 212/SD 205, SD 410/12, SD 425, SD 427, SD 430, SD 435, SD 450, SD 615/16/SD 415, SD 617, SD 625, SD 650/52, SD 810, SD 820, SD 820A, SD 835, SD 845, SDA660, SDM429, SDM439, SDM630, SDM632, SDM636, SDM660, Snapdragon_High_Med_2016",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1041432",
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:msm8909w:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8996au:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_410:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_412:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_415:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_425:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_427:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_430:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_435:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_450:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_615:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_616:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_617:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_625:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_652:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_810:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sda660:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm429:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm439:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm630:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm632:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm636:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm660:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2017-18311",
+        "cwe_id": null,
+        "description": "XPU Master privilege escalation is possible due to improper access control of unused configuration xPU ports where unused configuration ports are open in Snapdragon Automobile, Snapdragon Mobile, Snapdragon Wear in version MDM9607, MDM9635M, MDM9640, MDM9645, MDM9650, MDM9655, MSM8909W, MSM8996AU, SD 210/SD 212/SD 205, SD 410/12, SD 425, SD 427, SD 430, SD 435, SD 450, SD 615/16/SD 415, SD 625, SD 650/52, SD 810, SD 820, SD 820A, SD 835, SDA660, SDM429, SDM439, SDM630, SDM632, SDM636, SDM660, Snapdragon_High_Med_2016.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:mdm9607:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9635m:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9640:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9645:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9655:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8909w:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8996au:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_410:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_412:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_415:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_425:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_427:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_430:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_435:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_450:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_615:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_616:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_625:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_652:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_810:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sda660:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm429:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm439:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm630:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm632:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm636:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm660:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-11305",
+        "cwe_id": "CWE-416",
+        "description": "When a series of FDAL messages are sent to the modem, a Use After Free condition can occur in Snapdragon Automobile, Snapdragon Mobile, Snapdragon Wear in version MDM9206, MDM9607, MDM9640, MDM9650, MSM8909W, MSM8996AU, SD 210/SD 212/SD 205, SD 425, SD 430, SD 450, SD 615/16/SD 415, SD 617, SD 625, SD 650/52, SD 820, SD 820A, SD 835, SD 845, SDA660, SDX20.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securitytracker.com/id/1041432",
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:mdm9206:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9607:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9640:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8909w:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8996au:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_415:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_425:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_430:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_450:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_615:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_616:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_617:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_625:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_652:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sda660:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdx20:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "12/11/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-11821",
+        "cwe_id": "CWE-190",
+        "description": "Possible integer overflow may happen in WLAN during memory allocation in Snapdragon Mobile, Snapdragon Wear in version IPQ8074, MDM9206, MDM9607, MDM9650, SD 425, SD 427, SD 430, SD 435, SD 450, SD 625, SD 650/52, SD 835, SD 845, SD 850, SDA660, SDM630, SDM632, SDM636, SDM660, SDM710, Snapdragon_High_Med_2016",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/107681",
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:ipq8074:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9206:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9607:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_425:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_427:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_430:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_435:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_450:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_625:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_652:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_850:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sda660:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm630:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm632:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm636:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm660:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm710:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "04/25/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-11822",
+        "cwe_id": "CWE-190",
+        "description": "A possible integer overflow may happen in WLAN during memory allocation in Snapdragon Mobile in version SD 835, SD 845, SD 850, SDA660",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/107681",
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_850:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sda660:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "04/25/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-11824",
+        "cwe_id": "CWE-787",
+        "description": "A stack-based buffer overflow can occur in a firmware routine in Snapdragon Mobile, Snapdragon Wear in version MDM9206, MDM9607, MDM9650, SD 210/SD 212/SD 205, SD 835, SD 845, SD 850, SDA660",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:mdm9206:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9607:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_850:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sda660:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "08/24/2020",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-11828",
+        "cwe_id": "CWE-400",
+        "description": "When FW tries to get random mac address generated from new SW RNG and ADC values read are constant then DUT get struck in loop while trying to get random ADC samples in Snapdragon Mobile in version SD 210/SD 212/SD 205, SD 425, SD 430, SD 450, SD 625, SD 650/52",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/107681",
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_425:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_430:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_450:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_625:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_652:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "04/25/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-11846",
+        "cwe_id": "CWE-200",
+        "description": "The use of a non-time-constant memory comparison operation can lead to timing/side channel attacks in Snapdragon Mobile in version SD 210/SD 212/SD 205, SD 845, SD 850",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:C/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:C/I:N/A:N)"
+        },
+        "base_score_v3": "4.7 MEDIUM",
+        "base_score_v2": "4.7 MEDIUM",
+        "hyperlinks": [
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_850:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "12/10/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-11849",
+        "cwe_id": "CWE-119",
+        "description": "Lack of check on out of range of bssid parameter When processing scan start command will lead to buffer flow in Snapdragon Automobile, Snapdragon Mobile, Snapdragon Wear in version IPQ8074, MDM9206, MDM9607, MDM9635M, MDM9640, MDM9650, MSM8996AU, QCA4531, QCA6174A, QCA6564, QCA6574, QCA6574AU, QCA6584, QCA6584AU, QCA9377, QCA9378, QCA9379, QCA9886, SD 210/SD 212/SD 205, SD 425, SD 427, SD 430, SD 435, SD 450, SD 600, SD 625, SD 650/52, SD 810, SD 820, SD 820A, SD 835, SD 845, SD 850, SDA660, SDM630, SDM632, SDM636, SDM660, SDM710, SDX20, Snapdragon_High_Med_2016",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/107681",
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:ipq8074:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9206:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9607:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9635m:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9640:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8996au:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:qca4531:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:qca6174a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:qca6564:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:qca6574:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:qca6574au:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:qca6584:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:qca6584au:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:qca9377:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:qca9378:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:qca9379:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:qca9886:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_425:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_427:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_430:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_435:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_450:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_600:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_625:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_652:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_810:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_850:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sda660:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm630:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm632:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm636:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm660:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm710:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdx20:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "04/25/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-11850",
+        "cwe_id": "CWE-119",
+        "description": "Lack of check on remaining length parameter When processing scan start command will lead to buffer flow in Snapdragon Automobile, Snapdragon Mobile, Snapdragon Wear in version MDM9206, MDM9607, MDM9640, MDM9650, MSM8996AU, QCA6174A, QCA6574AU, QCA6584, QCA6584AU, QCA9377, QCA9379, SD 210/SD 212/SD 205, SD 425, SD 625, SD 810, SD 820, SD 820A, SD 835, SD 845, SD 850, SDA660, SDX20",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/107681",
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:mdm9206:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9607:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9640:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8996au:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:qca6174a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:qca6574au:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:qca6584:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:qca6584au:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:qca9377:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:qca9379:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_425:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_625:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_810:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_850:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sda660:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdx20:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "04/25/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-11853",
+        "cwe_id": "CWE-119",
+        "description": "Lack of check on out of range for channels When processing channel list set command will lead to buffer flow in Snapdragon Mobile, Snapdragon Wear in version IPQ8074, MDM9206, MDM9607, MDM9650, SD 425, SD 427, SD 430, SD 435, SD 450, SD 625, SD 650/52, SD 835, SD 845, SD 850, SDA660, SDM429, SDM439, SDM630, SDM632, SDM636, SDM660, SDM710, Snapdragon_High_Med_2016",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/107681",
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:ipq8074:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9206:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9607:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_425:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_427:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_430:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_435:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_450:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_625:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_652:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_850:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sda660:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm429:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm439:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm630:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm632:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm636:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm660:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sdm710:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "04/25/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-11854",
+        "cwe_id": "CWE-119",
+        "description": "Lack of check of valid length of input parameter may cause buffer overwrite in WLAN in Snapdragon Mobile in version SD 835, SD 845, SD 850, SDA660",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/107681",
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_850:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sda660:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "04/25/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-11950",
+        "cwe_id": "CWE-20",
+        "description": "Unapproved TrustZone applications can be loaded and executed in Snapdragon Mobile in version SD 845, SD 850",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_850:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "12/07/2018",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-11951",
+        "cwe_id": "CWE-732",
+        "description": "Improper access control in core module lead XBL_LOADER performs the ZI region clear for QTEE instead of XBL_SEC in Snapdragon Mobile in version SD 845, SD 850.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:C/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:C/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_850:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-3588",
+        "cwe_id": null,
+        "description": "There is improper access control of the SSC and GPU mapped regions which lead to inject code from HLOS in Snapdragon Automobile, Snapdragon Mobile, Snapdragon Wear in version MDM9206, MDM9607, MDM9650, MSM8996AU, SD 210/SD 212/SD 205, SD 820, SD 820A, SD 835, SDA660.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:mdm9206:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9607:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:msm8996au:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_820a:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sda660:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-5866",
+        "cwe_id": "CWE-119",
+        "description": "While processing logs, data is copied into a buffer pointed to by an untrusted pointer in Snapdragon Mobile, Snapdragon Wear in version MDM9206, MDM9607, MDM9650, SD 210/SD 212/SD 205, SD 425, SD 430, SD 450, SD 625, SD 650/52, SD 835, SD 845, SD 850, SDA660.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:mdm9206:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9607:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_425:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_430:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_450:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_625:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_652:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_845:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_850:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sda660:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "01/23/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-5914",
+        "cwe_id": "CWE-129",
+        "description": "Improper input validation in TZ led to array out of bound in TZ function while accessing the peripheral details using the incoming data in Snapdragon Mobile, Snapdragon Wear version MDM9206, MDM9607, MDM9650, SD 210/SD 212/SD 205, SD 425, SD 430, SD 450, SD 625, SD 650/52, SD 835, SDA660.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "https://www.qualcomm.com/company/product-security/bulletins"
+        ],
+        "cpe": [
+            "cpe:2.3:h:qualcomm:mdm9206:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9607:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:mdm9650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_205:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_210:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_212:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_425:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_430:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_450:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_625:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_650:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_652:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sd_835:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:qualcomm:sda660:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "01/23/2019",
+        "vulnerability_source": "Qualcomm, Inc.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-15686",
+        "cwe_id": "CWE-502",
+        "description": "A vulnerability in unit_deserialize of systemd allows an attacker to supply arbitrary state across systemd re-execution via NotifyAccess. This can be used to improperly influence systemd execution and possibly lead to root privilege escalation. Affected releases are systemd versions up to and including 239.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105747",
+            "https://access.redhat.com/errata/RHSA-2019:2091",
+            "https://access.redhat.com/errata/RHSA-2019:3222",
+            "https://access.redhat.com/errata/RHSA-2020:0593",
+            "https://github.com/systemd/systemd/pull/10519",
+            "https://lists.apache.org/thread.html/r1b103833cb5bc8466e24ff0ecc5e75b45a705334ab6a444e64e840a0@%3Cissues.bookkeeper.apache.org%3E",
+            "https://lists.debian.org/debian-lts-announce/2018/11/msg00017.html",
+            "https://security.gentoo.org/glsa/201810-10",
+            "https://usn.ubuntu.com/3816-1/",
+            "https://www.exploit-db.com/exploits/45714/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:freedesktop:systemd:*:*:*:*:*:*:*:* versions up to (including) 239",
+            "*cpe:2.3:a:freedesktop:systemd:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "07/29/2020",
+        "vulnerability_source": "Canonical Ltd.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-15687",
+        "cwe_id": "CWE-362",
+        "description": "A race condition in chown_one() of systemd allows an attacker to cause systemd to set arbitrary permissions on arbitrary files. Affected releases are systemd versions up to and including 239.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.7 MEDIUM",
+        "base_score_v2": "1.9 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105748",
+            "https://github.com/systemd/systemd/pull/10517/commits",
+            "https://security.gentoo.org/glsa/201810-10",
+            "https://usn.ubuntu.com/3816-1/",
+            "https://www.exploit-db.com/exploits/45715/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:freedesktop:systemd:*:*:*:*:*:*:*:* versions up to (including) 239",
+            "*cpe:2.3:a:freedesktop:systemd:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Canonical Ltd.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-15688",
+        "cwe_id": "CWE-119",
+        "description": "A buffer overflow vulnerability in the dhcp6 client of systemd allows a malicious dhcp6 server to overwrite heap memory in systemd-networkd. Affected releases are systemd: versions up to and including 239.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105745",
+            "https://access.redhat.com/errata/RHBA-2019:0327",
+            "https://access.redhat.com/errata/RHSA-2018:3665",
+            "https://access.redhat.com/errata/RHSA-2019:0049",
+            "https://github.com/systemd/systemd/pull/10518",
+            "https://lists.debian.org/debian-lts-announce/2018/11/msg00017.html",
+            "https://security.gentoo.org/glsa/201810-10",
+            "https://usn.ubuntu.com/3806-1/",
+            "https://usn.ubuntu.com/3807-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:freedesktop:systemd:*:*:*:*:*:*:*:* versions up to (including) 239",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_eus:7.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_tus:7.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_workstation:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_eus:7.6:*:*:*:*",
+            "*cpe:2.3:a:freedesktop:systemd:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_desktop:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_aus:7.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:redhat:enterprise_linux_server_eus:7.6:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Canonical Ltd.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18657",
+        "cwe_id": "CWE-200",
+        "description": "An issue was discovered in Arcserve Unified Data Protection (UDP) through 6.5 Update 4. There is a DDI-VRT-2018-18 Unauthenticated Sensitive Information Disclosure via /gateway/services/EdgeServiceImpl issue.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://support.arcserve.com/s/article/360001392563?language=en_US",
+            "https://support.arcserve.com/s/article/Security-vulnerabilities-with-Arcserve-UDP-and-fixes-for-them?language=en_US",
+            "https://www.digitaldefense.com/blog/zero-day-alerts/arcserve-disclosure/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:arcserve:udp:6.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.0:1:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.0:2:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.0:3:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.5:*:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.5:1:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.5:2:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.5:3:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.5:4:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.0:1:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.0:2:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.0:3:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:1:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:2:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:3:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:4:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "12/06/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18658",
+        "cwe_id": "CWE-200",
+        "description": "An issue was discovered in Arcserve Unified Data Protection (UDP) through 6.5 Update 4. There is a DDI-VRT-2018-20 Unauthenticated Sensitive Information Disclosure via /UDPUpdates/Config/FullUpdateSettings.xml issue.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://support.arcserve.com/s/article/360001392563?language=en_US",
+            "https://support.arcserve.com/s/article/Security-vulnerabilities-with-Arcserve-UDP-and-fixes-for-them?language=en_US",
+            "https://www.digitaldefense.com/blog/zero-day-alerts/arcserve-disclosure/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:arcserve:udp:6.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.0:1:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.0:2:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.0:3:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.5:*:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.5:1:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.5:2:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.5:3:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.5:4:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.0:1:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.0:2:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.0:3:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:1:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:2:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:3:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:4:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "12/06/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18659",
+        "cwe_id": "CWE-611",
+        "description": "An issue was discovered in Arcserve Unified Data Protection (UDP) through 6.5 Update 4. There is a DDI-VRT-2018-19 Unauthenticated XXE in /management/UdpHttpService issue.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://exchange.xforce.ibmcloud.com/vulnerabilities/152033",
+            "https://support.arcserve.com/s/article/360001392563?language=en_US",
+            "https://support.arcserve.com/s/article/Security-vulnerabilities-with-Arcserve-UDP-and-fixes-for-them?language=en_US",
+            "https://www.digitaldefense.com/blog/zero-day-alerts/arcserve-disclosure/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:arcserve:udp:6.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.0:1:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.0:2:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.0:3:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.5:*:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.5:1:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.5:2:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.5:3:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.5:4:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.0:1:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.0:2:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.0:3:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:1:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:2:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:3:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:4:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "12/06/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18660",
+        "cwe_id": "CWE-79",
+        "description": "An issue was discovered in Arcserve Unified Data Protection (UDP) through 6.5 Update 4. There is a DDI-VRT-2018-21 Reflected Cross-site Scripting via /authenticationendpoint/domain.jsp issue.",
+        "cvss3": {
+            "cvss3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://support.arcserve.com/s/article/360001392563?language=en_US",
+            "https://support.arcserve.com/s/article/Security-vulnerabilities-with-Arcserve-UDP-and-fixes-for-them?language=en_US",
+            "https://www.digitaldefense.com/blog/zero-day-alerts/arcserve-disclosure/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:arcserve:udp:6.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.0:1:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.0:2:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.0:3:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.5:*:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.5:1:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.5:2:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.5:3:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.5:4:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.0:*:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.0:1:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.0:2:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.0:3:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.5:*:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.5:1:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.5:2:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.5:3:*:*:*:*:*:*\n     *cpe:2.3:a:arcserve:udp:6.5:4:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.0:1:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.0:2:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.0:3:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:1:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:2:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:3:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:4:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:arcserve:udp:6.5:-:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:update_1:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:update_2:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:update_3:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:update_4:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.0:1:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.0:2:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.0:3:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:1:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:2:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:3:*:*:*:*:*:*",
+            "*cpe:2.3:a:arcserve:udp:6.5:4:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "09/19/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18661",
+        "cwe_id": "CWE-476",
+        "description": "An issue was discovered in LibTIFF 4.0.9. There is a NULL pointer dereference in the function LZWDecode in the file tif_lzw.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://bugzilla.maptools.org/show_bug.cgi?id=2819",
+            "http://www.securityfocus.com/bid/105762",
+            "https://access.redhat.com/errata/RHSA-2019:2053",
+            "https://lists.debian.org/debian-lts-announce/2019/11/msg00027.html",
+            "https://usn.ubuntu.com/3864-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:libtiff:libtiff:4.0.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:libtiff:libtiff:4.0.9:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "08/06/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18662",
+        "cwe_id": "CWE-125",
+        "description": "There is an out-of-bounds read in fz_run_t3_glyph in fitz/font.c in Artifex MuPDF 1.14.0, as demonstrated by mutool.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105755",
+            "https://bugs.ghostscript.com/show_bug.cgi?id=700043",
+            "https://github.com/TeamSeri0us/pocs/tree/master/mupdf",
+            "https://lists.debian.org/debian-lts-announce/2020/07/msg00019.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:artifex:mupdf:1.14.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:artifex:mupdf:1.14.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "07/25/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-4022",
+        "cwe_id": "CWE-416",
+        "description": "A use-after-free vulnerability exists in the way MKVToolNix MKVINFO v25.0.0 handles the MKV (matroska) file format. A specially crafted MKV file can cause arbitrary code execution in the context of the current user.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://talosintelligence.com/vulnerability_reports/TALOS-2018-0694"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mkvtoolnix:mkvinfo:25.0.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:mkvtoolnix:mkvinfo:25.0.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "01/28/2019",
+        "vulnerability_source": "Talos",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-6559",
+        "cwe_id": "CWE-200",
+        "description": "The Linux kernel, as used in Ubuntu 18.04 LTS and Ubuntu 18.10, allows local users to obtain names of files in which they would not normally be able to access via an overlayfs mount inside of a user namespace.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "3.3 LOW",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/105752",
+            "https://launchpad.net/bugs/1793458",
+            "https://lists.ubuntu.com/archives/kernel-team/2018-October/096172.html",
+            "https://people.canonical.com/~ubuntu-security/cve/2018/CVE-2018-6559.html",
+            "https://usn.ubuntu.com/3832-1/",
+            "https://usn.ubuntu.com/3833-1/",
+            "https://usn.ubuntu.com/3835-1/",
+            "https://usn.ubuntu.com/3836-1/",
+            "https://usn.ubuntu.com/3836-2/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Canonical Ltd.",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18690",
+        "cwe_id": "CWE-754",
+        "description": "In the Linux kernel before 4.17, a local attacker able to set attributes on an xfs filesystem could make this filesystem non-operational until the next mount by triggering an unchecked error condition during an xfs attribute change, because xfs_attr_shortform_addname in fs/xfs/libxfs/xfs_attr.c mishandles ATTR_REPLACE operations with conversion of an attr from short to long form.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=7b38460dc8e4eafba06c78f8e37099d3b34d473c",
+            "http://www.securityfocus.com/bid/105753",
+            "https://bugzilla.kernel.org/show_bug.cgi?id=199119",
+            "https://bugzilla.suse.com/show_bug.cgi?id=1105025",
+            "https://github.com/torvalds/linux/commit/7b38460dc8e4eafba06c78f8e37099d3b34d473c",
+            "https://lists.debian.org/debian-lts-announce/2019/03/msg00017.html",
+            "https://lists.debian.org/debian-lts-announce/2019/03/msg00034.html",
+            "https://lists.debian.org/debian-lts-announce/2019/04/msg00004.html",
+            "https://usn.ubuntu.com/3847-1/",
+            "https://usn.ubuntu.com/3847-2/",
+            "https://usn.ubuntu.com/3847-3/",
+            "https://usn.ubuntu.com/3848-1/",
+            "https://usn.ubuntu.com/3848-2/",
+            "https://usn.ubuntu.com/3849-1/",
+            "https://usn.ubuntu.com/3849-2/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:* versions up to (excluding) 4.17",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "10/26/2018",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-10731",
+        "cwe_id": "CWE-89",
+        "description": "ProjectSend (formerly cFTP) r582 allows SQL injection via manage-files.php with the request parameter status, manage-files.php with the request parameter files, clients.php with the request parameter selected_clients, clients.php with the request parameter status, process-zip-download.php with the request parameter file, or home-log.php with the request parameter action.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/sandboxescape/ProjectSend-multiple-vulnerabilities/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:projectsend:projectsend:582:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:projectsend:projectsend:582:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/29/2018",
+        "modified_date": "12/18/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-10732",
+        "cwe_id": "CWE-287",
+        "description": "ProjectSend (formerly cFTP) r582 allows authentication bypass via a direct request for users.php, home.php, edit-file.php?file_id=1, or process-zip-download.php, or add_user_form_* parameters to users-add.php.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/sandboxescape/ProjectSend-multiple-vulnerabilities/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:projectsend:projectsend:582:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:projectsend:projectsend:582:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/29/2018",
+        "modified_date": "12/06/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-10733",
+        "cwe_id": "CWE-22",
+        "description": "ProjectSend (formerly cFTP) r582 allows directory traversal via file=../ in the process-zip-download.php query string.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/sandboxescape/ProjectSend-multiple-vulnerabilities/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:projectsend:projectsend:582:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:projectsend:projectsend:582:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/29/2018",
+        "modified_date": "12/06/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2016-10734",
+        "cwe_id": "CWE-285",
+        "description": "ProjectSend (formerly cFTP) r582 allows Insecure Direct Object Reference via includes/actions.log.export.php.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/sandboxescape/ProjectSend-multiple-vulnerabilities/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:projectsend:projectsend:582:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:projectsend:projectsend:582:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/29/2018",
+        "modified_date": "12/06/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18694",
+        "cwe_id": "CWE-79",
+        "description": "admin/index.php?id=filesmanager in Monstra CMS 3.0.4 allows remote authenticated administrators to trigger stored XSS via JavaScript content in a file whose name lacks an extension. Such a file is interpreted as text/html in certain cases.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.8 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://github.com/monstra-cms/monstra/issues/459"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:monstra:monstra:3.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:monstra:monstra:3.0.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/29/2018",
+        "modified_date": "12/06/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18699",
+        "cwe_id": "CWE-787",
+        "description": "An issue was discovered in GoPro gpmf-parser 1.2.1. There is an out-of-bounds write in OpenMP4Source in GPMF_mp4reader.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/gopro/gpmf-parser/issues/43"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gopro:gpmf-parser:1.2.1:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:gopro:gpmf-parser:1.2.1:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/29/2018",
+        "modified_date": "12/06/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18700",
+        "cwe_id": "CWE-835",
+        "description": "An issue was discovered in cp-demangle.c in GNU libiberty, as distributed in GNU Binutils 2.31. There is a stack consumption vulnerability resulting from infinite recursion in the functions d_name(), d_encoding(), and d_local_name() in cp-demangle.c. Remote attackers could leverage this vulnerability to cause a denial-of-service via an ELF file, as demonstrated by nm.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=87681",
+            "https://usn.ubuntu.com/4326-1/",
+            "https://usn.ubuntu.com/4336-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gnu:binutils:2.31:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:gnu:binutils:2.31:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/29/2018",
+        "modified_date": "04/21/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18701",
+        "cwe_id": "CWE-835",
+        "description": "An issue was discovered in cp-demangle.c in GNU libiberty, as distributed in GNU Binutils 2.31. There is a stack consumption vulnerability resulting from infinite recursion in the functions next_is_type_qual() and cplus_demangle_type() in cp-demangle.c. Remote attackers could leverage this vulnerability to cause a denial-of-service via an ELF file, as demonstrated by nm.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=87675",
+            "https://usn.ubuntu.com/4326-1/",
+            "https://usn.ubuntu.com/4336-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gnu:binutils:2.31:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:gnu:binutils:2.31:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/29/2018",
+        "modified_date": "04/21/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18702",
+        "cwe_id": "CWE-89",
+        "description": "spider.admincp.php in iCMS v7.0.11 allows SQL injection via admincp.php?app=spider&do=import_rule because the upfile content is base64 decoded, deserialized, and used for database insertion.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/idreamsoft/iCMS/issues/42"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:icmsdev:icms:7.0.11:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:icmsdev:icms:7.0.11:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/29/2018",
+        "modified_date": "12/04/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18703",
+        "cwe_id": "CWE-22",
+        "description": "PhpTpoint Mailing Server Using File Handling 1.0 suffers from multiple Arbitrary File Read vulnerabilities in different sections that allow an attacker to read sensitive files on the system via directory traversal, bypassing the login page, as demonstrated by the Mailserver_filesystem/home.php coninb, consent, contrsh, condrft, or conspam parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/149965/PHPTPoint-Mailing-Server-Using-File-Handling-1.0-Arbitrary-File-Read.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:phptpoint:mailing_server_using_file_handling:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:phptpoint:mailing_server_using_file_handling:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/29/2018",
+        "modified_date": "12/04/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18704",
+        "cwe_id": "CWE-89",
+        "description": "PhpTpoint Pharmacy Management System suffers from a SQL injection vulnerability in the index.php username parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://www.exploit-db.com/exploits/45682/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:phptpoint:pharmacy_management_system:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:phptpoint:pharmacy_management_system:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/29/2018",
+        "modified_date": "12/04/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18705",
+        "cwe_id": "CWE-89",
+        "description": "PhpTpoint hospital management system suffers from multiple SQL injection vulnerabilities via the index.php user parameter associated with LOGIN.php, or the rno parameter to ALIST.php, DUNDEL.php, PDEL.php, or PUNDEL.php.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://packetstormsecurity.com/files/149942/PHPTPoint-Hospital-Management-System-1-SQL-Injection.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:phptpoint:hospital_management_system:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:phptpoint:hospital_management_system:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/29/2018",
+        "modified_date": "12/04/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18706",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered on Tenda AC7 V15.03.06.44_CN, AC9 V15.03.05.19(6318)_CN, AC10 V15.03.06.23_CN, AC15 V15.03.05.19_CN, and AC18 V15.03.05.19(6318)_CN devices. It is a buffer overflow vulnerability in the router's web server -- httpd. When processing the \"page\" parameter of the function \"fromDhcpListClient\" for a request, it is directly used in a sprintf to a local variable placed on the stack, which overrides the return address of the function.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "https://github.com/zsjevilhex/iot/blob/master/route/tenda/tenda-06/Tenda.md"
+        ],
+        "cpe": [
+            "cpe:2.3:h:tenda:ac10:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:tenda:ac15:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:tenda:ac18:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:tenda:ac7:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:tenda:ac9:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/29/2018",
+        "modified_date": "12/14/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18707",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered on Tenda AC7 V15.03.06.44_CN, AC9 V15.03.05.19(6318)_CN, AC10 V15.03.06.23_CN, AC15 V15.03.05.19_CN, and AC18 V15.03.05.19(6318)_CN devices. It is a buffer overflow vulnerability in the router's web server -- httpd. When processing the \"ssid\" parameter for a post request, the value is directly used in a strcpy to a local variable placed on the stack, which overrides the return address of the function.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "https://github.com/zsjevilhex/iot/blob/master/route/tenda/tenda-07/Tenda.md"
+        ],
+        "cpe": [
+            "cpe:2.3:h:tenda:ac10:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:tenda:ac15:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:tenda:ac18:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:tenda:ac7:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:tenda:ac9:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/29/2018",
+        "modified_date": "12/14/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18708",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered on Tenda AC7 V15.03.06.44_CN, AC9 V15.03.05.19(6318)_CN, AC10 V15.03.06.23_CN, AC15 V15.03.05.19_CN, and AC18 V15.03.05.19(6318)_CN devices. It is a buffer overflow vulnerability in the router's web server -- httpd. When processing the \"page\" parameter of the function \"fromAddressNat\" for a post request, the value is directly used in a sprintf to a local variable placed on the stack, which overrides the return address of the function.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "https://github.com/zsjevilhex/iot/blob/master/route/tenda/tenda-05/Tenda.md"
+        ],
+        "cpe": [
+            "cpe:2.3:h:tenda:ac10:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:tenda:ac15:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:tenda:ac18:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:tenda:ac7:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:tenda:ac9:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/29/2018",
+        "modified_date": "12/14/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18709",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered on Tenda AC7 V15.03.06.44_CN, AC9 V15.03.05.19(6318)_CN, AC10 V15.03.06.23_CN, AC15 V15.03.05.19_CN, and AC18 V15.03.05.19(6318)_CN devices. It is a buffer overflow vulnerability in the router's web server -- httpd. When processing the \"firewallEn\" parameter for a post request, the value is directly used in a strcpy to a local variable placed on the stack, which overrides the return address of the function.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "7.8 HIGH",
+        "hyperlinks": [
+            "https://github.com/zsjevilhex/iot/blob/master/route/tenda/tenda-08/Tenda.md"
+        ],
+        "cpe": [
+            "cpe:2.3:h:tenda:ac10:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:tenda:ac15:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:tenda:ac18:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:tenda:ac7:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:tenda:ac9:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/29/2018",
+        "modified_date": "12/14/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18710",
+        "cwe_id": "CWE-200",
+        "description": "An issue was discovered in the Linux kernel through 4.19. An information leak in cdrom_ioctl_select_disc in drivers/cdrom/cdrom.c could be used by local attackers to read kernel memory because a cast from unsigned long to int interferes with bounds checking. This is similar to CVE-2018-10940 and CVE-2018-16658.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=e4f3aa2e1e67bb48dfbaaf1cad59013d5a5bc276",
+            "http://www.securityfocus.com/bid/106041",
+            "https://github.com/torvalds/linux/commit/e4f3aa2e1e67bb48dfbaaf1cad59013d5a5bc276",
+            "https://lists.debian.org/debian-lts-announce/2019/03/msg00017.html",
+            "https://lists.debian.org/debian-lts-announce/2019/03/msg00034.html",
+            "https://lists.debian.org/debian-lts-announce/2019/04/msg00004.html",
+            "https://usn.ubuntu.com/3846-1/",
+            "https://usn.ubuntu.com/3847-1/",
+            "https://usn.ubuntu.com/3847-2/",
+            "https://usn.ubuntu.com/3847-3/",
+            "https://usn.ubuntu.com/3848-1/",
+            "https://usn.ubuntu.com/3848-2/",
+            "https://usn.ubuntu.com/3849-1/",
+            "https://usn.ubuntu.com/3849-2/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:* versions up to (including) 4.19",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:12.04:*:*:*:esm:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "10/29/2018",
+        "modified_date": "04/03/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18711",
+        "cwe_id": "CWE-352",
+        "description": "An issue was discovered in WUZHI CMS 4.1.0. There is a CSRF vulnerability that can change the super administrator's password via index.php?m=core&f=panel&v=edit_info.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/wuzhicms/wuzhicms/issues/156"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:wuzhicms:wuzhi_cms:4.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:wuzhicms:wuzhi_cms:4.1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/29/2018",
+        "modified_date": "11/16/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18712",
+        "cwe_id": "CWE-352",
+        "description": "An issue was discovered in WUZHI CMS 4.1.0. There is a CSRF vulnerability that can change the super administrator's username via index.php?m=member&f=index&v=edit&uid=1.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/wuzhicms/wuzhicms/issues/156"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:wuzhicms:wuzhi_cms:4.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:wuzhicms:wuzhi_cms:4.1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/29/2018",
+        "modified_date": "11/16/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18713",
+        "cwe_id": "CWE-22",
+        "description": "The function down_sql_action() in /admin/model/database.class.php in PHPYun 4.6 allows remote attackers to read arbitrary files via directory traversal in an m=database&c=down_sql&name=../ URI.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://jlkl.github.io/2018/10/25/CVE_02/",
+            "http://str3am.me/2018/10/25/CVE_02/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:phpyun:phpyun:4.6:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:phpyun:phpyun:4.6:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/29/2018",
+        "modified_date": "01/28/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18717",
+        "cwe_id": "CWE-79",
+        "description": "An issue was discovered in Eleanor CMS through 2015-03-19. XSS exists via the ajax.php?direct=admin&file=autocomplete&query=[XSS] URI.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.8 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://github.com/Sunvas/Eleanor-CMS/issues/5"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:eleanor-cms:eleanor_cms:*:*:*:*:*:*:*:* versions up to (including) 2015-03-19",
+            "*cpe:2.3:a:eleanor-cms:eleanor_cms:*:*:*:*:*:*:*:*",
+            "(including)",
+            "2015-03-19"
+        ],
+        "published_date": "10/29/2018",
+        "modified_date": "12/10/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18718",
+        "cwe_id": "CWE-415",
+        "description": "An issue was discovered in gThumb through 3.6.2. There is a double-free vulnerability in the add_themes_from_dir method in dlg-contact-sheet.c because of two successive calls of g_free, each of which frees the same buffer.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "https://gitlab.gnome.org/GNOME/gthumb/issues/18",
+            "https://lists.debian.org/debian-lts-announce/2018/11/msg00002.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:gnome:gthumb:*:*:*:*:*:*:*:* versions up to (including) 3.6.2",
+            "*cpe:2.3:a:gnome:gthumb:*:*:*:*:*:*:*:*",
+            "(including)",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/29/2018",
+        "modified_date": "12/07/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18720",
+        "cwe_id": "CWE-79",
+        "description": "An XSS issue was discovered in index.php/admin/system/basic in YUNUCMS 1.1.5.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.8 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://github.com/source-trace/yunucms/issues/2"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:yunucms:yunucms:1.1.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:yunucms:yunucms:1.1.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/29/2018",
+        "modified_date": "12/04/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18721",
+        "cwe_id": "CWE-79",
+        "description": "An XSS issue was discovered in admin/link/editlink?id=5 in YUNUCMS 1.1.5.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.8 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://github.com/source-trace/yunucms/issues/7"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:yunucms:yunucms:1.1.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:yunucms:yunucms:1.1.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/29/2018",
+        "modified_date": "12/04/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18722",
+        "cwe_id": "CWE-79",
+        "description": "An XSS issue was discovered in admin/content/editcontent?id=29&gopage=1 in YUNUCMS 1.1.5.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.8 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://github.com/source-trace/yunucms/issues/6"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:yunucms:yunucms:1.1.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:yunucms:yunucms:1.1.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/29/2018",
+        "modified_date": "12/04/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    },
+    {
+        "cve_id": "CVE-2018-18723",
+        "cwe_id": "CWE-79",
+        "description": "An XSS issue was discovered in index.php/admin/area/editarea/id/110000 in YUNUCMS 1.1.5.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.8 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://github.com/source-trace/yunucms/issues/3"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:yunucms:yunucms:1.1.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:yunucms:yunucms:1.1.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "10/29/2018",
+        "modified_date": "12/04/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2018",
+        "month": "10"
+    }
+]

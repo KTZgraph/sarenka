@@ -1,0 +1,3054 @@
+[
+    {
+        "cve_id": "CVE-2017-17862",
+        "cwe_id": "CWE-20",
+        "description": "kernel/bpf/verifier.c in the Linux kernel through 4.14.8 ignores unreachable code, even though it would still be processed by JIT compilers. This behavior, also considered an improper branch-pruning logic issue, could possibly be used by local users for denial of service.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.9 MEDIUM",
+        "hyperlinks": [
+            "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=c131187db2d3fa2f8bf32fdf4e9a4ef805168467",
+            "http://www.securityfocus.com/bid/102325",
+            "http://www.securitytracker.com/id/1040057",
+            "https://anonscm.debian.org/cgit/kernel/linux.git/tree/debian/patches/bugfix/all/bpf-fix-branch-pruning-logic.patch?h=stretch-security",
+            "https://github.com/torvalds/linux/commit/c131187db2d3fa2f8bf32fdf4e9a4ef805168467",
+            "https://usn.ubuntu.com/3619-1/",
+            "https://usn.ubuntu.com/3619-2/",
+            "https://usn.ubuntu.com/usn/usn-3523-2/",
+            "https://www.debian.org/security/2017/dsa-4073",
+            "https://www.spinics.net/lists/stable/msg206984.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "04/06/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17863",
+        "cwe_id": "CWE-190",
+        "description": "kernel/bpf/verifier.c in the Linux kernel 4.9.x through 4.9.71 does not check the relationship between pointer values and the BPF stack, which allows local users to cause a denial of service (integer overflow or invalid memory access) or possibly have unspecified other impact.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/102321",
+            "http://www.securitytracker.com/id/1040058",
+            "https://anonscm.debian.org/cgit/kernel/linux.git/tree/debian/patches/bugfix/all/bpf-reject-out-of-bounds-stack-pointer-calculation.patch?h=stretch-security",
+            "https://usn.ubuntu.com/3523-3/",
+            "https://usn.ubuntu.com/usn/usn-3523-2/",
+            "https://www.debian.org/security/2017/dsa-4073",
+            "https://www.spinics.net/lists/stable/msg206985.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(including)"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "03/15/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17864",
+        "cwe_id": "CWE-200",
+        "description": "kernel/bpf/verifier.c in the Linux kernel through 4.14.8 mishandles states_equal comparisons between the pointer data type and the UNKNOWN_VALUE data type, which allows local users to obtain potentially sensitive address information, aka a \"pointer leak.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "3.3 LOW",
+        "base_score_v2": "2.1 LOW",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/102320",
+            "http://www.securitytracker.com/id/1040059",
+            "https://anonscm.debian.org/cgit/kernel/linux.git/commit/?h=stretch-security&id=ad775f6ff7eebb93eedc2f592bc974260e7757b0",
+            "https://anonscm.debian.org/cgit/kernel/linux.git/tree/debian/patches/bugfix/all/bpf-verifier-fix-states_equal-comparison-of-pointer-and-unknown.patch?h=stretch-security",
+            "https://usn.ubuntu.com/usn/usn-3523-2/",
+            "https://www.debian.org/security/2017/dsa-4073"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:linux:linux_kernel:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/12/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17866",
+        "cwe_id": "CWE-119",
+        "description": "pdf/pdf-write.c in Artifex MuPDF before 1.12.0 mishandles certain length changes when a repair operation occurs during a clean operation, which allows remote attackers to cause a denial of service (buffer overflow and application crash) or possibly have unspecified other impact via a crafted PDF document.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.ghostscript.com/cgi-bin/findgit.cgi?520cc26d18c9ee245b56e9e91f9d4fcae02be5f0",
+            "https://bugs.ghostscript.com/show_bug.cgi?id=698699",
+            "https://www.debian.org/security/2018/dsa-4334"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:artifex:mupdf:*:*:*:*:*:*:*:* versions up to (excluding) 1.12.0",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:artifex:mupdf:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "03/11/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17868",
+        "cwe_id": "CWE-79",
+        "description": "In Liferay Portal 6.1.0, the tags section has XSS via a Public Render Parameter (p_r_p) value, as demonstrated by p_r_p_564233524_tag.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://cxsecurity.com/issue/WLB-2017120169"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:liferay:liferay_portal:6.1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:liferay:liferay_portal:6.1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17869",
+        "cwe_id": "CWE-79",
+        "description": "The mgl-instagram-gallery plugin for WordPress has XSS via the single-gallery.php media parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://cxsecurity.com/issue/WLB-2017120183"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mgl-instagram-gallery_project:mgl-instagram-gallery:-:*:*:*:*:wordpress:*:*",
+            "*cpe:2.3:a:mgl-instagram-gallery_project:mgl-instagram-gallery:-:*:*:*:*:wordpress:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/10/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17870",
+        "cwe_id": "CWE-89",
+        "description": "The JBuildozer extension 1.4.1 for Joomla! has SQL Injection via the appid parameter in an entriessearch action.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://vel.joomla.org/vel-blog/2046-jbuildozer-1-4-1-sql-injection",
+            "https://www.exploit-db.com/exploits/43323/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jbuildozer:jbuildozer:1.4.1:*:*:*:*:joomla\\!:*:*",
+            "*cpe:2.3:a:jbuildozer:jbuildozer:1.4.1:*:*:*:*:joomla\\!:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/11/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17871",
+        "cwe_id": "CWE-89",
+        "description": "The \"JEXTN Question And Answer\" extension 3.1.0 for Joomla! has SQL Injection via the an parameter in a view=tags action, or the ques-srch parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://www.exploit-db.com/exploits/43329/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jextn:jextn_question_and_answer:3.1.0:*:*:*:*:joomla:*:*",
+            "*cpe:2.3:a:jextn:jextn_question_and_answer:3.1.0:*:*:*:*:joomla:*:*",
+            "*cpe:2.3:a:jextn:jextn_question_and_answer:3.1.0:*:*:*:*:joomla:*:*",
+            "*cpe:2.3:a:jextn:jextn_question_and_answer:3.1.0:*:*:*:*:joomla!:*:*",
+            "*cpe:2.3:a:jextn:jextn_question_and_answer:3.1.0:*:*:*:*:joomla:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "07/01/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17872",
+        "cwe_id": "CWE-89",
+        "description": "The JEXTN Video Gallery extension 3.0.5 for Joomla! has SQL Injection via the id parameter in a view=category action.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://www.exploit-db.com/exploits/43330/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jextn:jextn_video_gallery:3.0.5:*:*:*:*:joomla:*:*",
+            "*cpe:2.3:a:jextn:jextn_video_gallery:3.0.5:*:*:*:*:joomla:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/17/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17873",
+        "cwe_id": "CWE-89",
+        "description": "Vanguard Marketplace Digital Products PHP 1.4 has SQL Injection via the PATH_INFO to the /p URI.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://www.exploit-db.com/exploits/43316/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:vanguard_project:marketplace_digital_products_php:1.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vanguard_project:marketplace_digital_products_php:1.4.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17874",
+        "cwe_id": "CWE-434",
+        "description": "Vanguard Marketplace Digital Products PHP 1.4 allows arbitrary file upload via an \"Add a new product\" or \"Add a product preview\" action, which can make a .php file accessible under a uploads/ URI.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://www.exploit-db.com/exploits/43315/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:vanguard_project:marketplace_digital_products_php:1.4.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:vanguard_project:marketplace_digital_products_php:1.4.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/11/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17875",
+        "cwe_id": "CWE-89",
+        "description": "The JEXTN FAQ Pro extension 4.0.0 for Joomla! has SQL Injection via the id parameter in a view=category action.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://www.exploit-db.com/exploits/43393/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:jextn:jextn_faq_pro:4.0.0:*:*:*:*:joomla\\!:*:*",
+            "*cpe:2.3:a:jextn:jextn_faq_pro:4.0.0:*:*:*:*:joomla\\!:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/17/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17876",
+        "cwe_id": "CWE-275",
+        "description": "Biometric Shift Employee Management System 3.0 allows remote attackers to bypass intended file-read restrictions via a user=download request with a pathname in the path parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://www.exploit-db.com/exploits/43394/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:iwcnetwork:shift:3.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:iwcnetwork:shift:3.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/10/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17877",
+        "cwe_id": null,
+        "description": "An issue was discovered in Valve Steam Link build 643. When the SSH daemon is enabled for local development, the device is publicly available via IPv6 TCP port 22 over the internet (with stateless address autoconfiguration) by default, which makes it easier for remote attackers to obtain access by guessing 24 bits of the MAC address and attempting a root login. This can be exploited in conjunction with CVE-2017-17878.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://blogger.davidmanouchehri.com/2017/12/steam-link-security-remotely-insecure.html",
+            "https://github.com/ValveSoftware/steamlink-sdk#ssh-access",
+            "https://github.com/ValveSoftware/steamlink-sdk/issues/119"
+        ],
+        "cpe": [
+            "cpe:2.3:h:valvesoftware:steam_link:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17878",
+        "cwe_id": "CWE-327",
+        "description": "An issue was discovered in Valve Steam Link build 643. Root passwords longer than 8 characters are truncated because of the default use of DES (aka the CONFIG_FEATURE_DEFAULT_PASSWD_ALGO=\"des\" setting).",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://blogger.davidmanouchehri.com/2017/12/steam-link-security-truncated-password.html",
+            "https://github.com/ValveSoftware/steamlink-sdk/issues/101",
+            "https://github.com/ValveSoftware/steamlink-sdk/issues/110"
+        ],
+        "cpe": [
+            "cpe:2.3:h:valvesoftware:steam_link:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:valvesoftware:steam_link:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:valvesoftware:steam_link:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/11/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17879",
+        "cwe_id": "CWE-125",
+        "description": "In ImageMagick 7.0.7-16 Q16 x86_64 2017-12-21, there is a heap-based buffer over-read in ReadOneMNGImage in coders/png.c, related to length calculation and caused by an off-by-one error.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/102305",
+            "https://github.com/ImageMagick/ImageMagick/issues/906",
+            "https://lists.debian.org/debian-lts-announce/2018/01/msg00000.html",
+            "https://usn.ubuntu.com/3681-1/",
+            "https://www.debian.org/security/2017/dsa-4074",
+            "https://www.debian.org/security/2018/dsa-4204"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:imagemagick:imagemagick:7.0.7-16:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:imagemagick:imagemagick:7.0.7-16:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17880",
+        "cwe_id": "CWE-125",
+        "description": "In ImageMagick 7.0.7-16 Q16 x86_64 2017-12-21, there is a stack-based buffer over-read in WriteWEBPImage in coders/webp.c, related to a WEBP_DECODER_ABI_VERSION check.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/102317",
+            "https://github.com/ImageMagick/ImageMagick/issues/907"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:imagemagick:imagemagick:7.0.7-16:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:imagemagick:imagemagick:7.0.7-16:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17881",
+        "cwe_id": "CWE-772",
+        "description": "In ImageMagick 7.0.7-12 Q16, a memory leak vulnerability was found in the function ReadMATImage in coders/mat.c, which allows attackers to cause a denial of service via a crafted MAT image file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/ImageMagick/ImageMagick/issues/878",
+            "https://usn.ubuntu.com/3681-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:a:imagemagick:imagemagick:7.0.7-12:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:a:imagemagick:imagemagick:7.0.7-12:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17882",
+        "cwe_id": "CWE-772",
+        "description": "In ImageMagick 7.0.7-12 Q16, a memory leak vulnerability was found in the function ReadXPMImage in coders/xpm.c, which allows attackers to cause a denial of service via a crafted XPM image file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/ImageMagick/ImageMagick/issues/880",
+            "https://usn.ubuntu.com/3681-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:a:imagemagick:imagemagick:7.0.7-12:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:a:imagemagick:imagemagick:7.0.7-12:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17883",
+        "cwe_id": "CWE-772",
+        "description": "In ImageMagick 7.0.7-12 Q16, a memory leak vulnerability was found in the function ReadPGXImage in coders/pgx.c, which allows attackers to cause a denial of service via a crafted PGX image file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/ImageMagick/ImageMagick/issues/877"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:imagemagick:imagemagick:7.0.7-12:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:imagemagick:imagemagick:7.0.7-12:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17884",
+        "cwe_id": "CWE-772",
+        "description": "In ImageMagick 7.0.7-16 Q16, a memory leak vulnerability was found in the function WriteOnePNGImage in coders/png.c, which allows attackers to cause a denial of service via a crafted PNG image file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/ImageMagick/ImageMagick/issues/902",
+            "https://usn.ubuntu.com/3681-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:a:imagemagick:imagemagick:7.0.7-16:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:a:imagemagick:imagemagick:7.0.7-16:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17885",
+        "cwe_id": "CWE-772",
+        "description": "In ImageMagick 7.0.7-12 Q16, a memory leak vulnerability was found in the function ReadPICTImage in coders/pict.c, which allows attackers to cause a denial of service via a crafted PICT image file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/ImageMagick/ImageMagick/issues/879",
+            "https://usn.ubuntu.com/3681-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:a:imagemagick:imagemagick:7.0.7-12:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:a:imagemagick:imagemagick:7.0.7-12:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17886",
+        "cwe_id": "CWE-772",
+        "description": "In ImageMagick 7.0.7-12 Q16, a memory leak vulnerability was found in the function ReadPSDChannelZip in coders/psd.c, which allows attackers to cause a denial of service via a crafted psd image file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/ImageMagick/ImageMagick/issues/874",
+            "https://usn.ubuntu.com/3681-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:a:imagemagick:imagemagick:7.0.7-12:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:a:imagemagick:imagemagick:7.0.7-12:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17887",
+        "cwe_id": "CWE-772",
+        "description": "In ImageMagick 7.0.7-16 Q16, a memory leak vulnerability was found in the function GetImagePixelCache in magick/cache.c, which allows attackers to cause a denial of service via a crafted MNG image file that is processed by ReadOneMNGImage.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/ImageMagick/ImageMagick/issues/903",
+            "https://usn.ubuntu.com/3681-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:a:imagemagick:imagemagick:7.0.7-16:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:a:imagemagick:imagemagick:7.0.7-16:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17888",
+        "cwe_id": "CWE-78",
+        "description": "cgi-bin/write.cgi in Anti-Web through 3.8.7, as used on NetBiter / HMS, Ouman EH-net, Alliance System WS100 --> AWU 500, Sauter ERW100F001, Carlo Gavazzi SIU-DLG, AEDILIS SMART-1, SYXTHSENSE WebBiter, ABB SREA, and ASCON DY WebServer devices, allows remote authenticated users to execute arbitrary OS commands via crafted multipart/form-data content, a different vulnerability than CVE-2017-9097.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "9.0 HIGH",
+        "hyperlinks": [
+            "https://github.com/ezelf/AntiWeb_testing-Suite/tree/master/RCE",
+            "https://www.seebug.org/vuldb/ssvid-96555",
+            "https://www.youtube.com/watch?v=HdkZA1DO08Y"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hoytech:antiweb:3.0.7:hms2:*:*:*:*:*:*\n     *cpe:2.3:a:hoytech:antiweb:*:*:*:*:*:*:*:* versions up to (including) 3.8.7",
+            "*cpe:2.3:a:hoytech:antiweb:3.0.7:hms2:*:*:*:*:*:*",
+            "*cpe:2.3:a:hoytech:antiweb:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/17/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17891",
+        "cwe_id": "CWE-352",
+        "description": "Readymade Video Sharing Script has CSRF via user-profile-edit.php.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/Readymade-Video-Sharing-Script.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:readymade_video_sharing_script_project:readymade_video_sharing_script:3.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:readymade_video_sharing_script_project:readymade_video_sharing_script:3.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17892",
+        "cwe_id": "CWE-89",
+        "description": "Readymade Video Sharing Script has SQL Injection via the viewsubs.php chnlid parameter or the search_video.php search parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/Readymade-Video-Sharing-Script.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:readymade_video_sharing_script_project:readymade_video_sharing_script:3.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:readymade_video_sharing_script_project:readymade_video_sharing_script:3.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17893",
+        "cwe_id": "CWE-79",
+        "description": "Readymade Video Sharing Script has XSS via the search_video.php search parameter, the viewsubs.php chnlid parameter, or the user-profile-edit.php fname parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/Readymade-Video-Sharing-Script.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:readymade_video_sharing_script_project:readymade_video_sharing_script:3.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:readymade_video_sharing_script_project:readymade_video_sharing_script:3.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17894",
+        "cwe_id": "CWE-352",
+        "description": "Readymade Job Site Script has CSRF via the /job URI.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/ready-made-job-site-script.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:basic_job_site_script_project:basic_job_site_script:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:basic_job_site_script_project:basic_job_site_script:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17895",
+        "cwe_id": "CWE-89",
+        "description": "Readymade Job Site Script has SQL Injection via the location_name array parameter to the /job URI.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/ready-made-job-site-script.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:basic_job_site_script_project:basic_job_site_script:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:basic_job_site_script_project:basic_job_site_script:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17896",
+        "cwe_id": "CWE-79",
+        "description": "Readymade Job Site Script has XSS via the keyword parameter to the /job URI.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/ready-made-job-site-script.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:basic_job_site_script_project:basic_job_site_script:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:basic_job_site_script_project:basic_job_site_script:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17897",
+        "cwe_id": "CWE-89",
+        "description": "SQL injection vulnerability in comm/multiprix.php in Dolibarr ERP/CRM version 6.0.4 allows remote attackers to execute arbitrary SQL commands via the id parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/Dolibarr/dolibarr/commit/4a5988accbb770b74105baacd5a034689272128c"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:dolibarr:dolibarr:6.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:dolibarr:dolibarr:6.0.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17898",
+        "cwe_id": "CWE-200",
+        "description": "Dolibarr ERP/CRM version 6.0.4 does not block direct requests to *.tpl.php files, which allows remote attackers to obtain sensitive information.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/Dolibarr/dolibarr/commit/4a5988accbb770b74105baacd5a034689272128c",
+            "https://github.com/Dolibarr/dolibarr/commit/6a62e139604dbbd5729e57df2433b37a5950c35c"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:dolibarr:dolibarr:6.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:dolibarr:dolibarr:6.0.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17899",
+        "cwe_id": "CWE-89",
+        "description": "SQL injection vulnerability in adherents/subscription/info.php in Dolibarr ERP/CRM version 6.0.4 allows remote attackers to execute arbitrary SQL commands via the rowid parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/Dolibarr/dolibarr/commit/4a5988accbb770b74105baacd5a034689272128c"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:dolibarr:dolibarr:6.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:dolibarr:dolibarr:6.0.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17900",
+        "cwe_id": "CWE-89",
+        "description": "SQL injection vulnerability in fourn/index.php in Dolibarr ERP/CRM version 6.0.4 allows remote attackers to execute arbitrary SQL commands via the socid parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/Dolibarr/dolibarr/commit/4a5988accbb770b74105baacd5a034689272128c"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:dolibarr:dolibarr:6.0.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:dolibarr:dolibarr:6.0.4:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17903",
+        "cwe_id": "CWE-352",
+        "description": "FS Lynda Clone has CSRF via user/edit_profile, as demonstrated by adding content to the user panel.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/FS%20Lynda%20Clone.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fortunescripts:lynda_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:lynda_clone:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17904",
+        "cwe_id": "CWE-79",
+        "description": "FS Lynda Clone has XSS via the keywords parameter to tutorial/ or the edit_profile_first_name parameter to user/edit_profile.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/FS%20Lynda%20Clone.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:fortunescripts:lynda_clone:1.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:fortunescripts:lynda_clone:1.0:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17905",
+        "cwe_id": "CWE-352",
+        "description": "PHP Scripts Mall Car Rental Script has CSRF via admin/sitesettings.php.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/Car-Rental-Script.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:car_rental_script_project:car_rental_script:2.0.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:car_rental_script_project:car_rental_script:2.0.8:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/10/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17906",
+        "cwe_id": "CWE-89",
+        "description": "PHP Scripts Mall Car Rental Script has SQL Injection via the admin/carlistedit.php carid parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/Car-Rental-Script.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:car_rental_script_project:car_rental_script:2.0.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:car_rental_script_project:car_rental_script:2.0.8:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17907",
+        "cwe_id": "CWE-79",
+        "description": "PHP Scripts Mall Car Rental Script has XSS via the admin/areaedit.php carid parameter or the admin/sitesettings.php websitename parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/Car-Rental-Script.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:car_rental_script_project:car_rental_script:2.0.8:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:car_rental_script_project:car_rental_script:2.0.8:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17908",
+        "cwe_id": "CWE-352",
+        "description": "PHP Scripts Mall Responsive Realestate Script has CSRF via admin/general.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/Responsive%20Realestate%20Script.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:responsive_realestate_script_project:responsive_realestate_script:3.3.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:responsive_realestate_script_project:responsive_realestate_script:3.3.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/10/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17909",
+        "cwe_id": "CWE-79",
+        "description": "PHP Scripts Mall Responsive Realestate Script has XSS via the admin/general.php gplus parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.8 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/Responsive%20Realestate%20Script.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:responsive_realestate_script_project:responsive_realestate_script:3.3.3:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:responsive_realestate_script_project:responsive_realestate_script:3.3.3:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/10/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17911",
+        "cwe_id": "CWE-79",
+        "description": "packages/core/contact.php in Archon 3.21 rev-1 has XSS in the referer parameter in an index.php?p=core/contact request, aka Open Bug Bounty ID OBB-278503.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://www.openbugbounty.org/reports/278503/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:archon:archon:3.21:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:archon:archon:3.21:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/11/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17912",
+        "cwe_id": "CWE-125",
+        "description": "In GraphicsMagick 1.4 snapshot-20171217 Q8, there is a heap-based buffer over-read in ReadNewsProfile in coders/tiff.c, in which LocaleNCompare reads heap data beyond the allocated region.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://hg.graphicsmagick.org/hg/GraphicsMagick/rev/0d871e813a4f",
+            "https://lists.debian.org/debian-lts-announce/2018/01/msg00005.html",
+            "https://lists.debian.org/debian-lts-announce/2018/06/msg00009.html",
+            "https://sourceforge.net/p/graphicsmagick/bugs/533/",
+            "https://usn.ubuntu.com/4266-1/",
+            "https://www.debian.org/security/2018/dsa-4321"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:graphicsmagick:graphicsmagick:1.3.27:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:graphicsmagick:graphicsmagick:1.3.27:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "02/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17913",
+        "cwe_id": "CWE-125",
+        "description": "In GraphicsMagick 1.4 snapshot-20171217 Q8, there is a stack-based buffer over-read in WriteWEBPImage in coders/webp.c, related to an incompatibility with libwebp versions, 0.5.0 and later, that use a different structure type.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://hg.graphicsmagick.org/hg/GraphicsMagick/rev/6dda3c33f35f",
+            "https://sourceforge.net/p/graphicsmagick/bugs/536/",
+            "https://usn.ubuntu.com/4266-1/",
+            "https://www.debian.org/security/2018/dsa-4321"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:graphicsmagick:graphicsmagick:1.3.27:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:graphicsmagick:graphicsmagick:1.3.27:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "02/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17914",
+        "cwe_id": "CWE-834",
+        "description": "In ImageMagick 7.0.7-16 Q16, a vulnerability was found in the function ReadOnePNGImage in coders/png.c, which allows attackers to cause a denial of service (ReadOneMNGImage large loop) via a crafted mng image file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:C)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "7.1 HIGH",
+        "hyperlinks": [
+            "https://github.com/ImageMagick/ImageMagick/issues/908",
+            "https://lists.debian.org/debian-lts-announce/2018/01/msg00000.html",
+            "https://lists.debian.org/debian-lts-announce/2019/05/msg00015.html",
+            "https://lists.debian.org/debian-lts-announce/2020/09/msg00007.html",
+            "https://usn.ubuntu.com/3681-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:imagemagick:imagemagick:7.0.7-16:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:imagemagick:imagemagick:7.0.7-16:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "09/07/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17915",
+        "cwe_id": "CWE-125",
+        "description": "In GraphicsMagick 1.4 snapshot-20171217 Q8, there is a heap-based buffer over-read in ReadMNGImage in coders/png.c, related to accessing one byte before testing whether a limit has been reached.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://hg.graphicsmagick.org/hg/GraphicsMagick/rev/1721f1b7e67a",
+            "https://lists.debian.org/debian-lts-announce/2018/01/msg00005.html",
+            "https://lists.debian.org/debian-lts-announce/2018/06/msg00009.html",
+            "https://sourceforge.net/p/graphicsmagick/bugs/535/",
+            "https://usn.ubuntu.com/4266-1/",
+            "https://www.debian.org/security/2018/dsa-4321"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*\n     *cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:graphicsmagick:graphicsmagick:1.3.27:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:7.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:debian:debian_linux:9.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:graphicsmagick:graphicsmagick:1.3.27:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "02/10/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17924",
+        "cwe_id": "CWE-22",
+        "description": "PHP Scripts Mall Professional Service Script allows remote attackers to obtain sensitive full-path information via the id parameter to admin/review_userwise.php.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/Professional-Service-Script.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ordermanagementscript:professional_service_script:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ordermanagementscript:professional_service_script:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/10/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17925",
+        "cwe_id": "CWE-79",
+        "description": "PHP Scripts Mall Professional Service Script has XSS via the admin/general_settingupd.php website_title parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.8 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/Professional-Service-Script.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ordermanagementscript:professional_service_script:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ordermanagementscript:professional_service_script:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/10/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17926",
+        "cwe_id": "CWE-200",
+        "description": "PHP Scripts Mall Professional Service Script has a predicable registration URL, which makes it easier for remote attackers to register with an invalid or spoofed e-mail address.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/Professional-Service-Script.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ordermanagementscript:professional_service_script:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ordermanagementscript:professional_service_script:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/10/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17927",
+        "cwe_id": "CWE-22",
+        "description": "PHP Scripts Mall Professional Service Script allows remote attackers to obtain sensitive full-path information via a crafted PATH_INFO to service-list/category/.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.3 MEDIUM",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/Professional-Service-Script.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ordermanagementscript:professional_service_script:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ordermanagementscript:professional_service_script:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/10/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17928",
+        "cwe_id": "CWE-89",
+        "description": "PHP Scripts Mall Professional Service Script has SQL injection via the admin/review.php id parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/Professional-Service-Script.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ordermanagementscript:professional_service_script:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ordermanagementscript:professional_service_script:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/10/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17929",
+        "cwe_id": "CWE-79",
+        "description": "PHP Scripts Mall Professional Service Script has XSS via the admin/bannerview.php view parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.8 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/Professional-Service-Script.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ordermanagementscript:professional_service_script:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ordermanagementscript:professional_service_script:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/10/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17930",
+        "cwe_id": "CWE-352",
+        "description": "PHP Scripts Mall Professional Service Script has CSRF via admin/general_settingupd.php, as demonstrated by modifying a setting in the user panel.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/Professional-Service-Script.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ordermanagementscript:professional_service_script:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:ordermanagementscript:professional_service_script:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/10/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17931",
+        "cwe_id": "CWE-89",
+        "description": "PHP Scripts Mall Resume Clone Script has SQL Injection via the forget.php username parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/Resume%20Clone%20Script.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:resume_clone_script_project:resume_clone_script:2.0.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:resume_clone_script_project:resume_clone_script:2.0.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/10/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17934",
+        "cwe_id": "CWE-772",
+        "description": "ImageMagick 7.0.7-17 Q16 x86_64 has memory leaks in coders/msl.c, related to MSLPopImage and ProcessMSLScript, and associated with mishandling of MSLPushImage calls.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/102314",
+            "https://github.com/ImageMagick/ImageMagick/issues/920",
+            "https://usn.ubuntu.com/3681-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*\n     *cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:a:imagemagick:imagemagick:7.0.7-17:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:14.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:18.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:a:imagemagick:imagemagick:7.0.7-17:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17935",
+        "cwe_id": "CWE-125",
+        "description": "The File_read_line function in epan/wslua/wslua_file.c in Wireshark through 2.2.11 does not properly strip '\\n' characters, which allows remote attackers to cause a denial of service (buffer underflow and application crash) via a crafted packet that triggers the attempted processing of an empty line.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/102311",
+            "https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=14295",
+            "https://code.wireshark.org/review/#/c/24997/",
+            "https://code.wireshark.org/review/gitweb?p=wireshark.git;a=commit;h=137ab7d5681486c6d6cc8faac4300b7cd4ec0cf1",
+            "https://lists.debian.org/debian-lts-announce/2019/01/msg00010.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:wireshark:wireshark:*:*:*:*:*:*:*:* versions up to (including) 2.2.11",
+            "*cpe:2.3:o:debian:debian_linux:8.0:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:wireshark:wireshark:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-7152",
+        "cwe_id": null,
+        "description": "An issue was discovered in certain Apple products. iOS before 11.2 is affected. The issue involves the \"Mail Message Framework\" component. It allows remote attackers to spoof the address bar via a crafted web site.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.3 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2019/Oct/49",
+            "http://seclists.org/fulldisclosure/2019/Oct/54",
+            "http://seclists.org/fulldisclosure/2019/Oct/56",
+            "https://support.apple.com/HT208334",
+            "https://support.apple.com/kb/HT210721",
+            "https://support.apple.com/kb/HT210722",
+            "https://support.apple.com/kb/HT210724"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (excluding) 11.2",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "10/29/2019",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-7154",
+        "cwe_id": "CWE-20",
+        "description": "An issue was discovered in certain Apple products. iOS before 11.2 is affected. macOS before 10.13.2 is affected. tvOS before 11.2 is affected. The issue involves the \"Kernel\" component. It allows local users to bypass intended memory-read restrictions or cause a denial of service (system crash).",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:N/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:N/A:C)"
+        },
+        "base_score_v3": "6.6 MEDIUM",
+        "base_score_v2": "5.6 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/103134",
+            "https://support.apple.com/HT208327",
+            "https://support.apple.com/HT208331",
+            "https://support.apple.com/HT208334",
+            "https://www.exploit-db.com/exploits/43521/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apple:apple_tv:*:*:*:*:*:*:*:* versions from (excluding) 11.2",
+            "*cpe:2.3:a:apple:apple_tv:*:*:*:*:*:*:*:* versions up to (excluding) 11.2\n     *cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (excluding) 11.2\n     *cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 10.13.2",
+            "*cpe:2.3:a:apple:apple_tv:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:apple:apple_tv:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "03/22/2019",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-7155",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. macOS before 10.13.2 is affected. The issue involves the \"Intel Graphics Driver\" component. It allows attackers to execute arbitrary code in a privileged context or cause a denial of service (memory corruption) via a crafted app.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "https://support.apple.com/HT208331"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 10.13.2",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "12/29/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-7156",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. iOS before 11.2 is affected. Safari before 11.0.2 is affected. iCloud before 7.2 on Windows is affected. iTunes before 12.7.2 on Windows is affected. tvOS before 11.2 is affected. The issue involves the \"WebKit\" component. It allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption and application crash) via a crafted web site.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/102181",
+            "http://www.securitytracker.com/id/1040012",
+            "http://www.securitytracker.com/id/1040013",
+            "https://security.gentoo.org/glsa/201801-09",
+            "https://support.apple.com/HT208324",
+            "https://support.apple.com/HT208326",
+            "https://support.apple.com/HT208327",
+            "https://support.apple.com/HT208328",
+            "https://support.apple.com/HT208334"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apple:webkit:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:apple_tv:*:*:*:*:*:*:*:* versions from (excluding) 11.2",
+            "*cpe:2.3:a:apple:webkit:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:*:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:apple_tv:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "cpe:2.3:o:microsoft:windows:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:apple_tv:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:apple:safari:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "03/22/2019",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-7157",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. iOS before 11.2 is affected. Safari before 11.0.2 is affected. iCloud before 7.2 on Windows is affected. iTunes before 12.7.2 on Windows is affected. tvOS before 11.2 is affected. The issue involves the \"WebKit\" component. It allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption and application crash) via a crafted web site.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/102181",
+            "http://www.securitytracker.com/id/1040012",
+            "http://www.securitytracker.com/id/1040013",
+            "https://security.gentoo.org/glsa/201801-09",
+            "https://support.apple.com/HT208324",
+            "https://support.apple.com/HT208326",
+            "https://support.apple.com/HT208327",
+            "https://support.apple.com/HT208328",
+            "https://support.apple.com/HT208334"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apple:webkit:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:apple_tv:*:*:*:*:*:*:*:* versions from (excluding) 11.2",
+            "*cpe:2.3:a:apple:webkit:-:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:*:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:apple_tv:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "cpe:2.3:o:microsoft:windows:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:apple_tv:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:apple:safari:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "03/22/2019",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-7158",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. macOS before 10.13.2 is affected. The issue involves the \"Screen Sharing Server\" component. It allows attackers to obtain root privileges for reading files by leveraging screen-sharing access.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:C/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:C/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://support.apple.com/HT208331"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 10.13.2",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "12/29/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-7159",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. macOS before 10.13.2 is affected. The issue involves the \"IOAcceleratorFamily\" component. It allows attackers to execute arbitrary code in a privileged context or cause a denial of service (memory corruption) via a crafted app.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "https://support.apple.com/HT208331"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 10.13.2",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "12/29/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-7160",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. iOS before 11.2 is affected. Safari before 11.0.2 is affected. iCloud before 7.2 on Windows is affected. iTunes before 12.7.2 on Windows is affected. tvOS before 11.2 is affected. The issue involves the \"WebKit\" component. It allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption and application crash) via a crafted web site.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://support.apple.com/HT208324",
+            "https://support.apple.com/HT208326",
+            "https://support.apple.com/HT208327",
+            "https://support.apple.com/HT208328",
+            "https://support.apple.com/HT208334",
+            "https://usn.ubuntu.com/3551-1/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apple:webkit:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:apple_tv:*:*:*:*:*:*:*:* versions from (excluding) 11.2",
+            "*cpe:2.3:a:apple:webkit:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:16.04:*:*:*:lts:*:*:*",
+            "*cpe:2.3:o:canonical:ubuntu_linux:17.10:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:*:*:*:*:*:*:*:*",
+            "cpe:2.3:o:microsoft:windows:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:apple_tv:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "cpe:2.3:o:microsoft:windows:*:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:apple:apple_tv:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:apple:safari:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "03/22/2019",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-7162",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. iOS before 11.2 is affected. macOS before 10.13.2 is affected. tvOS before 11.2 is affected. watchOS before 4.2 is affected. The issue involves the \"IOKit\" component. It allows attackers to execute arbitrary code in a privileged context or cause a denial of service (memory corruption) via a crafted app.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "https://support.apple.com/HT208325",
+            "https://support.apple.com/HT208327",
+            "https://support.apple.com/HT208331",
+            "https://support.apple.com/HT208334"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:apple:apple_tv:*:*:*:*:*:*:*:* versions from (excluding) 11.2",
+            "*cpe:2.3:a:apple:apple_tv:*:*:*:*:*:*:*:* versions up to (excluding) 11.2\n     *cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:* versions up to (excluding) 11.2\n     *cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 10.13.2\n     *cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:* versions up to (excluding) 4.2",
+            "*cpe:2.3:a:apple:apple_tv:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:tvos:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:apple:apple_tv:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:iphone_os:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:o:apple:watchos:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "03/08/2019",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-7163",
+        "cwe_id": "CWE-119",
+        "description": "An issue was discovered in certain Apple products. macOS before 10.13.2 is affected. The issue involves the \"Intel Graphics Driver\" component. It allows attackers to execute arbitrary code in a privileged context or cause a denial of service (memory corruption) via a crafted app.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "9.3 HIGH",
+        "hyperlinks": [
+            "https://support.apple.com/HT208331"
+        ],
+        "cpe": [
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:* versions up to (excluding) 10.13.2",
+            "*cpe:2.3:o:apple:mac_os_x:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "12/29/2017",
+        "vulnerability_source": "Apple Inc.",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-9944",
+        "cwe_id": "CWE-269",
+        "description": "A vulnerability has been identified in Siemens 7KT PAC1200 data manager (7KT1260) in all versions < V2.03. The integrated web server (port 80/tcp) of the affected devices could allow an unauthenticated remote attacker to perform administrative operations over the network.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/bid/101184",
+            "https://www.siemens.com/cert/pool/cert/siemens_security_advisory_ssa-971654.pdf"
+        ],
+        "cpe": [
+            "cpe:2.3:h:siemens:7kt_pac1200_data_manager:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Siemens AG",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2016-6914",
+        "cwe_id": "CWE-275",
+        "description": "Ubiquiti UniFi Video before 3.8.0 for Windows uses weak permissions for the installation directory, which allows local users to gain SYSTEM privileges via a Trojan horse taskkill.exe file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "7.2 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/145533/Ubiquiti-UniFi-Video-3.7.3-Windows-Local-Privilege-Escalation.html",
+            "http://seclists.org/fulldisclosure/2017/Dec/83",
+            "http://www.securityfocus.com/bid/102278",
+            "https://hackerone.com/reports/140793",
+            "https://www.exploit-db.com/exploits/43390/"
+        ],
+        "cpe": [
+            "cpe:2.3:o:microsoft:windows:*:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/10/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-13056",
+        "cwe_id": "CWE-20",
+        "description": "The launchURL function in PDF-XChange Viewer 2.5 (Build 314.0) might allow remote attackers to execute arbitrary code via a crafted PDF file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/143912/PDF-XChange-Viewer-2.5-Build-314.0-Code-Execution.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:tracker-software:pdf-xchange_viewer:2.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:tracker-software:pdf-xchange_viewer:2.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-16768",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in User Policy editor in Synology MailPlus Server before 1.4.0-0415 allows remote authenticated users to inject arbitrary HTML via the name parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.8 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://www.synology.com/en-global/support/security/Synology_SA_17_81"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:synology:mailplus_server:*:*:*:*:*:*:*:* versions up to (excluding) 1.4.0-0415",
+            "*cpe:2.3:a:synology:mailplus_server:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "1.4.0-0415"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/10/2018",
+        "vulnerability_source": "Synology Inc.",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2015-6237",
+        "cwe_id": "CWE-287",
+        "description": "The RPC service in Tripwire (formerly nCircle) IP360 VnE Manager 7.2.2 before 7.2.6 allows remote attackers to bypass authentication and (1) enumerate users, (2) reset passwords, or (3) manipulate IP filter restrictions via crafted \"privileged commands.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2015/Oct/20",
+            "http://www.securityfocus.com/archive/1/536609/100/0/threaded"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:tripwire:ip360:7.2.2:*:*:*:*:*:*:*\n     *cpe:2.3:a:tripwire:ip360:7.2.4:*:*:*:*:*:*:*\n     *cpe:2.3:a:tripwire:ip360:7.2.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:tripwire:ip360:7.2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:tripwire:ip360:7.2.4:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:tripwire:ip360:7.2.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "10/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2015-7324",
+        "cwe_id": "CWE-79",
+        "description": "Multiple cross-site scripting (XSS) vulnerabilities in helpers/comment.php in the StackIdeas Komento (com_komento) component before 2.0.5 for Joomla! allow remote attackers to inject arbitrary web script or HTML via the (1) img or (2) url tag of a new comment.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://seclists.org/fulldisclosure/2015/Oct/11",
+            "https://stackideas.com/changelog/komento?version=2.0.5",
+            "https://www.davidsopas.com/komento-joomla-component-persistent-xss/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:stackideas:komento:*:*:*:*:*:joomla\\!:*:* versions up to (excluding) 2.0.5",
+            "*cpe:2.3:a:stackideas:komento:*:*:*:*:*:joomla\\!:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/11/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2015-7666",
+        "cwe_id": "CWE-79",
+        "description": "Multiple cross-site scripting (XSS) vulnerabilities in the (1) cp_updateMessageItem and (2) cp_deleteMessageItem functions in cp_ppp_admin_int_message_list.inc.php in the Payment Form for PayPal Pro plugin before 1.0.2 for WordPress allow remote attackers to inject arbitrary web script or HTML via the cal parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/archive/1/536602/100/0/threaded",
+            "https://plugins.trac.wordpress.org/changeset/1254452/payment-form-for-paypal-pro",
+            "https://wordpress.org/plugins/payment-form-for-paypal-pro/#developers",
+            "https://wpvulndb.com/vulnerabilities/8210"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:payment_form_for_paypal_pro_project:payment_form_for_paypal_pro:*:*:*:*:*:wordpress:*:* versions up to (including) 1.0.1",
+            "*cpe:2.3:a:payment_form_for_paypal_pro_project:payment_form_for_paypal_pro:*:*:*:*:*:wordpress:*:* versions up to (including) 1.0.1",
+            "*cpe:2.3:a:payment_form_for_paypal_pro_project:payment_form_for_paypal_pro:*:*:*:*:*:wordpress:*:*",
+            "(including)",
+            "*cpe:2.3:a:codepeople:payment_form_for_paypal_pro:*:*:*:*:*:wordpress:*:*",
+            "(including)",
+            "*cpe:2.3:a:payment_form_for_paypal_pro_project:payment_form_for_paypal_pro:*:*:*:*:*:wordpress:*:*",
+            "(including)"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "07/26/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2015-7667",
+        "cwe_id": "CWE-79",
+        "description": "Multiple cross-site scripting (XSS) vulnerabilities in (1) templates/admanagement/admanagement.php and (2) templates/adspot/adspot.php in the ResAds plugin before 1.0.2 for WordPress allow remote attackers to inject arbitrary web script or HTML via the page parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/archive/1/536601/100/0/threaded",
+            "https://wordpress.org/plugins/resads/#developers",
+            "https://wpvulndb.com/vulnerabilities/8204"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:web-mv:resads:*:*:*:*:*:wordpress:*:* versions up to (excluding) 1.0.2",
+            "*cpe:2.3:a:web-mv:resads:*:*:*:*:*:wordpress:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "10/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2015-7668",
+        "cwe_id": "CWE-79",
+        "description": "Cross-site scripting (XSS) vulnerability in includes/MapPinImageSave.php in the Easy2Map plugin before 1.3.0 for WordPress allows remote attackers to inject arbitrary web script or HTML via the map_id parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.securityfocus.com/archive/1/536598/100/0/threaded",
+            "https://wordpress.org/plugins/easy2map/#developers",
+            "https://wpvulndb.com/vulnerabilities/8205"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:easy2map_project:easy2map:*:*:*:*:*:wordpress:*:* versions up to (excluding) 1.3.0",
+            "*cpe:2.3:a:easy2map_project:easy2map:*:*:*:*:*:wordpress:*:* versions up to (excluding) 1.3.0",
+            "*cpe:2.3:a:easy2map_project:easy2map:*:*:*:*:*:wordpress:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:easy2map:easy2map:*:*:*:*:*:wordpress:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:easy2map_project:easy2map:*:*:*:*:*:wordpress:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "05/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2015-7669",
+        "cwe_id": "CWE-22",
+        "description": "Multiple directory traversal vulnerabilities in (1) includes/MapImportCSV2.php and (2) includes/MapImportCSV.php in the Easy2Map plugin before 1.3.0 for WordPress allow remote attackers to include and execute arbitrary files via the csvfile parameter related to \"upload file functionality.\"",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://www.securityfocus.com/archive/1/536597/100/0/threaded",
+            "https://wordpress.org/plugins/easy2map/#developers",
+            "https://wpvulndb.com/vulnerabilities/8206"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:easy2map_project:easy2map:*:*:*:*:*:wordpress:*:* versions up to (excluding) 1.3.0",
+            "*cpe:2.3:a:easy2map_project:easy2map:*:*:*:*:*:wordpress:*:* versions up to (excluding) 1.3.0",
+            "*cpe:2.3:a:easy2map_project:easy2map:*:*:*:*:*:wordpress:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:easy2map:easy2map:*:*:*:*:*:wordpress:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:easy2map_project:easy2map:*:*:*:*:*:wordpress:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "05/07/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-11695",
+        "cwe_id": "CWE-119",
+        "description": "Heap-based buffer overflow in the alloc_segs function in lib/dbm/src/hash.c in Mozilla Network Security Services (NSS) allows context-dependent attackers to have unspecified impact using a crafted cert8.db file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/143735/NSS-Buffer-Overflows-Floating-Point-Exception.html",
+            "http://seclists.org/fulldisclosure/2017/Aug/17",
+            "http://www.geeknik.net/9brdqk6xu",
+            "http://www.securityfocus.com/bid/100345",
+            "http://www.securitytracker.com/id/1039153",
+            "https://security.gentoo.org/glsa/202003-37"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mozilla:network_security_services:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:mozilla:network_security_services:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "03/16/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-11696",
+        "cwe_id": "CWE-119",
+        "description": "Heap-based buffer overflow in the __hash_open function in lib/dbm/src/hash.c in Mozilla Network Security Services (NSS) allows context-dependent attackers to have unspecified impact using a crafted cert8.db file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/143735/NSS-Buffer-Overflows-Floating-Point-Exception.html",
+            "http://seclists.org/fulldisclosure/2017/Aug/17",
+            "http://www.geeknik.net/9brdqk6xu",
+            "http://www.securityfocus.com/bid/100345",
+            "http://www.securitytracker.com/id/1039153",
+            "https://security.gentoo.org/glsa/202003-37"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mozilla:network_security_services:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:mozilla:network_security_services:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "03/16/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-11697",
+        "cwe_id": "CWE-119",
+        "description": "The __hash_open function in hash.c:229 in Mozilla Network Security Services (NSS) allows context-dependent attackers to cause a denial of service (floating point exception and crash) via a crafted cert8.db file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/143735/NSS-Buffer-Overflows-Floating-Point-Exception.html",
+            "http://seclists.org/fulldisclosure/2017/Aug/17",
+            "http://www.geeknik.net/9brdqk6xu",
+            "http://www.securityfocus.com/bid/100345",
+            "http://www.securitytracker.com/id/1039153",
+            "https://security.gentoo.org/glsa/202003-37"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mozilla:network_security_services:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:mozilla:network_security_services:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "03/16/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-11698",
+        "cwe_id": "CWE-119",
+        "description": "Heap-based buffer overflow in the __get_page function in lib/dbm/src/h_page.c in Mozilla Network Security Services (NSS) allows context-dependent attackers to have unspecified impact using a crafted cert8.db file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:L/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:L/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.8 HIGH",
+        "base_score_v2": "4.6 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/143735/NSS-Buffer-Overflows-Floating-Point-Exception.html",
+            "http://seclists.org/fulldisclosure/2017/Aug/17",
+            "http://www.geeknik.net/9brdqk6xu",
+            "http://www.securityfocus.com/bid/100345",
+            "http://www.securitytracker.com/id/1039153",
+            "https://security.gentoo.org/glsa/202003-37"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mozilla:network_security_services:-:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:mozilla:network_security_services:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "03/16/2020",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-9608",
+        "cwe_id": "CWE-476",
+        "description": "The dnxhd decoder in FFmpeg before 3.2.6, and 3.3.x before 3.3.3 allows remote attackers to cause a denial of service (NULL pointer dereference) via a crafted mov file.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2017/08/14/1",
+            "http://www.openwall.com/lists/oss-security/2017/08/15/8",
+            "http://www.securityfocus.com/bid/100348",
+            "https://github.com/FFmpeg/FFmpeg/commit/0a709e2a10b8288a0cc383547924ecfe285cef89",
+            "https://github.com/FFmpeg/FFmpeg/commit/31c1c0b46a7021802c3d1d18039fca30dba5a14e",
+            "https://github.com/FFmpeg/FFmpeg/commit/611b35627488a8d0763e75c25ee0875c5b7987dd",
+            "https://www.debian.org/security/2017/dsa-3957"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:ffmpeg:ffmpeg:*:*:*:*:*:*:*:* versions up to (excluding) 3.2.6\n     *cpe:2.3:a:ffmpeg:ffmpeg:*:*:*:*:*:*:*:* versions from (including) 3.3 up to (excluding) 3.3.3",
+            "*cpe:2.3:a:ffmpeg:ffmpeg:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:ffmpeg:ffmpeg:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/17/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2014-8389",
+        "cwe_id": "CWE-78",
+        "description": "cgi-bin/mft/wireless_mft.cgi in AirLive BU-2015 with firmware 1.03.18 16.06.2014, AirLive BU-3026 with firmware 1.43 21.08.2014, AirLive MD-3025 with firmware 1.81 21.08.2014, AirLive WL-2000CAM with firmware LM.1.6.18 14.10.2011, and AirLive POE-200CAM v2 with firmware LM.1.6.17.01 uses hard-coded credentials in the embedded Boa web server, which allows remote attackers to obtain user credentials via crafted HTTP requests.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/132585/AirLive-Remote-Command-Injection.html",
+            "http://seclists.org/fulldisclosure/2015/Jul/29",
+            "http://www.securityfocus.com/archive/1/535938/100/0/threaded",
+            "http://www.securityfocus.com/bid/75559",
+            "https://www.coresecurity.com/advisories/airlive-multiple-products-os-command-injection"
+        ],
+        "cpe": [
+            "cpe:2.3:h:airlive:bu-2015:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:airlive:bu-3026:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:airlive:md-3025:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:airlive:poe-200cam_v2:-:*:*:*:*:*:*:*",
+            "cpe:2.3:h:airlive:wl-2000cam:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "10/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2015-3637",
+        "cwe_id": "CWE-89",
+        "description": "SQL injection vulnerability in phpMyBackupPro when run in multi-user mode before 2.5 allows remote attackers to execute arbitrary SQL commands via the username and password parameters.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.1 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://www.openwall.com/lists/oss-security/2015/05/04/4",
+            "http://www.securitytracker.com/id/1032250"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:phpmybackuppro:phpmybackuppro:*:*:*:*:*:*:*:* versions up to (excluding) 2.5",
+            "*cpe:2.3:a:phpmybackuppro:phpmybackuppro:*:*:*:*:*:*:*:*",
+            "(excluding)"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/11/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2015-7889",
+        "cwe_id": "CWE-275",
+        "description": "The SecEmailComposer/EmailComposer application in the Samsung S6 Edge before the October 2015 MR uses weak permissions for the com.samsung.android.email.intent.action.QUICK_REPLY_BACKGROUND service action, which might allow remote attackers with knowledge of the local email address to obtain sensitive information via a crafted application that sends a crafted intent.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "5.5 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "http://packetstormsecurity.com/files/134105/Samsung-SecEmailComposer-QUICK_REPLY_BACKGROUND-Permission-Weakness.html",
+            "http://www.securityfocus.com/bid/77339",
+            "https://bugs.chromium.org/p/project-zero/issues/detail?id=490&redir=1",
+            "https://www.exploit-db.com/exploits/38558/"
+        ],
+        "cpe": [
+            "cpe:2.3:h:samsung:galaxy_s6_edge:-:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "01/17/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-10910",
+        "cwe_id": "CWE-674",
+        "description": "MQTT.js 2.x.x prior to 2.15.0 issue in handling PUBLISH tickets may lead to an attacker causing a denial-of-service condition.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/mqttjs/MQTT.js/commit/403ba53b838f2d319a0c0505a045fe00239e9923",
+            "https://github.com/mqttjs/MQTT.js/releases/tag/v2.15.0",
+            "https://jvn.jp/en/jp/JVN45494523/index.html"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:mqtt.js_project:mqtt.js:*:*:*:*:*:*:*:* versions from (including) 2.0.0 up to (excluding) 2.15.0",
+            "*cpe:2.3:a:mqtt.js_project:mqtt.js:*:*:*:*:*:*:*:* versions from (including) 2.0.0 up to (excluding) 2.15.0",
+            "*cpe:2.3:a:mqtt.js_project:mqtt.js:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:mqtt.js_project:mqtt.js:*:*:*:*:*:node.js:*:*",
+            "(including)",
+            "(excluding)",
+            "*cpe:2.3:a:mqtt.js_project:mqtt.js:*:*:*:*:*:*:*:*",
+            "(including)",
+            "(excluding)"
+        ],
+        "published_date": "12/27/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "JPCERT/CC",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17932",
+        "cwe_id": "CWE-119",
+        "description": "A buffer overflow vulnerability exists in MediaServer.exe in ALLPlayer ALLMediaServer 0.95 and earlier that could allow remote attackers to execute arbitrary code and/or cause denial of service on the victim machine/computer via a long string to TCP port 888.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "10.0 HIGH",
+        "hyperlinks": [
+            "https://www.exploit-db.com/exploits/43406/",
+            "https://www.exploit-db.com/exploits/43407/",
+            "https://www.exploit-db.com/exploits/43523/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:allmediaserver:allmediaserver:*:*:*:*:*:*:*:* versions up to (including) 0.95",
+            "*cpe:2.3:a:allmediaserver:allmediaserver:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "12/28/2017",
+        "modified_date": "05/10/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17936",
+        "cwe_id": "CWE-352",
+        "description": "Vanguard Marketplace Digital Products PHP has CSRF via /search.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/Vanguard.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:vanguard_project:marketplace_digital_products_php:*:*:*:*:*:*:*:* versions up to (including) 1.9",
+            "*cpe:2.3:a:vanguard_project:marketplace_digital_products_php:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "12/28/2017",
+        "modified_date": "01/10/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17937",
+        "cwe_id": "CWE-79",
+        "description": "Vanguard Marketplace Digital Products PHP has XSS via the phps_query parameter to /search.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/Vanguard.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:vanguard_project:marketplace_digital_products_php:*:*:*:*:*:*:*:* versions up to (including) 1.9",
+            "*cpe:2.3:a:vanguard_project:marketplace_digital_products_php:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "12/28/2017",
+        "modified_date": "01/10/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17938",
+        "cwe_id": "CWE-79",
+        "description": "PHP Scripts Mall Single Theater Booking has XSS via the admin/viewtheatre.php theatreid parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.8 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/Single-Theater-Booking.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:single_theater_booking_script_project:single_theater_booking_script:3.2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:single_theater_booking_script_project:single_theater_booking_script:3.2.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/28/2017",
+        "modified_date": "01/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17939",
+        "cwe_id": "CWE-352",
+        "description": "PHP Scripts Mall Single Theater Booking has CSRF via admin/sitesettings.php.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/Single-Theater-Booking.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:single_theater_booking_script_project:single_theater_booking_script:3.2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:single_theater_booking_script_project:single_theater_booking_script:3.2.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/28/2017",
+        "modified_date": "01/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17940",
+        "cwe_id": "CWE-79",
+        "description": "PHP Scripts Mall Single Theater Booking has XSS via the title parameter to admin/sitesettings.php.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "4.8 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/Single-Theater-Booking.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:single_theater_booking_script_project:single_theater_booking_script:3.2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:single_theater_booking_script_project:single_theater_booking_script:3.2.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/28/2017",
+        "modified_date": "01/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17941",
+        "cwe_id": "CWE-89",
+        "description": "PHP Scripts Mall Single Theater Booking has SQL Injection via the admin/movieview.php movieid parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "7.2 HIGH",
+        "base_score_v2": "6.5 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/Single-Theater-Booking.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:single_theater_booking_script_project:single_theater_booking_script:3.2.2:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:single_theater_booking_script_project:single_theater_booking_script:3.2.2:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/28/2017",
+        "modified_date": "01/09/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17942",
+        "cwe_id": "CWE-125",
+        "description": "In LibTIFF 4.0.9, there is a heap-based buffer over-read in the function PackBitsEncode in tif_packbits.c.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "8.8 HIGH",
+        "base_score_v2": "6.8 MEDIUM",
+        "hyperlinks": [
+            "http://bugzilla.maptools.org/show_bug.cgi?id=2767",
+            "http://www.securityfocus.com/bid/102312"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:libtiff:libtiff:4.0.9:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:libtiff:libtiff:4.0.9:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/28/2017",
+        "modified_date": "10/02/2019",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-15711",
+        "cwe_id": null,
+        "description": "** REJECT **  DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: none.  Reason: This candidate was withdrawn by its CNA.  Further investigation showed that it was not a security issue.  Notes: none.",
+        "cvss3": {
+            "cvss3": "",
+            "cvss3_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-15711"
+        },
+        "cvss2": {
+            "cvss2": "",
+            "cvss2_url": "No Common Vulnerability Scoring System Version for CVE=CVE-2017-15711"
+        },
+        "base_score_v3": null,
+        "base_score_v2": null,
+        "hyperlinks": [],
+        "cpe": [],
+        "published_date": "12/28/2017",
+        "modified_date": "12/28/2017",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-15886",
+        "cwe_id": "CWE-918",
+        "description": "Server-side request forgery (SSRF) vulnerability in Link Preview in Synology Chat before 2.0.0-1124 allows remote authenticated users to download arbitrary local files via a crafted URI.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:S/C:P/I:N/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:S/C:P/I:N/A:N)"
+        },
+        "base_score_v3": "6.5 MEDIUM",
+        "base_score_v2": "4.0 MEDIUM",
+        "hyperlinks": [
+            "https://www.synology.com/en-global/support/security/Synology_SA_17_78"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:synology:chat:*:*:*:*:*:*:*:* versions up to (excluding) 2.0.0-1124",
+            "*cpe:2.3:a:synology:chat:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "2.0.0-1124"
+        ],
+        "published_date": "12/28/2017",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Synology Inc.",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-15892",
+        "cwe_id": "CWE-79",
+        "description": "Multiple cross-site scripting (XSS) vulnerabilities in Slash Command Creator in Synology Chat before 2.0.0-1124 allow remote authenticated users to inject arbitrary web script or HTML via (1) COMMAND, (2) COMMANDS INSTRUCTION, or (3) DESCRIPTION parameter.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:S/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:S/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "5.4 MEDIUM",
+        "base_score_v2": "3.5 LOW",
+        "hyperlinks": [
+            "https://www.synology.com/en-global/support/security/Synology_SA_17_78"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:synology:chat:*:*:*:*:*:*:*:* versions up to (excluding) 2.0.0-1124",
+            "*cpe:2.3:a:synology:chat:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "2.0.0-1124"
+        ],
+        "published_date": "12/28/2017",
+        "modified_date": "10/09/2019",
+        "vulnerability_source": "Synology Inc.",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-5641",
+        "cwe_id": "CWE-502",
+        "description": "Previous versions of Apache Flex BlazeDS (4.7.2 and earlier) did not restrict which types were allowed for AMF(X) object deserialization by default. During the deserialization process code is executed that for several known types has undesired side-effects. Other, unknown types may also exhibit such behaviors. One vector in the Java standard library exists that allows an attacker to trigger possibly further exploitable Java deserialization of untrusted data. Other known vectors in third party libraries can be used to trigger remote code execution.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        "base_score_v3": "9.8 CRITICAL",
+        "base_score_v2": "7.5 HIGH",
+        "hyperlinks": [
+            "http://mail-archives.apache.org/mod_mbox/flex-dev/201703.mbox/%3C6B86C8D0-6E36-48F5-AC81-4AB3978F6746@c-ware.de%3E",
+            "http://www.securityfocus.com/bid/97383",
+            "http://www.securitytracker.com/id/1038273",
+            "https://issues.apache.org/jira/browse/FLEX-35290",
+            "https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbhf03823en_us",
+            "https://www.kb.cert.org/vuls/id/307983"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:hp:xp_command_view_advanced_edition:*:*:*:*:*:*:*:* versions up to (excluding) 8.5.3-00",
+            "*cpe:2.3:a:apache:flex_blazeds:*:*:*:*:*:*:*:* versions up to (including) 4.7.2",
+            "*cpe:2.3:a:hp:xp_command_view_advanced_edition:*:*:*:*:*:*:*:*",
+            "(excluding)",
+            "*cpe:2.3:a:apache:flex_blazeds:*:*:*:*:*:*:*:*",
+            "(including)"
+        ],
+        "published_date": "12/28/2017",
+        "modified_date": "05/13/2019",
+        "vulnerability_source": "Apache Software Foundation",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-15667",
+        "cwe_id": "CWE-20",
+        "description": "In Flexense SysGauge Server 3.6.18, the Control Protocol suffers from a denial of service. The attack vector is a crafted SERVER_GET_INFO packet sent to control port 9221.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        "base_score_v3": "7.5 HIGH",
+        "base_score_v2": "5.0 MEDIUM",
+        "hyperlinks": [
+            "https://www.exploit-db.com/exploits/43403/"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:flexense:sysgauge:3.6.18:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:flexense:sysgauge:3.6.18:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/28/2017",
+        "modified_date": "04/13/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    },
+    {
+        "cve_id": "CVE-2017-17948",
+        "cwe_id": "CWE-79",
+        "description": "Cells Blog 3.5 has XSS via the jfdname parameter in an act=showpic request.",
+        "cvss3": {
+            "cvss3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "cvss3_url": "https://www.first.org/cvss/calculator/3.0#CVSS:3.0/CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        "cvss2": {
+            "cvss2": "(AV:N/AC:M/Au:N/C:N/I:P/A:N)",
+            "cvss2_url": "https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:M/Au:N/C:N/I:P/A:N)"
+        },
+        "base_score_v3": "6.1 MEDIUM",
+        "base_score_v2": "4.3 MEDIUM",
+        "hyperlinks": [
+            "https://github.com/d4wner/Vulnerabilities-Report/blob/master/cell.md"
+        ],
+        "cpe": [
+            "*cpe:2.3:a:cells:blog:3.5:*:*:*:*:*:*:*",
+            "*cpe:2.3:a:cells:blog:3.5:*:*:*:*:*:*:*"
+        ],
+        "published_date": "12/28/2017",
+        "modified_date": "04/13/2018",
+        "vulnerability_source": "MITRE",
+        "year": "2017",
+        "month": "12"
+    }
+]
