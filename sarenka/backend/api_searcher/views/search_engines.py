@@ -7,7 +7,7 @@ from django.http import JsonResponse
 import logging
 
 # refaktorowanie censysa
-from api_searcher.censys_data import censys_host_search
+from api_searcher.search_engines.censys_engine.censys_host_search import CensysHostSearch, CensysHostSearchError
 from api_searcher.searcher import Searcher
 from api_searcher.views.common import Common
 
@@ -26,9 +26,9 @@ class CensysHostSearchView(views.APIView):
         :return: dane w postaci json zawierajace informacje o hoście zwrócone przez serwis https://censys.io/.
         """
         try:
-            response = censys_host_search.CensysHostSearch.response(ip_address)
+            response = CensysHostSearch.response(ip_address)
             return Response(response)
-        except censys_host_search.CensysHostSearchError as ex:
+        except CensysHostSearchError as ex:
             host_address = Common(request).host_address
             settings_url = host_address + reverse('settings')
             return Response({"message": f"Please create account on https://censys.io/ and add valid credentials "
