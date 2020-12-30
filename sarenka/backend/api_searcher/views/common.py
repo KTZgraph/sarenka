@@ -26,7 +26,7 @@ class Common:
         return address
 
     @staticmethod
-    def __is_ipv4(host:str):
+    def is_ipv4(host:str):
         """Metoda statyczna sprawdzająca czy podano adres ip czy domenę."""
         try:
             ipaddress.IPv4Network(host)

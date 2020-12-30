@@ -86,6 +86,7 @@ class DNSSearcherError(Exception):
     """
     Zgłasza wyjątki gdy nie można pobrć danych o rekordach DNS.
     """
+    # https://catonmat.net/asynchronous-dns-resolution warto zobacyzc
     def __init__(self, message=None, errors=None):
         super().__init__(message)
         self.errors= errors
@@ -102,7 +103,11 @@ class DNSSearcher:
         except socket.gaierror as ex:
             raise DNSSearcherError(f"Unable to find host {host}")
 
+        # zdecydowanie lepiej suzka dla nazw domenowych typu google.com niż 8.8.8.8
         self.host = DNSSearcher.change_to_domain_addres(host)
+        # DNS host:  python.org dla http://127.0.0.1:8000/api/dns/python.org po pingu http://45.55.99.72/
+        # 72.99.55.45.in-addr.arpa. dla http://127.0.0.1:8000/api/search/python.org
+
 
     @staticmethod
     def is_ipv4(host:str)->bool:
@@ -124,7 +129,15 @@ class DNSSearcher:
         :return: reverse-map nazwa domenowa adresu hosta
         """
         if DNSSearcher.is_ipv4(host):
-            return dns.reversename.from_address(host)
+            try:
+                # nie wszystkie serwisy idzie z ip na domenę zamineić
+                #np. python.org -> 45.55.99.72 tak ale w drugą stronę już nie
+                # zdecydowanie lepiej szuka po nazwach domenowych
+                host_name = socket.gethostbyaddr(host)[0] # => (hostname, alias-list, IP)
+                return dns.reversename.from_address(host_name)
+            except socket.herror:
+                 raise DNSSearcherError(f"Unable to resolve host name from ip address= {host}")
+            #
         return host
 
     @staticmethod
