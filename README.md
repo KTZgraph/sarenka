@@ -28,6 +28,7 @@ More cryptography-math tools and reconnaissance scripts are planned.
 - https://www.facebook.com/ncybersec/posts/1671427243027993
 - https://www.instagram.com/p/CI8tXMNg3yI/
 - https://securityonline.info/sarenka-obtaining-and-understanding-attack-surface/
+- https://haxf4rall.com/2020/12/30/sarenka-obtaining-and-understanding-attack-surface/
 
 # Realtion beetwen CWE and CVE - sarenka data feeder
 Generating this file takes a long time e.g: 702.5641514
