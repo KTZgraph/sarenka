@@ -4,7 +4,7 @@ które wymagają kont dla korzystania z ich api i/lub funkcjonalności.
 """
 import json
 from .censys_credentials import CensysCredentials
-
+from .shodan_credentials import ShodanCredentials
 
 class UserCredentialsError(Exception):
     """

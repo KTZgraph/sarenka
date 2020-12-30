@@ -26,3 +26,19 @@ class CensysCredentials:
         else:
             raise CensysCredentialsError(f'No data in "{info_tag}" for service http://censys.io/ service. Please check '
                                          f'sarenka\\backend\\api_searcher\\search_engines\\user_credentials.json file.')
+
+    @property
+    def base_url(self):
+        return self.__base_url
+
+    @property
+    def api_id(self):
+        return self.__api_id
+
+    @property
+    def secret(self):
+        return self.__secret
+
+    @property
+    def api_url(self):
+        return self.__api_url

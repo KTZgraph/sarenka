@@ -25,3 +25,15 @@ class ShodanCredentials:
         else:
             raise ShodanCredentialsError(f'No data in "{info_tag}" for service https://shodan.io/service. Please check '
                                          f'sarenka\\backend\\api_searcher\\search_engines\\user_credentials.json file.')
+
+    @property
+    def base_url(self):
+        return self.__base_url
+
+    @property
+    def api_key(self):
+        return self.__api_key
+
+    @property
+    def user(self):
+        return self.__user
