@@ -2,10 +2,15 @@ from rest_framework import views, status
 from rest_framework.response import Response
 import sys
 
-from api_searcher.windows.hardware import Hardware
-from api_searcher.windows.local import LocalInfo
-from api_searcher.windows.network import LocalNetworkData
-from api_searcher.windows.registry import WindowsRegistry
+import sys
+IS_WINDOWS = sys.platform.startswith('win')
+
+
+if IS_WINDOWS:
+    from api_searcher.windows.hardware import Hardware
+    from api_searcher.windows.local import LocalInfo
+    from api_searcher.windows.network import LocalNetworkData
+    from api_searcher.windows.registry import WindowsRegistry
 
 
 def is_windows_os():
