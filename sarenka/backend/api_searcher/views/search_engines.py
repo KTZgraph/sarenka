@@ -32,9 +32,12 @@ class CensysHostSearchView(views.APIView):
         except CensysHostSearchError as ex:
             host_address = Common(request).host_address
             settings_url = host_address + reverse('settings')
-            return Response({"message": f"Please create account on https://censys.io/ and add valid credentials "
+            return Response({"message": f"Please create account on https://censys.io/ service and add valid credentials "
                                         f"for SARENKA app on {settings_url}",
-                             "details": str(ex)}, status=status.HTTP_417_EXPECTATION_FAILED)
+                             "details": str(ex)}, status=status.HTTP_401_UNAUTHORIZED)
+        except Exception as ex:
+            return Response({"message": "Unable to get infromation from https://censys.io/ service.",
+                             "details": str(ex)}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class ShodanHostSearchView(views.APIView):
@@ -47,10 +50,19 @@ class ShodanHostSearchView(views.APIView):
         :param request: obiekt request dla widoku Django
         :return: dane w postaci json zawierajace informacje o hoście zwrócone przez serwis https://censys.io/.
         """
-        user_credentials = UserCredentials()
-        response = ShodanHostSearch(user_credentials).response(ip_address)
-        return Response({"shodan": response})
-
+        try:
+            user_credentials = UserCredentials()
+            response = ShodanHostSearch(user_credentials).response(ip_address)
+            return Response({"shodan": response})
+        except ShodanHostSearchError as ex:
+            host_address = Common(request).host_address
+            settings_url = host_address + reverse('settings')
+            return Response({"message": f"Please create account on https://www.shodan.io/ service and add valid credentials "
+                                        f"for SARENKA app on {settings_url}",
+                             "details": str(ex)}, status=status.HTTP_401_UNAUTHORIZED)
+        except Exception as ex:
+            return Response({"message": "Unable to get infromation from https://www.shodan.io/ service.",
+                             "details": str(ex)}, status=status.HTTP_400_BAD_REQUEST)
 
 class SearcherView(views.APIView):
     """
