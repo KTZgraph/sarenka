@@ -14,9 +14,10 @@ from .dns.dns_searcher import DNSSearcher, DNSSearcherError
 
 
 class Searcher:
-    def __init__(self, ip_address:str, local_host_address=""):
+    def __init__(self, ip_address:str, local_host_address="", user_credentials=None):
         self.host = ip_address
         self.host_address = local_host_address
+        self.user_credentials = user_credentials
 
     def get_whois_data(self):
         return whois.whois(self.host)
@@ -40,15 +41,20 @@ class Searcher:
 
     def get_censys_data(self):
         try:
-            credentials = Credential().censys
-            connector = CensysConnector(credentials)
-        except CredentialsNotFoundError:
+            if self.user_credentials:
+                censys_credentials = self.user_credentials.censys
+                connector = CensysConnector(censys_credentials)
+            else:
+                raise CredentialsNotFoundError("UserCredentials object does not exists.")
+
+        except CredentialsNotFoundError as ex:
             settings_url = self.host_address + reverse('settings')
             return {
                 "censys": {
                     "error": "Unable to get credentials for service http://censys.io/. "
                              "Please create account on https://censys.io/ and add valid settings "
-                             f"for SARENKA app on {settings_url}"
+                             f"for SARENKA app on {settings_url}",
+                    "details": str(ex)
                     }
                 }
         try:
@@ -56,13 +62,11 @@ class Searcher:
             response.update({"banners": self.get_banner(response["ports"])})
             return response
         except Exception as ex:
-            print(ex)
-            print(type(ex))
-
             # censys nie udostępnia do importu klasy exceptionu CensysNotFoundException o.Ó
             return {
                 "censys": {
-                    "error": f"Censys doesn't know anything about this {self.host} host"
+                    "error": f"Censys doesn't know anything about this {self.host} host",
+                    "details": str(ex)
                     }
                 }
 

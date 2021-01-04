@@ -29,8 +29,6 @@ class CensysConnector:
         """
         response = self.ipv4.view(ip)
         return IPWrapper(response)
-        # Common.save_dict_to_file("50_56_73_47.json", response)
-        # return response
 
     def search_by_fingerprint(self, certificate_hash):
         return self.certificate.view(certificate_hash)

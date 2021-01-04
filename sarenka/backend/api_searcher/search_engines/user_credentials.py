@@ -7,6 +7,7 @@ from .censys_engine.censys_credentials import CensysCredentials
 from .shodan_engine.shodan_credentials import ShodanCredentials
 import os
 
+
 class UserCredentialsError(Exception):
     """
     Zgłoszenie wyjąktu gdy są problemy z danymi użytkownika do serwisów trzecich.
@@ -21,15 +22,22 @@ class UserCredentials:
     __instance = None
     __config_file = "user_credentials.json"
 
-    def __init__(self):
+    @classmethod
+    def get_config_file_path(cls):
+        """Metoda klasy zwracajaca ścieżkę do pliku konfiguracyjnego użytkownika."""
+        current_dir = os.path.dirname(__file__)
+        return os.path.join(current_dir, cls.__config_file)
 
+    @property
+    def config_file_path(self):
+        """Atrybut klasy zwracajacy ścieżkę do pliku z danymi uwierzytelniajacymi użytkownika."""
+        return self.get_config_file_path()
+
+    def __init__(self):
         if not UserCredentials.__instance:
-            filename =  "C:\\Users\\dp\\Desktop\\sarenka\\sarenka\\backend\\api_searcher\\search_engines\\user_credentials.json"
-            print("PLIK nazwa: ", filename)
             try:
-                with open(filename) as f:
+                with open(self.config_file_path) as f:
                     data = json.load(f)
-                print("PLIK: ", data)
             except FileNotFoundError:
                 raise UserCredentialsError("User credential file does not exist. "
                                            "Please create file sarenka/backend/api_searcher/search_engines/user_credentials.json "
@@ -42,14 +50,18 @@ class UserCredentials:
 
     @classmethod
     def getInstance(cls):
+        """Metoda klasy wymaga dla klasy typu Singleton
+        - zwraca instancję klasy, gwarantuje istnienie tylko jednego obiektu z danymi wuierzytleniajacmi użytkownika."""
         if not cls.__instance:
             cls.__instance = UserCredentials()
         return cls.__instance
 
     @property
     def censys(self):
+        """Atrybut zwracajacy dane uwierzytelniajace użytkownika dla serwisu http://censys.io/"""
         return self.__censys
 
     @property
     def shodan(self):
+        """Atrybut zwracajacy dane uwierzytelniajace użytkownika dla serwisu https://shodan.io/"""
         return self.__shodan

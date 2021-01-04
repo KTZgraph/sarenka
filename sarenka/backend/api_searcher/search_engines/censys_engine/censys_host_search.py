@@ -21,7 +21,6 @@ class CensysHostSearch:
         """Zwraca dane w formie jsona dla widoku Django"""
         try:
             censys_credentials = self.user_credentials.censys
-            print("credentials: ", censys_credentials)
             connector = CensysConnector(censys_credentials)
             response = connector.search_by_ip(ip_address)
             return response.to_json # TODO zmienić na serializatory

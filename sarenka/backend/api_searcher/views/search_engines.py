@@ -49,7 +49,8 @@ class SearcherView(views.APIView):
         :param host: string mający adres ip lub domenę np.: python.org
         :return: dane w postaci json zawierajace ingormacje o hoście
         """
-        searcher = Searcher(host)
+        user_credentials = UserCredentials()
+        searcher = Searcher(host, user_credentials=user_credentials)
         return Response({"full_search": searcher.values})
 
 
