@@ -13,7 +13,9 @@ class CveCirclDetails:
     def __init__(self, data):
         if not data:
             raise CveCirclDetailsError("No data about https://cve.circl.lu service. Please check "
-                                         "sarenka\\backend\\api_searcher\\third_services\\details.json file.")
+                                         "sarenka\\backend\\api_searcher\\third_services\\service_details.json file.")
+
+        self.data = data
         self.__base_url = self.__set_data("base_url")
         self.__cve = self.__set_data("cve")
         self.__db_info = self.__set_data("db_info")
@@ -28,7 +30,8 @@ class CveCirclDetails:
             return self.data[info_tag]
         else:
             raise CveCirclDetailsError(f'No data in "{info_tag}" for https://cve.circl.lu service. Please check '
-                                         f'sarenka\\backend\\api_searcher\\third_services\\details.json file.')
+                                         f'sarenka\\backend\\api_searcher\\third_services\\service_details.json file or '
+                                       f'repository https://github.com/pawlaczyk/sarenka/.')
 
     @property
     def base_url(self):

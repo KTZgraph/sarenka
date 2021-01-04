@@ -1,11 +1,12 @@
 from typing import Dict, List
-from .product import Product 
+from .product_wrapper import ProductWrapper
+
 
 class CVEParser:
     """
-    Zna wartości pola jsona
-    pytanie czy za bardzo nie rozdrabniam się na klaski?
+    Klasa pomocnicza opakowująca i parsujaca dane o produkcie z danych uzyskanych z serwisu trzeciego https://cve.circl.lu/.
     """
+
     @staticmethod
     def cve(data):
         return data["id"]
@@ -35,40 +36,38 @@ class CVEParser:
         return data["cwe"]
 
     @staticmethod
-    def title(data): #TODO struktura
+    def title(data):  # TODO struktura
         return data.get("oval")[0]["title"]
 
     @staticmethod
-    def products(data)->List[Product]:
-        """Parses 
-        cpe:/<part>:<vendor>:<product>:<version>:<update>:<edition>:<language>
-        <part>
-        a for applications,
-        h for hardware platforms, or
-        o for operating systems.
-        TODO: jakies reguły na OS  żeby dobrze wyciągało poprawnie"""
+    def products(data) -> List[ProductWrapper]:
+        """Metoda parsująca dane o produkcie z identyfikatora Common Platform Enumeration (CPE)
+        Postać wektora powinna być jak poniższa.
+        cpe:/<part>:<vendor>:<product>:<version>:<update>:<edition>:<language><part>
+        Niestety infromacje sa dodawane prze ludzi ręcznie i występują liczne błędy składniowe uniemożliwiaające poprawne parsowanie.
+        Więcej informacji: https://csrc.nist.gov/projects/security-content-automation-protocol/specifications/cpe
+        """
         data = data["vulnerable_product"]
         # print(data)
-
 
         vendor_idx = 3
         name_idx = 4
         version_idx = 5
         system_idx = 6
 
-        products_list =[]
+        products_list = []
         for product_data in data:
             p = product_data.split(":")
 
             products_list.append(
-                Product(
+                ProductWrapper(
                     vendor=p[vendor_idx],
-                    name= p[name_idx],
+                    name=p[name_idx],
                     version=p[version_idx],
-                    system= p[system_idx]
+                    system=p[system_idx]
                 )
             )
-        
+
         return products_list
 
     @staticmethod

@@ -27,7 +27,7 @@ class CensysHostSearchView(views.APIView):
         """
         try:
             user_credentials = UserCredentials()
-            response = CensysHostSearch(user_credentials).response(ip_address)
+            response = CensysHostSearch(user_credentials).get_data(ip_address)
             return Response(response)
         except CensysHostSearchError as ex:
             host_address = Common(request).host_address
@@ -52,7 +52,7 @@ class ShodanHostSearchView(views.APIView):
         """
         try:
             user_credentials = UserCredentials()
-            response = ShodanHostSearch(user_credentials).response(ip_address)
+            response = ShodanHostSearch(user_credentials).get_data(ip_address)
             return Response({"shodan": response})
         except ShodanHostSearchError as ex:
             host_address = Common(request).host_address

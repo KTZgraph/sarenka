@@ -16,7 +16,7 @@ class ShodanHostSearch:
     def __init__(self, user_credentials):
         self.user_credentials = user_credentials
 
-    def response(self, ip_address):
+    def get_data(self, ip_address):
         """Zwraca dane w formie jsona dla widoku Django z seriwsu https://shodan.io/."""
         try:
             shodan_credentials = self.user_credentials.shodan

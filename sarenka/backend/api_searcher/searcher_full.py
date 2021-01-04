@@ -58,7 +58,7 @@ class SearcherFull:
                     }
                 }
         try:
-            response = CensysHostSearch(self.user_credentials).response(self.host) #
+            response = CensysHostSearch(self.user_credentials).get_data(self.host) #
             response.update({"banners": self.get_banner(response["ports"])})
             return response
         except Exception as ex:
@@ -87,7 +87,7 @@ class SearcherFull:
                     }
                 }
         try:
-            response = ShodanHostSearch(self.user_credentials).response(self.host) #
+            response = ShodanHostSearch(self.user_credentials).get_data(self.host) #
             return response
         except Exception as ex:
             # censys nie udostępnia do importu klasy exceptionu CensysNotFoundException o.Ó

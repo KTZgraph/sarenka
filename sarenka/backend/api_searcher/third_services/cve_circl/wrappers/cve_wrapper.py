@@ -2,6 +2,7 @@ from common.converter import Converter
 from .cve_parser import CVEParser
 
 class CveWrapper:
+    """Klasa pomocnicza - parsuje uzyskane z seriwsu https://cve.circl.lu/ dane."""
     def __init__(self, data):
         self.__cve = CVEParser.cve(data) #kod podatności
         self.__cvss_vector = CVEParser.cvss_vector(data)
@@ -40,7 +41,7 @@ class CveWrapper:
 
     @property
     def cvss(self):
-        return self.__cvss 
+        return self.__cvss
 
     @property
     def cwe(self):
@@ -64,7 +65,7 @@ class CveWrapper:
 
     @property
     def summary(self):
-        return self.__summary 
+        return self.__summary
 
     def __str__(self):
         return f'CVE: {self.cve}'

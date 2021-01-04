@@ -4,7 +4,8 @@ from .views.search_engines import (CensysHostSearchView,
                                    login_required_view,
                                    SearcherView)
 from .views.cwe_and_cve import CVESearchView, CWETop25, CWEData, CWEAllView, CVEDetailsAllView, CWEDetailsAllView, \
-    AddCWEandCVE, ListVendors
+    AddCWEandCVE
+from .views.vendor_list import VendorListView
 from .views.dns import DNSSearcherView
 from .views.settings import SettingsView
 from .views.windows import NetworkLocalView, LocalView, HardwareView, RegistryView
@@ -22,7 +23,7 @@ urlpatterns = [
     path('cwe/add', AddCWEandCVE.as_view(), name="cwe_add"),
     path('cwe/<str:id_cwe>', CWEData.as_view(), name="get_by_cwe"),
 
-    path('list_vendors', ListVendors.as_view()),
+    path('list_vendors', VendorListView.as_view()),
 
     path('censys/<str:ip_address>', CensysHostSearchView.as_view(), name="get_censys_host_data"),
     path('shodan/<str:ip_address>', ShodanHostSearchView.as_view(), name="get_shodan_host_data"),

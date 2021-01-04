@@ -1,8 +1,5 @@
-from connectors.credential import Credential, CredentialsNotFoundError
-from connectors.cve_search.connector import Connector as CVEConnector
 from rest_framework import views, status
 from rest_framework.response import Response
-from rest_framework.reverse import reverse
 from rest_framework.views import APIView
 
 from api_searcher.cve_and_cwe.cve_details_all import CVEDetailsAll
@@ -165,28 +162,3 @@ class AddCWEandCVE(views.APIView):
                          })
 
 
-class ListVendors(views.APIView):
-    """Widok Django zwracający dostawców oprogramowania z wykrytymi podatnościami CVE"""
-
-    def get(self, request):
-        """
-        Metoda zwracajace dostawców dla których wykryto podatności Common Vulnerabilities and Exposures (CVE)
-        na podstawie zapytania GET HTTP użytkownika. Wymaga uzupełnionych danych la serwisów trzecich.
-        :tags: CVE
-        :param request: obiekt dla widoku Django z informacjami od użytkownika
-        :return: dane w postaci json zawierajace ingormacje o dostawcach dla których istnieją podntości CVE
-        """
-        try:
-            credentials = Credential().cve_search
-            connector = CVEConnector(credentials)
-            vendors = connector.get_vendors_list()
-            return Response(vendors)
-        except CredentialsNotFoundError:
-            host_address = Common(request).host_address
-            settings_url = host_address + reverse('settings')
-            return Response({"error": "Unable to get vendor list.",
-                             "details":  f"Please check settings on {settings_url}"},
-                                status=status.HTTP_400_BAD_REQUEST)
-        except BaseException as ex:
-            return Response({"error": "Unable to get vendor list.",
-                             "details": str(ex)}, status=status.HTTP_400_BAD_REQUEST)

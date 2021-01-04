@@ -1,4 +1,4 @@
-class Product:
+class ProductWrapper:
     def __init__(self, vendor, name, version, system):
         self.__vendor = vendor
         self.__name = name
@@ -12,11 +12,11 @@ class Product:
     @property
     def name(self):
         return self.__name
-    
+
     @property
     def version(self):
         return self.__version
-    
+
     @property
     def system(self):
         return self.__system
