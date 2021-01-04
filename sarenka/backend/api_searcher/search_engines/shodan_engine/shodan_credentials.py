@@ -6,12 +6,16 @@ class ShodanCredentialsError(Exception):
 
 
 class ShodanCredentials:
-    """Klasa przechowująca wymagane dane dla seriwsu trzeciego https://shodan.io/."""
+    """Klasa przechowująca wymagane dane dla seriwsu trzeciego https://shodan.io/.
+    Daje także możliwość aktualizacji danych uwierzytelniających użytkownika np. w przypadku przekroczenia ilości
+    wyszukiwań na darmowym koncie w serwisie."""
+
     def __init__(self, data):
         if not data:
             raise ShodanCredentialsError("No data to https://shodan.io/ service. Please check "
                                          "sarenka\\backend\\api_searcher\\search_engines\\user_credentials.json file.")
 
+        self.data= data
         self.__base_url = self.__set_data("base_url")
         self.__api_key = self.__set_data("api_key")
         self.__user = self.__set_data("user")
@@ -31,6 +35,10 @@ class ShodanCredentials:
         return self.__base_url
 
     @property
+    def api_key(self):
+        return self.__api_key
+
+    @api_key.setter
     def api_key(self):
         return self.__api_key
 

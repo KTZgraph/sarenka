@@ -6,12 +6,16 @@ class CensysCredentialsError(Exception):
 
 
 class CensysCredentials:
-    """Klasa przechowująca wymagane dane dla seriwsu trzeciego http://censys.io/."""
+    """Klasa przechowująca wymagane dane dla seriwsu trzeciego http://censys.io/.
+    Daje także możliwość aktualizacji danych uwierzytelniających użytkownika np. w przypadku przekroczenia ilości
+    wyszukiwań na darmowym koncie w serwisie."""
+    __instance = None
+
     def __init__(self, data):
         if not data:
             raise CensysCredentialsError("No data to http://censys.io/ service. Please check "
                                          "sarenka\\backend\\api_searcher\\search_engines\\user_credentials.json file.")
-
+        self.data = data
         self.__base_url = self.__set_data("base_url")
         self.__api_id = self.__set_data("API_ID")
         self.__secret = self.__set_data("Secret")
@@ -27,6 +31,13 @@ class CensysCredentials:
             raise CensysCredentialsError(f'No data in "{info_tag}" for http://censys.io/ service. Please check '
                                          f'sarenka\\backend\\api_searcher\\search_engines\\user_credentials.json file.')
 
+    @classmethod
+    def getInstance(cls):
+        # musze przekazac dane jak obiekt jest tworzony
+        if not cls.__instance:
+            raise CensysCredentialsError("Object CensysCredentials with credentails for http://censys.io/ does no exist")
+        return cls.__instance
+
     @property
     def base_url(self):
         return self.__base_url
@@ -35,9 +46,19 @@ class CensysCredentials:
     def api_id(self):
         return self.__api_id
 
+    @api_id.setter
+    def api_id(self, value):
+        """Property niezbędne do aktualizacji danych "API_ID" dla konta użytkownika do serwisu http://censys.io/ """
+        self.api_id = value
+
     @property
     def secret(self):
         return self.__secret
+
+    @secret.setter
+    def secret(self, value):
+        """Property niezbędne do aktualizacji danych "Secret" dla konta użytkownika do serwisu http://censys.io/ """
+        self.__secret = value
 
     @property
     def api_url(self):

@@ -4,7 +4,7 @@ dla serwisów trzeich, które nie wymagają uwierzytelniania od użytkownika.
 """
 import json
 
-from .api_searcher.third_services.cve_circl.cve_circl_details import CveCirclDetails
+from .cve_circl.cve_circl_details import CveCirclDetails
 
 class DetailsError(Exception):
     """

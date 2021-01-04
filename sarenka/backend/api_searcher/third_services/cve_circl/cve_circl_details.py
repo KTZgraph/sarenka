@@ -20,7 +20,6 @@ class CveCirclDetails:
         self.__last = self.__set_data("last")
         self.__vendor = self.__set_data("vendor")
 
-
     def __set_data(self, info_tag:str):
         """Metoda pomocnicza zwracajaca wybrane ifnormacje do seriwsu http://censys.io/ z pliku user_credentials.json
         :param: info_tag

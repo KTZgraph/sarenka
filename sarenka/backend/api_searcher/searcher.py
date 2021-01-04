@@ -13,7 +13,6 @@ from connectors.censys.connector import Connector as CensysConnector
 from .dns.dns_searcher import DNSSearcher, DNSSearcherError
 
 
-
 class Searcher:
     def __init__(self, ip_address:str, local_host_address=""):
         self.host = ip_address

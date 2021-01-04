@@ -3,8 +3,9 @@ Moduł do przechowywania danych użytkownika takich jak klucze do serwisów,
 które wymagają kont dla korzystania z ich api i/lub funkcjonalności.
 """
 import json
-from .api_searcher.search_engines.censys_engine.censys_credentials import CensysCredentials
-from .api_searcher.search_engines.shodan_engine.shodan_credentials import ShodanCredentials
+from .censys_engine.censys_credentials import CensysCredentials
+from .shodan_engine.shodan_credentials import ShodanCredentials
+import os
 
 class UserCredentialsError(Exception):
     """
@@ -23,9 +24,12 @@ class UserCredentials:
     def __init__(self):
 
         if not UserCredentials.__instance:
+            filename =  "C:\\Users\\dp\\Desktop\\sarenka\\sarenka\\backend\\api_searcher\\search_engines\\user_credentials.json"
+            print("PLIK nazwa: ", filename)
             try:
-                with open(self.__config_file) as f:
+                with open(filename) as f:
                     data = json.load(f)
+                print("PLIK: ", data)
             except FileNotFoundError:
                 raise UserCredentialsError("User credential file does not exist. "
                                            "Please create file sarenka/backend/api_searcher/search_engines/user_credentials.json "

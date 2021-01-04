@@ -1,5 +1,5 @@
-from connectors.credential import Credential, CredentialsNotFoundError
-from connectors.censys.connector import Connector as CensysConnector
+from .censys_credentials import CensysCredentials,CensysCredentialsError
+from .censys_connector import CensysConnector
 
 
 class CensysHostSearchError(Exception):
@@ -13,14 +13,18 @@ class CensysHostSearchError(Exception):
 
 class CensysHostSearch:
     """Klasa zwraca dane z wyszukiwarki censysa dla widoków Django"""
-    @staticmethod
-    def response(ip_address):
+    def __init__(self, user_credentials):
+        self.user_credentials = user_credentials
+
+
+    def response(self, ip_address):
         """Zwraca dane w formie jsona dla widoku Django"""
         try:
-            credentials = Credential().censys
-            connector = CensysConnector(credentials)
+            censys_credentials = self.user_credentials.censys
+            print("credentials: ", censys_credentials)
+            connector = CensysConnector(censys_credentials)
             response = connector.search_by_ip(ip_address)
             return response.to_json # TODO zmienić na serializatory
-        except CredentialsNotFoundError:
-            raise CensysHostSearchError("Invalid settings for service https://censys.io/")
+        except CensysCredentialsError as ex:
+            raise CensysHostSearchError("Invalid settings for service https://censys.io/. " + str(ex))
 

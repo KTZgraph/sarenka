@@ -10,7 +10,7 @@ import logging
 from api_searcher.search_engines.censys_engine.censys_host_search import CensysHostSearch, CensysHostSearchError
 from api_searcher.searcher import Searcher
 from api_searcher.views.common import Common
-
+from api_searcher.search_engines.user_credentials import UserCredentials
 logger = logging.getLogger('django')
 
 
@@ -26,7 +26,8 @@ class CensysHostSearchView(views.APIView):
         :return: dane w postaci json zawierajace informacje o hoście zwrócone przez serwis https://censys.io/.
         """
         try:
-            response = CensysHostSearch.response(ip_address)
+            user_credentials = UserCredentials()
+            response = CensysHostSearch(user_credentials).response(ip_address)
             return Response(response)
         except CensysHostSearchError as ex:
             host_address = Common(request).host_address

@@ -63,7 +63,7 @@ class Connector(ConnectorInterface):
 
 
 if __name__ == "__main__":
-    # \sarenka\backend>python connectors\cve_search\connector.py  
+    # \sarenka\backend>python connectors\cve_search\censys_connector.py
     credentials = Credential().cve_search
     connector = Connector(credentials)
     response = connector.search_by_cve_code("CVE-2010-3333")

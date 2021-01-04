@@ -1,4 +1,3 @@
-
 from django.urls import path
 from .views.search_engines import (CensysHostSearchView,
                                    login_required_view,
