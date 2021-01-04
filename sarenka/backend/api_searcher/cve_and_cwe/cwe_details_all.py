@@ -9,7 +9,7 @@ class CWEDetailsAll:
     nist_url = "https://nvd.nist.gov/vuln/detail/"
     mitre_cwe_url = "https://cwe.mitre.org/data/definitions/"
     file_prefix = "cwe_details"
-    feed_file_path = "feedes\cwe_details\\"
+    feed_file_path = "feeds\cwe_details\\"
 
     def __init__(self, page:str):
         self.__page = int(page)
@@ -23,7 +23,7 @@ class CWEDetailsAll:
 
     def get_filepath(self):
         two_up = os.path.abspath(os.path.join(settings.BASE_DIR, "../.."))
-        feed_path = os.path.join(two_up, "feedes\cwe_details\\" )
+        feed_path = os.path.join(two_up, "feeds\cwe_details\\" )
 
         start_idx = str(self.__page * 100)
         end_idx = str((self.__page + 1) * 100)

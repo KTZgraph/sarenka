@@ -98,7 +98,7 @@ class CWEAllView(views.APIView):
             return Response(response)
         except Exception as ex:
             Response({"error": "Unable to get all Common Weakness Enumeration data. "
-                               "Please check is file sarenka/feedes/cwe_ids/cwe_all.json exists",
+                               "Please check is file sarenka/feeds/cwe_ids/cwe_all.json exists",
                       "details": str(ex)}, status=status.HTTP_404_NOT_FOUND)
 
 
