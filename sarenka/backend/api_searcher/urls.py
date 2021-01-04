@@ -1,5 +1,6 @@
 from django.urls import path
 from .views.search_engines import (CensysHostSearchView,
+                                   ShodanHostSearchView,
                                    login_required_view,
                                    SearcherView)
 from .views.cwe_and_cve import CVESearchView, CWETop25, CWEData, CWEAllView, CVEDetailsAllView, CWEDetailsAllView, \
@@ -24,6 +25,7 @@ urlpatterns = [
     path('list_vendors', ListVendors.as_view()),
 
     path('censys/<str:ip_address>', CensysHostSearchView.as_view(), name="get_censys_host_data"),
+    path('shodan/<str:ip_address>', ShodanHostSearchView.as_view(), name="get_shodan_host_data"),
     path('search/<str:host>', SearcherView.as_view(), name="search"),
 
     path('login_required_view/<str:cve_code>', login_required_view, name="login_required_view"),

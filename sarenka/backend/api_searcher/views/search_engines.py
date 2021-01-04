@@ -6,9 +6,9 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 import logging
 
-# refaktorowanie censysa
 from api_searcher.search_engines.censys_engine.censys_host_search import CensysHostSearch, CensysHostSearchError
-from api_searcher.searcher import Searcher
+from api_searcher.search_engines.shodan_engine.shodan_host_search import ShodanHostSearch, ShodanHostSearchError
+from api_searcher.searcher_full import SearcherFull
 from api_searcher.views.common import Common
 from api_searcher.search_engines.user_credentials import UserCredentials
 logger = logging.getLogger('django')
@@ -16,7 +16,7 @@ logger = logging.getLogger('django')
 
 class CensysHostSearchView(views.APIView):
     """
-    Widok Django zwracający dane z wyszukiwartki http://censys.io/.
+    Widok Django zwracający dane z serwisu http://censys.io/.
     Zwraca informacje o potenjcalne podatności hosta na ataki: "heartbleed", "logjam_attack", "freak_attack", "poodle_attack".
     """
     def get(self, request, ip_address):
@@ -37,6 +37,21 @@ class CensysHostSearchView(views.APIView):
                              "details": str(ex)}, status=status.HTTP_417_EXPECTATION_FAILED)
 
 
+class ShodanHostSearchView(views.APIView):
+    """
+    Widok Django zwracający dane z serwisu https://shodan.io/.
+    """
+    def get(self, request, ip_address):
+        """Zwraca informacje uzyskane za pośrednictwem serwisu https://censys.io/.
+        Na podstawie adresu ip hosta podane przez uzytkownika w żadaniu GET HTTP.
+        :param request: obiekt request dla widoku Django
+        :return: dane w postaci json zawierajace informacje o hoście zwrócone przez serwis https://censys.io/.
+        """
+        user_credentials = UserCredentials()
+        response = ShodanHostSearch(user_credentials).response(ip_address)
+        return Response({"shodan": response})
+
+
 class SearcherView(views.APIView):
     """
     Widok Django zwracajacy wszystkie dane dla hostu podanego przez użytkownika.
@@ -50,7 +65,7 @@ class SearcherView(views.APIView):
         :return: dane w postaci json zawierajace ingormacje o hoście
         """
         user_credentials = UserCredentials()
-        searcher = Searcher(host, user_credentials=user_credentials)
+        searcher = SearcherFull(host, user_credentials=user_credentials)
         return Response({"full_search": searcher.values})
 
 

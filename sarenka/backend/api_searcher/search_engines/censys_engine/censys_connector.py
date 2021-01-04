@@ -3,6 +3,11 @@ from censys.ipv4 import CensysIPv4
 from censys.websites import CensysWebsites
 from .wrappers.ip_wrapper import IPWrapper
 
+class CensysConnectorError(Exception):
+    """Zgłasza wyjątek gdy nie można pobrać danych z serwisu https://censys.io/."""
+    def __init__(self, message=None, errors=None):
+        super().__init__(message)
+        self.errors = errors
 
 class CensysConnector:
     """Klasa konektora odopowiadająca za pobieranie danych z serwisu https://censys.io/."""
@@ -25,7 +30,8 @@ class CensysConnector:
 
     def search_by_ip(self, ip):
         """
-        https://censys.io/ipv4/150.254.78.51
+        Metoda szukająca infromacji o hoście na podtawie jego adresu ip z serwisu https://censys.io/..
+        Np.:https://censys.io/ipv4/150.254.78.51
         """
         response = self.ipv4.view(ip)
         return IPWrapper(response)

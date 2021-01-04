@@ -1,10 +1,10 @@
-from .censys_credentials import CensysCredentials,CensysCredentialsError
+from .censys_credentials import CensysCredentialsError
 from .censys_connector import CensysConnector
 
 
 class CensysHostSearchError(Exception):
     """
-    Zgłoszenie wyjąktu gdy nie można pobrac danych z serwisu censys.io.
+    Zgłoszenie wyjąktu gdy nie można pobrac danych z serwisu https://censys.io/.
     """
     def __init__(self, message=None, errors=None):
         super().__init__(message)
@@ -12,7 +12,7 @@ class CensysHostSearchError(Exception):
 
 
 class CensysHostSearch:
-    """Klasa zwraca dane z wyszukiwarki censysa dla widoków Django"""
+    """Klasa zwraca dane z seriwsu https://censys.io/ dla widoków Django"""
     def __init__(self, user_credentials):
         self.user_credentials = user_credentials
 

@@ -9,21 +9,22 @@ import socket
 
 from connectors.credential import CredentialsNotFoundError
 from api_searcher.search_engines.censys_engine.censys_host_search import CensysHostSearch
-from connectors.censys.connector import Connector as CensysConnector
 from .dns.dns_searcher import DNSSearcher, DNSSearcherError
 
 
-class Searcher:
+class SearcherFull:
+    """Klasa zwracajaca wszystkie znalezione dane - zwraca infromacje ze wszystkich serwisów trzeich, informacje o DNS etc."""
     def __init__(self, ip_address:str, local_host_address="", user_credentials=None):
         self.host = ip_address
         self.host_address = local_host_address
         self.user_credentials = user_credentials
 
     def get_whois_data(self):
+        """Metoda zwraca dane z bazy whois."""
         return whois.whois(self.host)
 
     def get_banner(self, port_list)->List[Dict]:
-        """Pobieranie banera"""
+        """Metoda zwraca banery, które pórbuje uzyskac dla otwartych portów zwróconych przez seriwsy trzecie"""
         result = []
         for port in port_list:
             s = socket.socket()
@@ -40,6 +41,7 @@ class Searcher:
         return result
 
     def get_censys_data(self):
+        """Metoda zwraca dane wyszukane w serwisie http://censys.io/"""
         try:
             if not self.user_credentials:
                 raise CredentialsNotFoundError("UserCredentials object does not exist.")
@@ -68,6 +70,7 @@ class Searcher:
                 }
 
     def get_dns_data(self):
+        """Metoda zwraca informacje o rekordach DNS hosta."""
         try:
             data = DNSSearcher(self.host).get_data()
             return data
