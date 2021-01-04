@@ -7,8 +7,8 @@ from typing import List, Dict
 import whois
 import socket
 
-from connectors.credential import Credential, CredentialsNotFoundError
-from connectors.cve_search.connector import Connector as CVEConnector
+from connectors.credential import CredentialsNotFoundError
+from api_searcher.search_engines.censys_engine.censys_host_search import CensysHostSearch
 from connectors.censys.connector import Connector as CensysConnector
 from .dns.dns_searcher import DNSSearcher, DNSSearcherError
 
@@ -41,11 +41,8 @@ class Searcher:
 
     def get_censys_data(self):
         try:
-            if self.user_credentials:
-                censys_credentials = self.user_credentials.censys
-                connector = CensysConnector(censys_credentials)
-            else:
-                raise CredentialsNotFoundError("UserCredentials object does not exists.")
+            if not self.user_credentials:
+                raise CredentialsNotFoundError("UserCredentials object does not exist.")
 
         except CredentialsNotFoundError as ex:
             settings_url = self.host_address + reverse('settings')
@@ -58,7 +55,7 @@ class Searcher:
                     }
                 }
         try:
-            response = connector.search_by_ip(self.host).to_json #
+            response = CensysHostSearch(self.user_credentials).response(self.host) #
             response.update({"banners": self.get_banner(response["ports"])})
             return response
         except Exception as ex:
