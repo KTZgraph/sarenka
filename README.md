@@ -2,7 +2,7 @@
     <img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/logo.png">
 </p>
 
-[![Release release](https://img.shields.io/badge/release-planned-red.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) [![CircleCi release](https://img.shields.io/badge/coverage-None-green.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) [![CircleCi release](https://img.shields.io/badge/CircleCi-passed-lime.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) ![Platform release](https://img.shields.io/badge/platform-Windows-blue.svg) [![Platform release](https://img.shields.io/badge/platform-Linux-purple.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) ![CWE feed](https://img.shields.io/badge/CWE-12/20/2020-darkgreen.svg) [![license](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/pawlaczyk/sarenka/blob/master/LICENSE) 
+[![Release release](https://img.shields.io/badge/release-planned-red.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) [![CircleCi release](https://img.shields.io/badge/coverage-None-green.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) [![CircleCi release](https://img.shields.io/badge/CircleCi-passed-lime.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) ![Platform release](https://img.shields.io/badge/platform-Windows-blue.svg) [![Platform release](https://img.shields.io/badge/platform-Linux-purple.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) ![CWE feed](https://img.shields.io/badge/CWE-12/20/2020-darkgreen.svg) ![CVE feed](https://img.shields.io/badge/CVE-12/19/2020-green.svg) [![license](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/pawlaczyk/sarenka/blob/master/LICENSE) 
 
 
 
@@ -28,6 +28,8 @@ More cryptography-math tools and reconnaissance scripts are planned.
 - https://www.facebook.com/ncybersec/posts/1671427243027993
 - https://www.instagram.com/p/CI8tXMNg3yI/
 - https://securityonline.info/sarenka-obtaining-and-understanding-attack-surface/
+- https://haxf4rall.com/2020/12/30/sarenka-obtaining-and-understanding-attack-surface/
+- http://hackdig.com/12/hack-245463.htm
 
 # Realtion beetwen CWE and CVE - sarenka data feeder
 Generating this file takes a long time e.g: 702.5641514
