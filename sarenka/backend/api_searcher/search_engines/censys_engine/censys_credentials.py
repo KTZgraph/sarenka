@@ -37,18 +37,16 @@ class CensysCredentials:
     def api_id(self):
         return self.__api_id
 
-    @api_id.setter
-    def api_id(self, value):
-        """Property niezbędne do aktualizacji danych "API_ID" dla konta użytkownika do serwisu http://censys.io/ """
-        self.api_id = value
+    def update_api_id(self, value):
+        """Metoda do aktualizacji danych "API_ID" dla konta użytkownika do serwisu http://censys.io/ """
+        self.__api_id = value
 
     @property
     def secret(self):
         return self.__secret
 
-    @secret.setter
-    def secret(self, value):
-        """Property niezbędne do aktualizacji danych "Secret" dla konta użytkownika do serwisu http://censys.io/ """
+    def update_secret(self, value):
+        """Metoda niezbędne do aktualizacji danych "Secret" dla konta użytkownika do serwisu http://censys.io/ """
         self.__secret = value
 
     @property

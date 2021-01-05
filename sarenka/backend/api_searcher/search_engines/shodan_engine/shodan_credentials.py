@@ -21,7 +21,7 @@ class ShodanCredentials:
         self.__user = self.__set_data("user")
 
     def __set_data(self, info_tag:str):
-        """Metoda pomocnicza zwracajaca wybrane ifnormacje do seriwsu http://censys.io/ z pliku user_credentials.json
+        """Metoda pomocnicza zwracajaca wybrane ifnormacje do seriwsu https://shodan.io/ z pliku user_credentials.json
         :param: info_tag
         """
         if self.data.get(info_tag, None):
@@ -38,10 +38,14 @@ class ShodanCredentials:
     def api_key(self):
         return self.__api_key
 
-    @api_key.setter
-    def api_key(self):
-        return self.__api_key
+    def update_api_key(self, value):
+        """Metoda do aktualizacji danych "user" dla konta użytkownika do serwisu https://shodan.io/ """
+        self.__api_key = value
 
     @property
     def user(self):
         return self.__user
+
+    def update_user(self, value):
+        """Metoda do aktualizacji danych "api_key" dla konta użytkownika do serwisu https://shodan.io/"""
+        self.__user = value

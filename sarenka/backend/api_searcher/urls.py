@@ -7,12 +7,12 @@ from .views.cwe_and_cve import CVESearchView, CWETop25, CWEData, CWEAllView, CVE
     AddCWEandCVE
 from .views.vendor_list import VendorListView
 from .views.dns import DNSSearcherView
-from .views.settings import SettingsView
+from .views.user_credentials import UserCredentialsView
 from .views.windows import NetworkLocalView, LocalView, HardwareView, RegistryView
 
 urlpatterns = [
     # dodanie kluczy użytkownika do serwisów trzeich
-    path('settings', SettingsView.as_view(), name="settings"),
+    path('user_credentials', UserCredentialsView.as_view(), name="user_credentials"),
 
     path('cve/all/<str:page>', CVEDetailsAllView.as_view(), name="cve_all"),
     path('cve/<str:cve_id>', CVESearchView.as_view(), name="get_by_cve"),
