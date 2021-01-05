@@ -9,13 +9,13 @@ schema_view = get_schema_view(
     openapi.Info(
         title="SARENKA API",
         default_version='v1',
-        description="Information gathering tool.",
+        description="Open Source Intelligence (OSINT) tool .",
         terms_of_service="test terms",
         contact=openapi.Contact(email="contact@snippets.local"),
-        license=openapi.License(name="Test License"),
-        x_logo={
+        license=openapi.License(name="MIT"),
+        x_logo={ # to nie dizała na zmiane kolorkow i logo :<
             "url": "https://github.com/pawlaczyk/sarenka/blob/master/logo.png",
-            "backgroundColor": "#FFFFFF"
+            "backgroundColor": "#CC0"
         }
     ),
     public=True,
@@ -25,6 +25,7 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include("api_searcher.urls")),
+    path('vulns/', include("api_vulnerabilities.urls")),
     path('tools/', include("api_tools.urls")),
     path('reports/', include("reports.urls")),
     path('graphql/', GraphQLView.as_view(graphiql=True)),

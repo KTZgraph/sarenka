@@ -69,6 +69,6 @@ class CVEDetailsAll:
             return all_cves
 
         # jak nie ma danych
-        return {"page": self.__page, "message": "No data available"}
+        return {}
 
 

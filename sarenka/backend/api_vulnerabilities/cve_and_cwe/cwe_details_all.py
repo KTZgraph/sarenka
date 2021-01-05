@@ -64,4 +64,4 @@ class CWEDetailsAll:
             return all_cwes
 
         # jak nie ma danych
-        return {"page": self.__page, "message": "No data available"}
+        return {}
