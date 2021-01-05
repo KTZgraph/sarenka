@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'api_searcher',
     'api_tools',
+    'api_vulnerabilities',
 ]
 
 GRAPHENE = {
