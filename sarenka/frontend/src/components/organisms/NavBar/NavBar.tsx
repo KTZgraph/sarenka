@@ -80,16 +80,9 @@ const NavBar = () => {
         <NavButton
           icon={exploitsIcon}
           iconactive={exploitsIconActive}
-          onClick={() => handleClick(routesWithoutTab.exploits, 'Exploits')}
-        >
-          Exploits
-        </NavButton>
-        <NavButton
-          icon={exploitsIcon}
-          iconactive={exploitsIconActive}
           onClick={() => handleClick(routesWithoutTab.cveSearch, 'Search CVE')}
         >
-          Search CVE
+          Search CVE / CWE
         </NavButton>
         <NavButton
           icon={regeditIcon}
