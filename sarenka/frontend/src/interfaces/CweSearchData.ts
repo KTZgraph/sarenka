@@ -1,4 +1,4 @@
-interface HardwareInfoData {
+interface CweSearchData {
   ID_CWE: string;
   title: string;
   description: string;
@@ -17,4 +17,4 @@ interface HardwareInfoData {
   }[];
 }
 
-export default HardwareInfoData;
+export default CweSearchData;
