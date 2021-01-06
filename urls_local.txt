@@ -20,26 +20,26 @@ http://127.0.0.1:8000/api/local/registry
 http://127.0.0.1:8000/api/cwe/all
 
 # lista wszystkich CWE (ze stronnicowaniem)
-http://127.0.0.1:8000/api/cwe/all/1
-http://127.0.0.1:8000/api/cwe/all/-1 # zwróci bład
+http://127.0.0.1:8000/vulns/cwe/all
+http://127.0.0.1:8000/vulns/cwe/all/-1 # obsłużonmyb blad
 
 # pojedynczy cwe
-http://127.0.0.1:8000/api/cwe/1 # nie istnieje
-http://127.0.0.1:8000/api/cwe/79
-http://127.0.0.1:8000/api/cwe/CWE-79
-http://127.0.0.1:8000/api/cwe/all/fdsf # zwróci dane bo argument musi być intem
+http://127.0.0.1:8000/vulns/cwe/1 # nie istnieje
+http://127.0.0.1:8000/vulns/cwe/79
+http://127.0.0.1:8000/vulns/cwe/CWE-79
+http://127.0.0.1:8000/vulns/cwe/all/fdsf # obłsużone zwróci dane bo argument musi być intem
 
 
 # CVE pojedyncze
-http://127.0.0.1:8000/api/cve/CVE-2017-1719 # zwróci bład - taki CVe nie istnieje
-http://127.0.0.1:8000/api/cve/CVE-2019-4570 # zwróci dane
+http://127.0.0.1:8000/vulns/cve/CVE-2017-1719# obsłużone zwróci bład - taki CVe nie istnieje
+http://127.0.0.1:8000/vulns/cve/CVE-2019-4570# zwróci dane
 
 
 
 # CVE wszystkie z feedów
-http://127.0.0.1:8000/api/cve/all/1
-http://127.0.0.1:8000/api/cve/all/1548 # bląd - tu juz nie ma danych
-http://127.0.0.1:8000/api/cve/all/fsdf # zwróci błąd bp złe dane dał user
+http://127.0.0.1:8000/vulns/cve/all/1
+http://127.0.0.1:8000/vulns/cve/all/1548 # bląd - tu juz nie ma danych
+http://127.0.0.1:8000/vulns/cve/all/fsdf# zwróci błąd bp złe dane dał user
 
 # DNS
 http://127.0.0.1:8000/api/dns/python.org #dużo danych
@@ -63,3 +63,6 @@ http://127.0.0.1:8000/api/censys/ewrwe # obsłużone
 
 # lista dostawców
 http://127.0.0.1:8000/api/list_vendors #wymaga credentiali
+
+# settings
+http://127.0.0.1:8000/api/user_credentials

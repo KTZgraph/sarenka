@@ -3,8 +3,8 @@ Moduł do przechowywania danych użytkownika takich jak klucze do serwisów,
 które wymagają kont dla korzystania z ich api i/lub funkcjonalności.
 """
 import json
-from .censys_engine.censys_credentials import CensysCredentials
-from .shodan_engine.shodan_credentials import ShodanCredentials
+from .censys_engine.censys_credentials import CensysCredentials, CensysCredentialsError
+from .shodan_engine.shodan_credentials import ShodanCredentials, ShodanCredentialsError
 import os
 
 
@@ -43,8 +43,14 @@ class UserCredentials:
                                            "Please create file sarenka/backend/api_searcher/search_engines/user_credentials.json "
                                            "or clone from repository https://github.com/pawlaczyk/sarenka")
 
-            self.__censys = CensysCredentials(data.get("censys", None))
-            self.__shodan = ShodanCredentials(data.get("shodan", None))
+            try:
+                self.__censys = CensysCredentials(data.get("censys", None))
+            except CensysCredentialsError as ex:
+                raise UserCredentialsError(str(ex))
+            try:
+                self.__shodan = ShodanCredentials(data.get("shodan", None))
+            except ShodanCredentialsError as ex:
+                raise UserCredentialsError(str(ex))
         else:
             self.getInstance()
 
