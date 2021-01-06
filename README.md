@@ -30,6 +30,8 @@ More cryptography-math tools and reconnaissance scripts are planned.
 - https://securityonline.info/sarenka-obtaining-and-understanding-attack-surface/
 - https://haxf4rall.com/2020/12/30/sarenka-obtaining-and-understanding-attack-surface/
 - http://hackdig.com/12/hack-245463.htm
+- http://www.findglocal.com/BR/Ananindeua/1436460569931544/Computer-Network-%26-Technology
+- https://www.facebook.com/DDHS.TW/
 
 # Realtion beetwen CWE and CVE - sarenka data feeder
 Generating this file takes a long time e.g: 702.5641514

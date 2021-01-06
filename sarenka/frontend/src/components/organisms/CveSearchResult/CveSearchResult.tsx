@@ -120,7 +120,7 @@ const CveSearchResult: React.FC<Props> = ({
       </Paragraph>
       <Paragraph>
         <strong>Useful links: </strong>
-        {hyperlinks.map((link, index) => {
+        {hyperlinks?.map((link, index) => {
           return (
             <StyledLink
               key={index}
