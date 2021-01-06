@@ -31,7 +31,6 @@ class CVEDetailsAll:
         start_idx = str(self.__page * 100)
         end_idx = str((self.__page + 1) * 100)
         file_name = f"{self.__file_prefix}_{start_idx}_{end_idx}.json"
-        print("file_name: ", file_name)
 
         if file_name in os.listdir(feed_path):
             return os.path.join(feed_path, file_name)
