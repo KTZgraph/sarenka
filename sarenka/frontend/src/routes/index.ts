@@ -49,6 +49,7 @@ export const serverRoutes: Record<string, string> = {
   registryScanData: `${serverIp}/api/local/registry`,
   hardwareInfoData: `${serverIp}/api/local/hardware`,
   cveSearchData: `${serverIp}/api/cve/`,
+  cweSearchData: `${serverIp}/api/cwe/`,
 };
 
 export default routes;

@@ -10,6 +10,7 @@ import GeneralHostInfo from 'components/molecules/GeneralHostInfo/GeneralHostInf
 import TLSInfo from 'components/molecules/TLSInfo/TLSInfo';
 import Button, { ButtonAlignToRight } from 'components/atoms/Button/Button';
 import { updateTabLabel } from 'actions/TabsActions';
+import Paragraph from 'components/atoms/Paragraph/Paragraph';
 
 const RemoteHostInfoResult = () => {
   const [searchHost, setSearchHost] = useState('');
@@ -19,10 +20,11 @@ const RemoteHostInfoResult = () => {
     isLoading,
     data,
     searchedHost,
+    error,
   } = useSelector(({ remoteHost }: Record<string, any>) =>
     remoteHost[page]
       ? remoteHost[page]
-      : { isLoading: true, data: {}, searchedHost: '' },
+      : { isLoading: true, data: {}, searchedHost: '', error: '' },
   );
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -53,6 +55,8 @@ const RemoteHostInfoResult = () => {
       result={
         isLoading ? (
           <LoadingAnimation />
+        ) : error ? (
+          <Paragraph>{error}</Paragraph>
         ) : (
           <>
             <ButtonAlignToRight>

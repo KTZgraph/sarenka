@@ -32,9 +32,9 @@ const CveSearch = () => {
         handleSubmit={handleSubmit}
         searchWord={searchCve}
         setSearchWord={setSearchCve}
-        title="Search infromation about specific CVE"
-        placeholder="Type CVE number e.g CVE-2010-3333"
-        pattern="(CVE|cve)-\d{4}-\d+"
+        title="Search information about specific CVE or CWE"
+        placeholder="Type CVE or CWE number e.g CVE-2010-3333, CWE-246"
+        pattern="((CVE|cve)-\d{4}-\d+)|((CWE|cwe)-\d+)"
       />
     </VulnerabilityTemplate>
   );
