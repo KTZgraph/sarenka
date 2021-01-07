@@ -3,18 +3,18 @@ import magnifierIcon from 'static/magnifierIconInput.svg';
 
 type Props = {
   search?: boolean;
+  noBorder?: boolean;
 };
 
 const Input = styled.input<Props>`
-  height: 34px;
+  height: 35px;
   max-width: 550px;
   width: 100%;
   padding-left: 10px;
-  border: none;
   border-radius: 6px;
   font-size: 1.8rem;
   transition: 0.3s;
-  border: 1px solid #c10c27;
+  border: ${({ noBorder }) => (noBorder ? `none` : `1px solid #c10c27`)};
   font-weight: ${({ theme }: Record<string, any>) => theme.font.weight.regular};
 
   ${({ search }) =>

@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import theme from 'theme/theme';
 
 type Props = {
   bold?: boolean;
@@ -8,8 +9,8 @@ type Props = {
 
 const Paragraph = styled.p<Props>`
   font-size: 1.7rem;
-  color: #e0e0e0;
-  font-weight: ${({ bold, theme }) =>
+  color: ${theme.colors.font};
+  font-weight: ${({ bold }) =>
     bold ? theme.font.weight.bold : theme.font.weight.regular};
   word-break: ${({ wordBreak }) => (wordBreak ? 'break-all' : 'normal')};
   ${({ listTitle }) =>
