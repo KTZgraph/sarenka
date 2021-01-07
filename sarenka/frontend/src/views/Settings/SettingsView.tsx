@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Heading from 'components/atoms/Heading/Heading';
 import logo from 'static/logo.svg';
 import SettingsTemplate from 'templates/SettingsTemplate';
 import styled from 'styled-components';
 import InputWithLabel from 'components/atoms/InputWithLabel/InputWithLabel';
 import Button from 'components/atoms/Button/Button';
-import Input from '../../components/atoms/Input/Input';
+import {
+  getUserCredentials,
+  setUserCredentials,
+} from 'actions/settingsActions';
+import UserCredentialsData from 'interfaces/UserCredentialsData';
 
 const StyledTokensWrapper = styled.section`
   margin-left: 40px;
@@ -16,16 +20,27 @@ const StyledForm = styled.form`
 `;
 
 const SettingsView = () => {
-  const allKeys = {
+  const [allCredentials, setAllCredentials] = useState<UserCredentialsData>({
     censys_API_ID: '',
     censys_Secret: '',
     shodan_user: '',
     shodan_api_key: '',
-  };
+  });
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setUserCredentials(allCredentials).then(
+      (credentials: UserCredentialsData) => {
+        setAllCredentials(credentials);
+      },
+    );
   };
+
+  useEffect(() => {
+    getUserCredentials().then((credentials: UserCredentialsData) => {
+      setAllCredentials(credentials);
+    });
+  }, []);
 
   return (
     <SettingsTemplate logo={<img src={logo} alt="App logo." />}>
@@ -41,52 +56,72 @@ const SettingsView = () => {
             name="censysAPIID"
             label="censys.io"
             placeholder="Type here your API ID"
-            defaultValue={allKeys.censys_API_ID}
+            defaultValue={allCredentials.censys_API_ID}
             onChange={(
               event:
                 | React.ChangeEvent<HTMLInputElement>
                 | React.FocusEvent<HTMLInputElement>,
             ) => {
-              allKeys.censys_API_ID = event.target.value;
+              setAllCredentials({
+                censys_API_ID: event.target.value,
+                censys_Secret: allCredentials.censys_Secret,
+                shodan_user: allCredentials.shodan_user,
+                shodan_api_key: allCredentials.shodan_api_key,
+              });
             }}
           />
           <InputWithLabel
             name="censysSecret"
             label="censys.io"
             placeholder="Type here your key"
-            defaultValue={allKeys.censys_Secret}
+            defaultValue={allCredentials.censys_Secret}
             onChange={(
               event:
                 | React.ChangeEvent<HTMLInputElement>
                 | React.FocusEvent<HTMLInputElement>,
             ) => {
-              allKeys.censys_Secret = event.target.value;
+              setAllCredentials({
+                censys_API_ID: allCredentials.censys_API_ID,
+                censys_Secret: event.target.value,
+                shodan_user: allCredentials.shodan_user,
+                shodan_api_key: allCredentials.shodan_api_key,
+              });
             }}
           />
           <InputWithLabel
             name="shodanUser"
             label="shodan.io"
             placeholder="Type here your username"
-            defaultValue={allKeys.shodan_user}
+            defaultValue={allCredentials.shodan_user}
             onChange={(
               event:
                 | React.ChangeEvent<HTMLInputElement>
                 | React.FocusEvent<HTMLInputElement>,
             ) => {
-              allKeys.shodan_user = event.target.value;
+              setAllCredentials({
+                censys_API_ID: allCredentials.censys_API_ID,
+                censys_Secret: allCredentials.censys_Secret,
+                shodan_user: event.target.value,
+                shodan_api_key: allCredentials.shodan_api_key,
+              });
             }}
           />
           <InputWithLabel
             name="shodanAPIKEY"
             label="shodan.io"
             placeholder="Type here your API key"
-            defaultValue={allKeys.shodan_api_key}
+            defaultValue={allCredentials.shodan_api_key}
             onChange={(
               event:
                 | React.ChangeEvent<HTMLInputElement>
                 | React.FocusEvent<HTMLInputElement>,
             ) => {
-              allKeys.shodan_api_key = event.target.value;
+              setAllCredentials({
+                censys_API_ID: allCredentials.censys_API_ID,
+                censys_Secret: allCredentials.censys_Secret,
+                shodan_user: allCredentials.shodan_user,
+                shodan_api_key: event.target.value,
+              });
             }}
           />
           <Button type="submit" small displayBlock>

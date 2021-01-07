@@ -11,7 +11,7 @@ const StyledLabel = styled.label`
 `;
 
 const StyledInput = styled(Input)`
-  max-width: 270px;
+  max-width: 300px;
   margin-bottom: 20px;
 `;
 

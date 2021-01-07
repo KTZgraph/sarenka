@@ -50,6 +50,7 @@ export const serverRoutes: Record<string, string> = {
   hardwareInfoData: `${serverIp}/api/local/hardware`,
   cveSearchData: `${serverIp}/api/cve/`,
   cweSearchData: `${serverIp}/api/cwe/`,
+  userCredentials: `${serverIp}/api/user_credentials`,
 };
 
 export default routes;
