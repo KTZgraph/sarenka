@@ -1,11 +1,18 @@
 import styled, { css } from 'styled-components';
 
-const Button = styled.button<{ small?: boolean }>`
+type Props = {
+  small?: boolean;
+  displayBlock?: boolean;
+};
+
+const Button = styled.button<Props>`
   color: ${({ theme }) => theme.colors.font};
   background: ${({ theme }) => theme.colors.red};
   border: none;
   border-radius: 5px;
   padding: 15px 40px;
+  cursor: pointer;
+  display: ${({ displayBlock }) => (displayBlock ? `block` : `inline-block`)};
 
   ${({ small }) =>
     small &&
