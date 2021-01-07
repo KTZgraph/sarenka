@@ -52,9 +52,9 @@ const CveSearchResult = () => {
                   <CweSearchResult data={data} />
                 ) : (
                   <SearchResultCVE
-                    title={data.cwe?.[0]?.cwe_title}
+                    title={data.cwe?.cwe_title}
                     cve={data.cve}
-                    cwe={data.cwe?.[0]?.ID_CWE}
+                    cwe={data.cwe?.ID_CWE}
                     cweLink={data.cwe?.[0]?.cwe_mitre_url}
                     cvss2={data.cvss2?.cvss2}
                     cvss2link={data.cvss2?.cvss2_url}
