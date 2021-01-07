@@ -33,6 +33,10 @@ More cryptography-math tools and reconnaissance scripts are planned.
 - http://www.findglocal.com/BR/Ananindeua/1436460569931544/Computer-Network-%26-Technology
 - https://www.facebook.com/DDHS.TW/
 - https://laptrinhx.com/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place-3347349303/
+- https://www.kitploit.com/2021/01/sarenka-osint-tool-data-from-services.html
+- https://attackware.com/index.php/2021/01/07/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place/security-world-news/admin/
+- https://www.hacking.land/2021/01/sarenka-osint-tool-data-from-services.html
+- 
 
 # Realtion beetwen CWE and CVE - sarenka data feeder
 Generating this file takes a long time e.g: 702.5641514
