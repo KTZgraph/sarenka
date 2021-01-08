@@ -24,6 +24,11 @@ It returns data about local machine - local installed softwares (from Windows Re
 For now application has also simple tools like hash calcualtor, shannon entropy calculator and very simple port scanner. 
 More cryptography-math tools and reconnaissance scripts are planned.
 
+# Screenshots
+<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 234911.png">
+<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 235528.png">
+<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 235615.png">
+
 #### Look
 - https://www.facebook.com/ncybersec/posts/1671427243027993
 - https://www.instagram.com/p/CI8tXMNg3yI/
@@ -212,7 +217,4 @@ SARENKA is **licensed** under the **[MIT License]**.
    [PlMe]: <https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md>
    [PlGa]: <https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md>
 
-# Screenshots
-<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 234911.png">
-<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 235528.png">
-<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 235615.png">
+
