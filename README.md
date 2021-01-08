@@ -24,6 +24,11 @@ It returns data about local machine - local installed softwares (from Windows Re
 For now application has also simple tools like hash calcualtor, shannon entropy calculator and very simple port scanner. 
 More cryptography-math tools and reconnaissance scripts are planned.
 
+# Screenshots
+<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 234911.png">
+<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 235528.png">
+<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 235615.png">
+
 #### Look
 - https://www.facebook.com/ncybersec/posts/1671427243027993
 - https://www.instagram.com/p/CI8tXMNg3yI/
@@ -39,6 +44,13 @@ More cryptography-math tools and reconnaissance scripts are planned.
 - https://cyberfishnews.com/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place-19097.html
 - https://modernnetsec.io/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place/
 - https://spywarenews.com/index.php/2021/01/07/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place/security-world-news/admin/
+- https://cert.europa.eu/cert/alertedition/en/VulnerabilitiesDBMS.html
+- http://dfir.pro/index.php?link_id=109300&utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+dfirpro+%28IT+%26+Security+NewsFeed+%29
+- https://iransec.net/forums/topic/550-sarenka/?tab=comments#comment-605
+- https://hacker-gadgets.com/blog/2021/01/07/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place/
+- https://vulners.com/kitploit/KITPLOIT:491559930238488010
+- https://www.redpacketsecurity.com/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place/
+- https://kali-linuxtr.net/sarenka-open-source-intelligence-osint-tool
 
 # Realtion beetwen CWE and CVE - sarenka data feeder
 Generating this file takes a long time e.g: 702.5641514
@@ -201,7 +213,4 @@ SARENKA is **licensed** under the **[MIT License]**.
    [PlMe]: <https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md>
    [PlGa]: <https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md>
 
-# Screenshots
-<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 234911.png">
-<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 235528.png">
-<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 235615.png">
+
