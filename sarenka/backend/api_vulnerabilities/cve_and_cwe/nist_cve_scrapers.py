@@ -165,10 +165,3 @@ class NISTCVEScraper:
             "vulnerability_source" : self.get_vuln_source(soup)
         }
 
-
-if __name__ == "__main__":
-    # nist_cve_scraper = NISTCVEScraper("CVE-2019-4570")
-    # nist_cve_scraper = NISTCVEScraper("CVE-2014-8958")
-    nist_cve_scraper = NISTCVEScraper("CVE-2009-1532")
-    # print(nist_cve_scraper.get_data())
-    # nist_cve_scraper.get_data()

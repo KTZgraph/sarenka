@@ -39,9 +39,7 @@ class TextParser:
             except BaseException as ex:
                 not_analyzed.append(line) # TODO: logger
 
-        
         flat_list = Common.list_flattening(matches)
-        print("NOT ANALYZED: ", not_analyzed)
 
         return TextParser.get_unique_list(flat_list)
 

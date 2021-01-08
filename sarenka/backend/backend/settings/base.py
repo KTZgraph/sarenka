@@ -6,6 +6,9 @@ BASE_DIR = os.path.dirname(
     os.path.dirname(os.path.abspath(__file__))
 )
 
+USER_CREDENTIALS_DB_NAME = "user_credentials"
+USER_CREDENTIALS_DB_FILE = "user_credentials.sqlite3"
+
 # SECRET_KEY = config('SECRET_KEY')
 SECRET_KEY = "^oa#2a*y#rr-vhoi0m&s4+ph&m5^=iq-7wdiitm1@12p15z151"
 
@@ -144,9 +147,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     },
-    'user_credentials': {
+    USER_CREDENTIALS_DB_NAME: {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'user_credentials.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, USER_CREDENTIALS_DB_FILE),
     },
     'CWE_NONE': {
         'ENGINE': 'django.db.backends.sqlite3',

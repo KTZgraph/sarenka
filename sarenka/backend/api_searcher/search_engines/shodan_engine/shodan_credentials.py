@@ -1,4 +1,7 @@
-from api_searcher.models import ShodanCredentailsModel
+from django.conf import settings
+USER_CREDENTIALS_DB = settings.USER_CREDENTIALS_DB_NAME
+
+from api_searcher.models import ShodanCredentialsModel
 
 
 class ShodanCredentialsError(Exception):
@@ -9,26 +12,35 @@ class ShodanCredentialsError(Exception):
 
 
 class ShodanCredentials:
-    """Klasa przechowująca wymagane dane dla seriwsu trzeciego https://shodan.io/.
+    """Singleton - Klasa przechowująca wymagane dane dla seriwsu trzeciego https://shodan.io/.
     Daje także możliwość aktualizacji danych uwierzytelniających użytkownika np. w przypadku przekroczenia ilości
     wyszukiwań na darmowym koncie w serwisie."""
 
-    def __init__(self, credentials_db_name:str):
-        print("self.credentials_db_name: ", credentials_db_name)
-        self.__db_name = credentials_db_name
+    __instance = None
 
-        credentials_obj = ShodanCredentailsModel.objects.using(self.credentials_db_name).all().first()
-        if not credentials_obj:
-            credentials_obj = ShodanCredentailsModel.objects.using(self.credentials_db_name).create()
+    def __init__(self):
+        if not ShodanCredentials.__instance:
+            credentials_obj = ShodanCredentialsModel.objects.using(self.db_name).all().first()
+            if not credentials_obj:
+                credentials_obj = ShodanCredentialsModel.objects.using(self.db_name).create()
 
-        self.__base_url = credentials_obj.base_url
-        self.__api_key = credentials_obj.api_key
-        self.__user = credentials_obj.user
+            self.__base_url = credentials_obj.base_url
+            self.__api_key = credentials_obj.api_key
+            self.__user = credentials_obj.user
+        else:
+            self.getInstance()
 
+    @classmethod
+    def getInstance(cls):
+        """Metoda klasy wymaga dla klasy typu Singleton
+        - zwraca instancję klasy, gwarantuje istnienie tylko jednego obiektu z danymi wuierzytleniajacmi użytkownika."""
+        if not cls.__instance:
+            cls.__instance = ShodanCredentials()
+        return cls.__instance
 
     @property
-    def credentials_db_name(self):
-        return self.__db_name
+    def db_name(self):
+        return USER_CREDENTIALS_DB
 
     @property
     def base_url(self):
@@ -40,7 +52,10 @@ class ShodanCredentials:
 
     def update_api_key(self, new_api_key):
         """Metoda do aktualizacji danych "user" dla konta użytkownika do serwisu https://shodan.io/ """
-        credentials_obj = ShodanCredentailsModel.objects.using(self.credentials_db_name).all().first()
+        if not new_api_key:
+            raise ShodanCredentialsError('Shodan "api_key" value is empty.')
+
+        credentials_obj = ShodanCredentialsModel.objects.using(self.db_name).all().first()
         credentials_obj.api_key = new_api_key
         credentials_obj.save()
 
@@ -53,9 +68,13 @@ class ShodanCredentials:
 
     def update_user(self, new_user):
         """Metoda do aktualizacji danych "api_key" dla konta użytkownika do serwisu https://shodan.io/"""
-        credentials_obj = ShodanCredentailsModel.objects.using(self.credentials_db_name).all().first()
+        if not new_user:
+            raise ShodanCredentialsError('Shodan "user" value is empty.')
+
+        credentials_obj = ShodanCredentialsModel.objects.using(self.db_name).all().first()
         credentials_obj.user = new_user
         credentials_obj.save()
 
         # aktualizacja danych obiektu
         self.__user = new_user
+

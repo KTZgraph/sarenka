@@ -48,7 +48,6 @@ class CVEParser:
         Więcej informacji: https://csrc.nist.gov/projects/security-content-automation-protocol/specifications/cpe
         """
         data = data["vulnerable_product"]
-        # print(data)
 
         vendor_idx = 3
         name_idx = 4

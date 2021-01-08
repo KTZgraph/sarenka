@@ -59,24 +59,19 @@ Description in progress
 Sarenka is local web application for Windows.
 
 #### Config
-Rirst release gathers data from two search engines.
-example sarenka/backend/connectors/credentials.json  
-
+User have to crete account on services:
+censys:
+shodan:
+Next on **<server>/api/user_credentials** via post request user can add credentials:
 ```json
-{   
-    "censys": {
-        "base_url": "https://censys.io/",
-        "API_ID": "<my_user>",
-        "Secret": "<my_api_key>",
-        "API_URL": "https://censys.io/api/v1"
-    },
-    "shodan": {
-        "base_url": "https://www.shodan.io/",
-        "user": "<my_user>",
-        "api_key": "<my_api_key>"
-    }
+{
+    "censys.api_id": "<censys_API_ID>",
+    "censys.secret" : "<censys_Secret>",
+    "shodan.user": "<shodan_user>",
+    "shodan.api_key": "<shodan_api_key>"
 }
 ```
+
 
 # Features
   - gets data from **https://censys.io/** by ip

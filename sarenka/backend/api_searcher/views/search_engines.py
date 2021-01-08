@@ -14,6 +14,16 @@ from api_searcher.search_engines.user_credentials import UserCredentials
 logger = logging.getLogger('django')
 
 
+class LocalUrlCreator:
+    """Klasa pomocnicza generujaca urle do wnętrza aplikacji."""
+    @staticmethod
+    def get_user_credentials_url(request):
+        return Common(request).host_address + reverse("user_credentials")
+
+
+
+
+
 class CensysHostSearchView(views.APIView):
     """
     Widok Django zwracający dane z serwisu http://censys.io/.
@@ -25,18 +35,18 @@ class CensysHostSearchView(views.APIView):
         :param request: obiekt request dla widoku Django
         :return: dane w postaci json zawierajace informacje o hoście zwrócone przez serwis https://censys.io/.
         """
+        settings_url = LocalUrlCreator.get_user_credentials_url(request)
+
         try:
             user_credentials = UserCredentials()
             response = CensysHostSearch(user_credentials).get_data(ip_address)
             return Response(response)
         except CensysHostSearchError as ex:
-            host_address = Common(request).host_address
-            settings_url = host_address + reverse('settings')
-            return Response({"message": f"Please create account on https://censys.io/ service and add valid credentials "
+            return Response({"error": f"Please create account on https://censys.io/ service and add valid credentials "
                                         f"for SARENKA app on {settings_url}",
                              "details": str(ex)}, status=status.HTTP_401_UNAUTHORIZED)
         except Exception as ex:
-            return Response({"message": "Unable to get infromation from https://censys.io/ service.",
+            return Response({"error": f"Unable to get infromation from https://censys.io/ service.",
                              "details": str(ex)}, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -50,21 +60,22 @@ class ShodanHostSearchView(views.APIView):
         :param request: obiekt request dla widoku Django
         :return: dane w postaci json zawierajace informacje o hoście zwrócone przez serwis https://censys.io/.
         """
+        settings_url = LocalUrlCreator.get_user_credentials_url(request)
+
         try:
             user_credentials = UserCredentials()
             response = ShodanHostSearch(user_credentials).get_data(ip_address)
             return Response({"shodan": response})
         except ShodanHostSearchError as ex:
-            host_address = Common(request).host_address
-            settings_url = host_address + reverse('settings')
-            return Response({"message": f"Please create account on https://www.shodan.io/ service and add valid credentials "
+            return Response({"error": f"Please create account on https://www.shodan.io/ service and add valid credentials "
                                         f"for SARENKA app on {settings_url}",
                              "details": str(ex)}, status=status.HTTP_401_UNAUTHORIZED)
         except Exception as ex:
-            return Response({"message": "Unable to get infromation from https://www.shodan.io/ service.",
+            return Response({"error": f"Unable to get infromation from https://www.shodan.io/ service.",
                              "details": str(ex)}, status=status.HTTP_400_BAD_REQUEST)
 
-class SearcherView(views.APIView):
+
+class SearcherFullView(views.APIView):
     """
     Widok Django zwracajacy wszystkie dane dla hostu podanego przez użytkownika.
     Zawiera dane ze wszsytkich serwisów trzecich, informacje o DNS oraz banner.

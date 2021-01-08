@@ -1,8 +1,7 @@
 from django.urls import path
 from .views.search_engines import (CensysHostSearchView,
                                    ShodanHostSearchView,
-                                   login_required_view,
-                                   SearcherView)
+                                   SearcherFullView)
 
 from .views.vendor_list import VendorListView
 from .views.dns import DNSSearcherView
@@ -17,9 +16,7 @@ urlpatterns = [
 
     path('censys/<str:ip_address>', CensysHostSearchView.as_view(), name="get_censys_host_data"),
     path('shodan/<str:ip_address>', ShodanHostSearchView.as_view(), name="get_shodan_host_data"),
-    path('search/<str:host>', SearcherView.as_view(), name="search"),
-
-    path('login_required_view/<str:cve_code>', login_required_view, name="login_required_view"),
+    path('search/<str:host>', SearcherFullView.as_view(), name="search"),
 
     path("dns/<str:host>", DNSSearcherView.as_view(), name="dns_record"),
 

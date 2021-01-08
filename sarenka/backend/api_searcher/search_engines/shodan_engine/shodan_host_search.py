@@ -23,5 +23,5 @@ class ShodanHostSearch:
             connector = ShodanConnector(shodan_credentials)
             response = connector.search_by_ip(ip_address)
             return response.to_json # TODO zmienić na serializatory
-        except ShodanHostSearchError as ex:
+        except ShodanCredentialsError as ex:
             raise ShodanHostSearchError("Invalid settings for service https://censys.io/. " + str(ex))

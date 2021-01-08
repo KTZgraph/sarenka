@@ -4,7 +4,7 @@ Modul przechowujący dane uwierzytelniające użytkownika do serwisów trzecich,
 from django.db import models
 
 
-class CensysCredentailsModel(models.Model):
+class CensysCredentialsModel(models.Model):
     """Model przechowujący informacje o danych uwierzytelniajacych użytkownika do serwisu http://censys.io/
     Może istnieć tylko jedna instancja przechowująca dane użytkownika"""
     api_id = models.CharField(max_length=72, unique=True, default="")
@@ -21,7 +21,7 @@ class CensysCredentailsModel(models.Model):
         return super().save(*args, **kwargs)
 
 
-class ShodanCredentailsModel(models.Model):
+class ShodanCredentialsModel(models.Model):
     """Model przechowujący informacje o danych uwierzytelniajacych użytkownika do serwisu https://www.shodan.io/
     Może istnieć tylko jedna instancja przechowująca dane użytkownika"""
     user = models.CharField(max_length=200, unique=True, default="")

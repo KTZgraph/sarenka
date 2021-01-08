@@ -48,7 +48,7 @@ class SearcherFull:
                 raise CredentialsNotFoundError("UserCredentials object does not exist.")
 
         except CredentialsNotFoundError as ex:
-            settings_url = self.host_address + reverse('settings')
+            settings_url = self.host_address + reverse("user_credentials")
             return {
                 "censys": {
                     "error": "Unable to get credentials for service http://censys.io/. "
@@ -77,7 +77,7 @@ class SearcherFull:
                 raise CredentialsNotFoundError("UserCredentials object does not exist.")
 
         except CredentialsNotFoundError as ex:
-            settings_url = self.host_address + reverse('settings')
+            settings_url = self.host_address + reverse("user_credentials")
             return {
                 "shodan": {
                     "error": "Unable to get credentials for service https://www.shodan.io/. "

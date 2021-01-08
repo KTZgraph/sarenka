@@ -17,10 +17,10 @@ http://127.0.0.1:8000/api/local/registry
 ### CWE
 
 #lista wszystkich CWE bez szczegółów
-http://127.0.0.1:8000/api/cwe/all
+http://127.0.0.1:8000/vulns/cwe/all
 
 # lista wszystkich CWE (ze stronnicowaniem)
-http://127.0.0.1:8000/vulns/cwe/all
+http://127.0.0.1:8000/vulns/cwe/all/5
 http://127.0.0.1:8000/vulns/cwe/all/-1 # obsłużonmyb blad
 
 # pojedynczy cwe
@@ -64,5 +64,13 @@ http://127.0.0.1:8000/api/censys/ewrwe # obsłużone
 # lista dostawców
 http://127.0.0.1:8000/api/list_vendors #wymaga credentiali
 
-# settings
+# user credentials
 http://127.0.0.1:8000/api/user_credentials
+
+http://127.0.0.1:8000/api/user_credentials POST
+{
+    "censys.api_id": "1postman",
+    "censys.secret" : "2postman",
+    "shodan.user": "3postman",
+    "shodan.api_key": "4postman"
+}

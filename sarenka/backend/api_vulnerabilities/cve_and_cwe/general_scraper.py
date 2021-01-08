@@ -75,10 +75,3 @@ class GeneralScraper:
     def get_image(self):
         og_image = self.soup.find("meta", property="og:image")
         return og_image.get('content') if og_image else None
-
-
-if __name__ == "__main__":
-    try:
-        GeneralScraper("https://www.yaheeeeeeeeeeeeeeeeeeeeeeoo.com")
-    except:
-        print("obsluzone elo")

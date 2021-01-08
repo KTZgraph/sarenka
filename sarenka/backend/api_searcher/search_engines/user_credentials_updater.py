@@ -1,6 +1,3 @@
-import json
-import os
-
 from .user_credentials import UserCredentials, UserCredentialsError
 
 
@@ -24,7 +21,6 @@ class UserCredentialsUpdater:
     def user_data(self):
         return self.__user_data
 
-
     def __update_censys_credentials(self):
         """Metoda pomocnicza aktualizująca dane uwierzytelniające użytkownika do serwisu http://censys.io/
         Aktualizuje obiekt przechowujący dane oraz plik konfiguracyjny."""
@@ -36,7 +32,6 @@ class UserCredentialsUpdater:
         self.user_credentials.censys.update_api_id(new_api_id)
         self.user_credentials.censys.update_secret(new_secret)
 
-
     def __update_shodan_credentials(self):
         """Metoda pomocnicza aktualizująca dane uwierzytelniające użytkownika do serwisu https://shodan.io/
         Aktualizuje obiekt przechowujący dane oraz plik konfiguracyjny."""
@@ -47,7 +42,6 @@ class UserCredentialsUpdater:
         self.user_credentials.shodan.update_user(new_shodan_user)
         self.user_credentials.shodan.update_api_key(new_shodan_api_key)
 
-
     def update(self):
         """Metoda aktualizująca i zapisujaca do pliku dane uwierzytelniające użytkownika do serwisów trzeich,
         które udostępniaja swoje dane tylko po utworzeniu konta z uniklanym kluczem przypisanym użytkownikowi."""
@@ -56,3 +50,4 @@ class UserCredentialsUpdater:
             self.__update_shodan_credentials()
         except Exception as ex:
             raise UserCredentialsUpdaterError(str(ex))
+
