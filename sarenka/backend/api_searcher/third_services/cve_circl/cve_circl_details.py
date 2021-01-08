@@ -23,7 +23,7 @@ class CveCirclDetails:
         self.__vendor = self.__set_data("vendor")
 
     def __set_data(self, info_tag:str):
-        """Metoda pomocnicza zwracajaca wybrane ifnormacje do seriwsu http://censys.io/ z pliku user_credentials.json
+        """Metoda pomocnicza zwracajaca wybrane ifnormacje do seriwsu http://censys.io/ z pliku bazy danych user_credentials
         :param: info_tag
         """
         if self.data.get(info_tag, None):
