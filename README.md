@@ -26,7 +26,9 @@ More cryptography-math tools and reconnaissance scripts are planned.
 
 # Screenshots
 <img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 234911.png">
+
 <img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 235528.png">
+
 <img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 235615.png">
 
 #### Look
@@ -52,29 +54,14 @@ More cryptography-math tools and reconnaissance scripts are planned.
 - https://www.redpacketsecurity.com/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place/
 - https://kali-linuxtr.net/sarenka-open-source-intelligence-osint-tool
 
-# Realtion beetwen CWE and CVE - sarenka data feeder
-Generating this file takes a long time e.g: 702.5641514
-#### all CWE Ids with description
-https://raw.githubusercontent.com/pawlaczyk/sarenka_tools/master/cwe_all.json
-
-#### all CVE Ids with description
-In progress
-
-#### get all CVE Ids by CWE Id
-In progress
 
 # Installation
-Description in progress
+Description in progress.
 
 # Getting started 
-Description in progress
-Sarenka is local web application for Windows.
+Description in progress.
 
-#### Config
-User have to crete account on services:
-censys:
-shodan:
-Next on **<server>/api/user_credentials** via post request user can add credentials:
+#### Config POST
 ```json
 {
     "censys.api_id": "<censys_API_ID>",
@@ -106,31 +93,18 @@ You can also:
 [1]: https://twitter.com/OsintSarenka
 [2]: https://www.facebook.com/sarenka.osint.5
 
-- Whant some feature, other tool, library functionality?
+- Want some feature, other tool, library functionality?
 - Have any idea or question?  [![alt text][1.1]][1]
 - Don't hesitate to contact  [![Author](https://img.shields.io/badge/pawlaczyk-black.svg)](https://github.com/pawlaczyk/) .
 
-# Database
-This is tricki part, because we have 863 sqlite3 database files: default, CWE-NONE (some CVE hasn't cwe_id eg.: CVE-2013-3621) and 861 individual for CWEs 
+#### Databases
+Details in documentation.
 
 ## Tech
-Description in progress.
-
-SARENKA uses a number of open source projects to work properly on:
-* [Renderforest](https://www.renderforest.com/) - logo generator
-* [gawk](http://gnuwin32.sourceforge.net/packages/gawk.htm) - python manage.py migrate --database CWE_ID 
+* [Renderforest](https://www.renderforest.com/)
+* [gawk](http://gnuwin32.sourceforge.net/packages/gawk.htm) 
 * [chocolatey](https://chocolatey.org/)
-* [PyCharm](https://www.jetbrains.com/pycharm/) - Community Edition
-* [Technology](url_address) - description
-* [Technology](url_address) - description
-* [Technology](url_address) - description
-* [Technology](url_address) - description
-* [Technology](url_address) - description
-* [Technology](url_address) - description
-* [Technology](url_address) - description
-* [Technology](url_address) - description
-* [Technology](url_address) - description
-* [Technology](url_address) - description
+* [PyCharm](https://www.jetbrains.com/pycharm/)
 
 
 
@@ -175,7 +149,6 @@ The documentation is availabe [here](https://pawlaczyk.github.io/sarenka/).
 [![Author](https://img.shields.io/badge/Dominika-Pawlaczyk-red.svg)](https://github.com/pawlaczyk/)  [![Author](https://img.shields.io/badge/Michał-Pawlaczyk-red.svg)](https://github.com/michalpawlaczyk) [![Author](https://img.shields.io/badge/Karolina-Słonka-red.svg)](https://github.com/k-slonka)
 
 
-
 ##### Contact
 [![Author](https://img.shields.io/badge/pawlaczyk-black.svg)](https://github.com/pawlaczyk/)
 
@@ -183,7 +156,6 @@ The documentation is availabe [here](https://pawlaczyk.github.io/sarenka/).
 SARENKA is **licensed** under the **[MIT License]**.
 
 [MIT License]: https://github.com/pawlaczyk/sarenka/blob/master/LICENSE
-[Mirrors]: http://mirrors.jenkins-ci.org
 [GitHub]: https://github.com/pawlaczyk/sarenka
 [documentation]: https://pawlaczyk.github.io/sarenka/
 [public repository]: https://github.com/pawlaczyk/sarenka
@@ -195,22 +167,5 @@ SARENKA is **licensed** under the **[MIT License]**.
    [sarenka]: <https://github.com/pawlaczyk/sarenka>
    [git-repo-url]: <https://github.com/pawlaczyk/sarenka>
    [William Edwards Deming]: <https://deming.org/deming-the-man/>
-   [df1]: <http://daringfireball.net/projects/markdown/>
-   [markdown-it]: <https://github.com/markdown-it/markdown-it>
-   [Ace Editor]: <http://ace.ajax.org>
-   [node.js]: <http://nodejs.org>
-   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
-   [jQuery]: <http://jquery.com>
-   [@tjholowaychuk]: <http://twitter.com/tjholowaychuk>
-   [express]: <http://expressjs.com>
-   [AngularJS]: <http://angularjs.org>
-   [Gulp]: <http://gulpjs.com>
-
-   [PlDb]: <https://github.com/joemccann/dillinger/tree/master/plugins/dropbox/README.md>
-   [PlGh]: <https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md>
-   [PlGd]: <https://github.com/joemccann/dillinger/tree/master/plugins/googledrive/README.md>
-   [PlOd]: <https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md>
-   [PlMe]: <https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md>
-   [PlGa]: <https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md>
 
 
