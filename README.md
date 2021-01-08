@@ -49,6 +49,7 @@ More cryptography-math tools and reconnaissance scripts are planned.
 - https://iransec.net/forums/topic/550-sarenka/?tab=comments#comment-605
 - https://hacker-gadgets.com/blog/2021/01/07/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place/
 - https://vulners.com/kitploit/KITPLOIT:491559930238488010
+- https://www.redpacketsecurity.com/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place/
 
 
 # Realtion beetwen CWE and CVE - sarenka data feeder
