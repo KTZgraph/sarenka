@@ -8,7 +8,14 @@ export const getUserCredentials = () => {
   });
 };
 
-export const setUserCredentials = (credentials: UserCredentialsData) => {
+export const setUserCredentials = (allCredentials: UserCredentialsData) => {
+  const credentials = {
+    'censys.api_id': allCredentials.censys.API_ID,
+    'censys.secret': allCredentials.censys.Secret,
+    'shodan.user': allCredentials.shodan.user,
+    'shodan.api_key': allCredentials.shodan.api_key,
+  };
+
   return axios
     .post(`${serverRoutes.userCredentials}`, credentials)
     .then(({ data }) => {
