@@ -39,6 +39,7 @@ More cryptography-math tools and reconnaissance scripts are planned.
 - https://cyberfishnews.com/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place-19097.html
 - https://modernnetsec.io/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place/
 - https://spywarenews.com/index.php/2021/01/07/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place/security-world-news/admin/
+- http://dfir.pro/index.php?link_id=109300&utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+dfirpro+%28IT+%26+Security+NewsFeed+%29
 
 # Realtion beetwen CWE and CVE - sarenka data feeder
 Generating this file takes a long time e.g: 702.5641514
