@@ -1,3 +1,6 @@
+from api_searcher.models import ShodanCredentailsModel
+
+
 class ShodanCredentialsError(Exception):
     """Zgłasza wyjątek gdy nie można utworzyć obiketu przechowujące dane użytkownika do seriwsu https://shodan.io/"""
     def __init__(self, message=None, errors=None):
@@ -10,25 +13,22 @@ class ShodanCredentials:
     Daje także możliwość aktualizacji danych uwierzytelniających użytkownika np. w przypadku przekroczenia ilości
     wyszukiwań na darmowym koncie w serwisie."""
 
-    def __init__(self, data):
-        if not data:
-            raise ShodanCredentialsError("No data to https://shodan.io/ service. Please check "
-                                         "sarenka\\backend\\api_searcher\\search_engines\\user_credentials.json file.")
+    def __init__(self, credentials_db_name:str):
+        print("self.credentials_db_name: ", credentials_db_name)
+        self.__db_name = credentials_db_name
 
-        self.data= data
-        self.__base_url = self.__set_data("base_url")
-        self.__api_key = self.__set_data("api_key")
-        self.__user = self.__set_data("user")
+        credentials_obj = ShodanCredentailsModel.objects.using(self.credentials_db_name).all().first()
+        if not credentials_obj:
+            credentials_obj = ShodanCredentailsModel.objects.using(self.credentials_db_name).create()
 
-    def __set_data(self, info_tag:str):
-        """Metoda pomocnicza zwracajaca wybrane ifnormacje do seriwsu https://shodan.io/ z pliku user_credentials.json
-        :param: info_tag
-        """
-        if self.data.get(info_tag, None):
-            return self.data[info_tag]
-        else:
-            raise ShodanCredentialsError(f'No data in "{info_tag}" for https://shodan.io/ service. Please check '
-                                         f'sarenka\\backend\\api_searcher\\search_engines\\user_credentials.json file.')
+        self.__base_url = credentials_obj.base_url
+        self.__api_key = credentials_obj.api_key
+        self.__user = credentials_obj.user
+
+
+    @property
+    def credentials_db_name(self):
+        return self.__db_name
 
     @property
     def base_url(self):
@@ -38,14 +38,24 @@ class ShodanCredentials:
     def api_key(self):
         return self.__api_key
 
-    def update_api_key(self, value):
+    def update_api_key(self, new_api_key):
         """Metoda do aktualizacji danych "user" dla konta użytkownika do serwisu https://shodan.io/ """
-        self.__api_key = value
+        credentials_obj = ShodanCredentailsModel.objects.using(self.credentials_db_name).all().first()
+        credentials_obj.api_key = new_api_key
+        credentials_obj.save()
+
+        # aktualizacja danych obiektu
+        self.__api_key = new_api_key
 
     @property
     def user(self):
         return self.__user
 
-    def update_user(self, value):
+    def update_user(self, new_user):
         """Metoda do aktualizacji danych "api_key" dla konta użytkownika do serwisu https://shodan.io/"""
-        self.__user = value
+        credentials_obj = ShodanCredentailsModel.objects.using(self.credentials_db_name).all().first()
+        credentials_obj.user = new_user
+        credentials_obj.save()
+
+        # aktualizacja danych obiektu
+        self.__user = new_user

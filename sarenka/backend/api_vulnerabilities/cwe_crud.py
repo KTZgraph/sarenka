@@ -36,7 +36,6 @@ class CWECRUD:
         return "CWE_NONE"  # jawnie ma mi zwrócić, że nie ma  cwe_id
 
     def __add_cwe_none_obj(self):
-        print("no cwe id")
         cwe_db_obj, is_created = CWEModel.objects.using(self.db_name).get_or_create(
             cwe_id="None",
             title="None",
@@ -69,8 +68,6 @@ class CWECRUD:
             return
 
         # gdy normalnie CWE obiekt ma id
-        print("TUUUUUUUUUUUUUUUUUUU")
-        print("self.db_name: ", self.db_name)
         cwe_data_scraper = CWEDataScraper(self.cwe_id).get_data()
 
         cwe_db_obj, is_created = CWEModel.objects.using(self.db_name).get_or_create(

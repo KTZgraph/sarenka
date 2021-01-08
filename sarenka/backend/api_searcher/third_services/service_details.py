@@ -40,7 +40,7 @@ class ServiceDetails:
                     data = json.load(f)
             except FileNotFoundError:
                 raise ServiceDetailsError("Details for third part service not found."
-                                           "Please create file sarenka/backend/api_searcher/search_engines/user_credentials.json "
+                                           "Please create file sarenka/backend/api_searcher/search_engines/service_details.json "
                                            "or clone it from repository https://github.com/pawlaczyk/sarenka")
             self.__cve_circl = CveCirclDetails(data.get("cve_circl", None))
 

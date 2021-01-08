@@ -79,7 +79,6 @@ import dns.reversename
 from dns.rdatatype import RdataType
 import ipaddress
 import socket
-import pprint
 
 
 class DNSSearcherError(Exception):

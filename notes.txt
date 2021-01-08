@@ -1,0 +1,11 @@
+##### api_searcher #####
+
+# baza danych:
+# tworzenie migracji
+python manage.py makemigrations  api_searcher
+
+# migracja bazy danych użytkownika do serwisów trzecich
+# fake dla testów
+python manage.py migrate  --fake  api_searcher --database=user_credentials
+
+python manage.py migrate api_searcher --database=user_credentials

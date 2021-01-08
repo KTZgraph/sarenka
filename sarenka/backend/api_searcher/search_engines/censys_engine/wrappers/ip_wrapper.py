@@ -172,9 +172,3 @@ class IPWrapper:
             result += str(item[0]) + ": " + str(item[1]) + "\n"
 
         return result
-
-
-
-if __name__ == "__main__":
-    ip_wrapper = IPWrapper()
-    print(ip_wrapper.https)

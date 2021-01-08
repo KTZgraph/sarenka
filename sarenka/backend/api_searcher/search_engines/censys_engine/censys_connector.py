@@ -3,11 +3,13 @@ from censys.ipv4 import CensysIPv4
 from censys.websites import CensysWebsites
 from .wrappers.ip_wrapper import IPWrapper
 
+
 class CensysConnectorError(Exception):
     """Zgłasza wyjątek gdy nie można pobrać danych z serwisu https://censys.io/."""
     def __init__(self, message=None, errors=None):
         super().__init__(message)
         self.errors = errors
+
 
 class CensysConnector:
     """Klasa konektora odopowiadająca za pobieranie danych z serwisu https://censys.io/."""

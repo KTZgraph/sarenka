@@ -20,35 +20,22 @@ class UserCredentialsError(Exception):
 class UserCredentials:
     """Singleton - Klasa przechowująca dane użytkownika do serwisów trzecich niezbędne do korzystania z ich funkcjonalności."""
     __instance = None
-    __config_file = "user_credentials.json"
-
-    @classmethod
-    def get_config_file_path(cls):
-        """Metoda klasy zwracajaca ścieżkę do pliku konfiguracyjnego użytkownika."""
-        current_dir = os.path.dirname(__file__)
-        return os.path.join(current_dir, cls.__config_file)
+    __db_name = "user_credentials"
 
     @property
-    def config_file_path(self):
-        """Atrybut klasy zwracajacy ścieżkę do pliku z danymi uwierzytelniajacymi użytkownika."""
-        return self.get_config_file_path()
+    def db_name(self):
+        """Metoda klasy zwracajaca ścieżkę do pliku konfiguracyjnego użytkownika."""
+        return self.__db_name
 
     def __init__(self):
         if not UserCredentials.__instance:
-            try:
-                with open(self.config_file_path) as f:
-                    data = json.load(f)
-            except FileNotFoundError:
-                raise UserCredentialsError("User credential file does not exist. "
-                                           "Please create file sarenka/backend/api_searcher/search_engines/user_credentials.json "
-                                           "or clone from repository https://github.com/pawlaczyk/sarenka")
 
             try:
-                self.__censys = CensysCredentials(data.get("censys", None))
+                self.__censys = CensysCredentials(self.db_name)
             except CensysCredentialsError as ex:
                 raise UserCredentialsError(str(ex))
             try:
-                self.__shodan = ShodanCredentials(data.get("shodan", None))
+                self.__shodan = ShodanCredentials(self.db_name)
             except ShodanCredentialsError as ex:
                 raise UserCredentialsError(str(ex))
         else:

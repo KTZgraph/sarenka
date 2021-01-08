@@ -10,22 +10,28 @@ class UserCredentialsView(views.APIView):
     serializer_class = UserCredentialsSerializer
 
     def get(self, request):
-        # Michałowi zrobić
         try:
             user_credentials = UserCredentials()
-            response = {
-                "censys_API_ID": user_credentials.censys.api_id,
-                "censys_Secret": user_credentials.censys.secret,
-                "shodan_user": user_credentials.shodan.user,
-                "shodan_api_key": user_credentials.shodan.api_key,
+            print("user_credentials.censys.api_id: ", user_credentials.censys)
+            details = {
+                "censys": {
+                    "API_ID": user_credentials.censys.api_id,
+                    "Secret": user_credentials.censys.secret,
+                },
+                "shodan": {
+                    "user": user_credentials.shodan.user,
+                    "api_key": user_credentials.shodan.api_key,
+                }
             }
-            return Response(response)
+
+            return Response(details)
         except UserCredentialsError as ex:
             Response({"error": "Unable to get user credentials.", "details": str(ex)}, status.HTTP_400_BAD_REQUEST)
         except Exception as ex:
-            return Response({"error": "User credentials are not valid. Please chceck if file "
-                                      "sarenka\\backend\\api_searcher\\search_engines\\user_credentials.json exists "
-                                      "and is valid or copy from repository https://github.com/pawlaczyk/sarenka/",
+            print(type(ex))
+            print(ex)
+            return Response({"error": "User credentials are not valid. Please chceck file "
+                                      "user_credentials.sqlite3 database",
                              "details": str(ex)},
                             status=status.HTTP_400_BAD_REQUEST)
 
@@ -37,14 +43,18 @@ class UserCredentialsView(views.APIView):
 
             # walidacja danych
             if serializer.is_valid():
-                details = {
-                    "censys_API_ID": serializer.data.get("censys_API_ID"),
-                    "censys_Secret": serializer.data.get("censys_Secret"),
-                    "shodan_user": serializer.data.get("shodan_user"),
-                    "shodan_api_key": serializer.data.get("shodan_api_key"),
+                user_credentials = {
+                    "censys": {
+                        "API_ID": serializer.data.get("censys_API_ID"),
+                        "Secret": serializer.data.get("censys_Secret"),
+                    },
+                    "shodan": {
+                        "user": serializer.data.get("shodan_user"),
+                        "api_key": serializer.data.get("shodan_api_key"),
+                    }
                 }
-                UserCredentialsUpdater(details).update()
-                return Response({"message": "User credentials added.", "details": details})
+                UserCredentialsUpdater(user_credentials).update()
+                return Response({"message": "User credentials added.", "details": user_credentials})
             else:
                 return Response({"message": "User credentials are not valid.", "details": serializer.errors},
                                 status=status.HTTP_400_BAD_REQUEST)
@@ -54,7 +64,7 @@ class UserCredentialsView(views.APIView):
                                 status=status.HTTP_400_BAD_REQUEST)
         except Exception as ex:
             return Response({"error": "User credentials are not valid. Please chceck if file "
-                                "sarenka\\backend\\api_searcher\\search_engines\\user_credentials.json exists "
+                                "user_credentials.sqlite3 exists "
                                 "and is valid or copy from repository https://github.com/pawlaczyk/sarenka/",
                                 "details": str(ex)},
                                 status=status.HTTP_400_BAD_REQUEST)
