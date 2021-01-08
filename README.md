@@ -53,6 +53,8 @@ More cryptography-math tools and reconnaissance scripts are planned.
 - https://vulners.com/kitploit/KITPLOIT:491559930238488010
 - https://www.redpacketsecurity.com/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place/
 - https://kali-linuxtr.net/sarenka-open-source-intelligence-osint-tool
+- https://anonymousmedia.org/2021/01/07/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place/
+- https://pentesttools.net/sarenka-osint-tool-data-from-services-like-shodan-censys-etc/
 
 
 # Installation
