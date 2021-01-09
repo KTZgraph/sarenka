@@ -14,13 +14,13 @@ Kopiowanie plików
 └──────────────────┴────────┴───────────┴──────────┴────────────────┘
 """
 import os
-import sys
+from sys import platform
 import json
 from shutil import copy2, rmtree
 from time import perf_counter
 import subprocess
-IS_WINDOWS = sys.platform.startswith('win')
-IS_LINUX = sys.platform.startswith('linux') # linux or linux2 (*)
+IS_WINDOWS = platform.startswith('win')
+IS_LINUX = platform.startswith('linux') # linux or linux2 (*)
 
 
 class SarenkaBuildError(Exception):
@@ -59,6 +59,9 @@ class SarenkaHelper:
         self.__manage_py_path = str(os.path.join(self.backend_dir, "manage.py"))
         self.__backend_backend_dir = os.path.join(self.backend_dir, "backend")
 
+        #ścieżki do requirements
+        self.__requirements_file = self.get_requirements_file_path()
+
     @staticmethod
     def run_command(command, verbose=True):
         # Never use os.popen, always use subprocess!
@@ -74,6 +77,19 @@ class SarenkaHelper:
         all_cwe_ids =[cwe["cwe_id"] for cwe in data["cwe_all"]]
         all_cwe_ids.sort()
         return all_cwe_ids # zwraca wszystkie CWE ids
+
+    def get_requirements_file_path(self):
+        if IS_WINDOWS:
+            return os.path.join(self.current_dir_path, "requirements_windows.txt")
+        if IS_LINUX:
+            return os.path.join(self.current_dir_path, "requirements_linux.txt")
+        else:
+            print("You are trying to build SARENKA on not tested Operating System.")
+            user_input = input("Do you really want to build app like on Linux OS (y/n): ")
+            if user_input == "y":
+                return os.path.join(self.current_dir_path, "requirements_linux.txt")
+            else:
+                print("Building application canceled by user.")
 
     @property
     def all_cwe_ids_list(self):
@@ -184,6 +200,7 @@ class SarenkaBuilder:
     def __create_env(self): #TODO
         if self.is_verbose:
             print("creating env")
+        self.helper.run_command("python -m venv venv")
 
     def __install_requirements(self):
         """Instaluje wymagane biblioteki w zależności od systemu operacyjnego na jakim ma być uruchamiona aplikacja."""
@@ -327,7 +344,6 @@ class SarenkaCommand:
             self.builder.run()
         else:
             print("Building application canceled by user.")
-
 
 if __name__ == "__main__":
     sarenka_command = SarenkaCommand()
