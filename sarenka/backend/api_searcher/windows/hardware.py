@@ -31,7 +31,6 @@ class Hardware:
         total_physical_memory =  subprocess.getoutput("wmic COMPUTERSYSTEM get TotalPhysicalMemory")
         mac_address =  subprocess.getoutput("wmic nic get macaddress")
         computer_manufacturer =  subprocess.getoutput("WMIC COMPUTERSYSTEM GET MANUFACTURER")
-
         response =  {
             "name" : name_computer.split()[2],
             "system_type": name_computer.split()[3],
