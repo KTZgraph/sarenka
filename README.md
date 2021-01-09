@@ -61,6 +61,8 @@ More cryptography-math tools and reconnaissance scripts are planned.
 - https://kali-linuxtr.net/sarenka-open-source-intelligence-osint-tool
 - https://anonymousmedia.org/2021/01/07/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place/
 - https://pentesttools.net/sarenka-osint-tool-data-from-services-like-shodan-censys-etc/
+- https://wangshit.xyz/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place/
+- https://geekychild.com/hack-penetration-tool/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place/
 
 
 # Installation
