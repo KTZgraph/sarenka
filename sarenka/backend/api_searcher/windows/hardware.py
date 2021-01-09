@@ -17,34 +17,25 @@ class Hardware:
 
 
 
+
+
+
     @staticmethod
-    def get_commputer_name()->Dict:
+    def get_computer_information()->Dict:
         """
-        Returns name name_computer
+        Returns name computer_information
         """
         name_computer =  subprocess.getoutput("wmic computersystem get name,systemtype")
 
-        response =  {
-            "name" : name_computer.split()[2],
-            "system_type": name_computer.split()[3]
-        }
-        return response
-    
-
-
-
-    @staticmethod
-    def get_commputer_information()->Dict:
-        """
-        Returns name commputer_information
-        """
-        commputer_serial_number =  subprocess.getoutput("wmic bios get serialnumber")
+        computer_serial_number =  subprocess.getoutput("wmic bios get serialnumber")
         total_physical_memory =  subprocess.getoutput("wmic COMPUTERSYSTEM get TotalPhysicalMemory")
         mac_address =  subprocess.getoutput("wmic nic get macaddress")
         computer_manufacturer =  subprocess.getoutput("WMIC COMPUTERSYSTEM GET MANUFACTURER")
 
         response =  {
-            "commputer_serial_number" : commputer_serial_number.split()[1],
+            "name" : name_computer.split()[2],
+            "system_type": name_computer.split()[3],
+            "computer_serial_number" : computer_serial_number.split()[1],
             "total_physical_memory" : total_physical_memory.split()[1],
             "mac_address" : mac_address.split()[1],
             "computer_manufacturer" : ' '.join(computer_manufacturer.split()[1:]),
@@ -55,9 +46,9 @@ class Hardware:
 
 
     @staticmethod
-    def get_baseboard_information()->Dict:
+    def get_motherboard_information()->Dict:
         """
-        Returns name baseboard_information
+        Returns name motherboard_information
         """
         product =  subprocess.getoutput("wmic baseboard get product")
         manufacturer =  subprocess.getoutput("wmic baseboard get manufacturer")
@@ -127,10 +118,9 @@ class Hardware:
     def to_json()->Dict:
         response = {}
         response.update({"bios": Hardware.get_bios()})
-        response.update({"computer_name": Hardware.get_commputer_name()})
-        response.update({"commputer_information": Hardware.get_commputer_information()})
+        response.update({"computer_information": Hardware.get_computer_information()})
         response.update({"operation_system": Hardware.get_operation_system()})
-        response.update({"baseboard_information": Hardware.get_baseboard_information()})
+        response.update({"motherboard_information": Hardware.get_motherboard_information()})
         response.update({"hard_drive_info": Hardware.get_hard_drive_info()})
 
         return response  

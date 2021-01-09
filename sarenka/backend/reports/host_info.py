@@ -2,7 +2,7 @@ from fpdf import FPDF, HTMLMixin
 import json
 import requests
 
-class PDF(FPDF, HTMLMixin):
+class PDFHostInfo(FPDF, HTMLMixin):
 
 
     def header(self):
