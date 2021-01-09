@@ -31,6 +31,12 @@ More cryptography-math tools and reconnaissance scripts are planned.
 
 <img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 235615.png">
 
+<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-08 213333.png">
+
+<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-08 213519.png">
+
+<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-08 213602.png">
+
 #### Look
 - https://www.facebook.com/ncybersec/posts/1671427243027993
 - https://www.instagram.com/p/CI8tXMNg3yI/
@@ -53,6 +59,10 @@ More cryptography-math tools and reconnaissance scripts are planned.
 - https://vulners.com/kitploit/KITPLOIT:491559930238488010
 - https://www.redpacketsecurity.com/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place/
 - https://kali-linuxtr.net/sarenka-open-source-intelligence-osint-tool
+- https://anonymousmedia.org/2021/01/07/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place/
+- https://pentesttools.net/sarenka-osint-tool-data-from-services-like-shodan-censys-etc/
+- https://wangshit.xyz/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place/
+- https://geekychild.com/hack-penetration-tool/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place/
 
 
 # Installation
