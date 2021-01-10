@@ -2,7 +2,7 @@ from fpdf import FPDF, HTMLMixin
 import json
 import requests
 
-class PDF(FPDF, HTMLMixin):
+class PDFHostInfo(FPDF, HTMLMixin):
 
 
     def header(self):
@@ -10,7 +10,7 @@ class PDF(FPDF, HTMLMixin):
 
 
     def headerOnlyFirstSide(self,ipAdress):
-        self.image('../logo.png',90,15, 30)
+        self.image('../../logo.png',90,15, 30)
         self.cell(0, 100, 'Host adress: '+ipAdress, 0, 0, 'C')
         self.ln(60)
 

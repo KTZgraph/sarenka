@@ -31,3 +31,8 @@ export const fetchHardwareInfo = (tabIndex: number) => (dispatch: Function) => {
       });
     });
 };
+
+export const fetchReport = () => {
+  const URL = serverRoutes.hardwareInfoReport;
+  window.open(URL);
+};

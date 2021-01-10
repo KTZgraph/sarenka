@@ -1,109 +1,125 @@
-from typing import Dict
+from typing import Dict, Tuple, Sequence, List, NoReturn
 import subprocess
 
-
+import json
 class Hardware:
     @staticmethod
-    def get_bios() -> Dict:
+    def get_bios()->Dict:
         """
         Returns Bios version
         """
-        value = subprocess.getoutput("wmic bios get smbiosbiosversion")
-        response = {
-            "name": value.split()[0],
+        value =  subprocess.getoutput("wmic bios get smbiosbiosversion")
+        response =  {
+            "name" : value.split()[0],
             "version": value.split()[1]
         }
         return response
 
-    @staticmethod
-    def get_commputer_name() -> Dict:
-        """
-        Returns name name_computer
-        """
-        name_computer = subprocess.getoutput("wmic computersystem get name,systemtype")
 
-        response = {
-            "name": name_computer.split()[2],
-            "system_type": name_computer.split()[3]
-        }
-        return response
+
+
+
 
     @staticmethod
-    def get_commputer_information() -> Dict:
+    def get_computer_information()->Dict:
         """
-        Returns name commputer_information
+        Returns name computer_information
         """
-        commputer_serial_number = subprocess.getoutput("wmic bios get serialnumber")
-        total_physical_memory = subprocess.getoutput("wmic COMPUTERSYSTEM get TotalPhysicalMemory")
-        mac_address = subprocess.getoutput("wmic nic get macaddress")
-        computer_manufacturer = subprocess.getoutput("WMIC COMPUTERSYSTEM GET MANUFACTURER")
+        name_computer =  subprocess.getoutput("wmic computersystem get name,systemtype")
 
-        response = {
-            "commputer_serial_number": commputer_serial_number.split()[1],
-            "total_physical_memory": total_physical_memory.split()[1],
-            "mac_address???": mac_address.split()[1],
-            "computer_manufacturer": ' '.join(computer_manufacturer.split()[1:]),
+        computer_serial_number =  subprocess.getoutput("wmic bios get serialnumber")
+        total_physical_memory =  subprocess.getoutput("wmic COMPUTERSYSTEM get TotalPhysicalMemory")
+        mac_address =  subprocess.getoutput("wmic nic get macaddress")
+        computer_manufacturer =  subprocess.getoutput("WMIC COMPUTERSYSTEM GET MANUFACTURER")
+        response =  {
+            "name" : name_computer.split()[2],
+            "system_type": name_computer.split()[3],
+            "computer_serial_number" : computer_serial_number.split()[1],
+            "total_physical_memory" : total_physical_memory.split()[1],
+            "mac_address" : mac_address.split()[1],
+            "computer_manufacturer" : ' '.join(computer_manufacturer.split()[1:]),
 
         }
         return response
+    
+
 
     @staticmethod
-    def get_baseboard_information() -> Dict:
+    def get_motherboard_information()->Dict:
         """
-        Returns name baseboard_information
+        Returns name motherboard_information
         """
-        product = subprocess.getoutput("wmic baseboard get product")
-        manufacturer = subprocess.getoutput("wmic baseboard get manufacturer")
-        version = subprocess.getoutput("wmic baseboard get version")
-        serialnumber = subprocess.getoutput("wmic baseboard get serialnumber")
+        product =  subprocess.getoutput("wmic baseboard get product")
+        manufacturer =  subprocess.getoutput("wmic baseboard get manufacturer")
+        version =  subprocess.getoutput("wmic baseboard get version")
+        serialnumber =  subprocess.getoutput("wmic baseboard get serialnumber")
 
-        response = {
-            "product": product.split()[1],
-            "manufacturer": ' '.join(manufacturer.split()[1:]),
-            "version": version.split()[1],
-            "serialnumber": serialnumber.split()[1],
+        response =  {
+            "product" : product.split()[1],
+            "manufacturer" : ' '.join(manufacturer.split()[1:]),
+            "version" : version.split()[1],
+            "serialnumber" : serialnumber.split()[1],
 
         }
         return response
+        
+
 
     @staticmethod
-    def get_operation_system() -> Dict:
+    def get_operation_system()->Dict:
         """
         Returns name operation_system
         """
-        os_architecture = subprocess.getoutput("wmic OS get OSArchitecture")
-        other_information = subprocess.getoutput('systeminfo | findstr /C:"OS"')
-        other_information = dict(
-            map(str.strip, sub.split(':', 1)) for sub in other_information.split('\n') if ':' in sub)
-        response = {
-            "name": other_information["OS Name"],
-            "version": other_information["OS Version"],
-
-            "manufacturer": other_information["OS Manufacturer"],
-            "configuration": other_information["OS Configuration"],
-            "build_type": other_information["OS Build Type"],
-
-            "os_architecture": os_architecture.split()[1],
+        os_architecture =  subprocess.getoutput("wmic OS get OSArchitecture")
+        other_information =  subprocess.getoutput('systeminfo | findstr /C:"OS"')
+        other_information =dict(map(str.strip, sub.split(':', 1)) for sub in other_information.split('\n') if ':' in sub)
+        response =  {
+            "name" : other_information["OS Name"],
+            "version" : other_information["OS Version"],
+            "manufacturer" : other_information["OS Manufacturer"],
+            "configuration" : other_information["OS Configuration"],
+            "build_type" : other_information["OS Build Type"],
+            "os_architecture" : os_architecture.split()[1],
 
         }
 
         return response
 
-    @staticmethod
-    def get_another_command() -> Dict:
-        """
-        Tutaj sobie implementujesz kolejne metody
-        """
-        pass
+
+
 
     @staticmethod
-    def to_json() -> Dict:
+    def get_hard_drive_info()->Dict:
+        """
+        Returns name hard_drive_info
+        """
+        hard_drive =  subprocess.getoutput("wmic logicaldisk where drivetype=3 get name, freespace, systemname, filesystem, size, volumeserialnumber")
+        hard_drive2 =hard_drive.split()[6:]
+        
+        response={}
+        x = range(0, 6, len(hard_drive))
+
+        for n in x:
+            hard_drive_element=hard_drive2[n+1:n+6]
+            response[hard_drive2[n]]={
+                "freespace":hard_drive_element[0],
+                "systemname":hard_drive_element[1],
+                "filesystem":hard_drive_element[2],
+                "size":hard_drive_element[3],
+                "volumeserialnumber":hard_drive_element[4],
+
+                }
+        return response
+
+
+
+    @staticmethod
+    def to_json()->Dict:
         response = {}
         response.update({"bios": Hardware.get_bios()})
-        response.update({"computer_name": Hardware.get_commputer_name()})
-        response.update({"commputer_information": Hardware.get_commputer_information()})
+        response.update({"computer_information": Hardware.get_computer_information()})
         response.update({"operation_system": Hardware.get_operation_system()})
-        response.update({"baseboard_information": Hardware.get_baseboard_information()})
+        response.update({"motherboard_information": Hardware.get_motherboard_information()})
+        response.update({"hard_drive_info": Hardware.get_hard_drive_info()})
 
-        # response.update({"moja nazwa klucza": Hardware.get_another_command()})
-        return response
+        return response  

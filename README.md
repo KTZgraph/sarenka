@@ -16,12 +16,12 @@
 
 **SARENKA** is an Open Source Intelligence (**OSINT**) tool which helps you obtaining and understanding **Attack Surface**.
 
-The main goal is to gathering infromation from search engines for Internet-connected devices (**https://censys.io/**, **https://www.shodan.io/**).
+The main goal is gathering information from search engines for Internet-connected devices (**https://censys.io/**, **https://www.shodan.io/**).
 It scraps data about Common Vulnerabilities and Exposures (**CVE**), Common Weakness Enumeration (**CWE**) and also has database where CVEs are mapped to CWE.
 
-It returns data about local machine - local installed softwares (from Windows Registry), local network information (python libraries, popular cmd commads).
+It returns data about the local machine - local installed software (from Windows Registry), local network information (python libraries, popular cmd commads).
 
-For now application has also simple tools like hash calcualtor, shannon entropy calculator and very simple port scanner. 
+For now application has also simple tools like hash calculator, shannon entropy calculator and very simple port scanner. 
 More cryptography-math tools and reconnaissance scripts are planned.
 
 #### SARENKA was mentioned here:
@@ -94,7 +94,6 @@ $ cd sarenka/sarenka
 $ python sarenka.py
 ```
 
-
 # Getting started 
 
 ####Please create accounts on this services:
@@ -103,6 +102,7 @@ $ python sarenka.py
 
 ##### Run backend application - default http://localhost:8000/
 ```
+# go to sarenka/sarenka
 $ python backend/manage.py runserver
 ```
 
@@ -142,12 +142,15 @@ $ npm start
 - Have any idea or question?  [![alt text][1.1]][1]
 - Don't hesitate to contact  [![Author](https://img.shields.io/badge/pawlaczyk-black.svg)](https://github.com/pawlaczyk/) .
 
+#### Databases
+Details in documentation.
 
 ## Tech
 * [Renderforest](https://www.renderforest.com/)
 * [gawk](http://gnuwin32.sourceforge.net/packages/gawk.htm) 
 * [chocolatey](https://chocolatey.org/)
 * [PyCharm](https://www.jetbrains.com/pycharm/)
+
 
 
 And of course SARENKA itself is open source with a [public repository][sarenka]
