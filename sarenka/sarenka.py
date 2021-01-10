@@ -304,16 +304,19 @@ class SarenkaBuilder:
         # TODO - zapisać do bazy wszystkie CVE
 
     def __build_frontend(self):  # TODO
+        raise NotImplementedError
         if self.is_verbose:
             self.heart_print("Building React frontent - npm run build ")
+        subprocess.check_call(["npm",  "install"], cwd=self.helper.frontend_dir)
+
 
     def run(self):
         starting_time = perf_counter()
         self.__install_requirements()
         self.__create_cwes_databases_files()
         self.__create_user_credentials_database()
-        self.__feed_cwe_databases()
-        self.__build_frontend()
+        # self.__feed_cwe_databases()
+        # self.__build_frontend()
         performance = perf_counter() - starting_time
         self.heart_print(f"Builded in {performance} seconds.")
 
@@ -349,14 +352,15 @@ class SarenkaEnvCreator:
 
 class SarenkaCommand:
     def __init__(self, verbose=True):
-        self.env_creator = SarenkaEnvCreator()
+        # self.env_creator = SarenkaEnvCreator()
         self.builder = SarenkaBuilder(verbose)
 
     def create_env(self):
-        self.env_creator.run()
+        # self.env_creator.run()
+        raise NotImplementedError
 
     def info(self):
-        pass
+        raise NotImplementedError
 
     def build(self):
         print("Do you really want to build application? It ")
@@ -368,5 +372,6 @@ class SarenkaCommand:
 
 
 if __name__ == "__main__":
+    print("!!! It is in develop mode !!!")
     sarenka_command = SarenkaCommand()
     sarenka_command.build()

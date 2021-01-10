@@ -91,7 +91,7 @@ $ git clone https://github.com/pawlaczyk/sarenka.git
 $ cd sarenka/sarenka
 ```
 
-###Create and activate virtualenv - depends on OS!
+###Please create and activate virtualenv - depends on OS!
 #### Linux
 
 ```
@@ -109,31 +109,34 @@ $ source sarenka_env/bin/activate
 > sarenka_env\Scripts\activate
 ```
 
-#### With sarenka.py script
-```
-# script checks OS and creates proper 'sarenka_env' 
-python sarenka.py --env
-```
-##### activate sarenka_env in Linux
-```
-# script creates "sarenka_env" now this name is required
-$ source sarenka_env/bin/activate
-```
-##### activate sarenka_env in Windows
-```
-# script creates "sarenka_env" now this name is required
-$ sarenka_env\Scripts\activate
-```
+
 
 ##### Build application with sarenka.py script
 ```
-$ python sarenka.py --build
+$ python sarenka.py
 ```
 ##### Run backend application - Django
 ```
 $ python backend/manage.py runserver
+# leave this command window open!
 ```
+
 ##### Run frontent application - React
+```
+# open another command 
+cd sarenka\sarenka\frontend
+# you should be in sarenka\sarenka\frontend
+
+# install javascript dependencies
+npm install
+
+# run react dev server
+npm start
+# leave this command window open!
+```
+
+Now you have backend Django app on <server_address>:8000 ( it has swagger by default)
+Frontent app http://localhost:3000/
 
 
 # Getting started 
