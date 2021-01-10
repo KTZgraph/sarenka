@@ -322,9 +322,9 @@ class SarenkaEnvCreator:
     def __init__(self):
         self.helper = SarenkaHelper()
 
-    def __env_linux(self):
+    def __create_env_linux(self):
         """
-        Funkcja pomocnicza tworząca środowisko
+        Funkcja pomocnicza tworząca środowisko w systemie Linux
         """
         # TODO dodac sciezki env
         current_dir_path = self.helper.current_dir_path
@@ -333,8 +333,19 @@ class SarenkaEnvCreator:
         self.helper.run_command("virtualenv sarenka_env")
         self.helper.run_command("source sarenka_env/bin/activate")
 
-    def __env_windows(self):
-        pass
+    def __create_env_windows(self):
+        self.helper.run_command("pip3 install virtualenv")
+        self.helper.run_command("virtualenv sarenka_env")
+        self.helper.run_command("virtualenv sarenka_env")
+        self.helper.run_command("source sarenka_env/bin/activate")
+
+    def run(self):
+        """Uruchamia komendy tworzące środowisko w zalezności od systemu operacyjnego na którym uruchomiono skrypt."""
+        if IS_LINUX:
+            self.__create_env_linux()
+        if IS_WINDOWS:
+            self.__create_env_windows()
+
 
 class SarenkaCommand:
     def __init__(self, verbose=True):
