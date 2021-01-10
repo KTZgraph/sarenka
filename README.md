@@ -53,7 +53,11 @@ More cryptography-math tools and reconnaissance scripts are planned.
 * [hacker.observer](https://hacker.observer/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place/)
 * [nuomiphp.com](https://www.nuomiphp.com/github/zh/5ff88c65e4570e7ee973117d.html)
 * [danielonsecurity.com](https://danielonsecurity.com/links/)
-
+* [haktechs](https://www.haktechs.com/hacking-pentesting-tools/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place/)
+* [cybeseclabs.com](https://www.cybeseclabs.com/2021/01/07/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place/?fbclid=IwAR0HsqzT9UK-lReusUu0xEz2REN9uFZxXyOdr3dRrZ4uI8C0oseA8mZJSak)
+* [vk.com](https://vk.com/wall-105076815_33626)
+* [hacking.reviews](https://www.hacking.reviews/2021/01/sarenka-osint-tool-data-from-services.html)
+* [thehacker.co](https://thehacker.co/pentest/information-gathering-pentest/sarenka-osint-tool-data-from-services-like-shodan-censys-etc)
 
 
 # Features
