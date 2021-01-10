@@ -139,10 +139,10 @@ $ python backend/manage.py runserver
 - https://censys.io/register
 
 #### Next go to 'Settings' tab and add user credentials:
-<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-08 213602.png">
+<img alt="sarenka-settigs" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-08 213602.png">
 
 
-#### Or if you are using only backend send this POST request to <server_addres>/api/user_credentials endpoint
+###### Or if you are using only backend send this POST request to <server_addres>/api/user_credentials endpoint
 ```json
 {
     "censys.api_id": "<censys_API_ID>",
@@ -156,19 +156,19 @@ $ python backend/manage.py runserver
 
 
 # Screenshots
-<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 234911.png">
+<img alt="sarenka-main-harwdare" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 234911.png">
 
-<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 235528.png">
+<img alt="sarenka-cve" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 235528.png">
 
-<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 235615.png">
+<img alt="sarenka-windows-registry" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 235615.png">
 
-<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-08 213333.png">
+<img alt="sarenka-censys" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-08 213333.png">
 
-<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-08 213519.png">
+<img alt="sarenka-cwe" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-08 213519.png">
 
-<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-08 213602.png">
+<img alt="sarenka-swagger" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/swagger.png">
 
-<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/swagger">
+
 
 
 
