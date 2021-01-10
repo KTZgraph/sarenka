@@ -16,26 +16,26 @@
 
 **SARENKA** is an Open Source Intelligence (**OSINT**) tool which helps you obtaining and understanding **Attack Surface**.
 
-The main goal is to gathering infromation from search engines for Internet-connected devices (**https://censys.io/**, **https://www.shodan.io/**).
+The main goal is gathering information from search engines for Internet-connected devices (**https://censys.io/**, **https://www.shodan.io/**).
 It scraps data about Common Vulnerabilities and Exposures (**CVE**), Common Weakness Enumeration (**CWE**) and also has database where CVEs are mapped to CWE.
 
-It returns data about local machine - local installed softwares (from Windows Registry), local network information (python libraries, popular cmd commads).
+It returns data about a local machine - local installed software (from Windows Registry), local network information (python libraries, popular cmd commads).
 
-For now application has also simple tools like hash calcualtor, shannon entropy calculator and very simple port scanner. 
+For now application has also simple tools like hash calculator, shannon entropy calculator and very simple port scanner. 
 More cryptography-math tools and reconnaissance scripts are planned.
 
 # Screenshots
-<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 234911.png">
+<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/screenshot-2021-01-07-234911.png">
 
-<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 235528.png">
+<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/screenshot-2021-01-07-235528.png">
 
-<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 235615.png">
+<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/screenshot-2021-01-07-235615.png">
 
-<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-08 213333.png">
+<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/screenshot-2021-01-08-213333.png">
 
-<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-08 213519.png">
+<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/screenshot-2021-01-08-213519.png">
 
-<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-08 213602.png">
+<img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/screenshot-2021-01-08-213602.png">
 
 #### Look
 - https://www.facebook.com/ncybersec/posts/1671427243027993
