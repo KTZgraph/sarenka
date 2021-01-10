@@ -76,11 +76,9 @@ You can also:
 
 
 # Installation
-
-## Installation from sources
-- Application has been tested manually in Kali Linux kali-rolling 2020.2; Python 3.8.2; Node
-- Application has been tested manually in Windows 10; Python 3.8.5; Node v12.13.0
-
+SARENKA requires:
+* [Python](https://www.python.org/downloads/)
+* [Node.js](https://nodejs.org/en/download/)
 
 ##### Clone repository
 ```
@@ -91,52 +89,21 @@ $ git clone https://github.com/pawlaczyk/sarenka.git
 $ cd sarenka/sarenka
 ```
 
-###Please create and activate virtualenv - depends on OS!
-#### Linux
-
-```
-# python virtualenv manually; you can change "sarenka_env"
-
-$ pip3 install virtualenv
-$ virtualenv sarenka_env
-$ virtualenv sarenka_env
-$ source sarenka_env/bin/activate
-```
-
-#### Windows
-```
-> python -m venv sarenka_env
-> sarenka_env\Scripts\activate
-```
-
-
-
 ##### Build application with sarenka.py script
 ```
 $ python sarenka.py
 ```
-##### Run backend application - Django
+##### Run backend application - default http://localhost:8000/
 ```
 $ python backend/manage.py runserver
-# leave this command window open!
 ```
 
-##### Run frontent application - React
+##### Run frontent application - default http://localhost:3000/
 ```
-# open another command 
-cd sarenka\sarenka\frontend
-# you should be in sarenka\sarenka\frontend
-
-# install javascript dependencies
-npm install
-
-# run react dev server
-npm start
-# leave this command window open!
+# go to sarenka/sarenka/frontend folder
+$ npm install
+$ npm start
 ```
-
-Now you have backend Django app on <server_address>:8000 ( it has swagger by default)
-Frontent app http://localhost:3000/
 
 
 # Getting started 
@@ -145,19 +112,6 @@ Frontent app http://localhost:3000/
 - https://account.shodan.io/register
 - https://censys.io/register
 
-#### Next go to 'Settings' tab and add user credentials:
-<img alt="sarenka-settigs" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-08 213602.png">
-
-
-###### Or if you are using only backend send this POST request to <server_addres>/api/user_credentials endpoint
-```json
-{
-    "censys.api_id": "<censys_API_ID>",
-    "censys.secret" : "<censys_Secret>",
-    "shodan.user": "<shodan_user>",
-    "shodan.api_key": "<shodan_api_key>"
-}
-```
 
 
 
@@ -228,9 +182,9 @@ And of course SARENKA itself is open source with a [public repository][sarenka]
 - https://circleci.com/
 - https://github.com/snyk-bot
 
-#### Tests
-- Tested on Windows 10
-- Tested on Kali Linux kali-rolling 2020.2
+#### Tested manually
+- Kali Linux kali-rolling 2020.2; Python 3.8.2; Node
+- Windows 10; Python 3.8.5; Node v12.13.0
 
 ### Documentation
 Till end of March, 2021 documentation will be available only in Polish!
