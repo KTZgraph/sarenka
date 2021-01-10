@@ -99,14 +99,6 @@ const NavBar = () => {
         >
           Hardware info
         </NavButton>
-        <NavButton
-          icon={docsIcon}
-          iconactive={docsIconActive}
-          onClick={() =>
-            handleClick(routesWithoutTab.documentation, 'Documentation')}
-        >
-          Documentation
-        </NavButton>
         <StyledSettingsParagraph>Settings</StyledSettingsParagraph>
         <NavButton
           icon={settingsIcon}
@@ -114,6 +106,14 @@ const NavBar = () => {
           onClick={() => handleClick(routesWithoutTab.settings, 'Settings')}
         >
           Settings
+        </NavButton>
+        <NavButton
+          icon={docsIcon}
+          iconactive={docsIconActive}
+          onClick={() =>
+            handleClick(routesWithoutTab.documentation, 'Documentation')}
+        >
+          Documentation
         </NavButton>
         <StyledSettingsParagraph>Tabs</StyledSettingsParagraph>
         <ScrollableTabButtons />
