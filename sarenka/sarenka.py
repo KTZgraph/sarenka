@@ -304,19 +304,21 @@ class SarenkaBuilder:
         # TODO - zapisać do bazy wszystkie CVE
 
     def __build_frontend(self):  # TODO
-        raise NotImplementedError
         if self.is_verbose:
-            self.heart_print("Building React frontent - npm run build ")
-        subprocess.check_call(["npm",  "install"], cwd=self.helper.frontend_dir)
+            self.heart_print("Installing React Requirements ")
+        subprocess.Popen("npm install", cwd=self.helper.frontend_dir, shell=True)
 
 
     def run(self):
         starting_time = perf_counter()
-        self.__install_requirements()
-        self.__create_cwes_databases_files()
-        self.__create_user_credentials_database()
+        # self.__install_requirements()
+        # self.__create_cwes_databases_files()
+        # self.__create_user_credentials_database()
+
+
+
         # self.__feed_cwe_databases()
-        # self.__build_frontend()
+        self.__build_frontend()
         performance = perf_counter() - starting_time
         self.heart_print(f"Builded in {performance} seconds.")
 

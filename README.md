@@ -93,17 +93,6 @@ $ cd sarenka/sarenka
 ```
 $ python sarenka.py
 ```
-##### Run backend application - default http://localhost:8000/
-```
-$ python backend/manage.py runserver
-```
-
-##### Run frontent application - default http://localhost:3000/
-```
-# go to sarenka/sarenka/frontend folder
-$ npm install
-$ npm start
-```
 
 
 # Getting started 
@@ -112,8 +101,16 @@ $ npm start
 - https://account.shodan.io/register
 - https://censys.io/register
 
+##### Run backend application - default http://localhost:8000/
+```
+$ python backend/manage.py runserver
+```
 
-
+##### Run frontent application - default http://localhost:3000/
+```
+# go to sarenka/sarenka/frontend folder
+$ npm start
+```
 
 
 # Screenshots
