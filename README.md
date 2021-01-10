@@ -63,7 +63,7 @@ More cryptography-math tools and reconnaissance scripts are planned.
 - https://pentesttools.net/sarenka-osint-tool-data-from-services-like-shodan-censys-etc/
 - https://wangshit.xyz/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place/
 - https://geekychild.com/hack-penetration-tool/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place/
-
+- https://www.haktechs.com/hacking-pentesting-tools/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place/
 
 # Installation
 Description in progress.
