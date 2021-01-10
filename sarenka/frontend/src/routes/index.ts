@@ -48,6 +48,7 @@ export const serverRoutes: Record<string, string> = {
   remoteHostReport: `${serverIp}/reports/host_info/`,
   registryScanData: `${serverIp}/api/local/registry`,
   hardwareInfoData: `${serverIp}/api/local/hardware`,
+  hardwareInfoReport: `${serverIp}/reports/hardware_info`,
   cveSearchData: `${serverIp}/vulns/cve/`,
   cweSearchData: `${serverIp}/vulns/cwe/`,
   userCredentials: `${serverIp}/api/user_credentials`,
