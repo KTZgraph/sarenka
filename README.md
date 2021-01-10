@@ -112,17 +112,21 @@ $ python backend/manage.py runserver
 $ npm start
 ```
 
+#####Add user credentials at "Settings"
+<img alt="sarenka-cwe" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/screenshot-2021-01-08-213602.png">
+
+
 
 # Screenshots
-<img alt="sarenka-main-harwdare" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 234911.png">
+<img alt="sarenka-main-harwdare" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/screenshot-2021-01-07-234911.png">
 
-<img alt="sarenka-cve" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 235528.png">
+<img alt="sarenka-cve" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/screenshot-2021-01-07-235528.png">
 
-<img alt="sarenka-windows-registry" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-07 235615.png">
+<img alt="sarenka-windows-registry" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/screenshot-2021-01-07-235615.png">
 
-<img alt="sarenka-censys" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-08 213333.png">
+<img alt="sarenka-censys" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/screenshot-2021-01-08-213333.png">
 
-<img alt="sarenka-cwe" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/Screenshot 2021-01-08 213519.png">
+<img alt="sarenka-cwe" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/screenshot-2021-01-08-213519.png">
 
 <img alt="sarenka-swagger" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/swagger.png">
 
