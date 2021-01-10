@@ -51,7 +51,7 @@ const SettingsView = () => {
       </Heading>
       <StyledTokensWrapper>
         <Heading as="h2" regularfont>
-          Type your API tokens
+          Type your user credentials
         </Heading>
         <StyledForm onSubmit={(event) => onSubmit(event)}>
           <InputWithLabel
@@ -143,7 +143,7 @@ const SettingsView = () => {
             }}
           />
           <Button type="submit" small displayBlock>
-            Update tokens
+            Update credentials
           </Button>
         </StyledForm>
       </StyledTokensWrapper>
