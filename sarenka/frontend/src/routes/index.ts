@@ -54,4 +54,8 @@ export const serverRoutes: Record<string, string> = {
   userCredentials: `${serverIp}/api/user_credentials`,
 };
 
+export const documentationRoutes: Record<string, string> = {
+  apiDocumentation: serverIp,
+};
+
 export default routes;

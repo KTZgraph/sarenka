@@ -1,17 +1,22 @@
 import React from 'react';
-import VulnerabilityTemplate from 'templates/VulnerabilityTemplate';
 import Heading from 'components/atoms/Heading/Heading';
+import Paragraph from 'components/atoms/Paragraph/Paragraph';
+import SettingsTemplate from 'templates/SettingsTemplate';
+import logo from 'static/logo.svg';
+import LinkButton from 'components/atoms/LinkButton/LinkButton';
+import { documentationRoutes } from 'routes';
 
 const DocsView = () => {
   return (
-    <VulnerabilityTemplate>
-      <Heading>
-        In progress...
-        <span role="img" aria-label="smile">
-          😁
-        </span>
+    <SettingsTemplate logo={<img src={logo} alt="App logo." />}>
+      <Heading regularfont bigFont>
+        Documentation
       </Heading>
-    </VulnerabilityTemplate>
+      <Paragraph>
+        API documentation
+        <LinkButton url={documentationRoutes.apiDocumentation} />
+      </Paragraph>
+    </SettingsTemplate>
   );
 };
 
