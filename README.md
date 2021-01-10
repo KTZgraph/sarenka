@@ -66,6 +66,49 @@ More cryptography-math tools and reconnaissance scripts are planned.
 
 
 # Installation
+## Installation from sources
+### Linux
+Application has been tested manually in Kali Linux kali-rolling 2020.2
+
+##### Clone repository
+```
+$ git clone https://github.com/pawlaczyk/sarenka.git
+```
+##### Create virtualenv first 
+###### manually
+```
+# python virtualenv manually; you can change "sarenka_env" if you like
+$ pip3 install virtualenv
+$ virtualenv sarenka_env
+$ virtualenv sarenka_env
+$ source sarenka_env/bin/activate
+```
+
+###### or with sarenka.py script
+
+##### Go to source appliction directory
+```
+$ cd sarenka/sarenka
+```
+
+##### Build application with sarenka.py script
+```
+$ python sarenka.py
+```
+##### Run backend application - Django
+```
+$ python backend/manage.py runserver
+```
+###### Run frontent application - React
+
+
+
+
+### Windows
+##### Please create virtualenv first
+Application has been tested manually in Windows 10
+
+
 Description in progress.
 
 # Getting started 

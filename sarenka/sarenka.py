@@ -19,14 +19,16 @@ import json
 from shutil import copy2, rmtree
 from time import perf_counter
 import subprocess
+
 IS_WINDOWS = platform.startswith('win')
-IS_LINUX = platform.startswith('linux') # linux or linux2 (*)
+IS_LINUX = platform.startswith('linux')  # linux or linux2 (*)
 
 
 class SarenkaBuildError(Exception):
     """
     Zgłasza wyjątek gdy nie można zbudować aplikacji SARENKA.
     """
+
     def __init__(self, message=None, errors=None):
         super().__init__(message)
         self.errors = errors
@@ -34,20 +36,25 @@ class SarenkaBuildError(Exception):
 
 class SarenkaHelper:
     """Klasa pomocnicza zawierająca ścieżki do plików, oraz listy danych niezbędnych do zbudowania aplikacji."""
+
     def __init__(self):
         self.__current_dir_path = os.path.dirname(os.path.realpath(__file__))
 
         self.__feed_folder_path = os.path.join(self.current_dir_path, "feeds")
-        self.__empty_database_file_path = os.path.join(self.feed_folder_path, "empty.sqlite3")
+        self.__empty_database_file_path = os.path.join(
+            self.feed_folder_path, "empty.sqlite3")
 
         # ścieżki do folderów ze slabościami CWE - niezbędne do karmienia aplikacji
-        self.__all_cwe_details_dir = os.path.join(self.feed_folder_path, "cwe_details")
+        self.__all_cwe_details_dir = os.path.join(
+            self.feed_folder_path, "cwe_details")
         self.__all_cwe_ids_dir = os.path.join(self.feed_folder_path, "cwe_ids")
-        self.__all_cwe_ids_file_path = os.path.join(self.all_cwe_ids_dir, "cwe_all.json")
+        self.__all_cwe_ids_file_path = os.path.join(
+            self.all_cwe_ids_dir, "cwe_all.json")
         self.__all_cwe_ids_list = self.get_all_cwe_ids()
 
         # ścieżki do folderów z podatnościami CVE - niezbędne do karmienia aplikacji
-        self.__cve_details_dir = os.path.join(self.feed_folder_path, "cve_details")
+        self.__cve_details_dir = os.path.join(
+            self.feed_folder_path, "cve_details")
         self.__cve_ids_dir = os.path.join(self.feed_folder_path, "cve_ids")
         self.__cve_ids_file = os.path.join(self.feed_folder_path, "cve_ids")
 
@@ -56,15 +63,17 @@ class SarenkaHelper:
 
         # ścieżki do backendu aplikacji - potrzebne podczas budowania projektu
         self.__backend_dir = os.path.join(self.current_dir_path, "backend")
-        self.__manage_py_path = str(os.path.join(self.backend_dir, "manage.py"))
+        self.__manage_py_path = str(
+            os.path.join(self.backend_dir, "manage.py"))
         self.__backend_backend_dir = os.path.join(self.backend_dir, "backend")
 
-        #ścieżki do requirements
+        # ścieżki do requirements
         self.__requirements_file = self.get_requirements_file_path()
 
     @staticmethod
     def run_command(command, verbose=True):
         # Never use os.popen, always use subprocess!
+        print("command: ", command)
         response = subprocess.run(str(command), shell=True)
         if response.returncode:
             raise SarenkaBuildError(f"Error while executing command {command}")
@@ -74,9 +83,9 @@ class SarenkaHelper:
         Dane są potrzebne do stworzenia baz danych dla aplikacji api_searcher."""
         with open(self.all_cwe_ids_file_path) as json_file:
             data = json.load(json_file)
-        all_cwe_ids =[cwe["cwe_id"] for cwe in data["cwe_all"]]
+        all_cwe_ids = [cwe["cwe_id"] for cwe in data["cwe_all"]]
         all_cwe_ids.sort()
-        return all_cwe_ids # zwraca wszystkie CWE ids
+        return all_cwe_ids  # zwraca wszystkie CWE ids
 
     def get_requirements_file_path(self):
         if IS_WINDOWS:
@@ -85,11 +94,16 @@ class SarenkaHelper:
             return os.path.join(self.current_dir_path, "requirements_linux.txt")
         else:
             print("You are trying to build SARENKA on not tested Operating System.")
-            user_input = input("Do you really want to build app like on Linux OS (y/n): ")
+            user_input = input(
+                "Do you really want to build app like on Linux OS (y/n): ")
             if user_input == "y":
                 return os.path.join(self.current_dir_path, "requirements_linux.txt")
             else:
                 print("Building application canceled by user.")
+
+    @property
+    def requirements(self):
+        return self.__requirements_file
 
     @property
     def all_cwe_ids_list(self):
@@ -98,7 +112,7 @@ class SarenkaHelper:
 
     @property
     def cwe_dbs_name_list(self):
-        #TODO dac lambdę
+        # TODO dac lambdę
         return [cwe.replace("-", "_").lower() for cwe in self.__all_cwe_ids_list]
 
     @property
@@ -197,11 +211,6 @@ class SarenkaBuilder:
     def user_database_file_path(self):
         return os.path.join(self.helper.backend_backend_dir, SarenkaBuilder.__user_credentials_db_filename)
 
-    def __create_env(self): #TODO
-        if self.is_verbose:
-            print("creating env")
-        self.helper.run_command("python -m venv venv")
-
     def __install_requirements(self):
         """Instaluje wymagane biblioteki w zależności od systemu operacyjnego na jakim ma być uruchamiona aplikacja."""
         if IS_WINDOWS:
@@ -211,12 +220,14 @@ class SarenkaBuilder:
             if self.is_verbose:
                 self.heart_print("Installing requirements for Linux")
         else:
-            raise SarenkaBuildError("Unable to install packages from requirements.")
+            raise SarenkaBuildError(
+                "Unable to install packages from requirements.")
 
-    def __create_cwes_databases_files(self): #TRICKY
+    def __create_cwes_databases_files(self):  # TRICKY
         """Tworzy docelowe bazy dancyh dla aplikacji api_vulnerabilities"""
         if self.is_verbose:
-            self.heart_print("Creating databases for Common Weakness Enumeration")
+            self.heart_print(
+                "Creating databases for Common Weakness Enumeration")
 
         # 1.Sprawdza czy taki folder już istnieje, jeśli tak uwuam całą jego zawartość
         if os.path.isdir(self.cwe_db_dir):
@@ -226,10 +237,11 @@ class SarenkaBuilder:
         # 2. Tworzy folder dla baz danych dla podatności CWE
         os.makedirs(self.cwe_db_dir)
         if self.is_verbose:
-            self.heart_print(f"Folder cwe database files in {self.cwe_db_dir} for 'api_vulnerabilities' application created.")
+            self.heart_print(
+                f"Folder cwe database files in {self.cwe_db_dir} for 'api_vulnerabilities' application created.")
 
         # 3. Migruje jedną bazę danych CWE-NONE
-        #3.1  tworzy pustą bazę danych
+        # 3.1  tworzy pustą bazę danych
         cwe_none_db = os.path.join(self.cwe_db_dir, "cwe_none.sqlite3")
         copy2(self.helper.empty_database_file_path, cwe_none_db)
 
@@ -239,7 +251,8 @@ class SarenkaBuilder:
 
         # 4. Tworzenie pustych baz danych dla wszystkich CWE
         if self.is_verbose:
-            self.heart_print(f"Creating {len(self.helper.all_cwe_ids_list)} empty databases: CWE-IDs + CWE-NONE.")
+            self.heart_print(
+                f"Creating {len(self.helper.all_cwe_ids_list)} empty databases: CWE-IDs + CWE-NONE.")
 
         # tworzy dokładnie 862 bazy danych TRICKY PART
         for cwe_id in self.helper.cwe_dbs_name_list:
@@ -248,7 +261,8 @@ class SarenkaBuilder:
             copy2(cwe_none_db, destination)
 
         if self.is_verbose:
-            self.heart_print(f"{len(self.helper.all_cwe_ids_list)} empty databases for application 'api_vulnerabilities' created.")
+            self.heart_print(
+                f"{len(self.helper.all_cwe_ids_list)} empty databases for application 'api_vulnerabilities' created.")
 
     def __create_user_credentials_database(self):
         """Funkcja tworząca nową bazę dla danych uwierzytelniających użytkownika"""
@@ -258,7 +272,8 @@ class SarenkaBuilder:
         destination = self.user_database_file_path
         # usuwa stary plik bazy danych z danymi uwierzytelniającymi użytkownika w serwisach trzecich.
         if os.path.isfile(destination):
-            self.heart_print(f"Removing old user credentials database file: {destination}")
+            self.heart_print(
+                f"Removing old user credentials database file: {destination}")
             os.remove(destination)
 
         source = self.helper.empty_database_file_path
@@ -268,30 +283,32 @@ class SarenkaBuilder:
             self.heart_print(f"Empty database file {destination} created")
 
         if self.is_verbose:
-            self.heart_print("Applying migration to Common Weakness Enumeration databases")
+            self.heart_print(
+                "Applying migration to Common Weakness Enumeration databases")
 
         command = f"python {self.helper.manage_py} migrate api_searcher --database={self.user_credentials_db_name}"
         self.helper.run_command(command, verbose=self.is_verbose)
 
         if self.is_verbose:
-            print(f"Applied migrations to {self.user_credentials_db_name} database for 'api_searcher' application.")
+            print(
+                f"Applied migrations to {self.user_credentials_db_name} database for 'api_searcher' application.")
 
-    def __feed_cwe_databases(self): #TODO
+    def __feed_cwe_databases(self):  # TODO
         if self.is_verbose:
             self.heart_print("Saving Common Weakness Enumeration to databases")
         # TODO - zapisać do bazy wszystkie CWE
 
         if self.is_verbose:
-            self.heart_print("Saving Common Vulnerabilities and Exposures to databases")
+            self.heart_print(
+                "Saving Common Vulnerabilities and Exposures to databases")
         # TODO - zapisać do bazy wszystkie CVE
 
-    def __build_frontend(self): #TODO
+    def __build_frontend(self):  # TODO
         if self.is_verbose:
             self.heart_print("Building React frontent - npm run build ")
 
     def run(self):
         starting_time = perf_counter()
-        self.__create_env()
         self.__install_requirements()
         self.__create_cwes_databases_files()
         self.__create_user_credentials_database()
@@ -301,38 +318,31 @@ class SarenkaBuilder:
         self.heart_print(f"Builded in {performance} seconds.")
 
 
-class SarenkaInfo:
+class SarenkaEnvCreator:
     def __init__(self):
-        result = {}
+        self.helper = SarenkaHelper()
 
-    @staticmethod
-    def __get_authors():
-        return {
-            "Dominika Pawlaczyk": "https://github.com/pawlaczyk/",
-            "Michał Pawlaczyk": "https://github.com/michalpawlaczyk",
-            "Karolina Słonka": "https://github.com/k-slonka"
-        }
+    def __env_linux(self):
+        """
+        Funkcja pomocnicza tworząca środowisko
+        """
+        # TODO dodac sciezki env
+        current_dir_path = self.helper.current_dir_path
+        self.helper.run_command("pip3 install virtualenv")
+        self.helper.run_command("virtualenv sarenka_env")
+        self.helper.run_command("virtualenv sarenka_env")
+        self.helper.run_command("source sarenka_env/bin/activate")
 
-    @staticmethod
-    def get_feeds_info():
+    def __env_windows(self):
         pass
-
-    @staticmethod
-    def __get_project_info():
-        return {
-            "repository": "https://github.com/pawlaczyk/sarenka/",
-            "package": "https://pypi.org/project/sarenka/",
-            "maintainers": "Dominika Pawlaczyk",
-            "contact": "https://github.com/pawlaczyk",
-            "documentation": "https://pawlaczyk.github.io/sarenka/",
-            "license": "MIT"
-        }
-
 
 class SarenkaCommand:
     def __init__(self, verbose=True):
+        self.env_creator = SarenkaEnvCreator()
         self.builder = SarenkaBuilder(verbose)
-        self.info_obj = SarenkaInfo()
+
+    def create_env(self):
+        self.env_creator.run()
 
     def info(self):
         pass
@@ -345,8 +355,7 @@ class SarenkaCommand:
         else:
             print("Building application canceled by user.")
 
+
 if __name__ == "__main__":
     sarenka_command = SarenkaCommand()
     sarenka_command.build()
-
-
