@@ -294,33 +294,29 @@ class SarenkaBuilder:
                 f"Applied migrations to {self.user_credentials_db_name} database for 'api_searcher' application.")
 
     def __feed_cwe_databases(self):  # TODO
-        if self.is_verbose:
-            self.heart_print("Saving Common Weakness Enumeration to databases")
-        # TODO - zapisać do bazy wszystkie CWE
+        # if self.is_verbose:
+        #     self.heart_print("Saving Common Weakness Enumeration to databases")
+        # # TODO - zapisać do bazy wszystkie CWE
 
-        if self.is_verbose:
-            self.heart_print(
-                "Saving Common Vulnerabilities and Exposures to databases")
-        # TODO - zapisać do bazy wszystkie CVE
+        # if self.is_verbose:
+        #     self.heart_print(
+        #         "Saving Common Vulnerabilities and Exposures to databases")
+        # # TODO - zapisać do bazy wszystkie CVE
+        pass
 
     def __build_frontend(self):  # TODO
         if self.is_verbose:
             self.heart_print("Installing React Requirements ")
         subprocess.Popen("npm install", cwd=self.helper.frontend_dir, shell=True)
+        subprocess.Popen("npm build", cwd=self.helper.frontend_dir, shell=True)
 
 
     def run(self):
-        starting_time = perf_counter()
         # self.__install_requirements()
-        # self.__create_cwes_databases_files()
-        # self.__create_user_credentials_database()
-
-
-
-        # self.__feed_cwe_databases()
+        self.__create_cwes_databases_files()
+        self.__create_user_credentials_database()
+        self.__feed_cwe_databases()
         self.__build_frontend()
-        performance = perf_counter() - starting_time
-        self.heart_print(f"Builded in {performance} seconds.")
 
 
 class SarenkaEnvCreator:
@@ -329,20 +325,18 @@ class SarenkaEnvCreator:
 
     def __create_env_linux(self):
         """
-        Funkcja pomocnicza tworząca środowisko w systemie Linux
+        Funkcja pomocnicza tworząca virtualenv dla pythona w systemie Linux
         """
-        # TODO dodac sciezki env
-        current_dir_path = self.helper.current_dir_path
         self.helper.run_command("pip3 install virtualenv")
         self.helper.run_command("virtualenv sarenka_env")
-        self.helper.run_command("virtualenv sarenka_env")
-        self.helper.run_command("source sarenka_env/bin/activate")
 
     def __create_env_windows(self):
+        """
+        Funkcja pomocnicza tworząca virtualenv dla pythona w systemie Linux
+        """
         self.helper.run_command("pip3 install virtualenv")
-        self.helper.run_command("virtualenv sarenka_env")
-        self.helper.run_command("virtualenv sarenka_env")
-        self.helper.run_command("source sarenka_env/bin/activate")
+        self.helper.run_command("python -m venv sarenka_env")
+
 
     def run(self):
         """Uruchamia komendy tworzące środowisko w zalezności od systemu operacyjnego na którym uruchomiono skrypt."""
@@ -365,7 +359,7 @@ class SarenkaCommand:
         raise NotImplementedError
 
     def build(self):
-        print("Do you really want to build application? It ")
+        print("Do you really want to build application?")
         user_input = input("Proceed (y/n): ")
         if user_input == "y":
             self.builder.run()
