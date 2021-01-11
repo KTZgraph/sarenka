@@ -6,6 +6,8 @@ BASE_DIR = os.path.dirname(
     os.path.dirname(os.path.abspath(__file__))
 )
 
+SARENKA_SOURCE = os.path.dirname(os.path.dirname(BASE_DIR))
+
 USER_CREDENTIALS_DB_NAME = "user_credentials"
 USER_CREDENTIALS_DB_FILE = "user_credentials.sqlite3"
 
@@ -79,7 +81,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'build')
+            os.path.join(SARENKA_SOURCE, 'frontend/build')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -105,7 +107,7 @@ REST_FRAMEWORK = {
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'build/static')
+    os.path.join(SARENKA_SOURCE, 'frontend/build/static')
 ]
 
 
