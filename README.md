@@ -58,6 +58,10 @@ More cryptography-math tools and reconnaissance scripts are planned.
 * [vk.com](https://vk.com/wall-105076815_33626)
 * [hacking.reviews](https://www.hacking.reviews/2021/01/sarenka-osint-tool-data-from-services.html)
 * [thehacker.co](https://thehacker.co/pentest/information-gathering-pentest/sarenka-osint-tool-data-from-services-like-shodan-censys-etc)
+* [iguru.gr](https://iguru.gr/2021/01/11/sarenka-ergaleio-osint-dedomena-apo-ypiresies-opos-shodan-kai-censys/)
+* [en.iguru.gr](https://en.iguru.gr/2021/01/11/sarenka-ergaleio-osint-dedomena-apo-ypiresies-opos-shodan-kai-censys/)
+* [rucore.net](https://rucore.net/p/archives/9740)
+* [kalilinuxtutorials.com](https://kalilinuxtutorials.com/sarenka/)
 
 
 # Features
