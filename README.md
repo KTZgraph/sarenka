@@ -104,17 +104,12 @@ $ python sarenka.py
 - https://account.shodan.io/register
 - https://censys.io/register
 
-##### Run backend application - default http://localhost:8000/
+##### Application - default http://localhost:8000/
 ```
 # go to sarenka/sarenka
 $ python backend/manage.py runserver
 ```
 
-##### Run frontent application - default http://localhost:3000/
-```
-# go to sarenka/sarenka/frontend folder
-$ npm start
-```
 
 #####Add user credentials at "Settings"
 <img alt="sarenka-cwe" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/screenshot-2021-01-08-213602.png">

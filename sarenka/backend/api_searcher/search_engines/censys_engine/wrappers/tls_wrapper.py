@@ -439,24 +439,19 @@ class TLSWrapper:
     def to_json(self):
         result = {}
         result.update({"chain": self.chain})
-        # result.update({"certificate": self.certificate})
-        # result.update({"version": self.version})
-        # result.update({"cipher_suite_id": self.cipher_suite_id})
-        # result.update({"cipher_suite_name": self.cipher_suite_name})
-        # result.update({"dh_prime": self.dh_prime})
-        # result.update({"dh_generator": self.dh_generator})
-        # result.update({"session_ticket_length": self.session_ticket_length})
-        # result.update({"ocsp_stapling": self.ocsp_stapling})
-        # result.update({"validation_browser_trusted": self.validation_browser_trusted})
-        # result.update({"validation_browser_error": self.validation_browser_error})
-        # result.update({"certificate": self.certificate.extensions})
+        result.update({"certificate": self.certificate})
+        result.update({"version": self.version})
+        result.update({"cipher_suite_id": self.cipher_suite_id})
+        result.update({"cipher_suite_name": self.cipher_suite_name})
+        result.update({"dh_prime": self.dh_prime})
+        result.update({"dh_generator": self.dh_generator})
+        result.update({"session_ticket_length": self.session_ticket_length})
+        result.update({"ocsp_stapling": self.ocsp_stapling})
+        result.update({"validation_browser_trusted": self.validation_browser_trusted})
+        result.update({"validation_browser_error": self.validation_browser_error})
+        result.update({"certificate": self.certificate.extensions})
 
         return result
     
     def __str__(self):
-        # return Common.dict_to_string(self.to_json)
-        result = ""
-        for i in self.chain:
-            print(i)
-            print("\n\n\n\n\n")
-        return result
+        return Common.dict_to_string(self.to_json)
