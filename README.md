@@ -62,6 +62,7 @@ More cryptography-math tools and reconnaissance scripts are planned.
 * [en.iguru.gr](https://en.iguru.gr/2021/01/11/sarenka-ergaleio-osint-dedomena-apo-ypiresies-opos-shodan-kai-censys/)
 * [rucore.net](https://rucore.net/p/archives/9740)
 * [hackerzzz.com](https://hackerzzz.com/2021/01/11/sarenka-osint-tool-data-from-services-like-shodan-censys/)
+* [my.oschina.net](https://my.oschina.net/u/4579293/blog/4885529)
 * [kalilinuxtutorials.com](https://kalilinuxtutorials.com/sarenka/)
 
 
