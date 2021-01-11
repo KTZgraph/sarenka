@@ -24,12 +24,13 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
+    path('', TemplateView.as_view(template_name='index.html')),
     path('admin/', admin.site.urls),
+    path('api', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('api/', include("api_searcher.urls")),
     path('vulns/', include("api_vulnerabilities.urls")),
     path('tools/', include("api_tools.urls")),
     path('reports/', include("reports.urls")),
     path('graphql/', GraphQLView.as_view(graphiql=True)),
-    path('', TemplateView.as_view(template_name='index.html')),
     path('redoc', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]

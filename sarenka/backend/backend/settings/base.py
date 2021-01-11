@@ -5,8 +5,9 @@ from decouple import config # circleCI
 BASE_DIR = os.path.dirname(
     os.path.dirname(os.path.abspath(__file__))
 )
-
 SARENKA_SOURCE = os.path.dirname(os.path.dirname(BASE_DIR))
+SARENKA_FRONTEND = os.path.join(SARENKA_SOURCE, "frontend")
+SARENKA_FRONTEND_BUILD = os.path.join(SARENKA_FRONTEND, "build")
 
 USER_CREDENTIALS_DB_NAME = "user_credentials"
 USER_CREDENTIALS_DB_FILE = "user_credentials.sqlite3"
@@ -52,10 +53,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ORIGIN_WHITELIST = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000"
-]
+# CORS_ORIGIN_WHITELIST = [
+#     "http://localhost:3000",
+#     "http://127.0.0.1:3000"
+# ]
 
 CORS_ALLOW_METHODS = [
     'GET',
@@ -81,7 +82,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(SARENKA_SOURCE, 'frontend/build')
+            os.path.join(SARENKA_FRONTEND, 'build')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -148,6 +149,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(SARENKA_FRONTEND_BUILD, 'static')
+]
+
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases

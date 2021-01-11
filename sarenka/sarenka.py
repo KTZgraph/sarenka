@@ -304,20 +304,11 @@ class SarenkaBuilder:
         # # TODO - zapisać do bazy wszystkie CVE
         pass
 
-    def __build_frontend(self):  # TODO
-        if self.is_verbose:
-            self.heart_print("Installing React Requirements ")
-        subprocess.Popen("npm install", cwd=self.helper.frontend_dir, shell=True)
-        subprocess.Popen("npm build", cwd=self.helper.frontend_dir, shell=True)
-
-
     def run(self):
         # self.__install_requirements()
         self.__create_cwes_databases_files()
         self.__create_user_credentials_database()
         self.__feed_cwe_databases()
-        self.__build_frontend()
-
 
 class SarenkaEnvCreator:
     def __init__(self):
