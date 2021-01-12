@@ -2,7 +2,15 @@
     <img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/logo.png">
 </p>
 
-[![Release release](https://img.shields.io/badge/release-planned-red.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) [![CircleCi release](https://img.shields.io/badge/coverage-None-green.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) [![CircleCi release](https://img.shields.io/badge/CircleCi-passed-lime.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) ![Platform release](https://img.shields.io/badge/platform-Windows-blue.svg) [![Platform release](https://img.shields.io/badge/platform-Linux-purple.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) ![CWE feed](https://img.shields.io/badge/CWE-12/20/2020-darkgreen.svg) ![CVE feed](https://img.shields.io/badge/CVE-12/19/2020-green.svg) [![license](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/pawlaczyk/sarenka/blob/master/LICENSE) 
+[![Release release](https://img.shields.io/badge/release-planned-red.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) 
+[![CircleCi release](https://img.shields.io/badge/coverage-None-green.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) 
+[![CircleCi release](https://img.shields.io/badge/CircleCi-passed-lime.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) 
+![Platform release](https://img.shields.io/badge/platform-Windows_10-blue.svg) 
+[![Platform release](https://img.shields.io/badge/platform-Kali_Linux-purple.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) 
+[![Python version](https://img.shields.io/badge/Python-3.8-blue.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) 
+![CWE feed](https://img.shields.io/badge/CWE-12/20/2020-darkgreen.svg) 
+![CVE feed](https://img.shields.io/badge/CVE-12/19/2020-green.svg) 
+[![license](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/pawlaczyk/sarenka/blob/master/LICENSE) 
 
 
 
@@ -82,9 +90,10 @@ You can also:
 
 
 # Installation
+Team tests application on Windows 10 and Kali Linux with Python 3.8.
+
 SARENKA requires:
 * [Python](https://www.python.org/downloads/)
-* [Node.js](https://nodejs.org/en/download/)
 
 ##### Clone repository
 ```
@@ -102,7 +111,7 @@ $ python sarenka.py
 
 # Getting started 
 
-####Please create accounts on this services:
+####Please create accounts on services:
 - https://account.shodan.io/register
 - https://censys.io/register
 
