@@ -197,8 +197,8 @@ And of course SARENKA itself is open source with a [public repository][sarenka]
 - https://github.com/snyk-bot
 
 #### Tested manually
-- Kali Linux kali-rolling 2020.2; Python 3.8.2; Node
-- Windows 10; Python 3.8.5; Node v12.13.0
+- Kali Linux kali-rolling 2020.2; Python 3.8.2
+- Windows 10; Python 3.8.5
 
 ### Documentation
 Till end of March, 2021 documentation will be available only in Polish!
