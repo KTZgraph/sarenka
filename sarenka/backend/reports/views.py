@@ -1,8 +1,3 @@
-from fpdf import FPDF, HTMLMixin
-
-import logging
-from rest_framework.response import Response
-
 from rest_framework import views
 from reports.host_info import PDFHostInfo
 from reports.hardware_info import PDFHardwareInfo
@@ -31,8 +26,17 @@ class GeneratePdfHostInfo(views.APIView):
             pdf.output('reports/report_host_info.pdf', 'F')
             return FileResponse(open('reports/report_host_info.pdf', 'rb'))
 
+
 class GeneratePdfHardware(views.APIView):
-    def get(self, request): 
+    """
+    Klasa generująca raport w formacie pdf o fizycznym sprzęcie na któym została uruchomiona aplikacja.
+    """
+    def get(self, request):
+        """
+        Metoda zwracająca raport w postacie pdf zawięrającym informacje o fizycznym sprzęcie na którym
+        :param request: obiket dla widoków Django, przechowujacy informacje o żądania HTTP użytkownika.
+        :return: plik pdf
+        """
         pdf = PDFHardwareInfo()
         pdf.alias_nb_pages()
         pdf.add_page()

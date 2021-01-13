@@ -1,5 +1,5 @@
 import os
-from decouple import config # circleCI
+# from decouple import config # circleCI
 
 
 BASE_DIR = os.path.dirname(
