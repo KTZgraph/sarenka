@@ -3,14 +3,18 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to sarenka's documentation!
+SARENKA
 ===================================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Sarenka documentation:
+   :maxdepth: 14
+   :caption: Dokumentacja aplikacji:
 
-   common/common
+   backend/common
+   backend/api_searcher
+   backend/api_tools
+   backend/api_vulnerabilities
+   backend/reports
 
 
 

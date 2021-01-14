@@ -1,6 +1,9 @@
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../sarenka/backend/backend'))
+import django
+sys.path.insert(0, os.path.abspath('../sarenka/backend'))
+os.environ['DJANGO_SETTINGS_MODULE'] = 'backend.settings.base'
+django.setup()
 
 project = 'SARENKA'
 copyright = '2021, Dominika Pawlaczyk, Michał Pawlaczyk, Karolina Słonka'
@@ -11,7 +14,13 @@ release = '0.0.1'
 
 
 extensions = [
-    'sphinx.ext.autodoc'
+    'sphinx.ext.autodoc',
+    'sphinxcontrib_django',
+    'sphinx.ext.viewcode',
+    'sphinx_autodoc_typehints',
+    'sphinx.ext.githubpages',
+    'sphinx.ext.graphviz',
+    'sphinx_autodoc_annotation',
 ]
 
 html_theme = "sphinx_rtd_theme"
