@@ -1,9 +1,9 @@
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../backend'))
+sys.path.insert(0, os.path.abspath('../sarenka/backend/backend'))
 
-project = 'sarenka'
-copyright = '2021, 0.0.1'
+project = 'SARENKA'
+copyright = '2021, Dominika Pawlaczyk, Michał Pawlaczyk, Karolina Słonka'
 author = '0.0.1'
 
 
