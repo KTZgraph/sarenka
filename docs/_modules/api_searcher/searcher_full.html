@@ -1,0 +1,325 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>api_searcher.searcher_full &mdash; SARENKA 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> SARENKA
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Dokumentacja aplikacji:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../backend/common.html">common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backend/api_searcher.html">api_searcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backend/api_tools.html">api_tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backend/api_vulnerabilities.html">api_vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backend/reports.html">reports</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SARENKA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>api_searcher.searcher_full</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for api_searcher.searcher_full</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Moduł spiający wszystkie wyszukiwania w jedną klasę - wszystkei dane dla adresu ip/domeny.</span>
+<span class="sd">Klasa bezpośrednio używana w widoku Django.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">rest_framework.reverse</span> <span class="kn">import</span> <span class="n">reverse</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Dict</span>
+<span class="kn">import</span> <span class="nn">whois</span>
+<span class="kn">import</span> <span class="nn">socket</span>
+
+<span class="kn">from</span> <span class="nn">connectors.credential</span> <span class="kn">import</span> <span class="n">CredentialsNotFoundError</span>
+<span class="kn">from</span> <span class="nn">api_searcher.search_engines.censys_engine.censys_host_search</span> <span class="kn">import</span> <span class="n">CensysHostSearch</span>
+<span class="kn">from</span> <span class="nn">api_searcher.search_engines.shodan_engine.shodan_host_search</span> <span class="kn">import</span> <span class="n">ShodanHostSearch</span>
+<span class="kn">from</span> <span class="nn">.dns.dns_searcher</span> <span class="kn">import</span> <span class="n">DNSSearcher</span><span class="p">,</span> <span class="n">DNSSearcherError</span>
+
+
+<div class="viewcode-block" id="SearcherFull"><a class="viewcode-back" href="../../backend/api_searcher.html#api_searcher.searcher_full.SearcherFull">[docs]</a><span class="k">class</span> <span class="nc">SearcherFull</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Klasa zwracajaca wszystkie znalezione dane - zwraca infromacje ze wszystkich serwisów trzeich, informacje o DNS etc.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="SearcherFull.__init__"><a class="viewcode-back" href="../../backend/api_searcher.html#api_searcher.searcher_full.SearcherFull.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ip_address</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">local_host_address</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">user_credentials</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">host</span> <span class="o">=</span> <span class="n">ip_address</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">host_address</span> <span class="o">=</span> <span class="n">local_host_address</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user_credentials</span> <span class="o">=</span> <span class="n">user_credentials</span></div>
+
+<div class="viewcode-block" id="SearcherFull.get_whois_data"><a class="viewcode-back" href="../../backend/api_searcher.html#api_searcher.searcher_full.SearcherFull.get_whois_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_whois_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Metoda zwraca dane z bazy whois.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">whois</span><span class="o">.</span><span class="n">whois</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SearcherFull.get_banner"><a class="viewcode-back" href="../../backend/api_searcher.html#api_searcher.searcher_full.SearcherFull.get_banner">[docs]</a>    <span class="k">def</span> <span class="nf">get_banner</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">port_list</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Metoda zwraca banery, które pórbuje uzyskac dla otwartych portów zwróconych przez seriwsy trzecie&quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">port</span> <span class="ow">in</span> <span class="n">port_list</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">()</span>
+            <span class="n">s</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">port</span><span class="p">)))</span>
+            <span class="n">s</span><span class="o">.</span><span class="n">settimeout</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="c1"># jak nie ma banera to rzuca timeotam</span>
+                <span class="n">response</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">response</span><span class="p">:</span>
+                    <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="n">port</span><span class="p">:</span> <span class="n">response</span><span class="p">})</span>
+            <span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">timeout</span><span class="p">:</span>
+                <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="n">port</span><span class="p">:</span> <span class="s2">&quot;Unable to grab banner.&quot;</span><span class="p">})</span>
+
+        <span class="k">return</span> <span class="n">result</span></div>
+
+<div class="viewcode-block" id="SearcherFull.get_censys_data"><a class="viewcode-back" href="../../backend/api_searcher.html#api_searcher.searcher_full.SearcherFull.get_censys_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_censys_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Metoda zwraca dane wyszukane w serwisie http://censys.io/&quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_credentials</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">CredentialsNotFoundError</span><span class="p">(</span><span class="s2">&quot;UserCredentials object does not exist.&quot;</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="n">CredentialsNotFoundError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="n">settings_url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host_address</span> <span class="o">+</span> <span class="n">reverse</span><span class="p">(</span><span class="s2">&quot;user_credentials&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s2">&quot;censys&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="s2">&quot;Unable to get credentials for service http://censys.io/. &quot;</span>
+                             <span class="s2">&quot;Please create account on https://censys.io/ and add valid settings &quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;for SARENKA app on </span><span class="si">{</span><span class="n">settings_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;details&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">CensysHostSearch</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_credentials</span><span class="p">)</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="p">)</span> <span class="c1">#</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;banners&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_banner</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="s2">&quot;ports&quot;</span><span class="p">])})</span>
+            <span class="k">return</span> <span class="n">response</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="c1"># censys nie udostępnia do importu klasy exceptionu CensysNotFoundException o.Ó</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s2">&quot;censys&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Unable to get infromation from https://censys.io/ service.&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;details&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
+                    <span class="p">}</span>
+                <span class="p">}</span></div>
+
+<div class="viewcode-block" id="SearcherFull.get_shodan_data"><a class="viewcode-back" href="../../backend/api_searcher.html#api_searcher.searcher_full.SearcherFull.get_shodan_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_shodan_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Metoda zwraca dane wyszukane w serwisie https://www.shodan.io/&quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_credentials</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">CredentialsNotFoundError</span><span class="p">(</span><span class="s2">&quot;UserCredentials object does not exist.&quot;</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="n">CredentialsNotFoundError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="n">settings_url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host_address</span> <span class="o">+</span> <span class="n">reverse</span><span class="p">(</span><span class="s2">&quot;user_credentials&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s2">&quot;shodan&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="s2">&quot;Unable to get credentials for service https://www.shodan.io/. &quot;</span>
+                             <span class="s2">&quot;Please create account on https://www.shodan.io/ and add valid settings &quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;for SARENKA app on </span><span class="si">{</span><span class="n">settings_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;details&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">ShodanHostSearch</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_credentials</span><span class="p">)</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="p">)</span> <span class="c1">#</span>
+            <span class="k">return</span> <span class="n">response</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="c1"># censys nie udostępnia do importu klasy exceptionu CensysNotFoundException o.Ó</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s2">&quot;shodan&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Unable to get infromation from https://www.shodan.io/ service.&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;details&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
+                    <span class="p">}</span>
+                <span class="p">}</span></div>
+
+
+<div class="viewcode-block" id="SearcherFull.get_dns_data"><a class="viewcode-back" href="../../backend/api_searcher.html#api_searcher.searcher_full.SearcherFull.get_dns_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_dns_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Metoda zwraca informacje o rekordach DNS hosta.&quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">DNSSearcher</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="p">)</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">data</span>
+        <span class="k">except</span> <span class="n">DNSSearcherError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)}</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Unable to get DNS record data for host=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">,</span> <span class="s2">&quot;details&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)}</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Zwraca jsona ze wszystkimi danymi - metoda pomocna dla widoków Django.&quot;&quot;&quot;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;whois&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_whois_data</span><span class="p">(),</span>
+            <span class="s2">&quot;dns_data&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dns_data</span><span class="p">(),</span>
+        <span class="p">}</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;censys&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_censys_data</span><span class="p">()})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;shodan&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_shodan_data</span><span class="p">()})</span>
+
+        <span class="k">return</span> <span class="n">response</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Dominika Pawlaczyk, Michał Pawlaczyk
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

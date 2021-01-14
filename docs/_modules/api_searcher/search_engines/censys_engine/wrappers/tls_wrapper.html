@@ -1,0 +1,660 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>api_searcher.search_engines.censys_engine.wrappers.tls_wrapper &mdash; SARENKA 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home" alt="Documentation Home"> SARENKA
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Dokumentacja aplikacji:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../backend/common.html">common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../backend/api_searcher.html">api_searcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../backend/api_tools.html">api_tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../backend/api_vulnerabilities.html">api_vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../backend/reports.html">reports</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">SARENKA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>api_searcher.search_engines.censys_engine.wrappers.tls_wrapper</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for api_searcher.search_engines.censys_engine.wrappers.tls_wrapper</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">common.dict_x</span> <span class="kn">import</span> <span class="n">DictX</span>
+<span class="kn">from</span> <span class="nn">common.common</span> <span class="kn">import</span> <span class="n">Common</span>
+
+
+<div class="viewcode-block" id="TLSCertificateExtensionsWrapper"><a class="viewcode-back" href="../../../../../backend/api_searcher.html#api_searcher.search_engines.censys_engine.wrappers.tls_wrapper.TLSCertificateExtensionsWrapper">[docs]</a><span class="k">class</span> <span class="nc">TLSCertificateExtensionsWrapper</span><span class="p">:</span>
+<div class="viewcode-block" id="TLSCertificateExtensionsWrapper.__init__"><a class="viewcode-back" href="../../../../../backend/api_searcher.html#api_searcher.search_engines.censys_engine.wrappers.tls_wrapper.TLSCertificateExtensionsWrapper.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;extensions&quot;</span><span class="p">,</span> <span class="p">{})</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">authority_key_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;authority_key_id&quot;</span><span class="p">)</span>
+
+    <span class="c1">###########################</span>
+    <span class="c1"># certificate_policies</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">ceritificate_policies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Czy tworzyć na sztywno słowniki z wszystkimi możlwiymi kluczami?</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;certificate_policies&quot;</span><span class="p">,</span> <span class="p">{})</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">certificate_policies_cps</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">cps</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;cps&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ceritificate_policies</span> <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;cps&quot;</span><span class="p">)]</span>
+        <span class="k">return</span> <span class="n">Common</span><span class="o">.</span><span class="n">list_flattening</span><span class="p">(</span><span class="n">cps</span><span class="p">)</span> <span class="c1"># moze byc pusta lista</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">certificate_policies_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ceritificate_policies</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">ids</span> <span class="c1"># moze byc pusta lista</span>
+
+    <span class="c1">#####################################</span>
+    <span class="c1"># authority_info_access</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">authority_info_access_ocsp_urls</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;authority_info_access&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ocsp_urls&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">authority_info_access_issuer_urls</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;authority_info_access&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;issuer_urls&quot;</span><span class="p">)</span>
+
+    <span class="c1">#####################################</span>
+    <span class="c1"># extended_key_usage</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">client_auth</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;extended_key_usage&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;client_auth&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">server_auth</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;extended_key_usage&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;server_auth&quot;</span><span class="p">)</span>
+
+    <span class="c1">#####################################</span>
+    <span class="c1"># subject_alt_names</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dns_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;subject_alt_names&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;dns_names&quot;</span><span class="p">)</span>
+
+    <span class="c1">#####################################</span>
+    <span class="c1"># basic_constraints</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">is_ca</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;basic_constraints&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;is_ca&quot;</span><span class="p">)</span>
+
+    <span class="c1">#####################################</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">crl_distribution_points</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;crl_distribution_points&quot;</span><span class="p">)</span>
+
+
+    <span class="c1">#####################################</span>
+    <span class="c1"># key_usage</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">key_usage_key_encipherment</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;key_usage&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;key_encipherment&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">key_usage_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;key_usage&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">key_usage_is_digital_signature</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;key_usage&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;digital_signature&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">subject_key_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;subject_key_id&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;authority_key_id&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">authority_key_id</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;certificate_policies_cps&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">certificate_policies_cps</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;certificate_policies_id&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">certificate_policies_id</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;authority_info_access_ocsp_urls&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">authority_info_access_ocsp_urls</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;authority_info_access_issuer_urls&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">authority_info_access_issuer_urls</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;client_auth&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">client_auth</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;server_auth&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">server_auth</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;dns_names&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">dns_names</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;is_ca&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_ca</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;crl_distribution_points&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">crl_distribution_points</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;key_usage_key_encipherment&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">key_usage_key_encipherment</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;key_usage_value&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">key_usage_value</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;key_usage_is_digital_signature&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">key_usage_is_digital_signature</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;subject_key_id&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">subject_key_id</span><span class="p">})</span>
+
+        <span class="k">return</span> <span class="n">response</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Common</span><span class="o">.</span><span class="n">dict_to_string</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_json</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="TLSCertificateWrapper"><a class="viewcode-back" href="../../../../../backend/api_searcher.html#api_searcher.search_engines.censys_engine.wrappers.tls_wrapper.TLSCertificateWrapper">[docs]</a><span class="k">class</span> <span class="nc">TLSCertificateWrapper</span><span class="p">:</span>
+<div class="viewcode-block" id="TLSCertificateWrapper.__init__"><a class="viewcode-back" href="../../../../../backend/api_searcher.html#api_searcher.search_engines.censys_engine.wrappers.tls_wrapper.TLSCertificateWrapper.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__extensions</span> <span class="o">=</span> <span class="n">TLSCertificateExtensionsWrapper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{}))</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">extensions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__extensions</span><span class="o">.</span><span class="n">to_json</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">tbs_noct_fingerprint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;tbs_noct_fingerprint&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">subject_dn</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;subject_dn&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">common_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;subject&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;common_name&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">organization</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;subject&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;organization&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">organizational_unit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;subject&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;organizational_unit&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">signature_algorithm_oid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        https://crypto.stackexchange.com/questions/63157/who-assigns-algorithm-oids-for-cryptographic-algorithms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;signature_algorithm&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;oid&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">signature_algorithm_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;signature_algorithm&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">redacted</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;redacted&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">serial_number</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;serial_number&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">validation_level</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        https://www.ssl.com/article/dv-ov-and-ev-certificates/</span>
+<span class="sd">        DV Certificates - Domain validated </span>
+<span class="sd">        OV Certificates - Organization validated</span>
+<span class="sd">        EV Certificates - Extended validation</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">level</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;validation_level&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">switcher</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;dv&quot;</span><span class="p">:</span> <span class="s2">&quot;domain&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ov&quot;</span><span class="p">:</span> <span class="s2">&quot;organization&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ev&quot;</span><span class="p">:</span> <span class="s2">&quot;extended&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;unknown&quot;</span><span class="p">:</span> <span class="s2">&quot;no data&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;&quot;</span><span class="p">:</span> <span class="kc">None</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">switcher</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">issuer_dn</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;issuer_dn&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">fingerprint_sha1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;fingerprint_sha1&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">version</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;version&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">fingerprint_sha256</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;fingerprint_sha256&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">tbs_fingerprint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;tbs_fingerprint&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="c1">######################</span>
+    <span class="c1"># validity</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">validity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;validity&quot;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">validity_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">validity</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;start&quot;</span><span class="p">)</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">validity_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">validity</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;valid&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">validity_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">validity</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">fingerprint_md5</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;fingerprint_md5&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">spki_subject_fingerprint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;spki_subject_fingerprint&quot;</span><span class="p">)</span>
+
+    <span class="c1">######################</span>
+    <span class="c1"># subject key info</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">subject_key_info_fingerprint_sha256</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;subject_key_info&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;fingerprint_sha256&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">subject_key_info_key_algorithm_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;subject_key_info&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;key_algorithm&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">subject_key_info_rsa_public_key_lenght</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;subject_key_info&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;rsa_public_key&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;length&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">subject_key_info_rsa_public_key_modulus</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;subject_key_info&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;rsa_public_key&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;modulus&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">subject_key_info_rsa_public_key_exponent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;subject_key_info&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;rsa_public_key&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;exponent&quot;</span><span class="p">)</span>
+
+
+    <span class="c1">######################</span>
+    <span class="c1"># signature </span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">signature_self_signed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;signature&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;self_signed&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">signature_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;signature&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;valid&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">signature_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;signature&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">signature_signature_algorithm_oid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        https://crypto.stackexchange.com/questions/63157/who-assigns-algorithm-oids-for-cryptographic-algorithms</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;signature&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;signature_algorithm&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;oid&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">signature_signature_algorithm_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;signature&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;signature_algorithm&quot;</span><span class="p">,</span> <span class="p">{})</span>
+
+    <span class="c1">######################</span>
+    <span class="c1"># issuer</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">issuer_organizational_unit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;issuer&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;organizational_unit&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">issuer_common_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;issuer&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;common_name&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">issuer_organization</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parsed&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;issuer&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;organization&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;tbs_noct_fingerprint&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">tbs_noct_fingerprint</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;subject_dn&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">subject_dn</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;common_name&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">common_name</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;organization&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">organization</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;organizational_unit&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">organizational_unit</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;signature_algorithm_oid&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">signature_algorithm_oid</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;signature_algorithm_name&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">signature_algorithm_name</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;redacted&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">redacted</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;serial_number&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">serial_number</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;validation_level&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">validation_level</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;issuer_dn&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">issuer_dn</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;fingerprint_sha1&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">fingerprint_sha1</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;fingerprint_sha256&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">fingerprint_sha256</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;tbs_fingerprint&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">tbs_fingerprint</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;names&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">names</span><span class="p">})</span>
+        
+        <span class="c1">######################</span>
+        <span class="c1">#validity</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;validity_start&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">validity_start</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;validity_valid&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">validity_valid</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;validity_value&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">validity_value</span><span class="p">})</span>
+
+
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;fingerprint_md5&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">fingerprint_md5</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;spki_subject_fingerprint&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">spki_subject_fingerprint</span><span class="p">})</span>
+
+        <span class="c1">######################</span>
+        <span class="c1"># subject key info</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;subject_key_info_fingerprint_sha256&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">subject_key_info_fingerprint_sha256</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;subject_key_info_key_algorithm_name&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">subject_key_info_key_algorithm_name</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;subject_key_info_rsa_public_key_lenght&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">subject_key_info_rsa_public_key_lenght</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;subject_key_info_rsa_public_key_modulus&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">subject_key_info_rsa_public_key_modulus</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;subject_key_info_rsa_public_key_exponent&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">subject_key_info_rsa_public_key_exponent</span><span class="p">})</span>
+
+        <span class="c1">######################</span>
+        <span class="c1"># signature </span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;signature_self_signed&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">signature_self_signed</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;signature_valid&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">signature_valid</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;signature_value&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">signature_value</span><span class="p">})</span>
+
+        <span class="c1">######################</span>
+        <span class="c1"># issuer</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;issuer_organizational_unit&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">issuer_organizational_unit</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;issuer_common_name&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">issuer_common_name</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;issuer_organization&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">issuer_organization</span><span class="p">})</span>
+
+        <span class="c1"># extensions</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;extensions&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">extensions</span><span class="p">})</span>
+
+        <span class="k">return</span> <span class="n">response</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">----------------------------TLSCertificateWrapper</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">response</span> <span class="o">+=</span> <span class="n">Common</span><span class="o">.</span><span class="n">dict_to_string</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_json</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span></div>
+
+
+<div class="viewcode-block" id="TLSWrapper"><a class="viewcode-back" href="../../../../../backend/api_searcher.html#api_searcher.search_engines.censys_engine.wrappers.tls_wrapper.TLSWrapper">[docs]</a><span class="k">class</span> <span class="nc">TLSWrapper</span><span class="p">:</span>
+<div class="viewcode-block" id="TLSWrapper.__init__"><a class="viewcode-back" href="../../../../../backend/api_searcher.html#api_searcher.search_engines.censys_engine.wrappers.tls_wrapper.TLSWrapper.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">DictX</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__certificate</span> <span class="o">=</span> <span class="n">TLSCertificateWrapper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;certificate&quot;</span><span class="p">,</span> <span class="p">{}))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__chain</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_chain</span><span class="p">()</span></div>
+
+    <span class="k">def</span> <span class="nf">__get_chain</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">chain</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;chain&quot;</span><span class="p">):</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">TLSCertificateWrapper</span><span class="p">(</span><span class="n">chain</span><span class="p">)</span><span class="o">.</span><span class="n">to_json</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">chain</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__chain</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">certificate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__certificate</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">version</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;version&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dh_params</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;server_key_exchange&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;dh_params&quot;</span><span class="p">)</span>
+        
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dh_prime</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;prime_length&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;prime_value&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
+        <span class="n">prime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;dh_params&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;prime&quot;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="k">if</span> <span class="n">prime</span><span class="p">:</span>
+            <span class="n">response</span><span class="p">[</span><span class="s2">&quot;prime_length&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">prime</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;length&quot;</span><span class="p">)</span>
+            <span class="n">response</span><span class="p">[</span><span class="s2">&quot;prime_value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">prime</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dh_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;generator_lenght&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;generator_value&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
+        <span class="n">generator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;dh_params&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;generator&quot;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="k">if</span> <span class="n">generator</span><span class="p">:</span>
+            <span class="n">response</span><span class="p">[</span><span class="s2">&quot;generator_lenght&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">generator</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;length&quot;</span><span class="p">)</span>
+            <span class="n">response</span><span class="p">[</span><span class="s2">&quot;generator_value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">generator</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">cipher_suite</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;cipher_suite&quot;</span><span class="p">,</span> <span class="p">{})</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">cipher_suite_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cipher_suite</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">cipher_suite_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cipher_suite</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">session_ticket_length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;session_ticket&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;length&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">ocsp_stapling</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ocsp_stapling&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">signature_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;singature&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;valid&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">validation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;validation&quot;</span><span class="p">,</span> <span class="p">{})</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">validation_browser_trusted</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">validation</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;browser_trusted&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">validation_browser_error</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">validation</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;browser_error&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;chain&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">chain</span><span class="p">})</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;certificate&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">certificate</span><span class="p">})</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="p">})</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;cipher_suite_id&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">cipher_suite_id</span><span class="p">})</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;cipher_suite_name&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">cipher_suite_name</span><span class="p">})</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;dh_prime&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">dh_prime</span><span class="p">})</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;dh_generator&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">dh_generator</span><span class="p">})</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;session_ticket_length&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">session_ticket_length</span><span class="p">})</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;ocsp_stapling&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">ocsp_stapling</span><span class="p">})</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;validation_browser_trusted&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">validation_browser_trusted</span><span class="p">})</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;validation_browser_error&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">validation_browser_error</span><span class="p">})</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;certificate&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">certificate</span><span class="o">.</span><span class="n">extensions</span><span class="p">})</span>
+
+        <span class="k">return</span> <span class="n">result</span>
+    
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Common</span><span class="o">.</span><span class="n">dict_to_string</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_json</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Dominika Pawlaczyk, Michał Pawlaczyk
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

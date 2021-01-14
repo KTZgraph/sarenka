@@ -1,0 +1,494 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>reports.host_info &mdash; SARENKA 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> SARENKA
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Dokumentacja aplikacji:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../backend/common.html">common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backend/api_searcher.html">api_searcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backend/api_tools.html">api_tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backend/api_vulnerabilities.html">api_vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backend/reports.html">reports</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SARENKA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>reports.host_info</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for reports.host_info</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">fpdf</span> <span class="kn">import</span> <span class="n">FPDF</span><span class="p">,</span> <span class="n">HTMLMixin</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<div class="viewcode-block" id="PDFHostInfo"><a class="viewcode-back" href="../../backend/reports.html#reports.host_info.PDFHostInfo">[docs]</a><span class="k">class</span> <span class="nc">PDFHostInfo</span><span class="p">(</span><span class="n">FPDF</span><span class="p">,</span> <span class="n">HTMLMixin</span><span class="p">):</span>
+
+
+<div class="viewcode-block" id="PDFHostInfo.header"><a class="viewcode-back" href="../../backend/reports.html#reports.host_info.PDFHostInfo.header">[docs]</a>    <span class="k">def</span> <span class="nf">header</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="s1">&#39;Arial&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PDFHostInfo.headerOnlyFirstSide"><a class="viewcode-back" href="../../backend/reports.html#reports.host_info.PDFHostInfo.headerOnlyFirstSide">[docs]</a>    <span class="k">def</span> <span class="nf">headerOnlyFirstSide</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ipAdress</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="s1">&#39;../../logo.png&#39;</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;Host adress: &#39;</span><span class="o">+</span><span class="n">ipAdress</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PDFHostInfo.chapter"><a class="viewcode-back" href="../../backend/reports.html#reports.host_info.PDFHostInfo.chapter">[docs]</a>    <span class="k">def</span> <span class="nf">chapter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ipAdress</span><span class="p">,</span><span class="n">link</span><span class="p">):</span>
+        <span class="c1">#GET JSON</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">link</span><span class="o">+</span><span class="n">ipAdress</span><span class="p">)</span>
+        <span class="n">searchDomainInfo</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="n">epw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">l_margin</span>
+        <span class="n">col_width</span> <span class="o">=</span> <span class="n">epw</span><span class="o">/</span><span class="mi">3</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="s1">&#39;Times&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="mf">12.0</span><span class="p">)</span>
+        <span class="n">th</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">font_size</span>
+
+
+
+        <span class="c1">#FIRST COLUMN - FITST TABLE - TITLE</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="s1">&#39;Times&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="mf">16.0</span><span class="p">)</span> 
+        <span class="n">top</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">192</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">38</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">col_width</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">font_size</span><span class="p">,</span> <span class="s1">&#39;PROTOCOLS PORT&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="s1">&#39;Times&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="mf">12.0</span><span class="p">)</span>
+
+
+
+        <span class="c1">#FIRST COLUMN - FITST TABLE - TEXT</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">searchDomainInfo</span><span class="p">[</span><span class="s2">&quot;protocols_port&quot;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">multi_cell</span><span class="p">(</span><span class="n">col_width</span><span class="p">,</span> <span class="mf">1.6</span><span class="o">*</span><span class="n">th</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;: &quot;</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="n">searchDomainInfo</span><span class="p">[</span><span class="s2">&quot;protocols_port&quot;</span><span class="p">][</span><span class="n">key</span><span class="p">]))),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>
+        <span class="n">offset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">col_width</span>
+
+
+
+        <span class="c1">#SECOND COLUMN - FITST TABLE - TITLE</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="s1">&#39;Times&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="mf">16.0</span><span class="p">)</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">top</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">offset</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">192</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">38</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">col_width</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">font_size</span><span class="p">,</span> <span class="s1">&#39;DETAILS&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+
+
+        <span class="c1">#SECOND COLUMN - FITST TABLE - TEXT</span>
+        <span class="n">SecondColumnTableItem</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">,</span><span class="s1">&#39;latitude&#39;</span><span class="p">,</span><span class="s1">&#39;timezone&#39;</span><span class="p">,</span><span class="s1">&#39;continent&#39;</span><span class="p">,</span><span class="s1">&#39;registered_country&#39;</span><span class="p">,</span><span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;rir&#39;</span><span class="p">,</span> <span class="s1">&#39;routed_prefix&#39;</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="s1">&#39;Times&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="mf">12.0</span><span class="p">)</span>        
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span>  <span class="n">searchDomainInfo</span><span class="p">:</span>
+            <span class="n">text</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="o">+</span><span class="s2">&quot;: &quot;</span>
+            <span class="n">text2</span><span class="o">=</span><span class="n">searchDomainInfo</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">offset</span>   
+            <span class="k">if</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">text2</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">SecondColumnTableItem</span> <span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">multi_cell</span><span class="p">(</span><span class="n">col_width</span><span class="p">,</span> <span class="mf">1.6</span><span class="o">*</span><span class="n">th</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">text</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="n">text2</span><span class="p">)))),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>                         
+            <span class="k">elif</span><span class="p">(</span><span class="n">key</span> <span class="ow">in</span> <span class="n">SecondColumnTableItem</span> <span class="p">):</span>
+                <span class="k">if</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">text2</span><span class="p">)</span><span class="o">==</span><span class="s1">&#39;None&#39;</span><span class="p">):</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">179</span><span class="p">,</span> <span class="mi">179</span><span class="p">,</span> <span class="mi">179</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">multi_cell</span><span class="p">(</span><span class="n">col_width</span><span class="p">,</span> <span class="mf">1.6</span><span class="o">*</span><span class="n">th</span><span class="p">,(</span><span class="n">text</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">text2</span><span class="p">)),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>   
+
+
+
+        <span class="c1">#THIRD COLUMN - FITST TABLE - TITLE</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="s1">&#39;Times&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="mf">16.0</span><span class="p">)</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">top</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">offset</span><span class="o">+</span><span class="n">col_width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">192</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">38</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">col_width</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">font_size</span><span class="p">,</span> <span class="s1">&#39;DETAILS&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+
+
+        <span class="c1">#THIRD COLUMN - FITST TABLE - TEXT</span>
+        <span class="n">ThirdColumnTableItem</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">,</span><span class="s1">&#39;asn&#39;</span><span class="p">,</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="s1">&#39;dns_names&#39;</span><span class="p">,</span><span class="s1">&#39;dns_erros&#39;</span><span class="p">,</span><span class="s1">&#39;os&#39;</span><span class="p">,</span> <span class="s1">&#39;updated_at&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="s1">&#39;Times&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="mf">12.0</span><span class="p">)</span>
+        
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span>  <span class="n">searchDomainInfo</span><span class="p">:</span>
+            <span class="n">text</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="o">+</span><span class="s2">&quot;: &quot;</span>
+            <span class="n">text2</span><span class="o">=</span><span class="n">searchDomainInfo</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">offset</span><span class="o">+</span><span class="n">col_width</span>               
+            <span class="k">if</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">text2</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">ThirdColumnTableItem</span> <span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">multi_cell</span><span class="p">(</span><span class="n">col_width</span><span class="p">,</span> <span class="mf">1.6</span><span class="o">*</span><span class="n">th</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">text</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="n">text2</span><span class="p">)))),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>                    
+            <span class="k">elif</span><span class="p">(</span><span class="n">key</span> <span class="ow">in</span> <span class="n">ThirdColumnTableItem</span> <span class="p">):</span>
+                <span class="k">if</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">text2</span><span class="p">)</span><span class="o">==</span><span class="s1">&#39;None&#39;</span><span class="p">):</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">179</span><span class="p">,</span> <span class="mi">179</span><span class="p">,</span> <span class="mi">179</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">multi_cell</span><span class="p">(</span><span class="n">col_width</span><span class="p">,</span> <span class="mf">1.6</span><span class="o">*</span><span class="n">th</span><span class="p">,(</span><span class="n">text</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">text2</span><span class="p">)),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>       
+
+
+
+        <span class="c1">#FIRST COLUMN - SECOND TABLE - TITLE        </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="s1">&#39;Times&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="mf">16.0</span><span class="p">)</span> 
+        <span class="n">top</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">192</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">38</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">col_width</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">font_size</span><span class="p">,</span> <span class="s1">&#39;METADATA&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+        
+
+
+        <span class="c1">#FIRST COLUMN - SECOND TABLE - TEXT        </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="s1">&#39;Times&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="mf">12.0</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span>  <span class="n">searchDomainInfo</span><span class="p">[</span><span class="s2">&quot;https&quot;</span><span class="p">][</span><span class="s2">&quot;get_metadata&quot;</span><span class="p">]:</span>
+            <span class="n">text</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="o">+</span><span class="s2">&quot;: &quot;</span>
+            <span class="n">text2</span><span class="o">=</span><span class="n">searchDomainInfo</span><span class="p">[</span><span class="s2">&quot;https&quot;</span><span class="p">][</span><span class="s2">&quot;get_metadata&quot;</span><span class="p">][</span><span class="n">key</span><span class="p">]</span>
+            <span class="n">offset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">col_width</span>
+            <span class="k">if</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">text2</span><span class="p">,</span> <span class="nb">list</span><span class="p">)):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">multi_cell</span><span class="p">(</span><span class="n">col_width</span><span class="p">,</span> <span class="mf">1.6</span><span class="o">*</span><span class="n">th</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">text</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="n">text2</span><span class="p">)))),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>             
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">text2</span><span class="p">)</span><span class="o">==</span><span class="s1">&#39;None&#39;</span><span class="p">):</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">179</span><span class="p">,</span> <span class="mi">179</span><span class="p">,</span> <span class="mi">179</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">multi_cell</span><span class="p">(</span><span class="n">col_width</span><span class="p">,</span> <span class="mf">1.6</span><span class="o">*</span><span class="n">th</span><span class="p">,(</span><span class="n">text</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">text2</span><span class="p">)),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>
+
+
+
+
+        <span class="c1">#FIRST COLUMN - SECOND TABLE - TITLE        </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="s1">&#39;Times&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="mf">16.0</span><span class="p">)</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">192</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">38</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">col_width</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">font_size</span><span class="p">,</span> <span class="s1">&#39;DH PARAMS&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+        
+        
+        
+        <span class="c1">#FIRST COLUMN - SECOND TABLE - TEXT        </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="s1">&#39;Times&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="mf">12.0</span><span class="p">)</span> 
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span>  <span class="n">searchDomainInfo</span><span class="p">[</span><span class="s2">&quot;https&quot;</span><span class="p">][</span><span class="s2">&quot;dh_params&quot;</span><span class="p">]:</span>
+            <span class="n">text</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="o">+</span><span class="s2">&quot;: &quot;</span>
+            <span class="n">text2</span><span class="o">=</span><span class="n">searchDomainInfo</span><span class="p">[</span><span class="s2">&quot;https&quot;</span><span class="p">][</span><span class="s2">&quot;dh_params&quot;</span><span class="p">][</span><span class="n">key</span><span class="p">]</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">text2</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="n">key</span><span class="o">!=</span><span class="s2">&quot;extensions&quot;</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">multi_cell</span><span class="p">(</span><span class="n">col_width</span><span class="p">,</span> <span class="mf">1.6</span><span class="o">*</span><span class="n">th</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">text</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="n">text2</span><span class="p">)))),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>                 
+            <span class="k">elif</span><span class="p">(</span><span class="n">key</span><span class="o">!=</span><span class="s2">&quot;extensions&quot;</span><span class="p">):</span>
+                <span class="k">if</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">text2</span><span class="p">)</span><span class="o">==</span><span class="s1">&#39;None&#39;</span><span class="p">):</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">179</span><span class="p">,</span> <span class="mi">179</span><span class="p">,</span> <span class="mi">179</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">multi_cell</span><span class="p">(</span><span class="n">col_width</span><span class="p">,</span> <span class="mf">1.6</span><span class="o">*</span><span class="n">th</span><span class="p">,(</span><span class="n">text</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">text2</span><span class="p">)),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>
+    
+
+
+        <span class="c1">#SECOND COLUMN - SECOND TABLE - TITLE        </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="s1">&#39;Times&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="mf">16.0</span><span class="p">)</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">top</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">offset</span>  
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">192</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">38</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">col_width</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">font_size</span><span class="p">,</span> <span class="s1">&#39;DETAILS HTTPS&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+
+      
+        <span class="c1">#SECOND COLUMN - SECOND TABLE - TEXT        </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="s1">&#39;Times&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="mf">12.0</span><span class="p">)</span>
+        <span class="n">ThirdColumnTable23Item</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;webpage_title&#39;</span><span class="p">,</span><span class="s1">&#39;webpage_body_sha256&#39;</span><span class="p">,</span><span class="s1">&#39;status_code&#39;</span><span class="p">,</span><span class="s1">&#39;rsa_export&#39;</span><span class="p">,</span><span class="s1">&#39;rsa_length&#39;</span><span class="p">,</span><span class="s1">&#39;rsa_modulus&#39;</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span>  <span class="n">searchDomainInfo</span><span class="p">[</span><span class="s2">&quot;https&quot;</span><span class="p">]:</span>
+            <span class="n">text</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="o">+</span><span class="s2">&quot;: &quot;</span>
+            <span class="n">text2</span><span class="o">=</span><span class="n">searchDomainInfo</span><span class="p">[</span><span class="s2">&quot;https&quot;</span><span class="p">][</span><span class="n">key</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">offset</span>  
+            <span class="k">if</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">text2</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">ThirdColumnTable23Item</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">multi_cell</span><span class="p">(</span><span class="n">col_width</span><span class="p">,</span> <span class="mf">1.6</span><span class="o">*</span><span class="n">th</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">text</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="n">text2</span><span class="p">)))),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>                 
+            <span class="k">elif</span><span class="p">(</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">ThirdColumnTable23Item</span><span class="p">):</span>
+                <span class="k">if</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">text2</span><span class="p">)</span><span class="o">==</span><span class="s1">&#39;None&#39;</span><span class="p">):</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">179</span><span class="p">,</span> <span class="mi">179</span><span class="p">,</span> <span class="mi">179</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">multi_cell</span><span class="p">(</span><span class="n">col_width</span><span class="p">,</span> <span class="mf">1.6</span><span class="o">*</span><span class="n">th</span><span class="p">,(</span><span class="n">text</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">text2</span><span class="p">)),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>
+
+    
+
+        <span class="c1">#THIRD COLUMN - SECOND TABLE - TITLE        </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="s1">&#39;Times&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="mf">16.0</span><span class="p">)</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">top</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">offset</span><span class="o">+</span><span class="n">col_width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">192</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">38</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">col_width</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">font_size</span><span class="p">,</span> <span class="s1">&#39;DETAILS HTTPS&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+
+
+        <span class="c1">#THIRD COLUMN - SECOND TABLE - TEXT        </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="s1">&#39;Times&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="mf">12.0</span><span class="p">)</span> 
+        <span class="n">ThirdColumnTable2Item</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;rsa_exponent&#39;</span><span class="p">,</span><span class="s1">&#39;dhe_export&#39;</span><span class="p">,</span><span class="s1">&#39;dhe_support&#39;</span><span class="p">,</span><span class="s1">&#39;heartbleed&#39;</span><span class="p">,</span><span class="s1">&#39;logjam_attack&#39;</span><span class="p">,</span><span class="s1">&#39;freak_attack&#39;</span><span class="p">,</span> <span class="s1">&#39;poodle_attack&#39;</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span>  <span class="n">searchDomainInfo</span><span class="p">[</span><span class="s2">&quot;https&quot;</span><span class="p">]:</span>
+            <span class="n">text</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="o">+</span><span class="s2">&quot;: &quot;</span>
+            <span class="n">text2</span><span class="o">=</span><span class="n">searchDomainInfo</span><span class="p">[</span><span class="s2">&quot;https&quot;</span><span class="p">][</span><span class="n">key</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">offset</span><span class="o">+</span><span class="n">col_width</span> 
+            <span class="k">if</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">text2</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">ThirdColumnTable2Item</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">multi_cell</span><span class="p">(</span><span class="n">col_width</span><span class="p">,</span> <span class="mf">1.6</span><span class="o">*</span><span class="n">th</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">text</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="n">text2</span><span class="p">)))),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>            
+            <span class="k">elif</span><span class="p">(</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">ThirdColumnTable2Item</span><span class="p">):</span>
+                <span class="k">if</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">text2</span><span class="p">)</span><span class="o">==</span><span class="s1">&#39;None&#39;</span><span class="p">):</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">179</span><span class="p">,</span> <span class="mi">179</span><span class="p">,</span> <span class="mi">179</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">multi_cell</span><span class="p">(</span><span class="n">col_width</span><span class="p">,</span> <span class="mf">1.6</span><span class="o">*</span><span class="n">th</span><span class="p">,(</span><span class="n">text</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">text2</span><span class="p">)),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span><span class="mi">450</span><span class="p">)</span>
+
+
+
+
+        <span class="c1">#THIRD TABLE - TITLE        </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="s1">&#39;Times&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="mf">18.0</span><span class="p">)</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">192</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">38</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;TLS CERTIFICATE CHAIN&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+
+        
+        
+        <span class="c1">#THIRD TABLE - TEXT        </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="s1">&#39;Times&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="mf">12.0</span><span class="p">)</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span>  <span class="n">searchDomainInfo</span><span class="p">[</span><span class="s2">&quot;https&quot;</span><span class="p">][</span><span class="s2">&quot;tls&quot;</span><span class="p">][</span><span class="s2">&quot;chain&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="n">text</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="o">+</span><span class="s2">&quot;: &quot;</span>
+            <span class="n">text2</span><span class="o">=</span><span class="n">searchDomainInfo</span><span class="p">[</span><span class="s2">&quot;https&quot;</span><span class="p">][</span><span class="s2">&quot;tls&quot;</span><span class="p">][</span><span class="s2">&quot;chain&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">if</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">text2</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="n">key</span><span class="o">!=</span><span class="s2">&quot;extensions&quot;</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">multi_cell</span><span class="p">(</span><span class="n">epw</span><span class="p">,</span> <span class="mf">1.6</span><span class="o">*</span><span class="n">th</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">text</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="n">text2</span><span class="p">)))),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>
+            <span class="k">elif</span><span class="p">(</span><span class="n">key</span><span class="o">!=</span><span class="s2">&quot;extensions&quot;</span><span class="p">):</span>
+                <span class="k">if</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">text2</span><span class="p">)</span><span class="o">==</span><span class="s1">&#39;None&#39;</span><span class="p">):</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">179</span><span class="p">,</span> <span class="mi">179</span><span class="p">,</span> <span class="mi">179</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">multi_cell</span><span class="p">(</span><span class="n">epw</span><span class="p">,</span> <span class="mf">1.6</span><span class="o">*</span><span class="n">th</span><span class="p">,(</span><span class="n">text</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">text2</span><span class="p">)),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>
+
+
+
+        <span class="c1">#FOURTH TABLE - TITLE        </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="s1">&#39;Times&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="mf">18.0</span><span class="p">)</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">192</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">38</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;EXTENSIONS&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+        
+
+
+        <span class="c1">#FOURTH TABLE - TEXT        </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="s1">&#39;Times&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="mf">12.0</span><span class="p">)</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">ln</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+        <span class="n">th</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">font_size</span>
+        <span class="n">top</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span>  <span class="n">searchDomainInfo</span><span class="p">[</span><span class="s2">&quot;https&quot;</span><span class="p">][</span><span class="s2">&quot;tls&quot;</span><span class="p">][</span><span class="s2">&quot;chain&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;extensions&quot;</span><span class="p">]:</span>
+            <span class="n">text</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="o">+</span><span class="s2">&quot;: &quot;</span>
+            <span class="n">text2</span><span class="o">=</span><span class="n">searchDomainInfo</span><span class="p">[</span><span class="s2">&quot;https&quot;</span><span class="p">][</span><span class="s2">&quot;tls&quot;</span><span class="p">][</span><span class="s2">&quot;chain&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;extensions&quot;</span><span class="p">][</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">if</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">text2</span><span class="p">,</span> <span class="nb">list</span><span class="p">)):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">multi_cell</span><span class="p">(</span><span class="n">epw</span><span class="p">,</span> <span class="mf">1.6</span><span class="o">*</span><span class="n">th</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">text</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="n">text2</span><span class="p">)))),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>               
+                <span class="k">if</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">text2</span><span class="p">)</span><span class="o">==</span><span class="s1">&#39;None&#39;</span><span class="p">):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">179</span><span class="p">,</span> <span class="mi">179</span><span class="p">,</span> <span class="mi">179</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">multi_cell</span><span class="p">(</span><span class="n">epw</span><span class="p">,</span> <span class="mf">1.6</span><span class="o">*</span><span class="n">th</span><span class="p">,(</span><span class="n">text</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">text2</span><span class="p">)),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;L&#39;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="PDFHostInfo.footer"><a class="viewcode-back" href="../../backend/reports.html#reports.host_info.PDFHostInfo.footer">[docs]</a>    <span class="k">def</span> <span class="nf">footer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_y</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="s1">&#39;Arial&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;Page &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">page_no</span><span class="p">())</span> <span class="o">+</span> <span class="s1">&#39;/</span><span class="si">{nb}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">196</span><span class="p">,</span> <span class="mi">283</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">287</span><span class="p">)</span></div></div>
+        
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Dominika Pawlaczyk, Michał Pawlaczyk
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

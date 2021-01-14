@@ -1,0 +1,1029 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>api_vulnerabilities &mdash; SARENKA 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="reports" href="reports.html" />
+    <link rel="prev" title="api_tools" href="api_tools.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> SARENKA
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Dokumentacja aplikacji:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="common.html">common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_searcher.html">api_searcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_tools.html">api_tools</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">api_vulnerabilities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-api_vulnerabilities.common">common</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-api_vulnerabilities.cwe_crud">cwe_crud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-api_vulnerabilities.models">models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-api_vulnerabilities.serializers">serializers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-api_vulnerabilities.urls">urls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-api_vulnerabilities.views">views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cve-and-cwe">cve_and_cwe</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-api_vulnerabilities.cve_and_cwe.cve_details_all">cve_details_all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-api_vulnerabilities.cve_and_cwe.cwe_all">cwe_all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-api_vulnerabilities.cve_and_cwe.cwe_details_all">cwe_details_all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-api_vulnerabilities.cve_and_cwe.general_scraper">general_scraper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers">mitre_cwe_scrapers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-api_vulnerabilities.cve_and_cwe.nist_cve_scrapers">nist_cve_scrapers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reports.html">reports</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SARENKA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>api_vulnerabilities</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/backend/api_vulnerabilities.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="api-vulnerabilities">
+<h1>api_vulnerabilities<a class="headerlink" href="#api-vulnerabilities" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-api_vulnerabilities.common">
+<span id="common"></span><h2>common<a class="headerlink" href="#module-api_vulnerabilities.common" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="api_vulnerabilities.common.Common">
+<em class="property">class </em><code class="sig-prename descclassname">api_vulnerabilities.common.</code><code class="sig-name descname">Common</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/common.html#Common"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.common.Common" title="Permalink to this definition">¶</a></dt>
+<dd><p>Klasa pomocnicza zwracajaca najcześciej używane funkcje przez widoki api_searcher.</p>
+<dl class="py method">
+<dt id="api_vulnerabilities.common.Common.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/common.html#Common.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.common.Common.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.common.Common.get_ip_addres">
+<em class="property">static </em><code class="sig-name descname">get_ip_addres</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/common.html#Common.get_ip_addres"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.common.Common.get_ip_addres" title="Permalink to this definition">¶</a></dt>
+<dd><p>Metoda statyczna zwracająca adres ip adress hosta.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.common.Common.host_address">
+<em class="property">property </em><code class="sig-name descname">host_address</code><a class="headerlink" href="#api_vulnerabilities.common.Common.host_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Atrybut zwrcacający adres hosta na którym uruchomiony jest backend aplikacji SARENKA.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.common.Common.is_ipv4">
+<em class="property">static </em><code class="sig-name descname">is_ipv4</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/common.html#Common.is_ipv4"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.common.Common.is_ipv4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Metoda statyczna sprawdzająca czy podano adres ip czy domenę.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-api_vulnerabilities.cwe_crud">
+<span id="cwe-crud"></span><h2>cwe_crud<a class="headerlink" href="#module-api_vulnerabilities.cwe_crud" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="api_vulnerabilities.cwe_crud.CWECRUD">
+<em class="property">class </em><code class="sig-prename descclassname">api_vulnerabilities.cwe_crud.</code><code class="sig-name descname">CWECRUD</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cwe_data</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cwe_crud.html#CWECRUD"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cwe_crud.CWECRUD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Klasa odpowiedzialna za operacje bazodanow.
+Jesj zadaniem jest dodanie obiektu CWE do odpowiedniej bazy danych</p>
+<dl class="py method">
+<dt id="api_vulnerabilities.cwe_crud.CWECRUD.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cwe_data</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cwe_crud.html#CWECRUD.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cwe_crud.CWECRUD.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cwe_crud.CWECRUD.add">
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cwe_crud.html#CWECRUD.add"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cwe_crud.CWECRUD.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>”
+Dodaje obiekt CWE do odpowiedniej bazy danych.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cwe_crud.CWECRUD.get_database_name">
+<code class="sig-name descname">get_database_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cwe_crud.html#CWECRUD.get_database_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cwe_crud.CWECRUD.get_database_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wybiera odpowiednią nazwę bazy danych</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-api_vulnerabilities.models">
+<span id="models"></span><h2>models<a class="headerlink" href="#module-api_vulnerabilities.models" title="Permalink to this headline">¶</a></h2>
+<p>”
+Modele potrzebne do przechowywania danych relacji CWE - do CVE.
+Problem - mamy informacje o kodzie CWE w CVE ale relacja w drugą stronę nie jest nigdzie
+na stronie <a class="reference external" href="https://nvd.nist.gov/">https://nvd.nist.gov/</a> ani <a class="reference external" href="https://cwe.mitre.org/">https://cwe.mitre.org/</a>.</p>
+<dl class="py class">
+<dt id="api_vulnerabilities.models.CVEModel">
+<em class="property">class </em><code class="sig-prename descclassname">api_vulnerabilities.models.</code><code class="sig-name descname">CVEModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/models.html#CVEModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.models.CVEModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Common Vulnerabilities and Exposures (CVE) - konkretna podatnośc z konkretnej wersji oprogramowania.
+CVE-d{4}-d{4,7}
+Relacja n many (CVE) -&gt; 1 one (CWE)</p>
+<blockquote>
+<div><p>“cve”: {
+“cve”: “CVE-2019-4570”,
+“description”: “IBM Tivoli Netcool Impact 7.1.0 through 7.1.0.16 generates an error message that includes sensitive information about its environment, users, or associated data. IBM X-Force ID: 166720.”,
+“cvss3”: {</p>
+<blockquote>
+<div><p>“cvss3”: “CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N”,
+“cvss3_url”: “https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N”</p>
+</div></blockquote>
+<p>},
+“cvss2”: {</p>
+<blockquote>
+<div><p>“cvss2”: “(AV:N/AC:L/Au:N/C:P/I:N/A:N)”,
+“cvss2_url”: “https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)”</p>
+</div></blockquote>
+<p>},
+“base_score_v3”: “5.3 MEDIUM”,
+“base_score_v2”: “5.0 MEDIUM”,
+“hyperlinks”: [</p>
+<blockquote>
+<div><p>“<a class="reference external" href="https://exchange.xforce.ibmcloud.com/vulnerabilities/166720">https://exchange.xforce.ibmcloud.com/vulnerabilities/166720</a>”,
+“<a class="reference external" href="https://www.ibm.com/support/pages/node/1110141">https://www.ibm.com/support/pages/node/1110141</a>”</p>
+</div></blockquote>
+<p>],</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<em>AutoField</em>) – Id</p></li>
+<li><p><strong>cve_id</strong> (<em>CharField</em>) – Cve id</p></li>
+<li><p><strong>year</strong> (<em>CharField</em>) – Year</p></li>
+<li><p><strong>month</strong> (<em>CharField</em>) – Month</p></li>
+<li><p><strong>cwe</strong> (ForeignKey to <a class="reference internal" href="#api_vulnerabilities.models.CWEModel" title="api_vulnerabilities.models.CWEModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CWEModel</span></code></a>) – Cwe</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py exception">
+<dt id="api_vulnerabilities.models.CVEModel.DoesNotExist">
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#api_vulnerabilities.models.CVEModel.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt id="api_vulnerabilities.models.CVEModel.MultipleObjectsReturned">
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code><a class="headerlink" href="#api_vulnerabilities.models.CVEModel.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="api_vulnerabilities.models.CWEModel">
+<em class="property">class </em><code class="sig-prename descclassname">api_vulnerabilities.models.</code><code class="sig-name descname">CWEModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/models.html#CWEModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.models.CWEModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Klasa do przechowywanie kodów CWE (common weakness enumeration)
+ogólnych słabości np.: SQL Injection i listy konkretnych podatnosci CVE związanych z nim.
+Relacja 1 one (CWE) &lt;- n many (CVE)
+“ID_CWE”: “CWE-79”,
+“title”: “Improper Neutralization of Input During Web Page Generation (‘Cross-site Scripting’)”,
+“description”: “The software does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users. “,
+“likehood”: “High”,
+“technical_impact”: [</p>
+<blockquote>
+<div><p>“Read Application Data”,
+“Bypass Protection Mechanism”,
+“Execute Unauthorized Code or Commands”</p>
+</div></blockquote>
+<p>],
+“caused_by”: {</p>
+<blockquote>
+<div><p>“field”: “Architecture and Design”,
+“process”: “Implementation”,
+“description”: “This weakness is caused during implementation of an architectural security tactic.”</p>
+</div></blockquote>
+<p>},</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<em>AutoField</em>) – Id</p></li>
+<li><p><strong>cwe_id</strong> (<em>CharField</em>) – Cwe id</p></li>
+<li><p><strong>title</strong> (<em>TextField</em>) – Title</p></li>
+<li><p><strong>description</strong> (<em>TextField</em>) – Description</p></li>
+<li><p><strong>likehood</strong> (<em>TextField</em>) – Likehood</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py exception">
+<dt id="api_vulnerabilities.models.CWEModel.DoesNotExist">
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#api_vulnerabilities.models.CWEModel.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt id="api_vulnerabilities.models.CWEModel.MultipleObjectsReturned">
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code><a class="headerlink" href="#api_vulnerabilities.models.CWEModel.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="api_vulnerabilities.models.CausedByModel">
+<em class="property">class </em><code class="sig-prename descclassname">api_vulnerabilities.models.</code><code class="sig-name descname">CausedByModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/models.html#CausedByModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.models.CausedByModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>1 (one) CWE &lt;- n (many) CausedByModel
+“caused_by”: {</p>
+<blockquote>
+<div><p>“field”: “Architecture and Design”,
+“process”: “Implementation”,
+“description”: “This weakness is caused during implementation of an architectural security tactic.”</p>
+</div></blockquote>
+<p>},</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<em>AutoField</em>) – Id</p></li>
+<li><p><strong>field</strong> (<em>CharField</em>) – Field</p></li>
+<li><p><strong>process</strong> (<em>TextField</em>) – Process</p></li>
+<li><p><strong>description</strong> (<em>TextField</em>) – Description</p></li>
+<li><p><strong>cwe</strong> (ForeignKey to <a class="reference internal" href="#api_vulnerabilities.models.CWEModel" title="api_vulnerabilities.models.CWEModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CWEModel</span></code></a>) – Cwe</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py exception">
+<dt id="api_vulnerabilities.models.CausedByModel.DoesNotExist">
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#api_vulnerabilities.models.CausedByModel.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt id="api_vulnerabilities.models.CausedByModel.MultipleObjectsReturned">
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code><a class="headerlink" href="#api_vulnerabilities.models.CausedByModel.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="api_vulnerabilities.models.TechnicalImpactModel">
+<em class="property">class </em><code class="sig-prename descclassname">api_vulnerabilities.models.</code><code class="sig-name descname">TechnicalImpactModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/models.html#TechnicalImpactModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.models.TechnicalImpactModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>1 (one) CWE &lt;- n (many) impacts
+“technical_impact”: [</p>
+<blockquote>
+<div><p>“Bypass Protection Mechanism”,
+“Read Application Data”,
+“Execute Unauthorized Code or Commands”</p>
+</div></blockquote>
+<p>],</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<em>AutoField</em>) – Id</p></li>
+<li><p><strong>title</strong> (<em>TextField</em>) – Title</p></li>
+<li><p><strong>cwe</strong> (ForeignKey to <a class="reference internal" href="#api_vulnerabilities.models.CWEModel" title="api_vulnerabilities.models.CWEModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CWEModel</span></code></a>) – Cwe</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py exception">
+<dt id="api_vulnerabilities.models.TechnicalImpactModel.DoesNotExist">
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#api_vulnerabilities.models.TechnicalImpactModel.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt id="api_vulnerabilities.models.TechnicalImpactModel.MultipleObjectsReturned">
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code><a class="headerlink" href="#api_vulnerabilities.models.TechnicalImpactModel.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-api_vulnerabilities.serializers">
+<span id="serializers"></span><h2>serializers<a class="headerlink" href="#module-api_vulnerabilities.serializers" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="api_vulnerabilities.serializers.CWEModelSerializer">
+<em class="property">class </em><code class="sig-prename descclassname">api_vulnerabilities.serializers.</code><code class="sig-name descname">CWEModelSerializer</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/serializers.html#CWEModelSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.serializers.CWEModelSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serializowanie obiektu z bazy danych</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="api_vulnerabilities.serializers.CveWrapperSerializer">
+<em class="property">class </em><code class="sig-prename descclassname">api_vulnerabilities.serializers.</code><code class="sig-name descname">CveWrapperSerializer</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/serializers.html#CveWrapperSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.serializers.CveWrapperSerializer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt id="api_vulnerabilities.serializers.ProductSerializer">
+<em class="property">class </em><code class="sig-prename descclassname">api_vulnerabilities.serializers.</code><code class="sig-name descname">ProductSerializer</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/serializers.html#ProductSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.serializers.ProductSerializer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-api_vulnerabilities.urls">
+<span id="urls"></span><h2>urls<a class="headerlink" href="#module-api_vulnerabilities.urls" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-api_vulnerabilities.views">
+<span id="views"></span><h2>views<a class="headerlink" href="#module-api_vulnerabilities.views" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="api_vulnerabilities.views.AddCWEandCVE">
+<em class="property">class </em><code class="sig-prename descclassname">api_vulnerabilities.views.</code><code class="sig-name descname">AddCWEandCVE</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/views.html#AddCWEandCVE"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.views.AddCWEandCVE" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="api_vulnerabilities.views.AddCWEandCVE.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/views.html#AddCWEandCVE.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.views.AddCWEandCVE.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="api_vulnerabilities.views.CVEDetailsAllView">
+<em class="property">class </em><code class="sig-prename descclassname">api_vulnerabilities.views.</code><code class="sig-name descname">CVEDetailsAllView</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/views.html#CVEDetailsAllView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.views.CVEDetailsAllView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Widok Django zwracającyh szczegółowe dane o wszystkich podatnościach
+Common Vulnerabilities and Exposures (CVE) pobranych z serwisu <a class="reference external" href="https://nvd.nist.gov/">https://nvd.nist.gov/</a></p>
+<dl class="py method">
+<dt id="api_vulnerabilities.views.CVEDetailsAllView.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">page</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/views.html#CVEDetailsAllView.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.views.CVEDetailsAllView.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Metoda zwracajaca szczegółowe informacje o podantościach CVE z stronnicowaniem.
+Partia danych zwrócona jest na podstawie danych z żadania GET HTTP użytkownika</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="api_vulnerabilities.views.CVESearchView">
+<em class="property">class </em><code class="sig-prename descclassname">api_vulnerabilities.views.</code><code class="sig-name descname">CVESearchView</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/views.html#CVESearchView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.views.CVESearchView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Widok Django zwracajacy szczegółowe informacje o jednej podatności Common Vulnerabilities and Exposures (CVE).</p>
+<dl class="py method">
+<dt id="api_vulnerabilities.views.CVESearchView.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">cve_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/views.html#CVESearchView.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.views.CVESearchView.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Metoda zwracająca szczegółowe infromacje o konkretnej podatności po podaniu identyfikatora CVE</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="api_vulnerabilities.views.CWEAllView">
+<em class="property">class </em><code class="sig-prename descclassname">api_vulnerabilities.views.</code><code class="sig-name descname">CWEAllView</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/views.html#CWEAllView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.views.CWEAllView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Widok Django zwracający wszystkie kody CWE z podstawowywmi danymi takimi jak datę pobrania danych, źródło danych,
+identyfikator slabości, opis słabości, url do serwisu <a class="reference external" href="https://cwe.mitre.org">https://cwe.mitre.org</a> ze szczegółowymi danymi,
+url do aplikacji SARENKA z najważniejszymi informacjami o konkretnej słabości.</p>
+<dl class="py method">
+<dt id="api_vulnerabilities.views.CWEAllView.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/views.html#CWEAllView.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.views.CWEAllView.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Metoda zwracajaca podstawowe dane o wszystkich słabościach CWE z oficjalnego serwisu <a class="reference external" href="https://cwe.mitre.org">https://cwe.mitre.org</a>.
+:param request: obiekt dla widoku Django z informacjami od użytkownika
+:return: podstawowe dane w formacie json o wszystkich słabościach CWE zawartych w feedach</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="api_vulnerabilities.views.CWEData">
+<em class="property">class </em><code class="sig-prename descclassname">api_vulnerabilities.views.</code><code class="sig-name descname">CWEData</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/views.html#CWEData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.views.CWEData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Widok Django zwracajacy infromacje o Common Weakness Enumeration na podstawie podanego numeru CWE ID.
+:tags: CWE</p>
+<dl class="py method">
+<dt id="api_vulnerabilities.views.CWEData.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">id_cwe</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/views.html#CWEData.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.views.CWEData.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Metoda zwracająca dane o słabości oprogramowania na podstawie identyfikatora CWE podanego przez użytkownika
+w zapytaniu GET HTTP.
+:tags: CWE
+:type id_cwe: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+:param request: obiekt request dla widoku Django
+:type id_cwe: <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>
+:param id_cwe: kod identyfikujący słabość oprogramowania
+:return: json z danymi wybranej słabości oprogramowania</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="api_vulnerabilities.views.CWEDetailsAllView">
+<em class="property">class </em><code class="sig-prename descclassname">api_vulnerabilities.views.</code><code class="sig-name descname">CWEDetailsAllView</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/views.html#CWEDetailsAllView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.views.CWEDetailsAllView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Widok Django zwracajacy wszystkie słabości Common Weakness Enumeration ze szczegółowymi danymi.
+Wszystki identyfikatory CWE pochodza z <a class="reference external" href="https://cwe.mitre.org/data/published/cwe_latest.pdf">https://cwe.mitre.org/data/published/cwe_latest.pdf</a></p>
+<dl class="py method">
+<dt id="api_vulnerabilities.views.CWEDetailsAllView.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">page</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/views.html#CWEDetailsAllView.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.views.CWEDetailsAllView.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="api_vulnerabilities.views.CWETop25">
+<em class="property">class </em><code class="sig-prename descclassname">api_vulnerabilities.views.</code><code class="sig-name descname">CWETop25</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/views.html#CWETop25"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.views.CWETop25" title="Permalink to this definition">¶</a></dt>
+<dd><p>Widok Django zwracający informacje o TOP 25 najgroźniejszych słabościach oprogramowania.</p>
+<dl class="py method">
+<dt id="api_vulnerabilities.views.CWETop25.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/views.html#CWETop25.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.views.CWETop25.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Metoda zwracająca dane o 25 najpopularniejszych słabościach oprogramowania na podstawie żądania GET HTTP.
+Dane pochodzą ze strony <a class="reference external" href="https://cwe.mitre.org/top25/archive/2020/2020_cwe_top25.html">https://cwe.mitre.org/top25/archive/2020/2020_cwe_top25.html</a>
+:tags: CWE
+:param request: obiekt request dla widoku Django
+:return: dane w postaci json zawierajace ingormacje o hoście</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="cve-and-cwe">
+<h2>cve_and_cwe<a class="headerlink" href="#cve-and-cwe" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-api_vulnerabilities.cve_and_cwe.cve_details_all">
+<span id="cve-details-all"></span><h3>cve_details_all<a class="headerlink" href="#module-api_vulnerabilities.cve_and_cwe.cve_details_all" title="Permalink to this headline">¶</a></h3>
+<dl class="py class">
+<dt id="api_vulnerabilities.cve_and_cwe.cve_details_all.CVEDetailsAll">
+<em class="property">class </em><code class="sig-prename descclassname">api_vulnerabilities.cve_and_cwe.cve_details_all.</code><code class="sig-name descname">CVEDetailsAll</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">page</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/cve_details_all.html#CVEDetailsAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.cve_details_all.CVEDetailsAll" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.cve_details_all.CVEDetailsAll.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">page</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/cve_details_all.html#CVEDetailsAll.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.cve_details_all.CVEDetailsAll.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.cve_details_all.CVEDetailsAll.get_data">
+<code class="sig-name descname">get_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/cve_details_all.html#CVEDetailsAll.get_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.cve_details_all.CVEDetailsAll.get_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.cve_details_all.CVEDetailsAll.get_filepath">
+<code class="sig-name descname">get_filepath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/cve_details_all.html#CVEDetailsAll.get_filepath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.cve_details_all.CVEDetailsAll.get_filepath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.cve_details_all.CVEDetailsAll.render_output">
+<code class="sig-name descname">render_output</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host_address</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/cve_details_all.html#CVEDetailsAll.render_output"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.cve_details_all.CVEDetailsAll.render_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dodaje url do sarenki i zewnętrzen do mitre wskazujące na mitre</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.cve_details_all.CVEDetailsAll.values">
+<em class="property">property </em><code class="sig-name descname">values</code><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.cve_details_all.CVEDetailsAll.values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-api_vulnerabilities.cve_and_cwe.cwe_all">
+<span id="cwe-all"></span><h3>cwe_all<a class="headerlink" href="#module-api_vulnerabilities.cve_and_cwe.cwe_all" title="Permalink to this headline">¶</a></h3>
+<dl class="py class">
+<dt id="api_vulnerabilities.cve_and_cwe.cwe_all.CWEAll">
+<em class="property">class </em><code class="sig-prename descclassname">api_vulnerabilities.cve_and_cwe.cwe_all.</code><code class="sig-name descname">CWEAll</code><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/cwe_all.html#CWEAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.cwe_all.CWEAll" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.cwe_all.CWEAll.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/cwe_all.html#CWEAll.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.cwe_all.CWEAll.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.cwe_all.CWEAll.get_data">
+<code class="sig-name descname">get_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/cwe_all.html#CWEAll.get_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.cwe_all.CWEAll.get_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.cwe_all.CWEAll.render_output">
+<code class="sig-name descname">render_output</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host_address</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/cwe_all.html#CWEAll.render_output"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.cwe_all.CWEAll.render_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dodaje url do sarenki i zewnętrzen do mitre wskazujące na mitre</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.cwe_all.CWEAll.values">
+<em class="property">property </em><code class="sig-name descname">values</code><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.cwe_all.CWEAll.values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-api_vulnerabilities.cve_and_cwe.cwe_details_all">
+<span id="cwe-details-all"></span><h3>cwe_details_all<a class="headerlink" href="#module-api_vulnerabilities.cve_and_cwe.cwe_details_all" title="Permalink to this headline">¶</a></h3>
+<dl class="py class">
+<dt id="api_vulnerabilities.cve_and_cwe.cwe_details_all.CWEDetailsAll">
+<em class="property">class </em><code class="sig-prename descclassname">api_vulnerabilities.cve_and_cwe.cwe_details_all.</code><code class="sig-name descname">CWEDetailsAll</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">page</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/cwe_details_all.html#CWEDetailsAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.cwe_details_all.CWEDetailsAll" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.cwe_details_all.CWEDetailsAll.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">page</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/cwe_details_all.html#CWEDetailsAll.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.cwe_details_all.CWEDetailsAll.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="api_vulnerabilities.cve_and_cwe.cwe_details_all.CWEDetailsAll.feed_file_path">
+<code class="sig-name descname">feed_file_path</code><em class="property"> = 'feeds\\cwe_details\\'</em><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.cwe_details_all.CWEDetailsAll.feed_file_path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="api_vulnerabilities.cve_and_cwe.cwe_details_all.CWEDetailsAll.file_prefix">
+<code class="sig-name descname">file_prefix</code><em class="property"> = 'cwe_details'</em><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.cwe_details_all.CWEDetailsAll.file_prefix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.cwe_details_all.CWEDetailsAll.get_data">
+<code class="sig-name descname">get_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/cwe_details_all.html#CWEDetailsAll.get_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.cwe_details_all.CWEDetailsAll.get_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.cwe_details_all.CWEDetailsAll.get_filepath">
+<code class="sig-name descname">get_filepath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/cwe_details_all.html#CWEDetailsAll.get_filepath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.cwe_details_all.CWEDetailsAll.get_filepath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="api_vulnerabilities.cve_and_cwe.cwe_details_all.CWEDetailsAll.mitre_cwe_url">
+<code class="sig-name descname">mitre_cwe_url</code><em class="property"> = 'https://cwe.mitre.org/data/definitions/'</em><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.cwe_details_all.CWEDetailsAll.mitre_cwe_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="api_vulnerabilities.cve_and_cwe.cwe_details_all.CWEDetailsAll.nist_url">
+<code class="sig-name descname">nist_url</code><em class="property"> = 'https://nvd.nist.gov/vuln/detail/'</em><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.cwe_details_all.CWEDetailsAll.nist_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.cwe_details_all.CWEDetailsAll.render_output">
+<code class="sig-name descname">render_output</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host_address</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/cwe_details_all.html#CWEDetailsAll.render_output"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.cwe_details_all.CWEDetailsAll.render_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dodaje url do sarenki i zewnętrzen do mitre wskazujące na mitre</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.cwe_details_all.CWEDetailsAll.values">
+<em class="property">property </em><code class="sig-name descname">values</code><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.cwe_details_all.CWEDetailsAll.values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-api_vulnerabilities.cve_and_cwe.general_scraper">
+<span id="general-scraper"></span><h3>general_scraper<a class="headerlink" href="#module-api_vulnerabilities.cve_and_cwe.general_scraper" title="Permalink to this headline">¶</a></h3>
+<dl class="py class">
+<dt id="api_vulnerabilities.cve_and_cwe.general_scraper.GeneralScraper">
+<em class="property">class </em><code class="sig-prename descclassname">api_vulnerabilities.cve_and_cwe.general_scraper.</code><code class="sig-name descname">GeneralScraper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/general_scraper.html#GeneralScraper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.general_scraper.GeneralScraper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets general data from website, like keywords, title, image etc.</p>
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.general_scraper.GeneralScraper.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/general_scraper.html#GeneralScraper.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.general_scraper.GeneralScraper.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.general_scraper.GeneralScraper.get_all">
+<code class="sig-name descname">get_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/general_scraper.html#GeneralScraper.get_all"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.general_scraper.GeneralScraper.get_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all founded data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.general_scraper.GeneralScraper.get_description">
+<code class="sig-name descname">get_description</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/general_scraper.html#GeneralScraper.get_description"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.general_scraper.GeneralScraper.get_description" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.general_scraper.GeneralScraper.get_image">
+<code class="sig-name descname">get_image</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/general_scraper.html#GeneralScraper.get_image"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.general_scraper.GeneralScraper.get_image" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.general_scraper.GeneralScraper.get_keywords">
+<code class="sig-name descname">get_keywords</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/general_scraper.html#GeneralScraper.get_keywords"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.general_scraper.GeneralScraper.get_keywords" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.general_scraper.GeneralScraper.get_title">
+<code class="sig-name descname">get_title</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/general_scraper.html#GeneralScraper.get_title"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.general_scraper.GeneralScraper.get_title" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="api_vulnerabilities.cve_and_cwe.general_scraper.GeneralScraperError">
+<em class="property">exception </em><code class="sig-prename descclassname">api_vulnerabilities.cve_and_cwe.general_scraper.</code><code class="sig-name descname">GeneralScraperError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">errors</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/general_scraper.html#GeneralScraperError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.general_scraper.GeneralScraperError" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.general_scraper.GeneralScraperError.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">errors</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/general_scraper.html#GeneralScraperError.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.general_scraper.GeneralScraperError.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers">
+<span id="mitre-cwe-scrapers"></span><h3>mitre_cwe_scrapers<a class="headerlink" href="#module-api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers" title="Permalink to this headline">¶</a></h3>
+<p>Scrapery do danych ze strony <a class="reference external" href="https://cwe.mitre.org/">https://cwe.mitre.org/</a></p>
+<p>CVE-2019-4570
+<a class="reference external" href="https://nvd.nist.gov/vuln/detail/CVE-2019-4570#vulnCurrentDescriptionTitle">https://nvd.nist.gov/vuln/detail/CVE-2019-4570#vulnCurrentDescriptionTitle</a>
+Scrapery do danych ze strony <a class="reference external" href="https://nvd.nist.gov">https://nvd.nist.gov</a></p>
+<dl class="py class">
+<dt id="api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWEDataScraper">
+<em class="property">class </em><code class="sig-prename descclassname">api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.</code><code class="sig-name descname">CWEDataScraper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id_cwe</span></em>, <em class="sig-param"><span class="n">host_address</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/mitre_cwe_scrapers.html#CWEDataScraper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWEDataScraper" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWEDataScraper.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id_cwe</span></em>, <em class="sig-param"><span class="n">host_address</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/mitre_cwe_scrapers.html#CWEDataScraper.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWEDataScraper.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWEDataScraper.cwe_mitre_url">
+<code class="sig-name descname">cwe_mitre_url</code><em class="property"> = 'https://cwe.mitre.org/data/definitions/'</em><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWEDataScraper.cwe_mitre_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWEDataScraper.generate_definition_url">
+<code class="sig-name descname">generate_definition_url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/mitre_cwe_scrapers.html#CWEDataScraper.generate_definition_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWEDataScraper.generate_definition_url" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWEDataScraper.get_caused_by">
+<code class="sig-name descname">get_caused_by</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/mitre_cwe_scrapers.html#CWEDataScraper.get_caused_by"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWEDataScraper.get_caused_by" title="Permalink to this definition">¶</a></dt>
+<dd><p>Etap podczas którego powstaje podatność. Np. podczas implementacji.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWEDataScraper.get_cve_examples">
+<code class="sig-name descname">get_cve_examples</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/mitre_cwe_scrapers.html#CWEDataScraper.get_cve_examples"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWEDataScraper.get_cve_examples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Przykładowe podatności bezpieczeństwa w konkretnych oprogramowanaich dla tego typu słabości oprogramowania.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWEDataScraper.get_data">
+<code class="sig-name descname">get_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/mitre_cwe_scrapers.html#CWEDataScraper.get_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWEDataScraper.get_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zwraca wszystkie dane wyciągniete podczas scrapowania.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWEDataScraper.get_description">
+<code class="sig-name descname">get_description</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/mitre_cwe_scrapers.html#CWEDataScraper.get_description"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWEDataScraper.get_description" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWEDataScraper.get_likelihood">
+<code class="sig-name descname">get_likelihood</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/mitre_cwe_scrapers.html#CWEDataScraper.get_likelihood"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWEDataScraper.get_likelihood" title="Permalink to this definition">¶</a></dt>
+<dd><p>Poziom prawdopodobieństwa istnienia exploitów i samej exploitacji słabości.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWEDataScraper.get_technical_impact">
+<code class="sig-name descname">get_technical_impact</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/mitre_cwe_scrapers.html#CWEDataScraper.get_technical_impact"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWEDataScraper.get_technical_impact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Częsre konswekwencje exploitacji słabości.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWEDataScraper.get_title">
+<code class="sig-name descname">get_title</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/mitre_cwe_scrapers.html#CWEDataScraper.get_title"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWEDataScraper.get_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zwraca tytuł slabości.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWETableTop25Scraper">
+<em class="property">class </em><code class="sig-prename descclassname">api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.</code><code class="sig-name descname">CWETableTop25Scraper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host_address</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/mitre_cwe_scrapers.html#CWETableTop25Scraper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWETableTop25Scraper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scraper danych - pobiera dane z tabeli dla top 25 słabości oprogramowania z <a class="reference external" href="https://cwe.mitre.org/top25/archive/2020/2020_cwe_top25.html">https://cwe.mitre.org/top25/archive/2020/2020_cwe_top25.html</a>.</p>
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWETableTop25Scraper.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host_address</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/mitre_cwe_scrapers.html#CWETableTop25Scraper.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWETableTop25Scraper.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWETableTop25Scraper.cwe_mitre_url">
+<code class="sig-name descname">cwe_mitre_url</code><em class="property"> = 'https://cwe.mitre.org'</em><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWETableTop25Scraper.cwe_mitre_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWETableTop25Scraper.get_top_25">
+<code class="sig-name descname">get_top_25</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/mitre_cwe_scrapers.html#CWETableTop25Scraper.get_top_25"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWETableTop25Scraper.get_top_25" title="Permalink to this definition">¶</a></dt>
+<dd><p>SCRAPER - Pobiera dane ze strony - zwraca top 25 najpopularniejszych słabości.
+:return:</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWETableTop25Scraper.top_25_url">
+<code class="sig-name descname">top_25_url</code><em class="property"> = 'https://cwe.mitre.org/top25/archive/2020/2020_cwe_top25.html'</em><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.mitre_cwe_scrapers.CWETableTop25Scraper.top_25_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-api_vulnerabilities.cve_and_cwe.nist_cve_scrapers">
+<span id="nist-cve-scrapers"></span><h3>nist_cve_scrapers<a class="headerlink" href="#module-api_vulnerabilities.cve_and_cwe.nist_cve_scrapers" title="Permalink to this headline">¶</a></h3>
+<dl class="py class">
+<dt id="api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper">
+<em class="property">class </em><code class="sig-prename descclassname">api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.</code><code class="sig-name descname">NISTCVEScraper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id_cve</span></em>, <em class="sig-param"><span class="n">host_address</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/nist_cve_scrapers.html#NISTCVEScraper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dodatkowe źródło danych o podatnosciach CVE</p>
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id_cve</span></em>, <em class="sig-param"><span class="n">host_address</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/nist_cve_scrapers.html#NISTCVEScraper.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.get_base_score_v2">
+<code class="sig-name descname">get_base_score_v2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">soup</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/nist_cve_scrapers.html#NISTCVEScraper.get_base_score_v2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.get_base_score_v2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.get_base_score_v3">
+<code class="sig-name descname">get_base_score_v3</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">soup</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/nist_cve_scrapers.html#NISTCVEScraper.get_base_score_v3"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.get_base_score_v3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.get_cpe">
+<code class="sig-name descname">get_cpe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">soup</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/nist_cve_scrapers.html#NISTCVEScraper.get_cpe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.get_cpe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Common Platform Enumeration
+<a class="reference external" href="https://nvd.nist.gov/products/cpe">https://nvd.nist.gov/products/cpe</a>
+<a class="reference external" href="https://nvd.nist.gov/products/cpe/search">https://nvd.nist.gov/products/cpe/search</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.get_cvss2_vector">
+<code class="sig-name descname">get_cvss2_vector</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">soup</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/nist_cve_scrapers.html#NISTCVEScraper.get_cvss2_vector"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.get_cvss2_vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zwraca Common Vulnerability Scoring System Version 2.0.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.get_cvss3_vector">
+<code class="sig-name descname">get_cvss3_vector</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">soup</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/nist_cve_scrapers.html#NISTCVEScraper.get_cvss3_vector"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.get_cvss3_vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zwraca Common Vulnerability Scoring System Version 3.0.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.get_cwe">
+<code class="sig-name descname">get_cwe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">soup</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/nist_cve_scrapers.html#NISTCVEScraper.get_cwe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.get_cwe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.get_data">
+<code class="sig-name descname">get_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/nist_cve_scrapers.html#NISTCVEScraper.get_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.get_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.get_description">
+<code class="sig-name descname">get_description</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">soup</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/nist_cve_scrapers.html#NISTCVEScraper.get_description"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.get_description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.get_hyperlinks">
+<code class="sig-name descname">get_hyperlinks</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">soup</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/nist_cve_scrapers.html#NISTCVEScraper.get_hyperlinks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.get_hyperlinks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.get_last_modified">
+<code class="sig-name descname">get_last_modified</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">soup</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/nist_cve_scrapers.html#NISTCVEScraper.get_last_modified"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.get_last_modified" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.get_published_date">
+<code class="sig-name descname">get_published_date</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">soup</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/nist_cve_scrapers.html#NISTCVEScraper.get_published_date"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.get_published_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Data publikacji publiczenj podatnosci.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.get_vector_calculator_url">
+<code class="sig-name descname">get_vector_calculator_url</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vector</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/nist_cve_scrapers.html#NISTCVEScraper.get_vector_calculator_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.get_vector_calculator_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Common Vulnerability Scoring System Version
+Zwraca link do kalkulator vectora ataku na podstawie jego wersji.
+Brak spójności - stare podatnosci mają tylko wersje 2.0 lub 2.0 i 3.0
+najnowsze tylko 3.1 - ciągle sie to zmienia</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.get_vuln_source">
+<code class="sig-name descname">get_vuln_source</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">soup</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_vulnerabilities/cve_and_cwe/nist_cve_scrapers.html#NISTCVEScraper.get_vuln_source"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.get_vuln_source" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.nist_url">
+<code class="sig-name descname">nist_url</code><em class="property"> = 'https://nvd.nist.gov/vuln/detail/'</em><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.nist_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.nist_vector_v2_url">
+<code class="sig-name descname">nist_vector_v2_url</code><em class="property"> = 'https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector='</em><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.nist_vector_v2_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.nist_vector_v3_1_url">
+<code class="sig-name descname">nist_vector_v3_1_url</code><em class="property"> = 'https://www.first.org/cvss/calculator/3.1#'</em><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.nist_vector_v3_1_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.nist_vector_v3_url">
+<code class="sig-name descname">nist_vector_v3_url</code><em class="property"> = 'https://www.first.org/cvss/calculator/3.0#CVSS:3.0/'</em><a class="headerlink" href="#api_vulnerabilities.cve_and_cwe.nist_cve_scrapers.NISTCVEScraper.nist_vector_v3_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="reports.html" class="btn btn-neutral float-right" title="reports" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="api_tools.html" class="btn btn-neutral float-left" title="api_tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Dominika Pawlaczyk, Michał Pawlaczyk
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

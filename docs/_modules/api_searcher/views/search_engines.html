@@ -1,0 +1,302 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>api_searcher.views.search_engines &mdash; SARENKA 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> SARENKA
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Dokumentacja aplikacji:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../backend/common.html">common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../backend/api_searcher.html">api_searcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../backend/api_tools.html">api_tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../backend/api_vulnerabilities.html">api_vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../backend/reports.html">reports</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">SARENKA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>api_searcher.views.search_engines</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for api_searcher.views.search_engines</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">rest_framework</span> <span class="kn">import</span> <span class="n">views</span>
+<span class="kn">from</span> <span class="nn">rest_framework.response</span> <span class="kn">import</span> <span class="n">Response</span>
+<span class="kn">from</span> <span class="nn">rest_framework</span> <span class="kn">import</span> <span class="n">status</span>
+<span class="kn">from</span> <span class="nn">rest_framework.reverse</span> <span class="kn">import</span> <span class="n">reverse</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.decorators</span> <span class="kn">import</span> <span class="n">login_required</span>
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">JsonResponse</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">from</span> <span class="nn">api_searcher.search_engines.censys_engine.censys_host_search</span> <span class="kn">import</span> <span class="n">CensysHostSearch</span><span class="p">,</span> <span class="n">CensysHostSearchError</span>
+<span class="kn">from</span> <span class="nn">api_searcher.search_engines.shodan_engine.shodan_host_search</span> <span class="kn">import</span> <span class="n">ShodanHostSearch</span><span class="p">,</span> <span class="n">ShodanHostSearchError</span>
+<span class="kn">from</span> <span class="nn">api_searcher.searcher_full</span> <span class="kn">import</span> <span class="n">SearcherFull</span>
+<span class="kn">from</span> <span class="nn">api_searcher.views.common</span> <span class="kn">import</span> <span class="n">Common</span>
+<span class="kn">from</span> <span class="nn">api_searcher.search_engines.user_credentials</span> <span class="kn">import</span> <span class="n">UserCredentials</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;django&#39;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="LocalUrlCreator"><a class="viewcode-back" href="../../../backend/api_searcher.html#api_searcher.views.search_engines.LocalUrlCreator">[docs]</a><span class="k">class</span> <span class="nc">LocalUrlCreator</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Klasa pomocnicza generujaca urle do wnętrza aplikacji.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="LocalUrlCreator.get_user_credentials_url"><a class="viewcode-back" href="../../../backend/api_searcher.html#api_searcher.views.search_engines.LocalUrlCreator.get_user_credentials_url">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">get_user_credentials_url</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Common</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="o">.</span><span class="n">host_address</span> <span class="o">+</span> <span class="n">reverse</span><span class="p">(</span><span class="s2">&quot;user_credentials&quot;</span><span class="p">)</span></div></div>
+
+
+
+
+
+<div class="viewcode-block" id="CensysHostSearchView"><a class="viewcode-back" href="../../../backend/api_searcher.html#api_searcher.views.search_engines.CensysHostSearchView">[docs]</a><span class="k">class</span> <span class="nc">CensysHostSearchView</span><span class="p">(</span><span class="n">views</span><span class="o">.</span><span class="n">APIView</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Widok Django zwracający dane z serwisu http://censys.io/.</span>
+<span class="sd">    Zwraca informacje o potenjcalne podatności hosta na ataki: &quot;heartbleed&quot;, &quot;logjam_attack&quot;, &quot;freak_attack&quot;, &quot;poodle_attack&quot;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="CensysHostSearchView.get"><a class="viewcode-back" href="../../../backend/api_searcher.html#api_searcher.views.search_engines.CensysHostSearchView.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">ip_address</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Zwraca informacje uzyskane za pośrednictwem serwisu https://censys.io/.</span>
+<span class="sd">        Na podstawie adresu ip hosta podane przez uzytkownika w żadaniu GET HTTP.</span>
+<span class="sd">        :param request: obiekt request dla widoku Django</span>
+<span class="sd">        :return: dane w postaci json zawierajace informacje o hoście zwrócone przez serwis https://censys.io/.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">settings_url</span> <span class="o">=</span> <span class="n">LocalUrlCreator</span><span class="o">.</span><span class="n">get_user_credentials_url</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">user_credentials</span> <span class="o">=</span> <span class="n">UserCredentials</span><span class="p">()</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">CensysHostSearch</span><span class="p">(</span><span class="n">user_credentials</span><span class="p">)</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">ip_address</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">CensysHostSearchError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Please create account on https://censys.io/ service and add valid credentials &quot;</span>
+                                        <span class="sa">f</span><span class="s2">&quot;for SARENKA app on </span><span class="si">{</span><span class="n">settings_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                             <span class="s2">&quot;details&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)},</span> <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_401_UNAUTHORIZED</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Unable to get infromation from https://censys.io/ service.&quot;</span><span class="p">,</span>
+                             <span class="s2">&quot;details&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)},</span> <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="ShodanHostSearchView"><a class="viewcode-back" href="../../../backend/api_searcher.html#api_searcher.views.search_engines.ShodanHostSearchView">[docs]</a><span class="k">class</span> <span class="nc">ShodanHostSearchView</span><span class="p">(</span><span class="n">views</span><span class="o">.</span><span class="n">APIView</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Widok Django zwracający dane z serwisu https://shodan.io/.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="ShodanHostSearchView.get"><a class="viewcode-back" href="../../../backend/api_searcher.html#api_searcher.views.search_engines.ShodanHostSearchView.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">ip_address</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Zwraca informacje uzyskane za pośrednictwem serwisu https://censys.io/.</span>
+<span class="sd">        Na podstawie adresu ip hosta podane przez uzytkownika w żadaniu GET HTTP.</span>
+<span class="sd">        :param request: obiekt request dla widoku Django</span>
+<span class="sd">        :return: dane w postaci json zawierajace informacje o hoście zwrócone przez serwis https://censys.io/.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">settings_url</span> <span class="o">=</span> <span class="n">LocalUrlCreator</span><span class="o">.</span><span class="n">get_user_credentials_url</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">user_credentials</span> <span class="o">=</span> <span class="n">UserCredentials</span><span class="p">()</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">ShodanHostSearch</span><span class="p">(</span><span class="n">user_credentials</span><span class="p">)</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">ip_address</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="s2">&quot;shodan&quot;</span><span class="p">:</span> <span class="n">response</span><span class="p">})</span>
+        <span class="k">except</span> <span class="n">ShodanHostSearchError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Please create account on https://www.shodan.io/ service and add valid credentials &quot;</span>
+                                        <span class="sa">f</span><span class="s2">&quot;for SARENKA app on </span><span class="si">{</span><span class="n">settings_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                             <span class="s2">&quot;details&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)},</span> <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_401_UNAUTHORIZED</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Unable to get infromation from https://www.shodan.io/ service.&quot;</span><span class="p">,</span>
+                             <span class="s2">&quot;details&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)},</span> <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="SearcherFullView"><a class="viewcode-back" href="../../../backend/api_searcher.html#api_searcher.views.search_engines.SearcherFullView">[docs]</a><span class="k">class</span> <span class="nc">SearcherFullView</span><span class="p">(</span><span class="n">views</span><span class="o">.</span><span class="n">APIView</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Widok Django zwracajacy wszystkie dane dla hostu podanego przez użytkownika.</span>
+<span class="sd">    Zawiera dane ze wszsytkich serwisów trzecich, informacje o DNS oraz banner.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="SearcherFullView.get"><a class="viewcode-back" href="../../../backend/api_searcher.html#api_searcher.views.search_engines.SearcherFullView.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">host</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Metoda zwracajace wszystkie dane o podanym przez użytkownika hoście na zapytanie GET HTTP.</span>
+<span class="sd">        :param request: obiekt dla widoku Django z informacjami od użytkownika</span>
+<span class="sd">        :param host: string mający adres ip lub domenę np.: python.org</span>
+<span class="sd">        :return: dane w postaci json zawierajace ingormacje o hoście</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">user_credentials</span> <span class="o">=</span> <span class="n">UserCredentials</span><span class="p">()</span>
+        <span class="n">searcher</span> <span class="o">=</span> <span class="n">SearcherFull</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">user_credentials</span><span class="o">=</span><span class="n">user_credentials</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="s2">&quot;full_search&quot;</span><span class="p">:</span> <span class="n">searcher</span><span class="o">.</span><span class="n">values</span><span class="p">})</span></div></div>
+
+
+<div class="viewcode-block" id="login_required_view"><a class="viewcode-back" href="../../../backend/api_searcher.html#api_searcher.views.search_engines.login_required_view">[docs]</a><span class="nd">@login_required</span>
+<span class="k">def</span> <span class="nf">login_required_view</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">cve_code</span><span class="p">):</span>
+    <span class="c1"># cve = get_object_or_404() #jakby testowac z bazy</span>
+    <span class="n">cve</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="n">cve_code</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;test value&quot;</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">(</span><span class="n">cve</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Dominika Pawlaczyk, Michał Pawlaczyk
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,768 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>api_tools &mdash; SARENKA 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="api_vulnerabilities" href="api_vulnerabilities.html" />
+    <link rel="prev" title="api_searcher" href="api_searcher.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> SARENKA
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Dokumentacja aplikacji:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="common.html">common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_searcher.html">api_searcher</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">api_tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-api_tools.models">models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-api_tools.port_scanner">port_scanner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-api_tools.urls">urls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-api_tools.views">views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#entropy-calculator">entropy_calculator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-api_tools.entropy_calculator.shanon_entropy">shanon_entropy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#hash-calculator">hash_calculator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-api_tools.hash_calculator.cryptographic_hash_calculator">cryptographic_hash_calculator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-api_tools.hash_calculator.historic_hash_calculator">historic_hash_calculator</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_vulnerabilities.html">api_vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reports.html">reports</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SARENKA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>api_tools</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/backend/api_tools.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="api-tools">
+<h1>api_tools<a class="headerlink" href="#api-tools" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-api_tools.models">
+<span id="models"></span><h2>models<a class="headerlink" href="#module-api_tools.models" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-api_tools.port_scanner">
+<span id="port-scanner"></span><h2>port_scanner<a class="headerlink" href="#module-api_tools.port_scanner" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="api_tools.port_scanner.PortScanner">
+<em class="property">class </em><code class="sig-prename descclassname">api_tools.port_scanner.</code><code class="sig-name descname">PortScanner</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ip_address</span></em>, <em class="sig-param"><span class="n">port</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/port_scanner.html#PortScanner"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.port_scanner.PortScanner" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="api_tools.port_scanner.PortScanner.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ip_address</span></em>, <em class="sig-param"><span class="n">port</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/port_scanner.html#PortScanner.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.port_scanner.PortScanner.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Skaner portu - znacznie wolneijsza funckjonalność niż w nmapie.
+:type port: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+:type ip_address: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+:type ip_address: <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>
+:param ip_address: adres ip hosta
+:type port: <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>
+:param port: numer portu</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.port_scanner.PortScanner.scan">
+<code class="sig-name descname">scan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/port_scanner.html#PortScanner.scan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.port_scanner.PortScanner.scan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-api_tools.urls">
+<span id="urls"></span><h2>urls<a class="headerlink" href="#module-api_tools.urls" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-api_tools.views">
+<span id="views"></span><h2>views<a class="headerlink" href="#module-api_tools.views" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="api_tools.views.EntropyCalculatorView">
+<em class="property">class </em><code class="sig-prename descclassname">api_tools.views.</code><code class="sig-name descname">EntropyCalculatorView</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/views.html#EntropyCalculatorView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.views.EntropyCalculatorView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obliczanie Entropii ciągu znaków - obliczanie na podstawie entropi Shannona.</p>
+<dl class="py method">
+<dt id="api_tools.views.EntropyCalculatorView.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">value_sequence</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/views.html#EntropyCalculatorView.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.views.EntropyCalculatorView.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="api_tools.views.HashCalcualtorView">
+<em class="property">class </em><code class="sig-prename descclassname">api_tools.views.</code><code class="sig-name descname">HashCalcualtorView</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/views.html#HashCalcualtorView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.views.HashCalcualtorView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obliczanie najpopularnieszjych wartości hashy dla podanego ciagu znaków.</p>
+<dl class="py method">
+<dt id="api_tools.views.HashCalcualtorView.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/views.html#HashCalcualtorView.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.views.HashCalcualtorView.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zwraca wartości różnych hashy na podstawie stringa poganego przez użytkownika.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="api_tools.views.PortScannerView">
+<em class="property">class </em><code class="sig-prename descclassname">api_tools.views.</code><code class="sig-name descname">PortScannerView</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/views.html#PortScannerView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.views.PortScannerView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uwaga - takie skanowanie zajmuje dużo czasu - zdecydowanie lepiej użyć oryginalnego nmapa!</p>
+<dl class="py method">
+<dt id="api_tools.views.PortScannerView.change_to_domain_addres">
+<code class="sig-name descname">change_to_domain_addres</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/views.html#PortScannerView.change_to_domain_addres"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.views.PortScannerView.change_to_domain_addres" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.views.PortScannerView.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">host</span></em>, <em class="sig-param"><span class="n">port</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/views.html#PortScannerView.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.views.PortScannerView.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Podstawowe skanowanie portów hosta.
+:param request: obiekt request django
+:param host: adres ip lub domeny wybranego hosta
+:return: informacje o statusie przeskanowanych portów - “open” albo “closed”</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.views.PortScannerView.is_ipv4">
+<code class="sig-name descname">is_ipv4</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/views.html#PortScannerView.is_ipv4"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.views.PortScannerView.is_ipv4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="entropy-calculator">
+<h2>entropy_calculator<a class="headerlink" href="#entropy-calculator" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-api_tools.entropy_calculator.shanon_entropy">
+<span id="shanon-entropy"></span><h3>shanon_entropy<a class="headerlink" href="#module-api_tools.entropy_calculator.shanon_entropy" title="Permalink to this headline">¶</a></h3>
+<p>Moduł do obliczania entropii - rozbudowanie w przyszłosci</p>
+<dl class="py class">
+<dt id="api_tools.entropy_calculator.shanon_entropy.ShanonEntropy">
+<em class="property">class </em><code class="sig-prename descclassname">api_tools.entropy_calculator.shanon_entropy.</code><code class="sig-name descname">ShanonEntropy</code><a class="reference internal" href="../_modules/api_tools/entropy_calculator/shanon_entropy.html#ShanonEntropy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.entropy_calculator.shanon_entropy.ShanonEntropy" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="api_tools.entropy_calculator.shanon_entropy.ShanonEntropy.calculate">
+<em class="property">static </em><code class="sig-name descname">calculate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value_sequence</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/entropy_calculator/shanon_entropy.html#ShanonEntropy.calculate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.entropy_calculator.shanon_entropy.ShanonEntropy.calculate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="hash-calculator">
+<h2>hash_calculator<a class="headerlink" href="#hash-calculator" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-api_tools.hash_calculator.cryptographic_hash_calculator">
+<span id="cryptographic-hash-calculator"></span><h3>cryptographic_hash_calculator<a class="headerlink" href="#module-api_tools.hash_calculator.cryptographic_hash_calculator" title="Permalink to this headline">¶</a></h3>
+<p>Obliczanie wartości Kryptograficznych Hashy.
+Użycie biblioteki Crypto zamiast hashlib, ponieważ zawiera ona znane kolizje.</p>
+<p>Nowoczesne algorytmy hashujące</p>
+<dl class="simple">
+<dt>rodzina SHA-2</dt><dd><p>SHA-224
+SHA-256
+SHA-384
+SHA-512, SHA-512/224, SHA-512/256</p>
+</dd>
+<dt>rodzina SHA-3:</dt><dd><p>SHA3-224
+SHA3-256
+SHA3-384
+SHA3-512</p>
+</dd>
+<dt>rodzaje BLAKE2</dt><dd><p>BLAKE2s
+BLAKE2b</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator">
+<em class="property">class </em><code class="sig-prename descclassname">api_tools.hash_calculator.cryptographic_hash_calculator.</code><code class="sig-name descname">CryptographicHashCalcualator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">user_value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/cryptographic_hash_calculator.html#CryptographicHashCalcualator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obliczanie wartości Kryptograficznych Hashy.
+Użycie biblioteki Crypto zamiast hashlib, ponieważ zawiera ona znane kolizje.</p>
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">user_value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/cryptographic_hash_calculator.html#CryptographicHashCalcualator.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator.byte_string">
+<em class="property">property </em><code class="sig-name descname">byte_string</code><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator.byte_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator.get_blake2s_256_bits">
+<code class="sig-name descname">get_blake2s_256_bits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/cryptographic_hash_calculator.html#CryptographicHashCalcualator.get_blake2s_256_bits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator.get_blake2s_256_bits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Weilkość digest_bits od 8 do 256
+The algorithm uses 32 bit words, and it therefore works best on 32-bit platforms. The digest size ranges from 8 to 256 bits:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator.get_blake2s_as_mac">
+<code class="sig-name descname">get_blake2s_as_mac</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">secret</span><span class="o">=</span><span class="default_value">'secret'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/cryptographic_hash_calculator.html#CryptographicHashCalcualator.get_blake2s_as_mac"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator.get_blake2s_as_mac" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ewentulanie BLAKE2s może być użyty jak kryptograficzny MAC jeśli się zainicjalizuje go dodatkową  sekretną wartością
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator.get_sha224">
+<code class="sig-name descname">get_sha224</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/cryptographic_hash_calculator.html#CryptographicHashCalcualator.get_sha224"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator.get_sha224" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator.get_sha256">
+<code class="sig-name descname">get_sha256</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/cryptographic_hash_calculator.html#CryptographicHashCalcualator.get_sha256"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator.get_sha256" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator.get_sha384">
+<code class="sig-name descname">get_sha384</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/cryptographic_hash_calculator.html#CryptographicHashCalcualator.get_sha384"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator.get_sha384" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator.get_sha3_224">
+<code class="sig-name descname">get_sha3_224</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/cryptographic_hash_calculator.html#CryptographicHashCalcualator.get_sha3_224"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator.get_sha3_224" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator.get_sha3_256">
+<code class="sig-name descname">get_sha3_256</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/cryptographic_hash_calculator.html#CryptographicHashCalcualator.get_sha3_256"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator.get_sha3_256" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator.get_sha3_384">
+<code class="sig-name descname">get_sha3_384</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/cryptographic_hash_calculator.html#CryptographicHashCalcualator.get_sha3_384"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator.get_sha3_384" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator.get_sha512">
+<code class="sig-name descname">get_sha512</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/cryptographic_hash_calculator.html#CryptographicHashCalcualator.get_sha512"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator.get_sha512" title="Permalink to this definition">¶</a></dt>
+<dd><p>UWAGA: Hash podanty na atak “length extension attack”
+<a class="reference external" href="http://netifera.com/research/flickr_api_signature_forgery.pdf">http://netifera.com/research/flickr_api_signature_forgery.pdf</a>
+you are able to compute h(m||pad(m)||m’) for any m’ (|| stands for concatenation), even if
+you don’t know the entire message m
+<a class="reference external" href="https://crypto.stackexchange.com/questions/3978/understanding-the-length-extension-attack">https://crypto.stackexchange.com/questions/3978/understanding-the-length-extension-attack</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator.get_sha512_truncate_224">
+<code class="sig-name descname">get_sha512_truncate_224</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/cryptographic_hash_calculator.html#CryptographicHashCalcualator.get_sha512_truncate_224"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator.get_sha512_truncate_224" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator.get_sha512_truncate_256">
+<code class="sig-name descname">get_sha512_truncate_256</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/cryptographic_hash_calculator.html#CryptographicHashCalcualator.get_sha512_truncate_256"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashCalcualator.get_sha512_truncate_256" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper">
+<em class="property">class </em><code class="sig-prename descclassname">api_tools.hash_calculator.cryptographic_hash_calculator.</code><code class="sig-name descname">CryptographicHashWrapper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/cryptographic_hash_calculator.html#CryptographicHashWrapper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper na dane z CryptographicHashCalcualator ponieważ wystepują problemy z kodowaniem.
+Pomocnicza klasa zamiast serializera dla widoku</p>
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/cryptographic_hash_calculator.html#CryptographicHashWrapper.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.blake2s_256_bits_digest">
+<em class="property">property </em><code class="sig-name descname">blake2s_256_bits_digest</code><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.blake2s_256_bits_digest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.blake2s_256_bits_hexdigets">
+<em class="property">property </em><code class="sig-name descname">blake2s_256_bits_hexdigets</code><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.blake2s_256_bits_hexdigets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha224_digest">
+<em class="property">property </em><code class="sig-name descname">sha224_digest</code><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha224_digest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha224_hexdigets">
+<em class="property">property </em><code class="sig-name descname">sha224_hexdigets</code><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha224_hexdigets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha256_digest">
+<em class="property">property </em><code class="sig-name descname">sha256_digest</code><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha256_digest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha256_hexdigets">
+<em class="property">property </em><code class="sig-name descname">sha256_hexdigets</code><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha256_hexdigets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha384_digest">
+<em class="property">property </em><code class="sig-name descname">sha384_digest</code><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha384_digest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha384_hexdigets">
+<em class="property">property </em><code class="sig-name descname">sha384_hexdigets</code><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha384_hexdigets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha3_224_digest">
+<em class="property">property </em><code class="sig-name descname">sha3_224_digest</code><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha3_224_digest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha3_224_hexdigets">
+<em class="property">property </em><code class="sig-name descname">sha3_224_hexdigets</code><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha3_224_hexdigets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha3_256_digest">
+<em class="property">property </em><code class="sig-name descname">sha3_256_digest</code><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha3_256_digest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha3_256_hexdigets">
+<em class="property">property </em><code class="sig-name descname">sha3_256_hexdigets</code><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha3_256_hexdigets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha3_384_digest">
+<em class="property">property </em><code class="sig-name descname">sha3_384_digest</code><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha3_384_digest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha3_384_hexdigets">
+<em class="property">property </em><code class="sig-name descname">sha3_384_hexdigets</code><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha3_384_hexdigets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha512_digest">
+<em class="property">property </em><code class="sig-name descname">sha512_digest</code><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha512_digest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha512_hexdigets">
+<em class="property">property </em><code class="sig-name descname">sha512_hexdigets</code><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha512_hexdigets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha512_truncate_224_digest">
+<em class="property">property </em><code class="sig-name descname">sha512_truncate_224_digest</code><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha512_truncate_224_digest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha512_truncate_224_hexdigets">
+<em class="property">property </em><code class="sig-name descname">sha512_truncate_224_hexdigets</code><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha512_truncate_224_hexdigets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha512_truncate_224_warning">
+<em class="property">property </em><code class="sig-name descname">sha512_truncate_224_warning</code><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha512_truncate_224_warning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha512_truncate_256_digest">
+<em class="property">property </em><code class="sig-name descname">sha512_truncate_256_digest</code><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha512_truncate_256_digest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha512_truncate_256_hexdigets">
+<em class="property">property </em><code class="sig-name descname">sha512_truncate_256_hexdigets</code><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha512_truncate_256_hexdigets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha512_truncate_256_warning">
+<em class="property">property </em><code class="sig-name descname">sha512_truncate_256_warning</code><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha512_truncate_256_warning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha512_warning">
+<em class="property">property </em><code class="sig-name descname">sha512_warning</code><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.sha512_warning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.values">
+<em class="property">property </em><code class="sig-name descname">values</code><a class="headerlink" href="#api_tools.hash_calculator.cryptographic_hash_calculator.CryptographicHashWrapper.values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zwraca jsona który może być zwrócocny bezpoeśrednio przez widok Django.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-api_tools.hash_calculator.historic_hash_calculator">
+<span id="historic-hash-calculator"></span><h3>historic_hash_calculator<a class="headerlink" href="#module-api_tools.hash_calculator.historic_hash_calculator" title="Permalink to this headline">¶</a></h3>
+<p>Kalkulator historycznych algorytmów hashujących - NIE używac w kryptografi.</p>
+<p>SHA-1
+MD2
+MD5
+RIPEMD-160
+Keccak</p>
+<dl class="py class">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator">
+<em class="property">class </em><code class="sig-prename descclassname">api_tools.hash_calculator.historic_hash_calculator.</code><code class="sig-name descname">HistoricHashCalcualator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">user_value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/historic_hash_calculator.html#HistoricHashCalcualator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obliczanie wartości Kryptograficznych Hsitorycznych Hashy.
+Użycie biblioteki Crypto zamiast hashlib, ponieważ zawiera ona znane kolizje.</p>
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">user_value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/historic_hash_calculator.html#HistoricHashCalcualator.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.get_keccak_224_bits">
+<code class="sig-name descname">get_keccak_224_bits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/historic_hash_calculator.html#HistoricHashCalcualator.get_keccak_224_bits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.get_keccak_224_bits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.get_keccak_256_bits">
+<code class="sig-name descname">get_keccak_256_bits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/historic_hash_calculator.html#HistoricHashCalcualator.get_keccak_256_bits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.get_keccak_256_bits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.get_keccak_384_bits">
+<code class="sig-name descname">get_keccak_384_bits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/historic_hash_calculator.html#HistoricHashCalcualator.get_keccak_384_bits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.get_keccak_384_bits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.get_keccak_512_bits">
+<code class="sig-name descname">get_keccak_512_bits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/historic_hash_calculator.html#HistoricHashCalcualator.get_keccak_512_bits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.get_keccak_512_bits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.get_md2">
+<code class="sig-name descname">get_md2</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/historic_hash_calculator.html#HistoricHashCalcualator.get_md2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.get_md2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.get_md5">
+<code class="sig-name descname">get_md5</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/historic_hash_calculator.html#HistoricHashCalcualator.get_md5"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.get_md5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.get_ripemd160">
+<code class="sig-name descname">get_ripemd160</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/historic_hash_calculator.html#HistoricHashCalcualator.get_ripemd160"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.get_ripemd160" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.get_sha1">
+<code class="sig-name descname">get_sha1</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/historic_hash_calculator.html#HistoricHashCalcualator.get_sha1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.get_sha1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper">
+<em class="property">class </em><code class="sig-prename descclassname">api_tools.hash_calculator.historic_hash_calculator.</code><code class="sig-name descname">HistoricHashWrapper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/historic_hash_calculator.html#HistoricHashWrapper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper na dane z HistoricHashCalcualator ponieważ wystepują problemy z kodowaniem.
+Pomocnicza klasa zamiast serializera dla widoku</p>
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/api_tools/hash_calculator/historic_hash_calculator.html#HistoricHashWrapper.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.keccak_224_bits_digest">
+<em class="property">property </em><code class="sig-name descname">keccak_224_bits_digest</code><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.keccak_224_bits_digest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.keccak_224_bits_hexdigets">
+<em class="property">property </em><code class="sig-name descname">keccak_224_bits_hexdigets</code><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.keccak_224_bits_hexdigets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.keccak_256_bits_digest">
+<em class="property">property </em><code class="sig-name descname">keccak_256_bits_digest</code><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.keccak_256_bits_digest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.keccak_256_bits_hexdigets">
+<em class="property">property </em><code class="sig-name descname">keccak_256_bits_hexdigets</code><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.keccak_256_bits_hexdigets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.keccak_384_bits_digest">
+<em class="property">property </em><code class="sig-name descname">keccak_384_bits_digest</code><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.keccak_384_bits_digest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.keccak_384_bits_hexdigets">
+<em class="property">property </em><code class="sig-name descname">keccak_384_bits_hexdigets</code><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.keccak_384_bits_hexdigets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.keccak_512_bits_digest">
+<em class="property">property </em><code class="sig-name descname">keccak_512_bits_digest</code><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.keccak_512_bits_digest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.keccak_512_bits_hexdigets">
+<em class="property">property </em><code class="sig-name descname">keccak_512_bits_hexdigets</code><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.keccak_512_bits_hexdigets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.md2_digest">
+<em class="property">property </em><code class="sig-name descname">md2_digest</code><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.md2_digest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.md2_hexdigets">
+<em class="property">property </em><code class="sig-name descname">md2_hexdigets</code><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.md2_hexdigets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.md2_warning">
+<em class="property">property </em><code class="sig-name descname">md2_warning</code><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.md2_warning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.md5_digest">
+<em class="property">property </em><code class="sig-name descname">md5_digest</code><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.md5_digest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.md5_hexdigets">
+<em class="property">property </em><code class="sig-name descname">md5_hexdigets</code><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.md5_hexdigets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.md5_warning">
+<em class="property">property </em><code class="sig-name descname">md5_warning</code><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.md5_warning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.ripemd160_digest">
+<em class="property">property </em><code class="sig-name descname">ripemd160_digest</code><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.ripemd160_digest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.ripemd160_hexdigets">
+<em class="property">property </em><code class="sig-name descname">ripemd160_hexdigets</code><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.ripemd160_hexdigets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.ripemd160_warning">
+<em class="property">property </em><code class="sig-name descname">ripemd160_warning</code><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.ripemd160_warning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.sha1_digest">
+<em class="property">property </em><code class="sig-name descname">sha1_digest</code><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.sha1_digest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.sha1_hexdigets">
+<em class="property">property </em><code class="sig-name descname">sha1_hexdigets</code><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.sha1_hexdigets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.sha1_warning">
+<em class="property">property </em><code class="sig-name descname">sha1_warning</code><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.sha1_warning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.values">
+<em class="property">property </em><code class="sig-name descname">values</code><a class="headerlink" href="#api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zwraca jsona który może być zwrócocny bezpoeśrednio przez widok Django.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api_vulnerabilities.html" class="btn btn-neutral float-right" title="api_vulnerabilities" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="api_searcher.html" class="btn btn-neutral float-left" title="api_searcher" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Dominika Pawlaczyk, Michał Pawlaczyk
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

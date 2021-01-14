@@ -1,0 +1,307 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>api_vulnerabilities.models &mdash; SARENKA 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> SARENKA
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Dokumentacja aplikacji:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../backend/common.html">common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backend/api_searcher.html">api_searcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backend/api_tools.html">api_tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backend/api_vulnerabilities.html">api_vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backend/reports.html">reports</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SARENKA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>api_vulnerabilities.models</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for api_vulnerabilities.models</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;&quot;</span>
+<span class="sd">Modele potrzebne do przechowywania danych relacji CWE - do CVE.</span>
+<span class="sd">Problem - mamy informacje o kodzie CWE w CVE ale relacja w drugą stronę nie jest nigdzie</span>
+<span class="sd">na stronie https://nvd.nist.gov/ ani https://cwe.mitre.org/.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+
+<div class="viewcode-block" id="CWEModel"><a class="viewcode-back" href="../../backend/api_vulnerabilities.html#api_vulnerabilities.models.CWEModel">[docs]</a><span class="k">class</span> <span class="nc">CWEModel</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Klasa do przechowywanie kodów CWE (common weakness enumeration)</span>
+<span class="sd">    ogólnych słabości np.: SQL Injection i listy konkretnych podatnosci CVE związanych z nim.</span>
+<span class="sd">    Relacja 1 one (CWE) &lt;- n many (CVE)</span>
+<span class="sd">    &quot;ID_CWE&quot;: &quot;CWE-79&quot;,</span>
+<span class="sd">    &quot;title&quot;: &quot;Improper Neutralization of Input During Web Page Generation (&#39;Cross-site Scripting&#39;)&quot;,</span>
+<span class="sd">    &quot;description&quot;: &quot;The software does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users. &quot;,</span>
+<span class="sd">    &quot;likehood&quot;: &quot;High&quot;,</span>
+<span class="sd">    &quot;technical_impact&quot;: [</span>
+<span class="sd">        &quot;Read Application Data&quot;,</span>
+<span class="sd">        &quot;Bypass Protection Mechanism&quot;,</span>
+<span class="sd">        &quot;Execute Unauthorized Code or Commands&quot;</span>
+<span class="sd">    ],</span>
+<span class="sd">    &quot;caused_by&quot;: {</span>
+<span class="sd">        &quot;field&quot;: &quot;Architecture and Design&quot;,</span>
+<span class="sd">        &quot;process&quot;: &quot;Implementation&quot;,</span>
+<span class="sd">        &quot;description&quot;: &quot;This weakness is caused during implementation of an architectural security tactic.&quot;</span>
+<span class="sd">    },</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">cwe_id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span> <span class="c1"># może być długi opis</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span> <span class="c1"># może być długi opis</span>
+    <span class="n">likehood</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;CWE_ID: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">cwe_id</span><span class="si">}</span><span class="se">\n</span><span class="s2"> title: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+
+<div class="viewcode-block" id="TechnicalImpactModel"><a class="viewcode-back" href="../../backend/api_vulnerabilities.html#api_vulnerabilities.models.TechnicalImpactModel">[docs]</a><span class="k">class</span> <span class="nc">TechnicalImpactModel</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    1 (one) CWE &lt;- n (many) impacts</span>
+<span class="sd">    &quot;technical_impact&quot;: [</span>
+<span class="sd">        &quot;Bypass Protection Mechanism&quot;,</span>
+<span class="sd">        &quot;Read Application Data&quot;,</span>
+<span class="sd">        &quot;Execute Unauthorized Code or Commands&quot;</span>
+<span class="sd">    ],</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+    <span class="n">cwe</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">CWEModel</span><span class="p">,</span>
+                            <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span>
+                            <span class="n">related_name</span><span class="o">=</span><span class="s2">&quot;cwe_technical_model&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">title</span></div>
+
+
+<div class="viewcode-block" id="CausedByModel"><a class="viewcode-back" href="../../backend/api_vulnerabilities.html#api_vulnerabilities.models.CausedByModel">[docs]</a><span class="k">class</span> <span class="nc">CausedByModel</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    1 (one) CWE &lt;- n (many) CausedByModel</span>
+<span class="sd">    &quot;caused_by&quot;: {</span>
+<span class="sd">        &quot;field&quot;: &quot;Architecture and Design&quot;,</span>
+<span class="sd">        &quot;process&quot;: &quot;Implementation&quot;,</span>
+<span class="sd">        &quot;description&quot;: &quot;This weakness is caused during implementation of an architectural security tactic.&quot;</span>
+<span class="sd">    },</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">field</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">350</span><span class="p">)</span>
+    <span class="n">process</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">350</span><span class="p">)</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+    <span class="n">cwe</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">CWEModel</span><span class="p">,</span>
+                            <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span>
+                            <span class="n">related_name</span><span class="o">=</span><span class="s2">&quot;cwe_caused_by&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="CVEModel"><a class="viewcode-back" href="../../backend/api_vulnerabilities.html#api_vulnerabilities.models.CVEModel">[docs]</a><span class="k">class</span> <span class="nc">CVEModel</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Common Vulnerabilities and Exposures (CVE) - konkretna podatnośc z konkretnej wersji oprogramowania.</span>
+<span class="sd">    CVE-\d{4}-\d{4,7}</span>
+<span class="sd">    Relacja n many (CVE) -&gt; 1 one (CWE)</span>
+<span class="sd">        &quot;cve&quot;: {</span>
+<span class="sd">        &quot;cve&quot;: &quot;CVE-2019-4570&quot;,</span>
+<span class="sd">        &quot;description&quot;: &quot;IBM Tivoli Netcool Impact 7.1.0 through 7.1.0.16 generates an error message that includes sensitive information about its environment, users, or associated data. IBM X-Force ID: 166720.&quot;,</span>
+<span class="sd">        &quot;cvss3&quot;: {</span>
+<span class="sd">            &quot;cvss3&quot;: &quot;CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N&quot;,</span>
+<span class="sd">            &quot;cvss3_url&quot;: &quot;https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N&quot;</span>
+<span class="sd">        },</span>
+<span class="sd">        &quot;cvss2&quot;: {</span>
+<span class="sd">            &quot;cvss2&quot;: &quot;(AV:N/AC:L/Au:N/C:P/I:N/A:N)&quot;,</span>
+<span class="sd">            &quot;cvss2_url&quot;: &quot;https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)&quot;</span>
+<span class="sd">        },</span>
+<span class="sd">        &quot;base_score_v3&quot;: &quot;5.3 MEDIUM&quot;,</span>
+<span class="sd">        &quot;base_score_v2&quot;: &quot;5.0 MEDIUM&quot;,</span>
+<span class="sd">        &quot;hyperlinks&quot;: [</span>
+<span class="sd">            &quot;https://exchange.xforce.ibmcloud.com/vulnerabilities/166720&quot;,</span>
+<span class="sd">            &quot;https://www.ibm.com/support/pages/node/1110141&quot;</span>
+<span class="sd">        ],</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">cve_id</span>  <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">17</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">year</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">month</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># miesiące cyframi 1,2, ..., 12</span>
+    <span class="n">cwe</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">CWEModel</span><span class="p">,</span>
+                            <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span>
+                            <span class="n">related_name</span><span class="o">=</span><span class="s2">&quot;cwe_model&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;CVE_ID: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">cve</span><span class="si">}</span><span class="se">\n</span><span class="s2"> year: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2"> month: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">month</span><span class="si">}</span><span class="s2">&quot;</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Dominika Pawlaczyk, Michał Pawlaczyk
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

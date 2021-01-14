@@ -1,0 +1,257 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>api_searcher.third_services.cve_circl.cve_circl_details &mdash; SARENKA 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> SARENKA
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Dokumentacja aplikacji:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../backend/common.html">common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../backend/api_searcher.html">api_searcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../backend/api_tools.html">api_tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../backend/api_vulnerabilities.html">api_vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../backend/reports.html">reports</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">SARENKA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>api_searcher.third_services.cve_circl.cve_circl_details</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for api_searcher.third_services.cve_circl.cve_circl_details</h1><div class="highlight"><pre>
+<div class="viewcode-block" id="CveCirclDetailsError"><a class="viewcode-back" href="../../../../backend/api_searcher.html#api_searcher.third_services.cve_circl.cve_circl_details.CveCirclDetailsError">[docs]</a><span></span><span class="k">class</span> <span class="nc">CveCirclDetailsError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Klasa zgłaszajca wyjątek gdy nie można stworzyć obiektu przechowujacego szczegółowe dane do serwisu trzeciego</span>
+<span class="sd">    https://cve.circl.lu&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="CveCirclDetailsError.__init__"><a class="viewcode-back" href="../../../../backend/api_searcher.html#api_searcher.third_services.cve_circl.cve_circl_details.CveCirclDetailsError.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">errors</span> <span class="o">=</span> <span class="n">errors</span></div></div>
+
+
+<div class="viewcode-block" id="CveCirclDetails"><a class="viewcode-back" href="../../../../backend/api_searcher.html#api_searcher.third_services.cve_circl.cve_circl_details.CveCirclDetails">[docs]</a><span class="k">class</span> <span class="nc">CveCirclDetails</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Klasa przechowuje szczegółowe dane do serwiu trzeciego https://cve.circl.lu oraz jego specyficznych urli.</span>
+<span class="sd">    Serwis nie wymagaja uwierzytelnienia użytkownika&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="CveCirclDetails.__init__"><a class="viewcode-back" href="../../../../backend/api_searcher.html#api_searcher.third_services.cve_circl.cve_circl_details.CveCirclDetails.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">CveCirclDetailsError</span><span class="p">(</span><span class="s2">&quot;No data about https://cve.circl.lu service. Please check &quot;</span>
+                                         <span class="s2">&quot;sarenka</span><span class="se">\\</span><span class="s2">backend</span><span class="se">\\</span><span class="s2">api_searcher</span><span class="se">\\</span><span class="s2">third_services</span><span class="se">\\</span><span class="s2">service_details.json file.&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__base_url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__set_data</span><span class="p">(</span><span class="s2">&quot;base_url&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__cve</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__set_data</span><span class="p">(</span><span class="s2">&quot;cve&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__db_info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__set_data</span><span class="p">(</span><span class="s2">&quot;db_info&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__last</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__set_data</span><span class="p">(</span><span class="s2">&quot;last&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__set_data</span><span class="p">(</span><span class="s2">&quot;vendor&quot;</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">__set_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">info_tag</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Metoda pomocnicza zwracajaca wybrane ifnormacje do seriwsu http://censys.io/ z pliku bazy danych user_credentials</span>
+<span class="sd">        :param: info_tag</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">info_tag</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">info_tag</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">CveCirclDetailsError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;No data in &quot;</span><span class="si">{</span><span class="n">info_tag</span><span class="si">}</span><span class="s1">&quot; for https://cve.circl.lu service. Please check &#39;</span>
+                                         <span class="sa">f</span><span class="s1">&#39;sarenka</span><span class="se">\\</span><span class="s1">backend</span><span class="se">\\</span><span class="s1">api_searcher</span><span class="se">\\</span><span class="s1">third_services</span><span class="se">\\</span><span class="s1">service_details.json file or &#39;</span>
+                                       <span class="sa">f</span><span class="s1">&#39;repository https://github.com/pawlaczyk/sarenka/.&#39;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">base_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__base_url</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">cve</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cve</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">db_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__db_info</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">vendor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__vendor</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">last</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__last</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Dominika Pawlaczyk, Michał Pawlaczyk
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

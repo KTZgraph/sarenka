@@ -1,0 +1,370 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>api_searcher.dns.dns_searcher &mdash; SARENKA 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> SARENKA
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Dokumentacja aplikacji:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../backend/common.html">common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../backend/api_searcher.html">api_searcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../backend/api_tools.html">api_tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../backend/api_vulnerabilities.html">api_vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../backend/reports.html">reports</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">SARENKA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>api_searcher.dns.dns_searcher</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for api_searcher.dns.dns_searcher</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Pobiera dane o rekordach DNS - wysztkie sotępne w bibliotece:</span>
+<span class="sd">A</span>
+<span class="sd">NS</span>
+<span class="sd">MD</span>
+<span class="sd">MF</span>
+<span class="sd">CNAME</span>
+<span class="sd">SOA</span>
+<span class="sd">MB</span>
+<span class="sd">MG</span>
+<span class="sd">MR</span>
+<span class="sd">NULL</span>
+<span class="sd">WKS</span>
+<span class="sd">PTR</span>
+<span class="sd">HINFO</span>
+<span class="sd">MINFO</span>
+<span class="sd">MX</span>
+<span class="sd">TXT</span>
+<span class="sd">RP</span>
+<span class="sd">AFSDB</span>
+<span class="sd">X25</span>
+<span class="sd">ISDN</span>
+<span class="sd">RT</span>
+<span class="sd">NSAP</span>
+<span class="sd">NSAP_PTR</span>
+<span class="sd">SIG</span>
+<span class="sd">KEY</span>
+<span class="sd">PX</span>
+<span class="sd">GPOS</span>
+<span class="sd">AAAA</span>
+<span class="sd">LOC</span>
+<span class="sd">NXT</span>
+<span class="sd">SRV</span>
+<span class="sd">NAPTR</span>
+<span class="sd">KX</span>
+<span class="sd">CERT</span>
+<span class="sd">A6</span>
+<span class="sd">DNAME</span>
+<span class="sd">OPT</span>
+<span class="sd">APL</span>
+<span class="sd">DS</span>
+<span class="sd">SSHFP</span>
+<span class="sd">IPSECKEY</span>
+<span class="sd">RRSIG</span>
+<span class="sd">NSEC</span>
+<span class="sd">DNSKEY</span>
+<span class="sd">DHCID</span>
+<span class="sd">NSEC3</span>
+<span class="sd">NSEC3PARAM</span>
+<span class="sd">TLSA</span>
+<span class="sd">HIP</span>
+<span class="sd">NINFO</span>
+<span class="sd">CDS</span>
+<span class="sd">CDNSKEY</span>
+<span class="sd">OPENPGPKEY</span>
+<span class="sd">CSYNC</span>
+<span class="sd">SPF</span>
+<span class="sd">UNSPEC</span>
+<span class="sd">EUI48</span>
+<span class="sd">EUI64</span>
+<span class="sd">TKEY</span>
+<span class="sd">TSIG</span>
+<span class="sd">IXFR</span>
+<span class="sd">AXFR</span>
+<span class="sd">MAILB</span>
+<span class="sd">MAILA</span>
+<span class="sd">ANY</span>
+<span class="sd">URI</span>
+<span class="sd">CAA</span>
+<span class="sd">AVC</span>
+<span class="sd">AMTRELAY</span>
+<span class="sd">TA</span>
+<span class="sd">DLV</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Dict</span>
+<span class="kn">import</span> <span class="nn">dns.resolver</span>
+<span class="kn">import</span> <span class="nn">dns.exception</span>
+<span class="kn">import</span> <span class="nn">dns.reversename</span>
+<span class="kn">from</span> <span class="nn">dns.rdatatype</span> <span class="kn">import</span> <span class="n">RdataType</span>
+<span class="kn">import</span> <span class="nn">ipaddress</span>
+<span class="kn">import</span> <span class="nn">socket</span>
+
+
+<div class="viewcode-block" id="DNSSearcherError"><a class="viewcode-back" href="../../../backend/api_searcher.html#api_searcher.dns.dns_searcher.DNSSearcherError">[docs]</a><span class="k">class</span> <span class="nc">DNSSearcherError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Zgłasza wyjątki gdy nie można pobrć danych o rekordach DNS.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># https://catonmat.net/asynchronous-dns-resolution warto zobacyzc</span>
+<div class="viewcode-block" id="DNSSearcherError.__init__"><a class="viewcode-back" href="../../../backend/api_searcher.html#api_searcher.dns.dns_searcher.DNSSearcherError.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">errors</span><span class="o">=</span> <span class="n">errors</span></div></div>
+
+
+<div class="viewcode-block" id="DNSSearcher"><a class="viewcode-back" href="../../../backend/api_searcher.html#api_searcher.dns.dns_searcher.DNSSearcher">[docs]</a><span class="k">class</span> <span class="nc">DNSSearcher</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Klasa odpowiedzialna za wyszukiwanie informacji o rekordach DNS.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="DNSSearcher.__init__"><a class="viewcode-back" href="../../../backend/api_searcher.html#api_searcher.dns.dns_searcher.DNSSearcher.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">socket</span><span class="o">.</span><span class="n">gethostbyname</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">gaierror</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">DNSSearcherError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unable to find host </span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># zdecydowanie lepiej suzka dla nazw domenowych typu google.com niż 8.8.8.8</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">host</span> <span class="o">=</span> <span class="n">DNSSearcher</span><span class="o">.</span><span class="n">change_to_domain_addres</span><span class="p">(</span><span class="n">host</span><span class="p">)</span></div>
+        <span class="c1"># DNS host:  python.org dla http://127.0.0.1:8000/api/dns/python.org po pingu http://45.55.99.72/</span>
+        <span class="c1"># 72.99.55.45.in-addr.arpa. dla http://127.0.0.1:8000/api/search/python.org</span>
+
+
+<div class="viewcode-block" id="DNSSearcher.is_ipv4"><a class="viewcode-back" href="../../../backend/api_searcher.html#api_searcher.dns.dns_searcher.DNSSearcher.is_ipv4">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">is_ipv4</span><span class="p">(</span><span class="n">host</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Metoda pomocnicza sprawdzająca czy podany host to adres ip czy domenowy.</span>
+<span class="sd">        :param host: adres ip lub nazwa domenowa hosta</span>
+<span class="sd">        :return: True jeśli argument host to adres ip, w przeciwnym wypadku zwraca False</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">ipaddress</span><span class="o">.</span><span class="n">IPv4Network</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span></div>
+
+<div class="viewcode-block" id="DNSSearcher.change_to_domain_addres"><a class="viewcode-back" href="../../../backend/api_searcher.html#api_searcher.dns.dns_searcher.DNSSearcher.change_to_domain_addres">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">change_to_domain_addres</span><span class="p">(</span><span class="n">host</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Metoda pomocnicza zwraca adres ip w postaci reverse-map nazwy domenowej.</span>
+<span class="sd">        :param host: adres ip lub nazwa domenowa hosta</span>
+<span class="sd">        :return: reverse-map nazwa domenowa adresu hosta</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">DNSSearcher</span><span class="o">.</span><span class="n">is_ipv4</span><span class="p">(</span><span class="n">host</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="c1"># nie wszystkie serwisy idzie z ip na domenę zamineić</span>
+                <span class="c1">#np. python.org -&gt; 45.55.99.72 tak ale w drugą stronę już nie</span>
+                <span class="c1"># zdecydowanie lepiej szuka po nazwach domenowych</span>
+                <span class="n">host_name</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">gethostbyaddr</span><span class="p">(</span><span class="n">host</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># =&gt; (hostname, alias-list, IP)</span>
+                <span class="k">return</span> <span class="n">dns</span><span class="o">.</span><span class="n">reversename</span><span class="o">.</span><span class="n">from_address</span><span class="p">(</span><span class="n">host_name</span><span class="p">)</span>
+            <span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">herror</span><span class="p">:</span>
+                 <span class="k">raise</span> <span class="n">DNSSearcherError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unable to resolve host name from ip address= </span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="c1">#</span>
+        <span class="k">return</span> <span class="n">host</span></div>
+
+<div class="viewcode-block" id="DNSSearcher.all_records"><a class="viewcode-back" href="../../../backend/api_searcher.html#api_searcher.dns.dns_searcher.DNSSearcher.all_records">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">all_records</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">List</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Atrybut klasy zwracający informacje wybranych rekordów DNS w postaci listy.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">RdataType</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="DNSSearcher.get_data"><a class="viewcode-back" href="../../../backend/api_searcher.html#api_searcher.dns.dns_searcher.DNSSearcher.get_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">List</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">qtype</span> <span class="ow">in</span> <span class="n">DNSSearcher</span><span class="o">.</span><span class="n">all_records</span><span class="p">():</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">answers</span> <span class="o">=</span> <span class="n">dns</span><span class="o">.</span><span class="n">resolver</span><span class="o">.</span><span class="n">resolve</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="p">,</span> <span class="n">qtype</span><span class="p">,</span> <span class="n">raise_on_no_answer</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">answers</span> <span class="ow">and</span> <span class="n">answers</span><span class="o">.</span><span class="n">rrset</span><span class="p">:</span>
+                    <span class="c1"># jak znaleziono dane</span>
+                    <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                        <span class="n">qtype</span><span class="p">:{</span>
+                            <span class="s2">&quot;answers&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">answer</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span> <span class="k">for</span> <span class="n">answer</span> <span class="ow">in</span> <span class="n">answers</span><span class="p">],</span>
+                            <span class="s2">&quot;answers_rrset&quot;</span><span class="p">:</span> <span class="n">answers</span><span class="o">.</span><span class="n">rrset</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span>
+                        <span class="p">}</span>
+                    <span class="p">})</span>
+
+            <span class="k">except</span> <span class="n">dns</span><span class="o">.</span><span class="n">exception</span><span class="o">.</span><span class="n">DNSException</span><span class="p">:</span>
+                <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="n">qtype</span><span class="p">:</span> <span class="s2">&quot;Unable to detect.&quot;</span><span class="p">,</span> <span class="s2">&quot;answers_rrset&quot;</span><span class="p">:</span> <span class="s2">&quot;Unable to detect&quot;</span><span class="p">})</span>
+
+        <span class="k">return</span> <span class="n">result</span></div></div>
+
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Dominika Pawlaczyk, Michał Pawlaczyk
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

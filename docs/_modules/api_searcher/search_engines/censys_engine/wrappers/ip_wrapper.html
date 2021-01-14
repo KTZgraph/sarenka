@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>api_searcher.search_engines.censys_engine.wrappers.ip_wrapper &mdash; SARENKA 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home" alt="Documentation Home"> SARENKA
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Dokumentacja aplikacji:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../backend/common.html">common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../backend/api_searcher.html">api_searcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../backend/api_tools.html">api_tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../backend/api_vulnerabilities.html">api_vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../backend/reports.html">reports</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">SARENKA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>api_searcher.search_engines.censys_engine.wrappers.ip_wrapper</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for api_searcher.search_engines.censys_engine.wrappers.ip_wrapper</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">common.common</span> <span class="kn">import</span> <span class="n">Common</span>
+<span class="kn">from</span> <span class="nn">.ip_parser</span> <span class="kn">import</span> <span class="n">IPParser</span>
+<span class="c1"># from ip_parser import IPParser</span>
+
+
+<div class="viewcode-block" id="IPWrapper"><a class="viewcode-back" href="../../../../../backend/api_searcher.html#api_searcher.search_engines.censys_engine.wrappers.ip_wrapper.IPWrapper">[docs]</a><span class="k">class</span> <span class="nc">IPWrapper</span><span class="p">:</span>
+<div class="viewcode-block" id="IPWrapper.__init__"><a class="viewcode-back" href="../../../../../backend/api_searcher.html#api_searcher.search_engines.censys_engine.wrappers.ip_wrapper.IPWrapper.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">dp</span><span class="se">\\</span><span class="s2">Desktop</span><span class="se">\\</span><span class="s2">sarenka</span><span class="se">\\</span><span class="s2">backend</span><span class="se">\\</span><span class="s2">connectors</span><span class="se">\\</span><span class="s2">censys</span><span class="se">\\</span><span class="s2">50_56_73_47.json&quot;</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">Common</span><span class="o">.</span><span class="n">file_to_dict</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="n">ip_parser</span> <span class="o">=</span> <span class="n">IPParser</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">protocols_port</span><span class="p">,</span> <span class="n">used_protocols</span> <span class="o">=</span> <span class="n">ip_parser</span><span class="o">.</span><span class="n">get_protocols</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__protocols_port</span> <span class="o">=</span> <span class="n">protocols_port</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__protocols</span> <span class="o">=</span> <span class="n">used_protocols</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__ports</span> <span class="o">=</span> <span class="n">ip_parser</span><span class="o">.</span><span class="n">get_ports</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__location</span> <span class="o">=</span> <span class="n">ip_parser</span><span class="o">.</span><span class="n">get_location</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__autonomous_system</span> <span class="o">=</span> <span class="n">ip_parser</span><span class="o">.</span><span class="n">get_autonomous_system</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__dns</span> <span class="o">=</span> <span class="n">ip_parser</span><span class="o">.</span><span class="n">get_dns</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__https</span> <span class="o">=</span> <span class="n">ip_parser</span><span class="o">.</span><span class="n">get_https</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__os</span> <span class="o">=</span> <span class="n">ip_parser</span><span class="o">.</span><span class="n">get_os</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__updated_at</span> <span class="o">=</span> <span class="n">ip_parser</span><span class="o">.</span><span class="n">updated_at</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">protocols_port</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__protocols_port</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">protocols</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__protocols</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">ports</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__ports</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">os</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__os</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">updated_at</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__updated_at</span>
+
+    <span class="c1"># ---------------------- location ----------------------</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">location</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__location</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">country</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__location</span><span class="o">.</span><span class="n">country</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">longitude</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__location</span><span class="o">.</span><span class="n">longitude</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">latitude</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__location</span><span class="o">.</span><span class="n">latitude</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">timezone</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__location</span><span class="o">.</span><span class="n">timezone</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">continent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__location</span><span class="o">.</span><span class="n">continent</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">registered_country</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">registered_country</span>
+
+
+    <span class="c1"># ---------------------- autonomous_system ----------------------</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">autonomous_system</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__autonomous_system</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">autonomous_system</span><span class="o">.</span><span class="n">description</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">rir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        RIR - Regional Internet registry</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">autonomous_system</span><span class="o">.</span><span class="n">rir</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">routed_prefix</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">autonomous_system</span><span class="o">.</span><span class="n">routed_prefix</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">path</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">autonomous_system</span><span class="o">.</span><span class="n">path</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">asn</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        autonomous system number (ASN)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">autonomous_system</span><span class="o">.</span><span class="n">asn</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">autonomous_system</span><span class="o">.</span><span class="n">name</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">autonomous_system</span> <span class="k">else</span> <span class="kc">None</span>
+
+    <span class="c1"># -------------------------- PROTOKOŁY --------------------------</span>
+    <span class="c1"># -------------------------- DNS</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dns</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__dns</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dns_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dns</span><span class="o">.</span><span class="n">names</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dns</span> <span class="k">else</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dns_erros</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dns</span><span class="p">:</span>
+            <span class="n">errors</span> <span class="o">=</span> <span class="p">[]</span>
+            
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">dns</span><span class="o">.</span><span class="n">is_resolves_correctly</span><span class="p">:</span>
+                <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;resolves uncorrectly&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">dns</span><span class="o">.</span><span class="n">is_support</span><span class="p">:</span>
+                <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;not supported&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">dns</span><span class="o">.</span><span class="n">is_open_resolver</span><span class="p">:</span>
+                <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;no open resolver&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">dns</span><span class="o">.</span><span class="n">is_erros</span><span class="p">:</span>
+                <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dns</span><span class="o">.</span><span class="n">is_erros</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">errors</span>
+        
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="c1"># -------------------------- HTTPS</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">https</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__https</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;protocols_port&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">protocols_port</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;protocols_port&quot;</span> <span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">protocols_port</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;protocols&quot;</span> <span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">protocols</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;ports&quot;</span> <span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">ports</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;longitude&quot;</span> <span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">longitude</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;latitude&quot;</span> <span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">latitude</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;timezone&quot;</span> <span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">timezone</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;continent&quot;</span> <span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">continent</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;registered_country&quot;</span> <span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">registered_country</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;description&quot;</span> <span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;rir&quot;</span> <span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">rir</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;routed_prefix&quot;</span> <span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">routed_prefix</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;path&quot;</span> <span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;asn&quot;</span> <span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">asn</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;name&quot;</span> <span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;dns_names&quot;</span> <span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">dns_names</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;dns_erros&quot;</span> <span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">dns_erros</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;https&quot;</span> <span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">https</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;os&quot;</span> <span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">os</span><span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;updated_at&quot;</span> <span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">updated_at</span><span class="p">})</span>
+        <span class="k">return</span> <span class="n">response</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_json</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+        <span class="k">return</span> <span class="n">result</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Dominika Pawlaczyk, Michał Pawlaczyk
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

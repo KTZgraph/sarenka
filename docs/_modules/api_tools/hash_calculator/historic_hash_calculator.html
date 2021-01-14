@@ -1,0 +1,442 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>api_tools.hash_calculator.historic_hash_calculator &mdash; SARENKA 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> SARENKA
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Dokumentacja aplikacji:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../backend/common.html">common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../backend/api_searcher.html">api_searcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../backend/api_tools.html">api_tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../backend/api_vulnerabilities.html">api_vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../backend/reports.html">reports</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">SARENKA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>api_tools.hash_calculator.historic_hash_calculator</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for api_tools.hash_calculator.historic_hash_calculator</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Kalkulator historycznych algorytmów hashujących - NIE używac w kryptografi.</span>
+
+<span class="sd">SHA-1</span>
+<span class="sd">MD2</span>
+<span class="sd">MD5</span>
+<span class="sd">RIPEMD-160</span>
+<span class="sd">Keccak</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span>
+<span class="kn">from</span> <span class="nn">Crypto.Hash</span> <span class="kn">import</span> <span class="n">SHA1</span><span class="p">,</span> <span class="n">MD2</span><span class="p">,</span> <span class="n">MD5</span><span class="p">,</span> <span class="n">RIPEMD160</span><span class="p">,</span> <span class="n">keccak</span>
+<span class="kn">import</span> <span class="nn">base64</span>
+
+<div class="viewcode-block" id="HistoricHashCalcualator"><a class="viewcode-back" href="../../../backend/api_tools.html#api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator">[docs]</a><span class="k">class</span> <span class="nc">HistoricHashCalcualator</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Obliczanie wartości Kryptograficznych Hsitorycznych Hashy.</span>
+<span class="sd">    Użycie biblioteki Crypto zamiast hashlib, ponieważ zawiera ona znane kolizje.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="HistoricHashCalcualator.__init__"><a class="viewcode-back" href="../../../backend/api_tools.html#api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_value</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">original_value</span> <span class="o">=</span> <span class="n">user_value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">user_value</span><span class="p">,</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HistoricHashCalcualator.get_sha1"><a class="viewcode-back" href="../../../backend/api_tools.html#api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.get_sha1">[docs]</a>    <span class="k">def</span> <span class="nf">get_sha1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">hash_obj</span> <span class="o">=</span> <span class="n">SHA1</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+        <span class="n">hash_obj</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;digest&quot;</span><span class="p">:</span> <span class="n">hash_obj</span><span class="o">.</span><span class="n">digest</span><span class="p">(),</span>
+            <span class="s2">&quot;hexdigets&quot;</span><span class="p">:</span> <span class="n">hash_obj</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">(),</span>
+            <span class="s2">&quot;warning&quot;</span><span class="p">:</span> <span class="s2">&quot;WARNING: Insecure and vulnerable to length-extension attacks.&quot;</span>
+        <span class="p">}</span></div>
+
+<div class="viewcode-block" id="HistoricHashCalcualator.get_md2"><a class="viewcode-back" href="../../../backend/api_tools.html#api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.get_md2">[docs]</a>    <span class="k">def</span> <span class="nf">get_md2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">hash_obj</span> <span class="o">=</span> <span class="n">MD2</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+        <span class="n">hash_obj</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;digest&quot;</span><span class="p">:</span> <span class="n">hash_obj</span><span class="o">.</span><span class="n">digest</span><span class="p">(),</span>
+            <span class="s2">&quot;hexdigets&quot;</span><span class="p">:</span> <span class="n">hash_obj</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">(),</span>
+            <span class="s2">&quot;warning&quot;</span><span class="p">:</span> <span class="s2">&quot;WARNING: Insecure.&quot;</span>
+        <span class="p">}</span></div>
+
+<div class="viewcode-block" id="HistoricHashCalcualator.get_md5"><a class="viewcode-back" href="../../../backend/api_tools.html#api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.get_md5">[docs]</a>    <span class="k">def</span> <span class="nf">get_md5</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">hash_obj</span> <span class="o">=</span> <span class="n">MD5</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+        <span class="n">hash_obj</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;digest&quot;</span><span class="p">:</span> <span class="n">hash_obj</span><span class="o">.</span><span class="n">digest</span><span class="p">(),</span>
+            <span class="s2">&quot;hexdigets&quot;</span><span class="p">:</span> <span class="n">hash_obj</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">(),</span>
+            <span class="s2">&quot;warning&quot;</span><span class="p">:</span> <span class="s2">&quot;WARNING: Insecure and vulnerable to length-extension attacks.&quot;</span>
+        <span class="p">}</span></div>
+
+<div class="viewcode-block" id="HistoricHashCalcualator.get_ripemd160"><a class="viewcode-back" href="../../../backend/api_tools.html#api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.get_ripemd160">[docs]</a>    <span class="k">def</span> <span class="nf">get_ripemd160</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">hash_obj</span> <span class="o">=</span> <span class="n">RIPEMD160</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+        <span class="n">hash_obj</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;digest&quot;</span><span class="p">:</span> <span class="n">hash_obj</span><span class="o">.</span><span class="n">digest</span><span class="p">(),</span>
+            <span class="s2">&quot;hexdigets&quot;</span><span class="p">:</span> <span class="n">hash_obj</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">(),</span>
+            <span class="s2">&quot;warning&quot;</span><span class="p">:</span> <span class="s2">&quot;WARNING: Insecure and vulnerable to length-extension attacks.&quot;</span>
+        <span class="p">}</span></div>
+
+    <span class="c1"># keccak</span>
+<div class="viewcode-block" id="HistoricHashCalcualator.get_keccak_224_bits"><a class="viewcode-back" href="../../../backend/api_tools.html#api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.get_keccak_224_bits">[docs]</a>    <span class="k">def</span> <span class="nf">get_keccak_224_bits</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">hash_obj</span> <span class="o">=</span> <span class="n">keccak</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">digest_bits</span><span class="o">=</span><span class="mi">224</span><span class="p">)</span>
+        <span class="n">hash_obj</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;digest&quot;</span><span class="p">:</span> <span class="n">hash_obj</span><span class="o">.</span><span class="n">digest</span><span class="p">(),</span>
+            <span class="s2">&quot;hexdigets&quot;</span><span class="p">:</span> <span class="n">hash_obj</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">(),</span>
+        <span class="p">}</span></div>
+
+<div class="viewcode-block" id="HistoricHashCalcualator.get_keccak_256_bits"><a class="viewcode-back" href="../../../backend/api_tools.html#api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.get_keccak_256_bits">[docs]</a>    <span class="k">def</span> <span class="nf">get_keccak_256_bits</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">hash_obj</span> <span class="o">=</span> <span class="n">keccak</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">digest_bits</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span>
+        <span class="n">hash_obj</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;digest&quot;</span><span class="p">:</span> <span class="n">hash_obj</span><span class="o">.</span><span class="n">digest</span><span class="p">(),</span>
+            <span class="s2">&quot;hexdigets&quot;</span><span class="p">:</span> <span class="n">hash_obj</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">(),</span>
+        <span class="p">}</span></div>
+
+<div class="viewcode-block" id="HistoricHashCalcualator.get_keccak_384_bits"><a class="viewcode-back" href="../../../backend/api_tools.html#api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.get_keccak_384_bits">[docs]</a>    <span class="k">def</span> <span class="nf">get_keccak_384_bits</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">hash_obj</span> <span class="o">=</span> <span class="n">keccak</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">digest_bits</span><span class="o">=</span><span class="mi">384</span><span class="p">)</span>
+        <span class="n">hash_obj</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;digest&quot;</span><span class="p">:</span> <span class="n">hash_obj</span><span class="o">.</span><span class="n">digest</span><span class="p">(),</span>
+            <span class="s2">&quot;hexdigets&quot;</span><span class="p">:</span> <span class="n">hash_obj</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">(),</span>
+        <span class="p">}</span></div>
+
+<div class="viewcode-block" id="HistoricHashCalcualator.get_keccak_512_bits"><a class="viewcode-back" href="../../../backend/api_tools.html#api_tools.hash_calculator.historic_hash_calculator.HistoricHashCalcualator.get_keccak_512_bits">[docs]</a>    <span class="k">def</span> <span class="nf">get_keccak_512_bits</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">hash_obj</span> <span class="o">=</span> <span class="n">keccak</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">digest_bits</span><span class="o">=</span><span class="mi">512</span><span class="p">)</span>
+        <span class="n">hash_obj</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;digest&quot;</span><span class="p">:</span> <span class="n">hash_obj</span><span class="o">.</span><span class="n">digest</span><span class="p">(),</span>
+            <span class="s2">&quot;hexdigets&quot;</span><span class="p">:</span> <span class="n">hash_obj</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">(),</span>
+        <span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="HistoricHashWrapper"><a class="viewcode-back" href="../../../backend/api_tools.html#api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper">[docs]</a><span class="k">class</span> <span class="nc">HistoricHashWrapper</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Wrapper na dane z HistoricHashCalcualator ponieważ wystepują problemy z kodowaniem.</span>
+<span class="sd">    Pomocnicza klasa zamiast serializera dla widoku&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="HistoricHashWrapper.__init__"><a class="viewcode-back" href="../../../backend/api_tools.html#api_tools.hash_calculator.historic_hash_calculator.HistoricHashWrapper.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hash_calc</span> <span class="o">=</span> <span class="n">HistoricHashCalcualator</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">__convert_digest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">digest</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">digest</span><span class="p">)</span>
+
+    <span class="c1"># sha1</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">sha1_digest</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">digest</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash_calc</span><span class="o">.</span><span class="n">get_sha1</span><span class="p">()[</span><span class="s2">&quot;digest&quot;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__convert_digest</span><span class="p">(</span><span class="n">digest</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">sha1_hexdigets</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash_calc</span><span class="o">.</span><span class="n">get_sha1</span><span class="p">()[</span><span class="s2">&quot;hexdigets&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">sha1_warning</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash_calc</span><span class="o">.</span><span class="n">get_sha1</span><span class="p">()[</span><span class="s2">&quot;warning&quot;</span><span class="p">]</span>
+
+    <span class="c1"># md2</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">md2_digest</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">digest</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash_calc</span><span class="o">.</span><span class="n">get_md2</span><span class="p">()[</span><span class="s2">&quot;digest&quot;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__convert_digest</span><span class="p">(</span><span class="n">digest</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">md2_hexdigets</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash_calc</span><span class="o">.</span><span class="n">get_md2</span><span class="p">()[</span><span class="s2">&quot;hexdigets&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">md2_warning</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash_calc</span><span class="o">.</span><span class="n">get_md2</span><span class="p">()[</span><span class="s2">&quot;warning&quot;</span><span class="p">]</span>
+
+    <span class="c1"># md5</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">md5_digest</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">digest</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash_calc</span><span class="o">.</span><span class="n">get_md5</span><span class="p">()[</span><span class="s2">&quot;digest&quot;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__convert_digest</span><span class="p">(</span><span class="n">digest</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">md5_hexdigets</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash_calc</span><span class="o">.</span><span class="n">get_md5</span><span class="p">()[</span><span class="s2">&quot;hexdigets&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">md5_warning</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash_calc</span><span class="o">.</span><span class="n">get_md5</span><span class="p">()[</span><span class="s2">&quot;warning&quot;</span><span class="p">]</span>
+
+    <span class="c1"># ripemd160</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">ripemd160_digest</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">digest</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash_calc</span><span class="o">.</span><span class="n">get_ripemd160</span><span class="p">()[</span><span class="s2">&quot;digest&quot;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__convert_digest</span><span class="p">(</span><span class="n">digest</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">ripemd160_hexdigets</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash_calc</span><span class="o">.</span><span class="n">get_ripemd160</span><span class="p">()[</span><span class="s2">&quot;hexdigets&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">ripemd160_warning</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash_calc</span><span class="o">.</span><span class="n">get_ripemd160</span><span class="p">()[</span><span class="s2">&quot;warning&quot;</span><span class="p">]</span>
+
+    <span class="c1">##### keccak</span>
+    <span class="c1"># keccak_224_bits</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">keccak_224_bits_digest</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">digest</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash_calc</span><span class="o">.</span><span class="n">get_keccak_224_bits</span><span class="p">()[</span><span class="s2">&quot;digest&quot;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__convert_digest</span><span class="p">(</span><span class="n">digest</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">keccak_224_bits_hexdigets</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash_calc</span><span class="o">.</span><span class="n">get_keccak_224_bits</span><span class="p">()[</span><span class="s2">&quot;hexdigets&quot;</span><span class="p">]</span>
+
+    <span class="c1"># keccak_256_bits</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">keccak_256_bits_digest</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">digest</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash_calc</span><span class="o">.</span><span class="n">get_keccak_256_bits</span><span class="p">()[</span><span class="s2">&quot;digest&quot;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__convert_digest</span><span class="p">(</span><span class="n">digest</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">keccak_256_bits_hexdigets</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash_calc</span><span class="o">.</span><span class="n">get_keccak_256_bits</span><span class="p">()[</span><span class="s2">&quot;hexdigets&quot;</span><span class="p">]</span>
+
+    <span class="c1"># keccak_384_bits</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">keccak_384_bits_digest</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">digest</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash_calc</span><span class="o">.</span><span class="n">get_keccak_384_bits</span><span class="p">()[</span><span class="s2">&quot;digest&quot;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__convert_digest</span><span class="p">(</span><span class="n">digest</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">keccak_384_bits_hexdigets</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash_calc</span><span class="o">.</span><span class="n">get_keccak_384_bits</span><span class="p">()[</span><span class="s2">&quot;hexdigets&quot;</span><span class="p">]</span>
+
+    <span class="c1"># get_keccak_512_bits</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">keccak_512_bits_digest</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">digest</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash_calc</span><span class="o">.</span><span class="n">get_keccak_512_bits</span><span class="p">()[</span><span class="s2">&quot;digest&quot;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__convert_digest</span><span class="p">(</span><span class="n">digest</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">keccak_512_bits_hexdigets</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash_calc</span><span class="o">.</span><span class="n">get_keccak_512_bits</span><span class="p">()[</span><span class="s2">&quot;hexdigets&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">values</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">Dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Zwraca jsona który może być zwrócocny bezpoeśrednio przez widok Django.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="c1"># sha1</span>
+            <span class="s2">&quot;sha1_digest&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">sha1_digest</span><span class="p">,</span>
+            <span class="s2">&quot;sha1_hexdigets&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">sha1_hexdigets</span><span class="p">,</span>
+            <span class="s2">&quot;sha1_warning&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">sha1_warning</span><span class="p">,</span>
+
+            <span class="c1"># md2</span>
+            <span class="s2">&quot;md2_digest&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">md2_digest</span><span class="p">,</span>
+            <span class="s2">&quot;md2_hexdigets&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">md2_hexdigets</span><span class="p">,</span>
+            <span class="s2">&quot;md2_warning&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">md2_warning</span><span class="p">,</span>
+
+            <span class="c1"># md5</span>
+            <span class="s2">&quot;md5_digest&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">md5_digest</span><span class="p">,</span>
+            <span class="s2">&quot;md5_hexdigets&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">md5_hexdigets</span><span class="p">,</span>
+            <span class="s2">&quot;md5_warning&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">md5_warning</span><span class="p">,</span>
+
+            <span class="c1"># ripemd160</span>
+            <span class="s2">&quot;ripemd160_digest&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">ripemd160_digest</span><span class="p">,</span>
+            <span class="s2">&quot;ripemd160_hexdigets&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">ripemd160_hexdigets</span><span class="p">,</span>
+            <span class="s2">&quot;ripemd160_warning&quot;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">ripemd160_warning</span><span class="p">,</span>
+
+            <span class="c1"># keccak_224_bits</span>
+            <span class="s2">&quot;keccak_224_bits_digest&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">keccak_224_bits_digest</span><span class="p">,</span>
+            <span class="s2">&quot;keccak_224_bits_hexdigets&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">keccak_224_bits_hexdigets</span><span class="p">,</span>
+
+            <span class="c1"># keccak_256_bits</span>
+            <span class="s2">&quot;keccak_256_bits_digest&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">keccak_256_bits_digest</span><span class="p">,</span>
+            <span class="s2">&quot;keccak_256_bits_hexdigets&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">keccak_256_bits_hexdigets</span><span class="p">,</span>
+
+            <span class="c1"># keccak_384_bits</span>
+            <span class="s2">&quot;keccak_384_bits_digest&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">keccak_384_bits_digest</span><span class="p">,</span>
+            <span class="s2">&quot;keccak_384_bits_hexdigets&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">keccak_384_bits_hexdigets</span><span class="p">,</span>
+
+            <span class="c1"># get_keccak_512_bits</span>
+            <span class="s2">&quot;keccak_512_bits_digest&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">keccak_512_bits_digest</span><span class="p">,</span>
+            <span class="s2">&quot;keccak_512_bits_hexdigets&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">keccak_512_bits_hexdigets</span>
+        <span class="p">}</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Dominika Pawlaczyk, Michał Pawlaczyk
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

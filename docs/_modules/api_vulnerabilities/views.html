@@ -1,0 +1,360 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>api_vulnerabilities.views &mdash; SARENKA 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> SARENKA
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Dokumentacja aplikacji:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../backend/common.html">common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backend/api_searcher.html">api_searcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backend/api_tools.html">api_tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backend/api_vulnerabilities.html">api_vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backend/reports.html">reports</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SARENKA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>api_vulnerabilities.views</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for api_vulnerabilities.views</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">rest_framework</span> <span class="kn">import</span> <span class="n">views</span><span class="p">,</span> <span class="n">status</span>
+<span class="kn">from</span> <span class="nn">rest_framework.response</span> <span class="kn">import</span> <span class="n">Response</span>
+<span class="kn">from</span> <span class="nn">rest_framework.views</span> <span class="kn">import</span> <span class="n">APIView</span>
+
+<span class="kn">from</span> <span class="nn">.cve_and_cwe.cve_details_all</span> <span class="kn">import</span> <span class="n">CVEDetailsAll</span>
+<span class="kn">from</span> <span class="nn">.cve_and_cwe.cwe_all</span> <span class="kn">import</span> <span class="n">CWEAll</span>
+<span class="kn">from</span> <span class="nn">.cve_and_cwe.cwe_details_all</span> <span class="kn">import</span> <span class="n">CWEDetailsAll</span>
+<span class="kn">from</span> <span class="nn">.cve_and_cwe.mitre_cwe_scrapers</span> <span class="kn">import</span> <span class="n">CWETableTop25Scraper</span><span class="p">,</span> <span class="n">CWEDataScraper</span>
+<span class="kn">from</span> <span class="nn">.cve_and_cwe.nist_cve_scrapers</span> <span class="kn">import</span> <span class="n">NISTCVEScraper</span>
+<span class="kn">from</span> <span class="nn">.cwe_crud</span> <span class="kn">import</span> <span class="n">CWECRUD</span>
+<span class="kn">from</span> <span class="nn">.common</span> <span class="kn">import</span> <span class="n">Common</span>
+
+
+<div class="viewcode-block" id="CVESearchView"><a class="viewcode-back" href="../../backend/api_vulnerabilities.html#api_vulnerabilities.views.CVESearchView">[docs]</a><span class="k">class</span> <span class="nc">CVESearchView</span><span class="p">(</span><span class="n">views</span><span class="o">.</span><span class="n">APIView</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Widok Django zwracajacy szczegółowe informacje o jednej podatności Common Vulnerabilities and Exposures (CVE).&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="CVESearchView.get"><a class="viewcode-back" href="../../backend/api_vulnerabilities.html#api_vulnerabilities.views.CVESearchView.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">cve_id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Metoda zwracająca szczegółowe infromacje o konkretnej podatności po podaniu identyfikatora CVE</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">server_address</span> <span class="o">=</span> <span class="n">Common</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="o">.</span><span class="n">host_address</span>
+            <span class="n">nist_cve_scraper</span> <span class="o">=</span> <span class="n">NISTCVEScraper</span><span class="p">(</span><span class="n">cve_id</span><span class="p">,</span> <span class="n">server_address</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">nist_cve_scraper</span><span class="o">.</span><span class="n">get_data</span><span class="p">())</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="n">cve_id</span><span class="p">:</span> <span class="s2">&quot;Unable to get information - probably this CVE doesn&#39;t exists.&quot;</span><span class="p">},</span>
+                            <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Unable to get information about CVE=</span><span class="si">{</span><span class="n">cve_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;details&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)},</span>
+                            <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_404_NOT_FOUND</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="CWETop25"><a class="viewcode-back" href="../../backend/api_vulnerabilities.html#api_vulnerabilities.views.CWETop25">[docs]</a><span class="k">class</span> <span class="nc">CWETop25</span><span class="p">(</span><span class="n">APIView</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Widok Django zwracający informacje o TOP 25 najgroźniejszych słabościach oprogramowania.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="CWETop25.get"><a class="viewcode-back" href="../../backend/api_vulnerabilities.html#api_vulnerabilities.views.CWETop25.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Metoda zwracająca dane o 25 najpopularniejszych słabościach oprogramowania na podstawie żądania GET HTTP.</span>
+<span class="sd">        Dane pochodzą ze strony https://cwe.mitre.org/top25/archive/2020/2020_cwe_top25.html</span>
+<span class="sd">        :tags: CWE</span>
+<span class="sd">        :param request: obiekt request dla widoku Django</span>
+<span class="sd">        :return: dane w postaci json zawierajace ingormacje o hoście</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">server_address</span> <span class="o">=</span> <span class="n">Common</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="o">.</span><span class="n">host_address</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="n">CWETableTop25Scraper</span><span class="p">(</span><span class="n">server_address</span><span class="p">)</span><span class="o">.</span><span class="n">get_top_25</span><span class="p">()})</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="s2">&quot;Unable to get TOP 25 CWE from https://cwe.mitre.org/top25/archive/2020/2020_cwe_top25.html&quot;</span><span class="p">,</span>
+                             <span class="s2">&quot;details&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)},</span> <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_404_NOT_FOUND</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="CWEData"><a class="viewcode-back" href="../../backend/api_vulnerabilities.html#api_vulnerabilities.views.CWEData">[docs]</a><span class="k">class</span> <span class="nc">CWEData</span><span class="p">(</span><span class="n">APIView</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Widok Django zwracajacy infromacje o Common Weakness Enumeration na podstawie podanego numeru CWE ID.</span>
+<span class="sd">    :tags: CWE</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="CWEData.get"><a class="viewcode-back" href="../../backend/api_vulnerabilities.html#api_vulnerabilities.views.CWEData.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">id_cwe</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Metoda zwracająca dane o słabości oprogramowania na podstawie identyfikatora CWE podanego przez użytkownika</span>
+<span class="sd">        w zapytaniu GET HTTP.</span>
+<span class="sd">        :tags: CWE</span>
+<span class="sd">        :param request: obiekt request dla widoku Django</span>
+<span class="sd">        :param id_cwe: kod identyfikujący słabość oprogramowania</span>
+<span class="sd">        :return: json z danymi wybranej słabości oprogramowania</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">server_address</span> <span class="o">=</span> <span class="n">Common</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="o">.</span><span class="n">host_address</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">CWEDataScraper</span><span class="p">(</span><span class="n">id_cwe</span><span class="p">,</span> <span class="n">server_address</span><span class="p">)</span><span class="o">.</span><span class="n">get_data</span><span class="p">())</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Unable to get information about CWE=</span><span class="si">{</span><span class="n">id_cwe</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">,</span>
+                             <span class="s2">&quot;details&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot; Please check if CWE with id=</span><span class="si">{</span><span class="n">id_cwe</span><span class="si">}</span><span class="s2"> exists on https://cwe.mitre.org/.&quot;</span><span class="p">},</span>
+                            <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Unable to get data.&quot;</span><span class="p">,</span>
+                             <span class="s2">&quot;details&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)},</span>
+                            <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_404_NOT_FOUND</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="CWEAllView"><a class="viewcode-back" href="../../backend/api_vulnerabilities.html#api_vulnerabilities.views.CWEAllView">[docs]</a><span class="k">class</span> <span class="nc">CWEAllView</span><span class="p">(</span><span class="n">views</span><span class="o">.</span><span class="n">APIView</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Widok Django zwracający wszystkie kody CWE z podstawowywmi danymi takimi jak datę pobrania danych, źródło danych,</span>
+<span class="sd">    identyfikator slabości, opis słabości, url do serwisu https://cwe.mitre.org ze szczegółowymi danymi,</span>
+<span class="sd">    url do aplikacji SARENKA z najważniejszymi informacjami o konkretnej słabości.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="CWEAllView.get"><a class="viewcode-back" href="../../backend/api_vulnerabilities.html#api_vulnerabilities.views.CWEAllView.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Metoda zwracajaca podstawowe dane o wszystkich słabościach CWE z oficjalnego serwisu https://cwe.mitre.org.</span>
+<span class="sd">        :param request: obiekt dla widoku Django z informacjami od użytkownika</span>
+<span class="sd">        :return: podstawowe dane w formacie json o wszystkich słabościach CWE zawartych w feedach</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">server_address</span> <span class="o">=</span> <span class="n">Common</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="o">.</span><span class="n">host_address</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">CWEAll</span><span class="p">()</span><span class="o">.</span><span class="n">render_output</span><span class="p">(</span><span class="n">server_address</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="s2">&quot;Unable to get all Common Weakness Enumeration data. &quot;</span>
+                               <span class="s2">&quot;Please check is file sarenka/feeds/cwe_ids/cwe_all.json exists&quot;</span><span class="p">,</span>
+                      <span class="s2">&quot;details&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)},</span> <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_404_NOT_FOUND</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="CVEDetailsAllView"><a class="viewcode-back" href="../../backend/api_vulnerabilities.html#api_vulnerabilities.views.CVEDetailsAllView">[docs]</a><span class="k">class</span> <span class="nc">CVEDetailsAllView</span><span class="p">(</span><span class="n">views</span><span class="o">.</span><span class="n">APIView</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Widok Django zwracającyh szczegółowe dane o wszystkich podatnościach</span>
+<span class="sd">    Common Vulnerabilities and Exposures (CVE) pobranych z serwisu https://nvd.nist.gov/ &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="CVEDetailsAllView.get"><a class="viewcode-back" href="../../backend/api_vulnerabilities.html#api_vulnerabilities.views.CVEDetailsAllView.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">page</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Metoda zwracajaca szczegółowe informacje o podantościach CVE z stronnicowaniem.</span>
+<span class="sd">        Partia danych zwrócona jest na podstawie danych z żadania GET HTTP użytkownika&quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">page</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
+            <span class="n">server_address</span> <span class="o">=</span> <span class="n">Common</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="o">.</span><span class="n">host_address</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">CVEDetailsAll</span><span class="p">(</span><span class="n">page</span><span class="p">)</span><span class="o">.</span><span class="n">render_output</span><span class="p">(</span><span class="n">server_address</span><span class="p">)</span> <span class="c1">#render_output(server_address)</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Unsupported type of user input data.&quot;</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">ex</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="s2">&quot;Unable to get CVE details data - check is files &quot;</span>
+                                      <span class="s2">&quot;in folder sarenka</span><span class="se">\f</span><span class="s2">eedes\cve_details exist&quot;</span><span class="p">,</span>
+                             <span class="s2">&quot;details&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)},</span> <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_404_NOT_FOUND</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="CWEDetailsAllView"><a class="viewcode-back" href="../../backend/api_vulnerabilities.html#api_vulnerabilities.views.CWEDetailsAllView">[docs]</a><span class="k">class</span> <span class="nc">CWEDetailsAllView</span><span class="p">(</span><span class="n">views</span><span class="o">.</span><span class="n">APIView</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Widok Django zwracajacy wszystkie słabości Common Weakness Enumeration ze szczegółowymi danymi.</span>
+<span class="sd">    Wszystki identyfikatory CWE pochodza z https://cwe.mitre.org/data/published/cwe_latest.pdf&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="CWEDetailsAllView.get"><a class="viewcode-back" href="../../backend/api_vulnerabilities.html#api_vulnerabilities.views.CWEDetailsAllView.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">page</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">page</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
+            <span class="n">server_address</span> <span class="o">=</span> <span class="n">Common</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="o">.</span><span class="n">host_address</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">CWEDetailsAll</span><span class="p">(</span><span class="n">page</span><span class="p">)</span><span class="o">.</span><span class="n">render_output</span><span class="p">(</span><span class="n">server_address</span><span class="p">)</span>  <span class="c1"># render_output(server_address)</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Unsupported type of user input data.&quot;</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="s2">&quot;Unable to get all CWE details data - check is files &quot;</span>
+                                      <span class="s2">&quot;in folder sarenka</span><span class="se">\f</span><span class="s2">eedes\cwe_details&quot;</span><span class="p">,</span>
+                             <span class="s2">&quot;details&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)},</span> <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_404_NOT_FOUND</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="AddCWEandCVE"><a class="viewcode-back" href="../../backend/api_vulnerabilities.html#api_vulnerabilities.views.AddCWEandCVE">[docs]</a><span class="k">class</span> <span class="nc">AddCWEandCVE</span><span class="p">(</span><span class="n">views</span><span class="o">.</span><span class="n">APIView</span><span class="p">):</span>
+<div class="viewcode-block" id="AddCWEandCVE.get"><a class="viewcode-back" href="../../backend/api_vulnerabilities.html#api_vulnerabilities.views.AddCWEandCVE.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="c1"># nist_cve_scraper = NISTCVEScraper(&quot;CVE-2013-3621&quot;) CWE_NONE</span>
+        <span class="n">nist_cve_scraper</span> <span class="o">=</span> <span class="n">NISTCVEScraper</span><span class="p">(</span><span class="s2">&quot;CVE-2019-4570&quot;</span><span class="p">)</span>
+        <span class="n">cve</span> <span class="o">=</span> <span class="n">nist_cve_scraper</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+
+        <span class="n">cwe</span> <span class="o">=</span> <span class="n">cve</span><span class="p">[</span><span class="s2">&quot;cwe&quot;</span><span class="p">]</span>
+
+        <span class="c1"># zapisz do bazy obiekt CWE</span>
+        <span class="n">cwe_crud</span> <span class="o">=</span> <span class="n">CWECRUD</span><span class="p">(</span><span class="n">cwe</span><span class="p">)</span>
+        <span class="n">cwe_crud</span><span class="o">.</span><span class="n">add</span><span class="p">()</span>
+        <span class="n">cwe_db_obj</span> <span class="o">=</span> <span class="n">cwe_crud</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Żyjemy&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;cve&quot;</span><span class="p">:</span> <span class="n">cve</span><span class="p">,</span>
+                         <span class="s2">&quot;cwe&quot;</span><span class="p">:</span> <span class="n">cwe</span><span class="p">,</span>
+                         <span class="c1"># &quot;cwe_response&quot;: CWEModelSerializer(instance=cwe_db_obj).data,</span>
+                         <span class="s2">&quot;cwe_response&quot;</span><span class="p">:</span> <span class="n">cwe_db_obj</span><span class="p">,</span>
+                         <span class="p">})</span></div></div>
+
+
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Dominika Pawlaczyk, Michał Pawlaczyk
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

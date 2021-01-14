@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>api_searcher.third_services.cve_circl.wrappers.cve_parser &mdash; SARENKA 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home" alt="Documentation Home"> SARENKA
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Dokumentacja aplikacji:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../backend/common.html">common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../backend/api_searcher.html">api_searcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../backend/api_tools.html">api_tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../backend/api_vulnerabilities.html">api_vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../backend/reports.html">reports</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">SARENKA</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>api_searcher.third_services.cve_circl.wrappers.cve_parser</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for api_searcher.third_services.cve_circl.wrappers.cve_parser</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span>
+<span class="kn">from</span> <span class="nn">.product_wrapper</span> <span class="kn">import</span> <span class="n">ProductWrapper</span>
+
+
+<div class="viewcode-block" id="CVEParser"><a class="viewcode-back" href="../../../../../backend/api_searcher.html#api_searcher.third_services.cve_circl.wrappers.cve_parser.CVEParser">[docs]</a><span class="k">class</span> <span class="nc">CVEParser</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Klasa pomocnicza opakowująca i parsujaca dane o produkcie z danych uzyskanych z serwisu trzeciego https://cve.circl.lu/.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="CVEParser.cve"><a class="viewcode-back" href="../../../../../backend/api_searcher.html#api_searcher.third_services.cve_circl.wrappers.cve_parser.CVEParser.cve">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">cve</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="CVEParser.cvss_vector"><a class="viewcode-back" href="../../../../../backend/api_searcher.html#api_searcher.third_services.cve_circl.wrappers.cve_parser.CVEParser.cvss_vector">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">cvss_vector</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;cvss-vector&quot;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="CVEParser.complexity"><a class="viewcode-back" href="../../../../../backend/api_searcher.html#api_searcher.third_services.cve_circl.wrappers.cve_parser.CVEParser.complexity">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">complexity</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;access&quot;</span><span class="p">][</span><span class="s2">&quot;complexity&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="CVEParser.authentication"><a class="viewcode-back" href="../../../../../backend/api_searcher.html#api_searcher.third_services.cve_circl.wrappers.cve_parser.CVEParser.authentication">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">authentication</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;access&quot;</span><span class="p">][</span><span class="s2">&quot;authentication&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="CVEParser.vector"><a class="viewcode-back" href="../../../../../backend/api_searcher.html#api_searcher.third_services.cve_circl.wrappers.cve_parser.CVEParser.vector">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">vector</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;access&quot;</span><span class="p">][</span><span class="s2">&quot;vector&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="CVEParser.cvss"><a class="viewcode-back" href="../../../../../backend/api_searcher.html#api_searcher.third_services.cve_circl.wrappers.cve_parser.CVEParser.cvss">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">cvss</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;cvss&quot;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="CVEParser.cwe"><a class="viewcode-back" href="../../../../../backend/api_searcher.html#api_searcher.third_services.cve_circl.wrappers.cve_parser.CVEParser.cwe">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">cwe</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;cwe&quot;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="CVEParser.title"><a class="viewcode-back" href="../../../../../backend/api_searcher.html#api_searcher.third_services.cve_circl.wrappers.cve_parser.CVEParser.title">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">title</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>  <span class="c1"># TODO struktura</span>
+        <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;oval&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;title&quot;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="CVEParser.products"><a class="viewcode-back" href="../../../../../backend/api_searcher.html#api_searcher.third_services.cve_circl.wrappers.cve_parser.CVEParser.products">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">products</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ProductWrapper</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Metoda parsująca dane o produkcie z identyfikatora Common Platform Enumeration (CPE)</span>
+<span class="sd">        Postać wektora powinna być jak poniższa.</span>
+<span class="sd">        cpe:/&lt;part&gt;:&lt;vendor&gt;:&lt;product&gt;:&lt;version&gt;:&lt;update&gt;:&lt;edition&gt;:&lt;language&gt;&lt;part&gt;</span>
+<span class="sd">        Niestety infromacje sa dodawane prze ludzi ręcznie i występują liczne błędy składniowe uniemożliwiaające poprawne parsowanie.</span>
+<span class="sd">        Więcej informacji: https://csrc.nist.gov/projects/security-content-automation-protocol/specifications/cpe</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;vulnerable_product&quot;</span><span class="p">]</span>
+
+        <span class="n">vendor_idx</span> <span class="o">=</span> <span class="mi">3</span>
+        <span class="n">name_idx</span> <span class="o">=</span> <span class="mi">4</span>
+        <span class="n">version_idx</span> <span class="o">=</span> <span class="mi">5</span>
+        <span class="n">system_idx</span> <span class="o">=</span> <span class="mi">6</span>
+
+        <span class="n">products_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">product_data</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="n">product_data</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+
+            <span class="n">products_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">ProductWrapper</span><span class="p">(</span>
+                    <span class="n">vendor</span><span class="o">=</span><span class="n">p</span><span class="p">[</span><span class="n">vendor_idx</span><span class="p">],</span>
+                    <span class="n">name</span><span class="o">=</span><span class="n">p</span><span class="p">[</span><span class="n">name_idx</span><span class="p">],</span>
+                    <span class="n">version</span><span class="o">=</span><span class="n">p</span><span class="p">[</span><span class="n">version_idx</span><span class="p">],</span>
+                    <span class="n">system</span><span class="o">=</span><span class="n">p</span><span class="p">[</span><span class="n">system_idx</span><span class="p">]</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">products_list</span></div>
+
+<div class="viewcode-block" id="CVEParser.availability"><a class="viewcode-back" href="../../../../../backend/api_searcher.html#api_searcher.third_services.cve_circl.wrappers.cve_parser.CVEParser.availability">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">availability</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;impact&quot;</span><span class="p">][</span><span class="s2">&quot;availability&quot;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="CVEParser.confidentiality"><a class="viewcode-back" href="../../../../../backend/api_searcher.html#api_searcher.third_services.cve_circl.wrappers.cve_parser.CVEParser.confidentiality">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">confidentiality</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;impact&quot;</span><span class="p">][</span><span class="s2">&quot;confidentiality&quot;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="CVEParser.integrity"><a class="viewcode-back" href="../../../../../backend/api_searcher.html#api_searcher.third_services.cve_circl.wrappers.cve_parser.CVEParser.integrity">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">integrity</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;impact&quot;</span><span class="p">][</span><span class="s2">&quot;integrity&quot;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="CVEParser.summary"><a class="viewcode-back" href="../../../../../backend/api_searcher.html#api_searcher.third_services.cve_circl.wrappers.cve_parser.CVEParser.summary">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">summary</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;summary&quot;</span><span class="p">]</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Dominika Pawlaczyk, Michał Pawlaczyk
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
