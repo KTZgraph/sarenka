@@ -12,8 +12,8 @@ class PDFHardwareInfo(FPDF, HTMLMixin):
 
     def headerOnlyFirstSide(self):
         # self.image('logo.png',90,15, 30)
-        self.cell(0, 100, 'Information about your computer', 0, 0, 'C')
-        self.ln(60)
+        self.cell(0, 10, 'Information about your computer', 0, 0, 'C')
+        self.ln(10)
 
 
     def chapter(self, link):

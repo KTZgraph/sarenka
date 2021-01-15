@@ -2,6 +2,7 @@ from fpdf import FPDF, HTMLMixin
 import json
 import requests
 
+
 class PDFHostInfo(FPDF, HTMLMixin):
     # TODO wywalic to !!!!!!!!!!!!!
 
