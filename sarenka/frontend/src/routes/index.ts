@@ -55,7 +55,7 @@ export const serverRoutes: Record<string, string> = {
 };
 
 export const documentationRoutes: Record<string, string> = {
-  apiDocumentation: serverIp,
+  apiDocumentation: `${serverIp}/api`,
 };
 
 export default routes;

@@ -3,14 +3,12 @@ interface HardwareInfoData {
     name: string;
     version: string;
   };
-  computer_name: {
+  computer_information: {
     name: string;
     system_type: string;
-  };
-  commputer_information: {
-    commputer_serial_number: string;
+    computer_serial_number: string;
     total_physical_memory: string;
-    'mac_address???': string;
+    mac_address: string;
     computer_manufacturer: string;
   };
   operation_system: {
@@ -21,11 +19,20 @@ interface HardwareInfoData {
     build_type: string;
     os_architecture: string;
   };
-  baseboard_information: {
+  motherboard_information: {
     product: string;
     manufacturer: string;
     version: string;
     serialnumber: string;
+  };
+  hard_drive_info: {
+    NTFS: {
+      freespace: string;
+      systemname: string;
+      filesystem: string;
+      size: string;
+      volumeserialnumber: string;
+    };
   };
 }
 

@@ -143,7 +143,7 @@ const SettingsView = () => {
             }}
           />
           <Button type="submit" small displayBlock>
-            Update credentials
+            Update
           </Button>
         </StyledForm>
       </StyledTokensWrapper>

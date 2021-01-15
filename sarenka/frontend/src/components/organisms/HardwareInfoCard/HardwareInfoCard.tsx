@@ -49,36 +49,31 @@ const HardwareInfoCard: React.FC<Props> = ({ data }: Props) => (
       </ListWrapper>
     </StyledColumnWrapper>
     <StyledColumnWrapper>
-      <Paragraph listTitle>Computer name</Paragraph>
-      <ListWrapper>
-        <ListItem>
-          {`Name: `}
-          {data.computer_name?.name || <NoData />}
-        </ListItem>
-        <ListItem>
-          {`Architecture: `}
-          {data.computer_name?.system_type || <NoData />}
-        </ListItem>
-      </ListWrapper>
-    </StyledColumnWrapper>
-    <StyledColumnWrapper>
       <Paragraph listTitle>Computer info</Paragraph>
       <ListWrapper>
         <ListItem>
+          {`Name: `}
+          {data.computer_information?.name || <NoData />}
+        </ListItem>
+        <ListItem>
           {`Serial number: `}
-          {data.commputer_information?.commputer_serial_number || <NoData />}
+          {data.computer_information?.computer_serial_number || <NoData />}
         </ListItem>
         <ListItem>
           {`MAC Address: `}
-          {data.commputer_information?.[`mac_address???`] || <NoData />}
+          {data.computer_information?.mac_address || <NoData />}
         </ListItem>
         <ListItem>
           {`Total physical memory: `}
-          {data.commputer_information?.total_physical_memory || <NoData />}
+          {data.computer_information?.total_physical_memory || <NoData />}
         </ListItem>
         <ListItem>
           {`Computer manufacturer: `}
-          {data.commputer_information?.computer_manufacturer || <NoData />}
+          {data.computer_information?.computer_manufacturer || <NoData />}
+        </ListItem>
+        <ListItem>
+          {`System type: `}
+          {data.computer_information?.system_type || <NoData />}
         </ListItem>
       </ListWrapper>
     </StyledColumnWrapper>
@@ -116,19 +111,19 @@ const HardwareInfoCard: React.FC<Props> = ({ data }: Props) => (
       <ListWrapper>
         <ListItem>
           {`Product: `}
-          {data.baseboard_information?.product || <NoData />}
+          {data.motherboard_information?.product || <NoData />}
         </ListItem>
         <ListItem>
           {`Manufacturer: `}
-          {data.baseboard_information?.manufacturer || <NoData />}
+          {data.motherboard_information?.manufacturer || <NoData />}
         </ListItem>
         <ListItem>
           {`Version: `}
-          {data.baseboard_information?.version || <NoData />}
+          {data.motherboard_information?.version || <NoData />}
         </ListItem>
         <ListItem>
           {`Serial number: `}
-          {data.baseboard_information?.serialnumber || <NoData />}
+          {data.motherboard_information?.serialnumber || <NoData />}
         </ListItem>
       </ListWrapper>
     </StyledColumnWrapper>
