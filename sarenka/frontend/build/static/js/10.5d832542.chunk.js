@@ -1,2 +1,0 @@
-(this.webpackJsonpsarenka=this.webpackJsonpsarenka||[]).push([[10],{119:function(e,t,a){"use strict";a.r(t);var r=a(20),n=a(0),o=a.n(n),c=a(26),s=a(39);t.default=function(){var e=Object(n.useState)(""),t=Object(r.a)(e,2),a=t[0],i=t[1];return o.a.createElement(c.a,null,o.a.createElement(s.a,{handleSubmit:function(){return console.log("Not supported yet")},searchWord:a,setSearchWord:i,title:"Search information about exploits for specific library or technology",placeholder:"Type library name"}))}}}]);
-//# sourceMappingURL=10.5d832542.chunk.js.map
