@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'api_searcher',
     'api_tools',
     'api_vulnerabilities',
-    'sphinxdoc',
 ]
 
 GRAPHENE = {
