@@ -3,6 +3,7 @@ import json
 import requests
 
 class PDFHostInfo(FPDF, HTMLMixin):
+    # TODO wywalic to !!!!!!!!!!!!!
 
 
     def header(self):
@@ -10,9 +11,9 @@ class PDFHostInfo(FPDF, HTMLMixin):
 
 
     def headerOnlyFirstSide(self,ipAdress):
-        self.image('../../logo.png',90,15, 30)
-        self.cell(0, 100, 'Host adress: '+ipAdress, 0, 0, 'C')
-        self.ln(60)
+        # self.image('logo.png',90,15, 30)
+        self.cell(0, 10, 'Host adress: '+ipAdress, 0, 0, 'C')
+        self.ln(10)
 
 
     def chapter(self, ipAdress,link):

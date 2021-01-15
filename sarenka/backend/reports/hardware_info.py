@@ -3,6 +3,7 @@ import json
 import requests
 
 class PDFHardwareInfo(FPDF, HTMLMixin):
+    # TODO wywalic to !!!!!!!!!!!!!
 
 
     def header(self):
@@ -10,7 +11,7 @@ class PDFHardwareInfo(FPDF, HTMLMixin):
 
 
     def headerOnlyFirstSide(self):
-        self.image('../../logo.png',90,15, 30)
+        # self.image('logo.png',90,15, 30)
         self.cell(0, 100, 'Information about your computer', 0, 0, 'C')
         self.ln(60)
 
