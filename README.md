@@ -99,14 +99,34 @@ SARENKA requires:
 ```
 $ git clone https://github.com/pawlaczyk/sarenka.git
 ```
-##### Go to source appliction directory
+##### Go to application directory
 ```
-$ cd sarenka/sarenka
+$ cd ./sarenka
+```
+
+##### Create venv 
+```
+$ python3 -m venv env
+```
+
+##### Activate venv
+Powershell
+```
+$ ./env/Scripts/Activate.ps1
+```
+cmd
+```
+$ ./env/Scripts/activate.bat
+```
+
+##### Install requirements
+```
+$ pip3 install -r ./requirements.txt
 ```
 
 ##### Build application with sarenka.py script
 ```
-$ python sarenka.py
+$ python ./sarenka/sarenka.py
 ```
 
 # Getting started 
