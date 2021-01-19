@@ -72,6 +72,7 @@ More cryptography-math tools and reconnaissance scripts are planned.
 * [hackerzzz.com](https://hackerzzz.com/2021/01/11/sarenka-osint-tool-data-from-services-like-shodan-censys/)
 * [my.oschina.net](https://my.oschina.net/u/4579293/blog/4885529)
 * [kalilinuxtutorials.com](https://kalilinuxtutorials.com/sarenka/)
+* [pintait.com](https://www.pintait.com/sarenka/)
 
 
 # Features
