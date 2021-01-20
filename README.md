@@ -73,6 +73,7 @@ More cryptography-math tools and reconnaissance scripts are planned.
 * [my.oschina.net](https://my.oschina.net/u/4579293/blog/4885529)
 * [kalilinuxtutorials.com](https://kalilinuxtutorials.com/sarenka/)
 * [pintait.com](https://www.pintait.com/sarenka/)
+* [osintbrasil.blogspot.com](https://osintbrasil.blogspot.com/2021/01/sarenka-e-uma-ferramenta-de.html)
 
 
 # Features
