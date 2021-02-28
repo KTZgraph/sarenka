@@ -6,7 +6,7 @@
 [![CircleCi release](https://img.shields.io/badge/coverage-None-green.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) 
 [![CircleCi release](https://img.shields.io/badge/CircleCi-passed-lime.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) 
 ![Platform release](https://img.shields.io/badge/platform-Windows_10-blue.svg) 
-[![Platform release](https://img.shields.io/badge/platform-Kali_Linux-purple.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) 
+[![Platform release](https://img.shields.io/badge/platform-Linux-purple.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) 
 [![Python version](https://img.shields.io/badge/Python-3.8-blue.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) 
 ![CWE feed](https://img.shields.io/badge/CWE-12/20/2020-darkgreen.svg) 
 ![CVE feed](https://img.shields.io/badge/CVE-12/19/2020-green.svg) 
@@ -74,6 +74,7 @@ More cryptography-math tools and reconnaissance scripts are planned.
 * [kalilinuxtutorials.com](https://kalilinuxtutorials.com/sarenka/)
 * [pintait.com](https://www.pintait.com/sarenka/)
 * [osintbrasil.blogspot.com](https://osintbrasil.blogspot.com/2021/01/sarenka-e-uma-ferramenta-de.html)
+* [pintait.com](https://pintait.com/sarenka/)
 
 
 # Features
@@ -100,25 +101,6 @@ SARENKA requires:
 ##### Clone repository
 ```
 $ git clone https://github.com/pawlaczyk/sarenka.git
-```
-##### Go to application directory
-```
-$ cd ./sarenka
-```
-
-##### Create venv 
-```
-$ python3 -m venv env
-```
-
-##### Activate venv
-Powershell
-```
-$ ./env/Scripts/Activate.ps1
-```
-cmd
-```
-$ ./env/Scripts/activate.bat
 ```
 
 ##### Install requirements
@@ -164,9 +146,6 @@ $ python backend/manage.py runserver
 
 
 
-
-
-
 #### Suggestions are welcome
 [1.1]: http://i.imgur.com/tXSoThF.png (twitter icon with padding)
 [2.1]: http://i.imgur.com/P3YfQoD.png (facebook icon with padding)
@@ -174,64 +153,11 @@ $ python backend/manage.py runserver
 [1]: https://twitter.com/OsintSarenka
 [2]: https://www.facebook.com/sarenka.osint.5
 
-- Want some feature, other tool, library functionality?
-- Have any idea or question?  [![alt text][1.1]][1]
-- Don't hesitate to contact  [![Author](https://img.shields.io/badge/pawlaczyk-black.svg)](https://github.com/pawlaczyk/) .
+- Contact [![alt text][1.1]][1]
 
-#### Databases
-Details in documentation.
-
-## Tech
-* [Renderforest](https://www.renderforest.com/)
-* [gawk](http://gnuwin32.sourceforge.net/packages/gawk.htm) 
-* [chocolatey](https://chocolatey.org/)
-* [PyCharm](https://www.jetbrains.com/pycharm/)
-
-
-
-And of course SARENKA itself is open source with a [public repository][sarenka]
- on GitHub.
-
-#### Planned features
-
- - Rewrite documentation in English (end of 2021)
- - trello/ github instead of Jira
- - Cover 100% code by tests
- - typing backend
- - document all functions and class
- - Docker
- - online demo
- - Jenkins
- - GraphQL
- - Selenium Scrapers
- - More pentesting tools
- - Google Dorks
- - Abstract Algebra calculator
- - Number Theory calculator
- - Server certificate validator
- - tests on Linux
- - NLP
- - d3js visualizations
- - alterntive pure version in command lineS
-
-##### CI/CD Tools
-- https://circleci.com/
-- https://github.com/snyk-bot
-
-#### Tested manually
-- Kali Linux kali-rolling 2020.2; Python 3.8.2
-- Windows 10; Python 3.8.5
 
 ### Documentation
-Till end of March, 2021 documentation will be available only in Polish!
 The documentation is availabe [here](https://pawlaczyk.github.io/sarenka/).
-
-# Authors
-[![Author](https://img.shields.io/badge/Dominika-Pawlaczyk-red.svg)](https://github.com/pawlaczyk/)  [![Author](https://img.shields.io/badge/Michał-Pawlaczyk-red.svg)](https://github.com/michalpawlaczyk) [![Author](https://img.shields.io/badge/Karolina-Słonka-red.svg)](https://github.com/k-slonka)
-
-
-##### Contact
-[![Author](https://img.shields.io/badge/pawlaczyk-black.svg)](https://github.com/pawlaczyk/)
 
 # License
 SARENKA is **licensed** under the **[MIT License]**.
