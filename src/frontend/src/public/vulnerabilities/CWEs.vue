@@ -1,12 +1,4 @@
 <template>
-  <h1>CWEs</h1>
-</template>
-
-<script>
-export default {
-  name: 'CWEs'
-}
-</script><template>
 
   <div class="container-fluid">
     <div class="row">
@@ -151,21 +143,7 @@ import {ref, onMounted} from 'vue';
 import axios from 'axios';
 
 export default {
-  name: 'CWEs',
-  setup(){
-    const cves = ref('');
+  name: 'CWEs'
 
-    const load = async () => {
-      const response = await axios.get('cwes');
-      cves.value = response.data.data;
-      console.log("cves.value", cves.value);
-    };
-
-    onMounted(load);
-
-    return {
-      load
-    }
-  }
 }
 </script>
