@@ -6,6 +6,7 @@ import CWEs from '@/public/vulnerabilities/CWEs.vue';
 import CWEsTop25 from '@/public/vulnerabilities/CWEsTop25.vue';
 // core
 import Settings from '@/public/core/Settings.vue';
+import Sources from '@/public/core/Sources.vue';
 // products
 import Products from '@/public/products/Products.vue';
 // search
@@ -25,7 +26,8 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Public',
     component: Public,
     children: [
-      {path: '/', redirect: '/cves'},
+      {path: '/', redirect: '/sources'},
+      {path: '/sources', component: Sources},
       {path: '/cves', component: CVEs},
       {path: '/cwes', component: CWEs},
       {path: '/cwes-top-25', component: CWEsTop25},

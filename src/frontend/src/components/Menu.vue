@@ -3,6 +3,9 @@
       <div class="sidebar-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
+            <router-link to="/sources" active-classes="active" class="nav-link">Sources</router-link>
+          </li>
+          <li class="nav-item">
             <router-link to="/products" active-classes="active" class="nav-link">Products</router-link>
           </li>
           <li class="nav-item">
