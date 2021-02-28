@@ -26,7 +26,7 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Public',
     component: Public,
     children: [
-      {path: '/', redirect: '/sources'},
+      // {path: '/', redirect: '/sources'},
       {path: '/sources', component: Sources},
       {path: '/cves', component: CVEs},
       {path: '/cwes', component: CWEs},

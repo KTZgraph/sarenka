@@ -153,7 +153,7 @@ export default {
       console.log("cves.value", cves.value);
     };
 
-    onMounted(load);
+    // onMounted(load);
 
     return {
       load
