@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'apps.search',
     'apps.technologies',
     'apps.tools',
+    'apps.universities',
     'apps.vendors',
     'apps.vulnerabilities',
 ]

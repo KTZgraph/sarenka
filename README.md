@@ -75,6 +75,7 @@ More cryptography-math tools and reconnaissance scripts are planned.
 * [pintait.com](https://www.pintait.com/sarenka/)
 * [osintbrasil.blogspot.com](https://osintbrasil.blogspot.com/2021/01/sarenka-e-uma-ferramenta-de.html)
 * [pintait.com](https://pintait.com/sarenka/)
+* [engetsu-consulting.com](https://www.engetsu-consulting.com/2021/02/05/penetration-testing-tools-reference-guide/)
 
 
 # Features
@@ -82,11 +83,32 @@ More cryptography-math tools and reconnaissance scripts are planned.
   - get data from **https://www.shodan.io/** by ip
   - get **DNS** data
   - get **WHOIS** data
-  - **banner** grabbing
   - find **CVEs** by **CWE** 
   - generatre pdf report
 
+Products:
+   - favicon hashes database (manually obtained data)
+   - favicon files database (manually obtained data)
+   - cpe fragments for CVES (manually obtained data)
+   - shodan queries for product for searching product (manually obtained data) 
+   - censys queries for product searching (manually obtained data) 
+
+Vendors:
+   - favicon hashes database (manually obtained data)
+   - favicon files database (manually obtained data)
+   - cpe fragments for CVES (manually obtained data)
+
+Vulnerabilities:
+  - find **CVEs** by **CWE** 
+
 You can also:
+  - calculate **hashes** based on user string
+  - calculate **hashes** based on user string
+  - calculate **shannon entropy** based on user string
+  - check is **port** open|closed (instead always use nmap if you can - it is slow)
+
+Tools:
+  - calculate favicon hash
   - calculate **hashes** based on user string
   - calculate **shannon entropy** based on user string
   - check is **port** open|closed (instead always use nmap if you can - it is slow)
@@ -127,23 +149,10 @@ $ python backend/manage.py runserver
 
 
 #####Add user credentials at "Settings"
-<img alt="sarenka-cwe" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/screenshot-2021-01-08-213602.png">
 
 
 
 # Screenshots
-<img alt="sarenka-main-harwdare" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/screenshot-2021-01-07-234911.png">
-
-<img alt="sarenka-cve" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/screenshot-2021-01-07-235528.png">
-
-<img alt="sarenka-windows-registry" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/screenshot-2021-01-07-235615.png">
-
-<img alt="sarenka-censys" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/screenshot-2021-01-08-213333.png">
-
-<img alt="sarenka-cwe" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/screenshot-2021-01-08-213519.png">
-
-<img alt="sarenka-swagger" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/readmeStatic/swagger.png">
-
 
 
 #### Suggestions are welcome
@@ -155,6 +164,8 @@ $ python backend/manage.py runserver
 
 - Contact [![alt text][1.1]][1]
 
+### Team
+SARENKA is one person project (since 16.01.2021).
 
 ### Documentation
 The documentation is availabe [here](https://pawlaczyk.github.io/sarenka/).
