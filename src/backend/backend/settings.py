@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'apps.universities',
     'apps.vendors',
     'apps.vulnerabilities',
+    'apps.cheat_sheets',
 ]
 
 MIDDLEWARE = [
