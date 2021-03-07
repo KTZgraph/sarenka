@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'drf_yasg',
     'apps.core',
     'apps.products',
     'apps.search',
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     'apps.vendors',
     'apps.vulnerabilities',
     'apps.cheat_sheets',
+    'apps.engines',
 ]
 
 MIDDLEWARE = [
