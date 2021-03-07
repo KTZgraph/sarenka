@@ -1,5 +1,7 @@
 from django.urls import path
 
-urlpatterns = [
+from .views import CredentialsAPI
 
+urlpatterns = [
+    path('credentials/', CredentialsAPI.as_view(), name='credentials'),
 ]
