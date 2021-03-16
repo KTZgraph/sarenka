@@ -1,7 +1,7 @@
 from django.urls import path
 
-from .views import Protonmail
+from .views import ProtonmailAPIView
 
 urlpatterns = [
-    path('protonmail/', Protonmail.as_view(), name='protonmail'),
+    path('protonmail/<str:username>', ProtonmailAPIView.as_view(), name='protonmail'),
 ]

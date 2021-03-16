@@ -5,9 +5,10 @@ source: https://sector035.nl/articles/2020-50
 import requests
 import re
 
+from .provider_url import ProviderUrl
+
 
 class Protonmail:
-    _feed = "https://api.protonmail.ch/pks/lookup?op=index&search="
 
     @staticmethod
     def get_user_email(username: str) -> list:
@@ -40,7 +41,7 @@ class Protonmail:
 
     @staticmethod
     def get_response(user):
-        feed_url = f'{Protonmail._feed}{user}'
+        feed_url = f'{ProviderUrl().protonmail}{user}'
         res_txt = requests.get(feed_url).text
         return Protonmail.parse_response(res_txt)
 
