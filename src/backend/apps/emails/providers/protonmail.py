@@ -18,8 +18,8 @@ class Protonmail:
             return [f'{username}@protonmail.com', f'{username}@protonmail.ch']
 
     @staticmethod
-    def parse_response(response_txt: str) -> dict:
-        info, pub, uid = None, None, None
+    def parse_response(response_txt: str, user: str) -> dict:
+        info, pub, uid = [None]*3
         response_txt = [i.rstrip() for i in response_txt.split('\n')]
         for r in response_txt:
             if 'info' in r:
@@ -29,21 +29,24 @@ class Protonmail:
             if 'uid' in r:
                 uid = r.split('uid:')[-1]
 
-        if pub is None and uid is None:
-            return {}
+        try:
+            email = re.search(r'<(.*?)>', uid).group(1)
+        except (AttributeError, TypeError):
+            email = None
 
         return {
             'info': info,
             'pub': pub,
             'uid': uid,
-            'email': re.search(r'<(.*?)>', uid).group(1)
+            'parsed_email': email,
+            'checked_email': user
         }
 
     @staticmethod
     def get_response(user):
         feed_url = f'{ProviderUrl().protonmail}{user}'
         res_txt = requests.get(feed_url).text
-        return Protonmail.parse_response(res_txt)
+        return Protonmail.parse_response(res_txt, user)
 
     @staticmethod
     def get(username: str):
@@ -62,4 +65,6 @@ class Protonmail:
 #     res = Protonmail.get('admin')
 #     print(res)
 #     res = Protonmail.get('admin@protonmail.com')
+#     print(res)
+#     res = Protonmail.get('renren')
 #     print(res)
