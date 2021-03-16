@@ -76,6 +76,7 @@ More cryptography-math tools and reconnaissance scripts are planned.
 * [osintbrasil.blogspot.com](https://osintbrasil.blogspot.com/2021/01/sarenka-e-uma-ferramenta-de.html)
 * [pintait.com](https://pintait.com/sarenka/)
 * [engetsu-consulting.com](https://www.engetsu-consulting.com/2021/02/05/penetration-testing-tools-reference-guide/)
+* [awesomeopensource.com](https://awesomeopensource.com/project/pawlaczyk/sarenka)
 
 
 # Features

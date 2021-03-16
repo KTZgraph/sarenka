@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'drf_yasg',
     'apps.core',
+    'apps.emails',
     'apps.products',
     'apps.search',
     'apps.technologies',
