@@ -5,17 +5,23 @@ source: https://sector035.nl/articles/2020-50
 import requests
 import re
 
-from .provider_url import ProviderUrl
+from provider_url import ProviderUrl
 
 
 class Protonmail:
 
     @staticmethod
     def get_user_email(username: str) -> list:
-        if '@protonmail.com' in username or '@protonmail.ch' in username:
+        if '@protonmail.com' in username or '@protonmail.ch' in username or '@pm.me' in username:
             return [username]
         else:
-            return [f'{username}@protonmail.com', f'{username}@protonmail.ch']
+            return [f'{username}@protonmail.com', f'{username}@protonmail.ch', f'{username}@pm.me']
+
+    @staticmethod
+    def get_public_key(email: str):
+        feed_ulr = f'{ProviderUrl().protonmail_pk}{email}'
+        response = requests.get(feed_ulr).text
+        return response
 
     @staticmethod
     def parse_response(response_txt: str, user: str) -> dict:
@@ -31,15 +37,18 @@ class Protonmail:
 
         try:
             email = re.search(r'<(.*?)>', uid).group(1)
+            email_pk = Protonmail.get_public_key(email)
         except (AttributeError, TypeError):
             email = None
+            email_pk = None
 
         return {
-            'info': info,
+            'info': 'valid' if '1:1' in info else 'invalid',
             'pub': pub,
             'uid': uid,
             'parsed_email': email,
-            'checked_email': user
+            'checked_email': user,
+            'pk': email_pk
         }
 
     @staticmethod
@@ -61,10 +70,10 @@ class Protonmail:
         return result
 
 
-# if __name__ == "__main__":
-#     res = Protonmail.get('admin')
-#     print(res)
-#     res = Protonmail.get('admin@protonmail.com')
-#     print(res)
-#     res = Protonmail.get('renren')
-#     print(res)
+if __name__ == "__main__":
+    # res = Protonmail.get('admin')
+    # print(res)
+    # res = Protonmail.get('admin@protonmail.com')
+    # print(res)
+    res = Protonmail.get('renren')
+    print(res)
