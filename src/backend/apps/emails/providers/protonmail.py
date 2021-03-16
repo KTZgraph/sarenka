@@ -5,7 +5,7 @@ source: https://sector035.nl/articles/2020-50
 import requests
 import re
 
-from provider_url import ProviderUrl
+from .provider_url import ProviderUrl
 
 
 class Protonmail:
@@ -24,14 +24,26 @@ class Protonmail:
         return response
 
     @staticmethod
+    def get_encryption_type(pub):
+        if ':2048:' in pub:
+            return 'rsa_2048'
+        if ':4096:' in pub:
+            return 'rsa_4096'
+        if ':22::' in pub:
+            return 'x25519'
+
+        return 'Unable to obtain.'
+
+    @staticmethod
     def parse_response(response_txt: str, user: str) -> dict:
-        info, pub, uid = [None]*3
+        info, pub, uid, encryption = [None]*4
         response_txt = [i.rstrip() for i in response_txt.split('\n')]
         for r in response_txt:
             if 'info' in r:
                 info = r.split('info:')[-1]
             if 'pub' in r:
                 pub = r.split('pub:')[-1]
+                encryption = Protonmail.get_encryption_type(pub)
             if 'uid' in r:
                 uid = r.split('uid:')[-1]
 
@@ -48,6 +60,7 @@ class Protonmail:
             'uid': uid,
             'parsed_email': email,
             'checked_email': user,
+            'encryption': encryption,
             'pk': email_pk
         }
 
@@ -70,10 +83,10 @@ class Protonmail:
         return result
 
 
-if __name__ == "__main__":
-    # res = Protonmail.get('admin')
-    # print(res)
-    # res = Protonmail.get('admin@protonmail.com')
-    # print(res)
-    res = Protonmail.get('renren')
-    print(res)
+# if __name__ == "__main__":
+#     res = Protonmail.get('admin')
+#     print(res)
+#     res = Protonmail.get('admin@protonmail.com')
+#     print(res)
+#     res = Protonmail.get('renren')
+#     print(res)
