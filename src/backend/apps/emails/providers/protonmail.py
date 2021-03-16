@@ -8,8 +8,14 @@ import re
 from .provider_url import ProviderUrl
 
 
-class Protonmail:
+class ProtonmailVPN:
+    @staticmethod
+    def get() -> dict:
+        response = requests.get(ProviderUrl().protonmail_vpn)
+        return response.json()
 
+
+class Protonmail:
     @staticmethod
     def get_user_email(username: str) -> list:
         if '@protonmail.com' in username or '@protonmail.ch' in username or '@pm.me' in username:
@@ -84,6 +90,7 @@ class Protonmail:
 
 
 # if __name__ == "__main__":
+#     ProtonmailVPN.get()
 #     res = Protonmail.get('admin')
 #     print(res)
 #     res = Protonmail.get('admin@protonmail.com')
