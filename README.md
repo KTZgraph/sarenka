@@ -77,6 +77,7 @@ More cryptography-math tools and reconnaissance scripts are planned.
 * [pintait.com](https://pintait.com/sarenka/)
 * [engetsu-consulting.com](https://www.engetsu-consulting.com/2021/02/05/penetration-testing-tools-reference-guide/)
 * [awesomeopensource.com](https://awesomeopensource.com/project/pawlaczyk/sarenka)
+* [github.com/The-Art-of-Hacking](https://github.com/The-Art-of-Hacking/h4cker/blob/master/new_tools.md)
 
 
 # Features
