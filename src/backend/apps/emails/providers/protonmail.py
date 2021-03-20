@@ -81,7 +81,6 @@ class Protonmail:
         result = []
         usernames = Protonmail.get_user_email(username)
         for user in usernames:
-            print()
             response = Protonmail.get_response(user)
             if response:
                 result.append(response)
