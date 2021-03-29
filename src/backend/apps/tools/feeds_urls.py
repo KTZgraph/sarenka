@@ -13,3 +13,4 @@ class FeedsUrls:
         self._diffnow = "https://diffnow.com/compare-clips"
         self._cyber_chef = "https://gchq.github.io/CyberChef/"
         self._nmmapper = "https://www.nmmapper.com"
+        self._securityforeveryone = "https://securityforeveryone.com/tools/dns-zone-transfer"
