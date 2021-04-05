@@ -79,6 +79,9 @@ More cryptography-math tools and reconnaissance scripts are planned.
 * [awesomeopensource.com](https://awesomeopensource.com/project/pawlaczyk/sarenka)
 * [github.com/The-Art-of-Hacking](https://github.com/The-Art-of-Hacking/h4cker/blob/master/new_tools.md)
 * [otwartezrodla.pl](https://otwartezrodla.pl/) "Domeny"
+* [reconshell.com](https://reconshell.com/sarenka-osint-tool-for-obtaining-and-understanding-attack-surface/)
+* [crackmyhash.com](https://crackmyhash.com/Thread-SARENKA-OSINT-tool-for-obtaining-and-understanding-Attack-Surface)
+* [mrhacker.co](https://mrhacker.co/pentest/information-gathering-pentest/sarenka-osint-tool-data-from-services-like-shodan-censys-etc)
 
 
 # Features
