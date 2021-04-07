@@ -82,6 +82,8 @@ More cryptography-math tools and reconnaissance scripts are planned.
 * [reconshell.com](https://reconshell.com/sarenka-osint-tool-for-obtaining-and-understanding-attack-surface/)
 * [crackmyhash.com](https://crackmyhash.com/Thread-SARENKA-OSINT-tool-for-obtaining-and-understanding-Attack-Surface)
 * [mrhacker.co](https://mrhacker.co/pentest/information-gathering-pentest/sarenka-osint-tool-data-from-services-like-shodan-censys-etc)
+* [onehack.us](https://onehack.us/t/sarenka-osint-tool-data-from-services-like-shodan-censys-etc-in-one-place/177997)
+* [imginn.com](https://imginn.com/p/CM9mS6jhRw3/)
 
 
 # Features
