@@ -1,51 +1,59 @@
 <template>
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-      <div class="sidebar-sticky pt-3">
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <router-link to="/sources" active-classes="active" class="nav-link">Sources</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/products" active-classes="active" class="nav-link">Products</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/search" active-classes="active" class="nav-link">Search</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/technologies" active-classes="active" class="nav-link">Technologies</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/tools" active-classes="active" class="nav-link">Tools</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/vendors" active-classes="active" class="nav-link">Vendors</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/cves" active-classes="active" class="nav-link">CVEs</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/cwes" active-classes="active" class="nav-link">CWEs</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/cwes-top-25" active-classes="active" class="nav-link">CWEs Top 25</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/cheat-sheets" active-classes="active" class="nav-link">Cheat Sheet</router-link>
-          </li>
-        </ul>
-      </div>
-    </nav>
+  <nav>
+    <ul>
+      <li>
+        <router-link to="/sources" active-classes="active" class="nav-link">Sources</router-link>
+      </li>
+
+      <li>
+        <router-link to="/products" active-classes="active" class="nav-link">Products</router-link>
+      </li>
+
+      <li>
+        <router-link to="/search" active-classes="active" class="nav-link">Search</router-link>
+      </li>
+
+      <li>
+        <router-link to="/technologies" active-classes="active" class="nav-link">Technologies</router-link>
+      </li>
+
+      <li>
+        <router-link to="/tools" active-classes="active" class="nav-link">Tools</router-link>
+      </li>
+
+      <li>
+        <router-link to="/vendors" active-classes="active" class="nav-link">Vendors</router-link>
+      </li>
+
+      <li>
+        <router-link to="/cves" active-classes="active" class="nav-link">CVEs</router-link>
+      </li>
+
+      <li>
+        <router-link to="/cwes" active-classes="active" class="nav-link">CWEs</router-link>
+      </li>
+
+      <li>
+        <router-link to="/cwes-top-25" active-classes="active" class="nav-link">CWEs Top 25</router-link>
+      </li>
+
+      <li>
+        <router-link to="/cheat-sheets" active-classes="active" class="nav-link">Cheat Sheet</router-link>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <script>
 import {useRouter} from 'vue-router';
-import { useStore } from 'vuex';
+import {useStore} from 'vuex';
+
 export default {
   name: 'Menu',
-  setup(){
-      const router = useRouter();
-      const store = useStore();
-    }
+  setup() {
+    const router = useRouter();
+    const store = useStore();
+  }
 }
 </script>
 

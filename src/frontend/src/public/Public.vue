@@ -16,7 +16,7 @@
 import { useRouter } from 'vue-router';
 
 import Menu from '@/components/Menu';
-import Navbar from '@/components/Navbar';
+import Navbar from '@/components/Header';
 
 export default {
   name: 'Public',
