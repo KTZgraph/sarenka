@@ -14,28 +14,39 @@ html {
 }
 
 .header-main {
+  display: flex;
+  justify-content: space-between;
   background-color: #1a1a1a;
   width: 100%;
-  font-size: 30px;
+  font-size: 26px;
   height: 75px;
-  text-align: right;
   line-height: 75px;
+  text-align: center;
 }
 .header-main a {
   transition: 0.2s linear;
   display: inline-block;
   height: 100%;
-  padding: 0 50px;
+  width: 200px;
 }
 .header-main a.header-url {
   color: white;
   text-decoration: none;
+}
+.header-main a.header-url:first-child {
+  margin-right: 50px;
 }
 .header-main a i {
   padding-right: 5px;
 }
 .header-main a:hover {
   background-color: #ddd;
+}
+.header-main a div {
+  padding: 5px;
+}
+.header-main a div img {
+  height: calc(75px - 10px);
 }
 
 nav.menu-main.active {
@@ -71,9 +82,12 @@ nav.menu-main.active button {
   font-size: 35px;
   border: 2px solid white;
   border-radius: 50%;
+  transition: 0.2s linear;
 }
-nav.menu-main.active:hover i {
-  color: #ddd;
+nav.menu-main.active button:hover {
+  color: #1a1a1a;
+  font-weight: bold;
+  background-color: pink;
 }
 
 section.wrap {

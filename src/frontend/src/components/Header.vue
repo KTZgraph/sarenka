@@ -1,5 +1,6 @@
 <template>
     <header class="header-main">
+      <router-link to="/documentation" class="header-url"><div><img src="../assets/logo_crop.png" alt="sarenka logo"></div></router-link>
       <router-link to="/settings" class="header-url"><i class="fas fa-cog"></i><strong>Settings</strong></router-link>
     </header>
 </template>
