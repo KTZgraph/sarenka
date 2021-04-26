@@ -1,5 +1,7 @@
 <template>
-  <h1>Tools</h1>
+  <section class="wrap">
+    <h1>Tools</h1>
+  </section>
 </template>
 
 <script>

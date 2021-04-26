@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav class="menu-main active">
     <ul>
       <li>
         <router-link to="/sources" active-classes="active" class="nav-link">Sources</router-link>
@@ -41,6 +41,7 @@
         <router-link to="/cheat-sheets" active-classes="active" class="nav-link">Cheat Sheet</router-link>
       </li>
     </ul>
+    <button class="menu-main active"><i class="fas fa-arrow-left menu-main"></i></button>
   </nav>
 </template>
 

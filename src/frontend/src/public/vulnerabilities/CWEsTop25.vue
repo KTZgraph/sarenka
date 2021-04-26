@@ -1,9 +1,7 @@
 <template>
 
-  <div class="container-fluid">
-    <div class="row">
+  <section class="wrap">
 
-      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
         <h2>Top 25 Common Weakness Enumeration</h2>
         <div class="table-responsive">
           <table class="table table-striped table-sm">
@@ -22,14 +20,11 @@
                 <td>{{ cwe.name }}</td>
                 <td>{{ cwe.weakness_abstraction }}</td>
                 <td>{{ cwe.status }}</td>
-
               </tr>
             </tbody>
           </table>
         </div>
-      </main>
-    </div>
-  </div>
+  </section>
 
 </template>
 
@@ -43,7 +38,7 @@ export default {
     const cwesTop25 = ref([]);
 
     const load = async () => {
-      const response = await axios.get('cwes');
+      const response = await axios.get('vulns/cwes');
       cwesTop25.value = response.data.data;
       // console.log("cwesTop25.value", cwesTop25.value);
       console.log("cwesTop25.value", response.data.data);
