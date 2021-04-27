@@ -4,29 +4,45 @@
   justify-content: space-between
   height: $header-height
   background-color: $sarenka-black
-  font-size: 26px
-
-  & div
-    display: flex
-    align-items: center
-    justify-content: center
-    background-color: yellow
-    width: $menu-width
-    &img
-      width: 90%
-    &.header-search
-      background-color: red
-      flex-grow: 10
-      width: calc((100vw - (2 * #{$menu-width})) / 2)
-      & input
-        display: block
-        border-radius: 15px
-        height: calc(#{$header-height} / 2)
-        width: 100%
-        padding-left: 15px
-        text-decoration: none
-        text-underline: none
-    &.header-settings
-      text-decoration: none
+  font-size: 3.2rem
+  & a
+    text-decoration: none
+    & div
+      display: flex
+      align-items: center
+      justify-content: center
+      //background-color: yellow
+      width: $menu-width
+      height: $header-height
+      &:hover
+        background-color: gray
+      &img
+        width: 90%
+      &.header-search
+        //background-color: red
+        flex-grow: 10
+        width: calc((100vw - (2 * #{$menu-width})) / 1.5)
+        &:hover
+          background-color: transparent
+        & input
+          font-size: 2rem
+          border-radius: 15px
+          border: 2px solid $sarenka-red
+          height: calc(#{$header-height} / 1.5)
+          width: 100%
+          padding-left: 20px
+          &::placeholder
+            text-transform: uppercase
+          &:focus, &:active
+            outline: none
+            border-radius: 15px
+            border: 4px solid $sarenka-red
+            color: black
+      &.header-settings
+        color: $sarenka-red
+        font-weight: bold
+        i
+          font-size: 36px
+          padding-right: 10px
 
 

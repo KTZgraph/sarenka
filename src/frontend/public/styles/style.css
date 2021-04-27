@@ -11,6 +11,7 @@ body {
 
 html {
   font-family: "Roboto", sans-serif;
+  font-size: 10px;
 }
 
 .header-main {
@@ -19,34 +20,55 @@ html {
   justify-content: space-between;
   height: 75px;
   background-color: #1a1a1a;
-  font-size: 26px;
+  font-size: 3.2rem;
 }
-.header-main div {
+.header-main a {
+  text-decoration: none;
+}
+.header-main a div {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: yellow;
   width: 200px;
+  height: 75px;
 }
-.header-main divimg {
+.header-main a div:hover {
+  background-color: gray;
+}
+.header-main a divimg {
   width: 90%;
 }
-.header-main div.header-search {
-  background-color: red;
+.header-main a div.header-search {
   flex-grow: 10;
-  width: calc((100vw - (2 * 200px)) / 2);
+  width: calc((100vw - (2 * 200px)) / 1.5);
 }
-.header-main div.header-search input {
-  display: block;
+.header-main a div.header-search:hover {
+  background-color: transparent;
+}
+.header-main a div.header-search input {
+  font-size: 2rem;
   border-radius: 15px;
-  height: calc(75px / 2);
+  border: 2px solid #c10c27;
+  height: calc(75px / 1.5);
   width: 100%;
-  padding-left: 15px;
-  text-decoration: none;
-  text-underline: none;
+  padding-left: 20px;
 }
-.header-main div.header-settings {
-  text-decoration: none;
+.header-main a div.header-search input::placeholder {
+  text-transform: uppercase;
+}
+.header-main a div.header-search input:focus, .header-main a div.header-search input:active {
+  outline: none;
+  border-radius: 15px;
+  border: 4px solid #c10c27;
+  color: black;
+}
+.header-main a div.header-settings {
+  color: #c10c27;
+  font-weight: bold;
+}
+.header-main a div.header-settings i {
+  font-size: 36px;
+  padding-right: 10px;
 }
 
 nav.menu-main.active {
