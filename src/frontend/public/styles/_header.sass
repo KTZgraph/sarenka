@@ -1,33 +1,32 @@
 .header-main
   display: flex
+  align-items: center /*wyśrodkowuje w pione - oś prosotpadła do głównej X*/
   justify-content: space-between
-  background-color: $nav-bgc
-  width: 100%
-  font-size: 26px
   height: $header-height
-  line-height: 75px
-  text-align: center
-  a
-    transition: .2s linear
-    display: inline-block
-    height: 100%
+  background-color: $sarenka-black
+  font-size: 26px
+
+  & div
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: yellow
     width: $menu-width
-
-    &.header-url
-      color: white
+    &img
+      width: 90%
+    &.header-search
+      background-color: red
+      flex-grow: 10
+      width: calc((100vw - (2 * #{$menu-width})) / 2)
+      & input
+        display: block
+        border-radius: 15px
+        height: calc(#{$header-height} / 2)
+        width: 100%
+        padding-left: 15px
+        text-decoration: none
+        text-underline: none
+    &.header-settings
       text-decoration: none
-    &.header-url:first-child
-      margin-right: 50px
-
-    i
-      padding-right: 5px
-    &:hover
-      background-color: #ddd
-    & div
-      padding: 5px
-    & div img
-      height: calc(#{$header-height} - 10px)
-
-
 
 
