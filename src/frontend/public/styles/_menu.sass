@@ -1,23 +1,43 @@
 //active menu
 nav.menu-main.active
   position: absolute
-  background-color: #000
+  //background-color: $sarenka-black
   width: $menu-width
   height: calc(100vh - #{$header-height})
+  font-size: 1.8rem
   ul
     display: flex
     flex-direction: column
     li
+      border-right: 1px solid darkgray
+      border-bottom: 2px solid
+      border-top-right-radius: 7px
+      border-bottom-right-radius: 7px
+      display: flex
+      align-items: center /*wysrodkowanie w pionie*/
+      justify-content: space-between
+      padding-right: 15px
+      background-color: $sarenka-black
+      &:nth-child(even)
+        background-color: $sarenka-black-lighter
       a.nav-link
         display: block
-        width: 100%
+        width: calc(100% - 50px)
         height: 100%
         color: white
         text-decoration: none
-        padding: 20px 20px
-        border: 2px solid white
+        padding: 20px 25px 20px 8px
+        border-right: 2px solid #5f1010
       &:hover
         background-color: #333
+      & div.menu-ico
+        color: #6f1717
+        height: 100%
+        width: $menu-ico-size
+        font-size: 2rem
+        padding-right: 5px
+        text-align: center
+
 
   button
     position: absolute
