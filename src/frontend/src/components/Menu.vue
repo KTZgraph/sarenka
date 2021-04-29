@@ -2,52 +2,79 @@
   <nav class="menu-main active">
     <ul>
       <li>
-        <router-link to="/home" active-classes="active" class="nav-link"><div class="menu-name">Home</div><div class="menu-ico"><i class="fas fa-heart"></i></div>
+        <router-link to="/sources" active-classes="active" class="nav-link">Sources
+          <div class="menu-ico"><i class="fas fa-table"></i></div>
         </router-link>
       </li>
       <li>
-        <router-link to="/sources" active-classes="active" class="nav-link">Sources<div class="menu-ico"><i class="fas fa-table"></i></div></router-link>
-      </li>
-      <li>
-        <router-link to="/products" active-classes="active" class="nav-link">Products<div class="menu-ico"><i class="fas fa-laptop-code"></i></div></router-link>
+        <router-link to="/products" active-classes="active" class="nav-link">Products
+          <div class="menu-ico"><i class="fas fa-laptop-code"></i></div>
+        </router-link>
 
       </li>
       <li>
-        <router-link to="/search" active-classes="active" class="nav-link">Search<div class="menu-ico"><i class="fas fa-search"></i></div></router-link>
+        <router-link to="/search" active-classes="active" class="nav-link">Search
+          <div class="menu-ico"><i class="fas fa-search"></i></div>
+        </router-link>
 
       </li>
       <li>
-        <router-link to="/people" active-classes="active" class="nav-link">Search<div class="menu-ico"><i class="fas fa-user"></i></div></router-link>
+        <router-link to="/people" active-classes="active" class="nav-link">Search
+          <div class="menu-ico"><i class="fas fa-user"></i></div>
+        </router-link>
 
       </li>
       <li>
-        <router-link to="/technologies" active-classes="active" class="nav-link">Technologies<div class="menu-ico"><i class="fas fa-digital-tachograph"></i></div></router-link>
+        <router-link to="/technologies" active-classes="active" class="nav-link">Technologies
+          <div class="menu-ico"><i class="fas fa-digital-tachograph"></i></div>
+        </router-link>
 
       </li>
       <li>
-        <router-link to="/tools" active-classes="active" class="nav-link">Tools<div class="menu-ico"><i class="fas fa-tools"></i></div></router-link>
+        <router-link to="/tools" active-classes="active" class="nav-link">Tools
+          <div class="menu-ico"><i class="fas fa-tools"></i></div>
+        </router-link>
 
       </li>
       <li>
-        <router-link to="/vendors" active-classes="active" class="nav-link">Vendors<div class="menu-ico"><i class="fas fa-building"></i></div></router-link>
+        <router-link to="/vendors" active-classes="active" class="nav-link">Vendors
+          <div class="menu-ico"><i class="fas fa-building"></i></div>
+        </router-link>
 
       </li>
       <li>
-        <router-link to="/cves" active-classes="active" class="nav-link">CVEs<div class="menu-ico"><i class="fas fa-fire-alt"></i></div></router-link>
+        <router-link to="/cves" active-classes="active" class="nav-link">CVEs
+          <div class="menu-ico"><i class="fas fa-fire-alt"></i></div>
+        </router-link>
 
       </li>
       <li>
-        <router-link to="/cwes" active-classes="active" class="nav-link">CWEs<div class="menu-ico"><i class="fas fa-fire-alt"></i></div></router-link>
-
+        <router-link to="/cwes" active-classes="active" class="nav-link">CWEs
+          <div class="menu-ico"><i class="fas fa-fire-alt"></i></div>
+        </router-link>
       </li>
       <li>
-        <router-link to="/cwes-top-25" active-classes="active" class="nav-link">Top CWEs<div class="menu-ico"><i class="fas fa-fire-alt"></i></div></router-link>
-
+        <router-link to="/cwes-top-25" active-classes="active" class="nav-link">Top CWEs
+          <div class="menu-ico"><i class="fas fa-fire-alt"></i></div>
+        </router-link>
       </li>
       <li>
-        <router-link to="/cheat-sheets" active-classes="active" class="nav-link">Cheat Sheet<div class="menu-ico"><i class="far fa-file-alt"></i></div></router-link>
-
+        <router-link to="/cheat-sheets" active-classes="active" class="nav-link">Cheat Sheet
+          <div class="menu-ico"><i class="far fa-file-alt"></i></div>
+        </router-link>
       </li>
+      <li>
+        <router-link to="/cheat-sheets" active-classes="active" class="nav-link">Settings
+          <div class="menu-ico"><i class="fas fa-cog"></i></div>
+        </router-link>
+      </li>
+<!--      hide menu-->
+      <li>
+        <a href="">
+          <div class="menu-ico"><i class="far fa-file-alt"></i></div>
+        </a>
+      </li>
+
     </ul>
     <button class="menu-main active"><img src="../assets/logo_crop.png" alt=""></button>
   </nav>
