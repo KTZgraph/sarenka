@@ -86,6 +86,7 @@ More cryptography-math tools and reconnaissance scripts are planned.
 * [imginn.com](https://imginn.com/p/CM9mS6jhRw3/)
 * [jxljscl.com](https://www.jxljscl.com/wap/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E7%9A%84%E5%A4%A7%E6%9D%80%E5%99%A8%E2%80%93KaliLinux.html)
 * [github.com/alphaSeclab](https://github.com/alphaSeclab/sec-daily-2020)
+* [nitter.tedomum.net](https://nitter.tedomum.net/viehgroup/status/1376144989273485316#m)
 
 
 # Features
