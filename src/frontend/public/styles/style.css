@@ -14,30 +14,32 @@ html {
   font-size: 10px;
 }
 
-nav.menu-main.active {
+nav.menu-main {
   position: absolute;
+  top: 0;
+  left: calc(48px - 200px);
   width: 200px;
   height: calc(100vh - 50px);
   font-size: 1.8rem;
 }
-nav.menu-main.active ul {
+nav.menu-main ul {
   display: flex;
   flex-direction: column;
 }
-nav.menu-main.active ul li {
+nav.menu-main ul li {
   background-color: #1a1a1a;
   transition: 0.2s;
   height: 100%;
   line-height: 250%;
   /*okreslic wysoklosc linii*/
 }
-nav.menu-main.active ul li:first-child {
+nav.menu-main ul li:first-child {
   text-transform: uppercase;
 }
-nav.menu-main.active ul li:nth-child(even) {
+nav.menu-main ul li:nth-child(even) {
   background-color: #292828;
 }
-nav.menu-main.active ul li .nav-link {
+nav.menu-main ul li .nav-link {
   display: flex;
   align-content: stretch;
   justify-content: space-between;
@@ -49,29 +51,32 @@ nav.menu-main.active ul li .nav-link {
   height: 100%;
   border-bottom: 3px solid black;
 }
-nav.menu-main.active ul li .nav-link .menu-name {
+nav.menu-main ul li .nav-link .menu-name {
   background-color: pink;
   align-self: flex-start;
   margin-bottom: auto;
   height: 100%;
   width: 100%;
 }
-nav.menu-main.active ul li div.nav-link {
+nav.menu-main ul li div.nav-link {
   justify-content: flex-end;
 }
-nav.menu-main.active ul li:hover i {
+nav.menu-main ul li div.nav-link div.menu-ico i {
+  transition: 0.3s;
+}
+nav.menu-main ul li:hover i {
   color: #ccc;
 }
-nav.menu-main.active ul li:hover .nav-link {
+nav.menu-main ul li:hover .nav-link {
   background-color: black;
   color: darkred;
 }
-nav.menu-main.active ul li:hover .nav-link div.menu-ico {
+nav.menu-main ul li:hover .nav-link div.menu-ico {
   background-color: #710b1c;
   border-left: 2px solid white;
   color: white;
 }
-nav.menu-main.active ul li div.menu-ico {
+nav.menu-main ul li div.menu-ico {
   color: #6f1717;
   font-size: 2rem;
   padding-right: 5px;
@@ -80,15 +85,23 @@ nav.menu-main.active ul li div.menu-ico {
   border-left: 2px solid darkred;
   width: 50px;
 }
-nav.menu-main.active ul li div.menu-ico i {
+nav.menu-main ul li div.menu-ico i {
   transition: 0.2s;
 }
-nav.menu-main.active ul li div.menu-ico.menu-ico-logo {
+nav.menu-main ul li div.menu-ico.menu-ico-logo {
   line-height: 100%;
   padding: calc(10% / 2);
 }
-nav.menu-main.active ul li div.menu-ico.menu-ico-logo img {
+nav.menu-main ul li div.menu-ico.menu-ico-logo img {
   width: 90%;
+}
+
+nav.menu-main.active {
+  top: 0;
+  left: 0;
+}
+nav.menu-main.active div.menu-ico i {
+  transform: rotate(-180deg);
 }
 
 section.wrap {

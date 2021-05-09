@@ -1,6 +1,7 @@
-//active menu
-nav.menu-main.active
+nav.menu-main
   position: absolute
+  top: 0
+  left: calc(48px - #{$menu-width})
   //background-color: $sarenka-black
   width: $menu-width
   height: calc(100vh - #{$header-height})
@@ -16,8 +17,6 @@ nav.menu-main.active
       height: 100%
       line-height: 250%
       /*okreslic wysoklosc linii*/
-
-
 
 
       &:first-child
@@ -47,6 +46,8 @@ nav.menu-main.active
 
       div.nav-link
         justify-content: flex-end
+        div.menu-ico i
+          transition: .3s
 
       &:hover i
         color: #ccc
@@ -68,13 +69,19 @@ nav.menu-main.active
         margin-right: 0
         border-left: 2px solid darkred
         width: 50px
-
         i
           transition: .2s
 
       & div.menu-ico.menu-ico-logo
         line-height: 100%
         padding: calc(10% / 2)
+
         img
           width: 90%
 
+//active menu
+nav.menu-main.active
+  top: 0
+  left: 0
+  & div.menu-ico i
+    transform: rotate(-180deg)

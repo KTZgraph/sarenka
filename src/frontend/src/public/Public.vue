@@ -1,5 +1,4 @@
 <template>
-    <Navbar />
     <div class="container-fluid">
     <div class="row">
     <Menu />
