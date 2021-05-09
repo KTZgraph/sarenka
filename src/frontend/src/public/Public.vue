@@ -16,13 +16,11 @@
 import { useRouter } from 'vue-router';
 
 import Menu from '@/components/Menu';
-import Navbar from '@/components/Header';
 
 export default {
   name: 'Public',
   components: {
     Menu,
-    Navbar
   },
   setup(){
     const router = useRouter()
