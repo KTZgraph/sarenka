@@ -69,7 +69,7 @@
         </router-link>
       </li>
       <li>
-<!--        hinde/show menu -->
+        <!-- hinde/show menu -->
         <div class="nav-link">
           <div class="menu-ico "><i class="fas fa-arrow-left"></i></div>
         </div>
