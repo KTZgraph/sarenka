@@ -1,3 +1,39 @@
 =circle-border($size, $color)
   border: 2px solid white
   border-radius: 50%
+
+=default-input()
+  input
+    display: block
+    font-size: 2rem
+    height: calc(#{$header-height} / 2)
+    width: 100%
+    padding-left: 20px
+    border: 0
+    background-color: #eee
+
+    &::placeholder
+      text-transform: lowercase
+      color: #bbb
+    &:focus, &:active
+      outline: none
+      color: black
+  & .con
+    display: inline-block
+    position: relative
+  & .con:after
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    // square-cut corners
+    border-bottom: 13px solid $sarenka-black
+    border-right: 14px solid transparent
+  & .con:before
+    content: ''
+    position: absolute
+    top: 0
+    right: 0
+    // square-cut corners
+    border-top: 13px solid $sarenka-black
+    border-left: 14px solid transparent

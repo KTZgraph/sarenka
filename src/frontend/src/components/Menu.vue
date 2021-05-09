@@ -92,7 +92,7 @@ export default {
   name: 'Menu',
   data() {
     return {
-      isActive: true
+      isActive: false
     }
   },
   setup() {
