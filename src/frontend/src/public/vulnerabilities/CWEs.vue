@@ -1,7 +1,7 @@
 <template>
-  <section class="wrap">
+  <div class="wrap">
     <h1>CWEs</h1>
-  </section>
+  </div>
 
 </template>
 

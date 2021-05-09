@@ -7,6 +7,7 @@
 body {
   min-height: 100vh;
   min-width: 100vw;
+  background-color: #1a1a1a;
 }
 
 html {
@@ -21,6 +22,7 @@ nav.menu-main {
   width: 200px;
   height: calc(100vh - 50px);
   font-size: 1.8rem;
+  z-index: 1;
 }
 nav.menu-main ul {
   display: flex;
@@ -77,7 +79,7 @@ nav.menu-main ul li:hover .nav-link div.menu-ico {
   color: white;
 }
 nav.menu-main ul li div.menu-ico {
-  color: #6f1717;
+  background-color: #6f1717;
   font-size: 2rem;
   padding-right: 5px;
   text-align: center;
@@ -104,22 +106,26 @@ nav.menu-main.active div.nav-link div.menu-ico i {
   transform: rotate(-180deg);
 }
 
-section.wrap {
-  background-color: pink;
-  min-height: calc(100vh - 50px);
+div.wrap.active {
   margin-left: 200px;
-  padding: 30px 30px 0;
 }
 
-.header-search {
+div.wrap {
+  min-height: 100vh;
+  margin-left: 50px;
+  padding: 30px 30px 0;
+  color: white;
+}
+
+.search {
   flex-grow: 10;
   width: 200px;
   padding: 5px 20px;
 }
-.header-search:hover {
+.search:hover {
   background-color: transparent;
 }
-.header-search input {
+.search input {
   display: block;
   font-size: 2rem;
   height: calc(50px / 2);
@@ -128,19 +134,19 @@ section.wrap {
   border: 0;
   background-color: #eee;
 }
-.header-search input::placeholder {
+.search input::placeholder {
   text-transform: lowercase;
   color: #bbb;
 }
-.header-search input:focus, .header-search input:active {
+.search input:focus, .search input:active {
   outline: none;
   color: black;
 }
-.header-search .con {
+.search .con {
   display: inline-block;
   position: relative;
 }
-.header-search .con:after {
+.search .con:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -148,7 +154,7 @@ section.wrap {
   border-bottom: 13px solid #1a1a1a;
   border-right: 14px solid transparent;
 }
-.header-search .con:before {
+.search .con:before {
   content: "";
   position: absolute;
   top: 0;

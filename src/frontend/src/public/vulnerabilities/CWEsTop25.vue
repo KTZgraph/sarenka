@@ -1,30 +1,28 @@
 <template>
-
-  <section class="wrap">
-
-        <h2>Top 25 Common Weakness Enumeration</h2>
-        <div class="table-responsive">
-          <table class="table table-striped table-sm">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>CWE-ID</th>
-                <th>Name</th>
-                <th>Weakness Abstraction</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="cwe in cwesTop25" :key="cwe.cwe_id">
-                <td>{{ cwe.cwe_id }}</td>
-                <td>{{ cwe.name }}</td>
-                <td>{{ cwe.weakness_abstraction }}</td>
-                <td>{{ cwe.status }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-  </section>
+  <div class="wrap">
+    <h2>Top 25 Common Weakness Enumeration</h2>
+    <div class="table-responsive">
+      <table class="table table-striped table-sm">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>CWE-ID</th>
+          <th>Name</th>
+          <th>Weakness Abstraction</th>
+          <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="cwe in cwesTop25" :key="cwe.cwe_id">
+          <td>{{ cwe.cwe_id }}</td>
+          <td>{{ cwe.name }}</td>
+          <td>{{ cwe.weakness_abstraction }}</td>
+          <td>{{ cwe.status }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
 </template>
 
@@ -34,7 +32,7 @@ import axios from 'axios';
 
 export default {
   name: 'CWEsTop25',
-  setup(){
+  setup() {
     const cwesTop25 = ref([]);
 
     const load = async () => {
@@ -47,7 +45,7 @@ export default {
     onMounted(load);
 
     return {
-      cwesTop25, 
+      cwesTop25,
       load
     }
   }

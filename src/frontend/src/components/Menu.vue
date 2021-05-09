@@ -70,7 +70,7 @@
         </router-link>
       </li>
       <li>
-        <router-link to="/cheat-sheets" active-classes="active" class="nav-link">Settings
+        <router-link to="/settings" active-classes="active" class="nav-link">Settings
           <div class="menu-ico"><i class="fas fa-cog"></i></div>
         </router-link>
       </li>

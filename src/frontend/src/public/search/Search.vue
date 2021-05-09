@@ -1,12 +1,12 @@
 <template>
-  <section class="wrap">
+  <div class="wrap">
     <h1>Search</h1>
-        <div class="header-search">
+        <div class="search">
         <span class="con">
             <input type="text" name="search" placeholder="search ...">
         </span>
         </div>
-  </section>
+  </div>
 </template>
 
 <script>
