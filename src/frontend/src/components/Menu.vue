@@ -1,6 +1,12 @@
 <template>
   <nav class="menu-main active">
     <ul>
+      <!--      menu with logo as icon-->
+      <li>
+        <router-link to="/swagger" active-classes="active" class="nav-link">Sarenka
+          <div class="menu-ico menu-ico-logo"><img src="../assets/logo_crop.png" alt=""></div>
+        </router-link>
+      </li>
       <li>
         <router-link to="/sources" active-classes="active" class="nav-link">Sources
           <div class="menu-ico"><i class="fas fa-table"></i></div>
