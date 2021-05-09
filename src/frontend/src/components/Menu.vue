@@ -68,15 +68,13 @@
           <div class="menu-ico"><i class="fas fa-cog"></i></div>
         </router-link>
       </li>
-<!--      hide menu-->
       <li>
-        <a href="">
-          <div class="menu-ico"><i class="far fa-file-alt"></i></div>
-        </a>
+<!--        hinde/show menu -->
+        <div class="nav-link">
+          <div class="menu-ico "><i class="fas fa-arrow-left"></i></div>
+        </div>
       </li>
-
     </ul>
-    <button class="menu-main active"><img src="../assets/logo_crop.png" alt=""></button>
   </nav>
 </template>
 
