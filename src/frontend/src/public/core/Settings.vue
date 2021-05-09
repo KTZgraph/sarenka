@@ -10,13 +10,11 @@
       <div class="credential">
         <p>Censys.io</p>
         <span class="con">
-            <input type="text" name="search" placeholder="censys ...">
+            <input type="text" name="search" placeholder="type api id">
         </span>
-      </div>
-      <div class="credential">
         <p>Censys.io</p>
         <span class="con">
-            <input type="text" name="search" placeholder="censys ...">
+            <input type="text" name="search" placeholder="type key">
         </span>
       </div>
       <!--    shodan -->
@@ -24,15 +22,14 @@
       <div class="credential">
         <p>Shodan.io</p>
         <span class="con">
-            <input type="text" name="search" placeholder="shodan ...">
+            <input type="text" name="search" placeholder="type username">
         </span>
-      </div>
-      <div class="credential">
         <p>Shodan.io</p>
         <span class="con">
-            <input type="text" name="search" placeholder="shodan ...">
+            <input type="text" name="search" placeholder="type api key">
         </span>
       </div>
+      <button class="submit">Save</button>
     </section>
   </div>
 </template>
