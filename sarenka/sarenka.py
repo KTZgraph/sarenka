@@ -67,8 +67,6 @@ class SarenkaHelper:
             os.path.join(self.backend_dir, "manage.py"))
         self.__backend_backend_dir = os.path.join(self.backend_dir, "backend")
 
-        # ścieżki do requirements
-        self.__requirements_file = self.get_requirements_file_path()
 
     @staticmethod
     def run_command(command, verbose=True):
@@ -86,24 +84,6 @@ class SarenkaHelper:
         all_cwe_ids = [cwe["cwe_id"] for cwe in data["cwe_all"]]
         all_cwe_ids.sort()
         return all_cwe_ids  # zwraca wszystkie CWE ids
-
-    def get_requirements_file_path(self):
-        if IS_WINDOWS:
-            return os.path.join(self.current_dir_path, "requirements_windows.txt")
-        if IS_LINUX:
-            return os.path.join(self.current_dir_path, "requirements_linux.txt")
-        else:
-            print("You are trying to build SARENKA on not tested Operating System.")
-            user_input = input(
-                "Do you really want to build app like on Linux OS (y/n): ")
-            if user_input == "y":
-                return os.path.join(self.current_dir_path, "requirements_linux.txt")
-            else:
-                print("Building application canceled by user.")
-
-    @property
-    def requirements(self):
-        return self.__requirements_file
 
     @property
     def all_cwe_ids_list(self):
@@ -211,17 +191,6 @@ class SarenkaBuilder:
     def user_database_file_path(self):
         return os.path.join(self.helper.backend_backend_dir, SarenkaBuilder.__user_credentials_db_filename)
 
-    def __install_requirements(self):
-        """Instaluje wymagane biblioteki w zależności od systemu operacyjnego na jakim ma być uruchamiona aplikacja."""
-        if IS_WINDOWS:
-            if self.is_verbose:
-                self.heart_print("Installing requirements for Windows")
-        elif IS_LINUX:
-            if self.is_verbose:
-                self.heart_print("Installing requirements for Linux")
-        else:
-            raise SarenkaBuildError(
-                "Unable to install packages from requirements.")
 
     def __create_cwes_databases_files(self):  # TRICKY
         """Tworzy docelowe bazy dancyh dla aplikacji api_vulnerabilities"""
@@ -293,53 +262,13 @@ class SarenkaBuilder:
             print(
                 f"Applied migrations to {self.user_credentials_db_name} database for 'api_searcher' application.")
 
-    def __feed_cwe_databases(self):  # TODO
-        # if self.is_verbose:
-        #     self.heart_print("Saving Common Weakness Enumeration to databases")
-        # # TODO - zapisać do bazy wszystkie CWE
-
-        # if self.is_verbose:
-        #     self.heart_print(
-        #         "Saving Common Vulnerabilities and Exposures to databases")
-        # # TODO - zapisać do bazy wszystkie CVE
-        pass
-
     def run(self):
-        # self.__install_requirements()
         self.__create_cwes_databases_files()
         self.__create_user_credentials_database()
-        self.__feed_cwe_databases()
-
-class SarenkaEnvCreator:
-    def __init__(self):
-        self.helper = SarenkaHelper()
-
-    def __create_env_linux(self):
-        """
-        Funkcja pomocnicza tworząca virtualenv dla pythona w systemie Linux
-        """
-        self.helper.run_command("pip3 install virtualenv")
-        self.helper.run_command("virtualenv sarenka_env")
-
-    def __create_env_windows(self):
-        """
-        Funkcja pomocnicza tworząca virtualenv dla pythona w systemie Linux
-        """
-        self.helper.run_command("pip3 install virtualenv")
-        self.helper.run_command("python -m venv sarenka_env")
-
-
-    def run(self):
-        """Uruchamia komendy tworzące środowisko w zalezności od systemu operacyjnego na którym uruchomiono skrypt."""
-        if IS_LINUX:
-            self.__create_env_linux()
-        if IS_WINDOWS:
-            self.__create_env_windows()
 
 
 class SarenkaCommand:
     def __init__(self, verbose=True):
-        # self.env_creator = SarenkaEnvCreator()
         self.builder = SarenkaBuilder(verbose)
 
     def create_env(self):
