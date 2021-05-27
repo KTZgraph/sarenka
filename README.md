@@ -76,6 +76,12 @@ App is alive and has been rewriting from scratch on branch [new_master](https://
 * [kalilinuxtutorials.com](https://kalilinuxtutorials.com/sarenka/)
 * [pintait.com](https://www.pintait.com/sarenka/)
 * [osintbrasil.blogspot.com](https://osintbrasil.blogspot.com/2021/01/sarenka-e-uma-ferramenta-de.html)
+* [wenyanet.com](https://www.wenyanet.com/opensource/ko/60407b4e1e5ba078c87a6d81.html)
+* [federatica.space](https://federatica.space/p/211996)
+* [giters.com](https://giters.com/pawlaczyk/sarenka?amp=1)
+* [redhotcyber.com](https://www.redhotcyber.com/post/sarenka-uno-strumento-osint-connesso-a-shodan-censys-cve-dns-whois)
+* [haktechs.com](https://www.haktechs.com/hacking-pentesting-tools/sarenka-an-osint-tool-that-gets-data-from-services-like-shodan-censys-etc-in-one-app/)
+* [hakin9.org](https://hakin9.org/sarenka-an-osint-tool-that-gets-data-from-services-like-shodan-censys-etc-in-one-app/)
 
 
 # Features
