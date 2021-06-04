@@ -32,4 +32,5 @@ urlpatterns = [
     path('api/universities/', include('apps.universities.urls')),
     path('api/vendors/', include('apps.vendors.urls')),
     path('api/vulns/', include('apps.vulnerabilities.urls')),
+    path('api/ataner/', include('apps.ataner.urls')),
 ]

@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'apps.vulnerabilities',
     'apps.cheat_sheets',
     'apps.engines',
+    'apps.ataner',
 ]
 
 MIDDLEWARE = [

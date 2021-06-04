@@ -77,6 +77,7 @@ More cryptography-math tools and reconnaissance scripts are planned.
 * [pintait.com](https://pintait.com/sarenka/)
 * [engetsu-consulting.com](https://www.engetsu-consulting.com/2021/02/05/penetration-testing-tools-reference-guide/)
 * [awesomeopensource.com](https://awesomeopensource.com/project/pawlaczyk/sarenka)
+* [awesomeopensource.com/projects/reconnaissance](https://awesomeopensource.com/projects/reconnaissance)
 * [github.com/The-Art-of-Hacking](https://github.com/The-Art-of-Hacking/h4cker/blob/master/new_tools.md)
 * [otwartezrodla.pl](https://otwartezrodla.pl/) "Domeny"
 * [reconshell.com](https://reconshell.com/sarenka-osint-tool-for-obtaining-and-understanding-attack-surface/)
@@ -87,6 +88,9 @@ More cryptography-math tools and reconnaissance scripts are planned.
 * [jxljscl.com](https://www.jxljscl.com/wap/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E7%9A%84%E5%A4%A7%E6%9D%80%E5%99%A8%E2%80%93KaliLinux.html)
 * [github.com/alphaSeclab](https://github.com/alphaSeclab/sec-daily-2020)
 * [nitter.tedomum.net](https://nitter.tedomum.net/viehgroup/status/1376144989273485316#m)
+* [newsbreak.com](https://www.newsbreak.com/amp/samsung-daily/n/0a79lJ9V)
+* [malwaredevil.com](https://malwaredevil.com/2021/05/21/sarenka-an-osint-tool-that-gets-data-from-services-like-shodan-censys-etc-in-one-app/)
+* [bugbountytips.tech](https://www.bugbountytips.tech/2021/05/27/sarenka-is-an-open-source-intelligenceosint-tool-which-helps-you-obtaining-an/)
 
 
 # Features
@@ -140,6 +144,19 @@ $ git clone https://github.com/pawlaczyk/sarenka.git
 ```
 $ pip3 install -r ./requirements.txt
 ```
+
+#### Install Tesseract
+https://tesseract-ocr.github.io/tessdoc/Home.html#binaries
+
+##### Windows 
+https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v5.0.0-alpha.20210506.exe
+
+#### Linux
+TODO: check Kali Linux
+##### Debian
+https://notesalexp.org/tesseract-ocr/#tesseract_5.x
+###### Ubuntu
+https://launchpad.net/~alex-p/+archive/ubuntu/tesseract-ocr-devel
 
 ##### Build application with sarenka.py script
 ```
