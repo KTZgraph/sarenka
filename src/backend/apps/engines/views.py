@@ -1,20 +1,17 @@
-from django.shortcuts import get_object_or_404
-from rest_framework.response import Response
-from rest_framework import mixins, generics, status
-from rest_framework.reverse import reverse
+from rest_framework import generics
+
 
 from .models import CensysCredentials, ShodanCredentials
 from .serializers import CensysCredentialsSerializer, ShodanCredentialsSerializer
 
 
-class CredentialsAPI(generics.GenericAPIView, mixins.RetrieveModelMixin):
-    def get(self, request):
+class CredentialsCensys(generics.UpdateAPIView):
+    # queryset = CensysCredentials.objects.all()  # wszystkie posty nawet nie opublikowane
+    # serializer_class = CensysCredentialsSerializer
+    pass
 
-        shodan = ShodanCredentials.object()
-        censys = CensysCredentials.object()
 
-
-        return Response({
-            'shodan': str(shodan),
-            'censys': str(censys)
-        })
+class CredentialsShodan(generics.UpdateAPIView):
+    # queryset = ShodanCredentials.objects.all() # wszystkie posty nawet nie opublikowane
+    # serializer_class = ShodanCredentialsSerializer
+    pass

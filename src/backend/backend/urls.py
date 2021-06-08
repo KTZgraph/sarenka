@@ -3,13 +3,14 @@ from django.urls import path, include
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
-
+from rest_framework import schemas
+from rest_framework.documentation import include_docs_urls
 
 schema_view = get_schema_view(
    openapi.Info(
       title="SARENKA",
       default_version='0.0.1',
-      description="OSINT",
+      description="SARENKA API",
       terms_of_service="",
       contact=openapi.Contact(email="pawlaczyk"),
       license=openapi.License(name="MIT"),
@@ -32,4 +33,11 @@ urlpatterns = [
     path('api/universities/', include('apps.universities.urls')),
     path('api/vendors/', include('apps.vendors.urls')),
     path('api/vulns/', include('apps.vulnerabilities.urls')),
+    # https://www.django-rest-framework.org/api-guide/schemas/
+    path('docs/', include_docs_urls(title='SarenkaAPI')),
+    path('schema', schemas.get_schema_view(
+        title='SarenkaAPI',
+        description='API for for the SARENKA',
+        version='0.0.1',
+    ), name='openapi-schema'),
 ]
