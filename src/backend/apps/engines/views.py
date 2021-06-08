@@ -1,17 +1,27 @@
-from rest_framework import generics
-
+from rest_framework import viewsets
+from rest_framework.generics import get_object_or_404
 
 from .models import CensysCredentials, ShodanCredentials
 from .serializers import CensysCredentialsSerializer, ShodanCredentialsSerializer
 
 
-class CredentialsCensys(generics.UpdateAPIView):
-    # queryset = CensysCredentials.objects.all()  # wszystkie posty nawet nie opublikowane
-    # serializer_class = CensysCredentialsSerializer
-    pass
+class CensysCredentialsView(viewsets.ModelViewSet):
+    serializer_class = CensysCredentialsSerializer
+
+    def get_object(self, queryset=None, **kwargs):
+        return get_object_or_404(CensysCredentials, pk=1)
+
+    # Define Custom Queryset
+    def get_queryset(self):
+        return CensysCredentials.credentials
 
 
-class CredentialsShodan(generics.UpdateAPIView):
-    # queryset = ShodanCredentials.objects.all() # wszystkie posty nawet nie opublikowane
-    # serializer_class = ShodanCredentialsSerializer
-    pass
+class ShodanCredentialsView(viewsets.ModelViewSet):
+    serializer_class = ShodanCredentialsSerializer
+
+    def get_object(self, queryset=None, **kwargs):
+        return get_object_or_404(ShodanCredentials, pk=1)
+
+    # Define Custom Queryset
+    def get_queryset(self):
+        return ShodanCredentials.credentials

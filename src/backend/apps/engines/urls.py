@@ -1,10 +1,10 @@
-from django.urls import path
+from rest_framework.routers import DefaultRouter
 
-from .views import CensysCredentials, CredentialsShodan
+from .views import CensysCredentialsView, ShodanCredentialsView
 
 app_name = 'engines'
 
-urlpatterns = [
-    # path('credentials_censys/', CensysCredentials.as_view(), name='credentials_censys'),
-    # path('credentials_shodan/', CredentialsShodan.as_view(), name='credentials_shodan'),
-]
+router = DefaultRouter()
+router.register('censys-credentials', CensysCredentialsView, basename='censys-credentials')
+router.register('shodan-credentials', ShodanCredentialsView, basename='shodan-credentials')
+urlpatterns = router.urls
