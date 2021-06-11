@@ -32,5 +32,5 @@ setup(
     },
     url="https://github.com/pawlaczyk/sarenka",
     author="Dominika Pawlaczyk, Michał Pawlaczyk, Karolina Słonka",
-    autor_email="dominika.pawlaczyk9@gmail.com"
+    author_email="dominika.pawlaczyk9@gmail.com"
 )
