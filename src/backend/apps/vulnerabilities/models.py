@@ -1,3 +1,5 @@
 from django.db import models
 
-# Create your models here.
+#
+# class CVEDetails(models.Model):
+#     code = models.CharField()

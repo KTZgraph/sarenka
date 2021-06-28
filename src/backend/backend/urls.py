@@ -32,7 +32,7 @@ urlpatterns = [
     path('api/tools/', include('apps.tools.urls')),
     path('api/universities/', include('apps.universities.urls')),
     path('api/vendors/', include('apps.vendors.urls')),
-    path('api/vulns/', include('apps.vulnerabilities.urls')),
+    path('api/vulns/', include('apps.vulnerabilities.api.urls')),
     # https://www.django-rest-framework.org/api-guide/schemas/
     path('docs/', include_docs_urls(title='SarenkaAPI')),
     path('schema', schemas.get_schema_view(

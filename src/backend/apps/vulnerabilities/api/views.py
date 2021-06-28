@@ -4,7 +4,7 @@ from django.shortcuts import render
 from rest_framework import generics, mixins
 from rest_framework.response import Response
 
-from .cwes.cwe_top_25 import CWETOP25
+from apps.vulnerabilities.cwes.cwe_top_25 import CWETOP25
 
 
 class CVEGenericAPIView(generics.GenericAPIView,  mixins.ListModelMixin, mixins.RetrieveModelMixin):
