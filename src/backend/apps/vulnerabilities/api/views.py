@@ -13,7 +13,12 @@ from apps.vulnerabilities import models
 from apps.vulnerabilities.cwes.cwe_top_25 import CWETOP25
 
 
-class CWEView(generics.ListCreateAPIView):
+class CWEList(generics.ListAPIView):
+    serializer_class = serializers.CWESerializer
+    queryset = models.CWE.objects.all()
+
+
+class CWEDetail(generics.RetrieveUpdateAPIView):
     serializer_class = serializers.CWESerializer
     queryset = models.CWE.objects.all()
 
