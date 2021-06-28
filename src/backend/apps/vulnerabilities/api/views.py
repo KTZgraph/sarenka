@@ -37,6 +37,10 @@ class CVECreate(generics.CreateAPIView):
         return cve
 
 
+class CVEDetail(generics.RetrieveUpdateAPIView):
+    serializer_class = serializers.CVESerializer
+    queryset = models.CVE.objects.all()
+
 class VectorView(generics.ListCreateAPIView):
     serializer_class = serializers.VectorSerializer
     queryset = models.Vector.objects.all()
