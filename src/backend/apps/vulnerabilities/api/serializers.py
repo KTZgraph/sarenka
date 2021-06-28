@@ -32,7 +32,6 @@ class CVESerializer(serializers.ModelSerializer):
 
 
 class CWESerializer(serializers.ModelSerializer):
-    # cve_list = CVESerializer(many=True, read_only=True)
     cve_list = serializers.StringRelatedField(many=True, read_only=True)
 
     class Meta:
