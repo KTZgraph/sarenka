@@ -12,7 +12,10 @@ urlpatterns = [
     path('cwe/<int:pk>/cve-create/', views.CVECreate.as_view(), name='cve-create'),
     path('cve/<int:pk>/', views.CVEDetail.as_view(), name='cve-detail'),
 
+    path('cve/<int:pk>/cpe-create/', views.CPECreate.as_view(), name='cpe-create'),
+    path('cpe-list/', views.CPEList.as_view(), name='cpe-list'),
+
+
     path('vector-list/', views.VectorView.as_view(), name='vector-list'),
     path('reference-list/', views.ReferenceView.as_view(), name='reference-list'),
-    path('cpe-list/', views.CPEView.as_view(), name='cpe-list'),
 ]

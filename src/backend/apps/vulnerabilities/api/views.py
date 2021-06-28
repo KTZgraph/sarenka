@@ -52,6 +52,15 @@ class ReferenceView(generics.ListCreateAPIView):
     queryset = models.Reference.objects.all()
 
 
-class CPEView(generics.ListCreateAPIView):
+class CPEList(generics.ListAPIView):
     serializer_class = serializers.CPESerializer
     queryset = models.CPE.objects.all()
+
+
+class CPECreate(generics.CreateAPIView):
+    serializer_class = serializers.CPESerializer
+
+    def get_queryset(self):
+        pk = self.kwargs['pk']
+        cpe = models.CPE.objects.filter(cve__id=pk)
+        return cpe
