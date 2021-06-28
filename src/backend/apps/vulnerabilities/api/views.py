@@ -18,25 +18,21 @@ class CWEView(generics.ListCreateAPIView):
     queryset = models.CWE.objects.all()
 
 
-
-class CVEGenericAPIView(generics.GenericAPIView,  mixins.ListModelMixin, mixins.RetrieveModelMixin):
-    def get(self, request, pk=None):
-        if pk:
-            return Response({
-                'data': "CVE test response pk"
-            })
-        return Response({
-            'data': "CVE test response"
-        })
+class CVEView(generics.ListCreateAPIView):
+    serializer_class = serializers.CVESerializer
+    queryset = models.CVE.objects.all()
 
 
-class CWEGenericAPIView(generics.GenericAPIView,  mixins.ListModelMixin, mixins.RetrieveModelMixin):
-    def get(self, request, pk=None):
-        if pk:
-            return Response({
-                'data': "CWE test response pk"
-            })
+class VectorView(generics.ListCreateAPIView):
+    serializer_class = serializers.VectorSerializer
+    queryset = models.Vector.objects.all()
 
-        return Response({
-            'data': CWETOP25().get()
-        })
+
+class ReferenceView(generics.ListCreateAPIView):
+    serializer_class = serializers.ReferenceSerializer
+    queryset = models.Reference.objects.all()
+
+
+class CPEView(generics.ListCreateAPIView):
+    serializer_class = serializers.CPESerializer
+    queryset = models.CPE.objects.all()

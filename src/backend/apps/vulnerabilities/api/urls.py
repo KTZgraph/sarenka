@@ -5,9 +5,9 @@ from apps.vulnerabilities.api import views
 app_name = 'vulnerabilities'
 
 urlpatterns = [
-    path('cwes/', views.CWEView.as_view(), name='cwe-list'),
-    # path('cves/', CVEGenericAPIView.as_view()),
-    # path('cves/<str:pk>/', CVEGenericAPIView.as_view()),
-    # path('cwes/', CWEGenericAPIView.as_view()),
-    # path('cwes/<str:pk>/', CWEGenericAPIView.as_view()),
+    path('cwe-list/', views.CWEView.as_view(), name='cwe-list'),
+    path('cve-list/', views.CVEView.as_view(), name='cve-list'),
+    path('vector-list/', views.VectorView.as_view(), name='vector-list'),
+    path('reference-list/', views.ReferenceView.as_view(), name='reference-list'),
+    path('cpe-list/', views.CPEView.as_view(), name='cpe-list'),
 ]

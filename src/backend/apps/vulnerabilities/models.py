@@ -3,6 +3,7 @@ from django.db import models
 
 class CWE(models.Model):
     code = models.CharField(max_length=10, unique=True)
+    # krókie opisy z https://nvd.nist.gov/vuln/categories
     short_description = models.CharField(max_length=500)
     description = models.TextField()
 
