@@ -47,7 +47,21 @@ class VectorView(generics.ListCreateAPIView):
     queryset = models.Vector.objects.all()
 
 
-class ReferenceView(generics.ListCreateAPIView):
+class ReferenceList(generics.ListAPIView):
+    serializer_class = serializers.ReferenceSerializer
+    queryset = models.Reference.objects.all()
+
+
+class ReferenceCreate(generics.CreateAPIView):
+    serializer_class = serializers.ReferenceSerializer
+
+    def get_queryset(self):
+        pk = self.kwargs['pk']
+        reference = models.Reference.objects.filter(cve__id=pk)
+        return reference
+
+
+class ReferenceDetail(generics.RetrieveUpdateAPIView):
     serializer_class = serializers.ReferenceSerializer
     queryset = models.Reference.objects.all()
 
@@ -64,6 +78,7 @@ class CPECreate(generics.CreateAPIView):
         pk = self.kwargs['pk']
         cpe = models.CPE.objects.filter(cve__id=pk)
         return cpe
+
 
 class CPEDetail(generics.RetrieveUpdateAPIView):
     serializer_class = serializers.CPESerializer

@@ -17,5 +17,9 @@ urlpatterns = [
     path('cve/<int:pk>/cpe-create/', views.CPECreate.as_view(), name='cpe-create'),
 
     path('vector-list/', views.VectorView.as_view(), name='vector-list'),
-    path('reference-list/', views.ReferenceView.as_view(), name='reference-list'),
+
+    path('reference-list/', views.ReferenceList.as_view(), name='reference-list'),
+    path('reference/<int:pk>/', views.ReferenceDetail.as_view(), name='reference-detail'),
+    path('cve/<int:pk>/reference-create/', views.ReferenceCreate.as_view(), name='reference-create'),
+
 ]
