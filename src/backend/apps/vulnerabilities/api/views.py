@@ -23,7 +23,7 @@ class CWEDetail(generics.RetrieveUpdateAPIView):
     queryset = models.CWE.objects.all()
 
 
-class CVEView(generics.ListCreateAPIView):
+class CVEList(generics.ListAPIView):
     serializer_class = serializers.CVESerializer
     queryset = models.CVE.objects.all()
 
@@ -40,6 +40,7 @@ class CVECreate(generics.CreateAPIView):
 class CVEDetail(generics.RetrieveUpdateAPIView):
     serializer_class = serializers.CVESerializer
     queryset = models.CVE.objects.all()
+
 
 class VectorView(generics.ListCreateAPIView):
     serializer_class = serializers.VectorSerializer
