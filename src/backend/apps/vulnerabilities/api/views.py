@@ -28,6 +28,15 @@ class CVEView(generics.ListCreateAPIView):
     queryset = models.CVE.objects.all()
 
 
+class CVECreate(generics.CreateAPIView):
+    serializer_class = serializers.CVESerializer
+
+    def get_queryset(self):
+        pk = self.kwargs['pk']
+        cve = models.CVE.objects.filter(cwe__id=pk)
+        return cve
+
+
 class VectorView(generics.ListCreateAPIView):
     serializer_class = serializers.VectorSerializer
     queryset = models.Vector.objects.all()
