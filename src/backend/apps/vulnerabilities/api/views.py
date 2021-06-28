@@ -64,3 +64,7 @@ class CPECreate(generics.CreateAPIView):
         pk = self.kwargs['pk']
         cpe = models.CPE.objects.filter(cve__id=pk)
         return cpe
+
+class CPEDetail(generics.RetrieveUpdateAPIView):
+    serializer_class = serializers.CPESerializer
+    queryset = models.CPE.objects.all()
