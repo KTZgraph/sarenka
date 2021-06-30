@@ -1,3 +1,11 @@
+"""
+http://127.0.0.1:8000/api/vulns/vector/1/
+
+http://127.0.0.1:8000/api/vulns/vector-list/search/?severity=2 #with slash at the end doesn't work
+http://127.0.0.1:8000/api/vulns/vector-list/search/?severity=medium #with slash at the end doesn't work
+http://127.0.0.1:8000/api/vulns/vector-list/search/?cve=cve-1 #with slash at the end doesn't work
+http://127.0.0.1:8000/api/vulns/vector-list/search/?severity=2&cve=cve-1 #with slash at the end doesn't work
+"""
 from django.urls import path, include
 
 from apps.vulnerabilities.api import views
@@ -22,6 +30,7 @@ urlpatterns = [
     path('cve/<int:pk>/reference-create/', views.ReferenceCreate.as_view(), name='reference-create'),
 
     path('vector-list/', views.VectorView.as_view(), name='vector-list'),
+    path('vector-list/search/', views.VectorSearch.as_view(), name='vector-search'),
     path('vector-list/<str:severity>/', views.VectorSeverityList.as_view(), name='vector-list-filter-severity'),
     path('vector/<int:pk>/', views.VectorDetail.as_view(), name='vector-detail'),
 

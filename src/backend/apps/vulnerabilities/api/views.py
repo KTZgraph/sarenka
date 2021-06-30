@@ -65,18 +65,42 @@ class VectorView(generics.ListCreateAPIView):
 
 class VectorSeverityList(generics.ListAPIView):
     """
-    Filter by severity level - return list of vectors by severity.
+    Filter by severity level - return list of vectors by severity name from choice field (HIGH, MEDIUM, LOW).
     """
     serializer_class = serializers.VectorSerializer
 
     def get_queryset(self):
         severity = self.kwargs['severity']
         if severity.isdigit():
-            value = int(severity)
+            severity_id = int(severity)
         else:
-            value_map = {v: k for k, v in models.Vector.SEVERITY}
-            value = value_map[severity.upper()]
-        return models.Vector.objects.filter(base_severity=value)
+            severity_levels = {v: k for k, v in models.Vector.SEVERITY}
+            severity_id = severity_levels[severity.upper()]
+        return models.Vector.objects.filter(base_severity=severity_id)
+
+
+class VectorSearch(generics.ListAPIView):
+    """
+    Filter by url parameters [cve, severity]
+    """
+    serializer_class = serializers.VectorSerializer
+
+    def get_queryset(self):
+        severity = self.request.query_params.get('severity', None)
+        cve = self.request.query_params.get('cve', None)
+
+        if severity is not None:
+            if severity.isdigit():
+                severity_id = int(severity)
+            else:
+                severity_levels = {v: k for k, v in models.Vector.SEVERITY}
+                severity_id = severity_levels[severity.upper()]
+            return models.Vector.objects.filter(base_severity=severity_id)
+        if cve is not None:
+            # zwraca wektory dla podanego cve
+            cve = cve.upper()
+            # vectors = models.CVE.get(code=cve).vectors
+            return models.Vector.objects.filter(cve__code=cve)
 
 
 class VectorDetail(generics.RetrieveUpdateAPIView):
