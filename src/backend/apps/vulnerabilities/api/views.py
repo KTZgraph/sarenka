@@ -95,6 +95,7 @@ class VectorSearch(generics.ListAPIView):
         base_score = self.request.query_params.get('base_score', None)
         exp_score = self.request.query_params.get('exp_score', None)
         impact_score = self.request.query_params.get('impact_score', None)
+        cwe = self.request.query_params.get('cwe', None)
 
         if severity is not None:
             if severity.isdigit():
@@ -128,7 +129,8 @@ class VectorSearch(generics.ListAPIView):
             return models.Vector.objects.filter(exploitability_score=float(exp_score))
         if impact_score is not None:
             return models.Vector.objects.filter(impact_score=float(impact_score))
-
+        if cwe is not None:
+            return models.Vector.objects.filter(cve__cwe__code__icontains=cwe)
 
 class VectorDetail(generics.RetrieveUpdateAPIView):
     serializer_class = serializers.VectorSerializer
