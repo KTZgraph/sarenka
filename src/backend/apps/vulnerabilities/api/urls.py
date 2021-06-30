@@ -9,6 +9,9 @@ http://127.0.0.1:8000/api/vulns/vector-list/search/?severity=2&cve=cve-1
 http://127.0.0.1:8000/api/vulns/vector-list/search/?code=QVY6TC9BQzo=
 http://127.0.0.1:8000/api/vulns/vector-list/search/?version=2.0
 http://127.0.0.1:8000/api/vulns/vector-list/search/?version=CVSSV3.1
+http://127.0.0.1:8000/api/vulns/vector-list/search/?base_score=7.8
+http://127.0.0.1:8000/api/vulns/vector-list/search/?exp_score=1.8
+http://127.0.0.1:8000/api/vulns/vector-list/search/?impact_score=5.9
 """
 from django.urls import path, include
 

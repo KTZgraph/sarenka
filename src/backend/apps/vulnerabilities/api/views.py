@@ -85,7 +85,6 @@ class VectorSearch(generics.ListAPIView):
     """
     Filter by url parameters [cve, severity]
     """
-    # TODO: http://127.0.0.1:8000/api/vulns/vector-list/search/?severity=2&cve=cve-1
     serializer_class = serializers.VectorSerializer
 
     def get_queryset(self):
@@ -93,6 +92,9 @@ class VectorSearch(generics.ListAPIView):
         cve = self.request.query_params.get('cve', None)
         code_b64 = self.request.query_params.get('code', None)
         version = self.request.query_params.get('version', None)
+        base_score = self.request.query_params.get('base_score', None)
+        exp_score = self.request.query_params.get('exp_score', None)
+        impact_score = self.request.query_params.get('impact_score', None)
 
         if severity is not None:
             if severity.isdigit():
@@ -119,6 +121,13 @@ class VectorSearch(generics.ListAPIView):
             code_str_bytes = base64.b64decode(code_base64_bytes)
             code = code_str_bytes.decode('ascii')
             return models.Vector.objects.filter(code__icontains=code)
+
+        if base_score is not None:
+            return models.Vector.objects.filter(base_score=float(base_score))
+        if exp_score is not None:
+            return models.Vector.objects.filter(exploitability_score=float(exp_score))
+        if impact_score is not None:
+            return models.Vector.objects.filter(impact_score=float(impact_score))
 
 
 class VectorDetail(generics.RetrieveUpdateAPIView):
