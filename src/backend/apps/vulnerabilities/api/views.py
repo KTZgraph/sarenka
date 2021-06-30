@@ -41,7 +41,6 @@ class CWECVEList(generics.ListAPIView):
 
     def get_queryset(self):
         cwe = self.kwargs['cwe']
-        print("CWE: ", cwe)
         return models.CVE.objects.filter(cwe__code=cwe.upper())
 
 
