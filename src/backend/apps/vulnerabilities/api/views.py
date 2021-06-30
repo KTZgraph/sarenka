@@ -1,12 +1,5 @@
-from django.shortcuts import get_object_or_404
-from rest_framework.response import Response
-from rest_framework.exceptions import ValidationError
-from rest_framework.views import APIView
-from rest_framework.status import HTTP_204_NO_CONTENT, HTTP_400_BAD_REQUEST, HTTP_404_NOT_FOUND
-from rest_framework import generics, viewsets
-
-from rest_framework import generics, mixins
-from rest_framework.response import Response
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import generics
 
 import base64
 
@@ -15,25 +8,26 @@ from apps.vulnerabilities import models
 from apps.vulnerabilities.cwes.cwe_top_25 import CWETOP25
 
 
-class CWEView(generics.ListCreateAPIView):
+class CWEList(generics.ListAPIView):
     serializer_class = serializers.CWESerializer
     queryset = models.CWE.objects.all()
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['code'] # Nie pozwala na tworzenie nowego CWE
+
+    def get_queryset(self):
+        cwe = self.request.query_params.get('cwe', None)
 
 
 class CWEDetail(generics.RetrieveUpdateAPIView):
     serializer_class = serializers.CWESerializer
     queryset = models.CWE.objects.all()
 
-    def get_serializer_context(self):
-        context = super().get_serializer_context()
-        context.update({"request": self.request})
-        return context
-
 
 class CVEList(generics.ListAPIView):
     serializer_class = serializers.CVESerializer
     queryset = models.CVE.objects.all()
-
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['cwe__code']
 
 class CWECVEList(generics.ListAPIView):
     """
@@ -131,6 +125,7 @@ class VectorSearch(generics.ListAPIView):
             return models.Vector.objects.filter(impact_score=float(impact_score))
         if cwe is not None:
             return models.Vector.objects.filter(cve__cwe__code__icontains=cwe)
+
 
 class VectorDetail(generics.RetrieveUpdateAPIView):
     serializer_class = serializers.VectorSerializer
