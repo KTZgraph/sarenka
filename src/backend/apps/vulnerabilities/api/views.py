@@ -22,10 +22,27 @@ class CWEDetail(generics.RetrieveUpdateAPIView):
     serializer_class = serializers.CWESerializer
     queryset = models.CWE.objects.all()
 
+    def get_serializer_context(self):
+        context = super().get_serializer_context()
+        context.update({"request": self.request})
+        return context
+
 
 class CVEList(generics.ListAPIView):
     serializer_class = serializers.CVESerializer
     queryset = models.CVE.objects.all()
+
+
+class CWECVEList(generics.ListAPIView):
+    """
+    Filter by cwe code - return list of CVEs for specific CWE.
+    """
+    serializer_class = serializers.CVESerializer
+
+    def get_queryset(self):
+        cwe = self.kwargs['cwe']
+        print("CWE: ", cwe)
+        return models.CVE.objects.filter(cwe__code=cwe.upper())
 
 
 class CVECreate(generics.CreateAPIView):
@@ -43,6 +60,27 @@ class CVEDetail(generics.RetrieveUpdateAPIView):
 
 
 class VectorView(generics.ListCreateAPIView):
+    serializer_class = serializers.VectorSerializer
+    queryset = models.Vector.objects.all()
+
+
+class VectorSeverityList(generics.ListAPIView):
+    """
+    Filter by severity level - return list of vectors by severity.
+    """
+    serializer_class = serializers.VectorSerializer
+
+    def get_queryset(self):
+        severity = self.kwargs['severity']
+        if severity.isdigit():
+            value = int(severity)
+        else:
+            value_map = {v: k for k, v in models.Vector.SEVERITY}
+            value = value_map[severity.upper()]
+        return models.Vector.objects.filter(base_severity=value)
+
+
+class VectorDetail(generics.RetrieveUpdateAPIView):
     serializer_class = serializers.VectorSerializer
     queryset = models.Vector.objects.all()
 

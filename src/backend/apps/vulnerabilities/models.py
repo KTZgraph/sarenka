@@ -11,21 +11,11 @@ class CWE(models.Model):
         return self.code
 
 
-class CVE(models.Model):
-    cwe = models.ForeignKey(CWE, on_delete=models.PROTECT, related_name='cve_list')
-    code = models.CharField(max_length=15, unique=True)
-    description = models.TextField()
-    published = models.DateField()
-    updated = models.DateField()
-
-    def __str__(self):
-        return self.code
-
-
 class Vector(models.Model):
     VERSION = [
-        ('3', 'CVSSV3'),
-        ('2', 'CVSSV2'),
+        ('3.1', 'CVSSV3.1'),
+        ('3.0', 'CVSSV3.0'),
+        ('2.0', 'CVSSV2.0'),
     ]
     SEVERITY = [
         ('0', 'LOW'),
@@ -33,12 +23,23 @@ class Vector(models.Model):
         ('2', 'HIGH'),
     ]
     version = models.CharField(choices=VERSION, max_length=6)
-    code = models.CharField(max_length=50)
+    code = models.CharField(max_length=50, unique=True)
     base_score = models.CharField(max_length=5)
     base_severity = models.CharField(choices=SEVERITY, max_length=6)
     exploitability_score = models.CharField(max_length=5)
     impact_score = models.CharField(max_length=5)
-    cve = models.ForeignKey(CVE, on_delete=models.CASCADE, related_name='vector_list')
+
+    def __str__(self):
+        return self.code
+
+
+class CVE(models.Model):
+    cwe = models.ForeignKey(CWE, on_delete=models.PROTECT, related_name='cve_list')
+    code = models.CharField(max_length=15, unique=True)
+    description = models.TextField()
+    published = models.DateField()
+    updated = models.DateField()
+    vectors = models.ManyToManyField(Vector)
 
     def __str__(self):
         return self.code
