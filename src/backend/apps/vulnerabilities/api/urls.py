@@ -1,10 +1,14 @@
 """
 http://127.0.0.1:8000/api/vulns/vector/1/
 
-http://127.0.0.1:8000/api/vulns/vector-list/search/?severity=2 #with slash at the end doesn't work
-http://127.0.0.1:8000/api/vulns/vector-list/search/?severity=medium #with slash at the end doesn't work
-http://127.0.0.1:8000/api/vulns/vector-list/search/?cve=cve-1 #with slash at the end doesn't work
-http://127.0.0.1:8000/api/vulns/vector-list/search/?severity=2&cve=cve-1 #with slash at the end doesn't work
+#with slash at the end doesn't work
+http://127.0.0.1:8000/api/vulns/vector-list/search/?severity=2
+http://127.0.0.1:8000/api/vulns/vector-list/search/?severity=medium
+http://127.0.0.1:8000/api/vulns/vector-list/search/?cve=cve-1
+http://127.0.0.1:8000/api/vulns/vector-list/search/?severity=2&cve=cve-1
+http://127.0.0.1:8000/api/vulns/vector-list/search/?code=QVY6TC9BQzo=
+http://127.0.0.1:8000/api/vulns/vector-list/search/?version=2.0
+http://127.0.0.1:8000/api/vulns/vector-list/search/?version=CVSSV3.1
 """
 from django.urls import path, include
 

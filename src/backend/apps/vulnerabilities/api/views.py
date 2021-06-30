@@ -8,6 +8,8 @@ from rest_framework import generics, viewsets
 from rest_framework import generics, mixins
 from rest_framework.response import Response
 
+import base64
+
 from apps.vulnerabilities.api import serializers
 from apps.vulnerabilities import models
 from apps.vulnerabilities.cwes.cwe_top_25 import CWETOP25
@@ -83,11 +85,14 @@ class VectorSearch(generics.ListAPIView):
     """
     Filter by url parameters [cve, severity]
     """
+    # TODO: http://127.0.0.1:8000/api/vulns/vector-list/search/?severity=2&cve=cve-1
     serializer_class = serializers.VectorSerializer
 
     def get_queryset(self):
         severity = self.request.query_params.get('severity', None)
         cve = self.request.query_params.get('cve', None)
+        code_b64 = self.request.query_params.get('code', None)
+        version = self.request.query_params.get('version', None)
 
         if severity is not None:
             if severity.isdigit():
@@ -96,11 +101,24 @@ class VectorSearch(generics.ListAPIView):
                 severity_levels = {v: k for k, v in models.Vector.SEVERITY}
                 severity_id = severity_levels[severity.upper()]
             return models.Vector.objects.filter(base_severity=severity_id)
+
+        if version is not None:
+            try:
+                version_id = float(version)
+            except ValueError:
+                version_list = {v: k for k, v in models.Vector.VERSION}
+                version_id = version_list[version.upper()]
+            return models.Vector.objects.filter(version=version_id)
+
         if cve is not None:
-            # zwraca wektory dla podanego cve
             cve = cve.upper()
-            # vectors = models.CVE.get(code=cve).vectors
             return models.Vector.objects.filter(cve__code=cve)
+
+        if code_b64 is not None:
+            code_base64_bytes = code_b64.encode("ascii")
+            code_str_bytes = base64.b64decode(code_base64_bytes)
+            code = code_str_bytes.decode('ascii')
+            return models.Vector.objects.filter(code__icontains=code)
 
 
 class VectorDetail(generics.RetrieveUpdateAPIView):
