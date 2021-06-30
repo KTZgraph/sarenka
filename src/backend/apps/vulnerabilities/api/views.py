@@ -12,7 +12,7 @@ class CWEList(generics.ListAPIView):
     serializer_class = serializers.CWESerializer
     queryset = models.CWE.objects.all()
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['code'] # Nie pozwala na tworzenie nowego CWE
+    filterset_fields = ['code']  # Nie pozwala na tworzenie nowego CWE, dobre do predefiniowanych wartosci
 
     def get_queryset(self):
         cwe = self.request.query_params.get('cwe', None)
@@ -27,7 +27,8 @@ class CVEList(generics.ListAPIView):
     serializer_class = serializers.CVESerializer
     queryset = models.CVE.objects.all()
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['cwe__code']
+    filterset_fields = ['cwe__code']  # by defautl exact match
+
 
 class CWECVEList(generics.ListAPIView):
     """
@@ -37,7 +38,7 @@ class CWECVEList(generics.ListAPIView):
 
     def get_queryset(self):
         cwe = self.kwargs['cwe']
-        return models.CVE.objects.filter(cwe__code=cwe.upper())
+        return models.CVE.objects.filter(cwe__code__icontains=cwe.upper())
 
 
 class CVECreate(generics.CreateAPIView):
@@ -135,6 +136,10 @@ class VectorDetail(generics.RetrieveUpdateAPIView):
 class ReferenceList(generics.ListAPIView):
     serializer_class = serializers.ReferenceSerializer
     queryset = models.Reference.objects.all()
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['is_confirmed', 'is_exploit', 'is_vendor_advisory']
+    # /api/vulns/reference-list/?is_confirmed=true; api/vulns/reference-list/?is_confirmed=true&is_exploit=true;
+    # api/vulns/reference-list/?is_confirmed=true&is_exploit=true&is_vendor_advisory=true
 
 
 class ReferenceCreate(generics.CreateAPIView):
@@ -154,6 +159,8 @@ class ReferenceDetail(generics.RetrieveUpdateAPIView):
 class CPEList(generics.ListAPIView):
     serializer_class = serializers.CPESerializer
     queryset = models.CPE.objects.all()
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['is_vulnerable']  # api/vulns/cpe-list/?is_vulnerable=true
 
 
 class CPECreate(generics.CreateAPIView):
