@@ -1,0 +1,89 @@
+nav.menu-main
+  position: absolute
+  top: 0
+  left: calc(48px - #{$menu-width})
+  //background-color: $sarenka-black
+  width: $menu-width
+  height: calc(100vh - #{$header-height})
+  font-size: 1.8rem
+  z-index: 1
+
+  ul
+    display: flex
+    flex-direction: column
+
+    li
+      background-color: $sarenka-black
+      transition: .2s
+      height: 100%
+      line-height: 250%
+      /*okreslic wysoklosc linii*/
+
+
+      &:first-child
+        text-transform: uppercase
+
+      &:nth-child(even)
+        background-color: $sarenka-black-lighter
+
+      .nav-link
+        display: flex
+        align-content: stretch
+        justify-content: space-between
+        color: white
+        text-decoration: none
+        flex-basis: 100%
+        padding-left: 3rem
+        width: 100%
+        height: 100%
+        border-bottom: 3px solid black
+
+        .menu-name
+          background-color: pink
+          align-self: flex-start
+          margin-bottom: auto
+          height: 100%
+          width: 100%
+
+      //  arrow button - hide/active menu
+      div.nav-link
+        justify-content: flex-end
+        div.menu-ico i
+          transition: .3s
+
+      &:hover i
+        color: #ccc
+
+      &:hover .nav-link
+        background-color: black
+        color: darkred
+
+      &:hover .nav-link div.menu-ico
+        background-color: $sarenka-red
+        border-left: 2px solid white
+        color: white
+
+      & div.menu-ico
+        background-color: #6f1717
+        font-size: 2rem
+        padding-right: 5px
+        text-align: center
+        margin-right: 0
+        border-left: 2px solid darkred
+        width: 50px
+        i
+          transition: .2s
+
+      & div.menu-ico.menu-ico-logo
+        line-height: 100%
+        padding: calc(10% / 2)
+
+        img
+          width: 90%
+
+//active menu
+nav.menu-main.active
+  top: 0
+  left: 0
+  & div.nav-link div.menu-ico i
+    transform: rotate(-180deg)

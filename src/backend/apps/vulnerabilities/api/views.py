@@ -1,5 +1,6 @@
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import generics
+
+from rest_framework import generics, filters
 
 import base64
 
@@ -9,13 +10,14 @@ from apps.vulnerabilities.cwes.cwe_top_25 import CWETOP25
 
 
 class CWEList(generics.ListAPIView):
+    """
+    /api/vulns/cwe-list/?search=NVD&?code=CVE-3
+    """
     serializer_class = serializers.CWESerializer
     queryset = models.CWE.objects.all()
-    filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['code']  # Nie pozwala na tworzenie nowego CWE, dobre do predefiniowanych wartosci
-
-    def get_queryset(self):
-        cwe = self.request.query_params.get('cwe', None)
+    filter_backends = [filters.SearchFilter, DjangoFilterBackend]
+    search_fields = ['short_description', 'description']
+    filterset_fields = ['code']  # dokładne szukanie, łącznie z wielkością liter
 
 
 class CWEDetail(generics.RetrieveUpdateAPIView):
@@ -27,7 +29,7 @@ class CVEList(generics.ListAPIView):
     serializer_class = serializers.CVESerializer
     queryset = models.CVE.objects.all()
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['cwe__code']  # by defautl exact match
+    filterset_fields = ['cwe__code']  # api/vulns/cve-list/?cwe__code=CWE-Other
 
 
 class CWECVEList(generics.ListAPIView):
@@ -78,7 +80,7 @@ class VectorSeverityList(generics.ListAPIView):
 
 class VectorSearch(generics.ListAPIView):
     """
-    Filter by url parameters [cve, severity]
+    api/vulns/vector-list/search/?severity=medium
     """
     serializer_class = serializers.VectorSerializer
 
@@ -119,11 +121,11 @@ class VectorSearch(generics.ListAPIView):
             return models.Vector.objects.filter(code__icontains=code)
 
         if base_score is not None:
-            return models.Vector.objects.filter(base_score=float(base_score))
+            return models.Vector.objects.filter(base_score=base_score)
         if exp_score is not None:
-            return models.Vector.objects.filter(exploitability_score=float(exp_score))
+            return models.Vector.objects.filter(exploitability_score=exp_score)
         if impact_score is not None:
-            return models.Vector.objects.filter(impact_score=float(impact_score))
+            return models.Vector.objects.filter(impact_score=impact_score)
         if cwe is not None:
             return models.Vector.objects.filter(cve__cwe__code__icontains=cwe)
 
@@ -136,6 +138,7 @@ class VectorDetail(generics.RetrieveUpdateAPIView):
 class ReferenceList(generics.ListAPIView):
     serializer_class = serializers.ReferenceSerializer
     queryset = models.Reference.objects.all()
+    # dokłądne fitlrowanie
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['is_confirmed', 'is_exploit', 'is_vendor_advisory']
     # /api/vulns/reference-list/?is_confirmed=true; api/vulns/reference-list/?is_confirmed=true&is_exploit=true;

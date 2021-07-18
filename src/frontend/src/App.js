@@ -1,24 +1,34 @@
 import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+
+import Header from "./components/Header";
+import HomeScreen from "./screens/HomeScreen";
+import CVEScreen from "./screens/CVEScreen";
+import CWEScreen from "./screens/CWEScreen";
+import CPEScreen from "./screens/CPEScreen";
+import ReferenceScreen from "./screens/ReferenceScreen";
+import VectorScreen from "./screens/VectorScreen";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header/>
+      <main className="py-3">
+        <div>
+          <Route path='/' component={HomeScreen} exact/>
+          {/*vulns*/}
+          <Route path='/cwe-list' component={CWEScreen}/>
+          <Route path='/cve-list' component={CVEScreen}/>
+          <Route path='/cpe-list' component={CPEScreen}/>
+          <Route path='/reference-list' component={ReferenceScreen}/>
+          <Route path='/vector-list' component={VectorScreen}/>
+
+          {/*id z cart opcjonalny parametr*/}
+          {/*<Route path='/cart/:id?' component={CartScreen}/>*/}
+        </div>
+      </main>
+      {/*<Footer/>*/}
+    </Router>
   );
 }
 

@@ -1,0 +1,40 @@
+=circle-border($size, $color)
+  border: 2px solid white
+  border-radius: 50%
+
+=default-input($height:30px, $width:100%)
+  input
+    display: block
+    font-size: 1.7rem
+    height: $height
+    width: $width
+    padding-left: 20px
+    border: 0
+    background-color: #ddd
+
+    &::placeholder
+      text-transform: lowercase
+      color: #777
+    &:focus, &:active
+      outline: none
+      background-color: white
+
+  & .con
+    display: inline-block
+    position: relative
+  & .con:after
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    // square-cut corners
+    border-bottom: 13px solid $sarenka-black
+    border-right: 14px solid transparent
+  & .con:before
+    content: ''
+    position: absolute
+    top: 0
+    right: 0
+    // square-cut corners
+    border-top: 13px solid $sarenka-black
+    border-left: 14px solid transparent
