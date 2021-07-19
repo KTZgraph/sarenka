@@ -17,7 +17,7 @@ function App() {
         <div>
           <Route path='/' component={HomeScreen} exact/>
           {/*vulns*/}
-          <Route path='/cwe-list' component={CWEScreen}/>
+          <Route path='/cwe/:id' component={CWEScreen}/>
           <Route path='/cve-list' component={CVEScreen}/>
           <Route path='/cpe-list' component={CPEScreen}/>
           <Route path='/reference-list' component={ReferenceScreen}/>

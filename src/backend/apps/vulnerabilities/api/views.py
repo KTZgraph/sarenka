@@ -17,7 +17,7 @@ class CWEList(generics.ListAPIView):
     queryset = models.CWE.objects.all()
     filter_backends = [filters.SearchFilter, DjangoFilterBackend]
     search_fields = ['short_description', 'description']
-    filterset_fields = ['code']  # dokładne szukanie, łącznie z wielkością liter
+    filterset_fields = ['id']  # dokładne szukanie, łącznie z wielkością liter
 
 
 class CWEDetail(generics.RetrieveUpdateAPIView):
@@ -29,7 +29,7 @@ class CVEList(generics.ListAPIView):
     serializer_class = serializers.CVESerializer
     queryset = models.CVE.objects.all()
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['cwe__code']  # api/vulns/cve-list/?cwe__code=CWE-Other
+    filterset_fields = ['cwe__id']  # api/vulns/cve-list/?cwe__code=CWE-Other
 
 
 class CWECVEList(generics.ListAPIView):

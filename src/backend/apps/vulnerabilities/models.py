@@ -1,14 +1,27 @@
 from django.db import models
+from django.db import IntegrityError, transaction
+from base64 import b64encode
+
+
+def encode_to_base64(value: str) -> str:
+    """
+    :param value:
+    :return: base64 encoded string
+    """
+    str_bytes = value.encode('utf-8')
+    base64_bytes = b64encode(str_bytes)
+    base64_str = base64_bytes.decode('utf-8')
+    return base64_str
 
 
 class CWE(models.Model):
-    code = models.CharField(max_length=10, unique=True)
+    id = models.CharField(max_length=20, primary_key=True)
     # krókie opisy z https://nvd.nist.gov/vuln/categories
     short_description = models.CharField(max_length=500)
     description = models.TextField()
 
     def __str__(self):
-        return self.code
+        return self.id
 
 
 class Vector(models.Model):
@@ -22,6 +35,7 @@ class Vector(models.Model):
         ('1', 'MEDIUM'),
         ('2', 'HIGH'),
     ]
+    id = models.CharField(primary_key=True ,max_length=50, default='-1')  # base64 vector code
     version = models.CharField(choices=VERSION, max_length=6)
     code = models.CharField(max_length=50, unique=True)
     base_score = models.CharField(max_length=5)
@@ -29,20 +43,24 @@ class Vector(models.Model):
     exploitability_score = models.CharField(max_length=5)
     impact_score = models.CharField(max_length=5)
 
+    def save(self, *args, **kwargs):
+        self.id = encode_to_base64(self.code)
+        super(Vector, self).save(*args, **kwargs)
+
     def __str__(self):
         return self.code
 
 
 class CVE(models.Model):
+    id = models.CharField(max_length=20, primary_key=True)
     cwe = models.ForeignKey(CWE, on_delete=models.PROTECT, related_name='cve_list')
-    code = models.CharField(max_length=15, unique=True)
     description = models.TextField()
     published = models.DateField()
     updated = models.DateField()
     vectors = models.ManyToManyField(Vector)
 
     def __str__(self):
-        return self.code
+        return self.id
 
 
 class Reference(models.Model):
@@ -61,10 +79,15 @@ class CPE(models.Model):
         ('2.2', 'CPE2.2'),
         ('2.3', 'CPE2.3')
     ]
+    id = models.CharField(primary_key=True, max_length=200, default='-1')  # base64 CPE code
     is_vulnerable = models.BooleanField()
     version = models.CharField(choices=VERSION, max_length=6)
     cve = models.ForeignKey(CVE, on_delete=models.CASCADE, related_name='cpe_list')
     code = models.CharField(max_length=500)
+
+    def save(self, *args, **kwargs):
+        self.id = encode_to_base64(self.code)
+        super(CPE, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.code
