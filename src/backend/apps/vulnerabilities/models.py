@@ -16,9 +16,12 @@ def encode_to_base64(value: str) -> str:
 
 class CWE(models.Model):
     id = models.CharField(max_length=20, primary_key=True)
-    # krókie opisy z https://nvd.nist.gov/vuln/categories
-    short_description = models.CharField(max_length=500)
-    description = models.TextField()
+    name = models.CharField(max_length=1500)
+    abstraction = models.CharField(max_length=100)
+    structure = models.CharField(max_length=100)
+    status = models.CharField(max_length=100)
+    description = models.CharField(max_length=1500) # krókie opisy z https://nvd.nist.gov/vuln/categories
+    extended_description = models.TextField(null=True)
 
     def __str__(self):
         return self.id
