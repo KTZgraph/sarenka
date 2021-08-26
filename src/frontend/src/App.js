@@ -1,33 +1,51 @@
-import logo from './logo.svg';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
-import Header from "./components/Header";
 import HomeScreen from "./screens/HomeScreen";
 import CVEScreen from "./screens/CVEScreen";
 import CWEScreen from "./screens/CWEScreen";
 import CPEScreen from "./screens/CPEScreen";
 import ReferenceScreen from "./screens/ReferenceScreen";
 import VectorScreen from "./screens/VectorScreen";
+import Navbar from "./components/Navbar";
+import CWE from "./components/CWE";
 
 function App() {
   return (
     <Router>
-      <Header/>
-      <main className="py-3">
-        <div>
-          <Route path='/' component={HomeScreen} exact/>
-          {/*vulns*/}
-          <Route path='/cwe/:id' component={CWEScreen}/>
-          <Route path='/cve-list' component={CVEScreen}/>
-          <Route path='/cpe-list' component={CPEScreen}/>
-          <Route path='/reference-list' component={ReferenceScreen}/>
-          <Route path='/vector-list' component={VectorScreen}/>
+      <Navbar/>
+      <div className="content">
+        <Switch>
+          <Route exact path="/">
+            <HomeScreen/>
+          </Route>
+          {/*settings*/}
 
-          {/*id z cart opcjonalny parametr*/}
-          {/*<Route path='/cart/:id?' component={CartScreen}/>*/}
-        </div>
-      </main>
-      {/*<Footer/>*/}
+          {/*search*/}
+
+          {/*vulnerabilities*/}
+          <Route path="/cwe-list">
+            <CWEScreen/>
+          </Route>
+
+          <Route path="/cwe/:id">
+            <CWE/>
+          </Route>
+          <Route path="/cve-list">
+            <CVEScreen/>
+          </Route>
+          <Route path="/cpe-list">
+            <CPEScreen/>
+          </Route>
+          <Route path="/reference-list">
+            <ReferenceScreen/>
+          </Route>
+          <Route path="/vector-list">
+            <VectorScreen/>
+          </Route>
+
+
+        </Switch>
+      </div>
     </Router>
   );
 }
