@@ -9,7 +9,7 @@ from apps.vulnerabilities import models
 from apps.vulnerabilities.cwes.cwe_top_25 import CWETOP25
 
 
-class CWEList(generics.ListAPIView):
+class CWEScreen(generics.ListAPIView):
     """
     /api/vulns/cwe-list/?search=NVD&?code=CVE-3
     """
