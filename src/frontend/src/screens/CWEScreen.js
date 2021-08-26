@@ -1,7 +1,7 @@
 import useFetch from "../useFetch";
 import CWEList from "../components/CWEList";
 
-const CWEScreen = (props) => {
+const CWEScreen = () => {
   const {data:cweList, isPending, error} = useFetch('http://127.0.0.1:8000/api/vulns/cwe-list/');
 
   return (
