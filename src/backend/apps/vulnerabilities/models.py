@@ -20,7 +20,7 @@ class CWE(models.Model):
     abstraction = models.CharField(max_length=100)
     structure = models.CharField(max_length=100)
     status = models.CharField(max_length=100)
-    description = models.CharField(max_length=1500) # krókie opisy z https://nvd.nist.gov/vuln/categories
+    description = models.CharField(max_length=1500)  # krókie opisy z https://nvd.nist.gov/vuln/categories
     extended_description = models.TextField(null=True)
 
     def __str__(self):
@@ -38,7 +38,7 @@ class Vector(models.Model):
         ('1', 'MEDIUM'),
         ('2', 'HIGH'),
     ]
-    id = models.CharField(primary_key=True ,max_length=50, default='-1')  # base64 vector code
+    id = models.CharField(primary_key=True, max_length=50, default='-1')  # base64 vector code
     version = models.CharField(choices=VERSION, max_length=6)
     code = models.CharField(max_length=50, unique=True)
     base_score = models.CharField(max_length=5)
@@ -56,7 +56,7 @@ class Vector(models.Model):
 
 class CVE(models.Model):
     id = models.CharField(max_length=20, primary_key=True)
-    cwe = models.ForeignKey(CWE, on_delete=models.PROTECT, related_name='cve_list')
+    cwe = models.ForeignKey(CWE, on_delete=models.PROTECT, related_name="cwe_list")
     description = models.TextField()
     published = models.DateField()
     updated = models.DateField()
@@ -70,7 +70,7 @@ class Reference(models.Model):
     is_confirmed = models.BooleanField()
     is_exploit = models.BooleanField()
     is_vendor_advisory = models.BooleanField()
-    cve = models.ForeignKey(CVE, on_delete=models.CASCADE, related_name='reference_list')
+    cve = models.ForeignKey(CVE, on_delete=models.CASCADE)
     url = models.URLField()
 
     def __str__(self):
@@ -85,7 +85,7 @@ class CPE(models.Model):
     id = models.CharField(primary_key=True, max_length=200, default='-1')  # base64 CPE code
     is_vulnerable = models.BooleanField()
     version = models.CharField(choices=VERSION, max_length=6)
-    cve = models.ForeignKey(CVE, on_delete=models.CASCADE, related_name='cpe_list')
+    cve = models.ForeignKey(CVE, on_delete=models.CASCADE)
     code = models.CharField(max_length=500)
 
     def save(self, *args, **kwargs):

@@ -9,7 +9,7 @@ from apps.vulnerabilities import models
 class CWETestCase(APITestCase):
     def test_create(self):
         data = {
-            "code": "CWE-123",
+            "code": "CWEDetails-123",
             "short_description": "short description",
             "description": "long description"
         }
@@ -23,7 +23,7 @@ class CWETestCase(APITestCase):
 class CVETestCase(APITestCase):
     def setUp(self) -> None:
         self.cwe = models.CWE.objects.create(
-            code="CWE-123",
+            code="CWEDetails-123",
             short_description="short description",
             description="long description"
         )
@@ -50,7 +50,7 @@ class CVETestCase(APITestCase):
 class VectorTestCase(APITestCase):
     def setUp(self) -> None:
         self.cwe = models.CWE.objects.create(
-            code="CWE-123",
+            code="CWEDetails-123",
             short_description="short description",
             description="long description"
         )
@@ -100,7 +100,7 @@ class VectorTestCase(APITestCase):
 class ReferenceCase(APITestCase):
     def setUp(self) -> None:
         self.cwe = models.CWE.objects.create(
-            code="CWE-123",
+            code="CWEDetails-123",
             short_description="short description",
             description="long description"
         )
@@ -133,7 +133,7 @@ class ReferenceCase(APITestCase):
 class CPECase(APITestCase):
     def setUp(self) -> None:
         self.cwe = models.CWE.objects.create(
-            code="CWE-123",
+            code="CWEDetails-123",
             short_description="short description",
             description="long description"
         )

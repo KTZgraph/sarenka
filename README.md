@@ -8,7 +8,7 @@
 ![Platform release](https://img.shields.io/badge/platform-Windows_10-blue.svg) 
 [![Platform release](https://img.shields.io/badge/platform-Linux-purple.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) 
 [![Python version](https://img.shields.io/badge/Python-3.8-blue.svg)](https://github.com/pawlaczyk/sarenka/releases/latest) 
-![CWE feed](https://img.shields.io/badge/CWE-12/20/2020-darkgreen.svg) 
+![CWEDetails feed](https://img.shields.io/badge/CWE-12/20/2020-darkgreen.svg) 
 ![CVE feed](https://img.shields.io/badge/CVE-12/19/2020-green.svg) 
 [![license](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/pawlaczyk/sarenka/blob/master/LICENSE) 
 
@@ -25,7 +25,7 @@
 **SARENKA** is an Open Source Intelligence (**OSINT**) tool which helps you obtaining and understanding **Attack Surface**.
 
 The main goal is gathering information from search engines for Internet-connected devices (**https://censys.io/**, **https://www.shodan.io/**).
-It scraps data about Common Vulnerabilities and Exposures (**CVE**), Common Weakness Enumeration (**CWE**) and also has database where CVEs are mapped to CWE.
+It scraps data about Common Vulnerabilities and Exposures (**CVE**), Common Weakness Enumeration (**CWEDetails**) and also has database where CVEs are mapped to CWEDetails.
 
 It returns data about the local machine - local installed software (from Windows Registry), local network information (python libraries, popular cmd commads).
 
@@ -94,7 +94,7 @@ More cryptography-math tools and reconnaissance scripts are planned.
   - get data from **https://www.shodan.io/** by ip
   - get **DNS** data
   - get **WHOIS** data
-  - find **CVEs** by **CWE** 
+  - find **CVEs** by **CWEDetails** 
   - generatre pdf report
 
 Products:
@@ -110,7 +110,7 @@ Vendors:
    - cpe fragments for CVES (manually obtained data)
 
 Vulnerabilities:
-  - find **CVEs** by **CWE** 
+  - find **CVEs** by **CWEDetails** 
 
 You can also:
   - calculate **hashes** based on user string

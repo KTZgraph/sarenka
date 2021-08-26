@@ -29,12 +29,12 @@ class CVEList(generics.ListAPIView):
     serializer_class = serializers.CVESerializer
     queryset = models.CVE.objects.all()
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['cwe__id']  # api/vulns/cve-list/?cwe__code=CWE-Other
+    filterset_fields = ['cwe__id']  # api/vulns/cve-list/?cwe__code=CWEDetails-Other
 
 
 class CWECVEList(generics.ListAPIView):
     """
-    Filter by cwe code - return list of CVEs for specific CWE.
+    Filter by cwe code - return list of CVEs for specific CWEDetails.
     """
     serializer_class = serializers.CVESerializer
 

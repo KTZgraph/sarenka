@@ -7,7 +7,7 @@ import CPEScreen from "./screens/CPEScreen";
 import ReferenceScreen from "./screens/ReferenceScreen";
 import VectorScreen from "./screens/VectorScreen";
 import Navbar from "./components/Navbar";
-import CWE from "./components/CWE";
+import CWEDetails from "./components/CWEDetails";
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
           </Route>
 
           <Route path="/cwe/:id">
-            <CWE/>
+            <CWEDetails/>
           </Route>
           <Route path="/cve-list">
             <CVEScreen/>
