@@ -9,6 +9,7 @@ import VectorScreen from "./screens/VectorScreen";
 import Navbar from "./components/Navbar";
 import CWEDetails from "./components/CWEDetails";
 import Spinner from './components/Spinner';
+import SpinnerTwo from './components/SpinnerTwo';
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
           </Route>
 
           {/* spinner */}
+          <Route path="/spinner2" component={SpinnerTwo} />
+
           <Route path="/spinner" component={Spinner} />
 
           {/*settings*/}
