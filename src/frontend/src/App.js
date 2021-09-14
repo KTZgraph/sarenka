@@ -10,6 +10,8 @@ import Navbar from "./components/Navbar";
 import CWEDetails from "./components/CWEDetails";
 import Spinner from './components/Spinner';
 import SpinnerTwo from './components/SpinnerTwo';
+import SpinnerThree from './components/SpinnerThree';
+import SpinnerHeart from './components/SpinnerHeart';
 
 function App() {
   return (
@@ -22,9 +24,10 @@ function App() {
           </Route>
 
           {/* spinner */}
+          <Route path="/spinner3" component={SpinnerThree} />
           <Route path="/spinner2" component={SpinnerTwo} />
-
           <Route path="/spinner" component={Spinner} />
+          <Route path="/spinner-heart" component={SpinnerHeart} />
 
           {/*settings*/}
 

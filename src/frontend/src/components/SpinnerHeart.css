@@ -1,0 +1,49 @@
+:root {
+  --pink-light: #ff7eb4;
+  --pink: #ff2581;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.icon {
+  fill: transparent;
+  stroke: var(--pink);
+  stroke-width: 20;
+  cursor: pointer;
+  position: relative;
+}
+
+.icon svg {
+  overflow: visible;
+  /* dzięki temu ikona już nie jest ucieta z boków */
+  width: 10rem;
+}
+
+.icon path {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 1550;
+  transform-origin: center;
+}
+
+.heart path {
+  animation: stroke-animation 2s ease-in-out forwards infinite;
+}
+
+@keyframes stroke-animation {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  30% {
+    stroke-dashoffset: 1550;
+  }
+  60% {
+    stroke-dashoffset: 3100;
+  }
+  100% {
+    stroke-dashoffset: 3100;
+  }
+}
