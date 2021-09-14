@@ -1,5 +1,6 @@
 // import { useHistory } from 'react-router-dom';
 import useFetch from "../useFetch";
+import SpinnerHeart from '../components/SpinnerHeart'
 
 const CWEDetails = ({ match, history }) => {
   const cwe_id = match.params.id;
@@ -8,7 +9,8 @@ const CWEDetails = ({ match, history }) => {
 
   return (
     <div className="cwe-details">
-      {isPending && <div>Loading...</div>}
+      {/* {isPending && <div>Loading...</div>} */}
+      {isPending && { SpinnerHeart }}
       {error && <div>{error}</div>}
       {cwe && (
         <article>
