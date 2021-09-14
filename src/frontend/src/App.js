@@ -8,6 +8,7 @@ import ReferenceScreen from "./screens/ReferenceScreen";
 import VectorScreen from "./screens/VectorScreen";
 import Navbar from "./components/Navbar";
 import CWEDetails from "./components/CWEDetails";
+import Spinner from './components/Spinner';
 
 function App() {
   return (
@@ -18,20 +19,21 @@ function App() {
           <Route exact path="/">
             <HomeScreen />
           </Route>
+
+          {/* spinner */}
+          <Route path="/spinner" component={Spinner} />
+
           {/*settings*/}
 
           {/*search*/}
 
           {/*vulnerabilities*/}
-          <Route path="/cwe-list">
-            <CWEScreen />
-          </Route>
-
+          <Route path="/cwe-list" component={CWEScreen} />
           <Route path="/cwe/:id" component={CWEDetails} />
 
-          <Route path="/cve-list">
-            <CVEScreen />
-          </Route>
+          <Route path="/cve-list" component={CVEScreen} />
+          <Route path="/cve/:id" component={CVEScreen} />
+
           <Route path="/cpe-list">
             <CPEScreen />
           </Route>
