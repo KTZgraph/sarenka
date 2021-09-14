@@ -1,6 +1,6 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const CWEList = ({cweList}) => {
+const CWEList = ({ cweList }) => {
   return (
     <div className="cwe-list">
       <h1>Common Weakness Enumeration List</h1>

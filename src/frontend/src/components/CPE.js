@@ -1,5 +1,3 @@
-import React from 'react';
-
 function CPE(props) {
   return (
     <div>

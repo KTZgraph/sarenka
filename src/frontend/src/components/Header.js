@@ -1,6 +1,4 @@
-
-import React from "react";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
@@ -12,7 +10,7 @@ function Header() {
       <Link to='/cpe-list'>cpe-list</Link>
       <Link to='/reference-list'>reference-list</Link>
       <Link to='/vector-list'>vector-list</Link>
-      
+
     </header>
   )
 }

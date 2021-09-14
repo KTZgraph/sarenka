@@ -1,9 +1,9 @@
-import {useHistory, useParams} from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import useFetch from "../useFetch";
 
 const CWEDetails = () => {
-  const {id} = useParams();
-  const {data:cwe, error, isPending} = useFetch('http://127.0.0.1:8000/api/vulns/cwe/' + id);
+  const { id } = useParams();
+  const { data: cwe, error, isPending } = useFetch('http://127.0.0.1:8000/api/vulns/cwe/' + id);
   const history = useHistory();
 
   return (

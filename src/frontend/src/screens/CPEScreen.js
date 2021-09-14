@@ -1,5 +1,3 @@
-import React from 'react';
-
 function CPEScreen(props) {
   return (
     <div className='wrap'>

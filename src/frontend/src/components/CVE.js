@@ -1,7 +1,6 @@
-import React from 'react';
-import {Link}from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-function CVE({cve}) {
+function CVE({ cve }) {
   return (
     <div>
       CVE pojedyncze

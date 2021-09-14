@@ -1,5 +1,3 @@
-import React from 'react';
-
 function VectorScreen(props) {
   return (
     <div className='wrap'>
