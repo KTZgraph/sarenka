@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import HomeScreen from "./screens/HomeScreen";
 import CVEScreen from "./screens/CVEScreen";
@@ -12,11 +12,11 @@ import CWEDetails from "./components/CWEDetails";
 function App() {
   return (
     <Router>
-      <Navbar/>
-      <div className="content">
+      <Navbar />
+      <main className="content">
         <Switch>
           <Route exact path="/">
-            <HomeScreen/>
+            <HomeScreen />
           </Route>
           {/*settings*/}
 
@@ -24,28 +24,27 @@ function App() {
 
           {/*vulnerabilities*/}
           <Route path="/cwe-list">
-            <CWEScreen/>
+            <CWEScreen />
           </Route>
 
-          <Route path="/cwe/:id">
-            <CWEDetails/>
-          </Route>
+          <Route path="/cwe/:id" component={CWEDetails} />
+
           <Route path="/cve-list">
-            <CVEScreen/>
+            <CVEScreen />
           </Route>
           <Route path="/cpe-list">
-            <CPEScreen/>
+            <CPEScreen />
           </Route>
           <Route path="/reference-list">
-            <ReferenceScreen/>
+            <ReferenceScreen />
           </Route>
           <Route path="/vector-list">
-            <VectorScreen/>
+            <VectorScreen />
           </Route>
 
 
         </Switch>
-      </div>
+      </main>
     </Router>
   );
 }
