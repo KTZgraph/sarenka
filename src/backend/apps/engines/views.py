@@ -34,4 +34,4 @@ class ShodanCredentialsView(viewsets.ModelViewSet):
 @api_view(['GET'])
 def get_shodan_queries(request):
     http_component = ShodanQueries().get_http_component()
-    return Response({"result": http_component})
+    return Response(http_component)

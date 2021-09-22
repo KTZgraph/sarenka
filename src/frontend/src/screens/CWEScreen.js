@@ -6,7 +6,7 @@ import SpinnerTwo from "../components/SpinnerTwo";
 import SpinnerThree from "../components/SpinnerThree";
 
 const CWEScreen = () => {
-  const { data: cweList, isPending, error } = useFetch('http://127.0.0.1:8000/api/vulns/cwe-list/');
+  const { data: cweList, isPending, error } = useFetch('/api/vulns/cwe-list/');
 
   return (
     <div className='cwe-screen'>
