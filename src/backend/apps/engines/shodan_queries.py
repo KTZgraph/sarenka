@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 class ShodanQueries:
-    __http_component_source = 'queries\\shodan\\http_component.json'
+    __http_component_source = 'feeds\\shodan\\http_component.json'
 
     def __init__(self) -> None:
         self.dir_path = Path(__file__).parent.absolute()
