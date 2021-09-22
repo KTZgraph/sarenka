@@ -1,14 +1,19 @@
 import json
+import os
+from pathlib import Path
 
 
 class ShodanQueries:
-    __http_component_source = 'http_component.json'
+    __http_component_source = 'queries\\shodan\\http_component.json'
 
     def __init__(self) -> None:
-        pass
+        self.dir_path = Path(__file__).parent.absolute()
 
     def get_http_component(self):
-        with open('http_component.json') as json_file:
+        file_path = os.path.join(
+            self.dir_path, ShodanQueries.__http_component_source)
+
+        with open(file_path) as json_file:
             data = json.loads(json_file.read())
         return data
 
