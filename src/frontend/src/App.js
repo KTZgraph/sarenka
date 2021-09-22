@@ -12,6 +12,7 @@ import Spinner from './components/Spinner';
 import SpinnerTwo from './components/SpinnerTwo';
 import SpinnerThree from './components/SpinnerThree';
 import SpinnerHeart from './components/SpinnerHeart';
+import ShodanQueriesScreen from "./screens/ShodanQueriesScreen";
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
           <Route path="/spinner2" component={SpinnerTwo} />
           <Route path="/spinner" component={Spinner} />
           <Route path="/spinner-heart" component={SpinnerHeart} />
+
+          {/* queries */}
+          <Route path="/shodan-queries" component={ShodanQueriesScreen} />
 
           {/*settings*/}
 

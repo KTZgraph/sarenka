@@ -6,6 +6,7 @@ const Navbar = () => {
       <h1>SARENKA</h1>
       <div className="links">
         <Link to="/">Home</Link>
+        <Link to="/shodan-queries">Shodan Queries</Link>
         <Link to="/search">Search</Link>
         <Link to="/vulns">Vulnerabilities</Link>
         <Link to="/cwe-list">CWE</Link>
