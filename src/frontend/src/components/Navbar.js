@@ -2,17 +2,21 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <nav className="navbar">
-      <h1>SARENKA</h1>
-      <div className="links">
-        <Link to="/">Home</Link>
-        <Link to="/shodan-queries">Shodan Queries</Link>
-        <Link to="/search">Search</Link>
-        <Link to="/vulns">Vulnerabilities</Link>
-        <Link to="/cwe-list">CWE</Link>
-      </div>
+    <nav class="navbar-primary justify-between">
+        <div class="container">
+        <h1 class="site-title">SARENKA</h1>
+        <ul class="display-f">
+        <Link to="/shodan-queries" class="ml-1 text-hover-secondary">Shodan Queries</Link>
 
+        <Link to="/" class="ml-1 text-hover-secondary" >Home</Link>
+        <Link to="/shodan-queries" class="ml-1 text-hover-secondary">Shodan Queries</Link>
+        <Link to="/search" class="ml-1 text-hover-secondary">Search</Link>
+        <Link to="/vulns" class="ml-1 text-hover-secondary">Vulnerabilities</Link>
+        <Link to="/cwe-list" class="ml-1 text-hover-secondary">CWE</Link>
+        </ul>
+        </div>
     </nav>
+
   );
 };
 
