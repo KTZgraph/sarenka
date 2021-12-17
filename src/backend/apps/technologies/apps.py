@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class TechnologiesConfig(AppConfig):
-    name = 'technologies'
+    name = 'apps.technologies'
