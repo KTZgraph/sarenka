@@ -3,7 +3,7 @@ import zipfile
 from os import remove
 from xml.dom import minidom
 from pathlib import Path
-
+import json
 
 class CWEDownloader:
     _remote_url = 'https://cwe.mitre.org/data/xml/cwec_latest.xml.zip'
@@ -42,7 +42,7 @@ class CWEParser:
     def cwe_list(self):
         return self._cwe_list
 
-    def parse(self):
+    def parse(self, save=True):
         cwe_list = []
 
         dom_tree = minidom.parse(self._filepath)
@@ -72,6 +72,14 @@ class CWEParser:
 
             cwe_list.append(cwe_obj)
 
+
+        if save == True:
+            data = {"cwe_list": cwe_list}
+            with open("cwe_list.json", 'w') as f:
+                json.dump(data, f)
+
+
         return cwe_list
 
-#
+if __name__ == "__main__":
+    CWEParser().parse()

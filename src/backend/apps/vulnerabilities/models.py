@@ -56,7 +56,7 @@ class Vector(models.Model):
 
 class CVE(models.Model):
     id = models.CharField(max_length=20, primary_key=True)
-    cwe = models.ForeignKey(CWE, on_delete=models.PROTECT, related_name="cwe_list")
+    cwe = models.ForeignKey(CWE, on_delete=models.PROTECT, related_name="cwe")
     description = models.TextField()
     published = models.DateField()
     updated = models.DateField()
