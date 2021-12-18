@@ -24,7 +24,7 @@ const CWE = ({cweTopList}) => {
             <h1>TOP 25 CWE</h1>
             <section>
             {cweTopList.map(cwe => (
-              <Link href={'/vulns/cwe/' + cwe.id} key={cwe.id}>
+              <Link href={'/vulns/cwe/' + cwe.cwe_id} key={cwe.cwe_id}>
                   <a>
                       <h3>{cwe.name}</h3>
                   </a>
