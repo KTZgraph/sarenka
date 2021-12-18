@@ -37,3 +37,4 @@ class CWESerializer(serializers.ModelSerializer):
     class Meta:
         model = models.CWE
         fields = '__all__'
+

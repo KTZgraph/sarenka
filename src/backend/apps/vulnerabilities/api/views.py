@@ -1,7 +1,7 @@
 from django_filters.rest_framework import DjangoFilterBackend
+from django.http import JsonResponse
 
 from rest_framework import generics, filters
-
 import base64
 
 from apps.vulnerabilities.api import serializers
@@ -18,6 +18,11 @@ class CWEScreen(generics.ListAPIView):
     filter_backends = [filters.SearchFilter, DjangoFilterBackend]
     search_fields = ['short_description', 'description']
     filterset_fields = ['id']  # dokładne szukanie, łącznie z wielkością liter
+
+
+def CWETOP25List(request):
+    data =  CWETOP25().get()
+    return JsonResponse(data, safe=False)
 
 
 class CWEDetail(generics.RetrieveUpdateAPIView):

@@ -22,6 +22,8 @@ app_name = 'vulnerabilities'
 urlpatterns = [
     path('cwe/<int:pk>/', views.CWEDetail.as_view(), name='cwe-detail'),
     path('cwe-list/', views.CWEScreen.as_view(), name='cwe-list'),
+    path('cwe-top/', views.CWETOP25List, name='cwe-list-top'),
+
 
     path('cve-list/', views.CVEList.as_view(), name='cve-list'),
     path('cve/<int:pk>/', views.CVEDetail.as_view(), name='cve-detail'),
