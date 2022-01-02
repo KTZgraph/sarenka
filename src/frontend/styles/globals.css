@@ -28,10 +28,84 @@ html{
   height:100vh;
   background-color: var(--main-bg-color);
   position: fixed;
+  left:-15vw; /*domuslnie menu schowane*/
+
   padding: 1.5rem 1rem;
   box-sizing: border-box;
+  z-index: 100; /*żeby ikona hamurgera była widoczna*/
+  transition: left 0.2s;
 }
 
+/* style gdy menu otwarte */
+.change .sidebar{
+  left:0;
+}
+
+/* hamburger menu */
+.hamburger-menu {
+  width: 3.5rem;
+  height:3.5rem;
+  background-color: var(--main-bg-color);
+  border-bottom-right-radius:1rem;
+  /* domyslnie pojawia sie w lewym gornym rogu - zmiana na góre prawo*/
+  position: absolute;
+  right:-3.5rem; /* domylsnie ikona ma być widoczna */
+  top:0;
+  /* wysrodkowanie - można obliczyc (3.5rem - 2.5rem[szerokosc linii)/2 i z tego wyniku obnliczyc padding*/
+  padding: .5rem;
+  box-sizing: border-box; /*bo przez padding sie powiekszyl elemnt*/
+  /* SREDNIO MI SIE TO PODOBA to transition */
+  transition: right .3s .3s; /*delay ostatnie*/
+}
+
+/* style gdy menu otwarte */
+.change .hamburger-menu{
+  right:0; /*żeby po otwarcu znajdowało sie w menu a nie dziwnie po prawej*/
+}
+
+
+
+/* linie hamburgera */
+.line {
+  width: 2.5rem;
+  height: .3rem;
+  background-color: var(--secondary-color);
+  /* linie domyslnie na siebie nachodza */
+  position: absolute;
+  /*zmiana punktu rotacji z domuyślnego centru, */
+  transform-origin: left;
+  /* animacja powrotu z X do zwyklego hamburgera */
+  transition: transform .3s, top .3s .3s, opacity .2s; 
+}
+
+.line-1{
+  top: 1.2rem;
+}
+.line-2{
+  top: 1.8rem;
+}
+.line-3{
+  top: 2.4rem;
+}
+
+/* stylizacja linii hamburgera animacja zmiany na X */
+/* jakoś to 40deg krzywo mi wygląda o.Ó */
+.change .line-1{
+  top:2.4rem;
+  transform: rotate(-42.5deg) translateY(0.3rem); /*MINUS*/
+  transition: top .3s, transform .3s .3s;
+}
+.change .line-2{
+  opacity:0;
+}
+.change .line-3{
+  top:1.2rem;
+  transform: rotate(42.5deg) translateY(-0.3rem);
+  transition: top .3s, transform .3s .3s;
+}
+
+
+/* ********************** elemnty menu - cześć admina logo etc ***********************/
 .card {
   display: flex;
 }
@@ -59,6 +133,8 @@ html{
   font-size: 1.8rem;
   color: var(--secondary-color);
 }
+
+/********************** search bar ***********************/
 
 .search-form{
   margin: 2rem 0 1rem 0;
@@ -89,6 +165,8 @@ html{
   color: var(--secondary-color);
 }
 
+
+/* /********************** właściwe menu  ***********************/
 .nav-list {
   margin-top: 3rem;
 }
@@ -129,16 +207,39 @@ html{
   color: var(--active-icon-color);
 }
 
+/* gdy sumbenu rozwiniete to tez ma sie swiecic ikona */
+.change.nav-link i:first-child{ /*bez spacji*/
+  color: var(--active-icon-color);
+}
+
 /* strzałeczki > */
 .nav-link i:last-child{
   margin-right: 2.5rem;
   font-size: 1.6rem;
+  transition: transform 0.5s;
+}
+
+/* rotacja strzłeczek gdy submenu rozwiniete */
+/*  > lemnt skałdki css */
+.change > i:last-child{
+  transform: rotate(90deg);
 }
 
 /********************** podmenu **********************/
 .sub-nav-list {
   width: 90%;
   margin-left: auto;
+  /* domyslnie schowane */
+  /* display: none; */ /*nie obsluguje transition*/
+  /* sztuczka z max height i overflow do chodzwania, bo to mozna animowac */
+  max-height:0;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+
+.change.sub-nav-list { /*bez spacji*/
+  /* display: block; */ /* display: none; */ /*nie obsluguje transition*/
+  max-height: 10rem;
 }
 
 .sub-nav-item{
@@ -214,13 +315,33 @@ html{
   align-items: center;
 }
 
+/* kolorwki powiadomień */
+.bottom-list-item:nth-child(1) span {
+  background-color: #cfa012;
+}
+
+.bottom-list-item:nth-child(2) span {
+  background-color: #54b154;
+}
+
+.bottom-list-item:nth-child(3) span {
+  background-color: #e22727;
+}
 
 /****************** główna sekcja ******************/
 .main-section {
-  width: 85vw;
+  width: 100vw; /*domylsnie caly ekran zajmuje*/
   position: relative;
-  left:15vw;
+  left:0;
+  transition: all 0.2s;
 }
+
+/* style gdy menu rozwiniete */
+.change .main-section {
+  left: 15vw;
+  width: 85vw;
+}
+
 
 .header{
   width: inherit;
@@ -237,4 +358,76 @@ html{
   font-size: 12rem;
   color: #fff;
   letter-spacing:1rem;
+}
+
+
+/* responsywnosc */
+@media (max-width:1500px) {
+  .sidebard {
+      width: 20vw;
+      left: -20vw
+  }
+
+  .change .main-section{
+      left: 20vw;
+      width: 80vw;
+  }
+}
+
+@media (max-width:1200px) {
+  .sidebard {
+      width: 25vw;
+      left: -25vw
+  }
+
+  .change .main-section{
+      left: 25vw;
+      width: 75vw;
+  }
+}
+
+
+@media (max-width:900px) {
+  .sidebard {
+      width: 30vw;
+      left: -30vw
+  }
+
+  .change .main-section{
+      left: 30vw;
+      width: 70vw;
+  }
+
+  .heading{
+      font-size: 8rem;
+  }
+}
+
+@media (max-width:700px) {
+  .sidebard {
+      width: 50vw;
+      left: -50vw
+  }
+
+  .change .main-section{
+      left: 50vw;
+      width: 50vw;
+  }
+
+  .heading{
+      display: none;
+  }
+}
+
+
+@media (max-width:400px) {
+  .sidebard {
+      width: 100vw;
+      left: -100vw
+  }
+
+  .change .main-section{
+      left: 100vw;
+      width: 0;
+  }
 }
