@@ -1,6 +1,6 @@
 const SearchForm = () => {
     return (
-        <form class="search-form">
+        <form className="search-form">
             <input type="text" className="search-input" placeholder="Search"/>
             {/* ważny jest typ przycisku w buttona w search */}
             <button type="button" className="search-button">
