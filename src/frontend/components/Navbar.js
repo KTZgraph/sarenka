@@ -38,7 +38,7 @@ const Navbar = () => {
                   {/* pierwsza opcja menu */}
                   <li className="nav-item">
                     <Link href="/">
-                      <a href="#" className="nav-lisnk">
+                      <a href="#" className="nav-link">
                           <i className="fas fa-tachometer-alt"></i>
                           <span className="nav-link-text">Dashboard</span>
                           <i className="fa fa-angle-right"></i>    
@@ -80,7 +80,7 @@ const Navbar = () => {
                   {/* druga opcja menu */}
                   <li className="nav-item">
                     <Link href="/vulns">
-                      <a className="nav-lisnk">
+                      <a className="nav-link">
                           <i className="fas fa-shopping-cart"></i>
                           <span className="nav-link-text">Vulnerabilities</span>
                           <i className="fa fa-angle-right"></i>    
@@ -137,7 +137,7 @@ const Navbar = () => {
                   {/* druga opcja menu */}
                   <li className="nav-item">
                     <Link href="/geo">
-                      <a className="nav-lisnk">
+                      <a className="nav-link">
                           <i className="fas fa-shopping-cart"></i>
                           <span className="nav-link-text">Geolocation</span>
                           <i className="fa fa-angle-right"></i>    
@@ -148,7 +148,7 @@ const Navbar = () => {
                   {/* druga opcja menu */}
                   <li className="nav-item">
                     <Link href="/credentials">
-                      <a className="nav-lisnk">
+                      <a className="nav-link">
                           <i className="fas fa-shopping-cart"></i>
                           <span className="nav-link-text">Credentials</span>
                           <i className="fa fa-angle-right"></i>    
