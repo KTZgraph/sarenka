@@ -17,7 +17,7 @@ const Vulns = ({cveList, cweList}) => {
             <Head>
                 {/* komponent na metadane np title */}
                 <title>Sarenka | Vulnerabilities</title>
-                <meta name='keywords' content='ninjas'/>
+                <meta name='keywords' content='sarenka'/>
             </Head>
             <div>
                 <h1>Vulns</h1>

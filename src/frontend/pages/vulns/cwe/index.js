@@ -17,7 +17,7 @@ const CWE = ({cweTopList}) => {
         <Head>
             {/* komponent na metadane np title */}
             <title>Sarenka | CWE TOP 25 </title>
-            <meta name='keywords' content='ninjas'/>
+            <meta name='keywords' content='sarenka'/>
         </Head>
         
         <div>
