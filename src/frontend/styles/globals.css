@@ -26,5 +26,215 @@ html{
 .sidebar {
   width: 15vw;
   height:100vh;
-  background-color: var();
+  background-color: var(--main-bg-color);
+  position: fixed;
+  padding: 1.5rem 1rem;
+  box-sizing: border-box;
+}
+
+.card {
+  display: flex;
+}
+
+.admin-image{
+  width:5rem;
+  border-radius: .5rem;
+}
+
+.card-body {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.card-title {
+  font-size: 2rem;
+  margin-right: 3rem;
+  color: var(--text-color);
+  letter-spacing:0.1rem;
+}
+
+.card-subtitle {
+  font-size: 1.8rem;
+  color: var(--secondary-color);
+}
+
+.search-form{
+  margin: 2rem 0 1rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 100%; 
+  height: 4rem;
+  background-color: var(--primary-color);
+  border: none; /*pozbycie sie domyslnego obramowania*/
+  border-radius: .5rem;
+  padding: 0 1rem;
+  font-size: 1.6rem;
+  color: var(--text-color);
+  letter-spacing:.1rem;
+}
+
+.search-button {
+  background-color: transparent;
+  border: none;
+  transform: translateX(-150%); /*ikona w środku inputu search*/
+}
+
+.search-button i {
+  font-size: 2rem;
+  color: var(--secondary-color);
+}
+
+.nav-list {
+  margin-top: 3rem;
+}
+
+.nav-item{
+  margin: 2rem 0;
+}
+
+.nav-link{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+}
+
+.nav-link-text {
+  font-size: 1.8rem;
+  padding-left: 1rem;
+  flex-grow:1; /*żeby ikonki > były na końcu*/
+}
+
+/* ikonki z głównego menu wskazujace na kategorie */
+.nav-link i:first-child{
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--primary-color);
+  display: flex;
+  /* centorowanie */
+  justify-content: center;
+  align-items: center;
+  padding: .2rem;
+  border-radius:.3rem;
+  transition: color .2s;
+}
+
+/* hover */
+.nav-link:hover i:first-child{
+  color: var(--active-icon-color);
+}
+
+/* strzałeczki > */
+.nav-link i:last-child{
+  margin-right: 2.5rem;
+  font-size: 1.6rem;
+}
+
+/********************** podmenu **********************/
+.sub-nav-list {
+  width: 90%;
+  margin-left: auto;
+}
+
+.sub-nav-item{
+  margin:.5rem 0;
+}
+
+.sub-nav-link{
+  font-size: 1.5rem;
+  color: var(--text-color);
+  transition: color .2s;
+}
+
+/* kółeczka w submenu */
+.sub-nav-link i{
+  font-size: 1rem;
+  margin-right: .5rem;
+  transition: color .2s;
+}
+
+.sub-nav-link:hover i{
+  color: var(--active-icon-color);
+}
+
+.sub-nav-link:hover{
+  color: var(--hover-text-color);
+}
+
+/****************** dolne menu ******************/
+.bottom-list{
+  width: 100%;
+  background-color: var(--primary-color);
+  /*ma byc przyklejone na samym dole*/
+  position: absolute; 
+  bottom: 0;
+  
+  padding: .5rem 0;
+  display: flex;
+  justify-content: space-around;
+  transform: translateX(-1rem);
+}
+
+.bottom-list-link {
+  /* zeby na dole liczby bylo po prawej ikonki - rodzic musi byc relative */
+  position: relative;
+}
+
+/* ikonki na dole */
+.bottom-list-link i{
+  font-size: 1.6rem;
+  color: var(--secondary-color);
+  transition: color .3s;
+}
+
+.bottom-list-link:hover i {
+  color: var(--active-icon-color)
+}
+
+/* powiadomienia liczby */
+.bottom-list-link span{
+  font-family: 'Roboto Slab', serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  /* pozycja liczby po prawej od ikonki */
+  position: absolute;
+  top: -100%;
+  right: -50%;
+  width: 1.4rem;
+  /* zaokrąglanie i centowanie liczby przy powiadomieniach */
+  border-radius:50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/****************** główna sekcja ******************/
+.main-section {
+  width: 85vw;
+  position: relative;
+  left:15vw;
+}
+
+.header{
+  width: inherit;
+  height:100vh;
+  background: linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.5)), url(../public/logo.png) center no-repeat;
+  background-size: cover;
+}
+
+.heading{
+  position: absolute;
+  top:5%;
+  left:50%;
+  transform: translateX(-50%);
+  font-size: 12rem;
+  color: #fff;
+  letter-spacing:1rem;
 }
