@@ -1,4 +1,4 @@
-BACKEND_API = "http://127.0.0.1:8000/api/";
+const BACKEND_API = "http://127.0.0.1:8000/api/";
 
 export async function getAllCWEs() {
   //zwraca promisa
@@ -8,7 +8,7 @@ export async function getAllCWEs() {
    */
   const response = await fetch(
     //zwraca promisa
-    `${BACKEND_API}/vulns/cwe-list/`
+    `${BACKEND_API}vulns/cwe-list/`
   );
   const data = await response.json();
   return data;
@@ -31,7 +31,7 @@ export async function getCWEById(id) {
         }
      */
 
-  const response = await fetch(`${BACKEND_API}/vulns/cwe/${id}`);
+  const response = await fetch(`${BACKEND_API}vulns/cwe/${id}`);
   const data = await response.json();
   return data;
 }
