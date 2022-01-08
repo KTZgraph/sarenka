@@ -11,6 +11,16 @@ import ChartList from "./navbar_components/chart-list";
 // TODO: podłaczyć font-awesome
 
 const Navbar = () => {
+    const handleSubmenu = (e) => {
+        const el = e.target.parentElement;
+        if(el.classList.contains('nav-link')){
+            if(el.nextElementSibling){
+                el.nextElementSibling.classList.toggle('change');
+                el.classList.toggle('change');
+            }
+        }
+    }
+
     return (
         <nav className="sidebar"> {/* menu z lewej */}
               {/* górna cześc menu - logo, search-form */}
@@ -19,8 +29,8 @@ const Navbar = () => {
               <SearchForm/> {/* search input field */}
 
               {/* lista w menu standardowa Właściwe menu */}
-              <ul className="nav-list">
-                  <DashboardList/>
+              <ul className="nav-list" onClick={handleSubmenu}>
+                  <DashboardList />
                   <VulnerabilityList/>
                   <GeolocationList />
                   <ChartList/>
