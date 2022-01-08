@@ -1,4 +1,4 @@
-const HamburgerIcon = () => {
+const HamburgerMenu = () => {
     return (
         <div className="hamburger-menu">
             <div className="line line-1"></div>
@@ -8,4 +8,4 @@ const HamburgerIcon = () => {
     )
 }
 
-export default HamburgerIcon;
+export default HamburgerMenu;

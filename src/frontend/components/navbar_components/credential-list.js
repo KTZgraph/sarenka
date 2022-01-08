@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 
-const CredentialsList = () => {
+const CredentialList = () => {
     return (
         <li className="nav-item">
         <Link href="/credentials">
@@ -15,4 +15,4 @@ const CredentialsList = () => {
     )
 }
 
-export default CredentialsList;
+export default CredentialList;

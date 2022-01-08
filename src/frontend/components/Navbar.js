@@ -1,30 +1,30 @@
 // reużywalny komponent - wazna sciezka
-import BottomList from "./navbar_components/BottomList";
-import HamburgerIcon from "./navbar_components/HamburgerIcon";
-import AdminImage from "./navbar_components/AdminImage";
-import SearchForm from "./navbar_components/SearchForm";
-import VulnerabilitiesList from "./navbar_components/VulnerabilitiesList";
-import CredentialsList from "./navbar_components/CredentialsList";
-import GeolocationList from "./navbar_components/GeolocationList";
-import DashboardList from "./navbar_components/DashboardList";
-import ChartList from "./navbar_components/ChartList";
+import BottomList from "./navbar_components/bottom-list";
+import HamburgerMenu from "./navbar_components/hamburger-menu";
+import AdminImage from "./navbar_components/admin-image";
+import SearchForm from "./navbar_components/search-form";
+import VulnerabilityList from "./navbar_components/vulnerability-list";
+import CredentialList from "./navbar_components/credential-list";
+import GeolocationList from "./navbar_components/geolocation-list";
+import DashboardList from "./navbar_components/dashboard-list";
+import ChartList from "./navbar_components/chart-list";
 // TODO: podłaczyć font-awesome
 
 const Navbar = () => {
     return (
         <nav className="sidebar"> {/* menu z lewej */}
               {/* górna cześc menu - logo, search-form */}
-              <HamburgerIcon/> {/* hamubrger ikona */}
+              <HamburgerMenu/> {/* hamubrger ikona */}
               <AdminImage/> {/* ikona i nazwa admina */}
               <SearchForm/> {/* search input field */}
 
               {/* lista w menu standardowa Właściwe menu */}
               <ul className="nav-list">
                   <DashboardList/>
-                  <VulnerabilitiesList/>
+                  <VulnerabilityList/>
                   <GeolocationList />
                   <ChartList/>
-                  <CredentialsList/>
+                  <CredentialList/>
               </ul> {/* koniec górnej listy menu */}
 
               {/* bootom list - małe śmieszczed ikonki z powiadomieniami*/}
