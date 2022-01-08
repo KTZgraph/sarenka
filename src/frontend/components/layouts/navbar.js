@@ -1,13 +1,13 @@
 // reużywalny komponent - wazna sciezka
-import BottomList from "./navbar_components/bottom-list";
-import HamburgerMenu from "./navbar_components/hamburger-menu";
-import AdminImage from "./navbar_components/admin-image";
-import SearchForm from "./navbar_components/search-form";
-import VulnerabilityList from "./navbar_components/vulnerability-list";
-import CredentialList from "./navbar_components/credential-list";
-import GeolocationList from "./navbar_components/geolocation-list";
-import DashboardList from "./navbar_components/dashboard-list";
-import ChartList from "./navbar_components/chart-list";
+import BottomList from "../navbar_components/bottom-list";
+import HamburgerMenu from "../navbar_components/hamburger-menu";
+import AdminImage from "../navbar_components/admin-image";
+import SearchForm from "../navbar_components/search-form";
+import VulnerabilityList from "../navbar_components/vulnerability-list";
+import CredentialList from "../navbar_components/credential-list";
+import GeolocationList from "../navbar_components/geolocation-list";
+import DashboardList from "../navbar_components/dashboard-list";
+import ChartList from "../navbar_components/chart-list";
 // TODO: podłaczyć font-awesome
 
 const Navbar = () => {
