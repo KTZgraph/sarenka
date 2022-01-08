@@ -11,7 +11,7 @@ export const getStaticProps = async () => {
 }
 
 
-const CWE = ({cweTopList}) => {
+const AllCWEPage = ({cweTopList}) => {
     return (
         <>
         <Head>
@@ -36,4 +36,4 @@ const CWE = ({cweTopList}) => {
     );
 }
  
-export default CWE;
+export default AllCWEPage;

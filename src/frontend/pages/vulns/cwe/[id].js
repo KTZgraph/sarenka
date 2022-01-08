@@ -1,4 +1,6 @@
-const CWEDetails = () => {
+function CWEDetailPage (props) {
+    const cwe = props.selectedCWE;
+
     return (
         <div>
             <h1>CWE</h1>
@@ -7,4 +9,4 @@ const CWEDetails = () => {
 
 }
 
-export default CWEDetails;
+export default CWEDetailPage;
