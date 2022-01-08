@@ -1,5 +1,8 @@
 import { Fragment } from "react";
+
 import { getCWEById, getAllCWEs } from "../../../helpers/api-utils";
+import CWEContent from "../../../components/cwe-components/cwe-detail/cwe-content";
+import CWESummary from "../../../components/cwe-components/cwe-detail/cwe-summary";
 
 function CWEDetailPage(props) {
   const cwe = props.selectedCWE;
@@ -15,9 +18,14 @@ function CWEDetailPage(props) {
 
   return (
     <Fragment>
+      <CWESummary title={cwe.title} />
       <h1>CWE</h1>
       <p>{cwe.name}</p>
       <p>{cwe.description}</p>
+      
+      <CWEContent>
+        <p>{cwe.description}</p>
+      </CWEContent>
     </Fragment>
   );
 }
@@ -35,10 +43,10 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
   // instancje dla których trzeba wyrenderować wczesniej strony
-  const cweList = await getAllCWEs(); // raczej się zmieniają i są ogladane tylko przyszłe wydarzenia
+  const cwes = await getAllCWEs(); // raczej się zmieniają i są ogladane tylko przyszłe wydarzenia
   //to tez w konsekwnecji sprawia, ze niektóe wydarzenia nie będę prerenderowane
 
-  const paths = cweList.map((cwe) => ({ params: { cweId: cwe.id } }));
+  const paths = cwes.map((cwe) => ({ params: { cweId: cwe.id } }));
 
   return {
     paths: paths,

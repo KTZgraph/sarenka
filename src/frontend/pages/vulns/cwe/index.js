@@ -1,39 +1,34 @@
-import Link from 'next/link';
-import Head from "next/head";
+import { Fragment } from "react";
+import Link from "next/link";
 
-export const getStaticProps = async () => {
-    const rest = await fetch('http://127.0.0.1:8000/api/vulns/cwe-top/');
-    const data = await rest.json();
+import { getAllCWEs } from "../../../helpers/api-utils";
+import CWEList from "../../../components/cwe-components/cwes/cwe-list";
+import Spinner from "../../../components/ui/spinner";
 
-    return {
-        props: {cweTopList: data} 
-    }
+function AllCWEPage(props) {
+  const cwes = props.cwes;
+
+  if (!cwes) {
+    //walidacja danych
+    return <Spinner />;
+  }
+
+  return (
+    <div>
+      <CWEList cwes={cwes} />
+    </div>
+  );
 }
 
+export async function getStaticProps() {
+  const cwes = await getAllCWEs();
 
-const AllCWEPage = ({cweTopList}) => {
-    return (
-        <>
-        <Head>
-            {/* komponent na metadane np title */}
-            <title>Sarenka | CWE TOP 25 </title>
-            <meta name='keywords' content='sarenka'/>
-        </Head>
-        
-        <div>
-            <h1>TOP 25 CWE</h1>
-            <section>
-            {cweTopList.map(cwe => (
-              <Link href={'/vulns/cwe/' + cwe.cwe_id} key={cwe.cwe_id}>
-                  <a>
-                      <h3>{cwe.name}</h3>
-                  </a>
-              </Link>
-            ))}
-            </section>
-        </div>
-        </>
-    );
+  return {
+    props: {
+      cwes: cwes,
+    },
+    revalidate: 86400, // co 24h
+  };
 }
- 
+
 export default AllCWEPage;
