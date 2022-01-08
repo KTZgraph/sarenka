@@ -4,8 +4,8 @@ import styles from '../styles/Home.module.css'
 
 function HomePage() {
   return (
-    <div className="container">
-      <h1>Container</h1>
+    <div>
+      <h1>HomePage</h1>
 
     </div>
   )
