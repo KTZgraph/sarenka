@@ -5,6 +5,9 @@ services:
   # db to tylko alias
   db:
     image: postgres
+    # potrzebuje portu żeby połaczyć się do bazy w kontenerze
+    ports:
+      - "5433:5432"
     # zmienna - nazwy ważne dla dockera
     environment:
       - POSTGRES_DB=postgres
