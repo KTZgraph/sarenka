@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'apps.technologies.apps.TechnologiesConfig',
     'apps.tools.apps.ToolsConfig',
     'apps.universities.apps.UniversitiesConfig',
+    'apps.users.apps.UsersConfig',
     'apps.vendors.apps.VendorsConfig',
     'apps.vulnerabilities.apps.VulnerabilitiesConfig',
 ]
