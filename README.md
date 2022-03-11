@@ -181,6 +181,9 @@ $ python backend/manage.py runserver
 ### Team
 SARENKA is one person project (since 16.01.2021).
 
+# For Contributors
+[JSON Viewer](https://dadroit.com/download)
+
 ### Documentation
 The documentation is availabe [here](https://pawlaczyk.github.io/sarenka/).
 
