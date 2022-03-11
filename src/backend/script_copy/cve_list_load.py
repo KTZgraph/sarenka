@@ -1,4 +1,5 @@
 """ 
+source: https://www.youtube.com/watch?v=lUuCv1ywBq8
 pip install django-extensions
 settings.py dopisać INSTALLED_APPS =[ ..., 'django-extensions', ...]
 stworzyć folder srcripts a w nim scripts/__init__.py pusty
@@ -84,15 +85,45 @@ class CVEDownloader:
 
 
 class CVEParsed:
-    def __init__(self, cve_id: str, cwe_id: str, description: str,  cpe_list: list, impact: dict, published_date: str,
+    def __init__(self, cve_id: str,
+                 cwe_id: str,
+                 description: str,
+
+                 cpe_list: list,
+
+                 cvss_v3,
+                 exploitability_score_v3,
+                 impact_score_v3,
+                 cvss_v2,
+                 exploitability_score_v2,
+                 impact_score_v2,
+                 severity,
+                 is_ac_insuf_info,
+                 is_obtain_all_privilege,
+                 is_obtain_user_privilege,
+                 is_user_interaction_required,
+
+                 published_date: str,
                  last_modified_date: str) -> None:
+
         self.cve_id = cve_id
         self.cwe_id = cwe_id
         self.description = description
 
         self.cpe_list = cpe_list
 
-        self.impact = impact
+        self.cvss_v3 = cvss_v3
+        self.exploitability_score_v3 = exploitability_score_v3
+        self.impact_score_v3 = impact_score_v3
+        self.cvss_v2 = cvss_v2
+        self.exploitability_score_v2 = exploitability_score_v2
+        self.impact_score_v2 = impact_score_v2
+        self.severity = severity
+        self.is_ac_insuf_info = is_ac_insuf_info
+        self.is_obtain_all_privilege = is_obtain_all_privilege
+        self.is_obtain_user_privilege = is_obtain_user_privilege
+        self.is_user_interaction_required = is_user_interaction_required
+
         self.published = published_date
         self.updated = last_modified_date
 
@@ -125,21 +156,52 @@ class CVEFileParser:
                 print(cpe.cpe_23_uri)
                 print(cpe.version_start_including)
                 print(cpe.version_end_excluding)
+
+            impact = ImpactParser(item["impact"])
+            print("_______________impact_______________")
+            print(impact.cvss_v3.version)
+            print(impact.cvss_v3.vector)
+            print(impact.cvss_v3.base_score)
+
+            print(impact.exploitability_score_v3)
+            print(impact.impact_score_v3)
+            print(impact.cvss_v2.version)
+            print(impact.cvss_v2.vector)
+            print(impact.cvss_v2.base_score)
+            print(impact.cvss_v2.version)
+
+            print(impact.exploitability_score_v2)
+            print(impact.impact_score_v2)
+            print(impact.severity)
+            print(impact.is_ac_insuf_info)
+            print(impact.is_obtain_all_privilege)
+            print(impact.is_obtain_user_privilege)
+            print(impact.is_user_interaction_required)
+
             print("\n\n\n")
-            # impact=ImpactParser(item["impact"])
 
             cve_parsed = CVEParsed(
-                #(2) klucz "cve"
+                # (2) klucz "cve"
                 cve_id=cve.id,
                 cwe_id=cve.cwe,
                 description=cve.description,
 
-                # (2) klucz "configurations" (3) klucz "nodes" lista 
-                cpe_list = cpe_matches.cpe_matches,
-                impact=None,
-                
+                # (2) klucz "configurations" (3) klucz "nodes" lista
+                cpe_list=cpe_matches.cpe_matches,
 
-                
+                cvss_v3=impact.cvss_v3,
+                exploitability_score_v3=impact.exploitability_score_v3,
+                impact_score_v3=impact.impact_score_v3,
+                cvss_v2=impact.cvss_v2,
+                exploitability_score_v2=impact.exploitability_score_v2,
+                impact_score_v2=impact.impact_score_v2,
+                severity=impact.severity,
+                is_ac_insuf_info=impact.is_ac_insuf_info,
+                is_obtain_all_privilege=impact.is_obtain_all_privilege,
+                is_obtain_user_privilege=impact.is_obtain_user_privilege,
+                is_user_interaction_required=impact.is_user_interaction_required,
+
+
                 # severity = impact.severity,
                 # exploitability_score = impact.exploitability_score,
                 # impact_score = impact.impact_score,
@@ -221,115 +283,121 @@ class ConfigurationsParser:
                 )
         return cpe_match_obj_list
 
+
 class CVSSV2:
-    def __init__(self, version:str, vector:str, base_score: str) -> None:
+    def __init__(self, version: str, vector: str, base_score: str) -> None:
         self.version = version
         self.vector = vector
         self.base_score = base_score
 
+
 class CVSSV3:
-    def __init__(self, version:str, vector:str, base_score: str, base_severity:str) -> None:
+    def __init__(self, version: str, vector: str, base_score: str, base_severity: str) -> None:
         self.version = version
         self.vector = vector
         self.base_score = base_score
         self.base_severity = base_severity
 
+
 class ImpactParser:
     # drugi poziom klucza "impact:"
     def __init__(self, impact: dict) -> None:
         self.impact = impact
-        # dane z baseMetricV3 
+        # dane z baseMetricV3
         self.cvss_v3 = self.get_cvss_v3()
-        self.exploitability_score_v2 = self.get_exploitability_score_v3()
-        self.impact_score_v2 = self.get_impact_score_v3()
+        self.exploitability_score_v3 = self.get_exploitability_score_v3()
+        self.impact_score_v3 = self.get_impact_score_v3()
 
         # dane z baseMetricV2
         self.cvss_v2 = self.get_cvss_v2()
         self.exploitability_score_v2 = self.get_exploitability_score_v2()
         self.impact_score_v2 = self.get_impact_score_v2()
 
-        self.severity = self.get_severity() 
+        self.severity = self.get_severity()
         self.is_ac_insuf_info = self.get_is_ac_insuf_info()
         self.is_obtain_all_privilege = self.get_is_obtain_all_privilege()
         self.is_obtain_user_privilege = self.get_is_obtain_user_privilege()
         self.is_user_interaction_required = self.get_is_user_interaction_required()
 
     def get_cvss_v3(self):
-        cvss_v3 = CVSSV3(None, None, None)
+
         try:
-            cvss_v3.version = self.impact["baseMetricV3"]["cvssV3"]["version"]
-            cvss_v3.vector = self.impact["baseMetricV3"]["cvssV3"]["vectorString"]
-            cvss_v3.base_score = self.impact["baseMetricV3"]["cvssV3"]["baseScore"]
-            cvss_v3.base_severity = self.impact["baseMetricV3"]["cvssV3"]["baseSeverity"]
-        
-        except IndexError:
-            return cvss_v3
+            return CVSSV3(
+                version=self.impact["baseMetricV3"]["cvssV3"]["version"],
+                vector=self.impact["baseMetricV3"]["cvssV3"]["vectorString"],
+                base_score=self.impact["baseMetricV3"]["cvssV3"]["baseScore"],
+                base_severity=self.impact["baseMetricV3"]["cvssV3"]["baseSeverity"]
+            )
+
+        except KeyError:
+            return CVSSV3(None, None, None, None)
 
     def get_exploitability_score_v3(self):
         try:
             return self.impact["baseMetricV3"]["exploitabilityScore"]
-        except IndexError:
+        except KeyError:
             return None
 
     def get_impact_score_v3(self):
         try:
             return self.impact["baseMetricV3"]["impactScore"]
-        except IndexError:
+        except KeyError:
             return None
 
-
-
     # dane z baseMetricV2
+
     def get_cvss_v2(self):
-        cvss_v2 = CVSSV2(None, None, None)
         try:
-            cvss_v2.version = self.impact["baseMetricV2"]["cvssV2"]["version"]
-            cvss_v2.vector = self.impact["baseMetricV2"]["cvssV2"]["vectorString"]
-            cvss_v2.base_score = self.impact["baseMetricV2"]["cvssV2"]["baseScore"]
-        
+            return CVSSV2(
+                version=self.impact["baseMetricV2"]["cvssV2"]["version"],
+                vector=self.impact["baseMetricV2"]["cvssV2"]["vectorString"],
+                base_score=self.impact["baseMetricV2"]["cvssV2"]["baseScore"],
+            )
         except IndexError:
-            return cvss_v2
+            return CVSSV2(None, None, None)
 
     def get_severity(self):
         try:
             return self.impact["baseMetricV2"]["severity"]
-        except IndexError:
+        except KeyError:
             return None
 
     def get_exploitability_score_v2(self):
         try:
             return self.impact["baseMetricV2"]["exploitabilityScore"]
-        except IndexError:
+        except KeyError:
             return None
 
     def get_impact_score_v2(self):
         try:
             return self.impact["baseMetricV2"]["impactScore"]
-        except IndexError:
+        except KeyError:
             return None
 
     def get_is_ac_insuf_info(self):
         try:
             return self.impact["baseMetricV2"]["acInsufInfo"]
-        except IndexError:
+        except KeyError:
             return None
+
     def get_is_obtain_all_privilege(self):
         try:
             return self.impact["baseMetricV2"]["obtainAllPrivilege"]
-        except IndexError:
+        except KeyError:
             return None
 
     def get_is_obtain_user_privilege(self):
         try:
             return self.impact["baseMetricV2"]["obtainOtherPrivilege"]
-        except IndexError:
+        except KeyError:
             return None
 
     def get_is_user_interaction_required(self):
         try:
             return self.impact["baseMetricV2"]["userInteractionRequired"]
-        except IndexError:
+        except KeyError:
             return None
+
 
 def run():
     # json_filenames = CVEDownloader().json_filenames
