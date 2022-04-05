@@ -1,13 +1,16 @@
 // reużwyalny komponent, zeby Linki jak przyciski wygladały
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import classes from "./button.module.css";
 
 // albo zwraca linka labo zwyczajny przycisk
 function Button(props) {
+  let router = useRouter();
+
   if (props.link) {
     return (
-      <Link href={props.link}>
+      <Link href={props.link} locale={router.locale}>
         {/* dodanie elemntu a bo jemu można dodać klasy; jak nie dodama <a> to Link pod maską sam wygeneruje tag <a> 
           tag który kontroluje to co zostało kliknięte where <a> captures a request and loads it witch JS only*/}
         {/* jak chce się swoje style to samemu trzeb adodać a, Link dalej dodaje funckjonalność ale teraz nie da wąłsnych styli */}
