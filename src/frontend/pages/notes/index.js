@@ -1,5 +1,7 @@
+import TextEditor from "../../components/notes/text-editor";
+
 function AllNotes(props){
-    return <div>AllNotes</div>
+    return <TextEditor/>
 }
 
 export default AllNotes;
