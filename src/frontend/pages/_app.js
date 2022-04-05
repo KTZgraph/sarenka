@@ -11,7 +11,6 @@ function MyApp({ Component, pageProps }) {
   return (
     <NotificationContextProvider>
       {/* layout opakuje całośc wizualnego kontentu, to on może mieć notyfikacje */}
-
       <Layout>
         <Head>
           <title>Sarenka</title>
