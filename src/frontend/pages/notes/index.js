@@ -1,7 +1,5 @@
-import TextEditor from "../../components/notes/text-editor";
-
-function AllNotes(props){
-    return <TextEditor/>
+function NotesListPage(props) {
+  return <div>NotesListPage</div>;
 }
 
-export default AllNotes;
+export default NotesListPage;
