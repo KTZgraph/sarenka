@@ -100,7 +100,7 @@ DATABASES = {
     },
     'vulns_db': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'test2',
+        'NAME': 'test',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': '127.0.0.1',

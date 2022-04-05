@@ -1,3 +1,4 @@
+from statistics import mode
 from django.db import models
 from django.db import IntegrityError, transaction
 from base64 import b64encode
@@ -67,14 +68,21 @@ class CVE(models.Model):
 
 
 class Reference(models.Model):
-    is_confirmed = models.BooleanField()
-    is_exploit = models.BooleanField()
-    is_vendor_advisory = models.BooleanField()
     cve = models.ForeignKey(CVE, on_delete=models.CASCADE)
     url = models.URLField()
+    name = models.TextField(max_length=250)
+    refsource = models.TextField(max_length=500)
 
     def __str__(self):
         return str(self.url)
+
+
+class ReferenceTag(models.Model):
+    name = models.TextField(max_length=250)
+    reference = models.ManyToManyField(Reference)
+
+    def __str__(self) -> str:
+        return self.name
 
 
 class CPE(models.Model):

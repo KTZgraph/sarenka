@@ -14,9 +14,7 @@ from pathlib import Path
 from zipfile import ZipFile
 from os import remove
 import json
-import codecs
 
-from pprint import pprint
 
 from apps.vulnerabilities.models import CVE
 
