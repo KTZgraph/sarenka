@@ -15,6 +15,7 @@ function SearchPage() {
         <title>Sarenka | {t("common:search")} </title>
         <meta name="keywords" content="shodan" />
       </Head>
+      <p>Sarenka</p>
 
       <Search />
     </>
