@@ -1,8 +1,8 @@
 class ProviderUrl:  # todo: singleton
     def __init__(self):
-        self._protonmail = 'https://api.protonmail.ch/pks/lookup?op=index&search='
-        self._protonmail_pk = 'https://api.protonmail.ch/pks/lookup?op=get&search='
-        self._protonmail_vpn = 'https://api.protonmail.ch/vpn/logicals'
+        self._protonmail = "https://api.protonmail.ch/pks/lookup?op=index&search="
+        self._protonmail_pk = "https://api.protonmail.ch/pks/lookup?op=get&search="
+        self._protonmail_vpn = "https://api.protonmail.ch/vpn/logicals"
 
     @property
     def protonmail(self) -> str:

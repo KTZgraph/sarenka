@@ -9,9 +9,9 @@ def encode_to_base64(value: str) -> str:
     :param value:
     :return: base64 encoded string
     """
-    str_bytes = value.encode('utf-8')
+    str_bytes = value.encode("utf-8")
     base64_bytes = b64encode(str_bytes)
-    base64_str = base64_bytes.decode('utf-8')
+    base64_str = base64_bytes.decode("utf-8")
     return base64_str
 
 
@@ -21,7 +21,9 @@ class CWE(models.Model):
     abstraction = models.CharField(max_length=100)
     structure = models.CharField(max_length=100)
     status = models.CharField(max_length=100)
-    description = models.TextField(null=False)  # krókie opisy z https://nvd.nist.gov/vuln/categories
+    description = models.TextField(
+        null=False
+    )  # krókie opisy z https://nvd.nist.gov/vuln/categories
     extended_description = models.TextField(null=True)
 
     def __str__(self):
@@ -30,16 +32,18 @@ class CWE(models.Model):
 
 class Vector(models.Model):
     VERSION = [
-        ('3.1', 'CVSSV3.1'),
-        ('3.0', 'CVSSV3.0'),
-        ('2.0', 'CVSSV2.0'),
+        ("3.1", "CVSSV3.1"),
+        ("3.0", "CVSSV3.0"),
+        ("2.0", "CVSSV2.0"),
     ]
     SEVERITY = [
-        ('0', 'LOW'),
-        ('1', 'MEDIUM'),
-        ('2', 'HIGH'),
+        ("0", "LOW"),
+        ("1", "MEDIUM"),
+        ("2", "HIGH"),
     ]
-    id = models.CharField(primary_key=True, max_length=50, default='-1')  # base64 vector code
+    id = models.CharField(
+        primary_key=True, max_length=50, default="-1"
+    )  # base64 vector code
     version = models.CharField(choices=VERSION, max_length=6)
     code = models.CharField(max_length=50, unique=True)
     base_score = models.CharField(max_length=5)
@@ -86,11 +90,10 @@ class ReferenceTag(models.Model):
 
 
 class CPE(models.Model):
-    VERSION = [
-        ('2.2', 'CPE2.2'),
-        ('2.3', 'CPE2.3')
-    ]
-    id = models.CharField(primary_key=True, max_length=200, default='-1')  # base64 CPE code
+    VERSION = [("2.2", "CPE2.2"), ("2.3", "CPE2.3")]
+    id = models.CharField(
+        primary_key=True, max_length=200, default="-1"
+    )  # base64 CPE code
     is_vulnerable = models.BooleanField()
     version = models.CharField(choices=VERSION, max_length=6)
     cve = models.ForeignKey(CVE, on_delete=models.CASCADE)

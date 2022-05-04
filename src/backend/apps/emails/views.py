@@ -6,14 +6,9 @@ from .providers.protonmail import Protonmail, ProtonmailVPN
 
 class ProtonmailVPNAPIView(views.APIView):
     def get(self, request):
-        return Response({
-            'data': ProtonmailVPN.get()
-        })
+        return Response({"data": ProtonmailVPN.get()})
 
 
 class ProtonmailAPIView(views.APIView):
     def get(self, request, username):
-        return Response({
-            'data': Protonmail.get(username)
-        })
-
+        return Response({"data": Protonmail.get(username)})

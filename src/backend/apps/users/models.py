@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class AppUser(User):
     censys_api_id = models.CharField(max_length=72, unique=True, default="")
     censys_secret = models.CharField(max_length=64, unique=True, default="")

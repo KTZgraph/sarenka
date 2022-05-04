@@ -11,12 +11,12 @@ class CWETestCase(APITestCase):
         data = {
             "code": "CWEDetails-123",
             "short_description": "short description",
-            "description": "long description"
+            "description": "long description",
         }
-        response = self.client.post(reverse('vulnerabilities:cwe-list'), data)
+        response = self.client.post(reverse("vulnerabilities:cwe-list"), data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-        response = self.client.post(reverse('vulnerabilities:cwe-list'), data)
+        response = self.client.post(reverse("vulnerabilities:cwe-list"), data)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
 
@@ -25,7 +25,7 @@ class CVETestCase(APITestCase):
         self.cwe = models.CWE.objects.create(
             code="CWEDetails-123",
             short_description="short description",
-            description="long description"
+            description="long description",
         )
 
     def test_create(self):
@@ -34,16 +34,16 @@ class CVETestCase(APITestCase):
             "description": "CVE description",
             "published": "1980-01-01",
             "updated": "2000-03-28",
-            "cwe": 1
+            "cwe": 1,
         }
-        response = self.client.post(reverse('vulnerabilities:cve-list'), data)
+        response = self.client.post(reverse("vulnerabilities:cve-list"), data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-        response = self.client.post(reverse('vulnerabilities:cve-list'), data)
+        response = self.client.post(reverse("vulnerabilities:cve-list"), data)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
-        data['cwe'] = 777777777
-        response = self.client.post(reverse('vulnerabilities:cve-list'), data)
+        data["cwe"] = 777777777
+        response = self.client.post(reverse("vulnerabilities:cve-list"), data)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
 
@@ -52,7 +52,7 @@ class VectorTestCase(APITestCase):
         self.cwe = models.CWE.objects.create(
             code="CWEDetails-123",
             short_description="short description",
-            description="long description"
+            description="long description",
         )
 
         self.cve = models.CVE.objects.create(
@@ -60,7 +60,7 @@ class VectorTestCase(APITestCase):
             description="CVE description",
             published="1980-01-01",
             updated="2000-03-28",
-            cwe=self.cwe
+            cwe=self.cwe,
         )
 
     def test_create_v3(self):
@@ -71,10 +71,10 @@ class VectorTestCase(APITestCase):
             "base_severity": "2",
             "exploitability_score": "1.8",
             "impact_score": "5.9",
-            "cve": 1
+            "cve": 1,
         }
 
-        response = self.client.post(reverse('vulnerabilities:vector-list'), data)
+        response = self.client.post(reverse("vulnerabilities:vector-list"), data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
     def test_create_v2(self):
@@ -85,16 +85,15 @@ class VectorTestCase(APITestCase):
             "base_severity": "1",
             "exploitability_score": "3.9",
             "impact_score": "6.4",
-            "cve": 1
+            "cve": 1,
         }
 
-        response = self.client.post(reverse('vulnerabilities:vector-list'), data)
+        response = self.client.post(reverse("vulnerabilities:vector-list"), data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-        data['cve'] = 999999
-        response = self.client.post(reverse('vulnerabilities:vector-list'), data)
+        data["cve"] = 999999
+        response = self.client.post(reverse("vulnerabilities:vector-list"), data)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
-
 
 
 class ReferenceCase(APITestCase):
@@ -102,7 +101,7 @@ class ReferenceCase(APITestCase):
         self.cwe = models.CWE.objects.create(
             code="CWEDetails-123",
             short_description="short description",
-            description="long description"
+            description="long description",
         )
 
         self.cve = models.CVE.objects.create(
@@ -110,7 +109,7 @@ class ReferenceCase(APITestCase):
             description="CVE description",
             published="1980-01-01",
             updated="2000-03-28",
-            cwe=self.cwe
+            cwe=self.cwe,
         )
 
     def test_create(self):
@@ -119,14 +118,14 @@ class ReferenceCase(APITestCase):
             "is_exploit": False,
             "is_vendor_advisory": True,
             "url": "https://www.intel.com",
-            "cve": 1
+            "cve": 1,
         }
 
-        response = self.client.post(reverse('vulnerabilities:reference-list'), data)
+        response = self.client.post(reverse("vulnerabilities:reference-list"), data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-        data['cve'] = 9999999999999999
-        response = self.client.post(reverse('vulnerabilities:reference-list'), data)
+        data["cve"] = 9999999999999999
+        response = self.client.post(reverse("vulnerabilities:reference-list"), data)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
 
@@ -135,7 +134,7 @@ class CPECase(APITestCase):
         self.cwe = models.CWE.objects.create(
             code="CWEDetails-123",
             short_description="short description",
-            description="long description"
+            description="long description",
         )
 
         self.cve = models.CVE.objects.create(
@@ -143,7 +142,7 @@ class CPECase(APITestCase):
             description="CVE description",
             published="1980-01-01",
             updated="2000-03-28",
-            cwe=self.cwe
+            cwe=self.cwe,
         )
 
     def test_create(self):
@@ -151,13 +150,12 @@ class CPECase(APITestCase):
             "is_vulnerable": True,
             "version": "2.3",
             "code": "cpe:2.3:o::",
-            "cve": 1
+            "cve": 1,
         }
 
-        response = self.client.post(reverse('vulnerabilities:cpe-list'), data)
+        response = self.client.post(reverse("vulnerabilities:cpe-list"), data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-        data['cve'] = 999999999999999
-        response = self.client.post(reverse('vulnerabilities:cpe-list'), data)
+        data["cve"] = 999999999999999
+        response = self.client.post(reverse("vulnerabilities:cpe-list"), data)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
-

@@ -6,19 +6,19 @@ from apps.vulnerabilities import models
 class CPESerializer(serializers.ModelSerializer):
     class Meta:
         model = models.CPE
-        fields = '__all__'
+        fields = "__all__"
 
 
 class ReferenceSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Reference
-        fields = '__all__'
+        fields = "__all__"
 
 
 class VectorSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Vector
-        fields = '__all__'
+        fields = "__all__"
 
 
 class CVESerializer(serializers.ModelSerializer):
@@ -28,7 +28,7 @@ class CVESerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.CVE
-        fields = '__all__'
+        fields = "__all__"
 
 
 class CWESerializer(serializers.ModelSerializer):
@@ -36,5 +36,4 @@ class CWESerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.CWE
-        fields = '__all__'
-
+        fields = "__all__"

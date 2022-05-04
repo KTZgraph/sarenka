@@ -13,15 +13,16 @@ class CWEScreen(generics.ListAPIView):
     """
     /api/vulns/cwe-list/?search=NVD&?code=CVE-3
     """
+
     serializer_class = serializers.CWESerializer
     queryset = models.CWE.objects.all()
     filter_backends = [filters.SearchFilter, DjangoFilterBackend]
-    search_fields = ['short_description', 'description']
-    filterset_fields = ['id']  # dokładne szukanie, łącznie z wielkością liter
+    search_fields = ["short_description", "description"]
+    filterset_fields = ["id"]  # dokładne szukanie, łącznie z wielkością liter
 
 
 def CWETOP25List(request):
-    data =  CWETOP25().get()
+    data = CWETOP25().get()
     return JsonResponse(data, safe=False)
 
 
@@ -34,17 +35,18 @@ class CVEList(generics.ListAPIView):
     serializer_class = serializers.CVESerializer
     queryset = models.CVE.objects.all()
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['cwe__id']  # api/vulns/cve-list/?cwe__code=CWEDetails-Other
+    filterset_fields = ["cwe__id"]  # api/vulns/cve-list/?cwe__code=CWEDetails-Other
 
 
 class CWECVEList(generics.ListAPIView):
     """
     Filter by cwe code - return list of CVEs for specific CWEDetails.
     """
+
     serializer_class = serializers.CVESerializer
 
     def get_queryset(self):
-        cwe = self.kwargs['cwe']
+        cwe = self.kwargs["cwe"]
         return models.CVE.objects.filter(cwe__code__icontains=cwe.upper())
 
 
@@ -52,7 +54,7 @@ class CVECreate(generics.CreateAPIView):
     serializer_class = serializers.CVESerializer
 
     def get_queryset(self):
-        pk = self.kwargs['pk']
+        pk = self.kwargs["pk"]
         cve = models.CVE.objects.filter(cwe__id=pk)
         return cve
 
@@ -71,10 +73,11 @@ class VectorSeverityList(generics.ListAPIView):
     """
     Filter by severity level - return list of vectors by severity name from choice field (HIGH, MEDIUM, LOW).
     """
+
     serializer_class = serializers.VectorSerializer
 
     def get_queryset(self):
-        severity = self.kwargs['severity']
+        severity = self.kwargs["severity"]
         if severity.isdigit():
             severity_id = int(severity)
         else:
@@ -87,17 +90,18 @@ class VectorSearch(generics.ListAPIView):
     """
     api/vulns/vector-list/search/?severity=medium
     """
+
     serializer_class = serializers.VectorSerializer
 
     def get_queryset(self):
-        severity = self.request.query_params.get('severity', None)
-        cve = self.request.query_params.get('cve', None)
-        code_b64 = self.request.query_params.get('code', None)
-        version = self.request.query_params.get('version', None)
-        base_score = self.request.query_params.get('base_score', None)
-        exp_score = self.request.query_params.get('exp_score', None)
-        impact_score = self.request.query_params.get('impact_score', None)
-        cwe = self.request.query_params.get('cwe', None)
+        severity = self.request.query_params.get("severity", None)
+        cve = self.request.query_params.get("cve", None)
+        code_b64 = self.request.query_params.get("code", None)
+        version = self.request.query_params.get("version", None)
+        base_score = self.request.query_params.get("base_score", None)
+        exp_score = self.request.query_params.get("exp_score", None)
+        impact_score = self.request.query_params.get("impact_score", None)
+        cwe = self.request.query_params.get("cwe", None)
 
         if severity is not None:
             if severity.isdigit():
@@ -122,7 +126,7 @@ class VectorSearch(generics.ListAPIView):
         if code_b64 is not None:
             code_base64_bytes = code_b64.encode("ascii")
             code_str_bytes = base64.b64decode(code_base64_bytes)
-            code = code_str_bytes.decode('ascii')
+            code = code_str_bytes.decode("ascii")
             return models.Vector.objects.filter(code__icontains=code)
 
         if base_score is not None:
@@ -145,7 +149,7 @@ class ReferenceList(generics.ListAPIView):
     queryset = models.Reference.objects.all()
     # dokłądne fitlrowanie
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['is_confirmed', 'is_exploit', 'is_vendor_advisory']
+    filterset_fields = ["is_confirmed", "is_exploit", "is_vendor_advisory"]
     # /api/vulns/reference-list/?is_confirmed=true; api/vulns/reference-list/?is_confirmed=true&is_exploit=true;
     # api/vulns/reference-list/?is_confirmed=true&is_exploit=true&is_vendor_advisory=true
 
@@ -154,7 +158,7 @@ class ReferenceCreate(generics.CreateAPIView):
     serializer_class = serializers.ReferenceSerializer
 
     def get_queryset(self):
-        pk = self.kwargs['pk']
+        pk = self.kwargs["pk"]
         reference = models.Reference.objects.filter(cve__id=pk)
         return reference
 
@@ -168,14 +172,14 @@ class CPEList(generics.ListAPIView):
     serializer_class = serializers.CPESerializer
     queryset = models.CPE.objects.all()
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['is_vulnerable']  # api/vulns/cpe-list/?is_vulnerable=true
+    filterset_fields = ["is_vulnerable"]  # api/vulns/cpe-list/?is_vulnerable=true
 
 
 class CPECreate(generics.CreateAPIView):
     serializer_class = serializers.CPESerializer
 
     def get_queryset(self):
-        pk = self.kwargs['pk']
+        pk = self.kwargs["pk"]
         cpe = models.CPE.objects.filter(cve__id=pk)
         return cpe
 

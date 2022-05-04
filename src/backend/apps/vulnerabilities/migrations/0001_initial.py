@@ -8,72 +8,132 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='CVE',
+            name="CVE",
             fields=[
-                ('id', models.CharField(max_length=20, primary_key=True, serialize=False)),
-                ('description', models.TextField()),
-                ('published', models.DateField()),
-                ('updated', models.DateField()),
+                (
+                    "id",
+                    models.CharField(max_length=20, primary_key=True, serialize=False),
+                ),
+                ("description", models.TextField()),
+                ("published", models.DateField()),
+                ("updated", models.DateField()),
             ],
         ),
         migrations.CreateModel(
-            name='CWE',
+            name="CWE",
             fields=[
-                ('id', models.CharField(max_length=20, primary_key=True, serialize=False)),
-                ('name', models.TextField()),
-                ('abstraction', models.CharField(max_length=100)),
-                ('structure', models.CharField(max_length=100)),
-                ('status', models.CharField(max_length=100)),
-                ('description', models.TextField()),
-                ('extended_description', models.TextField(null=True)),
+                (
+                    "id",
+                    models.CharField(max_length=20, primary_key=True, serialize=False),
+                ),
+                ("name", models.TextField()),
+                ("abstraction", models.CharField(max_length=100)),
+                ("structure", models.CharField(max_length=100)),
+                ("status", models.CharField(max_length=100)),
+                ("description", models.TextField()),
+                ("extended_description", models.TextField(null=True)),
             ],
         ),
         migrations.CreateModel(
-            name='Vector',
+            name="Vector",
             fields=[
-                ('id', models.CharField(default='-1', max_length=50, primary_key=True, serialize=False)),
-                ('version', models.CharField(choices=[('3.1', 'CVSSV3.1'), ('3.0', 'CVSSV3.0'), ('2.0', 'CVSSV2.0')], max_length=6)),
-                ('code', models.CharField(max_length=50, unique=True)),
-                ('base_score', models.CharField(max_length=5)),
-                ('base_severity', models.CharField(choices=[('0', 'LOW'), ('1', 'MEDIUM'), ('2', 'HIGH')], max_length=6)),
-                ('exploitability_score', models.CharField(max_length=5)),
-                ('impact_score', models.CharField(max_length=5)),
+                (
+                    "id",
+                    models.CharField(
+                        default="-1", max_length=50, primary_key=True, serialize=False
+                    ),
+                ),
+                (
+                    "version",
+                    models.CharField(
+                        choices=[
+                            ("3.1", "CVSSV3.1"),
+                            ("3.0", "CVSSV3.0"),
+                            ("2.0", "CVSSV2.0"),
+                        ],
+                        max_length=6,
+                    ),
+                ),
+                ("code", models.CharField(max_length=50, unique=True)),
+                ("base_score", models.CharField(max_length=5)),
+                (
+                    "base_severity",
+                    models.CharField(
+                        choices=[("0", "LOW"), ("1", "MEDIUM"), ("2", "HIGH")],
+                        max_length=6,
+                    ),
+                ),
+                ("exploitability_score", models.CharField(max_length=5)),
+                ("impact_score", models.CharField(max_length=5)),
             ],
         ),
         migrations.CreateModel(
-            name='Reference',
+            name="Reference",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('is_confirmed', models.BooleanField()),
-                ('is_exploit', models.BooleanField()),
-                ('is_vendor_advisory', models.BooleanField()),
-                ('url', models.URLField()),
-                ('cve', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='vulnerabilities.cve')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("is_confirmed", models.BooleanField()),
+                ("is_exploit", models.BooleanField()),
+                ("is_vendor_advisory", models.BooleanField()),
+                ("url", models.URLField()),
+                (
+                    "cve",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="vulnerabilities.cve",
+                    ),
+                ),
             ],
         ),
         migrations.AddField(
-            model_name='cve',
-            name='cwe',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='cwe', to='vulnerabilities.cwe'),
+            model_name="cve",
+            name="cwe",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.PROTECT,
+                related_name="cwe",
+                to="vulnerabilities.cwe",
+            ),
         ),
         migrations.AddField(
-            model_name='cve',
-            name='vectors',
-            field=models.ManyToManyField(to='vulnerabilities.Vector'),
+            model_name="cve",
+            name="vectors",
+            field=models.ManyToManyField(to="vulnerabilities.Vector"),
         ),
         migrations.CreateModel(
-            name='CPE',
+            name="CPE",
             fields=[
-                ('id', models.CharField(default='-1', max_length=200, primary_key=True, serialize=False)),
-                ('is_vulnerable', models.BooleanField()),
-                ('version', models.CharField(choices=[('2.2', 'CPE2.2'), ('2.3', 'CPE2.3')], max_length=6)),
-                ('code', models.CharField(max_length=500)),
-                ('cve', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='vulnerabilities.cve')),
+                (
+                    "id",
+                    models.CharField(
+                        default="-1", max_length=200, primary_key=True, serialize=False
+                    ),
+                ),
+                ("is_vulnerable", models.BooleanField()),
+                (
+                    "version",
+                    models.CharField(
+                        choices=[("2.2", "CPE2.2"), ("2.3", "CPE2.3")], max_length=6
+                    ),
+                ),
+                ("code", models.CharField(max_length=500)),
+                (
+                    "cve",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="vulnerabilities.cve",
+                    ),
+                ),
             ],
         ),
     ]

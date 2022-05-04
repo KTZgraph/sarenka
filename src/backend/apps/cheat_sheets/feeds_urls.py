@@ -7,6 +7,9 @@ class FeedsUrls:
         self._tutorials = [
             "http://fuzzysecurity.com/tutorials/16.html",
             "https://gracefulsecurity.com/web-application-defense-filtering-user-input/",
-            "https://grimhacker.com/"
+            "https://grimhacker.com/",
         ]
-        self._sekurak = ["https://sekurak.pl/", "https://www.youtube.com/channel/UCfxk5idSdKXTEqAOa8YXIgw"]
+        self._sekurak = [
+            "https://sekurak.pl/",
+            "https://www.youtube.com/channel/UCfxk5idSdKXTEqAOa8YXIgw",
+        ]

@@ -7,10 +7,10 @@ phone_nr = "+48616652945"
 number = parse(phone_nr)
 
 # miasto/kraj
-phone_country = geocoder.description_for_number(number, 'en')
+phone_country = geocoder.description_for_number(number, "en")
 print(phone_country)
 
 
-#siec telefonu
-phone_carrier = carrier.name_for_number(number, 'en')
+# siec telefonu
+phone_carrier = carrier.name_for_number(number, "en")
 print(phone_carrier)

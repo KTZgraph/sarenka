@@ -6,40 +6,48 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('vulnerabilities', '0001_initial'),
+        ("vulnerabilities", "0001_initial"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='reference',
-            name='is_confirmed',
+            model_name="reference",
+            name="is_confirmed",
         ),
         migrations.RemoveField(
-            model_name='reference',
-            name='is_exploit',
+            model_name="reference",
+            name="is_exploit",
         ),
         migrations.RemoveField(
-            model_name='reference',
-            name='is_vendor_advisory',
+            model_name="reference",
+            name="is_vendor_advisory",
         ),
         migrations.AddField(
-            model_name='reference',
-            name='name',
+            model_name="reference",
+            name="name",
             field=models.TextField(default=None, max_length=250),
             preserve_default=False,
         ),
         migrations.AddField(
-            model_name='reference',
-            name='refsource',
-            field=models.TextField(default='', max_length=500),
+            model_name="reference",
+            name="refsource",
+            field=models.TextField(default="", max_length=500),
             preserve_default=False,
         ),
         migrations.CreateModel(
-            name='ReferenceTag',
+            name="ReferenceTag",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.TextField(max_length=250)),
-                ('reference', models.ManyToManyField(to='vulnerabilities.Reference')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.TextField(max_length=250)),
+                ("reference", models.ManyToManyField(to="vulnerabilities.Reference")),
             ],
         ),
     ]

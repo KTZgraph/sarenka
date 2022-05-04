@@ -1,7 +1,5 @@
 from django.urls import path
 
-app_name = 'search'
+app_name = "search"
 
-urlpatterns = [
-
-]
+urlpatterns = []

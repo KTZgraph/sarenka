@@ -19,4 +19,3 @@ class FaviconCalculator:
 
 if __name__ == "__main__":
     print(FaviconCalculator.calculate(""))
-

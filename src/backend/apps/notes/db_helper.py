@@ -6,8 +6,8 @@ import pymongo
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 
-CONNECTION_STRING = 'mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false'
-DEFAULT_VALUE = ''
+CONNECTION_STRING = "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false"
+DEFAULT_VALUE = ""
 
 
 def get_db_connector() -> pymongo.database.Database:
@@ -18,7 +18,7 @@ def get_db_connector() -> pymongo.database.Database:
     return db
 
 
-def get_notes_collection(collection_name='notes') -> pymongo.collection.Collection:
+def get_notes_collection(collection_name="notes") -> pymongo.collection.Collection:
     db = get_db_connector()
 
     # notes to nazwa kolekcji
@@ -36,14 +36,11 @@ def find_note_by_id(note_id: str) -> pymongo.cursor.Cursor:
     return result
 
 
-def update_note(note_id:str, data:str) -> pymongo.results.UpdateResult:
+def update_note(note_id: str, data: str) -> pymongo.results.UpdateResult:
     collection = get_notes_collection()
-    
-    collection.update_one(
-        {"_id": note_id},
-        {"$set": {"data": data}}
-    )
-    
+
+    collection.update_one({"_id": note_id}, {"$set": {"data": data}})
+
     result = collection.find_one({"_id": note_id})
     return result
 
@@ -71,6 +68,6 @@ def get_or_create_note(note_id):
     result = collection.find_one({"_id": note_id})
 
     if not result:
-        result = save_note({'_id': note_id, 'data': DEFAULT_VALUE})
+        result = save_note({"_id": note_id, "data": DEFAULT_VALUE})
 
     return result
