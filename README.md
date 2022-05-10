@@ -139,6 +139,30 @@ $ pip3 install -r ./requirements.txt
 $ python ./sarenka/sarenka.py
 ```
 
+# Docker
+
+You are also able to run application inside a Docker container
+
+#### Build
+
+```
+make build
+
+# or
+
+docker build -t sarenka .
+```
+
+#### Run
+
+```
+make run
+
+# or
+
+docker run -p 8000:8000 sarenka
+```
+
 # Getting started 
 
 ####Please create accounts on services:
@@ -207,7 +231,6 @@ And of course SARENKA itself is open source with a [public repository][sarenka]
  - Cover 100% code by tests
  - typing backend
  - document all functions and class
- - Docker
  - online demo
  - Jenkins
  - GraphQL
