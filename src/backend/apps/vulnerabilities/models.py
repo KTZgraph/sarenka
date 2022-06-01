@@ -61,7 +61,7 @@ class Vector(models.Model):
 
 class CVE(models.Model):
     id = models.CharField(max_length=20, primary_key=True)
-    cwe = models.ForeignKey(CWE, on_delete=models.PROTECT, related_name="cwe")
+    # cwe = models.ForeignKey(CWE, on_delete=models.PROTECT, related_name="cwe")
     description = models.TextField()
     published = models.DateField()
     updated = models.DateField()
@@ -72,7 +72,7 @@ class CVE(models.Model):
 
 
 class Reference(models.Model):
-    cve = models.ForeignKey(CVE, on_delete=models.CASCADE)
+    # cve = models.ForeignKey(CVE, on_delete=models.CASCADE)
     url = models.URLField()
     name = models.TextField(max_length=250)
     refsource = models.TextField(max_length=500)
@@ -96,7 +96,7 @@ class CPE(models.Model):
     )  # base64 CPE code
     is_vulnerable = models.BooleanField()
     version = models.CharField(choices=VERSION, max_length=6)
-    cve = models.ForeignKey(CVE, on_delete=models.CASCADE)
+    # cve = models.ForeignKey(CVE, on_delete=models.CASCADE)
     code = models.CharField(max_length=500)
 
     def save(self, *args, **kwargs):

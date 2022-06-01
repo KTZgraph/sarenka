@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "corsheaders",
-    "drf_yasg",
     "django_filters",
     "django_extensions",
     "apps.cheat_sheets.apps.CheatSheetsConfig",
@@ -93,25 +92,34 @@ WSGI_APPLICATION = "backend.wsgi.application"
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {},
-    "users_db": {
+    "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "users.db.sqlite3",
-    },
-    "vulns_db": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "test",
-        "USER": "postgres",
-        "PASSWORD": "postgres",
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
-    },
+    }
 }
 
-DATABASE_ROUTERS = [
-    "routers.db_routers.AuthRouter",
-    "routers.db_routers.VulnerabilitiesRouter",
-]
+
+# DATABASES = {
+#     "default": {},
+#     "users_db": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "users.db.sqlite3",
+#     },
+#     "vulns_db": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "test",
+#         "USER": "postgres",
+#         "PASSWORD": "postgres",
+#         "HOST": "127.0.0.1",
+#         "PORT": "5432",
+#     },
+# }
+
+
+# DATABASE_ROUTERS = [
+#     "routers.db_routers.AuthRouter",
+#     "routers.db_routers.VulnerabilitiesRouter",
+# ]
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
