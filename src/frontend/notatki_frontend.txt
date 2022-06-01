@@ -1,0 +1,17 @@
+https://nodejs.org/dist/v16.15.0/node-v16.15.0-x64.msi
+npm install -g npm@latest
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+# Docker tylko frontend
+https://hub.docker.com/_/node?tab=tags&page=1&name=16.15.0-alpine
+1. wejść do tego folderu 
+2. zbudować obraz z Dockerfile
+docker build -t sarenka-frontend .
+3. sprawdizć obrazy
+docker images
+docker image ls
+4. uruchomić kontener
+docker run --name f1 -p 3001:3000 sarenka-frontend 
+albo żeby nie zajmowac konsoli w detached mode
+docker run -d --name f1 -p 3001:3000 sarenka-frontend
