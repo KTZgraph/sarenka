@@ -58,10 +58,8 @@ def save_dict_as_json(data: dict, filename: str) -> None:
     with open(filename, "w") as f:
         json.dump(data, f, indent=4)
 
-def get_plugin_version_readme_info():
-    pass
-
-def get_plugin_version_readme_file(plugin_version_url: str) -> Optional[str]:
+#helper
+def get_plugin_version_readme_file(plugin_version_url: str) -> tuple[Optional[str], Optional[str]]:
     """https://plugins.svn.wordpress.org/0-errors/tags/0.2/readme.txt
 
     === 0-Errors ===
@@ -80,9 +78,13 @@ def get_plugin_version_readme_file(plugin_version_url: str) -> Optional[str]:
     headers.update({'Range':'bytes=0-2000000'})
 
     readme_file = requests.get(readme_url, headers=headers, stream=True)
-    if readme_file.status_code != 200:
-        return None
+    
+    if readme_file.status_code == 200:
+        return readme_file
+    
+    return None
 
+def get_plugin_version_readme_info(plugin_version_url:str)->tuple[Optional[str], Optional[str]]:
     # u góry pliku znajdowanie tytułu
     # === 0-Errors ===
     # === Late Caching for Feeds ===
@@ -91,12 +93,15 @@ def get_plugin_version_readme_file(plugin_version_url: str) -> Optional[str]:
     # ===
     # Stable tag: 0.2
     # Stable tag:         1.0.2
-    title_pattern = r'=== (\w+[-,\s]*)+==='
-    stable_pattern = r'Stable tag:\s+(\d\.*)+'
-
-
     title_readme = None
     stable_readme = None
+
+    readme_file: requests.models.Response = get_plugin_version_readme_file(plugin_version_url)
+    if not readme_file:
+        return title_readme, stable_readme
+
+    title_pattern = r'=== (\w+[-,\s]*)+==='
+    stable_pattern = r'Stable tag:\s+(\d\.*)+'
 
     chunk: bytes
     for chunk in readme_file.iter_content(chunk_size=1024):
@@ -110,9 +115,6 @@ def get_plugin_version_readme_file(plugin_version_url: str) -> Optional[str]:
         if title_readme and stable_readme:
             break
 
-    print(readme_url)
-    print(title_readme)
-    print(stable_readme)
     return title_readme, stable_readme
 
 
@@ -121,6 +123,16 @@ class PluginDetails(TypedDict):
     versions: Optional[Dict[str, str]]  # śłownik albo None
     versions_short: Optional[List[str]]  # lista albo None
 
+def get_plugin_versions_info(plugin_versions_links:Dict[str, str])->Dict[str, str]:
+    versions_info = {}
+    for version_name, version_url in plugin_versions_links.items():
+        title_readme, stable_readme = get_plugin_version_readme_info(version_url)
+        versions_info[version_name] = {
+            'version_url': version_url,
+            'title_readme': title_readme,
+            'stable_readme': stable_readme
+        }
+    return versions_info
 
 def get_plugins_versions_links(
     main_links: Dict[str, str]
@@ -139,17 +151,13 @@ def get_plugins_versions_links(
         plugin_versions_links.pop("..", None)
         plugin_versions_links.pop("Apache Subversion", None)
 
-        for version_name, version_url in plugin_versions_links.items():
-            get_plugin_version_readme_file(version_url)
-
-
+        versions_info = get_plugin_versions_info(plugin_versions_links)
         plugins_versions_links[plugin_name] = {
             "plugin_url": plugin_main_url,
-            "versions": plugin_versions_links if plugin_versions_links else None,
-            "versions_short": list(plugin_versions_links.keys())
-            if plugin_versions_links
-            else None,
+            "versions": versions_info if versions_info else None,
+            "versions_short": list(plugin_versions_links.keys()) if plugin_versions_links else None,
         }
+
     return plugins_versions_links
 
 
