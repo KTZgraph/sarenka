@@ -58,6 +58,8 @@ def save_dict_as_json(data: dict, filename: str) -> None:
     with open(filename, "w") as f:
         json.dump(data, f, indent=4)
 
+def get_plugin_version_readme_info():
+    pass
 
 def get_plugin_version_readme_file(plugin_version_url: str) -> Optional[str]:
     """https://plugins.svn.wordpress.org/0-errors/tags/0.2/readme.txt
@@ -84,18 +86,34 @@ def get_plugin_version_readme_file(plugin_version_url: str) -> Optional[str]:
     # u góry pliku znajdowanie tytułu
     # === 0-Errors ===
     # === Late Caching for Feeds ===
-    pattern_title = r'=== (\w+[-,\s]*)+==='
+    #https://plugins.svn.wordpress.org/0-delay-late-caching-for-feeds/tags/1.0.1/readme.md
+    # Late Caching for Feeds
+    # ===
+    # Stable tag: 0.2
+    # Stable tag:         1.0.2
+    title_pattern = r'=== (\w+[-,\s]*)+==='
+    stable_pattern = r'Stable tag:\s+(\d\.*)+'
 
+
+    title_readme = None
+    stable_readme = None
 
     chunk: bytes
     for chunk in readme_file.iter_content(chunk_size=1024):
-        if 'Stable tag' in str(chunk):
-            #re.search zwraca pierwsze znalezienie
-            re.search(pattern_title, str(chunk)) 
-            text = chunk #tutuaj regex
-            print(type(chunk))
+        txt = str(chunk)
+        if re.search(title_pattern, txt):
+            title_readme = re.search(title_pattern, txt).group(0)
+        
+        if re.search(stable_pattern, txt):
+            stable_readme = re.search(stable_pattern, txt).group(0)
 
-    return text
+        if title_readme and stable_readme:
+            break
+
+    print(readme_url)
+    print(title_readme)
+    print(stable_readme)
+    return title_readme, stable_readme
 
 
 class PluginDetails(TypedDict):
