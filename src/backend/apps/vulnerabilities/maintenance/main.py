@@ -44,17 +44,25 @@ def get_dict_from_xml_file(xml_filepath:str)->dict:
 #zapisywanie do bazy danych
 def save_db_cwe_data(cwe_dict:dict)->list:
     weakness:list = cwe_dict.get('Weakness_Catalog').get('Weaknesses').get('Weakness')
-    for w in weakness:
-        CWE.objects.get_or_create(
-            id= w['@ID'], #musi być
-            name = 'test', #w['@Name'],  #musi być
-            abstraction = 'test', #w['@Abstraction'],
-            structure = 'test', # w['@Structure'],
-            status = 'test', #w['@Status'],
-            description = 'test', # w['Description'], #bez małpy
-            extended_description = 'test' #w['Extended_Description']["xhtml:p"][0]
-        )
 
+    for w in weakness:
+        try: # mismash json
+            extended_description = w['Extended_Description'].get("xhtml:p", [''])[0]
+            # print(extended_description)
+        except AttributeError as e:
+            extended_description = w['Extended_Description']
+        except KeyError as e:
+            extended_description = None #some CWEs don't have Extended_Description at all
+
+        CWE.objects.get_or_create(
+            id= w['@ID'],
+            name = w['@Name'],
+            abstraction = w['@Abstraction'],
+            structure = w['@Structure'],
+            status = w['@Status'],
+            description = w['Description'],
+            extended_description = extended_description
+        )
 
 def main():
     # 1. pobranie listy CWE z 
