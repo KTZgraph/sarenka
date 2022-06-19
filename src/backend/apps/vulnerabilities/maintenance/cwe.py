@@ -63,15 +63,20 @@ def save_db_cwe_data(cwe_dict:dict)->list:
             description = w['Description'],
             extended_description = extended_description
         )
+        
+        CWE.objects.get_or_create(
+            id= 'NVD-CWE-Other',
+            name = 'NVD-CWE-Other',
+            abstraction = 'NVD-CWE-Other',
+            structure = 'NVD-CWE-Other',
+            status = 'NVD-CWE-Other',
+            description = 'NVD-CWE-Other',
+            extended_description = 'NVD-CWE-Other'
+        )
 
 def main():
     # 1. pobranie listy CWE z 
     cwe_filename:str = get_cwe_filename()
-    print(cwe_filename)
     cwe_dict = get_dict_from_xml_file(cwe_filename)
     save_dict_as_json(cwe_dict, 'cwe.json')
     save_db_cwe_data(cwe_dict=cwe_dict)
-
-
-if __name__ == '__main__':
-    main()
