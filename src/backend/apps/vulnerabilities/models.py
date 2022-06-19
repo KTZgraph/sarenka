@@ -16,11 +16,17 @@ class CWE(models.Model):
 
 
 #-------------------- CVE -------------------------
+class Version(models.Model):
+    """cve.data_version"""
+    version = models.DecimalField(max_digits=5, decimal_places=2, null=False, blank=False, unique=True) #wiele cve ma wersje
+
+
 class CVE(models.Model):
     "cve.CVE_data_meta.ID"
     id = models.CharField(max_length=20, primary_key=True, unique=True, null=False, blank=False)
     # no cwe CVE-2002-2440
-    cwe = models.ForeignKey(CWE, on_delete=models.CASCADE, null=True, default=None) 
+    cwe = models.ForeignKey(CWE, on_delete=models.CASCADE, null=True, default=None, unique=True) 
+    version = models.ForeignKey(Version, on_delete=models.CASCADE, null=True, default=None, unique=True) # 1 wersja
     published = models.DateField(blank=False, null=False)
     modified = models.DateField(blank=True, null=True)
     description = models.TextField(blank=True, null=True)
@@ -28,10 +34,6 @@ class CVE(models.Model):
     def __str__(self):
         return self.id
 
-class Version(models.Model):
-    """cve.data_version"""
-    version = models.DecimalField(max_digits=5, decimal_places=2, null=False, blank=False)
-    cve = models.ManyToManyField(CVE)
 
 class Assigner(models.Model):
     """cve.data_version.ASSIGNER"""

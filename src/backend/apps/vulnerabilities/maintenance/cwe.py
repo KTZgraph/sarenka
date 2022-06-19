@@ -66,12 +66,12 @@ def save_db_cwe_data(cwe_dict:dict)->list:
         
         CWE.objects.get_or_create(
             id= 'NVD-CWE-Other',
-            name = 'NVD-CWE-Other',
-            abstraction = 'NVD-CWE-Other',
-            structure = 'NVD-CWE-Other',
-            status = 'NVD-CWE-Other',
-            description = 'NVD-CWE-Other',
-            extended_description = 'NVD-CWE-Other'
+            name = 'Other',
+            abstraction = 'Other',
+            structure = 'Other',
+            status = 'Other',
+            description = 'Other',
+            extended_description = 'Other'
         )
 
 def main():

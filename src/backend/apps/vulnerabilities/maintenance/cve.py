@@ -1,13 +1,14 @@
 from lib2to3.pytree import Base
+from pyexpat import model
 from statistics import mode
-from typing import List, Dict
+from typing import List, Dict, Optional
 import requests
 from bs4 import BeautifulSoup
 from zipfile import ZipFile
 import os
 import json
 from apps.vulnerabilities import models
-
+from .cve_saver import get_and_save_cve
 MAIN_URL  = "https://nvd.nist.gov/vuln/data-feeds#JSON_FEED"
 BASE_URL = "https://nvd.nist.gov/"
 
@@ -49,52 +50,25 @@ def download_file(file_url:str)->str:
     return extracted_file_name[0]
 
 # ------------------- database
-def get_cwe(id:str):
-    id = id.replace('CWE-', '')
-    cwe_obj = models.CWE.objects.filter(id=id)
-    return cwe_obj
 
 
-def get_and_save_cve(id:str, published:str, modified:str, description:str, cwe_obj:None): #->models.CVE:
-    cve_obj = models.CVE.objects.filter(id=id)
-    
-    if not cve_obj:
-        try:
-            if cwe_obj:
-                cve_obj = models.CVE.objects.create(
-                    id=id, 
-                    published=published[:10], #['“1999-12-30T05:00Z”
-                    modified=modified[:10], 
-                    description=description,
-                    cwe=cwe_obj
-                    )
-            else:
-                cve_obj = models.CVE.objects.create(
-                    id=id, 
-                    published=published[:10], #['“1999-12-30T05:00Z”
-                    modified=modified[:10], 
-                    description=description,
-                    )
-            
+def get_and_save_version(version:str, cve_obj:models.CVE)->None:
+    print("cve_obj: ", cve_obj)
+    print("type cve_obj: ", type(cve_obj))
+    if version:
+        data_version, _ = models.Version.objects.get_or_create(version=float(version))
+        print('data_version: ', data_version)
+        print("cve_obj: ", cve_obj)
+        print("type cve_obj: ", type(cve_obj))
+        if cve_obj is not None and data_version:
+            cve_obj.version.add(data_version)
             cve_obj.save()
-        except BaseException as e:
-            print('-------------- get_and_save_cve --------------')
-            print(e)
-            print(type(e))
-    
-    return cve_obj
 
-def get_and_save_version(version:str, cve_obj):
-    data_version = models.Version.objects.create(version=float(version), cve=cve_obj)
-    data_version.cve.add(cve_obj)
-    data_version.save()
-    return data_version
-
-def get_and_save_assigner(assigner_email:str, cve_obj=None):
-    assigner_obj = models.Assigner.objects.get_or_create(email=assigner_email)
-    assigner_obj.cve.add(cve_obj)
-    assigner_obj.save()
-    return assigner_obj
+def get_and_save_assigner(assigner_email:str, cve_obj:models.CVE)->None:
+    assigner_obj, _ = models.Assigner.objects.get_or_create(email=assigner_email)
+    if cve_obj:
+        assigner_obj.cve.add(cve_obj)
+        assigner_obj.save()
 
 def get_and_save_data_format(name:str, cve_obj=None):
     data_format = models.DataFormat.objects.get_or_create(name=name)
@@ -189,27 +163,26 @@ def get_and_save_base_metric_v3(base_metric_v3:dict, cve_obj=None):
 def save_data(filepath:str)->None:
     data = get_dict_from_json_file(filepath)
     cve_list = data.get('CVE_Items')
-    for cve in cve_list:
-        print('\n\n\n\n\n-------------------------\n')
+    for cve in cve_list[10:20]:
         for problemtype_data in cve['cve']['problemtype']['problemtype_data']:
             description = problemtype_data['description']
-            cve_id = cve['cve']['CVE_data_meta']['ID']
             cwe_id =  description[0].get('value') if description else None
-            if cwe_id:
-                cwe_obj = get_cwe(cwe_id)
-            else:
-                cwe_obj= None
 
+        cve_id = cve['cve']['CVE_data_meta']['ID']
         cve_obj = get_and_save_cve(
             id=cve['cve']['CVE_data_meta']['ID'],
             published = cve['publishedDate'],
             modified=cve['lastModifiedDate'],
             description= cve['cve']['description']['description_data'][0]['value'],
-            cwe_obj=cwe_obj
+            cwe_id=cwe_id
         )
+        version = cve.get('cve').get('data_version')
+        get_and_save_version(version, cve_obj)
 
-        data_version_obj = get_and_save_version(cve['cve']['data_version'], cve_obj)
-        # assigner_obj = get_and_save_assigner(cve['cve']['CVE_data_meta']['ASSIGNER'], cve_obj)
+
+        # get_and_save_assigner(cve['cve']['CVE_data_meta']['ASSIGNER'], cve_obj)
+        
+        
         # data_format_obj = get_and_save_data_format(cve['cve']['data_format'], cve_obj)
 
         # # print('#####################################################')
