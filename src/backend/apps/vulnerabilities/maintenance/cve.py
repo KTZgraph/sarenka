@@ -9,6 +9,9 @@ import os
 import json
 from apps.vulnerabilities import models
 from .cve_saver import get_and_save_cve
+import traceback
+
+
 MAIN_URL  = "https://nvd.nist.gov/vuln/data-feeds#JSON_FEED"
 BASE_URL = "https://nvd.nist.gov/"
 
@@ -26,7 +29,6 @@ def get_files_url(url=MAIN_URL, base_url=BASE_URL)->List[str]:
     files_urls = []
     for a in soup.find_all("a", href=True):
         href = a["href"]
-        # print(href)
         if href.split(".")[-1] == "zip":
             files_urls.append(f'{base_url}{href}')
 
@@ -37,75 +39,72 @@ def get_files_url(url=MAIN_URL, base_url=BASE_URL)->List[str]:
 def download_file(file_url:str)->str:
     zip_filename = file_url.split("/")[-1]
     data = requests.get(file_url)
-    #save zip file
     with open(zip_filename, "wb") as f:
         f.write(data.content)
-    # unzip downloaded file
     with ZipFile(zip_filename, "r") as zip_ref:
         extracted_file_name = zip_ref.namelist()
         zip_ref.extractall('.')
 
     os.remove(zip_filename)
-    #only one file i zip package
     return extracted_file_name[0]
 
-# ------------------- database
-
-
-def get_and_save_version(version:str, cve_obj:models.CVE)->None:
-    print("cve_obj: ", cve_obj)
-    print("type cve_obj: ", type(cve_obj))
-    if version:
+def save_version_to_cve(version:str, cve_obj:models.CVE)->None:
+    if version and cve_obj:
         data_version, _ = models.Version.objects.get_or_create(version=float(version))
-        print('data_version: ', data_version)
-        print("cve_obj: ", cve_obj)
-        print("type cve_obj: ", type(cve_obj))
         if cve_obj is not None and data_version:
-            cve_obj.version.add(data_version)
+            cve_obj.version = data_version
             cve_obj.save()
 
-def get_and_save_assigner(assigner_email:str, cve_obj:models.CVE)->None:
-    assigner_obj, _ = models.Assigner.objects.get_or_create(email=assigner_email)
-    if cve_obj:
-        assigner_obj.cve.add(cve_obj)
-        assigner_obj.save()
+def save_assigner_to_cve(assigner_email:str, cve_obj:models.CVE)->None:
+    if assigner_email:
+        assigner_obj, _ = models.Assigner.objects.get_or_create(email=assigner_email)
+        if cve_obj:
+            cve_obj.assigner = assigner_obj
+            cve_obj.save()
 
-def get_and_save_data_format(name:str, cve_obj=None):
-    data_format = models.DataFormat.objects.get_or_create(name=name)
-    data_format.cve.add(cve_obj)
-    data_format.save()
-    return data_format
+def save_format_to_cve(format_name:str, cve_obj:models.CVE)->None:
+    if format_name and cve_obj:
+        format_obj, _ = models.Format.objects.get_or_create(format=format_name)
+        cve_obj.format = format_obj
+        cve_obj.save()
 
-def get_and_save_reference_data(name:str, url:str, cve_obj=None):
-    reference_data = models.ReferenceData.objects.get_or_create(name=name, url=url)
-    reference_data.cve.add(cve_obj)
-    reference_data.save()
-    return reference_data
+def save_reference_data(name:str, url:str, cve_obj:models.CVE)->None:
+    if name and cve_obj:
+        reference_data, p = models.Reference.objects.get_or_create(name=name, url=url)
+        reference_data.cve.add(cve_obj)
+        reference_data.save()
+        return reference_data
 
-def get_and_save_refsource_reference(name:str, reference_data_obj=None):
-    refsource_reference_obj = models.RefsourceReference.objects.get_or_create(name=name)
-    refsource_reference_obj.reference_data.add(reference_data_obj)
-    refsource_reference_obj.save()
-    return refsource_reference_obj
+def save_refsource(name:str, reference_obj:models.Reference)->None:
+    if name:
+        refsource_obj, _ = models.Refsource.objects.get_or_create(name=name)
+        if reference_obj:
+            refsource_obj.reference.add(reference_obj)
+            refsource_obj.save()
 
-def get_and_save_tag(name:str, reference_data_obj): #zwraca tag obiekt  zbazy
-    name = name.lower()
-    name = name.replace(' ' ,'_')
-    tag_obj = models.TagReference.objects.get_or_create(name=name)
-    return tag_obj
 
-def get_and_save_cpe(is_vulnerable:bool, uri:str, cve_obj=None):
-    # print(f'\n\n\nis_vulnerable: {is_vulnerable}\n uri: {uri}')
-    cpe_obj = models.CPEMatch(is_vulnerable=is_vulnerable, uri=uri)
-    cpe_obj.cve.add(cve_obj)
-    cpe_obj.save()
-    return cpe_obj
+def save_tag_to_reference(tag_name:str, reference_obj:models.Reference)->None:
+    if tag_name:
+        tag_name = tag_name.lower()
+        tag_name = tag_name.replace(' ' ,'_')
+        tag_obj, _ = models.Tag.objects.get_or_create(name=tag_name)
+    if reference_obj:
+        tag_obj.reference.add(reference_obj)
+    tag_obj.save()
 
-def get_and_save_base_metric_v2(base_metric_v2:dict, cve_obj=None):
-    vector_obj = models.Vector.objects.get_or_create(base_metric_v2['cvssV2']['vectorString'])
+def get_and_save_cpe(is_vulnerable:bool, uri:str, cve_obj:models.CVE):
+    if uri and cve_obj:
+        cpe_obj, _ = models.CPEMatch.objects.get_or_create(is_vulnerable=is_vulnerable, uri=uri)
+        cpe_obj.cve.add(cve_obj)
+        cpe_obj.save()
+        return cpe_obj
 
-    cvss_v2_obj = models.CVSSV2.objects.get_or_create(
-        vector=vector_obj,
+def save_base_metric_v2(base_metric_v2:dict, cve_obj:models.CVE):
+    vector_str = base_metric_v2.get('cvssV2', {}).get('vectorString')
+    if vector_str:
+        vector_obj, _ = models.Vector.objects.get_or_create(vector = vector_str)
+
+    cvss_v2_obj, _ = models.CVSSV2.objects.get_or_create(
         version=base_metric_v2['cvssV2']['version'],
         access_vector=base_metric_v2['cvssV2']['accessVector'],
         access_complexity=base_metric_v2['cvssV2']['accessComplexity'],
@@ -114,27 +113,30 @@ def get_and_save_base_metric_v2(base_metric_v2:dict, cve_obj=None):
         integrity_impact=base_metric_v2['cvssV2']['integrityImpact'],
         availability_impact=base_metric_v2['cvssV2']['availabilityImpact'],
         base_score=base_metric_v2['cvssV2']['baseScore'],
+        vector=vector_obj
     )
 
-    base_metric_v2_obj = models.BaseMetricV2.objects.get_or_create(
-        cve=cve_obj,
-        cvss_v2=cvss_v2_obj,
+    base_metric_v2_obj, _ = models.BaseMetricV2.objects.get_or_create(
+        cvss_v2 = cvss_v2_obj,
         severity=base_metric_v2['severity'],
         exploitability_score=base_metric_v2['exploitabilityScore'],
         impact_score=base_metric_v2['impactScore'],
         is_obtain_all_privilege=base_metric_v2['obtainAllPrivilege'],
         is_obtain_user_privilege=base_metric_v2['obtainUserPrivilege'],
         is_obtain_other_privilege=base_metric_v2['obtainOtherPrivilege'],
-        is_user_interaction_required=base_metric_v2['userInteractionRequired'],
+        # CVE-2016-0099 nie ma UserInteractionRequired
+        is_user_interaction_required=base_metric_v2.get('userInteractionRequired', None),
     )
+    base_metric_v2_obj.cve.add(cve_obj)
+    base_metric_v2_obj.save()
 
-    return base_metric_v2_obj
 
-
-def get_and_save_base_metric_v3(base_metric_v3:dict, cve_obj=None):
-    vector_obj = models.Vector.objects.get_or_create(base_metric_v3['cvssV3']['vectorString'])
+def save_base_metric_v3(base_metric_v3:dict, cve_obj:models.CVE):
+    vector_str = base_metric_v3.get('cvssV3', {}).get('vectorString')
+    if vector_str:
+        vector_obj, _ = models.Vector.objects.get_or_create(vector = vector_str)
     
-    cvss_v3_obj = models.CVSS3.objects.get_or_create(
+    cvss_v3_obj, _ = models.CVSSV3.objects.get_or_create(
         version=base_metric_v3['cvssV3']['version'],
         vector=vector_obj,
         attack_vector=base_metric_v3['cvssV3']['attackVector'],
@@ -146,83 +148,103 @@ def get_and_save_base_metric_v3(base_metric_v3:dict, cve_obj=None):
         integrity_impact=base_metric_v3['cvssV3']['integrityImpact'],
         availability_impact=base_metric_v3['cvssV3']['availabilityImpact'],
         base_score=base_metric_v3['cvssV3']['baseScore'],
-        base_severity=base_metric_v3['cvssV3']['baseSeverity'],
+        base_severity=base_metric_v3['cvssV3']['baseSeverity']
     )
 
-    base_metric_v3_obj = models.BaseMetricV3.objects.get_or_create(
-        cve=cve_obj,
-        vector=vector_obj,
+    base_metric_v3_obj, _ = models.BaseMetricV3.objects.get_or_create(
         cvss_v3 = cvss_v3_obj,
         exploitability_score=base_metric_v3['exploitabilityScore'],
         impact_score=base_metric_v3['impactScore'],
     )
-
-    return base_metric_v3_obj
+    base_metric_v3_obj.cve.add(cve_obj)
+    base_metric_v3_obj.save()
 
 
 def save_data(filepath:str)->None:
     data = get_dict_from_json_file(filepath)
     cve_list = data.get('CVE_Items')
-    for cve in cve_list[10:20]:
-        for problemtype_data in cve['cve']['problemtype']['problemtype_data']:
-            description = problemtype_data['description']
-            cwe_id =  description[0].get('value') if description else None
+    for cve in cve_list:
+        try:
+            # print(cve['cve']['CVE_data_meta']['ID'])
+            for problemtype_data in cve['cve']['problemtype']['problemtype_data']:
+                description = problemtype_data['description']
+                cwe_id =  description[0].get('value') if description else None
 
-        cve_id = cve['cve']['CVE_data_meta']['ID']
-        cve_obj = get_and_save_cve(
-            id=cve['cve']['CVE_data_meta']['ID'],
-            published = cve['publishedDate'],
-            modified=cve['lastModifiedDate'],
-            description= cve['cve']['description']['description_data'][0]['value'],
-            cwe_id=cwe_id
-        )
-        version = cve.get('cve').get('data_version')
-        get_and_save_version(version, cve_obj)
+            cve_obj = get_and_save_cve(
+                id=cve['cve']['CVE_data_meta']['ID'],
+                published = cve['publishedDate'],
+                modified=cve['lastModifiedDate'],
+                description= cve['cve']['description']['description_data'][0]['value'],
+                cwe_id=cwe_id
+            )
+
+            version = cve.get('cve', {}).get('data_version')
+            save_version_to_cve(version, cve_obj)
+            save_assigner_to_cve(cve.get('cve', {}).get('CVE_data_meta', {}).get('ASSIGNER'), cve_obj)
+            save_format_to_cve(cve.get('cve', {}).get('data_format'), cve_obj)
 
 
-        # get_and_save_assigner(cve['cve']['CVE_data_meta']['ASSIGNER'], cve_obj)
-        
-        
-        # data_format_obj = get_and_save_data_format(cve['cve']['data_format'], cve_obj)
+            references_list= cve.get('cve', {}).get('references', {}).get('reference_data')
+            for ref in references_list:
+                reference_data_obj = save_reference_data(
+                    name = ref['name'],
+                    url = ref['url'],
+                    cve_obj=cve_obj
+                )
+                save_refsource(ref.get('refsource'), reference_data_obj)
+                for tag in ref.get('tags'):
+                    tag = save_tag_to_reference(tag, reference_data_obj)
 
-        # # print('#####################################################')
-        # references_dict= cve['cve']['references']['reference_data']
-        # for ref in references_dict:
+            for node in cve.get('configurations', {}).get('nodes'):
+                cpe_match_list= node.get('cpe_match')
+                for cpe_match in cpe_match_list:
+                    get_and_save_cpe(
+                        uri=cpe_match['cpe23Uri'],
+                        is_vulnerable=cpe_match['vulnerable'],
+                        cve_obj=cve_obj
+                    )
 
-        #     reference_data__obj = get_and_save_reference_data(
-        #         name = ref['name'],
-        #         url = ref['url'],
-        #         cve_obj=cve_obj
-        #     )
+            base_metric_v2:dict = cve.get('impact', {}).get('baseMetricV2')
+            if base_metric_v2:
+                save_base_metric_v2(base_metric_v2, cve_obj)
 
-        #     refsource_reference = get_and_save_refsource_reference(name=ref['refsource'], reference_data_obj = reference_data__obj)
+            base_metric_v3:dict = cve.get('impact', {}).get('baseMetricV3')
+            if base_metric_v3:
+                save_base_metric_v3(base_metric_v3, cve_obj)
 
-        #     for tag in ref['tags']:
-        #         tag = get_and_save_tag(name=tag, reference_data_obj =reference_data__obj)
-
-        # for node in cve.get('configurations', {}).get('nodes'):
-        #     cpe_match_list= node.get('cpe_match')
-        #     for cpe_match in cpe_match_list:
-        #         get_and_save_cpe(
-        #             uri=cpe_match['cpe23Uri'],
-        #             is_vulnerable=cpe_match['cpe23Uri'],
-        #             cve_obj=None
-        #         )
-
-        # base_metric_v2:dict = cve.get('impact', {}).get('baseMetricV2')
-        # if base_metric_v2:
-        #     get_and_save_base_metric_v2(base_metric_v2, cve_obj=cve_obj)
-
-        # base_metric_v3:dict = cve.get('impact', {}).get('baseMetricV3')
-        # if base_metric_v3:
-        #     get_and_save_base_metric_v3(base_metric_v3, cve_obj=cve_obj)
+        except BaseException as e:
+            print(e)
+            print(type(e))
+            print('[Error] CVE ID: ', cve['cve']['CVE_data_meta']['ID'])
 
 def main():
     files_url = get_files_url()
-    extracted_file_name = download_file(file_url =  files_url[-1])
-    print(extracted_file_name)
-    save_data(extracted_file_name)
-
-
-if __name__ == '__main__':
-    main()
+    files_url = [
+        # 'https://nvd.nist.gov//feeds/json/cve/1.1/nvdcve-1.1-modified.json.zip',
+        # 'https://nvd.nist.gov//feeds/json/cve/1.1/nvdcve-1.1-recent.json.zip',
+        # 'https://nvd.nist.gov//feeds/json/cve/1.1/nvdcve-1.1-2022.json.zip',
+        # 'https://nvd.nist.gov//feeds/json/cve/1.1/nvdcve-1.1-2021.json.zip',
+        # 'https://nvd.nist.gov//feeds/json/cve/1.1/nvdcve-1.1-2020.json.zip',
+        # 'https://nvd.nist.gov//feeds/json/cve/1.1/nvdcve-1.1-2019.json.zip',
+        # 'https://nvd.nist.gov//feeds/json/cve/1.1/nvdcve-1.1-2018.json.zip',
+        # 'https://nvd.nist.gov//feeds/json/cve/1.1/nvdcve-1.1-2017.json.zip',
+        # 'https://nvd.nist.gov//feeds/json/cve/1.1/nvdcve-1.1-2016.json.zip',
+        'https://nvd.nist.gov//feeds/json/cve/1.1/nvdcve-1.1-2015.json.zip',
+        # 'https://nvd.nist.gov//feeds/json/cve/1.1/nvdcve-1.1-2014.json.zip',
+        # 'https://nvd.nist.gov//feeds/json/cve/1.1/nvdcve-1.1-2013.json.zip',
+        # 'https://nvd.nist.gov//feeds/json/cve/1.1/nvdcve-1.1-2012.json.zip',
+        # 'https://nvd.nist.gov//feeds/json/cve/1.1/nvdcve-1.1-2011.json.zip',
+        # 'https://nvd.nist.gov//feeds/json/cve/1.1/nvdcve-1.1-2010.json.zip',
+        # 'https://nvd.nist.gov//feeds/json/cve/1.1/nvdcve-1.1-2009.json.zip',
+        # 'https://nvd.nist.gov//feeds/json/cve/1.1/nvdcve-1.1-2008.json.zip',
+        # 'https://nvd.nist.gov//feeds/json/cve/1.1/nvdcve-1.1-2007.json.zip',
+        # 'https://nvd.nist.gov//feeds/json/cve/1.1/nvdcve-1.1-2006.json.zip',
+        # 'https://nvd.nist.gov//feeds/json/cve/1.1/nvdcve-1.1-2005.json.zip',
+        # 'https://nvd.nist.gov//feeds/json/cve/1.1/nvdcve-1.1-2004.json.zip',
+        # 'https://nvd.nist.gov//feeds/json/cve/1.1/nvdcve-1.1-2003.json.zip',
+        # 'https://nvd.nist.gov//feeds/json/cve/1.1/nvdcve-1.1-2002.json.zip'
+    ]
+    for f_url in files_url:
+        extracted_file_name = download_file(file_url = f_url)
+        print('extracted_file_name: ', extracted_file_name)
+        save_data(extracted_file_name)

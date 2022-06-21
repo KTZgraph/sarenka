@@ -1,3 +1,4 @@
+from enum import unique
 from django.db import models
 
 class CWE(models.Model):
@@ -11,7 +12,7 @@ class CWE(models.Model):
     description = models.TextField(null=False)  
     extended_description = models.TextField(null=True)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.id
 
 
@@ -19,62 +20,79 @@ class CWE(models.Model):
 class Version(models.Model):
     """cve.data_version"""
     version = models.DecimalField(max_digits=5, decimal_places=2, null=False, blank=False, unique=True) #wiele cve ma wersje
+    def __str__(self) -> str:
+        return str(self.version)
 
+class Assigner(models.Model):
+    """cve.data_version.ASSIGNER"""
+    email = models.EmailField(max_length=30, blank=False, unique=True)
+    def __str__(self) -> str:
+        return self.email
+
+class Format(models.Model):
+    """cve.data_format"""
+    format = models.CharField(max_length=20, null=False, blank=False, unique=True)
+    def __str__(self) -> str:
+        return self.format
 
 class CVE(models.Model):
     "cve.CVE_data_meta.ID"
     id = models.CharField(max_length=20, primary_key=True, unique=True, null=False, blank=False)
     # no cwe CVE-2002-2440
-    cwe = models.ForeignKey(CWE, on_delete=models.CASCADE, null=True, default=None, unique=True) 
-    version = models.ForeignKey(Version, on_delete=models.CASCADE, null=True, default=None, unique=True) # 1 wersja
+    cwe = models.ForeignKey(CWE, on_delete=models.CASCADE, null=True, default=None) 
+    version = models.ForeignKey(Version, on_delete=models.CASCADE, null=True, default=None) # 1 wersja
+    assigner = models.ForeignKey(Assigner, on_delete=models.CASCADE, null=True, default=None) # 1 wersja
+    format = models.ForeignKey(Format, on_delete=models.CASCADE, null=True, default=None) # 1 wersja
+    
     published = models.DateField(blank=False, null=False)
     modified = models.DateField(blank=True, null=True)
     description = models.TextField(blank=True, null=True)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.id
 
-
-class Assigner(models.Model):
-    """cve.data_version.ASSIGNER"""
-    email = models.EmailField(max_length=30, blank=False, unique=True)
-    cve = models.ManyToManyField(CVE)
-
-class Format(models.Model):
-    """cve.data_format"""
-    format = models.CharField(max_length=20, null=False, blank=False, unique=True)
-    cve = models.ManyToManyField(CVE)
 
 class Reference(models.Model):
     """cve.references.reference_data[listId].name
        cve.references.reference_data[listId].url
     """
-    name = models.CharField(max_length=30, null=False, blank=False, unique=True)
-    url = models.URLField(max_length=300, null=False, blank=False, unique=True)
+    class Meta:
+        unique_together = ('name', 'url')
+
+    name = models.CharField(max_length=200, null=False, blank=False)
+    url = models.URLField(max_length=500, null=False, blank=False) 
     cve = models.ManyToManyField(CVE)
+
+    def __str__(self) -> str:
+        return self.name
 
 class Refsource(models.Model):
     """cve.references.reference_data[listId].refsource"""
     name = models.CharField(max_length=30, null=False, blank=False, unique=True)
-    reference_data = models.ManyToManyField(Reference)
+    reference = models.ManyToManyField(Reference)
+
+    def __str__(self) -> str:
+        return self.name
 
 class Tag(models.Model):
     """cve.references.reference_data[listId].tags[listId]"""
     name = models.CharField(max_length=20, null=False, blank=False, unique=True)
-    reference_data = models.ManyToManyField(Reference)
+    reference = models.ManyToManyField(Reference)
+    def __str__(self) -> str:
+        return self.name
 
 
 # ---    "configurations" :
 class CPEMatch(models.Model):
     """cve.configurations.nodes[listId].cpe_match[listId]"""
-    is_vulnerable = models.BooleanField()
     cve = models.ManyToManyField(CVE)
-    uri = models.CharField(max_length=80, null=False, blank=False, unique=True)
+    is_vulnerable = models.BooleanField()
+    uri = models.CharField(max_length=512, null=False, blank=False)
 
 
 # ---- "impact"
 class Vector(models.Model):
-    vector = models.TextField(max_length=44, blank=False, null=False)
+    vector = models.CharField(max_length=44, blank=False, null=False, unique=True)
 
     def __str__(self) -> str:
         return self.vector
@@ -135,10 +153,11 @@ class BaseMetricV2(models.Model):
     is_obtain_all_privilege  = models.BooleanField()
     is_obtain_user_privilege = models.BooleanField()
     is_obtain_other_privilege = models.BooleanField()
-    is_user_interaction_required = models.BooleanField()
+    # CVE-2016-0099 nie ma UserInteractionRequired
+    is_user_interaction_required = models.BooleanField(default=None, blank=True, null=True)
 
 # ----------------- impact.baseMetricV3 -----------------
-class CVSS3(models.Model):
+class CVSSV3(models.Model):
     version = models.DecimalField(max_digits=5, decimal_places=2, null=False, blank=False)
     vector = models.ForeignKey(Vector, on_delete=models.CASCADE)
     ATTACK_VECTOR = [
@@ -182,6 +201,7 @@ class CVSS3(models.Model):
         ('COMPLETE', 'complete'),
         ('PARTIAL', 'partial'),
         ('NONE', 'none'),
+        ('HIGH', 'high'),
     ]
     availability_impact = models.CharField(max_length=20, choices=AVAIALABILITY_IMPACT)
     base_score = models.DecimalField(max_digits=5, decimal_places=2, null=False, blank=False)
@@ -194,6 +214,6 @@ class CVSS3(models.Model):
 
 class BaseMetricV3(models.Model):
     cve = models.ManyToManyField(CVE)
-    cvss_v3 = models.ForeignKey(CVSSV2, on_delete=models.CASCADE)
+    cvss_v3 = models.ForeignKey(CVSSV3, on_delete=models.CASCADE)
     exploitability_score = models.DecimalField(max_digits=5, decimal_places=2, null=False, blank=False)
     impact_score = models.DecimalField(max_digits=5, decimal_places=2, null=False, blank=False)

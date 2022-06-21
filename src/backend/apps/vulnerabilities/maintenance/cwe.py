@@ -78,5 +78,10 @@ def main():
     # 1. pobranie listy CWE z 
     cwe_filename:str = get_cwe_filename()
     cwe_dict = get_dict_from_xml_file(cwe_filename)
-    save_dict_as_json(cwe_dict, 'cwe.json')
+    try:
+        save_dict_as_json(cwe_dict, 'cwe.json')
+    except BaseException as e:
+        print('---------- cwe main ------------')
+        print(e)
+        print(type(e))
     save_db_cwe_data(cwe_dict=cwe_dict)
