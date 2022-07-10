@@ -8,7 +8,7 @@ def save_cpe_list(cpe_list, cve_obj):
         )
 
         if cpe_obj and cve_obj:
-            cpe_obj.cve = cve_obj
+            cpe_obj.cve.set([cve_obj])
 
         #save obj to database
         cpe_obj.save()

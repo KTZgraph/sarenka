@@ -158,7 +158,7 @@ class BaseMetricV2(models.Model):
 # ----------------- impact.baseMetricV3 -----------------
 class CVSSV3(models.Model):
     version = models.DecimalField(max_digits=5, decimal_places=2, null=False, blank=False)
-    vector = models.ForeignKey(Vector, on_delete=models.CASCADE)
+    vector = models.ForeignKey(Vector, on_delete=models.CASCADE, null=False, blank=False)
     ATTACK_VECTOR = [
         ('NETWORK', 'network'),
         ('LOCAL', 'local'),

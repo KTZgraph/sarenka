@@ -15,9 +15,9 @@ def hello(request):
 @api_view(http_method_names=['GET'])
 def maintenance(request):
     start = datetime.now()
-    save_db()
+    missed_cwe_ids = save_db()
     end = datetime.now()
     return Response(
-        {"status": "success", "info": "maintenace", 'time': str(end-start)}, status=200
+        {"status": "success", "info": "maintenace", 'time': str(end-start), "missed_cwe_ids": missed_cwe_ids}, status=200
     )
 
