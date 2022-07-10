@@ -1,6 +1,7 @@
 from datetime import datetime
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from apps.vulnerabilities.src.maintenance.vulns import save_db
 
 @api_view(http_method_names=['GET'])
 def hello(request):
@@ -10,8 +11,9 @@ def hello(request):
 
 @api_view(http_method_names=['GET'])
 def maintenance(request):
-    start = 0
-    end = 0
+    start = datetime.now()
+    save_db()
+    end = datetime.now()
     return Response(
         {"status": "success", "info": "maintenace", 'time': str(end-start)}, status=200
     )
