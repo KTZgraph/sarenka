@@ -10,8 +10,6 @@ def save_references_list(references_list:dict, cve_obj:Optional[models.CVE]=None
 
             # add cve to reference_obj
             if reference_obj and cve_obj:
-                print("cve_obj: ", cve_obj)
-                print("reference_obj: ", reference_obj)
                 reference_obj.cve.set([cve_obj])
 
             #create refsource refsource": "MISC",
