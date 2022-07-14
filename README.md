@@ -31,3 +31,8 @@ https://chromedriver.chromium.org/downloads
 #### Auto Rename Tag (Jun Han) https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag
 #### Prettier - Code formatter (Prettier) https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode [alt + shift +f]
 #### ES7+ React/Redux/React-Native snippets (dsznajder) https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets [rafc]
+
+## Client
+cd client
+npx create-react-app .
+npm install sass
