@@ -30,9 +30,11 @@ https://chromedriver.chromium.org/downloads
 #### Live Server (Ritwick Dey) https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
 #### Auto Rename Tag (Jun Han) https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag
 #### Prettier - Code formatter (Prettier) https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode [alt + shift +f]
-#### ES7+ React/Redux/React-Native snippets (dsznajder) https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets [rafc]
-
+#### ES7+ React/Redux/React-Native snippets (dsznajder) https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets [rafce]
+#### GitLens — Git supercharged (GitKraken) https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens
+#### IntelliJ IDEA Keybindings (Keisuke Kato) https://marketplace.visualstudio.com/items?itemName=k--kato.intellij-idea-keybindings
 ## Client
 cd client
 npx create-react-app .
 npm install sass
+npm install react-router-dom

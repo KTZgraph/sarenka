@@ -1,4 +1,4 @@
-import './news.scss';
+import './new.scss';
 
 const New = () => {
     return (
