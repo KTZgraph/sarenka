@@ -1,3 +1,7 @@
+# Links
+
+- https://mui.com/material-ui/material-icons/
+
 # CSS normalize
 
 - https://github.com/csstools/normalize.css
@@ -14,6 +18,15 @@ npm install @csstools/normalize.css --save
 @import-normalize; /* bring in normalize.css styles */
 
 /* rest of app styles */
+```
+
+### libraries
+
+```
+npm install @csstools/normalize.css --save
+npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/icons-material
+
 ```
 
 #### SASS React

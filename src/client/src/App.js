@@ -6,6 +6,8 @@ import List from './pages/list/List';
 import Single from './pages/single/Single';
 import New from './pages/new/New';
 
+// FIXME
+// COMPLETE
 // TODO
 function App() {
   return (

@@ -1,11 +1,20 @@
-@mixin tablet {
+$sidebar-min-height: 620px;
+$sidebar-min-width: 300px;
+
+@mixin tabletBreakpoint {
   @media only screen and (min-width: 768px) {
     @content;
   }
 }
 
-@mixin desktop {
+@mixin desktopBreakpoint {
   @media only screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin sidebarBreakpoint {
+  @media only screen and (min-height: $sidebar-min-height) and (min-width: $sidebar-min-width) {
     @content;
   }
 }
