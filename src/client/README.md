@@ -1,3 +1,25 @@
+# CSS normalize
+
+- https://github.com/csstools/normalize.css
+
+```
+npm install @csstools/normalize.css --save
+```
+
+- https://create-react-app.dev/docs/adding-css-reset/
+
+#### client/src/index.css
+
+```
+@import-normalize; /* bring in normalize.css styles */
+
+/* rest of app styles */
+```
+
+#### SASS React
+
+- https://www.youtube.com/watch?v=kFA-ZJ9KTqs
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
