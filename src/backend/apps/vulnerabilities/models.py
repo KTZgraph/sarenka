@@ -1,4 +1,3 @@
-import black
 from django.db import models
 
 class CWE(models.Model):
