@@ -52,7 +52,7 @@ const Sidebar = () => {
             <span>settings</span>
           </li>
 
-          <p className={styles.title}>statisctics</p>
+          <p className={styles.title}>statistics</p>
           <li>
             <StorageRoundedIcon className={styles.icon} />
             <span>database status</span>
