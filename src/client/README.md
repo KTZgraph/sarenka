@@ -1,5 +1,8 @@
+# TODO: code of conduct napisać
+
 # Links
 
+- https://sass-lang.com/documentation/at-rules/mixin
 - https://mui.com/material-ui/material-icons/
 
 # CSS normalize

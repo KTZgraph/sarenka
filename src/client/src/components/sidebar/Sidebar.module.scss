@@ -2,8 +2,9 @@
 
 .sidebar {
   flex: 1;
+  // RESPONSIVENESS szerokość sidebara dla mniejszych okien
+  flex: 0 0 17rem;
   position: relative;
-  //   border-right: 0.5px solid  $color-gray-light;
   border-right: 2px solid $color-main-light;
   min-height: 100vh;
   background-color: $color-main-white;
@@ -77,7 +78,7 @@
       width: 2rem;
       height: 2rem;
       border-radius: 5px;
-      border: 1px solid $color-font-light;
+      border: 1px solid $color-font-dark;
       cursor: pointer;
       margin: 20px 3px;
 
@@ -86,14 +87,13 @@
       }
       &:nth-child(2) {
         background-color: $color-font-dark;
-        border: 1px solid $color-font-dark;
       }
     }
   }
 
   .logoFooter {
     display: none;
-    @include sidebarBreakpoint {
+    @include sidebar-breakpoint {
       position: absolute;
       bottom: 0;
       display: flex;
