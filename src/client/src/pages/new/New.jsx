@@ -1,9 +1,7 @@
-import './new.scss';
+import styles from "./New.module.scss";
 
 const New = () => {
-    return (
-        <div>New</div>
-    )
-}
+  return <div>New</div>;
+};
 
-export default New
+export default New;

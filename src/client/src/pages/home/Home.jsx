@@ -1,10 +1,9 @@
-import './home.scss';
-// FIXME
+import styles from "./Home.module.scss";
 
 const Home = () => {
   return (
-    <div className="home">
-      <h1 className="title">Sarenka</h1>
+    <div className={`${styles.home} wrapper`}>
+      <div className={`${styles.homeContainer}`}>HOME</div>
     </div>
   );
 };
