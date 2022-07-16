@@ -4,6 +4,7 @@
 
 - https://sass-lang.com/documentation/at-rules/mixin
 - https://mui.com/material-ui/material-icons/
+- https://html-css-js.com/css/generator/box-shadow/
 
 # CSS normalize
 
