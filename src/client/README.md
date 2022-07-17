@@ -87,7 +87,7 @@ npm install @mui/material @emotion/react @emotion/styled
 npm install @mui/icons-material
 npm install --save react-circular-progressbar
 npm install recharts
-npm install @mui/x-data-grid 
+npm install @mui/x-data-grid
 
 ```
 
@@ -166,7 +166,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-# \***\*\*\*\*\***\*\*\*\*\***\*\*\*\*\***\_\_\***\*\*\*\*\***\*\*\*\*\***\*\*\*\*\***
+# TERNARY OPERATOR
+
+- https://stackoverflow.com/questions/29043135/javascript-one-line-if-else-else-if-statement
 
 ```js
 <span
@@ -176,4 +178,30 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
       : `${styles.status} ${styles.Approved} `
   }
 >
+```
+
+```js
+<div
+  className={
+    params.row.status === "active"
+      ? `${styles.cellWithStatus} ${styles.active}`
+      : params.row.status === "passive"
+      ? `${styles.cellWithStatus} ${styles.passive}`
+      : `${styles.cellWithStatus} ${styles.pending}`
+  }
+>
+  {params.row.status}
+</div>
+```
+
+```
+a ? a : (b ? (c ? c(b) : b) : null)
+
+a
+  ? a
+  : b
+      ? c
+        ? c(b)
+        : b
+      : null
 ```

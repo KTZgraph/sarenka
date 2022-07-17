@@ -3,6 +3,7 @@ import styles from "./Datatable.module.scss";
 
 // FIXME prawdziwe dane
 const columns = [
+  // struktura danych do tabeli
   { field: "id", headerName: "ID", width: 70 },
   { field: "firstName", headerName: "First name", width: 130 },
   { field: "lastName", headerName: "Last name", width: 130 },
@@ -18,8 +19,19 @@ const columns = [
     description: "This column has a value getter and is not sortable.",
     sortable: false,
     width: 160,
+    // zamiast valueGetter można użyć renderCell:
     valueGetter: (params) =>
       `${params.row.firstName || ""} ${params.row.lastName || ""}`,
+    //   WARNING uważać na składnie - jak sie zrobi błąd to dane sie nie wyświetlają
+    renderCell: (params) => {
+      return (
+        <>
+          {/* można też zwróić image obrazek */}
+          <span>{params.row.lastName}</span>
+          <p>{params.row.age}</p>
+        </>
+      );
+    },
   },
 ];
 
@@ -40,8 +52,11 @@ const Datatable = () => {
   return (
     <div className={styles.datatable}>
       <DataGrid
+        //   rows - dane
         rows={rows}
+        // to co pokazujemy w datatable
         columns={columns}
+        // paginacja
         pageSize={5}
         rowsPerPageOptions={[5]}
         checkboxSelection
