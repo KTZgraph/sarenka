@@ -25,12 +25,12 @@ def save_cvss_v2(cvss_v2):
 def save_base_metric_v2(base_metric_v2, cve_obj):
     base_metric_v2_obj, _ = models.BaseMetricV2.objects.get_or_create(
         severity=base_metric_v2.get("severity"),
-        exploitability_score=int(base_metric_v2.get("exploitability_score")[0]), #TODO
-        impact_score= int(base_metric_v2.get("impact_score")[0]), #TODO
-        is_obtain_all_privilege=base_metric_v2.get("is_obtain_all_privilege")[0], #TODO
-        is_obtain_user_privilege=base_metric_v2.get("is_obtain_user_privilege")[0], #TODO
-        is_obtain_other_privilege=base_metric_v2.get("is_obtain_other_privilege")[0], #TODO
-        is_user_interaction_required=base_metric_v2.get("is_user_interaction_required")[0], #TODO
+        exploitability_score=int(base_metric_v2.get("exploitability_score")),
+        impact_score= int(base_metric_v2.get("impact_score")),
+        is_obtain_all_privilege=base_metric_v2.get("is_obtain_all_privilege"),
+        is_obtain_user_privilege=base_metric_v2.get("is_obtain_user_privilege"),
+        is_obtain_other_privilege=base_metric_v2.get("is_obtain_other_privilege"),
+        is_user_interaction_required=base_metric_v2.get("is_user_interaction_required"),
     )
     if base_metric_v2_obj and cve_obj:
         base_metric_v2_obj.cve.set([cve_obj])

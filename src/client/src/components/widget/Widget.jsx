@@ -2,7 +2,19 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import styles from "./Widget.module.scss";
 
-const Widget = () => {
+const Widget = ({ type }) => {
+  let data;
+
+  switch(type){
+    case "cwe":
+      data = {
+        "title": "CWEs",
+        isMoney: false,
+        link:"See all cwes",
+        icon:
+      }
+  }
+
   return (
     <div className={styles.widget}>
       <div className={styles.left}>

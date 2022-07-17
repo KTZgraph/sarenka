@@ -3,9 +3,6 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from apps.vulnerabilities.src.maintenance.vulns import save_db
 
-
-
-
 @api_view(http_method_names=['GET'])
 def hello(request):
     return Response(

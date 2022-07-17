@@ -1,6 +1,6 @@
 missed_cve_list = [
     {
-        "id": "CWE-17",
+        "code": "CWE-17",
         "name": "DEPRECATED: Code",
         "abstraction": "",
         "structure": "",
@@ -9,7 +9,7 @@ missed_cve_list = [
         "extended_description": "This entry has been deprecated. It was originally used for organizing the Development View (CWE-699) and some other views, but it introduced unnecessary complexity and depth to the resulting tree."
     },
     {
-        "id": "NVD-CWE-noinfo",
+        "code": "NVD-CWE-noinfo",
         "name": "Insufficient Information",
         "abstraction": "",
         "structure": "",
@@ -18,7 +18,7 @@ missed_cve_list = [
         "extended_description": ""
     },
     {
-        "id": "NVD-CWE-Other",
+        "code": "NVD-CWE-Other",
         "name": "Other",
         "abstraction": "",
         "structure": "",
@@ -27,7 +27,7 @@ missed_cve_list = [
         "extended_description": "NVD is only using a subset of CWE for mapping instead of the entire CWE, and the weakness type is not covered by that subset."
     },
     {
-        "id": "CWE-399",
+        "code": "CWE-399",
         "name": "Resource Management Errors",
         "abstraction": "",
         "structure": "",
@@ -36,7 +36,7 @@ missed_cve_list = [
         "extended_description": "Weaknesses in this category are related to improper management of system resources."
     },
     {
-        "id": "CWE-840",
+        "code": "CWE-840",
         "name": "Business Logic Errors",
         "abstraction": "",
         "structure": "",
@@ -45,7 +45,7 @@ missed_cve_list = [
         "extended_description": "They can be difficult to find automatically, since they typically involve legitimate use of the application's functionality. However, many business logic errors can exhibit patterns that are similar to well-understood implementation and design weaknesses."
     },
     {
-        "id": "CWE-310",
+        "code": "CWE-310",
         "name": "Cryptographic Issues",
         "abstraction": "",
         "structure": "",
@@ -54,7 +54,7 @@ missed_cve_list = [
         "extended_description": "Frequently these deal with the use of encoding techniques, encryption libraries, and hashing algorithms. The weaknesses in this category could lead to a degradation of the quality data if they are not addressed."
     },
     {
-        "id": "CWE-254",
+        "code": "CWE-254",
         "name": "7PK - Security Features",
         "abstraction": "",
         "structure": "",
@@ -63,7 +63,7 @@ missed_cve_list = [
         "extended_description": "Here we're concerned with topics like authentication, access control, confidentiality, cryptography, and privilege management."
     },
     {
-        "id": "CWE-361",
+        "code": "CWE-361",
         "name": "7PK - Time and State",
         "abstraction": "",
         "structure": "",
@@ -72,7 +72,7 @@ missed_cve_list = [
         "extended_description": " It includes weaknesses related to the improper management of time and state in an environment that supports simultaneous or near-simultaneous computation by multiple systems, processes, or threads."
     },
     {
-        "id": "CWE-388",
+        "code": "CWE-388",
         "name": "7PK - Errors",
         "abstraction": "",
         "structure": "",
@@ -81,7 +81,7 @@ missed_cve_list = [
         "extended_description": "According to the authors of the Seven Pernicious Kingdoms, \"Errors and error handling represent a class of API. Errors related to error handling are so common that they deserve a special kingdom of their own. As with 'API Abuse,' there are two ways to introduce an error-related security vulnerability: the most common one is handling errors poorly (or not at all). The second is producing errors that either give out too much information (to possible attackers) or are difficult to handle.\""
     },
     {
-        "id": "CWE-189",
+        "code": "CWE-189",
         "name": "Numeric Errors",
         "abstraction": "",
         "structure": "",
@@ -90,7 +90,7 @@ missed_cve_list = [
         "extended_description": ""
     },
     {
-        "id": "CWE-417",
+        "code": "CWE-417",
         "name": "Communication Channel Errors",
         "abstraction": "",
         "structure": "",
@@ -99,7 +99,7 @@ missed_cve_list = [
         "extended_description": "These weaknesses include problems in creating, managing, or removing alternate channels and alternate paths. Some of these can overlap virtual file problems and are commonly used in \"bypass\" attacks, such as those that exploit authentication errors."
     },
     {
-        "id": "CWE-264",
+        "code": "CWE-264",
         "name": "Permissions, Privileges, and Access Controls",
         "abstraction": "",
         "structure": "",
@@ -108,7 +108,7 @@ missed_cve_list = [
         "extended_description": ""
     },
     {
-        "id": "CWE-21",
+        "code": "CWE-21",
         "name": "DEPRECATED: Pathname Traversal and Equivalence Errors",
         "abstraction": "",
         "structure": "",
@@ -117,7 +117,7 @@ missed_cve_list = [
         "extended_description": "Consider using either the File Handling Issues category (CWE-1219) or the class Use of Incorrectly-Resolved Name or Reference (CWE-706)."
     },
     {
-        "id": "CWE-275",
+        "code": "CWE-275",
         "name": "Permission Issues",
         "abstraction": "",
         "structure": "",
@@ -126,7 +126,7 @@ missed_cve_list = [
         "extended_description": ""
     },
     {
-        "id": "CWE-199",
+        "code": "CWE-199",
         "name": "Information Management Errors",
         "abstraction": "",
         "structure": "",
@@ -135,7 +135,7 @@ missed_cve_list = [
         "extended_description": ""
     },
     {
-        "id": "CWE-320",
+        "code": "CWE-320",
         "name": "Key Management Errors",
         "abstraction": "",
         "structure": "",
@@ -144,7 +144,7 @@ missed_cve_list = [
         "extended_description": ""
     },
     {
-        "id": "CWE-19",
+        "code": "CWE-19",
         "name": "Data Processing Errors",
         "abstraction": "",
         "structure": "",
@@ -153,7 +153,7 @@ missed_cve_list = [
         "extended_description": ""
     },
     {
-        "id": "CWE-895",
+        "code": "CWE-895",
         "name": "SFP Primary Cluster: Information Leak",
         "abstraction": "",
         "structure": "",
@@ -162,7 +162,7 @@ missed_cve_list = [
         "extended_description": ""
     },
     {
-        "id": "CWE-16",
+        "code": "CWE-16",
         "name": "Configuration",
         "abstraction": "",
         "structure": "",
@@ -171,7 +171,7 @@ missed_cve_list = [
         "extended_description": ""
     },
     {
-        "id": "CWE-18",
+        "code": "CWE-18",
         "name": "DEPRECATED: Source Code",
         "abstraction": "",
         "structure": "",
@@ -180,7 +180,7 @@ missed_cve_list = [
         "extended_description": ""
     },
     {
-        "id": "CWE-255",
+        "code": "CWE-255",
         "name": "Credentials Management Errors",
         "abstraction": "",
         "structure": "",
@@ -189,7 +189,7 @@ missed_cve_list = [
         "extended_description": ""
     },
     {
-        "id": "CWE-1",
+        "code": "CWE-1",
         "name": "DEPRECATED: Location",
         "abstraction": "",
         "structure": "",
@@ -198,7 +198,7 @@ missed_cve_list = [
         "extended_description": ""
     },
     {
-        "id": "CWE-371",
+        "code": "CWE-371",
         "name": "State Issues",
         "abstraction": "",
         "structure": "",
