@@ -79,19 +79,21 @@ const Datatable = () => {
         <TableBody>
           {rows.map((row) => (
             <TableRow
-              key={row.name}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              // unikalne id tego co standardowo rect wymaga
+              key={row.id}
             >
-              {/* <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell> */}
-              <TableCell className="tableCell">{row.id}</TableCell>
-              <TableCell className="tableCell">{row.product}</TableCell>
-              <TableCell className="tableCell">{row.customer}</TableCell>
-              <TableCell className="tableCell">{row.date}</TableCell>
-              <TableCell className="tableCell">{row.amount}</TableCell>
-              <TableCell className="tableCell">{row.method}</TableCell>
-              <TableCell className="tableCell">{row.status}</TableCell>
+              <TableCell className={styles.tableCell}>{row.id}</TableCell>
+              <TableCell className={styles.tableCell}>
+                {/* obrazek produktu */}
+                <div className={styles.cellWrapper}>
+                  <img src={row.img} alt="" className={styles.productImg} />
+                </div>
+              </TableCell>
+              <TableCell className={styles.tableCell}>{row.customer}</TableCell>
+              <TableCell className={styles.tableCell}>{row.date}</TableCell>
+              <TableCell className={styles.tableCell}>{row.amount}</TableCell>
+              <TableCell className={styles.tableCell}>{row.method}</TableCell>
+              <TableCell className={styles.tableCell}>{row.status}</TableCell>
             </TableRow>
           ))}
         </TableBody>
