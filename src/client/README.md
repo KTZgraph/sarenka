@@ -194,6 +194,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 </div>
 ```
 
+```js
+a ? a : b ? (c ? c(b) : b) : null;
+```
+
 ```
 a ? a : (b ? (c ? c(b) : b) : null)
 
@@ -204,4 +208,58 @@ a
         ? c(b)
         : b
       : null
+```
+
+### client\src\components\datatable\DatatableColumns.jsx
+
+```js
+...
+  //   WARNING uważać na składnie - jak sie zrobi błąd to dane sie nie wyświetlają
+  renderCell: (params) => {
+    return (
+      <div
+        className={
+          params.row.status === "active"
+            ? `${styles.cellWithStatus} ${styles.active}`
+            : params.row.status === "passive"
+            ? `${styles.cellWithStatus} ${styles.passive}`
+            : `${styles.cellWithStatus} ${styles.pending}`
+        }
+      >
+        {params.row.status}
+      </div>
+    );
+  }
+...
+```
+
+### dodawanie kolumny do tabeli client\src\components\datatable\Datatable.jsx
+
+```js
+...
+  const actionColumn = [
+    {
+      field: "action",
+      headerName: "Action",
+      width: 200,
+      renderCell: () => {
+        return (
+          <div className={styles.cellAction}>
+            <div className={styles.viewButton}>View</div>
+            <div className={styles.deleteButton}>Delete</div>
+          </div>
+        );
+      },
+    },
+  ];
+  ...
+        <DataGrid
+        rows={userRows}
+        columns={userColumns.concat(actionColumn)}
+        pageSize={5}
+        rowsPerPageOptions={[5]}
+        checkboxSelection
+        className={styles.dataGrid}
+      />
+...
 ```

@@ -26,7 +26,6 @@ export const userColumns = [
     // `${params.row.firstName || ""} ${params.row.lastName || ""}`,
     //   WARNING uważać na składnie - jak sie zrobi błąd to dane sie nie wyświetlają
     renderCell: (params) => {
-      // FIXME style
       return (
         <div
           className={
