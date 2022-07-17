@@ -5,6 +5,15 @@
 - https://sass-lang.com/documentation/at-rules/mixin
 - https://mui.com/material-ui/material-icons/
 - https://html-css-js.com/css/generator/box-shadow/
+- https://www.npmjs.com/package/react-circular-progressbar
+
+```
+import { CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+...
+    <CircularProgressbar value={70} text={"70%"} strokeWidth={5} />
+...
+```
 
 # CSS normalize
 
