@@ -34,7 +34,7 @@ export const userColumns = [
               ? `${styles.cellWithStatus} ${styles.active}`
               : params.row.status === "passive"
               ? `${styles.cellWithStatus} ${styles.passive}`
-              : `${styles.cellWithStatus} ${styles.active}`
+              : `${styles.cellWithStatus} ${styles.pending}`
           }
         >
           {params.row.status}
