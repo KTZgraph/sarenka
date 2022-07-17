@@ -30,6 +30,7 @@ npm install @csstools/normalize.css --save
 npm install @csstools/normalize.css --save
 npm install @mui/material @emotion/react @emotion/styled
 npm install @mui/icons-material
+npm install --save react-circular-progressbar
 
 ```
 
