@@ -1,3 +1,5 @@
+@import "../../styles/main.scss";
+
 .datatable {
   height: 50vh;
   padding: 10px;
@@ -17,6 +19,21 @@
       border-radius: 50%;
       object-fit: cover;
       margin-right: 20px;
+    }
+  }
+
+  .cellWithStatus {
+    padding: 5px;
+    border-radius: 5px;
+
+    &.active {
+      @include status-success-mixin;
+    }
+    &.pending {
+      @include status-pending-mixin;
+    }
+    &.passive {
+      @include status-error-mixin;
     }
   }
 }
