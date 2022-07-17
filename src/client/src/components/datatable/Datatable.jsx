@@ -32,7 +32,7 @@ const Datatable = () => {
         columns={userColumns.concat(actionColumn)}
         // paginacja
         pageSize={5}
-        rowsPerPageOptions={[5]}
+        rowsPerPageOptions={[3]}
         checkboxSelection
         className={styles.dataGrid}
       />

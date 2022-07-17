@@ -236,6 +236,13 @@ a
 ### dodawanie kolumny do tabeli client\src\components\datatable\Datatable.jsx
 
 ```js
+const a = [1, 2, 3];
+const b = ["a", "b"];
+a.concat(b);
+console.log(a); // [1, 2, 3, "a", "b"]
+```
+
+```js
 ...
   const actionColumn = [
     {
