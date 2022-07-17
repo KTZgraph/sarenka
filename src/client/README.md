@@ -6,6 +6,7 @@
 - https://mui.com/material-ui/material-icons/
 - https://html-css-js.com/css/generator/box-shadow/
 - https://www.npmjs.com/package/react-circular-progressbar
+- https://recharts.org/en-US/examples/SimpleAreaChart
 
 ```
 import { CircularProgressbar } from "react-circular-progressbar";
@@ -14,6 +15,13 @@ import "react-circular-progressbar/dist/styles.css";
     <CircularProgressbar value={70} text={"70%"} strokeWidth={5} />
 ...
 ```
+
+# Charts
+
+- https://uber.github.io/react-vis/examples/showcases/axes
+- https://nivo.rocks/line/
+- https://recharts.org/en-US/
+- https://react-chartjs-2.netlify.app/
 
 # CSS normalize
 
@@ -40,6 +48,7 @@ npm install @csstools/normalize.css --save
 npm install @mui/material @emotion/react @emotion/styled
 npm install @mui/icons-material
 npm install --save react-circular-progressbar
+npm install recharts
 
 ```
 
