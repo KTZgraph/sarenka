@@ -1,6 +1,7 @@
 import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 import styles from "./Datatable.module.scss";
 
+// FIXME prawdziwe dane
 const columns = [
   { field: "id", headerName: "ID", width: 70 },
   { field: "firstName", headerName: "First name", width: 130 },
@@ -34,6 +35,7 @@ const rows = [
   { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
 ];
 
+// FIXME responsywność
 const Datatable = () => {
   return (
     <div className={styles.datatable}>
@@ -43,6 +45,7 @@ const Datatable = () => {
         pageSize={5}
         rowsPerPageOptions={[5]}
         checkboxSelection
+        className={styles.dataGrid}
       />
     </div>
   );
