@@ -9,67 +9,90 @@ import SettingsRoundedIcon from "@mui/icons-material/SettingsRounded";
 import InsertChartRoundedIcon from "@mui/icons-material/InsertChartRounded";
 import DocumentScannerRoundedIcon from "@mui/icons-material/DocumentScannerRounded";
 import ContactPageRoundedIcon from "@mui/icons-material/ContactPageRounded";
+import { Link } from "react-router-dom";
 import styles from "./Sidebar.module.scss";
 
 const Sidebar = () => {
   return (
     <div className={styles.sidebar}>
       <div className={styles.top}>
-        <span className={styles.logoName}>sarenka</span>
+        <Link to="/">
+          <span className={styles.logoName}>sarenka</span>
+        </Link>
       </div>
       <hr />
       <div className={styles.center}>
         <ul>
-          <li>
-            <DashboardRoundedIcon className={styles.icon} />
-            <span>home</span>
-          </li>
+          <Link to="/">
+            <li>
+              <DashboardRoundedIcon className={styles.icon} />
+              <span>home</span>
+            </li>
+          </Link>
           <p className={styles.title}>main</p>
-          <li>
-            <GppBadRoundedIcon className={styles.icon} />
-            <span>vulnerabilities</span>
-          </li>
-          <li>
-            <AddModeratorRoundedIcon className={styles.icon} />
-            <span>add vulnerability</span>
-          </li>
-          <li>
-            <PolicyRoundedIcon className={styles.icon} />
-            <span>search</span>
-          </li>
-          <li>
-            <WidgetsRoundedIcon className={styles.icon} />
-            <span>software</span>
-          </li>
+          <Link to="/vulns">
+            <li>
+              <GppBadRoundedIcon className={styles.icon} />
+              <span>vulnerabilities</span>
+            </li>
+          </Link>
+          <Link to="/vulns/new">
+            <li>
+              <AddModeratorRoundedIcon className={styles.icon} />
+              <span>add vulnerability</span>
+            </li>
+          </Link>
+          <Link to="/">
+            <li>
+              <PolicyRoundedIcon className={styles.icon} />
+              <span>search</span>
+            </li>
+          </Link>
+          <Link to="/">
+            <li>
+              <WidgetsRoundedIcon className={styles.icon} />
+              <span>software</span>
+            </li>
+          </Link>
           <p className={styles.title}>settings</p>
-          <li>
-            <ManageAccountsRoundedIcon className={styles.icon} />
-            <span>user credentials</span>
-          </li>
-
-          <li>
-            <SettingsRoundedIcon className={styles.icon} />
-            <span>settings</span>
-          </li>
-
+          <Link to="/">
+            <li>
+              <ManageAccountsRoundedIcon className={styles.icon} />
+              <span>user credentials</span>
+            </li>
+          </Link>
+          <Link to="/">
+            <li>
+              <SettingsRoundedIcon className={styles.icon} />
+              <span>settings</span>
+            </li>
+          </Link>
           <p className={styles.title}>statistics</p>
-          <li>
-            <StorageRoundedIcon className={styles.icon} />
-            <span>database status</span>
-          </li>
-          <li>
-            <InsertChartRoundedIcon className={styles.icon} />
-            <span>summary</span>
-          </li>
+          <Link to="/">
+            <li>
+              <StorageRoundedIcon className={styles.icon} />
+              <span>database status</span>
+            </li>
+          </Link>
+          <Link to="/">
+            <li>
+              <InsertChartRoundedIcon className={styles.icon} />
+              <span>summary</span>
+            </li>
+          </Link>
           <p className={styles.title}>Notes</p>
-          <li>
-            <DocumentScannerRoundedIcon className={styles.icon} />
-            <span>public</span>
-          </li>
-          <li>
-            <ContactPageRoundedIcon className={styles.icon} />
-            <span>my notes</span>
-          </li>
+          <Link to="/">
+            <li>
+              <DocumentScannerRoundedIcon className={styles.icon} />
+              <span>public</span>
+            </li>
+          </Link>
+          <Link to="/">
+            <li>
+              <ContactPageRoundedIcon className={styles.icon} />
+              <span>my notes</span>
+            </li>
+          </Link>
         </ul>
       </div>
       <div className={styles.bottom}>
