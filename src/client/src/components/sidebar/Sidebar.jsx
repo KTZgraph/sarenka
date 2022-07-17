@@ -13,7 +13,7 @@ import styles from "./Sidebar.module.scss";
 
 const Sidebar = () => {
   return (
-    <div className={`${styles.sidebar} wrapper`}>
+    <div className={styles.sidebar}>
       <div className={styles.top}>
         <span className={styles.logoName}>sarenka</span>
       </div>

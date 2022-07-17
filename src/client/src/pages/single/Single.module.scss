@@ -1,5 +1,7 @@
 @import "../../styles/main.scss";
+
 .single {
+  font-size: 1.2rem;
   display: flex;
   width: 100%;
 
@@ -13,6 +15,7 @@
 
       .left {
         // informacje o użytkowniku
+        position: relative;
         flex: 1;
         @include box-shadow-mixin;
 
@@ -20,6 +23,12 @@
           position: absolute;
           top: 0;
           right: 0;
+          padding: 5px;
+          font-size: 1.2rem;
+          color: $color-main-medium;
+          background-color: $color-main-medium-transparent;
+          cursor: pointer;
+          border-radius: 0px 0px 0px 5px;
         }
 
         .item {
@@ -31,6 +40,14 @@
             height: 100px;
             border-radius: 50%;
             object-fit: cover;
+          }
+
+          .details {
+            .itemTitle {
+              margin-bottom: 1rem;
+              font-family: $font-second;
+              color: $color-font-medium;
+            }
           }
         }
       }

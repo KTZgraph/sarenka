@@ -22,7 +22,7 @@ const Datatable = () => {
   ];
 
   return (
-    <div className={`${styles.datatable} wrapper`}>
+    <div className={styles.datatable}>
       <DataGrid
         //   rows - dane
         rows={userRows}

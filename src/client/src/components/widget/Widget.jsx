@@ -70,7 +70,7 @@ const Widget = ({ type }) => {
   }
 
   return (
-    <div className={`${styles.widget} wrapper`}>
+    <div className={styles.widget}>
       <div className={styles.left}>
         <div className={styles.title}>{data.title}</div>
         <div className={styles.counter}>

@@ -5,7 +5,7 @@ import styles from "./List.module.scss";
 
 const List = () => {
   return (
-    <div className={`${styles.list} wrapper`}>
+    <div className={styles.list}>
       <Sidebar />
       <div className={styles.listContainer}>
         <Navbar />

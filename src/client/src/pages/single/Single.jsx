@@ -4,7 +4,7 @@ import styles from "./Single.module.scss";
 
 const Single = () => {
   return (
-    <div className={`${styles.single} wrapper`}>
+    <div className={styles.single}>
       <Sidebar />
       <div className={styles.singleContainer}>
         <Navbar />
@@ -19,8 +19,28 @@ const Single = () => {
                 alt=""
                 className={styles.itemImg}
               />
+              <div className={styles.details}>
+                <h1 className={styles.itemTitle}>Jane Doe</h1>
+                <div className={styles.detailItem}>
+                  <span className={styles.itemKey}>Email:</span>
+                  <span className={styles.itemValue}>janedoe@gmail.com</span>
+                </div>
+                <div className={styles.detailItem}>
+                  <span className={styles.itemKey}>Phone:</span>
+                  <span className={styles.itemValue}>+1 2345 67 89</span>
+                </div>
+                <div className={styles.detailItem}>
+                  <span className={styles.itemKey}>Adress:</span>
+                  <span className={styles.itemValue}>
+                    Teststreat 1 Testcity
+                  </span>
+                </div>
+                <div className={styles.detailItem}>
+                  <span className={styles.itemKey}>Country:</span>
+                  <span className={styles.itemValue}>USA</span>
+                </div>
+              </div>
             </div>
-            <div className={styles.details}>details</div>
           </div>
           <div className={styles.right}></div>
         </div>

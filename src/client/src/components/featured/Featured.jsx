@@ -8,7 +8,7 @@ import styles from "./Featured.module.scss";
 
 const Featured = () => {
   return (
-    <div className={`${styles.featured} wrapper`}>
+    <div className={styles.featured}>
       <div className={styles.top}>
         <h1 className={styles.title}>Total Revenue</h1>
         {/* zmiana wilekości czcionki  */}

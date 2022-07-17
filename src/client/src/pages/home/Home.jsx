@@ -9,7 +9,7 @@ import Hometable from "../../components/hometable/Hometable";
 
 const Home = () => {
   return (
-    <div className={`${styles.home} wrapper`}>
+    <div className={styles.home}>
       <Sidebar />
       <div className={`${styles.homeContainer}`}>
         <Navbar />

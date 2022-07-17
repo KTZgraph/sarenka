@@ -8,7 +8,7 @@ import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutline
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
 const Navbar = () => {
   return (
-    <div className={`${styles.navbar} wrapper`}>
+    <div className={styles.navbar}>
       <div className={styles.navbarContainer}>
         <div className={styles.search}>
           {/* serach input */}
