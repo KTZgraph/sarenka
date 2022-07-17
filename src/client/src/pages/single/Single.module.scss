@@ -1,0 +1,44 @@
+@import "../../styles/main.scss";
+.single {
+  display: flex;
+  width: 100%;
+
+  .singleContainer {
+    flex: 6;
+
+    .top {
+      padding: 2rem;
+      display: flex;
+      gap: 2rem;
+
+      .left {
+        // informacje o użytkowniku
+        flex: 1;
+        @include box-shadow-mixin;
+
+        .editButton {
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+
+        .item {
+          display: flex;
+          gap: 2rem;
+
+          .itemImg {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+        }
+      }
+
+      .right {
+        // wykres chart będzie większy
+        flex: 2;
+      }
+    }
+  }
+}

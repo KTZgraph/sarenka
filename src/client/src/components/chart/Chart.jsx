@@ -65,7 +65,7 @@ const data = [
 
 const Charts = () => {
   return (
-    <div className={styles.chart}>
+    <div className={`${styles.chart} wrapper`}>
       <div className={styles.title}>Last 6 Months (Revenue)</div>
       {/* height="100%" sprawia, ze wykres leci w nieskończonosc w dół */}
       {/* <ResponsiveContainer width="100%" height="100%"> */}
