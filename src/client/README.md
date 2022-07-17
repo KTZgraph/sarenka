@@ -9,6 +9,9 @@
 - https://mui.com/material-ui/material-icons/
 - https://html-css-js.com/css/generator/box-shadow/
 - https://www.npmjs.com/package/react-circular-progressbar
+  ```
+  npm install --save react-circular-progressbar
+  ```
   - client\src\components\featured\Featured.jsx
     ```js
     import { CircularProgressbar } from "react-circular-progressbar";
@@ -19,6 +22,9 @@
     ```
 - https://recharts.org/en-US/examples/SimpleAreaChart (ten nie)
 - https://recharts.org/en-US/api
+  ```
+  npm install recharts
+  ```
   - client\src\components\chart\Chart.module.scss
     - dodać:
       ```js
@@ -49,6 +55,11 @@
 # Tables
 
 - https://mui.com/material-ui/react-table/#basic-table
+- https://mui.com/material-ui/react-table/#data-table
+
+```
+npm install @mui/x-data-grid
+```
 
 # CSS normalize
 
@@ -76,6 +87,7 @@ npm install @mui/material @emotion/react @emotion/styled
 npm install @mui/icons-material
 npm install --save react-circular-progressbar
 npm install recharts
+npm install @mui/x-data-grid 
 
 ```
 
@@ -154,7 +166,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-# __________________________________________________
+# \***\*\*\*\*\***\*\*\*\*\***\*\*\*\*\***\_\_\***\*\*\*\*\***\*\*\*\*\***\*\*\*\*\***
 
 ```js
 <span
