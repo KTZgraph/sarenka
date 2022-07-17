@@ -21,6 +21,10 @@ export const userColumns = [
     field: "status",
     headerName: "Status",
     width: 160,
+    // zamiast valueGetter można użyć renderCell:
+    // valueGetter: (params) =>
+    // `${params.row.firstName || ""} ${params.row.lastName || ""}`,
+    //   WARNING uważać na składnie - jak sie zrobi błąd to dane sie nie wyświetlają
     renderCell: (params) => {
       // FIXME style
       return (
@@ -29,8 +33,8 @@ export const userColumns = [
             params.row.status === "active"
               ? `${styles.cellWithStatus} ${styles.active}`
               : params.row.status === "passive"
-                ? `${styles.cellWithStatus} ${styles.passive}`
-                : `${styles.cellWithStatus} ${styles.active}`
+              ? `${styles.cellWithStatus} ${styles.passive}`
+              : `${styles.cellWithStatus} ${styles.active}`
           }
         >
           {params.row.status}
