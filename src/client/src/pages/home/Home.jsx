@@ -10,10 +10,10 @@ const Home = () => {
       <div className={`${styles.homeContainer}`}>
         <Navbar />
         <div className={styles.widgets}>
-          <Widget type="cwe" />
-          <Widget type="cve" />
-          <Widget type="software" />
-          <Widget type="favicon" />
+          <Widget type="user" />
+          <Widget type="order" />
+          <Widget type="earnings" />
+          <Widget type="balance" />
         </div>
       </div>
     </div>
