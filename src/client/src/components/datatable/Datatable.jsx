@@ -86,14 +86,19 @@ const Datatable = () => {
               <TableCell className={styles.tableCell}>
                 {/* obrazek produktu */}
                 <div className={styles.cellWrapper}>
-                  <img src={row.img} alt="" className={styles.productImg} />
+                  <img src={row.img} alt="" className={styles.cellImg} />
+                  {row.product}
                 </div>
               </TableCell>
               <TableCell className={styles.tableCell}>{row.customer}</TableCell>
               <TableCell className={styles.tableCell}>{row.date}</TableCell>
               <TableCell className={styles.tableCell}>{row.amount}</TableCell>
               <TableCell className={styles.tableCell}>{row.method}</TableCell>
-              <TableCell className={styles.tableCell}>{row.status}</TableCell>
+              <TableCell className={styles.tableCell}>
+                <span className={`${styles.status} ${row.status}`}>
+                  {row.status}
+                </span>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
