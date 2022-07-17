@@ -1,10 +1,11 @@
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
-import styles from "./Home.module.scss";
 import Widget from "../../components/widget/Widget";
 import Featured from "../../components/featured/Featured";
 import Chart from "../../components/chart/Chart";
 
+import styles from "./Home.module.scss";
+import Table from "../../components/datatable/Datatable";
 const Home = () => {
   return (
     <div className={`${styles.home} wrapper`}>
@@ -18,8 +19,14 @@ const Home = () => {
           <Widget type="balance" />
         </div>
         <div className={styles.charts}>
+          {/* wykresiki */}
           <Featured />
           <Chart />
+        </div>
+        <div className={styles.listContainer}>
+          {/* FIXME zmienić na ostatnie CVEs */}
+          <div className={styles.listTitle}>Latest Transactions</div>
+          <Table />
         </div>
       </div>
     </div>

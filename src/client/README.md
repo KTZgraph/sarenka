@@ -43,6 +43,10 @@
 - https://recharts.org/en-US/
 - https://react-chartjs-2.netlify.app/
 
+# Tables
+
+- https://mui.com/material-ui/react-table/#basic-table
+
 # CSS normalize
 
 - https://github.com/csstools/normalize.css
