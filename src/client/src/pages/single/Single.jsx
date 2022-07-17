@@ -1,8 +1,10 @@
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import Chart from "../../components/chart/Chart";
+import Hometable from "../../components/hometable/Hometable";
 import styles from "./Single.module.scss";
 
+// FIXME logo w navbarze znika tutaj
 const Single = () => {
   return (
     <div className={styles.single}>
@@ -44,10 +46,16 @@ const Single = () => {
             </div>
           </div>
           <div className={styles.right}>
-            <Chart />
+            <Chart
+              chartAspect={3 / 1}
+              chartTitle="User Spending (Last 6 Months)"
+            />
           </div>
         </div>
-        <div className={styles.bottom}></div>
+        <div className={styles.bottom}>
+          <h1 className={styles.title}>Last Transactions</h1>
+          <Hometable />
+        </div>
       </div>
     </div>
   );

@@ -22,7 +22,7 @@ const Home = () => {
         <div className={styles.charts}>
           {/* wykresiki */}
           <Featured />
-          <Chart />
+          <Chart chartTitle="Last 6 Months (Revenue)" chartAspect={2 / 1} />
         </div>
         <div className={styles.listContainer}>
           {/* FIXME zmienić na ostatnie CVEs */}

@@ -63,15 +63,15 @@ const data = [
   { name: "June", Total: 1700 },
 ];
 
-const Charts = () => {
+const Chart = ({ chartAspect, chartTitle }) => {
   return (
     <div className={styles.chart}>
-      <div className={styles.title}>Last 6 Months (Revenue)</div>
+      <div className={styles.title}>{chartTitle}</div>
       {/* height="100%" sprawia, ze wykres leci w nieskończonosc w dół */}
       {/* <ResponsiveContainer width="100%" height="100%"> */}
       {/* <ResponsiveContainer width="100%" height={100}> */}
       {/* aspect={2 / 1} daje połowę 100vh  */}
-      <ResponsiveContainer width="100%" aspect={2 / 1}>
+      <ResponsiveContainer width="100%" aspect={chartAspect}>
         {/* FIXME zmienić na dane o CVE CWETop25 albo OWASP TOP10 */}
         <AreaChart
           width={730}
@@ -123,4 +123,4 @@ const Charts = () => {
   );
 };
 
-export default Charts;
+export default Chart;

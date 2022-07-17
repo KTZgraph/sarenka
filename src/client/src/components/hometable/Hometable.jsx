@@ -60,7 +60,7 @@ const rows = [
   },
 ];
 // FIXME zmienić na czysta tablekę HTMl https://www.youtube.com/watch?v=vIxGDq1SPZQ
-const Datatable = () => {
+const Hometable = () => {
   return (
     <TableContainer component={Paper} className={styles.hometable}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -114,4 +114,4 @@ const Datatable = () => {
   );
 };
 
-export default Datatable;
+export default Hometable;
