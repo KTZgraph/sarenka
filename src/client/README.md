@@ -1,4 +1,7 @@
-# TODO: code of conduct napisać
+# TODO:
+
+- code of conduct napisać
+- tabelka w czystym HTML https://www.youtube.com/watch?v=vIxGDq1SPZQ
 
 # Links
 
