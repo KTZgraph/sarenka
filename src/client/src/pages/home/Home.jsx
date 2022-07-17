@@ -5,7 +5,7 @@ import Featured from "../../components/featured/Featured";
 import Chart from "../../components/chart/Chart";
 
 import styles from "./Home.module.scss";
-import Datatable from "../../components/datatable/Datatable";
+import Hometable from "../../components/hometable/Hometable";
 
 const Home = () => {
   return (
@@ -27,7 +27,7 @@ const Home = () => {
         <div className={styles.listContainer}>
           {/* FIXME zmienić na ostatnie CVEs */}
           <div className={styles.listTitle}>Latest Transactions</div>
-          <Datatable />
+          <Hometable />
         </div>
       </div>
     </div>

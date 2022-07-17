@@ -5,7 +5,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import styles from "./Datatable.module.scss";
+import styles from "./Hometable.module.scss";
 
 const rows = [
   {
@@ -62,7 +62,7 @@ const rows = [
 // FIXME zmienić na czysta tablekę HTMl https://www.youtube.com/watch?v=vIxGDq1SPZQ
 const Datatable = () => {
   return (
-    <TableContainer component={Paper} className={styles.datatable}>
+    <TableContainer component={Paper} className={styles.hometable}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
