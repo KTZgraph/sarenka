@@ -6,15 +6,35 @@
 - https://mui.com/material-ui/material-icons/
 - https://html-css-js.com/css/generator/box-shadow/
 - https://www.npmjs.com/package/react-circular-progressbar
-- https://recharts.org/en-US/examples/SimpleAreaChart
-
-```
-import { CircularProgressbar } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
-...
-    <CircularProgressbar value={70} text={"70%"} strokeWidth={5} />
-...
-```
+  - client\src\components\featured\Featured.jsx
+    ```js
+    import { CircularProgressbar } from "react-circular-progressbar";
+    import "react-circular-progressbar/dist/styles.css";
+    ...
+        <CircularProgressbar value={70} text={"70%"} strokeWidth={5} />
+    ...
+    ```
+- https://recharts.org/en-US/examples/SimpleAreaChart (ten nie)
+- https://recharts.org/en-US/api
+  - client\src\components\chart\Chart.module.scss
+    - dodać:
+      ```js
+      import {
+      AreaChart,
+      Area,
+      XAxis,
+      YAxis,
+      CartesianGrid,
+      Tooltip,
+      ResponsiveContainer,
+      } from "recharts";
+      ...
+      <ResponsiveContainer width="100%" height="100%">
+          <AreaChart ...>
+              ...
+          </AreaChart>
+      </ResponsiveContainer>
+      ```
 
 # Charts
 
