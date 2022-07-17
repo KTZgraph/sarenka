@@ -95,7 +95,14 @@ const Datatable = () => {
               <TableCell className={styles.tableCell}>{row.amount}</TableCell>
               <TableCell className={styles.tableCell}>{row.method}</TableCell>
               <TableCell className={styles.tableCell}>
-                <span className={`${styles.status} ${row.status}`}>
+                {/* <span className={`${styles.status} ${row.status}`}> */}
+                <span
+                  className={
+                    row.status === "Pending"
+                      ? `${styles.status} ${styles.Pending}`
+                      : `${styles.status} ${styles.Approved} `
+                  }
+                >
                   {row.status}
                 </span>
               </TableCell>

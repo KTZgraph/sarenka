@@ -153,3 +153,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# __________________________________________________
+
+```js
+<span
+  className={
+    row.status === "Pending"
+      ? `${styles.status} ${styles.Pending}`
+      : `${styles.status} ${styles.Approved} `
+  }
+>
+```
