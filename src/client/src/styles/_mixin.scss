@@ -24,6 +24,7 @@ $sidebar-min-width: 300px;
   box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.5);
 }
 
+// status info
 @mixin status-success-mixin {
   background-color: $color-status-success-transparent;
   color: $color-status-success;
@@ -37,4 +38,23 @@ $sidebar-min-width: 300px;
 @mixin status-error-mixin {
   background-color: $color-status-error-transparent;
   color: $color-status-error;
+}
+
+// buttons
+@mixin button-base-mixin {
+  padding: 2px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@mixin button-view-mixin {
+  @include button-base-mixin;
+  color: $color-button-view;
+  border: 1px solid $color-button-view-transparent;
+}
+
+@mixin button-delete-mixin {
+  @include button-base-mixin;
+  color: $color-button-delete;
+  border: 1px solid $color-button-delete-transparent;
 }
