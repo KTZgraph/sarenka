@@ -18,6 +18,7 @@
         position: relative;
         flex: 1;
         @include box-shadow-mixin;
+        padding: 20px;
 
         .editButton {
           position: absolute;
@@ -44,9 +45,25 @@
 
           .details {
             .itemTitle {
-              margin-bottom: 1rem;
+              margin-bottom: 10px;
               font-family: $font-second;
-              color: $color-font-medium;
+              color: $color-font-dark;
+            }
+
+            .detailItem {
+              margin-bottom: 10px;
+              font-size: 1.4rem;
+
+              .itemKey {
+                font-weight: bold;
+                color: $color-gray-medium;
+                margin-right: 3px;
+                text-transform: capitalize;
+              }
+
+              .itemValue {
+                font-weight: 300;
+              }
             }
           }
         }
@@ -57,5 +74,15 @@
         flex: 2;
       }
     }
+  }
+
+  // reużywam klasy title w obu .left i .right
+  .title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: $font-second;
+    color: $color-gray-medium;
+    padding: 5px;
+    margin-bottom: 20px;
   }
 }
