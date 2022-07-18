@@ -1,7 +1,6 @@
 import Sidebar from "../../../components/sidebar/Sidebar";
 import Navbar from "../../../components/navbar/Navbar";
-import CveData from "../../../components/cve/details/CveDetails";
-import CveForm from "../../../components/cve/form/CveForm";
+import CveData from "../../../components/cve/details/Single";
 import styles from "./Single.module.scss";
 
 // FIXME logo w navbarze znika tutaj
@@ -14,9 +13,7 @@ const Single = () => {
         <div className={styles.top}>
           <CveData />
         </div>
-        <div className={styles.bottom}>
-          <CveForm />
-        </div>
+        <div className={styles.bottom}></div>
       </div>
     </div>
   );
