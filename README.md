@@ -244,6 +244,12 @@ The documentation is availabe [here](https://pawlaczyk.github.io/sarenka/).
 # License
 SARENKA is **licensed** under the **[MIT License]**.
 
+# Develop branch
+<p align="center">
+    <img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/vulns_enpoint.PNG">
+</p>
+
+
 [MIT License]: https://github.com/pawlaczyk/sarenka/blob/master/LICENSE
 [GitHub]: https://github.com/pawlaczyk/sarenka
 [documentation]: https://pawlaczyk.github.io/sarenka/
