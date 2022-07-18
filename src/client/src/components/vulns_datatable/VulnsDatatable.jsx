@@ -2,6 +2,7 @@ import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 import styles from "./VulnsDatatable.module.scss";
 import { userColumns } from "./VulnsDatatableDatatableColumns";
 import { dummyCves } from "./dummy_cves";
+import { Link } from "react-router-dom";
 
 // FIXME responsywność
 const VulnsDatatable = () => {
@@ -13,8 +14,12 @@ const VulnsDatatable = () => {
       renderCell: () => {
         return (
           <div className={styles.cellAction}>
-            <div className={styles.viewButton}>View</div>
-            <div className={styles.deleteButton}>Delete</div>
+            <Link to="/vulns/123">
+              <div className={styles.viewButton}>View</div>
+            </Link>
+            <Link to="/vulns/123">
+              <div className={styles.deleteButton}>Delete</div>
+            </Link>
           </div>
         );
       },
@@ -24,14 +29,9 @@ const VulnsDatatable = () => {
   return (
     <div className={styles.datatable}>
       <DataGrid
-        //   rows - dane
         rows={dummyCves}
-        // to co pokazujemy w datatable
-        // columns={userColumns}
         // WARNING dodawanie danych do kolumny
-        // columns={userColumns.concat(actionColumn)}
-        columns={userColumns}
-        // paginacja
+        columns={userColumns.concat(actionColumn)}
         pageSize={10}
         rowsPerPageOptions={[3]}
         checkboxSelection

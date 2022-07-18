@@ -11,9 +11,7 @@ import VulnList from "./pages/vulns_list/VulnList";
 import VulnSingle from "./pages/vulns_single/VulnsSingle";
 import { DarkModeContext } from "./context/darkModeContext";
 
-// FIXME
-// COMPLETE
-// TODO
+
 function App() {
   const { darkMode } = useContext(DarkModeContext);
 
