@@ -1,8 +1,8 @@
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
-import Chart from "../../components/chart/Chart";
-import Hometable from "../../components/hometable/Hometable";
 import styles from "./VulnsSingle.module.scss";
+import CveData from "../../components/cve_details/CveDetails";
+import CveForm from "../../components/cve_form/CveForm";
 
 // FIXME logo w navbarze znika tutaj
 const Single = () => {
@@ -11,7 +11,12 @@ const Single = () => {
       <Sidebar />
       <div className={styles.singleContainer}>
         <Navbar />
-        VULNS SIGLE
+        <div className={styles.top}>
+          <CveData />
+        </div>
+        <div className={styles.bottom}>
+          <CveForm />
+        </div>
       </div>
     </div>
   );
