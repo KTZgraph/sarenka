@@ -26,14 +26,47 @@
     padding: 5px;
     border-radius: 5px;
 
-    &.active {
-      @include status-success-mixin;
+    //severity
+    &.critical,
+    &.medium,
+    &.high,
+    &.low {
+      font-weight: 700;
+      text-align: center;
+      width: 3rem;
     }
-    &.pending {
-      @include status-pending-mixin;
+
+    &.critical {
+      background-color: $color-severity-critical;
     }
-    &.passive {
-      @include status-error-mixin;
+    &.medium {
+      background-color: $color-severity-medium;
+    }
+    &.high {
+      background-color: $color-severity-high;
+    }
+    &.low {
+      background-color: $color-severity-low;
+    }
+    //vectors
+    &.vectorCritical,
+    &.verctorHigh,
+    &.vectorMedium,
+    &.vectorLow {
+      font-weight: 500;
+      font-size: 1.3rem;
+    }
+    &.vectorCritical {
+      color: $color-severity-critical;
+    }
+    &.verctorHigh {
+      color: $color-severity-high;
+    }
+    &.vectorMedium {
+      color: $color-severity-medium;
+    }
+    &.vectorLow {
+      color: black;
     }
   }
 
