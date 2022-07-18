@@ -10,9 +10,14 @@ import InsertChartRoundedIcon from "@mui/icons-material/InsertChartRounded";
 import DocumentScannerRoundedIcon from "@mui/icons-material/DocumentScannerRounded";
 import ContactPageRoundedIcon from "@mui/icons-material/ContactPageRounded";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/darkModeContext";
 import styles from "./Sidebar.module.scss";
 
+// FIXME darkMode nie działa na tym elemencie
 const Sidebar = () => {
+  const { dispatch } = useContext(DarkModeContext);
+
   return (
     <div className={styles.sidebar}>
       <div className={styles.top}>
@@ -96,8 +101,14 @@ const Sidebar = () => {
         </ul>
       </div>
       <div className={styles.bottom}>
-        <div className={styles.colorOption}></div>
-        <div className={styles.colorOption}></div>
+        <div
+          className={styles.colorOption}
+          onClick={() => dispatch({ type: "LIGHT" })}
+        ></div>
+        <div
+          className={styles.colorOption}
+          onClick={() => dispatch({ type: "DARK" })}
+        ></div>
       </div>
       <footer className={styles.logoFooter}>
         <div className={styles.logoContainer}>
