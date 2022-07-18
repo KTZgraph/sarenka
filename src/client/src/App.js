@@ -7,8 +7,8 @@ import List from "./pages/list/List";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
 //vulns
-import VulnList from "./pages/vulns_list/VulnList";
-import VulnSingle from "./pages/vulns_single/VulnsSingle";
+import VulnList from "./pages/cve/list/List";
+import VulnSingle from "./pages/cve/single/Single";
 import { DarkModeContext } from "./context/darkModeContext";
 
 
