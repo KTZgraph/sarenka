@@ -3,6 +3,7 @@
 - code of conduct napisać
 - tabelka w czystym HTML https://www.youtube.com/watch?v=vIxGDq1SPZQ
 - https://github.com/airbnb/javascript/tree/master/react#naming (naming convention)
+- https://cpe.mitre.org/specification/
 
 # Links
 
