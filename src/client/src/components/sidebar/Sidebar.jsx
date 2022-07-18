@@ -12,106 +12,106 @@ import ContactPageRoundedIcon from "@mui/icons-material/ContactPageRounded";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { DarkModeContext } from "../../context/darkModeContext";
-import styles from "./Sidebar.module.scss";
+import "./sidebar.scss";
 
 // FIXME darkMode nie działa na tym elemencie
 const Sidebar = () => {
   const { dispatch } = useContext(DarkModeContext);
 
   return (
-    <div className={styles.sidebar}>
-      <div className={styles.top}>
+    <div className="sidebar">
+      <div className="top">
         <Link to="/">
-          <span className={styles.logoName}>sarenka</span>
+          <span className="logoName">sarenka</span>
         </Link>
       </div>
       <hr />
-      <div className={styles.center}>
+      <div className="center">
         <ul>
           <Link to="/">
             <li>
-              <DashboardRoundedIcon className={styles.icon} />
+              <DashboardRoundedIcon className="icon" />
               <span>home</span>
             </li>
           </Link>
-          <p className={styles.title}>main</p>
+          <p className="title">main</p>
           <Link to="/vulns">
             <li>
-              <GppBadRoundedIcon className={styles.icon} />
+              <GppBadRoundedIcon className="icon" />
               <span>vulnerabilities</span>
             </li>
           </Link>
           <Link to="/vulns/new">
             <li>
-              <AddModeratorRoundedIcon className={styles.icon} />
+              <AddModeratorRoundedIcon className="icon" />
               <span>add vulnerability</span>
             </li>
           </Link>
           <Link to="/">
             <li>
-              <PolicyRoundedIcon className={styles.icon} />
+              <PolicyRoundedIcon className="icon" />
               <span>search</span>
             </li>
           </Link>
           <Link to="/">
             <li>
-              <WidgetsRoundedIcon className={styles.icon} />
+              <WidgetsRoundedIcon className="icon" />
               <span>software</span>
             </li>
           </Link>
-          <p className={styles.title}>settings</p>
+          <p className="title">settings</p>
           <Link to="/">
             <li>
-              <ManageAccountsRoundedIcon className={styles.icon} />
+              <ManageAccountsRoundedIcon className="icon" />
               <span>user credentials</span>
             </li>
           </Link>
           <Link to="/">
             <li>
-              <SettingsRoundedIcon className={styles.icon} />
+              <SettingsRoundedIcon className="icon" />
               <span>settings</span>
             </li>
           </Link>
-          <p className={styles.title}>statistics</p>
+          <p className="title">statistics</p>
           <Link to="/">
             <li>
-              <StorageRoundedIcon className={styles.icon} />
+              <StorageRoundedIcon className="icon" />
               <span>database status</span>
             </li>
           </Link>
           <Link to="/">
             <li>
-              <InsertChartRoundedIcon className={styles.icon} />
+              <InsertChartRoundedIcon className="icon" />
               <span>summary</span>
             </li>
           </Link>
-          <p className={styles.title}>Notes</p>
+          <p className="title">Notes</p>
           <Link to="/">
             <li>
-              <DocumentScannerRoundedIcon className={styles.icon} />
+              <DocumentScannerRoundedIcon className="icon" />
               <span>public</span>
             </li>
           </Link>
           <Link to="/">
             <li>
-              <ContactPageRoundedIcon className={styles.icon} />
+              <ContactPageRoundedIcon className="icon" />
               <span>my notes</span>
             </li>
           </Link>
         </ul>
       </div>
-      <div className={styles.bottom}>
+      <div className="bottom">
         <div
-          className={styles.colorOption}
+          className="colorOption"
           onClick={() => dispatch({ type: "LIGHT" })}
         ></div>
         <div
-          className={styles.colorOption}
+          className="colorOption"
           onClick={() => dispatch({ type: "DARK" })}
         ></div>
       </div>
-      <footer className={styles.logoFooter}>
-        <div className={styles.logoContainer}>
+      <footer className="logoFooter">
+        <div className="logoContainer">
           <img src={process.env.PUBLIC_URL + "images/logo_cropped.png"} />
         </div>
       </footer>
