@@ -1,7 +1,7 @@
 import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 import styles from "./VulnsDatatable.module.scss";
 import { userColumns } from "./VulnsDatatableDatatableColumns";
-import { userRows } from "../../dummy_data/datatablesource";
+import { dummyCves } from "./dummy_cves";
 
 // FIXME responsywność
 const VulnsDatatable = () => {
@@ -25,13 +25,14 @@ const VulnsDatatable = () => {
     <div className={styles.datatable}>
       <DataGrid
         //   rows - dane
-        rows={userRows}
+        rows={dummyCves}
         // to co pokazujemy w datatable
         // columns={userColumns}
         // WARNING dodawanie danych do kolumny
-        columns={userColumns.concat(actionColumn)}
+        // columns={userColumns.concat(actionColumn)}
+        columns={userColumns}
         // paginacja
-        pageSize={5}
+        pageSize={10}
         rowsPerPageOptions={[3]}
         checkboxSelection
         className={styles.dataGrid}
