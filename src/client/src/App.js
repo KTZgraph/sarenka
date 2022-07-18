@@ -6,6 +6,9 @@ import Login from "./pages/login/Login";
 import List from "./pages/list/List";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
+//vulns
+import VulnList from "./pages/vulns_list/VulnList";
+import VulnSingle from "./pages/vulns_single/VulnsSingle";
 import { DarkModeContext } from "./context/darkModeContext";
 
 // FIXME
@@ -33,8 +36,8 @@ function App() {
               <Route path="new" element={<New />} />
             </Route>
             <Route path="vulns">
-              <Route index element={<List />} />
-              <Route path=":vulnId" element={<Single />} />
+              <Route index element={<VulnList />} />
+              <Route path=":vulnId" element={<VulnSingle />} />
               <Route path="new" element={<New />} />
             </Route>
           </Route>
