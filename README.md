@@ -2,6 +2,10 @@
     <img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/master/logo.png">
 </p>
 
+<p align="center">
+    <img alt="sarenka-logo" src="https://raw.githubusercontent.com/pawlaczyk/sarenka/develop/vulns_enpoint.PNG">
+</p>
+
 # License
 
 SARENKA is **licensed** under the **[MIT License]**.
