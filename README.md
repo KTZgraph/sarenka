@@ -84,6 +84,7 @@ App is alive and has been rewriting from scratch on branch [new_master](https://
 * [hakin9.org](https://hakin9.org/sarenka-an-osint-tool-that-gets-data-from-services-like-shodan-censys-etc-in-one-app/)
 * [www.libhunt.com](https://www.libhunt.com/l/python/topic/reconnaissance)
 * [cybersec365.org](https://cybersec365.org/pentesting-tools/sarenka-osint-shodan-censys/)
+* [reddit.com user mikeis075](https://web.archive.org/web/20220524074859/https://www.reddit.com/r/hacking/comments/upx3hl/sarenka_an_osint_tool_that_gets_data_from/)
 
 # Features
   - gets data from **https://censys.io/** by ip
