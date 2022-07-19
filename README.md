@@ -82,6 +82,7 @@ App is alive and has been rewriting from scratch on branch [new_master](https://
 * [redhotcyber.com](https://www.redhotcyber.com/post/sarenka-uno-strumento-osint-connesso-a-shodan-censys-cve-dns-whois)
 * [haktechs.com](https://www.haktechs.com/hacking-pentesting-tools/sarenka-an-osint-tool-that-gets-data-from-services-like-shodan-censys-etc-in-one-app/)
 * [hakin9.org](https://hakin9.org/sarenka-an-osint-tool-that-gets-data-from-services-like-shodan-censys-etc-in-one-app/)
+* [www.libhunt.com](https://www.libhunt.com/l/python/topic/reconnaissance)
 * [cybersec365.org](https://cybersec365.org/pentesting-tools/sarenka-osint-shodan-censys/)
 
 # Features
