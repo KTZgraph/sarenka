@@ -32,9 +32,14 @@ It returns data about the local machine - local installed software (from Windows
 For now application has also simple tools like hash calculator, shannon entropy calculator and very simple port scanner. 
 More cryptography-math tools and reconnaissance scripts are planned.
 
-App is alive and has been rewriting from scratch on branch [new_master](https://github.com/pawlaczyk/sarenka/tree/new_master).
+App is alive and has been rewriting from scratch on branch [develop](https://github.com/pawlaczyk/sarenka/tree/new_master).
 
-#### SARENKA was mentioned here:
+
+# Contributors
+[![Author](https://img.shields.io/badge/parkjunmin-darkgreen.svg)](https://github.com/parkjunmin/)
+
+
+# SARENKA was mentioned here:
 * [ncybersec](https://www.facebook.com/ncybersec/posts/1671427243027993)
 * [llllap3xllll](https://www.instagram.com/p/CI8tXMNg3yI/)
 * [securityonline.info](https://securityonline.info/sarenka-obtaining-and-understanding-attack-surface//)
