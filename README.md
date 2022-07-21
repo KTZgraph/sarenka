@@ -24,7 +24,7 @@
 
 **SARENKA** is an Open Source Intelligence (**OSINT**) tool which helps you obtaining and understanding **Attack Surface**.
 
-The main goal is gathering information from search engines for Internet-connected devices (**https://censys.io/**, **https://www.shodan.io/**).
+The main goal is gathering information from search engines for Internet-connected devices (**https://censys.io/**, **https://www.shodan.io/**, **https://www.criminalip.io/ko**).
 It scraps data about Common Vulnerabilities and Exposures (**CVE**), Common Weakness Enumeration (**CWE**) and also has database where CVEs are mapped to CWE.
 
 It returns data about the local machine - local installed software (from Windows Registry), local network information (python libraries, popular cmd commads).
@@ -89,6 +89,7 @@ App is alive and has been rewriting from scratch on branch [new_master](https://
 # Features
   - gets data from **https://censys.io/** by ip
   - get data from **https://www.shodan.io/** by ip
+  - get data from **https://www.criminalip.io/** by ip
   - get **DNS** data
   - get **WHOIS** data
   - **banner** grabbing
