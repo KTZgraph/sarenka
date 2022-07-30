@@ -39,6 +39,17 @@ const Single = () => {
     }
   };
 
+  // DELETE -usuwanie filmu
+
+  const deleteMovie = async (id) => {
+    try {
+      await fetch(`/api/movies/${id}`, { method: "DELETE" });
+      setData(data.filter((m) => m.id !== id));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className={styles.single}>
       <Sidebar />
@@ -83,6 +94,7 @@ const Single = () => {
                   <th>id</th>
                   <th>name</th>
                   <th>year</th>
+                  <th>action</th>
                 </tr>
               </thead>
               <tbody>
@@ -91,6 +103,15 @@ const Single = () => {
                     <td>{id}</td>
                     <td>{name}</td>
                     <td>{year}</td>
+                    <td>
+                      {/* usuwanie filmu po id */}
+                      <button
+                        className="buttonDelete"
+                        onClick={() => deleteMovie(id)}
+                      >
+                        Delete
+                      </button>
+                    </td>
                   </tr>
                 ))}
               </tbody>
