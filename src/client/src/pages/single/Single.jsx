@@ -1,5 +1,5 @@
-import Sidebar from "../../components/sidebar/Sidebar";
-import Navbar from "../../components/navbar/Navbar";
+import Sidebar from "../../components/organisms/sidebar/Sidebar";
+import Navbar from "../../components/organisms/navbar/Navbar";
 import Chart from "../../components/chart/Chart";
 import Hometable from "../../components/hometable/Hometable";
 import styles from "./Single.module.scss";

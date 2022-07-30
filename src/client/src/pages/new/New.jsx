@@ -1,5 +1,5 @@
-import Sidebar from "../../components/sidebar/Sidebar";
-import Navbar from "../../components/navbar/Navbar";
+import Sidebar from "../../components/organisms/sidebar/Sidebar";
+import Navbar from "../../components/organisms/navbar/Navbar";
 import styles from "./New.module.scss";
 
 const New = () => {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Sidebar from "../../../components/sidebar/Sidebar";
-import Navbar from "../../../components/navbar/Navbar";
+import Sidebar from "../../../components/organisms/sidebar/Sidebar";
+import Navbar from "../../../components/organisms/navbar/Navbar";
 import CveData from "../../../components/cve/details/Single";
 import styles from "./Single.module.scss";
 

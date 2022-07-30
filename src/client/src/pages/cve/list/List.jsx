@@ -1,6 +1,6 @@
 import VulnsDatatable from "../../../components/vulns_datatable/VulnsDatatable";
-import Sidebar from "../../../components/sidebar/Sidebar";
-import Navbar from "../../../components/navbar/Navbar";
+import Sidebar from "../../../components/organisms/sidebar/Sidebar";
+import Navbar from "../../../components/organisms/navbar/Navbar";
 
 import styles from "./List.module.scss";
 const List = () => {

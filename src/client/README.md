@@ -109,15 +109,18 @@ npm install @mui/x-data-grid
 
 ## `Atomic Design Principles`
 
+- https://atomicdesign.bradfrost.com/table-of-contents/
 - https://andela.com/insights/structuring-your-react-application-atomic-design-principles/
 - https://github.com/danilowoz/react-atomic-design (całe repo <3)
-- https://danilowoz.com/blog/atomic-design-with-react 
+- https://danilowoz.com/blog/atomic-design-with-react
+- https://szkolareacta.pl/atomic-design/
 
 ### Storybook
 
 - https://storybook.js.org/docs/react/get-started/install
 - https://www.youtube.com/watch?v=FUKpWgRyPlU
 - https://www.youtube.com/watch?v=cx0S8JyiVxc (prop types)
+- https://marketplace.visualstudio.com/items?itemName=riccardoforina.storybook-helper Storybook helper (VS Code extension)
 
 ```sh
 npx sb init
