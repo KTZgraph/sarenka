@@ -13,6 +13,8 @@ const Single = () => {
   // stan dla formularza
   const [name, setName] = useState("");
   const [year, setYear] = useState("");
+  // stan dla aktorów filmu
+  const [actors, setActors] = useState(null);
 
   // pobieranie danych GET
   useEffect(() => {
@@ -113,6 +115,18 @@ const Single = () => {
     setYear(movie.year);
   };
 
+  // pobieranie aktorów dla filmu
+  const fetchActors = async (id) => {
+    try {
+      const res = await fetch(`/api/movies/${id}/actors`);
+      const json = await res.json();
+
+      setActors(json.actors);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className={styles.single}>
       <Sidebar />
@@ -159,6 +173,7 @@ const Single = () => {
                   <th>name</th>
                   <th>year</th>
                   <th>action</th>
+                  <th>actors</th>
                 </tr>
               </thead>
               <tbody>
@@ -167,6 +182,13 @@ const Single = () => {
                     <td>{id}</td>
                     <td>{name}</td>
                     <td>{year}</td>
+                    {/* map[owanie -lista aktorów] */}
+                    <td>
+                      {actors?.map((actor) => (
+                        // WARNING pamiętac o kluczu dla reacta
+                        <p key={actor.id}>{actor.name}</p>
+                      ))}
+                    </td>
                     <td>
                       {/* update movie */}
                       <button
@@ -174,6 +196,13 @@ const Single = () => {
                         onClick={() => setMovieToUpdate(id)}
                       >
                         Update
+                      </button>
+                      {/* relacja aktorzy - pobieranie aktorów dla filmu*/}
+                      <button
+                        className="buttonFetch"
+                        onClick={() => fetchActors(id)}
+                      >
+                        Fetch actor
                       </button>
                       {/* usuwanie filmu po id */}
                       <button
@@ -187,8 +216,10 @@ const Single = () => {
                 ))}
               </tbody>
             </table>
-          ) : (
+          ) : data ? (
             <p>No movies</p>
+          ) : (
+            <p>Loading</p>
           )}
         </div>
         <div className={styles.bottom}></div>

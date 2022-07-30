@@ -1,17 +1,45 @@
 // MOCKED server
 //https://miragejs.com/docs/getting-started/overview/
+// https://www.youtube.com/watch?v=Xw3K6Kk5Npw
 
-import { createServer, Model } from "miragejs";
+import { createServer, Model, hasMany, belongsTo } from "miragejs";
 
 createServer({
+  // https://miragejs.com/docs/getting-started/overview/#relationships
   models: {
-    movie: Model,
+    movie: Model.extend({
+      // liczba mnoga - jeden film ma wielu aktorów
+      actors: hasMany(),
+    }),
+    actor: Model.extend({
+      movie: belongsTo(),
+    }),
   },
 
   seeds(server) {
-    server.create("movie", { name: "Inception", year: 2010 });
-    server.create("movie", { name: "Interstellar", year: 2014 });
-    server.create("movie", { name: "Dunkirk", year: 2017 });
+    // WARNING - średniki po obiektach
+    // można aktorów utworzyć tutaj osobno a potem dodawac tego samego do wielu różnych filmów
+    const matt = server.create("actor", { name: "Matthew McConaughey" });
+    const anne = server.create("actor", { name: "Anne Hathaway" });
+    const jess = server.create("actor", { name: "Jessica Chastain" });
+    const tom = server.create("actor", { name: "Tom Hardy" }); // w dwóch filmach gra
+    const cillian = server.create("actor", { name: "Cilcian Muphry Chastain" });
+    // po prostu lista aktorów którzy grają w filmie jako atrybut obiektu
+    server.create("movie", {
+      name: "Inception",
+      year: 2010,
+      actors: [matt, tom],
+    });
+    server.create("movie", {
+      name: "Interstellar",
+      year: 2014,
+      actors: [matt, anne],
+    });
+    server.create("movie", {
+      name: "Dunkirk",
+      year: 2017,
+      actors: [cillian, tom],
+    });
   },
 
   routes() {
@@ -55,5 +83,11 @@ createServer({
     // this.post("/movies");
     // this.patch("/movies/:id");
     this.del("/movies/:id");
+
+    // endpoint do pobierania aktorów
+    this.get("/movies/:id/actors", (schema, request) => {
+      let movie = schema.movies.find(request.params.id);
+      return movie.actors; // zwraca listę aktorów z obiektu filmu
+    });
   },
 });

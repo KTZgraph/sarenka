@@ -101,6 +101,9 @@ npm install @mui/x-data-grid
 
 - https://www.youtube.com/watch?v=Xw3K6Kk5Npw
 - https://miragejs.com/docs/getting-started/overview/
+- https://miragejs.com/docs/getting-started/overview/#shorthands
+- https://miragejs.com/docs/getting-started/overview/#relationships
+- https://miragejs.com/docs/advanced/graphql/ (GraphQL)
 
 # Getting Started with Create React App
 
