@@ -17,15 +17,15 @@ createServer({
   routes() {
     this.namespace = "/api";
 
-    this.get("/movies", (schema, request) => {
-      return schema.movies.all();
-    });
+    // this.get("/movies", (schema, request) => {
+    //   return schema.movies.all();
+    // });
 
-    this.get("/movies/:id", (schema, request) => {
-      let id = request.params.id;
+    // this.get("/movies/:id", (schema, request) => {
+    //   let id = request.params.id;
 
-      return schema.movies.find(id);
-    });
+    //   return schema.movies.find(id);
+    // });
 
     this.post("/movies", (schema, request) => {
       let attrs = JSON.parse(request.requestBody);
@@ -41,10 +41,19 @@ createServer({
       return movie.update(newAttrs);
     });
 
-    this.delete("/movies/:id", (schema, request) => {
-      let id = request.params.id;
+    // this.delete("/movies/:id", (schema, request) => {
+    //   let id = request.params.id;
 
-      return schema.movies.find(id).destroy();
-    });
+    //   return schema.movies.find(id).destroy();
+    // });
+
+    // skrótowe
+    // https://miragejs.com/docs/getting-started/overview/#shorthands
+    this.get("/movies");
+    this.get("/movies/:id");
+    // WARNING problemy z dzaiłąniem metody post i patch prawdopodobnie prze zustawienia serializatora
+    // this.post("/movies");
+    // this.patch("/movies/:id");
+    this.del("/movies/:id");
   },
 });
