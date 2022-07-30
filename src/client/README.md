@@ -105,6 +105,25 @@ npm install @mui/x-data-grid
 - https://miragejs.com/docs/getting-started/overview/#relationships
 - https://miragejs.com/docs/advanced/graphql/ (GraphQL)
 
+# Struktura komponentów React
+
+## `Atomic Design Principles`
+
+- https://andela.com/insights/structuring-your-react-application-atomic-design-principles/
+- https://github.com/danilowoz/react-atomic-design
+- https://danilowoz.com/blog/atomic-design-with-react
+
+### Storybook
+
+- https://storybook.js.org/docs/react/get-started/install
+- https://www.youtube.com/watch?v=FUKpWgRyPlU
+- https://www.youtube.com/watch?v=cx0S8JyiVxc (prop types)
+
+```sh
+npx sb init
+npm run storybook
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
