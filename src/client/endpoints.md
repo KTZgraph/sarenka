@@ -13,7 +13,7 @@ class CWE(models.Model):
 
 - /api/vulns/cwes - lista wszsytkich CWE (< 900>)
 - /api/vulns/cwes/${id} - jedno CWE ze wszsytkimi szczegółami
-- /api/vulns/cwes/${id}/cves - wszystkie cve
+- /api/vulns/cwes/${id}/cves - wszystkie cve idki czy całe?
 
 ---
 
@@ -78,8 +78,14 @@ class CVE(models.Model):
 
 - /api/vulns/cves - lista wszystkich cve od najnowszego - tabelka na froncie
 - /api/vulns/cves/${id} - pojedyncze cve ze szczegółami
+  TODO co do poniższych to się zastanowić
 - /api/vulns/cves/${id}/cwes - same idki
 - /api/vulns/cves/${id}/versions - same idki
+- /api/vulns/cves/${id}/assigners - same idki
+- /api/vulns/cves/${id}/formats - same idki
+- /api/vulns/cves/${id}/base_metric_v2 - same idki
+- /api/vulns/cves/${id}/base_metric_v3 - same idki
+- /api/vulns/cves/${id}/references_list - same idki
 
 ---
 
@@ -219,6 +225,7 @@ class BaseMetricV2(models.Model):
 # CVSSV3, baseMetricV3
 
 ## CVSSV3
+
 ```python
 class CVSSV3(models.Model):
     version = models.DecimalField(max_digits=5, decimal_places=2, null=False, blank=False)
@@ -240,6 +247,7 @@ class CVSSV3(models.Model):
 - /api/vulns/CVSSV3s/${id}/vectors same idki
 
 ---
+
 ## BaseMetricV3
 
 ```python
