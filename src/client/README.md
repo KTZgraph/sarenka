@@ -97,6 +97,10 @@ npm install @mui/x-data-grid
 
 - https://www.youtube.com/watch?v=kFA-ZJ9KTqs
 
+# Mockowanie serwera
+
+- https://www.youtube.com/watch?v=Xw3K6Kk5Npw
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
