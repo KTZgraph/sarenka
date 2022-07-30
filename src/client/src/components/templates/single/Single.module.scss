@@ -1,0 +1,94 @@
+@import "../../styles/main.scss";
+
+.single {
+  font-size: 1.2rem;
+  display: flex;
+  width: 100%;
+
+  .singleContainer {
+    flex: 6;
+
+    .top {
+      padding: 2rem;
+      display: flex;
+      gap: 2rem;
+
+      .left {
+        // informacje o użytkowniku
+        position: relative;
+        flex: 1;
+        @include box-shadow-mixin;
+        padding: 20px;
+
+        .editButton {
+          position: absolute;
+          top: 0;
+          right: 0;
+          padding: 5px;
+          font-size: 1.2rem;
+          color: $color-main-medium;
+          background-color: $color-main-medium-transparent;
+          cursor: pointer;
+          border-radius: 0px 0px 0px 5px;
+        }
+
+        .item {
+          display: flex;
+          gap: 2rem;
+
+          .itemImg {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          .details {
+            .itemTitle {
+              margin-bottom: 10px;
+              font-family: $font-second;
+              color: $color-font-dark;
+            }
+
+            .detailItem {
+              margin-bottom: 10px;
+              font-size: 1.4rem;
+
+              .itemKey {
+                font-weight: bold;
+                color: $color-gray-medium;
+                margin-right: 3px;
+                text-transform: capitalize;
+              }
+
+              .itemValue {
+                font-weight: 300;
+              }
+            }
+          }
+        }
+      }
+
+      .right {
+        // wykres chart będzie większy
+        flex: 2;
+      }
+    }
+
+    .bottom {
+      padding: 20px;
+      margin: 10px 20px;
+      @include box-shadow-mixin;
+    }
+  }
+
+  // reużywam klasy title w obu .left i .right
+  .title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: $font-second;
+    color: $color-gray-medium;
+    padding: 5px;
+    margin-bottom: 20px;
+  }
+}

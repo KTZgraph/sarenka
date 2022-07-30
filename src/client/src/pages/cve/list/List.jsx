@@ -1,4 +1,4 @@
-import VulnsDatatable from "../../../components/vulns_datatable/VulnsDatatable";
+import VulnsDatatable from "../../../components/organisms/vulns_datatable/VulnsDatatable";
 import Sidebar from "../../../components/organisms/sidebar/Sidebar";
 import Navbar from "../../../components/organisms/navbar/Navbar";
 

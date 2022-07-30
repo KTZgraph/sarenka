@@ -1,11 +1,11 @@
 import Sidebar from "../../components/organisms/sidebar/Sidebar";
 import Navbar from "../../components/organisms/navbar/Navbar";
-import Widget from "../../components/widget/Widget";
-import Featured from "../../components/featured/Featured";
-import Chart from "../../components/chart/Chart";
+import Widget from "../../components/organisms/widget/Widget";
+import Featured from "../../components/organisms/featured/Featured";
+import Chart from "../../components/organisms/chart/Chart";
 
 import styles from "./Home.module.scss";
-import Hometable from "../../components/hometable/Hometable";
+import Hometable from "../../components/organisms/hometable/Hometable";
 
 const Home = () => {
   return (

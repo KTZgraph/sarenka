@@ -1,7 +1,7 @@
 import Sidebar from "../../components/organisms/sidebar/Sidebar";
 import Navbar from "../../components/organisms/navbar/Navbar";
 import Chart from "../../components/organisms/chart/Chart";
-import Hometable from "../../components/organisms/hometable/Hometable";
+import Hometable from "../../components/hometable/Hometable";
 import styles from "./Single.module.scss";
 
 // FIXME logo w navbarze znika tutaj
