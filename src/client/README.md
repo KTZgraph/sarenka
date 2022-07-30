@@ -100,6 +100,7 @@ npm install @mui/x-data-grid
 # Mockowanie serwera
 
 - https://www.youtube.com/watch?v=Xw3K6Kk5Npw
+- https://miragejs.com/docs/getting-started/overview/
 
 # Getting Started with Create React App
 
