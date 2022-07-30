@@ -110,8 +110,8 @@ npm install @mui/x-data-grid
 ## `Atomic Design Principles`
 
 - https://andela.com/insights/structuring-your-react-application-atomic-design-principles/
-- https://github.com/danilowoz/react-atomic-design
-- https://danilowoz.com/blog/atomic-design-with-react
+- https://github.com/danilowoz/react-atomic-design (całe repo <3)
+- https://danilowoz.com/blog/atomic-design-with-react 
 
 ### Storybook
 

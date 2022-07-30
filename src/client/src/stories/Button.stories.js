@@ -2,7 +2,7 @@
 import Button from "../components/atoms/button/Button";
 
 export default {
-  title: "Button",
+  title: "Components/Atoms/Button",
   component: Button,
   //   do funckji np handleClick jak w przycisku
   argTypes: { handleClick: { action: "handleClickLabel" } },
