@@ -6,6 +6,11 @@ import styles from "./Single.module.scss";
 
 const Single = () => {
   const [data, setData] = useState(null);
+  // id filmu
+  const [movieId, setMovieId] = useState(null);
+  // informacja o tym, że jesteśmy w stanie update
+  const [updating, setUpdating] = useState(false);
+  // stan dla formularza
   const [name, setName] = useState("");
   const [year, setYear] = useState("");
 
@@ -19,9 +24,10 @@ const Single = () => {
   }, []);
 
   // POST - tworzenie nowego filmu
-  const submitForm = async (e) => {
-    e.preventDefault();
 
+  // osobna funckja do tworzenia filmów
+  const createMovie = async () => {
+    // tworzenie NOWEGO filmu
     try {
       const res = await fetch("/api/movies", {
         method: "POST",
@@ -39,8 +45,50 @@ const Single = () => {
     }
   };
 
-  // DELETE -usuwanie filmu
+  // osobna funkjc ado aktualizji filmów
+  const updateMovie = async () => {
+    // tworzenie NOWEGO filmu
+    try {
+      const res = await fetch(`/api/movies/${movieId}`, {
+        method: "PATCH",
+        body: JSON.stringify({ name, year }),
+      });
+      const json = await res.json();
 
+      // nie tworzymy tylko aktulizujemy jeden obiekt z listy
+      // żeby być reaktywnym musimy skopiowac listę najpierw
+      // 1. szukamy tego filmu zakutlizowanego po id w liście (dlatego index findIndex)
+      const dataCopy = [...data]; // spread the existing movies
+      const index = data.findIndex((m) => m.id === movieId);
+      // aktulizuję tylko jeden element w liście
+      dataCopy[index] = json.movie;
+
+      // stan danych w komponencie to zaktualizowana lista ze zmienionym filmem
+      setData(dataCopy);
+      // czyszczenie inputów formularza
+      setName("");
+      setYear("");
+      // koniec updatu - zmienna stanowa znowu na false
+      setUpdating(false);
+      // czyszcze movieId żeby nie było powtorki z upsdatem niechcący na tym samy co poprzednio obiekcie
+      setMovieId(null);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // albo tworzy nowy film albo go atulizuuje zaleźnie od stanu updating
+  const submitForm = async (e) => {
+    e.preventDefault();
+
+    if (updating) {
+      updateMovie();
+    } else {
+      createMovie();
+    }
+  };
+
+  // DELETE -usuwanie filmu
   const deleteMovie = async (id) => {
     try {
       await fetch(`/api/movies/${id}`, { method: "DELETE" });
@@ -48,6 +96,21 @@ const Single = () => {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  // zwykła funckja do aktualizowania filmu
+  const setMovieToUpdate = (id) => {
+    const movie = data.find((m) => m.id === id);
+    // gdy z jakiegoś powodu nie ma tego filmu to zwracamy i nic nie robimy
+    if (!movie) return;
+    // informowanie o stanie, że jesteśmy w trakcie aktualizacji
+    setUpdating(true);
+    // id ale dopiero ze znalezionego obiektu, a nie id podanego od usera
+    setMovieId(movie.id);
+
+    // ustawianie stanow dla formularza
+    setName(movie.name);
+    setYear(movie.year);
   };
 
   return (
@@ -78,8 +141,9 @@ const Single = () => {
                 />
               </div>
               <div className="col">
+                {/* przyciks dla formularrza - albo akutlizujemy albo tworzymy - stan 'updating' informuje co robimy */}
                 <button type="submit" className="submit">
-                  Create
+                  {updating ? "Update" : "Create"}
                 </button>
               </div>
             </div>
@@ -104,6 +168,13 @@ const Single = () => {
                     <td>{name}</td>
                     <td>{year}</td>
                     <td>
+                      {/* update movie */}
+                      <button
+                        className="buttonUpdate"
+                        onClick={() => setMovieToUpdate(id)}
+                      >
+                        Update
+                      </button>
                       {/* usuwanie filmu po id */}
                       <button
                         className="buttonDelete"
