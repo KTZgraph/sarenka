@@ -22,6 +22,7 @@ const Single = () => {
     <DefaultSingle
       subtitle={data.code}
       actionType="update"
+      label={`Update ${data.code}`}
       actionLink={`/vulns/cves/${cveId}/update`}
     >
       <div>{data ? data.published : <Spinner />}</div>

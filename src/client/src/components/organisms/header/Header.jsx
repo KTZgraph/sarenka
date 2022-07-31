@@ -1,13 +1,15 @@
 import Navigation from "../../atoms/navigation";
 import "./header.scss";
 
-const Header = ({ actionType, actionLink }) => {
+const Header = ({ actionType, actionLink, label }) => {
   return (
     <div className="header">
       <div className="headerContainer">
         <div className="items">
           <Navigation to={actionLink} className={`item ${actionType}`}>
-            {actionType === "update"
+            {label
+              ? label
+              : actionType === "update"
               ? "Update"
               : actionType === "create"
               ? "Create"
