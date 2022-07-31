@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Spinner from "../../../components/atoms/spinner";
 import DefaultSingle from "../../../components/templates/default/DefaultSingle";
+import Information from "../../../components/molecules/information";
+import styles from "./Single.module.scss";
 
 const Single = () => {
   const [cve, setCve] = useState(null);
@@ -19,6 +21,8 @@ const Single = () => {
   };
 
   useEffect(() => {
+    // WARNING https://devtrium.com/posts/async-functions-useeffect
+
     getCveById(cveId);
   }, [cveId]);
 
@@ -29,11 +33,8 @@ const Single = () => {
       actionLink={`/vulns/cves/${cveId}/update`}
     >
       {cve ? (
-        <div className="card">
-          <div className="info">
-            <span className="name">Key: </span> <p className="value">Value</p>
-          </div>
-          <div>{JSON.stringify(cve)}</div>
+        <div className={styles.detailsContainer}>
+          <Information className={styles.detail} name="code" info={cve.code} />
         </div>
       ) : (
         <Spinner />

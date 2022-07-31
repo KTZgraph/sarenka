@@ -4,13 +4,7 @@ import Header from "../../organisms/header/Header";
 import Subtitle from "../../atoms/subtitle/index";
 import "./style.scss";
 
-const DefaultSingle = ({
-  children,
-  subtitle,
-  actionType,
-  actionLink,
-  label,
-}) => {
+const DefaultSingle = ({ children, subtitle, actionType, actionLink }) => {
   return (
     <div className="default">
       <Sidebar />

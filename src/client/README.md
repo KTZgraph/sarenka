@@ -5,6 +5,8 @@
 - tabelka w czystym HTML https://www.youtube.com/watch?v=vIxGDq1SPZQ
 - https://github.com/airbnb/javascript/tree/master/react#naming (naming convention)
 - https://cpe.mitre.org/specification/
+- https://capec.mitre.org/
+- https://devtrium.com/posts/async-functions-useeffect
 
 # Links
 

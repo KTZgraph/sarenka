@@ -23,7 +23,7 @@ const Navigation = (props) => {
   const { type, to, children, theme, size, className, disabled } = props;
 
   const classProps = classnames(
-    styles.action,
+    // styles.action,
     styles[theme],
     styles[size],
     {
