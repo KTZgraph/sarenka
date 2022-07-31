@@ -34,7 +34,43 @@ const Single = () => {
     >
       {cve ? (
         <div className={styles.detailsContainer}>
-          <Information className={styles.detail} name="code" info={cve.code} />
+          <div className={styles.detailsCard}>
+            <Information
+              className={styles.detail}
+              name="code"
+              info={cve.code}
+            />
+            <Information
+              className={styles.detail}
+              name="code"
+              info={cve.code}
+            />
+            <Information
+              className={styles.detail}
+              name="code"
+              info={cve.code}
+            />
+            <Information
+              className={styles.detail}
+              name="code"
+              info={cve.code}
+            />
+            <Information
+              className={styles.detail}
+              name="code"
+              info={cve.code}
+            />
+            <Information
+              className={styles.detail}
+              name="code"
+              info={cve.code}
+            />
+            <Information
+              className={styles.detail}
+              name="code"
+              info={cve.code}
+            />
+          </div>
         </div>
       ) : (
         <Spinner />
