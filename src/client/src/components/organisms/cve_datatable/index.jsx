@@ -2,7 +2,7 @@
 // TODO https://github.com/mui/mui-x/issues/1907
 import { DataGrid } from "@mui/x-data-grid";
 import { useState } from "react";
-import styles from "./CveDatatable.module.scss";
+import "./style.scss";
 
 const CveDatatable = ({ data, actionColumns, dataColumns }) => {
   const [pageSize, setPageSize] = useState(10);
@@ -12,7 +12,7 @@ const CveDatatable = ({ data, actionColumns, dataColumns }) => {
   };
 
   return (
-    <div className={styles.datatable}>
+    <div className="cveDatatable">
       <DataGrid
         rows={data}
         // WARNING dodawanie danych do kolumny
@@ -24,7 +24,7 @@ const CveDatatable = ({ data, actionColumns, dataColumns }) => {
         onPageSizeChange={handlePageSizeChange}
         // chckboxy z lewej
         checkboxSelection
-        className={styles.dataGrid}
+        className="dataGrid"
       />
     </div>
   );

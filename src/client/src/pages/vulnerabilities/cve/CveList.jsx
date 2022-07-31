@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Default from "../../../components/templates/default/Default";
-import CveDatatable from "../../../components/organisms/cve_datatable/CveDatatable";
+import CveDatatable from "../../../components/organisms/cve_datatable";
 import Sidebar from "../../../components/organisms/sidebar/Sidebar";
 import Navbar from "../../../components/organisms/navbar/Navbar";
 import styles from "./CveList.module.scss";
