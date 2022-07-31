@@ -42,9 +42,3 @@ export const userColumns = [
     },
   },
 ];
-
-// className={
-//   row.status === "Pending"
-//     ? `${styles.status} ${styles.Pending}`
-//     : `${styles.status} ${styles.Approved} `
-// }

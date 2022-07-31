@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Sidebar from "../../../components/organisms/sidebar/Sidebar";
 import Navbar from "../../../components/organisms/navbar/Navbar";
-import CveData from "../../../components/organisms/cve/details/Single";
 import styles from "./Single.module.scss";
 import Spinner from "../../../components/atoms/spinner";
 
