@@ -22,6 +22,8 @@ const CveDatatable = ({ data, actionColumns, dataColumns }) => {
         rowsPerPageOptions={[10, 15, 20, 50, 100]}
         // zmiana ilości widocznych wierszy
         onPageSizeChange={handlePageSizeChange}
+        // chckboxy z lewej
+        checkboxSelection
         className={styles.dataGrid}
       />
     </div>
