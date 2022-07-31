@@ -3,6 +3,7 @@ import Sidebar from "../../../components/organisms/sidebar/Sidebar";
 import Navbar from "../../../components/organisms/navbar/Navbar";
 import CveData from "../../../components/organisms/cve/details/Single";
 import styles from "./Single.module.scss";
+import Spinner from "../../../components/atoms/spinner";
 
 const Single = () => {
   const [data, setData] = useState(null);
@@ -219,7 +220,7 @@ const Single = () => {
           ) : data ? (
             <p>No movies</p>
           ) : (
-            <p>Loading</p>
+            <Spinner />
           )}
         </div>
         <div className={styles.bottom}></div>
