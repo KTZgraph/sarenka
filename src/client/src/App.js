@@ -13,7 +13,7 @@ import VulnSingle from "./pages/cve/single/Single";
 import CweList from "./pages/vulnerabilities/cwe/List";
 import CweSingle from "./pages/vulnerabilities/cwe/Single";
 // CVE (Common Vulnerabilities and Exposures)
-import CveList from "./pages/vulnerabilities/cve/List";
+import CveList from "./pages/vulnerabilities/cve/CveList";
 import CveSingle from "./pages/vulnerabilities/cve/Single";
 
 import { DarkModeContext } from "./context/darkModeContext";
