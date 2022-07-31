@@ -1,0 +1,36 @@
+@import "../../../styles/main.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  font-size: 1.4rem;
+  color: #555;
+  font-family: $font-second;
+  font-weight: 700;
+  // background-color: $color-main-white;
+  // @include box-shadow-mixin;
+
+  .headerContainer {
+    padding: 3rem;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+
+    .items {
+      gap: 7px;
+
+      .item {
+        padding: 15px;
+        @include button-update-mixin;
+
+        &.update {
+          background-color: $color-status-pending;
+        }
+        &.create {
+          background-color: $color-status-pending;
+        }
+      }
+    }
+  }
+}

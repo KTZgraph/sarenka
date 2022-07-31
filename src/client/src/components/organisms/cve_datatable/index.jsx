@@ -46,10 +46,6 @@ const CveDatatable = ({ data }) => {
 
   return (
     <div className="cveDatatable">
-      <Navigation>
-        <button className="viewButton">Tymczasowo</button>
-      </Navigation>
-
       <DataGrid
         rows={data}
         // WARNING dodawanie danych do kolumny

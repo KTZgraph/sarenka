@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import Default from "../../../components/templates/default/Default";
 import CveDatatable from "../../../components/organisms/cve_datatable";
 import Sidebar from "../../../components/organisms/sidebar/Sidebar";
 import Navbar from "../../../components/organisms/navbar/Navbar";
 import styles from "./CveList.module.scss";
-import { Link } from "react-router-dom";
 
 const CveList = () => {
   const [cves, setCves] = useState(null);

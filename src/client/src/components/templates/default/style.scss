@@ -3,35 +3,30 @@
 
 .default {
   display: flex;
-  background-color: pink;
   height: 100vh;
+  background-color: $color-main-white;
+
   .defaultContainer {
     flex: 6;
     height: 100vh;
 
-    .widgets,
-    .charts {
-      display: flex;
-      padding: 2rem;
-      // marginesy międyz elementami, zamiast margin:2rem w .widget
-      gap: 2rem;
-
-      .charts {
-        // klasa do wykresów ma za duży padding
-        padding: 5px 20px;
-      }
+    .children {
+      padding: 0 15px;
+      background-color: pink;
     }
-    .listContainer {
-      padding: 2rem;
-      margin: 2rem;
-      @include box-shadow-mixin;
+  }
+}
 
-      .listTitle {
-        font-family: $font-second;
-        font-weight: 800;
-        color: $color-gray-medium;
-        margin-bottom: 1.5rem;
-      }
+// TODO - dark mode
+.App.dark {
+  .default {
+    display: flex;
+    height: 100vh;
+    background-color: black;
+
+    .defaultContainer {
+      flex: 6;
+      height: 100vh;
     }
   }
 }
