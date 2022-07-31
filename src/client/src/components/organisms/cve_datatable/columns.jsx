@@ -1,100 +1,56 @@
 export const datatableColumns = [
   { field: "code", headerName: "ID", width: 120 },
+  {
+    field: "cvss",
+    headerName: "CVSS",
+    width: 100,
+    renderCell: (params) => {
+      // CVSSV3
+      const baseScoreV3 = params.row.base_metric_v3.cvss_v3.base_score || "";
+      let severityV3 = params.row.base_metric_v3.cvss_v3.base_severity;
+      severityV3 ? (severityV3 = severityV3.toLowerCase()) : (severityV3 = "");
+      // CVSSV2
+
+      const baseScoreV2 = params.row.base_metric_v2.cvss_v2.base_score || "";
+      let severityV2 = params.row.base_metric_v2.severity;
+      severityV2 ? (severityV2 = severityV2.toLowerCase()) : (severityV2 = "");
+
+      return (
+        <div className="cellMultiple">
+          <div
+            className={
+              severityV3 === "critical"
+                ? "cellWithStatus critical"
+                : severityV3 === "high"
+                ? "cellWithStatus high"
+                : severityV3 === "medium"
+                ? "cellWithStatus high"
+                : severityV3 === "low"
+                ? "cellWithStatus low"
+                : "cellWithStatus"
+            }
+          >
+            {baseScoreV3}
+          </div>
+          <div
+            className={
+              severityV2 === "critical"
+                ? "cellWithStatus critical"
+                : severityV2 === "high"
+                ? "cellWithStatus high"
+                : severityV2 === "medium"
+                ? "cellWithStatus high"
+                : severityV2 === "low"
+                ? "cellWithStatus low"
+                : "cellWithStatus"
+            }
+          >
+            {baseScoreV2}
+          </div>
+        </div>
+      );
+    },
+  },
   { field: "cwe_code", headerName: "CWE", width: 100 },
-  {
-    field: "cvss_v3",
-    headerName: "CVSSV3",
-    width: 100,
-    renderCell: (params) => {
-      let severity = params.row.base_metric_v3.cvss_v3.base_severity;
-      severity ? (severity = severity.toLowerCase()) : (severity = "");
-
-      return (
-        <div
-          className={
-            severity === "critical"
-              ? "cellWithStatus critical"
-              : severity === "high"
-              ? "cellWithStatus high"
-              : severity === "medium"
-              ? "cellWithStatus high"
-              : severity === "low"
-              ? "cellWithStatus low"
-              : "cellWithStatus"
-          }
-        >
-          {params.row.base_metric_v3.cvss_v3.base_score || ""}
-        </div>
-      );
-    },
-  },
-  {
-    //bgc zależnie od wartości
-    field: "cvss_v2",
-    headerName: "CVSSV2",
-    width: 100,
-    renderCell: (params) => {
-      let severity = params.row.base_metric_v2.severity;
-      severity ? (severity = severity.toLowerCase()) : (severity = "");
-
-      return (
-        <div
-          className={
-            severity === "critical"
-              ? `cellWithStatus critical`
-              : severity === "high"
-              ? `cellWithStatus high`
-              : severity === "medium"
-              ? `cellWithStatus high`
-              : severity === "low"
-              ? `cellWithStatus low`
-              : `cellWithStatus`
-          }
-        >
-          {params.row.base_metric_v2.cvss_v2.base_score || ""}
-        </div>
-      );
-    },
-  },
-  {
-    //bgc zależnie od wartości
-    field: "exploitability_score",
-    headerName: "Exploitability",
-    width: 100,
-    renderCell: (params) => {
-      return <p>{params.row.base_metric_v3.exploitability_score || ""}</p>;
-    },
-  },
-
-  {
-    field: "vector",
-    headerName: "Vector",
-    width: 400,
-    renderCell: (params) => {
-      let severity = params.row.base_metric_v2.severity;
-      severity ? (severity = severity.toLowerCase()) : (severity = "");
-
-      return (
-        <div
-          className={
-            severity === "critical"
-              ? `cellWithStatus vectorCritical`
-              : severity === "high"
-              ? `cellWithStatus verctorHigh`
-              : severity === "medium"
-              ? `cellWithStatus vectorMedium`
-              : severity === "low"
-              ? `cellWithStatus vectorLow`
-              : `cellWithStatus`
-          }
-        >
-          {params.row.base_metric_v3.cvss_v3.vector || ""}
-        </div>
-      );
-    },
-  },
-
-  { field: "published", headerName: "Published", width: 150 },
-  { field: "modified", headerName: "Modified", width: 150 },
-  // { field: "version", headerName: "Version", width: 150 },
+  { field: "description", headerName: "Description", flex: 1 },
 ];

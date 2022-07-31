@@ -1,10 +1,10 @@
 // PAGINACJA
 // TODO https://github.com/mui/mui-x/issues/1907
-import { DataGrid } from "@mui/x-data-grid";
 import { useState } from "react";
-import "./style.scss";
-import { datatableColumns } from "./columns";
 import { Link } from "react-router-dom";
+import { DataGrid } from "@mui/x-data-grid";
+import { datatableColumns } from "./columns";
+import "./style.scss";
 
 const CveDatatable = ({ data }) => {
   const [pageSize, setPageSize] = useState(10);
