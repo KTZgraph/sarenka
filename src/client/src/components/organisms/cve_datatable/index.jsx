@@ -1,8 +1,8 @@
 // PAGINACJA
 // TODO https://github.com/mui/mui-x/issues/1907
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { DataGrid } from "@mui/x-data-grid";
+import Navigation from "../../atoms/navigation";
 import { datatableColumns } from "./columns";
 import "./style.scss";
 
@@ -12,6 +12,10 @@ const CveDatatable = ({ data }) => {
   const handlePageSizeChange = (params) => {
     setPageSize(params.pageSize);
   };
+
+  const handleView = (cveId) => {
+    console.log("handle view: ", cveId);
+  };
   const actionColumns = [
     {
       field: "action",
@@ -20,12 +24,20 @@ const CveDatatable = ({ data }) => {
       renderCell: (params) => {
         return (
           <div className="cellAction">
-            <Link to={`/vulns/cves/${params.row.id}`}>
-              <div className="viewButton">View</div>
-            </Link>
-            <Link to={`/vulns/cves/${params.row.id}/delete`}>
-              <div className="deleteButton">Delete</div>
-            </Link>
+            {/* <Link to={`/vulns/cves/${params.row.id}`}> */}
+            {/* <div className="viewButton">View</div> */}
+            <Navigation
+              className="viewButton"
+              to={`/vulns/cves/${params.row.id}`}
+            >
+              View
+            </Navigation>
+            <Navigation
+              className="deleteButton"
+              to={`/vulns/cves/${params.row.id}/delete`}
+            >
+              Delete
+            </Navigation>
           </div>
         );
       },
@@ -34,6 +46,10 @@ const CveDatatable = ({ data }) => {
 
   return (
     <div className="cveDatatable">
+      <Navigation>
+        <button className="viewButton">Tymczasowo</button>
+      </Navigation>
+
       <DataGrid
         rows={data}
         // WARNING dodawanie danych do kolumny

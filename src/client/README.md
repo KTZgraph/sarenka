@@ -1,6 +1,6 @@
 # TODO:
 
-- https://github.com/danilowoz/react-atomic-design 
+- https://github.com/danilowoz/react-atomic-design
 - code of conduct napisać
 - tabelka w czystym HTML https://www.youtube.com/watch?v=vIxGDq1SPZQ
 - https://github.com/airbnb/javascript/tree/master/react#naming (naming convention)
@@ -59,6 +59,10 @@
 
 - https://mui.com/material-ui/react-table/#basic-table
 - https://mui.com/material-ui/react-table/#data-table
+
+### paginacja
+
+- https://github.com/mui/mui-x/issues/1907
 
 ```
 npm install @mui/x-data-grid
