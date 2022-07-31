@@ -16,7 +16,7 @@ const DefaultSingle = ({
       <Sidebar />
       <div className="defaultContainer">
         <Navbar />
-        <Header actionType={actionType} actionLink={actionLink} label={label} />
+        <Header actionType={actionType} actionLink={actionLink} />
         <div className="children">
           <Subtitle className="subtitle">{subtitle}</Subtitle>
           {children}

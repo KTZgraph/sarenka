@@ -40,8 +40,12 @@ createServer({
 
     // GET by ID
     this.get("/vulnerabilities/cves/:id", (schema, request) => {
-      let id = request.params.id;
-      return cveList.find((cve) => cve.id === id);
+      // FIXME - coś nie działa zwracanie po schematach
+
+      // let id = request.params.id;
+      // let cve = schema.cves.find(id);
+      // HACK
+      return cveList[0];
     });
 
     // PATCH

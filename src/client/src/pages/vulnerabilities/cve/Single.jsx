@@ -3,29 +3,41 @@ import { useParams } from "react-router-dom";
 import Spinner from "../../../components/atoms/spinner";
 import DefaultSingle from "../../../components/templates/default/DefaultSingle";
 
-import { cveList } from "../../../server_mock/cve_list";
-
 const Single = () => {
   const [cve, setCve] = useState(null);
   const { cveId } = useParams();
 
-  // pobieranie listy cve
-  useEffect(() => {
-    fetch(`/api/vulnerabilities/cves/${cveId}`)
-      .then((res) => res.json())
-      .then((json) => setCve(json.cves))
-      .catch((error) => console.log(error));
-  }, [cve]);
+  // pobieranie jednego
+  const getCveById = async (id) => {
+    try {
+      const res = await fetch(`/api/vulnerabilities/cves/${id}`);
+      const json = await res.json();
+      setCve(json);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-  const data = cveList[0];
+  useEffect(() => {
+    getCveById(cveId);
+  }, [cveId]);
+
   return (
     <DefaultSingle
-      subtitle={data.code}
+      subtitle={cve ? cve.code : cveId}
       actionType="update"
-      label={`Update ${data.code}`}
       actionLink={`/vulns/cves/${cveId}/update`}
     >
-      <div>{data ? data.published : <Spinner />}</div>
+      {cve ? (
+        <div className="card">
+          <div className="info">
+            <span className="name">Key: </span> <p className="value">Value</p>
+          </div>
+          <div>{JSON.stringify(cve)}</div>
+        </div>
+      ) : (
+        <Spinner />
+      )}
     </DefaultSingle>
   );
 };
