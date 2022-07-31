@@ -1,9 +1,4 @@
-// FIXME wybrać pola, dodac responsywnosć
-import styles from "./List.module.scss";
-// import styles from "./VulnsDatatable.module.scss";
-// import styles from "../../../components/organisms/vulns_datatable/VulnsDatatable.module.scss";
-
-// schemat dla tabeli danych, zeby tego nie trzymać w client\src\components\datatable\Datatable.jsx
+import styles from "./CveList.module.scss";
 
 export const datatableColumns = [
   { field: "code", headerName: "ID", width: 120 },
