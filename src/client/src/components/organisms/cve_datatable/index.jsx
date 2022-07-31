@@ -3,20 +3,41 @@
 import { DataGrid } from "@mui/x-data-grid";
 import { useState } from "react";
 import "./style.scss";
+import { datatableColumns } from "./columns";
+import { Link } from "react-router-dom";
 
-const CveDatatable = ({ data, actionColumns, dataColumns }) => {
+const CveDatatable = ({ data }) => {
   const [pageSize, setPageSize] = useState(10);
 
   const handlePageSizeChange = (params) => {
     setPageSize(params.pageSize);
   };
+  const actionColumns = [
+    {
+      field: "action",
+      headerName: "Action",
+      width: 200,
+      renderCell: (params) => {
+        return (
+          <div className="cellAction">
+            <Link to={`/vulns/cves/${params.row.id}`}>
+              <div className="viewButton">View</div>
+            </Link>
+            <Link to={`/vulns/cves/${params.row.id}/delete`}>
+              <div className="deleteButton">Delete</div>
+            </Link>
+          </div>
+        );
+      },
+    },
+  ];
 
   return (
     <div className="cveDatatable">
       <DataGrid
         rows={data}
         // WARNING dodawanie danych do kolumny
-        columns={dataColumns.concat(actionColumns)}
+        columns={datatableColumns.concat(actionColumns)}
         pageSize={pageSize}
         // opcja elemntów na stronie -wybiera user
         rowsPerPageOptions={[10, 15, 20, 50, 100]}

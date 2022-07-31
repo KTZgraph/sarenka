@@ -1,5 +1,3 @@
-import styles from "./CveList.module.scss";
-
 export const datatableColumns = [
   { field: "code", headerName: "ID", width: 120 },
   { field: "cwe_code", headerName: "CWE", width: 100 },
@@ -15,14 +13,14 @@ export const datatableColumns = [
         <div
           className={
             severity === "critical"
-              ? `${styles.cellWithStatus} ${styles.critical}`
+              ? "cellWithStatus critical"
               : severity === "high"
-              ? `${styles.cellWithStatus} ${styles.high}`
+              ? "cellWithStatus high"
               : severity === "medium"
-              ? `${styles.cellWithStatus} ${styles.high}`
+              ? "cellWithStatus high"
               : severity === "low"
-              ? `${styles.cellWithStatus} ${styles.low}`
-              : `${styles.cellWithStatus}`
+              ? "cellWithStatus low"
+              : "cellWithStatus"
           }
         >
           {params.row.base_metric_v3.cvss_v3.base_score || ""}
@@ -43,14 +41,14 @@ export const datatableColumns = [
         <div
           className={
             severity === "critical"
-              ? `${styles.cellWithStatus} ${styles.critical}`
+              ? `cellWithStatus critical`
               : severity === "high"
-              ? `${styles.cellWithStatus} ${styles.high}`
+              ? `cellWithStatus high`
               : severity === "medium"
-              ? `${styles.cellWithStatus} ${styles.high}`
+              ? `cellWithStatus high`
               : severity === "low"
-              ? `${styles.cellWithStatus} ${styles.low}`
-              : `${styles.cellWithStatus}`
+              ? `cellWithStatus low`
+              : `cellWithStatus`
           }
         >
           {params.row.base_metric_v2.cvss_v2.base_score || ""}
@@ -80,14 +78,14 @@ export const datatableColumns = [
         <div
           className={
             severity === "critical"
-              ? `${styles.cellWithStatus} ${styles.vectorCritical}`
+              ? `cellWithStatus vectorCritical`
               : severity === "high"
-              ? `${styles.cellWithStatus} ${styles.verctorHigh}`
+              ? `cellWithStatus verctorHigh`
               : severity === "medium"
-              ? `${styles.cellWithStatus} ${styles.vectorMedium}`
+              ? `cellWithStatus vectorMedium`
               : severity === "low"
-              ? `${styles.cellWithStatus} ${styles.vectorLow}`
-              : `${styles.cellWithStatus}`
+              ? `cellWithStatus vectorLow`
+              : `cellWithStatus`
           }
         >
           {params.row.base_metric_v3.cvss_v3.vector || ""}
