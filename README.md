@@ -92,14 +92,14 @@ The app is alive and has been rewriten from scratch on branch [develop](https://
 * [reddit.com user mikeis075](https://web.archive.org/web/20220524074859/https://www.reddit.com/r/hacking/comments/upx3hl/sarenka_an_osint_tool_that_gets_data_from/)
 
 # Features
-  - gets data from **https://censys.io/** by ip
+  - get data from **https://censys.io/** by ip
   - get data from **https://www.shodan.io/** by ip
   - get data from **https://www.criminalip.io/** by ip
   - get **DNS** data
   - get **WHOIS** data
   - **banner** grabbing
   - find **CVEs** by **CWE** 
-  - generatre pdf report
+  - generate pdf report
 
 You can also:
   - calculate **hashes** based on user string
@@ -228,7 +228,7 @@ And of course SARENKA itself is open source with a [public repository][sarenka]
  - tests on Linux
  - NLP
  - d3js visualizations
- - alterntive pure version in command lineS
+ - alternative pure version for command line
 
 ##### CI/CD Tools
 - https://circleci.com/
