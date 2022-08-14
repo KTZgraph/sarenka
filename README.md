@@ -32,7 +32,7 @@ It returns data about the local machine - local installed software (from Windows
 For now, the application also has simple tools like a hash calculator, shannon entropy calculator and very simple port scanner. 
 More cryptography-math tools and reconnaissance scripts are planned.
 
-The app is alive and has been rewriten from scratch on branch [develop](https://github.com/pawlaczyk/sarenka/tree/new_master).
+The app is alive and has been rewritten from scratch on branch [develop](https://github.com/pawlaczyk/sarenka/tree/new_master).
 
 
 # Contributors
