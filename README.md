@@ -22,7 +22,7 @@
 >[William Edwards Deming]
 
 
-**SARENKA** is an Open Source Intelligence (**OSINT**) tool which helps you in obtaining and understanding **Attack Surface**.
+**SARENKA** is an Open Source Intelligence (**OSINT**) tool that helps you in obtaining and understanding **Attack Surface**.
 
 The main goal is gathering information from search engines for Internet-connected devices (**https://censys.io/**, **https://www.shodan.io/**, **https://www.criminalip.io/ko**).
 It scrapes data about Common Vulnerabilities and Exposures (**CVE**), Common Weakness Enumeration (**CWE**) and also has a database where CVEs are mapped to CWE.
