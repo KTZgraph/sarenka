@@ -22,17 +22,17 @@
 >[William Edwards Deming]
 
 
-**SARENKA** is an Open Source Intelligence (**OSINT**) tool which helps you obtaining and understanding **Attack Surface**.
+**SARENKA** is an Open Source Intelligence (**OSINT**) tool which helps you in obtaining and understanding **Attack Surface**.
 
 The main goal is gathering information from search engines for Internet-connected devices (**https://censys.io/**, **https://www.shodan.io/**, **https://www.criminalip.io/ko**).
-It scraps data about Common Vulnerabilities and Exposures (**CVE**), Common Weakness Enumeration (**CWE**) and also has database where CVEs are mapped to CWE.
+It scrapes data about Common Vulnerabilities and Exposures (**CVE**), Common Weakness Enumeration (**CWE**) and also has a database where CVEs are mapped to CWE.
 
 It returns data about the local machine - local installed software (from Windows Registry), local network information (python libraries, popular cmd commads).
 
-For now application has also simple tools like hash calculator, shannon entropy calculator and very simple port scanner. 
+For now, the application also has simple tools like a hash calculator, shannon entropy calculator and very simple port scanner. 
 More cryptography-math tools and reconnaissance scripts are planned.
 
-App is alive and has been rewriting from scratch on branch [develop](https://github.com/pawlaczyk/sarenka/tree/new_master).
+The app is alive and has been rewriten from scratch on branch [develop](https://github.com/pawlaczyk/sarenka/tree/new_master).
 
 
 # Contributors
@@ -108,7 +108,7 @@ You can also:
 
 
 # Installation
-Team tests application on Windows 10 and Kali Linux with Python 3.8.
+Our team tests the application on Windows 10 and Kali Linux with Python 3.8.
 
 SARENKA requires:
 * [Python](https://www.python.org/downloads/)
