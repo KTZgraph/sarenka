@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Spinner from "../../../components/atoms/spinner";
 import DefaultSingle from "../../../components/templates/default/DefaultSingle";
+import Loading from "../../../components/templates/default/Loading";
 import Information from "../../../components/molecules/information";
 import styles from "./Single.module.scss";
 
@@ -26,55 +26,27 @@ const Single = () => {
     getCveById(cveId);
   }, [cveId]);
 
+  if (cve) {
+    return <Loading />;
+  }
+
   return (
     <DefaultSingle
       subtitle={cve ? cve.code : cveId}
       actionType="update"
       actionLink={`/vulns/cves/${cveId}/update`}
     >
-      {cve ? (
-        <div className={styles.detailsContainer}>
-          <div className={styles.detailsCard}>
-            <Information
-              className={styles.detail}
-              name="code"
-              info={cve.code}
-            />
-            <Information
-              className={styles.detail}
-              name="code"
-              info={cve.code}
-            />
-            <Information
-              className={styles.detail}
-              name="code"
-              info={cve.code}
-            />
-            <Information
-              className={styles.detail}
-              name="code"
-              info={cve.code}
-            />
-            <Information
-              className={styles.detail}
-              name="code"
-              info={cve.code}
-            />
-            <Information
-              className={styles.detail}
-              name="code"
-              info={cve.code}
-            />
-            <Information
-              className={styles.detail}
-              name="code"
-              info={cve.code}
-            />
-          </div>
+      <div className={styles.detailsContainer}>
+        <div className={styles.detailsCard}>
+          {/* <Information className={styles.detail} name="code" info={cve.code} />
+          <Information className={styles.detail} name="code" info={cve.code} />
+          <Information className={styles.detail} name="code" info={cve.code} />
+          <Information className={styles.detail} name="code" info={cve.code} />
+          <Information className={styles.detail} name="code" info={cve.code} />
+          <Information className={styles.detail} name="code" info={cve.code} />
+          <Information className={styles.detail} name="code" info={cve.code} /> */}
         </div>
-      ) : (
-        <Spinner />
-      )}
+      </div>
     </DefaultSingle>
   );
 };
