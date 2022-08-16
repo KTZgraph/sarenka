@@ -38,6 +38,7 @@ The app is alive and has been rewritten from scratch on branch [develop](https:/
 # Contributors
 [![Author](https://img.shields.io/badge/parkjunmin-darkgreen.svg)](https://github.com/parkjunmin/)
 [![Author](https://img.shields.io/badge/rpedrica-green.svg)](https://github.com/rpedrica/)
+[![Author](https://img.shields.io/badge/rafalwojaczek-brown.svg)](https://github.com/rafalwojaczek/)
 
 
 # SARENKA was mentioned here:
