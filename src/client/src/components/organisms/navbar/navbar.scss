@@ -1,0 +1,96 @@
+@import "../../../styles/main.scss";
+
+.navbar {
+  display: flex;
+  align-items: center;
+  height: $navbar-height;
+  // border-bottom: 2px solid $color-main-light;
+  font-size: 1.4rem;
+  color: #555;
+  background-color: $color-main-white;
+  @include box-shadow-mixin;
+  margin-bottom: 3px;
+
+  .navbarContainer {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    // wisth, zeby space beetwen zadziałalo
+    width: 100%;
+    justify-content: space-between;
+
+    .search {
+      display: flex;
+      align-items: center;
+      border: 0.5px solid $color-gray-light;
+      padding: 3px;
+
+      input {
+        border: none;
+        outline: none;
+        // transparent potrzebne do dark mode
+        background-color: transparent;
+
+        // zmiana czcionki w inpucie search
+        &::placeholder {
+          font-size: 1.2rem;
+        }
+      }
+    }
+    .items {
+      display: flex;
+      align-items: center;
+
+      .item {
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        margin: 1rem;
+        // rodzic dla kołeczek z nuemrkami
+        position: relative;
+
+        .icon {
+          font-size: 2rem;
+        }
+
+        .avatar {
+          // okrągły avatar
+          width: 3rem;
+          height: 3rem;
+          border-radius: 50%;
+        }
+
+        .counter {
+          width: 1.5rem;
+          height: 1.5rem;
+          background-color: red;
+          border-radius: 50%;
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1rem;
+          font-weight: bold;
+          // kółeczka z nuemrami mają nachodzić na ikonki
+          position: absolute;
+          top: -5px;
+          right: -5px;
+        }
+      }
+    }
+  }
+}
+
+// dark mode
+.App.dark {
+  background-color: #111; //#222; taki sam jak tabelki
+  color: rgb(156, 156, 156);
+  .navbar {
+    background-color: black;
+    color: white;
+    border-color: #333; //softer
+    .search {
+      border-color: gray;
+    }
+  }
+}

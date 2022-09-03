@@ -1,9 +1,12 @@
 # TODO:
 
+- https://github.com/danilowoz/react-atomic-design
 - code of conduct napisać
 - tabelka w czystym HTML https://www.youtube.com/watch?v=vIxGDq1SPZQ
 - https://github.com/airbnb/javascript/tree/master/react#naming (naming convention)
 - https://cpe.mitre.org/specification/
+- https://capec.mitre.org/
+- https://devtrium.com/posts/async-functions-useeffect
 
 # Links
 
@@ -59,6 +62,10 @@
 - https://mui.com/material-ui/react-table/#basic-table
 - https://mui.com/material-ui/react-table/#data-table
 
+### paginacja
+
+- https://github.com/mui/mui-x/issues/1907
+
 ```
 npm install @mui/x-data-grid
 ```
@@ -96,6 +103,36 @@ npm install @mui/x-data-grid
 #### SASS React
 
 - https://www.youtube.com/watch?v=kFA-ZJ9KTqs
+
+# Mockowanie serwera
+
+- https://www.youtube.com/watch?v=Xw3K6Kk5Npw
+- https://miragejs.com/docs/getting-started/overview/
+- https://miragejs.com/docs/getting-started/overview/#shorthands
+- https://miragejs.com/docs/getting-started/overview/#relationships
+- https://miragejs.com/docs/advanced/graphql/ (GraphQL)
+
+# Struktura komponentów React
+
+## `Atomic Design Principles`
+
+- https://atomicdesign.bradfrost.com/table-of-contents/
+- https://andela.com/insights/structuring-your-react-application-atomic-design-principles/
+- https://github.com/danilowoz/react-atomic-design (całe repo <3)
+- https://danilowoz.com/blog/atomic-design-with-react
+- https://szkolareacta.pl/atomic-design/
+
+### Storybook
+
+- https://storybook.js.org/docs/react/get-started/install
+- https://www.youtube.com/watch?v=FUKpWgRyPlU
+- https://www.youtube.com/watch?v=cx0S8JyiVxc (prop types)
+- https://marketplace.visualstudio.com/items?itemName=riccardoforina.storybook-helper Storybook helper (VS Code extension)
+
+```sh
+npx sb init
+npm run storybook
+```
 
 # Getting Started with Create React App
 

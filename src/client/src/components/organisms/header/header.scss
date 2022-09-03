@@ -1,0 +1,33 @@
+@import "../../../styles/main.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  height: $header-height;
+  font-size: 1.4rem;
+  color: #555;
+  font-family: $font-second;
+  font-weight: 700;
+  // WARNING zmienna do darkmode
+  background-color: $color-main-white;
+
+  .headerContainer {
+    padding-right: 3rem;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+
+    .items {
+      .item {
+        @include button-update-mixin;
+
+        &.update {
+          background-color: $color-status-pending;
+        }
+        &.create {
+          background-color: $color-status-pending;
+        }
+      }
+    }
+  }
+}

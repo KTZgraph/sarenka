@@ -1,6 +1,6 @@
-import Datatable from "../../components/datatable/Datatable";
-import Navbar from "../../components/navbar/Navbar";
-import Sidebar from "../../components/sidebar/Sidebar";
+import Datatable from "../../components/organisms/datatable/Datatable";
+import Navbar from "../../components/organisms/navbar/Navbar";
+import Sidebar from "../../components/organisms/sidebar/Sidebar";
 import styles from "./List.module.scss";
 
 const List = () => {
