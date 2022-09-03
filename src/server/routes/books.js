@@ -77,14 +77,41 @@ router.get('/', (req, res) => {
   res.send(books);
 });
 
-// pobieranie ksiazki po id
-router.get('/:id', (res, req) => {
-  const book = req.app.db.data.find({ id: req.params.id }).value();
+// ----------------- pobieranie ksiazki po id
+/**
+ * @swagger
+ * /books/{id}:
+ *   get:
+ *     summary: Get the book by id
+ *     tags: [Books]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: The book id
+ *     responses:
+ *       200:
+ *         description: The book description by id
+ *         contens:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Book'
+ *       404:
+ *         description: The book was not found
+ */
+
+router.get('/:id', (req, res) => {
+  const book = req.app.db.data.books.find(
+    (obj) => obj.id === req.params.id
+  );
 
   res.send(book);
 });
 
-// tworzenie nowej ksiazki - POST
+// -------------- tworzenie nowej ksiazki - POST
+
 router.post('/', (req, res) => {
   try {
     const book = {
