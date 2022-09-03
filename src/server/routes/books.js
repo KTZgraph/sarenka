@@ -1,3 +1,6 @@
+//  TODO uprościc swaggera przez reużywalne "parameters"
+// TODO swagger.io/docs/specification/components/
+
 import express from 'express';
 const router = express.Router();
 // nanoid do generowanie unikatowych id książek
@@ -189,24 +192,67 @@ router.post('/', (req, res) => {
  */
 
 router.put('/:id', (req, res) => {
+  //stackoverflow.com/questions/71164360/how-to-find-and-replace-an-object-with-in-array-of-objects
   try {
-    req.app.db
-      .get('books')
-      .find({ id: req.params.id })
-      .assign(req.body)
-      .write();
+    // stara ksiżka
+    const target = req.app.db.data.books.find(
+      (obj) => obj.id === req.params.id
+    );
 
-    res.send(req.app.db.get('books').find({ id: req.params.id }));
+    const source = req.body;
+    Object.assign(target, source);
+
+    // nowa ksiazka zaktulizowana
+    const book = req.app.db.data.books.find(
+      (obj) => obj.id === req.params.id
+    );
+
+    res.send(book);
   } catch (error) {
     return res.status(500).send(error);
   }
 });
 
-// usuwanie ksiażki - DELETE
-router.delete('/', (req, res) => {
-  // write żeby usunąć z bazy danych
-  req.app.db.get('books').remove({ id: req.params.id }).write();
-  res.sendStatus(200);
+// ------------ usuwanie ksiażki - DELETE
+/**
+ * @swagger
+ * /books/{id}:
+ *   delete:
+ *     summary: Remove the book by id
+ *     tags: [Books]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: The book id
+ *
+ *     responses:
+ *       200:
+ *         description: The book was deleted
+ *       404:
+ *         description: The book was not found
+ */
+
+router.delete('/:id', (req, res) => {
+  // stara ksiżka
+
+  const target = req.app.db.data.books.find(
+    (obj) => obj.id === req.params.id
+  );
+
+  if (!target) {
+    res.sendStatus(404);
+    return;
+  }
+
+  console.log('------------------------------');
+  console.log('target: ', target);
+
+  //   res.send(req.params.id);
+  //   res.sendStatus(200);
+  res.status(200).json({ book: target });
 });
 
 // export
