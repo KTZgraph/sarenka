@@ -69,7 +69,7 @@ router.get('/', (req, res) => {
 
 // pobieranie ksiazki po id
 router.get('/:id', (res, req) => {
-  const book = req.app.db.books.find({ id: req.params.id }).value();
+  const book = req.app.db.data.find({ id: req.params.id }).value();
 
   res.send(book);
 });
@@ -85,7 +85,7 @@ router.post('/', (req, res) => {
     };
 
     // req.app.db.get('books').push(book).write();
-    req.app.db.books.push(book).write();
+    req.app.db.data.push(book).write();
     //   await req.app.db.books.write()
   } catch (error) {
     return res.status(500).send(error);

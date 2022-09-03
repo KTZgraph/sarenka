@@ -27,8 +27,7 @@ const db = new Low(adapter);
 // Read data from JSON file, this will set db.data content
 await db.read();
 
-// If file.json doesn't exist, db.data will be null
-// Set default data
+// po słowie books będzie ogarniać sobie w routach
 db.data ||= { books: [] };
 
 //------------------------------------------------------------------------------------------------------------------------------------------------
