@@ -12,7 +12,12 @@ SARENKA is **licensed** under the **[MIT License]**.
 
 [mit license]: https://github.com/pawlaczyk/sarenka/blob/master/LICENSE
 
+# swagger
+
+https://www.youtube.com/watch?v=S8kmHtQeflo
+
 # frontend preview
+
 ### http://sarenka-develop.pawlaczykdominika.com/
 
 # chrome driver for selenium
