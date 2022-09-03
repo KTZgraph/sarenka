@@ -10,43 +10,37 @@ import morgan from 'morgan';
 
 // propblem z importem https://www.npmjs.com/package/lowdb
 // const low = require('lowdb');
+import { join, dirname } from 'path';
 import { Low, JSONFile } from 'lowdb';
+import { fileURLToPath } from 'url';
 
-// import swaggera
+const __dirname = dirname(fileURLToPath(import.meta.url));
+// dane zapisywane w pliku
+// const FileSync = require('lowdb/adapters/FileSync');
+// specyfikacja w którym pliku zapisujemy dane
+// const adapter = new FileSync('db.json');
+const file = join(__dirname, 'db.json');
+const adapter = new JSONFile(file);
+// Use JSON file for storage
+
+const db = new Low(adapter);
+// Read data from JSON file, this will set db.data content
+await db.read();
+
+// If file.json doesn't exist, db.data will be null
+// Set default data
+db.data ||= { books: [] };
+
+//------------------------------------------------------------------------------------------------------------------------------------------------
+//  import swaggera
 import swaggerUI from 'swagger-ui-express';
 import swaggerJsDoc from 'swagger-jsdoc';
-
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-import { join } from 'path';
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const file = join(__dirname, 'db.json');
 
 // importowanie routów z server/routes/books.js
 import booksRouter from './routes/books.js';
 
 // domyślny port aplikacji
 const PORT = process.env.PORT || 4000;
-
-// dane zapisywane w pliku
-// const FileSync = require('lowdb/adapters/FileSync');
-// specyfikacja w którym pliku zapisujemy dane
-// const adapter = new FileSync('db.json');
-const adapter = new JSONFile(file);
-
-// const db = low(adapter);
-
-const db = new Low(adapter);
-console.log(db);
-
-// defaultowe dane - pusta lista ksiażek
-// db.defaults({ books: [] }).write();
-// https://github.com/typicode/lowdb/issues/505 problem TypeError: db.defaults is not a function
-// Set some defaults
-if (db.data === null) {
-  db.data = { books: [] };
-  db.write();
-}
 
 console.log(db);
 

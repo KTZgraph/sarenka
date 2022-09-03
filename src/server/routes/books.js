@@ -33,21 +33,43 @@ const idLength = 8;
  *              author: Alexander K. Dewdney
  */
 
+// routy dla swaggera - ale difiniować jak są relatywne w index.js tzn tutaj url root "/" jest jako "/books/" w index.js i włąsnie ta wersja globalna jest w swaggerze
+/**
+ * @swagger
+ * /books:
+ *  get:
+ *      summary: Returns the list of all the books
+ *      responses:
+ *          200:
+ *              description: The list of the books
+ *              content:
+ *                  application/json:
+ *                      schema:
+ *                          type: array
+ *                          items:
+ *                              $ref: '#components/schemas/Book'
+ */
+
 // pobieranie listy wszsytkich ksiażek
-https: router.get('/', (req, res) => {
-  // obiekt req ma dostęp do obiektu app
-  // dzięki app.db = db; z index.js mamy dostęp do bazy
-  const books = req.app.db.get('books');
+// router.get('/', (req, res) => {
+//   // obiekt req ma dostęp do obiektu app
+//   // dzięki app.db = db; z index.js mamy dostęp do bazy
+//   const books = req.app.db.get('books');
+
+//   res.send(books);
+// });
+
+router.get('/', (req, res) => {
+  // pobieranie danych z biblioteki
+  // https://www.npmjs.com/package/@commonify/lowdb
+  const books = req.app.db.data;
 
   res.send(books);
 });
 
 // pobieranie ksiazki po id
 router.get('/:id', (res, req) => {
-  const book = req.app.db
-    .get('books')
-    .find({ id: req.params.id })
-    .value();
+  const book = req.app.db.books.find({ id: req.params.id }).value();
 
   res.send(book);
 });
@@ -62,7 +84,9 @@ router.post('/', (req, res) => {
       ...req.body,
     };
 
-    req.app.db.get('books').push(book).write();
+    // req.app.db.get('books').push(book).write();
+    req.app.db.books.push(book).write();
+    //   await req.app.db.books.write()
   } catch (error) {
     return res.status(500).send(error);
   }
