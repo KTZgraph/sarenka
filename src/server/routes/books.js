@@ -33,6 +33,15 @@ const idLength = 8;
  *              author: Alexander K. Dewdney
  */
 
+// grupopwanoie routów w swaggerze
+/**
+ * @swagger
+ * tags:
+ *  name: Books
+ *  description: The books managaging API
+ */
+
+// route routs definition
 // routy dla swaggera - ale difiniować jak są relatywne w index.js tzn tutaj url root "/" jest jako "/books/" w index.js i włąsnie ta wersja globalna jest w swaggerze
 /**
  * @swagger
