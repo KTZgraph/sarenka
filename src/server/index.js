@@ -12,11 +12,18 @@ import morgan from 'morgan';
 // const low = require('lowdb');
 import { Low, JSONFile } from 'lowdb';
 
+// import swaggera
+import swaggerUI from 'swagger-ui-express';
+import swaggerJsDoc from 'swagger-jsdoc';
+
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { join } from 'path';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const file = join(__dirname, 'db.json');
+
+// importowanie routów z server/routes/books.js
+import booksRouter from './routes/books.js';
 
 // domyślny port aplikacji
 const PORT = process.env.PORT || 4000;
@@ -43,8 +50,38 @@ if (db.data === null) {
 
 console.log(db);
 
+// swagger PRZED stworzeniem aplikacji express
+// obiekt opcji dla swaggera
+const options = {
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'Library API',
+      version: '1.0.0',
+      description: 'A simple Express Library API',
+    },
+
+    servers: [
+      // lista serverów, można mieć kilka np testing, production etc, tu mam jeden
+      {
+        url: 'http://localhost:4000',
+      },
+    ],
+  },
+
+  // apis na tym samym poziomie co definition
+  // lista gdzie mamy routy, bo moze być wiecej niż tylko server/routes/books.js
+  apis: ['./routes/*.js'],
+};
+
+// inicjalizacja swaggera
+const specs = swaggerJsDoc(options);
+
 // inicjalizacja aplikacji express
 const app = express();
+// aplikacja ma używać swaggera
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(specs));
+
 // dopisanie danych - można potem skorzystać z bazy za pomocą routów
 app.db = db;
 
@@ -53,6 +90,9 @@ app.use(cors());
 // middlewary
 app.use(express.json());
 app.use(morgan('dev'));
+
+// dołączanie routów z server/routes/books.js
+app.use('/books', booksRouter);
 
 // właczenie serwera do snasłuchiwania
 app.listen(PORT, () =>
