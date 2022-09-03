@@ -5,8 +5,36 @@ import { nanoid } from 'nanoid';
 
 const idLength = 8;
 
+// tworzenie modelu obiketu book dla bazy, który jest używane przez swaggera
+//wielolinijkowy komentarz
+//swagger.io/docs/specification/components/
+/**
+ * @swagger
+ * components:
+ *  schemas:
+ *      Book:
+ *          type: object
+ *          required:
+ *              - title
+ *              - author
+ *          properties:
+ *              id:
+ *                  type: string
+ *                  descriiption: The aut-generated id of the book
+ *              title:
+ *                  type: string
+ *                  description: The book title
+ *              author:
+ *                  type: string
+ *                  description: The book author
+ *          example:
+ *              id: d5fE_asz
+ *              title: The New Turing Omnibus
+ *              author: Alexander K. Dewdney
+ */
+
 // pobieranie listy wszsytkich ksiażek
-router.get('/', (req, res) => {
+https: router.get('/', (req, res) => {
   // obiekt req ma dostęp do obiektu app
   // dzięki app.db = db; z index.js mamy dostęp do bazy
   const books = req.app.db.get('books');
