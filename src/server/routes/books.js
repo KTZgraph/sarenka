@@ -107,10 +107,36 @@ router.get('/:id', (req, res) => {
     (obj) => obj.id === req.params.id
   );
 
+  if (!book) {
+    res.sendStatus(404);
+  }
+
   res.send(book);
 });
 
 // -------------- tworzenie nowej ksiazki - POST
+/**
+ * @swagger
+ * /books:
+ *   post:
+ *     summary: Create a new book
+ *     tags: [Books]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Book'
+ *     responses:
+ *       200:
+ *         description: The book was successfully created
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Book'
+ *       500:
+ *         description: Some server error
+ */
 
 router.post('/', (req, res) => {
   try {
@@ -122,14 +148,46 @@ router.post('/', (req, res) => {
     };
 
     // req.app.db.get('books').push(book).write();
-    req.app.db.data.push(book).write();
-    //   await req.app.db.books.write()
+    req.app.db.data.books.push(book);
+    res.send(book);
   } catch (error) {
     return res.status(500).send(error);
   }
 });
 
-// aktualizacja ksiązki po id - PUT
+// ---------- aktualizacja ksiązki po id - PUT
+/**
+ * @swagger
+ * /books/{id}:
+ *  put:
+ *      summary: Update the book by the id
+ *      tags: [Books]
+ *      parameters:
+ *          - in: path
+ *            name: id
+ *            schema:
+ *              type: string
+ *            required: true
+ *            description: The book id
+ *      requestBody:
+ *          required: true
+ *          content:
+ *              application/json:
+ *                  schema:
+ *                      $ref: '#/components/schemas/Book'
+ *      responses:
+ *          200:
+ *              description: The book was updated
+ *              content:
+ *                  application/json:
+ *                      schema:
+ *                          $ref: '#components/schemas/Book'
+ *          404:
+ *              description: The book was not found
+ *          500:
+ *              description: Some error happened
+ */
+
 router.put('/:id', (req, res) => {
   try {
     req.app.db
