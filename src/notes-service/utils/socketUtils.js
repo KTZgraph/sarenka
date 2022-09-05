@@ -4,8 +4,8 @@ exports.sio = (server) => {
   return socketIO(server, {
     transport: ['polling'],
     cors: {
-      // FIXME niebezpieczne corsy
-      origin: '*',
+      // FIXME CORS
+      origin: '',
     },
   });
 };

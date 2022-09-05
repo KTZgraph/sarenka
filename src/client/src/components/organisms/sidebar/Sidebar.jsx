@@ -92,7 +92,7 @@ const Sidebar = () => {
               <span>public</span>
             </li>
           </Link>
-          <Link to="/">
+          <Link to="/notes">
             <li>
               <ContactPageRoundedIcon className="icon" />
               <span>my notes</span>

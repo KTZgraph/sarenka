@@ -1,17 +1,17 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import "./index.css";
-import "./styles/main.scss";
-import { DarkModeContextProvider } from "./context/darkModeContext";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import './index.css';
+import './styles/main.scss';
+import { DarkModeContextProvider } from './context/darkModeContext';
 
 // MOCKED server
 // import "./server";
 // WARNING tylko jeden plik z mockowanym serverem
-import "./server_mock/server";
+// import "./server_mock/server";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <DarkModeContextProvider>
