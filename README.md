@@ -15,6 +15,10 @@ SARENKA is **licensed** under the **[MIT License]**.
 # frontend preview
 ### http://sarenka-develop.pawlaczykdominika.com/
 
+# backend - splitted to microservises
+- backed - Django core app
+- server - Node.js socket.io, express for user notes, files
+- communication?
 # chrome driver for selenium
 
 https://chromedriver.chromium.org/downloads
