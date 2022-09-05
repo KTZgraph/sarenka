@@ -112,7 +112,10 @@ const Sidebar = () => {
       </div>
       <footer className="logoFooter">
         <div className="logoContainer">
-          <img src={process.env.PUBLIC_URL + "/images/logo_cropped.png"} />
+          <img
+            src={process.env.PUBLIC_URL + "/images/logo_cropped.png"}
+            alt="sarenka-logo"
+          />
         </div>
       </footer>
     </div>

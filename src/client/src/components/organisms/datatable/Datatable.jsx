@@ -1,4 +1,4 @@
-import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
+import { DataGrid} from "@mui/x-data-grid";
 import styles from "./Datatable.module.scss";
 import { userColumns } from "./DatatableColumns";
 import { userRows } from "./datatablesource";

@@ -1,4 +1,4 @@
-import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
+import { DataGrid } from "@mui/x-data-grid";
 import styles from "./VulnsDatatable.module.scss";
 import { userColumns } from "./VulnsDatatableDatatableColumns";
 import { dummyCves } from "./dummy_cves";

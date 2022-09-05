@@ -13,9 +13,6 @@ const CveDatatable = ({ data }) => {
     setPageSize(params.pageSize);
   };
 
-  const handleView = (cveId) => {
-    console.log("handle view: ", cveId);
-  };
   const actionColumns = [
     {
       field: "action",
