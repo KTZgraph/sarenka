@@ -6,7 +6,7 @@ const Notes = () => {
 
   useEffect(() => {
     //   FIXME CORSES
-    socket.current = io('wd://localhost:3001');
+    socket.current = io('ws://localhost:3001');
     socket.current.on('connection', () => {
       console.log('connecte to server');
     });

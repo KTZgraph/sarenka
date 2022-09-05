@@ -2,10 +2,12 @@ const socketIO = require('socket.io');
 
 exports.sio = (server) => {
   return socketIO(server, {
+    // oba działają
     transport: ['polling'],
+    // transport: ['websocket'],
     cors: {
       // FIXME CORS
-      origin: '',
+      origin: '*',
     },
   });
 };
@@ -16,8 +18,7 @@ exports.connection = (io) => {
     console.log('A user is connected');
 
     socket.on('message', (message) => {
-      //   console.log(`message from ${socket.id} : ${message}`);
-      console.log(`message from ${socket.id} : eeeeeeeeeeee`);
+      console.log(`message from ${socket.id} : ${message}`);
     });
 
     socket.on('disconnect', () => {
