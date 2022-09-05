@@ -16,7 +16,8 @@ exports.connection = (io) => {
     console.log('A user is connected');
 
     socket.on('message', (message) => {
-      console.log(`message from ${socket.id} : ${message}`);
+      //   console.log(`message from ${socket.id} : ${message}`);
+      console.log(`message from ${socket.id} : eeeeeeeeeeee`);
     });
 
     socket.on('disconnect', () => {
