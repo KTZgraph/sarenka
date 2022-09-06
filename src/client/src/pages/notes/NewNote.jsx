@@ -35,6 +35,30 @@ const NewNote = () => {
     };
   }, []);
 
+  //--------------- odbieranie danych z serwera
+  useEffect(() => {
+    // do detekcji zmian, jeśli kiedykolwiek quill się zmieni
+
+    //socket i qull na początku sa niezdefiniowane
+    if (socket == null || quill == null) return;
+    // https://quilljs.com/docs/api/#text-change
+    // "text-change" zdarzenie z biblioteki
+    const handler = (delta) => {
+      // aktualizacja dokumentu o to co wysłał serwer
+      quill.updateContents(delta);
+    };
+
+    // "receive-changes", - moja nazwa zdarzenia z serwera który rozsyła dane
+    socket.on("receive-changes", handler);
+
+    return () => {
+      // czyszczenie gdy wychodzimy
+      socket.off("receive-changes", handler);
+    };
+    // useEffect tutaj zalezy od socket i quill
+  }, [socket, quill]);
+
+  //------------ wysyałnie delty - zmian w dokumencie
   useEffect(() => {
     // do detekcji zmian, jeśli kiedykolwiek quill się zmieni
 
@@ -56,6 +80,7 @@ const NewNote = () => {
     // useEffect tutaj zalezy od socket i quill
   }, [socket, quill]);
 
+  // edytor
   const wrapperRef = useCallback((wrapper) => {
     if (wrapper == null) return;
 

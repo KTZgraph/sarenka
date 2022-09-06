@@ -21,6 +21,9 @@ exports.connection = (io) => {
     // "send-changes" zdarzenie z biblioteki quill- kopia gogle docs
     socket.on("send-changes", (delta) => {
       console.log("delta: ", delta);
+      // wysyła do wszystkich tylko nie do nas zmiany
+      // "receive-changes" - moja nazwa zdarzenia
+      socket.broadcast.emit("receive-changes", delta);
     });
 
     socket.on("message", (message) => {
