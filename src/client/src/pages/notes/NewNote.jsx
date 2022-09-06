@@ -1,5 +1,6 @@
 // https://www.youtube.com/watch?v=iRaelG7v0OU
 import { useCallback, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import Quill from "quill";
 import "quill/dist/quill.snow.css";
 
@@ -22,6 +23,7 @@ const TOOLBAR_OPTIONS = [
 
 // npm i quill
 const NewNote = () => {
+  const { noteId } = useParams();
   const [socket, setSocket] = useState();
   const [quill, setQuill] = useState();
 
@@ -35,7 +37,23 @@ const NewNote = () => {
     };
   }, []);
 
-  //--------------- odbieranie danych z serwera
+  // ---------- ustawienie userów w pokoju o id dokumentu, zeby nie modyfikowac wszsytkich dokumentów o rożnych idkach
+  useEffect(() => {
+    if (socket == null || quill == null) return;
+
+    // tylko raz nasłuchujemy na zdarzenie dlatego socket.once
+    socket.once("load-note", (note) => {
+      // serwer raz wysyła wartośc z bazy notatki - quill aktualizuje edytor
+      quill.setContents(note);
+      // żeby mozna było edytować notatkę w edytorze
+      quill.enable();
+    });
+
+    // "get-note" - nazwa mojego zdarzenia, id potrzebne do podłaczenia go do pokoju
+    socket.emit("get-note", noteId);
+  }, [socket, quill, noteId]);
+
+  //--------------- odbieranie danych broadcastowo z serwera
   useEffect(() => {
     // do detekcji zmian, jeśli kiedykolwiek quill się zmieni
 
@@ -93,6 +111,10 @@ const NewNote = () => {
       theme: "snow",
       modules: { toolbar: TOOLBAR_OPTIONS },
     });
+
+    // edytor niedostępny dopóki nie ma danych
+    q.disable(); // albo q.enable(false)
+    q.setText("Loading...");
 
     setQuill(q);
   }, []);
