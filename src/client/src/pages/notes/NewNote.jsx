@@ -9,6 +9,7 @@ import { io } from "socket.io-client";
 
 import "./NewNote.scss";
 
+const SAVE_INTERVAL_MS = 2000;
 const TOOLBAR_OPTIONS = [
   [{ header: [1, 2, 3, 4, 5, 6, false] }],
   [{ font: [] }],
@@ -52,6 +53,22 @@ const NewNote = () => {
     // "get-note" - nazwa mojego zdarzenia, id potrzebne do podłaczenia go do pokoju
     socket.emit("get-note", noteId);
   }, [socket, quill, noteId]);
+
+  // ----------- zapisywanie dokumentu do bazy
+  useEffect(() => {
+    if (socket == null || quill == null) return;
+
+    // autoamtyczne zapisywanie dokumentu co kilka sekund
+    const interval = setInterval(() => {
+      // "save-note" - moje zdarzenie z backendu
+      socket.emit("save-note", quill.getContents());
+    }, SAVE_INTERVAL_MS);
+
+    // na końcu czyścimy interval
+    return () => {
+      clearInterval(interval);
+    };
+  }, [socket, quill]);
 
   //--------------- odbieranie danych broadcastowo z serwera
   useEffect(() => {
