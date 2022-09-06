@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     # https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html#project-configuration
     # If you wish to use localizations/translations, simply add rest_framework_simplejwt to INSTALLED_APPS.
     "rest_framework_simplejwt",
+    # bez rejestracji mojej aplikacjia - zawsze dodawać gdy chcę migrowac jakieś modele
+    # django.core.exceptions.ImproperlyConfigured: AUTH_USER_MODEL refers to model 'users.UserAccount' that has not been installed
+    "users",
 ]
 
 MIDDLEWARE = [
@@ -147,3 +150,9 @@ REST_FRAMEWORK = {
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=30),
 }
+
+
+# https://docs.djangoproject.com/en/4.1/topics/auth/customizing/#custom-users-admin-full-example  na samyym dole
+# rejestracja mojego customowego modelu User
+# AUTH_USER_MODEL = 'moja_aplikacja.mojCustomowyModel'
+AUTH_USER_MODEL = "users.UserAccount"
