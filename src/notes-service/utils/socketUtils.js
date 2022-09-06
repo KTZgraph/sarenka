@@ -1,27 +1,33 @@
-const socketIO = require('socket.io');
+const socketIO = require("socket.io");
 
 exports.sio = (server) => {
   return socketIO(server, {
     // oba działają
-    transport: ['polling'],
+    transport: ["polling"],
     // transport: ['websocket'],
     cors: {
       // FIXME CORS
-      origin: '*',
+      // origin: '*',
+      origin: "http://localhost:3000",
+      methods: ["GET", "POST"],
     },
   });
 };
 
 exports.connection = (io) => {
-  io.on('connection', (socket) => {
-    console.log('EEEEEEEEEEE');
-    console.log('A user is connected');
+  io.on("connection", (socket) => {
+    console.log("A user is connected");
 
-    socket.on('message', (message) => {
+    // "send-changes" zdarzenie z biblioteki quill- kopia gogle docs
+    socket.on("send-changes", (delta) => {
+      console.log("delta: ", delta);
+    });
+
+    socket.on("message", (message) => {
       console.log(`message from ${socket.id} : ${message}`);
     });
 
-    socket.on('disconnect', () => {
+    socket.on("disconnect", () => {
       console.log(`socket ${socket.id} disconnect`);
     });
   });

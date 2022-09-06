@@ -1,13 +1,13 @@
 // https://www.youtube.com/watch?v=SMubOngCCmw
 
-const http = require('http');
-const dotenv = require('dotenv');
-const cors = require('cors');
+const http = require("http");
+const dotenv = require("dotenv");
+const cors = require("cors");
 
 dotenv.config();
-const express = require('express');
+const express = require("express");
 const app = express();
-const socketUtils = require('./utils/socketUtils');
+const socketUtils = require("./utils/socketUtils");
 
 const server = http.createServer(app);
 // instancja potrzebnma do sockketu
@@ -24,13 +24,13 @@ const socketIOMiddleware = (req, res, next) => {
 app.use(cors());
 
 // ROUTES
-app.use('/api/v1/hello', socketIOMiddleware, (req, res) => {
-  req.io.emit('message', `Hello, ${req.originalUrl}`);
-  res.send('hello world from io express');
+app.use("/api/v1/hello", socketIOMiddleware, (req, res) => {
+  req.io.emit("message", `Hello, ${req.originalUrl}`);
+  res.send("hello world from io express");
 });
 
 //LISTEN the server
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3001;
 server.listen(port, () => {
   console.log(`App running on port ${port}...`);
 });

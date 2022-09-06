@@ -1,3 +1,9 @@
+<!-- FIXME - mirage dummy server podłączać przed wrzuceniem na serwer -->
+
+# notes-service
+
+- https://quilljs.com/docs/api/#text-change
+
 # TODO:
 
 - https://github.com/danilowoz/react-atomic-design
