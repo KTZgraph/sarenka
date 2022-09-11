@@ -39,7 +39,7 @@ const Sidebar = () => {
             </li>
           </Link>
           <p className="title">vulnerabilities</p>
-          <Link to="/vulns/cves">
+          <Link to="/vulns">
             <li>
               <GppMaybeIcon className="icon" />
               <span>vulnerabilities</span>

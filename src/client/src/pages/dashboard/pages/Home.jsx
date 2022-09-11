@@ -1,18 +1,14 @@
-import Sidebar from "../../components/organisms/sidebar/Sidebar";
-import Navbar from "../../components/organisms/navbar/Navbar";
-import Widget from "../../components/organisms/widget/Widget";
-import Featured from "../../components/organisms/featured/Featured";
-import Chart from "../../components/organisms/chart/Chart";
+import Widget from "../../../components/organisms/widget/Widget";
+import Featured from "../../../components/organisms/featured/Featured";
+import Chart from "../../../components/organisms/chart/Chart";
 
 import styles from "./Home.module.scss";
-import Hometable from "../../components/organisms/hometable/Hometable";
+import Hometable from "../../../components/organisms/hometable/Hometable";
 
 const Home = () => {
   return (
     <div className={styles.home}>
-      <Sidebar />
       <div className={`${styles.homeContainer}`}>
-        <Navbar />
         <div className={styles.widgets}>
           <Widget type="user" />
           <Widget type="order" />

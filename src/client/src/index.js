@@ -7,9 +7,8 @@ import './styles/main.scss';
 import { DarkModeContextProvider } from './context/darkModeContext';
 
 // MOCKED server
-// import "./server";
 // WARNING tylko jeden plik z mockowanym serverem
-// import "./server_mock/server";
+import './server_mock/server';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

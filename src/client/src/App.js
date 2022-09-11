@@ -1,87 +1,60 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Navigate,
-} from 'react-router-dom';
-import { useContext } from 'react';
-import { v4 as uuidV4 } from 'uuid';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useContext } from "react";
+import { v4 as uuidV4 } from "uuid";
 
-import Home from './pages/home/Home';
-import Search from './search/pages/Search';
+import Sidebar from "./components/organisms/sidebar/Sidebar";
+import Navbar from "./components/organisms/navbar/Navbar";
 
-//
-import Login from './pages/login/Login';
-import List from './pages/list/List';
-import Single from './pages/single/Single';
-import New from './pages/new/New';
+import Home from "./pages/dashboard/pages/Home";
+import Search from "./pages/search/pages/Search";
+import Login from "./pages/auth/Login";
+
 // ---------------- vulnerabilities -------------------
-import VulnList from './pages/cve/list/List';
-import VulnSingle from './pages/cve/single/Single';
-//CWE (Common Weakness Enumeration)
-import CweList from './pages/vulnerabilities/cwe/List';
-import CweSingle from './pages/vulnerabilities/cwe/Single';
-// CVE (Common Vulnerabilities and Exposures)
-import CveList from './pages/vulnerabilities/cve/CveList';
-import CveSingle from './pages/vulnerabilities/cve/Single';
+import NewVulnerability from "./pages/vulnerabilities/pages/NewVulnerability";
 
 // ------------- notes-service
-import Notes from './pages/notes/Notes';
-import NewNote from './pages/notes/NewNote';
+import Notes from "./pages/notes/pages/Notes";
+import NewNote from "./pages/notes/pages/NewNote";
 
-import { DarkModeContext } from './context/darkModeContext';
+import { DarkModeContext } from "./context/darkModeContext";
+
+import "./App.scss";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
 
   return (
-    <div className={darkMode ? 'App dark' : 'App'}>
+    <div className={darkMode ? "App dark" : "App"}>
       <BrowserRouter>
-        <Routes>
-          <Route path="/">
-            <Route index element={<Home />} />
-            <Route path="login" element={<Login />} />
-            <Route path="search" element={<Search />} />
+        {/* sidebar */}
+        <Sidebar />
+        <main>
+          {/* navbar */}
+          <Navbar />
+          <Routes>
+            {/* główne komponenty */}
+            <Route path="/">
+              <Route index element={<Home />} />
+              <Route path="login" element={<Login />} />
+              <Route path="search" element={<Search />} />
+            </Route>
 
-            {/* notes-service */}
-            <Route path="notes">
-              <Route index element={<Notes />} />
+            {/* vulnerabilities */}
+            <Route path="/vulns">
+              <Route path="new" element={<NewVulnerability />} />
+            </Route>
+
+            {/* notes */}
+            <Route path="/notes">
+              <Route path=":noteId" element={<NewNote />} />
+              <Route path=":vulnId" element={<Notes />} />
               <Route
                 path="new"
                 element={<Navigate to={`/notes/${uuidV4()}`} />}
               />
-              <Route path=":noteId" element={<NewNote />} />
             </Route>
-
-            <Route path="users">
-              <Route index element={<List />} />
-              <Route path=":userId" element={<Single />} />
-              <Route path="new" element={<New />} />
-            </Route>
-            <Route path="products">
-              <Route index element={<List />} />
-              <Route path=":productId" element={<Single />} />
-              <Route path="new" element={<New />} />
-            </Route>
-            <Route path="vulns">
-              <Route index element={<VulnList />} />
-              <Route path=":vulnId" element={<VulnSingle />} />
-              <Route path="new" element={<New />} />
-              <Route path="cwes">
-                <Route index element={<CweList />} />
-                <Route path=":cweId" element={<CweSingle />} />
-                {/* TODO pobieranie listy CVE dla dane CWE */}
-                {/* <Route path=":cweId/cves" element={<New />} /> */}
-              </Route>
-              <Route path="cves">
-                {/* TODO od groma */}
-                <Route index element={<CveList />} />
-                <Route path=":cveId" element={<CveSingle />} />
-                {/* TODO pobieranie CWE dla dane CVE */}
-              </Route>
-            </Route>
-          </Route>
-        </Routes>
+          </Routes>
+        </main>
       </BrowserRouter>
     </div>
   );
