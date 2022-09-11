@@ -1,22 +1,22 @@
-import DashboardRoundedIcon from "@mui/icons-material/DashboardRounded";
-import AddModeratorRoundedIcon from "@mui/icons-material/AddModeratorRounded";
-import PolicyRoundedIcon from "@mui/icons-material/PolicyRounded";
-import WidgetsRoundedIcon from "@mui/icons-material/WidgetsRounded";
-import ManageAccountsRoundedIcon from "@mui/icons-material/ManageAccountsRounded";
-import StorageRoundedIcon from "@mui/icons-material/StorageRounded";
-import SettingsRoundedIcon from "@mui/icons-material/SettingsRounded";
-import InsertChartRoundedIcon from "@mui/icons-material/InsertChartRounded";
-import DocumentScannerRoundedIcon from "@mui/icons-material/DocumentScannerRounded";
-import ContactPageRoundedIcon from "@mui/icons-material/ContactPageRounded";
-import NoteAddIcon from "@mui/icons-material/NoteAdd";
-import ReportIcon from "@mui/icons-material/Report";
-import GppMaybeIcon from "@mui/icons-material/GppMaybe";
-import SettingsInputHdmiIcon from "@mui/icons-material/SettingsInputHdmi";
-import AddBoxIcon from "@mui/icons-material/AddBox";
-import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { DarkModeContext } from "../../../context/darkModeContext";
-import "./sidebar.scss";
+import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
+import AddModeratorRoundedIcon from '@mui/icons-material/AddModeratorRounded';
+import PolicyRoundedIcon from '@mui/icons-material/PolicyRounded';
+import WidgetsRoundedIcon from '@mui/icons-material/WidgetsRounded';
+import ManageAccountsRoundedIcon from '@mui/icons-material/ManageAccountsRounded';
+import StorageRoundedIcon from '@mui/icons-material/StorageRounded';
+import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
+import InsertChartRoundedIcon from '@mui/icons-material/InsertChartRounded';
+import DocumentScannerRoundedIcon from '@mui/icons-material/DocumentScannerRounded';
+import ContactPageRoundedIcon from '@mui/icons-material/ContactPageRounded';
+import NoteAddIcon from '@mui/icons-material/NoteAdd';
+import ReportIcon from '@mui/icons-material/Report';
+import GppMaybeIcon from '@mui/icons-material/GppMaybe';
+import SettingsInputHdmiIcon from '@mui/icons-material/SettingsInputHdmi';
+import AddBoxIcon from '@mui/icons-material/AddBox';
+import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { DarkModeContext } from '../../../context/darkModeContext';
+import './sidebar.scss';
 
 // FIXME darkMode nie działa na tym elemencie
 const Sidebar = () => {
@@ -32,10 +32,10 @@ const Sidebar = () => {
       <hr />
       <div className="center">
         <ul>
-          <Link to="/">
+          <Link to="/search">
             <li>
               <DashboardRoundedIcon className="icon" />
-              <span>home</span>
+              <span>search</span>
             </li>
           </Link>
           <p className="title">vulnerabilities</p>
@@ -133,17 +133,17 @@ const Sidebar = () => {
       <div className="bottom">
         <div
           className="colorOption"
-          onClick={() => dispatch({ type: "LIGHT" })}
+          onClick={() => dispatch({ type: 'LIGHT' })}
         ></div>
         <div
           className="colorOption"
-          onClick={() => dispatch({ type: "DARK" })}
+          onClick={() => dispatch({ type: 'DARK' })}
         ></div>
       </div>
       <footer className="logoFooter">
         <div className="logoContainer">
           <img
-            src={process.env.PUBLIC_URL + "/images/logo_cropped.png"}
+            src={process.env.PUBLIC_URL + '/images/logo_cropped.png'}
             alt="sarenka-logo"
           />
         </div>

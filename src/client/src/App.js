@@ -1,38 +1,47 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { useContext } from "react";
-import { v4 as uuidV4 } from "uuid";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom';
+import { useContext } from 'react';
+import { v4 as uuidV4 } from 'uuid';
 
-import Home from "./pages/home/Home";
-import Login from "./pages/login/Login";
-import List from "./pages/list/List";
-import Single from "./pages/single/Single";
-import New from "./pages/new/New";
+import Home from './pages/home/Home';
+import Search from './search/pages/Search';
+
+//
+import Login from './pages/login/Login';
+import List from './pages/list/List';
+import Single from './pages/single/Single';
+import New from './pages/new/New';
 // ---------------- vulnerabilities -------------------
-import VulnList from "./pages/cve/list/List";
-import VulnSingle from "./pages/cve/single/Single";
+import VulnList from './pages/cve/list/List';
+import VulnSingle from './pages/cve/single/Single';
 //CWE (Common Weakness Enumeration)
-import CweList from "./pages/vulnerabilities/cwe/List";
-import CweSingle from "./pages/vulnerabilities/cwe/Single";
+import CweList from './pages/vulnerabilities/cwe/List';
+import CweSingle from './pages/vulnerabilities/cwe/Single';
 // CVE (Common Vulnerabilities and Exposures)
-import CveList from "./pages/vulnerabilities/cve/CveList";
-import CveSingle from "./pages/vulnerabilities/cve/Single";
+import CveList from './pages/vulnerabilities/cve/CveList';
+import CveSingle from './pages/vulnerabilities/cve/Single';
 
 // ------------- notes-service
-import Notes from "./pages/notes/Notes";
-import NewNote from "./pages/notes/NewNote";
+import Notes from './pages/notes/Notes';
+import NewNote from './pages/notes/NewNote';
 
-import { DarkModeContext } from "./context/darkModeContext";
+import { DarkModeContext } from './context/darkModeContext';
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
 
   return (
-    <div className={darkMode ? "App dark" : "App"}>
+    <div className={darkMode ? 'App dark' : 'App'}>
       <BrowserRouter>
         <Routes>
           <Route path="/">
             <Route index element={<Home />} />
             <Route path="login" element={<Login />} />
+            <Route path="search" element={<Search />} />
 
             {/* notes-service */}
             <Route path="notes">
