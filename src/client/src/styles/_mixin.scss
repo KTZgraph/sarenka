@@ -1,5 +1,9 @@
+@import "./variables";
 $sidebar-min-height: 620px;
 $sidebar-min-width: 300px;
+
+$min-height-for-sidebar: 690px;
+$min-width-for-sidebar: 1024px;
 
 @mixin tablet-breakpoint {
   @media only screen and (min-width: 768px) {
@@ -15,6 +19,12 @@ $sidebar-min-width: 300px;
 
 @mixin sidebar-breakpoint {
   @media only screen and (min-height: $sidebar-min-height) and (min-width: $sidebar-min-width) {
+    @content;
+  }
+}
+
+@mixin sidebarBreakpoint {
+  @media only screen and (min-width: $min-width-for-sidebar) and (min-height: $min-height-for-sidebar) {
     @content;
   }
 }
@@ -69,4 +79,33 @@ $sidebar-min-width: 300px;
   @include button-base-mixin;
   color: $color-button-delete;
   border: 1px solid $color-button-delete-transparent;
+}
+
+// -------------------------------
+// ------------------------ sections eg. Vulnerability Item
+@mixin section-subtitle-mixin {
+  font-size: $font-size-medium;
+  font-family: $font-second;
+  color: $color-gray-dark;
+  font-weight: 800;
+}
+
+@mixin section-separator-mixin {
+  height: 0;
+  border: 1px solid $color-gray-light;
+  margin: 10px 0;
+}
+
+// ------------ forms
+// buttons
+// login
+@mixin form-button-submit-mixin {
+  border-radius: 5px;
+  width: 20rem;
+  height: 3rem;
+  border: none;
+  background-color: $color-main-medium;
+  color: $color-main-white;
+  font-weight: bold;
+  cursor: pointer;
 }

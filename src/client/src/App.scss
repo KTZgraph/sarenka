@@ -1,4 +1,4 @@
-@import './styles/main.scss';
+@import "./styles/main.scss";
 
 * {
   margin: 0;
@@ -12,22 +12,145 @@ body {
 
 .App {
   display: flex;
-  background-color: rgb(255, 240, 240);
-
+  background-color: rgb(250, 250, 250);
   main {
     display: flex;
     flex-direction: column;
     flex: 8;
 
     .main__container {
-      margin: 5px 15px;
+      margin-top: 5px;
+      margin-right: 15px;
+      margin-left: calc($sidebar-max-width + 15px);
+      margin-bottom: 5px;
       display: flex;
       background-color: white;
       padding: 10px 20px;
       border-radius: 20px;
       width: inherit;
-      min-height: calc(100vw - $navbar-max-height);
+      min-height: calc(100vh - ($navbar-max-height) * 2);
       @include box-shadow-mixin;
     }
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.notification-container {
+  font-size: 1.4rem;
+  position: fixed;
+  box-sizing: border-box;
+  z-index: 99999;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.notification-position__top-right {
+  top: 12px;
+  right: 12px;
+  animation: toast-in-right 0.7s;
+}
+
+.notification-position__bottom-right {
+  bottom: 12px;
+  right: 12px;
+  animation: toast-in-right 0.7s;
+}
+
+.notification-position__top-left {
+  top: 12px;
+  left: 12px;
+  animation: toast-in-left 0.7s;
+}
+
+.notification-position__bottom-left {
+  bottom: 12px;
+  left: 12px;
+  animation: toast-in-left 0.7s;
+}
+
+.notification {
+  background-color: #fff;
+  transition: 0.3s ease;
+  position: relative;
+  pointer-events: auto;
+  overflow: hidden;
+  margin: 0 0 6px;
+  padding: 20px;
+  margin-bottom: 15px;
+  width: 300px;
+  max-height: 100px;
+  border-radius: 3px;
+  box-shadow: 0 0 10px #999;
+  color: black;
+  opacity: 0.7;
+}
+
+.notification:hover {
+  box-shadow: 0 0 12px #333;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.notification-title {
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 6px;
+  width: 300px;
+  height: 18px;
+}
+
+.notification-message {
+  margin: 0;
+  text-align: left;
+  height: 18px;
+  margin-left: -1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.notification-image {
+  float: left;
+  margin-right: 15px;
+  font-size: 36px;
+}
+
+.toast {
+  height: 80px;
+  width: 365px;
+  color: white;
+  padding: 20px 15px 10px 10px;
+}
+
+.notification-close {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  font-size: 24px;
+}
+
+/* animations */
+@keyframes toast-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes toast-in-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
   }
 }

@@ -1,5 +1,4 @@
 const DarkModeReducer = (state, action) => {
-  //action.type reprezentuje nazwę funkcji
   switch (action.type) {
     case "LIGHT": {
       return {
@@ -9,12 +8,6 @@ const DarkModeReducer = (state, action) => {
     case "DARK": {
       return {
         darkMode: true,
-      };
-    }
-    case "TOOGLE": {
-      // do księżyca tylko przełączanie
-      return {
-        darkMode: !state.darkMode,
       };
     }
     default:

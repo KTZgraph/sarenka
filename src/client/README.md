@@ -1,8 +1,37 @@
 <!-- FIXME - mirage dummy server podłączać przed wrzuceniem na serwer -->
 
+# CREATIVE COLOR SCHEMES
+- https://creativecolorschemes.com/resources/free-color-schemes/romantic-color-scheme.shtml 
+
+
+# ikonki
+- SQL 
+- https://www.flaticon.com/free-icon/sql-server_5815809
+- https://www.flaticon.com/free-icon/files_569809
+- https://www.flaticon.com/packs/file-and-folder
+- https://www.flaticon.com/free-icon/operating-system_5815980
+- https://www.flaticon.com/free-icon/python-file_5815719
+- https://www.flaticon.com/packs/coding-and-development-2
+- https://www.flaticon.com/packs/documentation-2
+- https://www.flaticon.com/free-icon/programing_4824239
+- https://www.flaticon.com/free-icon/programing_4824411
+- https://www.flaticon.com/free-icon/heart_2724657
+
+<!-- autorzy -->
+# cat icon
+author: Icon Mela
+https://www.flaticon.com/authors/icon-mela
+https://www.flaticon.com/free-icon/animal-shelter_7577239?term=cat&page=1&position=6&page=1&position=6&related_id=7577239&origin=style
+
+
+# tools
+png -> svh converter
+https://convertio.co/pl/download/7217ec7d2bf7443cc23246e9fbddc64b1689f1/
 # notes-service
 
 - https://quilljs.com/docs/api/#text-change
+
+
 
 # TODO:
 

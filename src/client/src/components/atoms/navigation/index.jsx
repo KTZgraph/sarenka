@@ -2,10 +2,12 @@ import { Link } from "react-router-dom";
 import classnames from "classnames";
 import styles from "./style.scss";
 
-// do przeklikiwania się w apcje
-// np klikviecie na konretne cve żeby przejsć do strony
 export const NavigationType = {
   DEFAULT: "default",
+  VIEW: "view",
+  CREATE: "create",
+  UPDATE: "update",
+  DELETE: "delete",
 };
 
 export const NavigationTheme = {
@@ -20,10 +22,9 @@ export const NavigationSize = {
 };
 
 const Navigation = (props) => {
-  const { type, to, children, theme, size, className, disabled } = props;
+  const { children, type, to, theme, size, className, disabled } = props;
 
   const classProps = classnames(
-    // styles.action,
     styles[theme],
     styles[size],
     {
@@ -39,7 +40,6 @@ const Navigation = (props) => {
   );
 };
 
-// typy przycisków
 Navigation.defaultProps = {
   type: NavigationType.DEFAULT,
   theme: NavigationTheme.DEFAULT,

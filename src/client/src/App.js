@@ -2,59 +2,41 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useContext } from "react";
 import { v4 as uuidV4 } from "uuid";
 
-import Sidebar from "./components/organisms/sidebar/Sidebar";
-import Navbar from "./components/organisms/navbar/Navbar";
-
-import Home from "./pages/dashboard/pages/Home";
-import Search from "./pages/search/pages/Search";
-import Login from "./pages/auth/Login";
-
-// ---------------- vulnerabilities -------------------
-import NewVulnerability from "./pages/vulnerabilities/pages/NewVulnerability";
-
-// ------------- notes-service
-import Notes from "./pages/notes/pages/Notes";
-import NewNote from "./pages/notes/pages/NewNote";
-
 import { DarkModeContext } from "./context/darkModeContext";
+import { AuthContext } from "./context/AuthContext";
+
+import Toast from "./UI/Toast";
+
+// -------------- NOWE SCIEZKI DO PLIKOW
+import Dashboard from "./core/dashboard/pages/Dashboard";
+import Statistics from "./core/statistics/pages/Statistics";
+import Login from "./core/login/pages/Login";
+import VulnerabilityList from "./core/vulnerabilities/pages/VulnerabilityList";
 
 import "./App.scss";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
+  const { currentUser } = useContext(AuthContext);
 
   return (
     <div className={darkMode ? "App dark" : "App"}>
       <BrowserRouter>
-        {/* sidebar */}
-        <Sidebar />
-        <main>
-          {/* navbar */}
-          <Navbar />
-          <Routes>
-            {/* główne komponenty */}
-            <Route path="/">
-              <Route index element={<Home />} />
-              <Route path="login" element={<Login />} />
-              <Route path="search" element={<Search />} />
-            </Route>
+        <Routes>
+          <Route path="/">
+            <Route index element={<Dashboard />} />
+            <Route path="login" element={<Login />} />
+            <Route path="vulnerabilities" element={<VulnerabilityList />} />
+            <Route path="statistics" element={<Statistics />} />
 
-            {/* vulnerabilities */}
-            <Route path="/vulns">
-              <Route path="new" element={<NewVulnerability />} />
-            </Route>
+            {/* <Route path="register" element={<Register />} /> */}
+          </Route>
 
-            {/* notes */}
-            <Route path="/notes">
-              <Route path=":noteId" element={<NewNote />} />
-              <Route path=":vulnId" element={<Notes />} />
-              <Route
-                path="new"
-                element={<Navigate to={`/notes/${uuidV4()}`} />}
-              />
-            </Route>
-          </Routes>
-        </main>
+        </Routes>
+        <Toast
+          position="notification-position__bottom-right"
+          autoDeleteInterval={4000}
+        />
       </BrowserRouter>
     </div>
   );

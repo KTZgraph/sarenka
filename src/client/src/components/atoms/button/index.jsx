@@ -1,5 +1,5 @@
-import styles from "./style.scss";
 import classnames from "classnames";
+import styles from "./style.scss";
 
 export const ButtonType = {
   BUTTON: "button",
@@ -21,7 +21,7 @@ export const ButtonSize = {
 };
 
 const Button = (props) => {
-  const { type, onClick, children, theme, size, className, disabled } = props;
+  const { children, type, onClick, theme, size, className, disabled } = props;
 
   const classProps = classnames(
     styles.button,
@@ -45,7 +45,6 @@ const Button = (props) => {
   );
 };
 
-// typy przycisków
 Button.defaultProps = {
   type: ButtonType.BUTTON,
   theme: ButtonTheme.DEFAULT,
