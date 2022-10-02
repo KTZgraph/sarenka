@@ -1,7 +1,6 @@
 // https://www.youtube.com/watch?v=T1RgT0Yh1Lg
 
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import * as d3 from "d3";
 
 import Navbar from "../../../shared/navbar/Navbar";
@@ -41,6 +40,8 @@ const Statistics = () => {
   const maxValue = 20; //Maximum data value
 
   const [chartdata, setChartdata] = useState(initialData);
+  // DOM element for SVG
+  const svgRef = useRef();
 
   // 2) Setup random data generator and SVG canvas ------------------------------------------------------------------
 
@@ -97,6 +98,16 @@ const Statistics = () => {
     console.log("chart draw commands", line(chartdata));
 
     // 5) Draw line ---------------------------------------------------------------------------------------------------
+    // mamy referencje do DOM element przez svgRef a potem wybieramy element 'path' i z tego atrybut 'd' do rysowania ścieżki
+    // można atrybut ustwaić na wartość na sztywno albo na funckję któa coś zwraca tutaj (value) => line(chartdata)
+    // d3.select(svgRef.current).select("path").attr("d", "MMM");
+    d3.select(svgRef.current)
+      .select("path")
+      .attr("d", (value) => line(chartdata))
+      // Można ustawiac więcejatrybutów defaultorow byłby black - dlatego użwyamy none
+      .attr("fill", "none")
+      .attr("stroke", "white");
+
     // 6) Setup functions to draw  X and Y Axes -----------------------------------------------------------------------
     // 7) Draw x and y Axes -------------------------------------------------------------------------------------------
   }, [chartdata]);
@@ -107,7 +118,8 @@ const Statistics = () => {
       <main>
         <Navbar />
         <div className="main__container statistics">
-          <svg id="chart" viewBox="0 0 500 150">
+          {/* WANŻE BEZ  ref={svgRef}  nei wygenereuje wykresu*/}
+          <svg id="chart" viewBox="0 0 500 150" ref={svgRef}>
             <path d="" fill="none" stroke="white" strokeWidth="5" />
           </svg>
           <p>
