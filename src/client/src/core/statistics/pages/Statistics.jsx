@@ -86,8 +86,16 @@ const Statistics = () => {
     console.log("Start - End yScale", yScale(0), yScale(10));
 
     // 4) Setup functions to draw Lines -------------------------------------------------------------------------------
+    // cchemy znaleźć x i y wartość  dla każdego punktu
+    // it produces drawing instructions for our line - istrnukcje do rysowania lini svg
+    // .x to metoda komponentu line(komponentu d3)
+    const line = d3
+      .line()
+      .x((d) => xScale(d.name))
+      .y((d) => yScale(d.value));
 
-    
+    console.log("chart draw commands", line(chartdata));
+
     // 5) Draw line ---------------------------------------------------------------------------------------------------
     // 6) Setup functions to draw  X and Y Axes -----------------------------------------------------------------------
     // 7) Draw x and y Axes -------------------------------------------------------------------------------------------
