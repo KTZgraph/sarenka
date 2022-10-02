@@ -93,7 +93,9 @@ const Statistics = () => {
     const line = d3
       .line()
       .x((d) => xScale(d.name))
-      .y((d) => yScale(d.value));
+      .y((d) => yScale(d.value))
+      // można wyspecyfikować rożne typu curve - linia już nie jest typowo łamana
+      .curve(d3.curveMonotoneX);
 
     console.log("chart draw commands", line(chartdata));
 
@@ -109,6 +111,7 @@ const Statistics = () => {
       .attr("stroke", "white");
 
     // 6) Setup functions to draw  X and Y Axes -----------------------------------------------------------------------
+    const 
     // 7) Draw x and y Axes -------------------------------------------------------------------------------------------
   }, [chartdata]);
 
