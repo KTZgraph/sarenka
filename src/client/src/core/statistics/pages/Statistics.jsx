@@ -111,8 +111,16 @@ const Statistics = () => {
       .attr("stroke", "white");
 
     // 6) Setup functions to draw  X and Y Axes -----------------------------------------------------------------------
-    const 
+    const xAxis = d3.axisBottom(xScale);
+    const yAxis = d3.axisLeft(yScale);
+
     // 7) Draw x and y Axes -------------------------------------------------------------------------------------------
+    // dopisanie wrapper do svg
+    d3.select(svgRef.current)
+      .append("g")
+      .attr("transform", `translate(0,${height - padding})`)
+      .attr("id", "xaxis")
+      .call(xAxis);
   }, [chartdata]);
 
   return (
