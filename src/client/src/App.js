@@ -10,6 +10,7 @@ import Toast from "./UI/Toast";
 // -------------- NOWE SCIEZKI DO PLIKOW
 import Dashboard from "./core/dashboard/pages/Dashboard";
 import Statistics from "./core/statistics/pages/Statistics";
+import StatisticsTwo from "./core/statistics/pages/StatisticsTwo";
 import Login from "./core/login/pages/Login";
 import VulnerabilityList from "./core/vulnerabilities/pages/VulnerabilityList";
 
@@ -28,10 +29,10 @@ function App() {
             <Route path="login" element={<Login />} />
             <Route path="vulnerabilities" element={<VulnerabilityList />} />
             <Route path="statistics" element={<Statistics />} />
+            <Route path="statistics-two" element={<StatisticsTwo />} />
 
             {/* <Route path="register" element={<Register />} /> */}
           </Route>
-
         </Routes>
         <Toast
           position="notification-position__bottom-right"
