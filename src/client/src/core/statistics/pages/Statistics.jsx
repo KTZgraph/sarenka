@@ -112,15 +112,27 @@ const Statistics = () => {
 
     // 6) Setup functions to draw  X and Y Axes -----------------------------------------------------------------------
     const xAxis = d3.axisBottom(xScale);
-    const yAxis = d3.axisLeft(yScale);
+    const yAxis = d3.axisLeft(yScale); //funckja która po lewej renderuje legendę do wykresu
 
     // 7) Draw x and y Axes -------------------------------------------------------------------------------------------
     // dopisanie wrapper do svg
+
+    // usuwamy element po id bo inaczej dodaje  nieskończenie wiele elementów takich samych
+    d3.select("#xaxis").remove();
     d3.select(svgRef.current)
       .append("g")
       .attr("transform", `translate(0,${height - padding})`)
+      // id musi być wcześniej wyspecyfikowane
       .attr("id", "xaxis")
       .call(xAxis);
+
+    d3.select("#yaxis").remove();
+    d3.select(svgRef.current)
+      .append("g")
+      .attr("transform", `translate(${padding},0)`)
+      // id musi być wcześniej wyspecyfikowane
+      .attr("id", "yaxis")
+      .call(yAxis);
   }, [chartdata]);
 
   return (
