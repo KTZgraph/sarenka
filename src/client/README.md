@@ -1,4 +1,7 @@
 <!-- FIXME - mirage dummy server podłączać przed wrzuceniem na serwer -->
+# D3.js
+- npm i d3
+
 
 # CREATIVE COLOR SCHEMES
 - https://creativecolorschemes.com/resources/free-color-schemes/romantic-color-scheme.shtml 
