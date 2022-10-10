@@ -7,6 +7,7 @@ geoPath z d3.js - zwraca funkcję która otrzymuje jakiś geo.json data or featu
 and transform them into "d" atributes of a <path> element in ans SVG
 - co chcemy zrobić to wyrenderować <path> element dla każdego kraju w świecie i połaczyć te atrybuty  "d" żeby zdefiniowac ich kształt
 
+TODO geoOrthographic - można pobawić się w obrót ziemi
 */
 
 import { useEffect, useRef, useState } from 'react';
