@@ -1,5 +1,11 @@
 import { useRef, useEffect } from 'react';
-import { select, hierarchy, forceSimulation } from 'd3';
+import {
+  select,
+  hierarchy,
+  forceSimulation,
+  forceCenter,
+  forceManyBody,
+} from 'd3';
 import useResizeObserver from '../../../../hooks/useResizeObserver';
 
 /*
@@ -26,8 +32,19 @@ const PhysicsBasedForceLayout = ({ data }) => {
 
     //   jako argument, do czego chce dodac siłę - chcę do moich nodów
     const simulation = forceSimulation(nodeData)
-      // WARNING force - te alphaTarget i alphaMin z 'tick' emulują/zmieniają dane
+      //   dodanwanie sił któe mają wpływ na wpsółrzędne
+      // forceCenter definiuję where Nodes should gravitates to - tu korzystam z wartości szerokośc, wysokość żeby było na środku
+      .force(
+        'center',
+        forceCenter(dimensions.width / 2, dimensions.height / 2)
+      )
+      // kolejna siła - kolejny łancuch funckji
+      //   forceManyBody - force which is applied to every Node and you can define if thety attract or reject - pryzciąganie/odpychanie jak w elektronach
+      // .strength(-30) warotśc ujemna - się odpychają
+      // .strength(30) warotśc dodwania - się przyciagają
+      .force('charge', forceManyBody().strength(-30))
 
+      // WARNING force - te alphaTarget i alphaMin z 'tick' emulują/zmieniają dane
       // alphaTarget dzięki temu symulacja jest nieskończona, ale ona się nigdy nie skońcyzć bo symulacja sie kończy na punkcie 0.001
       .alphaTarget(0.2)
       // .alpahMin - punk zakończenia symulacjia
@@ -54,8 +71,8 @@ const PhysicsBasedForceLayout = ({ data }) => {
           // WARNING one są dodawane podczas symulacji forceSimulation(nodeData) tutaj siła dodaje wsóółrzędne
           .attr('x1', (link) => link.source.x)
           .attr('y1', (link) => link.source.y)
-          .attr('x2', (link) => link.source.x)
-          .attr('y2', (link) => link.source.y);
+          .attr('x2', (link) => link.target.x)
+          .attr('y2', (link) => link.target.y);
 
         // nodes
         //   renderuje wszystkei nody
@@ -86,8 +103,23 @@ const PhysicsBasedForceLayout = ({ data }) => {
   }, [data, dimensions]);
 
   return (
-    <div ref={wrapperRef} style={{ marginBottom: '2rem' }}>
-      <svg ref={svgRef}></svg>
+    <div
+      ref={wrapperRef}
+      style={{
+        marginBottom: '2rem',
+        width: '100%',
+        height: '100%',
+        overflow: 'visible',
+      }}
+    >
+      <svg
+        ref={svgRef}
+        style={{
+          width: '100%',
+          height: '100%',
+          overflow: 'visible',
+        }}
+      ></svg>
     </div>
   );
 };
