@@ -115,6 +115,25 @@ const GeoChart = ({ data, property }) => {
       //   definiowanie kształtów krajów - atrybut "d" elementu <path> svg
       //   pathGenerator zwrócić prawidłowy atrybut d = "M100 100" i tak dalej
       .attr('d', (feature) => pathGenerator(feature));
+
+    //   text kóry zwraca informacje o kraju na który kliknęliśmyh i wartości
+    svg
+      // zawsze tylko jedna labelka
+      .selectAll('.label')
+      .data([selectedCountry])
+      .join('text')
+      .attr('class', 'label')
+      .text(
+        (feature) =>
+          feature &&
+          //   nazwa kraju + wartość dla property z wybranego selecta
+          `${feature.properties.name} : ${feature.properties[
+            property
+          ].toLocaleString()}`
+      )
+      //   text wysoko lewo góra
+      .attr('x', 10)
+      .attr('y', 25);
   }, [data, dimensions, property, selectedCountry]);
 
   return (
