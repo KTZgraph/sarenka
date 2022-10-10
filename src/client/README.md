@@ -3,6 +3,7 @@
 # D3.js
 
 - npm i d3
+- https://geojson-maps.ash.ms/ żródło jsona do mapy dla D3.js tylko trzeba dla React zmineić nazwę z końce .json
 - https://devdocs.io/d3~7/
 - https://rpruim.github.io/D3/notes/d3.html
 - http://using-d3js.com/

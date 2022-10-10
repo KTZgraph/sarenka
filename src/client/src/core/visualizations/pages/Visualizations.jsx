@@ -72,6 +72,14 @@ const Visualizations = () => {
           {/* <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--full-width">
+                <PhysicsBasedForceLayoutApp />
+              </div>
+            </div>
+          </div> */}
+
+          {/* <div className="visualizations__row">
+            <div className="visualizations_col">
+              <div className="visualizations__card  visualizations_col--full-width">
                 <AnimatedTreeChartApp />
               </div>
             </div>
