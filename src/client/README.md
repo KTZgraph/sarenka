@@ -1,14 +1,20 @@
 <!-- FIXME - mirage dummy server podłączać przed wrzuceniem na serwer -->
-# D3.js
-- npm i d3
 
+# D3.js
+
+- npm i d3
+- google analytics d3js
+- google grid-analytics dashboard
+- https://www.google.com/imgres?imgurl=https%3A%2F%2Fanmolkoul.files.wordpress.com%2F2015%2F07%2Fgridpreview.gif&imgrefurl=https%3A%2F%2Fwww.kdnuggets.com%2F2015%2F07%2Fvisuals-interactive-dashboard-gridster-d3js.html&tbnid=JNAhN5vSm5oErM&vet=12ahUKEwiMgZ3rhNb6AhUhCBAIHdewA6gQMygBegUIARCtAQ..i&docid=52G7VWy9wqvzIM&w=1366&h=674&q=analytics%20d3js&ved=2ahUKEwiMgZ3rhNb6AhUhCBAIHdewA6gQMygBegUIARCtAQ
+- https://www.kdnuggets.com/2015/07/visuals-interactive-dashboard-gridster-d3js.html
 
 # CREATIVE COLOR SCHEMES
-- https://creativecolorschemes.com/resources/free-color-schemes/romantic-color-scheme.shtml 
 
+- https://creativecolorschemes.com/resources/free-color-schemes/romantic-color-scheme.shtml
 
 # ikonki
-- SQL 
+
+- SQL
 - https://www.flaticon.com/free-icon/sql-server_5815809
 - https://www.flaticon.com/free-icon/files_569809
 - https://www.flaticon.com/packs/file-and-folder
@@ -21,20 +27,21 @@
 - https://www.flaticon.com/free-icon/heart_2724657
 
 <!-- autorzy -->
+
 # cat icon
+
 author: Icon Mela
 https://www.flaticon.com/authors/icon-mela
 https://www.flaticon.com/free-icon/animal-shelter_7577239?term=cat&page=1&position=6&page=1&position=6&related_id=7577239&origin=style
 
-
 # tools
+
 png -> svh converter
 https://convertio.co/pl/download/7217ec7d2bf7443cc23246e9fbddc64b1689f1/
+
 # notes-service
 
 - https://quilljs.com/docs/api/#text-change
-
-
 
 # TODO:
 
@@ -260,9 +267,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ```js
 <div
   className={
-    params.row.status === "active"
+    params.row.status === 'active'
       ? `${styles.cellWithStatus} ${styles.active}`
-      : params.row.status === "passive"
+      : params.row.status === 'passive'
       ? `${styles.cellWithStatus} ${styles.passive}`
       : `${styles.cellWithStatus} ${styles.pending}`
   }
@@ -314,7 +321,7 @@ a
 
 ```js
 const a = [1, 2, 3];
-const b = ["a", "b"];
+const b = ['a', 'b'];
 a.concat(b);
 console.log(a); // [1, 2, 3, "a", "b"]
 ```
