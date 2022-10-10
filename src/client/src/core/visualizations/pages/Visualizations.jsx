@@ -34,6 +34,7 @@ import BasicFive from '../components/basic-five/BasicFive';
 import BreakingBadTimelineApp from '../components/breaking-bad-timeline/BreakingBadTimelineApp';
 import RacingBarChartApp from '../components/racing-bar-chart/RacingBarChartApp';
 import AnimatedTreeChartApp from '../components/animated-tree-chart/AnimatedTreeChartApp';
+import PhysicsBasedForceLayoutApp from '../components/physics-based-force-layout/PhysicsBasedForceLayoutApp';
 
 import './Visualizations.scss';
 
@@ -63,20 +64,28 @@ const Visualizations = () => {
           <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--full-width">
-                nowy wykres
+                <PhysicsBasedForceLayoutApp />
               </div>
             </div>
           </div>
 
-          <div className="visualizations__row">
+          {/* <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--full-width">
                 <AnimatedTreeChartApp />
               </div>
             </div>
-          </div>
+          </div> */}
 
-          <div className="visualizations__row">
+          {/* <div className="visualizations__row">
+            <div className="visualizations_col">
+              <div className="visualizations__card  visualizations_col--full-width">
+                <RacingBarChartApp />
+              </div>
+            </div>
+          </div> */}
+
+          {/* <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--double-width">
                 <BreakingBadTimelineApp />
@@ -87,9 +96,9 @@ const Visualizations = () => {
                 <BasicFive />
               </div>
             </div>
-          </div>
+          </div> */}
 
-          <div className="visualizations__row">
+          {/* <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--double-width">
                 <BasicFour />
@@ -100,9 +109,9 @@ const Visualizations = () => {
                 <BasicThree />
               </div>
             </div>
-          </div>
+          </div> */}
 
-          <div className="visualizations__row">
+          {/* <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--double-width">
                 <BasicTwo />
@@ -113,10 +122,10 @@ const Visualizations = () => {
                 <BasicOne />
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* row */}
-          <div className="visualizations__row">
+          {/* <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card">
                 <CalendarHeatmap />
@@ -127,10 +136,10 @@ const Visualizations = () => {
                 <BasicOneRemastered />
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* row */}
-          <div className="visualizations__row">
+          {/* <div className="visualizations__row">
             <div className="visualizations_col visualizations_col--double-width">
               <div className="visualizations__card">
                 <BasicAreaChart />
@@ -141,10 +150,10 @@ const Visualizations = () => {
                 <PieChartLabels />
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* row */}
-          <div className="visualizations__row">
+          {/* <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card">
                 <PieChartInteractive />
@@ -160,9 +169,9 @@ const Visualizations = () => {
                 <BarplotThreeBars />
               </div>
             </div>
-          </div>
+          </div> */}
 
-          <VisualizationsRowTrendsChart />
+          {/* <VisualizationsRowTrendsChart /> */}
         </div>
       </main>
     </>
