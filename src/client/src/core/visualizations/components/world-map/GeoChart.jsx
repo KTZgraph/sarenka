@@ -13,7 +13,8 @@ import { useEffect, useRef, useState } from 'react';
 import {
   select,
   geoPath,
-  geoMercator,
+  geoOrthographic, //mapa orkągła - zmapowanie globusu
+  geoMercator, // płaska mapa
   min,
   max,
   scaleLinear,
@@ -68,7 +69,9 @@ const GeoChart = ({ data, property }) => {
     //   WARNING projects geo-coordinates on a 2D plane
     // const projection = geoMercator();
     //  WARNING fitSize() tak żeby się mapa zmienśiła do dimensions które musze podać i musze dać referencję
-    const projection = geoMercator()
+    //   BUG - można wybrac inen mapy płaska/ orągła jak globus
+    // const projection = geoMercator() // mapa błaska
+    const projection = geoOrthographic() // mapa okrągła
       .fitSize(
         // TODO - poprawocwać nad procentami ekranu
         [width, height],
