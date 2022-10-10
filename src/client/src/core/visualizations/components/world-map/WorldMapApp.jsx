@@ -5,11 +5,12 @@ import GeoChart from './GeoChart';
 // każdy kraj jest zdefuniowany jako feature
 import data from './GeoChart.world.geo.json';
 
+import './WorldMapApp.scss';
 const WorldMapApp = () => {
   const [property, setProperty] = useState('pop_est');
 
   return (
-    <>
+    <div className='world-map-app'>
       <h2>World Map with d3-geo</h2>
       <GeoChart data={data} property={property} />
       <h2>Select property to highlight</h2>
@@ -21,7 +22,7 @@ const WorldMapApp = () => {
         <option value="name_len">Name length</option>
         <option value="gdp_md_est">GDP</option>
       </select>
-    </>
+    </div>
   );
 };
 

@@ -19,7 +19,8 @@ import {
   scaleLinear,
 } from 'd3';
 import useResizeObserver from '../../../../hooks/useResizeObserver';
-import { width } from '@mui/system';
+
+import './GeoChart.scss';
 
 /*
 Component that renders a map of Germany
@@ -67,15 +68,19 @@ const GeoChart = ({ data, property }) => {
     //   WARNING projects geo-coordinates on a 2D plane
     // const projection = geoMercator();
     //  WARNING fitSize() tak żeby się mapa zmienśiła do dimensions które musze podać i musze dać referencję
-    const projection = geoMercator().fitSize(
-      // TODO - poprawocwać nad procentami ekranu
-      [width, height],
+    const projection = geoMercator()
+      .fitSize(
+        // TODO - poprawocwać nad procentami ekranu
+        [width, height],
 
-      //  selectedCountry  to obiet z listy data.features[isdx] //generuje KRAJ- przybliża
-      // WARNING jeśli wybraliśmy kraj, to on ma się renderować zamiast całej mapy
-      // FIXME - coś po klikaniu źle przybliża
-      selectedCountry || data
-    );
+        //  selectedCountry  to obiet z listy data.features[isdx] //generuje KRAJ- przybliża
+        // WARNING jeśli wybraliśmy kraj, to on ma się renderować zamiast całej mapy
+        // FIXME - coś po klikaniu źle przybliża
+        selectedCountry || data
+      )
+      //   fix - bo jak się robi zoom in i zoom uot to d3js ma jakieś dizwne lagi - to wynika z rekalkulacji
+      // FIXME - poprawka jakoś zoom in zoom out - domyslnie to jakaaś mała wartoscć 0.5 dlatego laguje przy rekalkulacji
+      .precision(100);
 
     //WARNING   takes geojson data
     //WARNING   transform that into the d attribute of a path element
@@ -92,9 +97,16 @@ const GeoChart = ({ data, property }) => {
       // po kliknieciu na kraj ustawiam stan/zmienną na wybrany tego kraju
       .on('click', (event, feature) => {
         console.log('setSelectedCountry');
-        setSelectedCountry(feature);
+        // setSelectedCountry(feature); // propsta wersja, ale jak się odklika to i tak mapa się nie zmniejsza z samego kraju na cały świat
+        //   WARNING - sztyuckza jeśli dwa razy klikamy w ten sam kraj to zoom out - wciska całamapę a nie tylko kraj
+        setSelectedCountry(
+          selectedCountry === feature ? null : feature
+        );
       })
       .attr('class', 'country')
+      // animacja, żeby dizko nie klikało
+      .transition()
+      .duration(1000)
       // skla kolorystyczna do wypełnianie krajów
       // wartosc z obiekty jego pola  po kluczu z selecta
       .attr('fill', (feature) =>
@@ -106,28 +118,8 @@ const GeoChart = ({ data, property }) => {
   }, [data, dimensions, property, selectedCountry]);
 
   return (
-    <div
-      ref={wrapperRef}
-      style={{
-        marginBottom: '2rem',
-        width: '100%',
-        height: '100%',
-        overflow: 'visible',
-        background: 'green',
-        display: 'flex',
-        alignItems: 'center',
-        // pdding dlatego, że od zero , zero pod sidebar chce być
-        padding: '150px',
-      }}
-    >
-      <svg
-        ref={svgRef}
-        style={{
-          width: '100%',
-          height: '100%',
-          overflow: 'visible',
-        }}
-      ></svg>
+    <div ref={wrapperRef} className="geo-chart">
+      <svg ref={svgRef}></svg>
     </div>
   );
 };
