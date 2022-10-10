@@ -3,6 +3,8 @@
 # D3.js
 
 - npm i d3
+- kolekcja d3.js https://github.com/holtzy/D3-graph-gallery
+- google https://www.google.com/search?source=univ&tbm=isch&q=Dataviz&fir=JctDQqFfk99VCM%252CcdocXOTlxdxNvM%252C_%253B_5x0jglXDk6NCM%252CmAPSJHSOQ6Z8DM%252C_%253BrqOQTJVzMaKbPM%252CScCwGlRWX0PzzM%252C_%253BhrluR6jzBIZFiM%252Ca8sFua_1GtbaUM%252C_%253B3BeBzkr75LrymM%252CScCwGlRWX0PzzM%252C_%253B9YicN5YR2SonhM%252CyiPbApK3LAGulM%252C_%253ByLOaCTHqmmH4MM%252Cly1sgApmRIG0SM%252C_%253BzTDtsAQiwsrnaM%252CQ--ZC_KIy93isM%252C_%253BG5FhjqjosaZiUM%252CUFP9EjM8B-yYkM%252C_%253B-B-P9VtROaYUHM%252CSXW4LguSlyls4M%252C_&usg=AI4_-kRzKIHc6CCP6c5_qw74V7gA0wwPHA&sa=X&ved=2ahUKEwi5sKX7yNb6AhUSl4sKHfMXDOcQjJkEegQIOhAC
 - https://geojson-maps.ash.ms/ żródło jsona do mapy dla D3.js tylko trzeba dla React zmineić nazwę z końce .json
 - https://devdocs.io/d3~7/
 - https://rpruim.github.io/D3/notes/d3.html
