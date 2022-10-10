@@ -34,7 +34,11 @@ import BasicFive from '../components/basic-five/BasicFive';
 import BreakingBadTimelineApp from '../components/breaking-bad-timeline/BreakingBadTimelineApp';
 import RacingBarChartApp from '../components/racing-bar-chart/RacingBarChartApp';
 import AnimatedTreeChartApp from '../components/animated-tree-chart/AnimatedTreeChartApp';
+// TODO - z tymi siłami jakies dziwne problemy
 import PhysicsBasedForceLayoutApp from '../components/physics-based-force-layout/PhysicsBasedForceLayoutApp';
+
+// mapa
+import WorldMapApp from '../components/world-map/WorldMapApp';
 
 import './Visualizations.scss';
 
@@ -64,7 +68,7 @@ const Visualizations = () => {
           <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--full-width">
-                <PhysicsBasedForceLayoutApp />
+                <WorldMapApp />
               </div>
             </div>
           </div>
@@ -80,11 +84,17 @@ const Visualizations = () => {
           {/* <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--full-width">
+                <PhysicsBasedForceLayoutApp />
+              </div>
+            </div>
+          </div> */}
+          {/* <div className="visualizations__row">
+            <div className="visualizations_col">
+              <div className="visualizations__card  visualizations_col--full-width">
                 <AnimatedTreeChartApp />
               </div>
             </div>
           </div> */}
-
           {/* <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--full-width">
@@ -92,7 +102,6 @@ const Visualizations = () => {
               </div>
             </div>
           </div> */}
-
           {/* <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--double-width">
@@ -105,7 +114,6 @@ const Visualizations = () => {
               </div>
             </div>
           </div> */}
-
           {/* <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--double-width">
@@ -118,7 +126,6 @@ const Visualizations = () => {
               </div>
             </div>
           </div> */}
-
           {/* <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--double-width">
@@ -131,7 +138,6 @@ const Visualizations = () => {
               </div>
             </div>
           </div> */}
-
           {/* row */}
           {/* <div className="visualizations__row">
             <div className="visualizations_col">
@@ -145,7 +151,6 @@ const Visualizations = () => {
               </div>
             </div>
           </div> */}
-
           {/* row */}
           {/* <div className="visualizations__row">
             <div className="visualizations_col visualizations_col--double-width">
@@ -159,7 +164,6 @@ const Visualizations = () => {
               </div>
             </div>
           </div> */}
-
           {/* row */}
           {/* <div className="visualizations__row">
             <div className="visualizations_col">
@@ -178,7 +182,6 @@ const Visualizations = () => {
               </div>
             </div>
           </div> */}
-
           {/* <VisualizationsRowTrendsChart /> */}
         </div>
       </main>

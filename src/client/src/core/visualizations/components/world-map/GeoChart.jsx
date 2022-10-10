@@ -18,7 +18,7 @@ const GeoChart = ({ data, property }) => {
     // use resized dimensions
     // but fall back to getBoundingClientReact, if no dimension yet
     const { widt, height } =
-      dimensions || wrapperRef.current.getBoundingClientReact();
+      dimensions || wrapperRef.current.getBoundingClientRect();
   }, [data, dimensions, property]);
 
   return (
