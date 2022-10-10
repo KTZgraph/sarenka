@@ -3,6 +3,9 @@
 # D3.js
 
 - npm i d3
+- https://devdocs.io/d3~7/
+- https://rpruim.github.io/D3/notes/d3.html
+- http://using-d3js.com/
 - google analytics d3js
 - google grid-analytics dashboard
 - https://www.google.com/imgres?imgurl=https%3A%2F%2Fanmolkoul.files.wordpress.com%2F2015%2F07%2Fgridpreview.gif&imgrefurl=https%3A%2F%2Fwww.kdnuggets.com%2F2015%2F07%2Fvisuals-interactive-dashboard-gridster-d3js.html&tbnid=JNAhN5vSm5oErM&vet=12ahUKEwiMgZ3rhNb6AhUhCBAIHdewA6gQMygBegUIARCtAQ..i&docid=52G7VWy9wqvzIM&w=1366&h=674&q=analytics%20d3js&ved=2ahUKEwiMgZ3rhNb6AhUhCBAIHdewA6gQMygBegUIARCtAQ

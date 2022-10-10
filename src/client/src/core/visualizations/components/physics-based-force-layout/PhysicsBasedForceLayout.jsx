@@ -100,6 +100,16 @@ const PhysicsBasedForceLayout = ({ data }) => {
           .attr('x', (node) => node.x)
           .attr('y', (node) => node.y);
       });
+
+    //   trigger na zdarzenie
+    svg.on('mousemove', (event) => {
+      //  FIXME - dziwne obliczanie aktualnej pozycji myszy
+      // funckja mouse
+      // https://devdocs.io/d3~7/d3-selection#selection_on .pageX .pageY albo .clientX clientY na obiekcie event
+      console.log('event');
+      console.log(event.pageX);
+      console.log(event.pageY);
+    });
   }, [data, dimensions]);
 
   return (
