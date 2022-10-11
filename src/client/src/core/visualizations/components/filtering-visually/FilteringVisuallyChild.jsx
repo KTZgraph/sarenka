@@ -24,7 +24,12 @@ import { useRef, useEffect } from "react";
 import useResizeObserver from "../../../../hooks/useResizeObserver";
 
 // selection to teraz props z rodzica
-const FilteringVisuallyChild = ({ data, selection }) => {
+const FilteringVisuallyChild = ({
+  data,
+  selection,
+  // props w domyślną wartością
+  clipPathId = "clipPath-id",
+}) => {
   const svgRef = useRef();
   const wrapperRef = useRef();
   const dimensions = useResizeObserver(wrapperRef);
@@ -42,11 +47,15 @@ const FilteringVisuallyChild = ({ data, selection }) => {
     const xScale = scaleLinear()
       // selection array jako zakres osi X - selection to ta cześć zaznczona przez brusha w komponencie rodzica
       .domain(selection)
-      .range([0, width]);
+      // .range([0, width]);
+      // tak samo padding do osi OX
+      .range([10, width - 10]);
 
     const yScale = scaleLinear()
       .domain([0, max(data)])
-      .range([height, 0]);
+      // .range([height, 0]);
+      // WARNING dodanie paddigu od osi OY żeby tak od brzegu do brzegu wartości nie były
+      .range([height - 10, 10]);
 
     const lineGenerator = line()
       .x((d, idx) => xScale(idx))
@@ -91,6 +100,8 @@ const FilteringVisuallyChild = ({ data, selection }) => {
     svg.select(".y-axis").call(yAxis);
   }, [data, dimensions, selection]);
 
+  // BUG jak się używam <clipPath id="myClipPath-id"> z tym samym id to są problemy
+  // BUG żeby to naprawić, trzeba pozwolić komponentom na zmianę tego id np przez extracting this value  "myClipPath-id" by the prop for example
   return (
     <>
       <div ref={wrapperRef} className="filtering-visually-chart">
@@ -99,14 +110,18 @@ const FilteringVisuallyChild = ({ data, selection }) => {
           {/* cmipPath - okno przed SVG definiowanie co ma być widoczne*/}
           <defs>
             {/* clipPath musi mieć id */}
-            <clipPath id="myClipPath-id">
+            {/* <clipPath id="myClipPath-id"> */}
+            {/* BUG roziwązanie problemu rtego samego id w cliPath */}
+            <clipPath id={clipPathId}>
               {/* trzeba zdefiniować kształ okna - prostokąta tutaj od góra lewo punk do prawo dół punk*/}
               <rect x="0" y="0" width="100%" height="100%" />
             </clipPath>
           </defs>
           {/* dopisanie clipPath do nowej grupy bo chcę windows położyć przed wykresem, ale nie  przed osiami, żeby dalej były widoczne*/}
           {/* dodaje isę przez url z id cliPath */}
-          <g className="content" clipPath="url(#myClipPath-id)" />
+          {/* <g className="content" clipPath="url(#myClipPath-id)" /> */}
+          {/* BUG roziwązanie problemu rtego samego id w cliPath */}
+          <g className="content" clipPath={`url(#${clipPathId})`} />
           <g className="x-axis" />
           <g className="y-axis" />
         </svg>
