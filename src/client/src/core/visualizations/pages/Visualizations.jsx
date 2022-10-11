@@ -40,8 +40,11 @@ import PhysicsBasedForceLayoutApp from "../components/physics-based-force-layout
 // mapa
 import WorldMapApp from "../components/world-map/WorldMapApp";
 
-// filtry po fragmencie wykresu
+// filtry po fragmencie wykresu + wykres z podglądem
 import FilteringVisuallyApp from "../components/filtering-visually/FilteringVisuallyApp";
+
+// wykresy słupkowe z podziałem kolorystycznym na wysokości
+import StackedBarChartApp from "../components/stacked-bar-chart/StackedBarChartApp";
 
 import "./Visualizations.scss";
 
@@ -71,10 +74,19 @@ const Visualizations = () => {
           <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--full-width">
-                <FilteringVisuallyApp />
+                <StackedBarChartApp />
               </div>
             </div>
           </div>
+
+          {/* <div className="visualizations__row">
+            <div className="visualizations_col">
+              <div className="visualizations__card  visualizations_col--full-width">
+                <FilteringVisuallyApp />
+              </div>
+            </div>
+          </div> */}
+
           {/* <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--full-width">
