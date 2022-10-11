@@ -27,7 +27,9 @@ const FilteringVisuallyApp = () => {
         )} */}
         {/* WARNING - funckja jako dizecko - komponet funcktujny żeby przekazać wartości do dizeckza */}
         {/* argument z  FilteringVisually przekazany do dziecka jest dostępny w callbacku*/}
-        {(selection) => <h1>Hello {selection.join(", ")}</h1>}
+        {(selection) => (
+          <FilteringVisuallyChild data={data} selection={selection} />
+        )}
       </FilteringVisually>
       <button onClick={onAddDataClick}>Add data</button>
     </div>

@@ -9,6 +9,7 @@ można dodać nowe dane i wybrac za pomocą bruch nowe dane
 
 `brushX` funckja z d3.js
 
+
 */
 
 import {
