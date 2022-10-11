@@ -35,7 +35,7 @@ const FilteringVisually = ({ data }) => {
 
   //   wybrana pozycja brusha
   // WARNING defaultowo brush JAKO INDEX wartości, NIE PIKSELE - default index selection
-  const [selection, setSelection] = useState([0, 1.5]); 
+  const [selection, setSelection] = useState([0, 1.5]);
 
   // BUG  usePrevious - custom hook
   const previousSelection = usePrevious(selection);
@@ -49,7 +49,9 @@ const FilteringVisually = ({ data }) => {
 
     //   scales + line generator
     const xScale = scaleLinear()
-      .domain([0, data.length - 1])
+      //   .domain([0, data.length - 1])
+      //   FIX - bo bez tego są wartości ujemny pod pod osią Y
+      .domain([0, data.length])
       .range([0, width]);
 
     // do  mapowanie wartości na osi OY
@@ -81,7 +83,16 @@ const FilteringVisually = ({ data }) => {
       .join("circle")
       .attr("class", "myDot")
       .attr("stroke", "black")
-      .attr("r", 2)
+      //   .attr("r", 2)
+      // WARNING - zmiana styli kółek jeśli sa w polu brush - selection to  lista dwóch współrzednych na osi X
+      //   jeśli jest w polu to promień kółka to 4
+      .attr("r", (value, idx) =>
+        idx >= selection[0] && idx <= selection[1] ? 4 : 2
+      )
+      //   tak samo zmiana koloru wypęłnienia jeśli kólka są w polu brush
+      .attr("fill", (value, idx) =>
+        idx >= selection[0] && idx <= selection[1] ? "orange" : "black"
+      )
       .attr("cx", (value, idx) => xScale(idx))
       .attr("cy", yScale);
 
@@ -148,14 +159,25 @@ const FilteringVisually = ({ data }) => {
   }, [data, dimensions, selection]);
 
   return (
-    <div ref={wrapperRef} className="filtering-visually-chart">
-      <svg ref={svgRef}>
-        {/* WARNING grupy są ważne, bo brush też będzie renderowany jako element HTML */}
-        <g className="x-axis" />
-        <g className="y-axis" />
-        <g className="brush" />
-      </svg>
-    </div>
+    <>
+      <div ref={wrapperRef} className="filtering-visually-chart">
+        <svg ref={svgRef}>
+          {/* WARNING grupy są ważne, bo brush też będzie renderowany jako element HTML */}
+          <g className="x-axis" />
+          <g className="y-axis" />
+          <g className="brush" />
+        </svg>
+      </div>
+      {/* tag small fo infgormacji o zakresie wybranych przez brush danych */}
+      <small style={{ marginBottom: "1rem", marginRight: "50px" }}>
+        Selected values: [
+        {data
+          // fitltrowqanie wartości które są w zakresie brusha
+          .filter((value, idx) => idx >= selection[0] && idx <= selection[1])
+          .join(", ")}
+        ]
+      </small>
+    </>
   );
 };
 
