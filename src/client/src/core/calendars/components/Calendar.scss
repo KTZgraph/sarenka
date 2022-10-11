@@ -1,0 +1,124 @@
+$calendar-dark-text: #f8fbff;
+$calendar-light-body: #f3f8fe;
+$calendar-light-main: #fdfdfd;
+$calendar-light-second: #c3c2c8;
+$calendar-light-hover: #f0f0f0;
+$calendar-light-text: #151426;
+$calendar-light-btn: #9796f0;
+$calendar-blue: #0000ff;
+$calendar-white: #fff;
+$calendar-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+$calendar-font-family: consolas;
+
+.calendar__container {
+  font-size: 1.4rem;
+  font-family: $calendar-font-family;
+  width: max-content;
+  height: max-content;
+  position: relative;
+  display: flex;
+  padding: 2% 0px 0px 0px;
+  justify-content: center;
+  top: 10%;
+  right: 0%;
+  width: 100%;
+  height: 100%;
+}
+
+.calendar {
+  height: 610px;
+  width: max-content;
+  background-color: white;
+  border-radius: 25px;
+  overflow: hidden;
+  padding: 30px 50px 0px 50px;
+  box-shadow: $calendar-shadow;
+}
+
+.celendar-header {
+  background-color: #9796f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  color: $calendar-white;
+  padding: 10px;
+}
+
+.calendar-body {
+  // WARNING pad CSS
+  // https://developer.mozilla.org/en-US/docs/Web/CSS/@counter-style/pad
+  pad: 10px;
+}
+
+.calendar-week-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-weight: 600;
+  cursor: pointer;
+  color: rgb(104, 104, 104);
+}
+
+.calendar-week-days div:hover {
+  color: black;
+  transform: scale(1.2);
+  transition: all 0.2s ease-in-out;
+}
+
+.calendar-week-days div {
+  display: grid;
+  place-items: center;
+  //   color: $calendar-light-second;
+  height: 50px;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  color: $calendar-light-text;
+}
+
+.calendar-days div {
+  width: 37px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  position: relative;
+  cursor: pointer;
+  animation: to-top 1s forwards;
+}
+
+.month-picker {
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.month-picker:hover {
+  background-color: $calendar-light-hover;
+  color: $calendar-light-text;
+}
+
+.year-picker {
+  display: flex;
+  align-items: center;
+}
+
+.year-change {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 0px 10px;
+  cursor: pointer;
+}
+
+.year-change:hover {
+  background-color: $calendar-light-btn;
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.12);
+}

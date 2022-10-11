@@ -19,6 +19,9 @@ import Diagrams from "./core/diagrams/pages/Diagrams";
 // tablica peirwiiastków
 import PeriodicTablePage from "./core/periodic-table/pages/PeriodicTablePage";
 
+// kelndarz mój, bo temte z react sa płatne
+import CalendarPage from "./core/calendars/pages/CalendarPage";
+
 import "./App.scss";
 
 function App() {
@@ -39,6 +42,7 @@ function App() {
             <Route path="diagrams" element={<Diagrams />} />
             <Route path="visualizations" element={<Visualizations />} />
             <Route path="periodic-table" element={<PeriodicTablePage />} />
+            <Route path="calendar" element={<CalendarPage />} />
 
             {/* <Route path="register" element={<Register />} /> */}
           </Route>
