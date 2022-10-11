@@ -43,6 +43,14 @@ const data = [
 
 const allKeys = ["🥑", "🍌", "🍆"];
 
+// OBIWEKT kolorów potrzeban do kolorowania warstw słupków po klucach dancyh
+/*     .attr("fill", (layer) => {
+        console.log("layer", layer);
+        // tu zwraca kolor z listy po kluczu, gdfzie kluczami sa te śmieszbe emotki jedzocznka
+        // sama lista jest propsem z rodzica
+        return colors[layer.key];
+      })
+*/
 const colors = {
   "🥑": "green",
   "🍌": "orange",
@@ -56,6 +64,7 @@ const StackedBarChartApp = () => {
       <h2>Stacked Bar Chart with D3 </h2>
       <StackedBarChart data={data} keys={keys} colors={colors} />
 
+      {/* keys - fajniusie jak oddlikam któeś dane to wyrenderuje się nowy wykres z np tylko dwoma kluczami */}
       <div className="fields">
         {allKeys.map((key) => (
           <div key={key} className="field">

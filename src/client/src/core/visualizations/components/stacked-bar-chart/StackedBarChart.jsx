@@ -61,7 +61,9 @@ const StackedBarChart = ({ data, keys, colors }) => {
       // domain input to lata, map zwraca listę
       //   scaleBand sykretna - lata
       .domain(data.map((d) => d.year))
-      .range([0, width]);
+      .range([0, width])
+      //   padding bo słupki poziome poprzyklejane
+      .padding(0.25);
 
     // WARNING OY
     //   sklaa OY tutaj liniowa
@@ -88,6 +90,14 @@ const StackedBarChart = ({ data, keys, colors }) => {
       //   WARNING wszsytko napisane po tym join, jest uruchaminiane dla każdej grupy czyli trzy razy
       // dodaje klase, zeby można je było potem updatować
       .attr("class", "layer")
+      // dodanwaie kolorowania warstw
+      .attr("fill", (layer) => {
+        console.log("layer", layer);
+        // tu zwraca kolor OBIEKT kolorów i po kluczu, gdfzie kluczami sa te śmieszbe emotki jedzocznka
+        // sam OBIEKT jest propsem z rodzica
+        return colors[layer.key];
+      })
+
       //   hej, d3 dla wszystkich grup które stworzyłeś, prozszę wybierz wszystkie istniejące prostokąty (po jednym dla jedzonka jednego)
       // i zsynchronizuje je z danymi - dane to jedna wartwa z katulanego zbioru layers
       // teraz tworzymy nowy prostokąt dla każdej sekwnecji tej warstwy
@@ -95,7 +105,21 @@ const StackedBarChart = ({ data, keys, colors }) => {
       //   to layer ejst z brane z grupy w której aktualnie jesteśmy
       .data((layer) => layer)
       //   teraz można join żeby stworzył prostokąt dla każdej tej wartswy
-      .join("rect");
+      .join("rect")
+      //   teraz trzeba wziąć x na osi poziomej z sekwnecji danych
+      .attr("x", (sequence) => {
+        console.log("sequence: ", sequence);
+        return xScale(sequence.data.year);
+      })
+      //   szerokosc słupka - tutaj szserokosć prostokąta
+      .attr("width", xScale.bandwidth())
+      // WARNING  teraz wyokosć zmapowana na piksele
+      //   trzeba pamieać że początek prosstokąta w svg w d3.js to lewy góry róg, bo tuaj punkt 0,0 jest NIEintuicyjny
+      //   w sekscwnecji drugra wartosc sequnece[1] oznacza do kiedyma rosnac słupek jeszce tę wartosc trzeba to przeskalować na canavas
+      .attr("y", (sequence) => yScale(sequence[1]))
+      //   sequence[0]) - bootom edge od zego zaczyna np baban od 20
+      //   sequence[1]) - top edge do czego rośnie np babn do 45
+      .attr("height", (sequence) => yScale(sequence[0]) - yScale(sequence[1]));
 
     //******************************************************************** */
 
