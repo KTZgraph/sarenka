@@ -1,8 +1,18 @@
 <!-- FIXME - mirage dummy server podłączać przed wrzuceniem na serwer -->
 
+# chart.js
+
+- https://react-chartjs-2.js.org/examples/radar-chart/
+- https://www.youtube.com/watch?v=6jc_GKVNkSs
+
 # D3.js
 
 - npm i d3
+- radarchart https://stackoverflow.com/questions/72259679/chartjs-radar-chart-hover-text
+- https://jsfiddle.net/qejb9ntu/
+- heatmap "d3": "6.7.0", https://codesandbox.io/s/heatmap-d3-tzpnu?file=/package.json
+- heatmap basic https://d3-graph-gallery.com/graph/heatmap_basic.html
+- https://d3-graph-gallery.com/heatmap
 - kolekcja d3.js https://github.com/holtzy/D3-graph-gallery
 - google https://www.google.com/search?source=univ&tbm=isch&q=Dataviz&fir=JctDQqFfk99VCM%252CcdocXOTlxdxNvM%252C_%253B_5x0jglXDk6NCM%252CmAPSJHSOQ6Z8DM%252C_%253BrqOQTJVzMaKbPM%252CScCwGlRWX0PzzM%252C_%253BhrluR6jzBIZFiM%252Ca8sFua_1GtbaUM%252C_%253B3BeBzkr75LrymM%252CScCwGlRWX0PzzM%252C_%253B9YicN5YR2SonhM%252CyiPbApK3LAGulM%252C_%253ByLOaCTHqmmH4MM%252Cly1sgApmRIG0SM%252C_%253BzTDtsAQiwsrnaM%252CQ--ZC_KIy93isM%252C_%253BG5FhjqjosaZiUM%252CUFP9EjM8B-yYkM%252C_%253B-B-P9VtROaYUHM%252CSXW4LguSlyls4M%252C_&usg=AI4_-kRzKIHc6CCP6c5_qw74V7gA0wwPHA&sa=X&ved=2ahUKEwi5sKX7yNb6AhUSl4sKHfMXDOcQjJkEegQIOhAC
 - https://geojson-maps.ash.ms/ żródło jsona do mapy dla D3.js tylko trzeba dla React zmineić nazwę z końce .json
@@ -273,9 +283,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ```js
 <div
   className={
-    params.row.status === 'active'
+    params.row.status === "active"
       ? `${styles.cellWithStatus} ${styles.active}`
-      : params.row.status === 'passive'
+      : params.row.status === "passive"
       ? `${styles.cellWithStatus} ${styles.passive}`
       : `${styles.cellWithStatus} ${styles.pending}`
   }
@@ -327,7 +337,7 @@ a
 
 ```js
 const a = [1, 2, 3];
-const b = ['a', 'b'];
+const b = ["a", "b"];
 a.concat(b);
 console.log(a); // [1, 2, 3, "a", "b"]
 ```

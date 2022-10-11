@@ -1,6 +1,7 @@
 /*
 https://www.youtube.com/watch?v=bPNkdoEqfVY&list=PLDZ4p-ENjbiPo4WH7KdHjh_EMI7Ic8b2B&index=16
 
+
 bruch w d3.js to jest ten szary prostokąt na wykresie który można przesuwać
 pozwala na wybranie podzzbioru (subportion of my chart) I can then extract and display values widoczne po dywkresem
 będzie responsywne
@@ -28,7 +29,8 @@ import usePrevious from "../../../../hooks/usePrevious";
 
 import "./FilteringVisually.scss";
 
-const FilteringVisually = ({ data }) => {
+// props children do renderowania dzieci komponentu
+const FilteringVisually = ({ data, children }) => {
   const svgRef = useRef();
   const wrapperRef = useRef();
   const dimensions = useResizeObserver(wrapperRef);
@@ -177,6 +179,9 @@ const FilteringVisually = ({ data }) => {
           .join(", ")}
         ]
       </small>
+
+      {/* dzieci tego komponentu - zamiana na funckję żeby przekazać aktualną wartosc selection z brusha*/}
+      {children(selection)}
     </>
   );
 };
