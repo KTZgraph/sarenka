@@ -1,5 +1,13 @@
 <!-- FIXME - mirage dummy server podłączać przed wrzuceniem na serwer -->
 
+# REDUX - priorytet
+
+- https://www.youtube.com/watch?v=NqzdVN2tyvQ
+
+## alternatywa dla postmana
+
+- https://www.youtube.com/watch?v=MTrj3tNf9jA
+
 # TODO
 
 - https://www.youtube.com/watch?v=MGRuvlXzZHs&list=PLDZ4p-ENjbiPo4WH7KdHjh_EMI7Ic8b2B&index=19
@@ -11,6 +19,17 @@
 - https://codesandbox.io/s/i5v08
 - https://www.youtube.com/watch?v=xPuYbmmPdEM&list=PL4cUxeGkcC9hk02lFb6EkdXF2DYGl4Gg4 CSS grid
 - https://github.com/muratkemaldar/periodic-table-css peridoc table
+
+# Moder Website - RESPONSWYNOŚĆ
+
+- https://www.youtube.com/watch?v=_oO4Qi5aVZs
+- https://www.youtube.com/watch?v=LMagNcngvcU
+- https://www.youtube.com/watch?v=EJxeMbDTkVI animacja UI
+- https://www.youtube.com/watch?v=jx5hdo50a2M are chart, line chart
+
+# Figma
+
+- https://www.youtube.com/watch?v=2C2sxQ4hiS8
 
 # tabelki
 
