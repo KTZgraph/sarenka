@@ -32,7 +32,9 @@ const FilteringVisually = ({ data }) => {
 
   //   wybrana pozycja brusha
   // WARNING defaultowo brush JAKO INDEX wartości, NIE PIKSELE - default index selection
-  const [selection, seteSelection] = useState([0, 1.5]);
+  //   BUG - u mnie brush działa tylko z wartościami pikselowymi
+  //   const [selection, setSelection] = useState([0, 1.5]); // BUG
+  const [selection, setSelection] = useState([0, 100]);
 
   //   will be called initially and on every dta change
   useEffect(() => {
@@ -115,6 +117,7 @@ const FilteringVisually = ({ data }) => {
         // bez tego za każdym razem jak wykres się zrerenderuje (np po zmianie rozmiaru okna przeglądartki) to brush jest na początku 0, 100 pikseli
         // dodatkowo jajk moje kółka sa zaznaczone brushem to chce żeby wyglądały te zaznaczone inaczej
         console.log(indexSelection);
+        // seteSelection(indexSelection);
       });
 
     // renderowanie brusha w svg
@@ -124,10 +127,14 @@ const FilteringVisually = ({ data }) => {
       .select(".brush")
       .call(brush)
       // brush.move, [0, 100] wprowadza zakres brush na samym początku od zera o 100
-      .call(brush.move, [0, 100]);
+      //   .call(brush.move, [0, 100]);
+      //   WARNING defaultowa pozycja brusha - z index value mapuję na piksele
+      //   brush.move wymaga wartości pikselowej jako arumentu
+      //   .call(brush.move, selection.map(xScale.invert));
+      .call(brush.move, selection);
 
     // koniec useEffect
-  }, [data, dimensions]);
+  }, [data, dimensions, selection]);
 
   return (
     <div ref={wrapperRef} className="filtering-visually-chart">
