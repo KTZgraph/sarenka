@@ -1,4 +1,5 @@
 /*
+https://www.youtube.com/watch?v=bXN9anQN_kQ&list=PLDZ4p-ENjbiPo4WH7KdHjh_EMI7Ic8b2B&index=16
 https://youtu.be/bXN9anQN_kQ?t=391
 d3.stack() główna cześć tego tutroialu 
 
@@ -14,6 +15,7 @@ import {
   max,
   scaleLinear,
   axisLeft,
+  stackOrderAscending,
 } from "d3";
 import { useEffect, useRef } from "react";
 import useResizeObserver from "../../../../hooks/useResizeObserver";
@@ -33,7 +35,9 @@ const StackedBarChart = ({ data, keys, colors }) => {
     // te warstwy/layers są nazywane "series"
     const stackGenerator = stack()
       // musze wyrażnie powiedziec, które klucze wartości chcę żeby był nad soba, tutja keys jako props otrzymuję
-      .keys(keys);
+      .keys(keys)
+      //   dodatkwoy atrbut - można sortować -p sprawi że slupki od lewej do prawej będą nie po roku a po wysokosći od najniższego do najwyższego
+      .order(stackOrderAscending);
 
     //   zwracajedną listę długiosc 3 bo takie mamy klucze 3array z obiektami array długosc 5 bo 5 lat rtóżnych
     // widac że wartości sa takie jak mają być na słupku np dla babanaów dla roku 1990 to bedzie od 20 do 40px
