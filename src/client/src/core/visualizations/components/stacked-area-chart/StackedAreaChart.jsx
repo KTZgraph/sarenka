@@ -5,7 +5,6 @@ scalePoint() - skla dla wykresy chart area
 
 import {
   select,
-  scaleBand,
   axisBottom,
   stack,
   max,

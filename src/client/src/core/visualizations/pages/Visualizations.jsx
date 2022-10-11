@@ -49,6 +49,9 @@ import StackedBarChartApp from "../components/stacked-bar-chart/StackedBarChartA
 // wykres słupkowy z seriami danych i area chart razem
 import StackedAreaChartApp from "../components/stacked-area-chart/StackedAreaChartApp";
 
+// wykres liniowy z opcją zoom
+import ZoomableLineChartApp from "../components/zoomable-line-chart/ZoomableLineChartApp";
+
 import "./Visualizations.scss";
 
 const VisualizationsRowTrendsChart = () => (
@@ -77,10 +80,18 @@ const Visualizations = () => {
           <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--full-width">
-                <StackedAreaChartApp />
+                <ZoomableLineChartApp />
               </div>
             </div>
           </div>
+          {/* 
+          <div className="visualizations__row">
+            <div className="visualizations_col">
+              <div className="visualizations__card  visualizations_col--full-width">
+                <StackedAreaChartApp />
+              </div>
+            </div>
+          </div> */}
 
           {/* <div className="visualizations__row">
             <div className="visualizations_col">
