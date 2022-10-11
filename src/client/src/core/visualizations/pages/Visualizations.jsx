@@ -5,42 +5,45 @@ Podpatrzeć
 - https://www.reddit.com/r/dataisbeautiful/comments/xxqf8a/oc_defense_stocks_have_been_unable_to_hold_onto/
  */
 
-import Navbar from '../../../shared/navbar/Navbar';
-import Sidebar from '../../../shared/sidebar/Sidebar';
+import Navbar from "../../../shared/navbar/Navbar";
+import Sidebar from "../../../shared/sidebar/Sidebar";
 
-import TrendsChart from '../components/trends-char/TrendsChart';
-import GroupedBarplot from '../components/grouped-barplot/GroupedBarplot';
-import BarplotThreeBars from '../components/barplot-three-bars/BarplotThreeBars';
+import TrendsChart from "../components/trends-char/TrendsChart";
+import GroupedBarplot from "../components/grouped-barplot/GroupedBarplot";
+import BarplotThreeBars from "../components/barplot-three-bars/BarplotThreeBars";
 
 // wykresy kołowe
-import PieChartInteractive from '../components/pie-chart-interactive/PieChartInteractive';
-import PieChartLabels from '../components/pie-chart-labels/PieChartLabels';
+import PieChartInteractive from "../components/pie-chart-interactive/PieChartInteractive";
+import PieChartLabels from "../components/pie-chart-labels/PieChartLabels";
 
 // area charts
-import BasicAreaChart from '../components/basic-area-chart/BasicAreaChart';
+import BasicAreaChart from "../components/basic-area-chart/BasicAreaChart";
 
 // heatmap jak github można pokazac natężenie podatności
-import CalendarHeatmap from '../components/calendar-heatmap/CalendarHeatmap';
+import CalendarHeatmap from "../components/calendar-heatmap/CalendarHeatmap";
 
 // bazowe pod responswyność i lepsze zażadzanie stanem reacta
-import BasicOne from '../components/basic-one/BasicOne';
-import BasicOneRemastered from '../components/basic-one-remastered/BasicOneRemastered';
-import BasicTwo from '../components/basic-two/BasicTwo';
-import BasicThree from '../components/basic-three/BasicThree';
-import BasicFour from '../components/basic-four/BasicFour';
-import BasicFive from '../components/basic-five/BasicFive';
+import BasicOne from "../components/basic-one/BasicOne";
+import BasicOneRemastered from "../components/basic-one-remastered/BasicOneRemastered";
+import BasicTwo from "../components/basic-two/BasicTwo";
+import BasicThree from "../components/basic-three/BasicThree";
+import BasicFour from "../components/basic-four/BasicFour";
+import BasicFive from "../components/basic-five/BasicFive";
 
 // łamanie złej linii czasowej
-import BreakingBadTimelineApp from '../components/breaking-bad-timeline/BreakingBadTimelineApp';
-import RacingBarChartApp from '../components/racing-bar-chart/RacingBarChartApp';
-import AnimatedTreeChartApp from '../components/animated-tree-chart/AnimatedTreeChartApp';
+import BreakingBadTimelineApp from "../components/breaking-bad-timeline/BreakingBadTimelineApp";
+import RacingBarChartApp from "../components/racing-bar-chart/RacingBarChartApp";
+import AnimatedTreeChartApp from "../components/animated-tree-chart/AnimatedTreeChartApp";
 // TODO - z tymi siłami jakies dziwne problemy
-import PhysicsBasedForceLayoutApp from '../components/physics-based-force-layout/PhysicsBasedForceLayoutApp';
+import PhysicsBasedForceLayoutApp from "../components/physics-based-force-layout/PhysicsBasedForceLayoutApp";
 
 // mapa
-import WorldMapApp from '../components/world-map/WorldMapApp';
+import WorldMapApp from "../components/world-map/WorldMapApp";
 
-import './Visualizations.scss';
+// filtry po fragmencie wykresu
+import FilteringVisuallyApp from "../components/filtering-visually/FilteringVisuallyApp";
+
+import "./Visualizations.scss";
 
 const VisualizationsRowTrendsChart = () => (
   <div className="visualizations__row">
@@ -51,8 +54,8 @@ const VisualizationsRowTrendsChart = () => (
     </div>
     <div className="visualizations_col">
       <div className="visualizations__card">
-        tableka z danymi do podatności na rok + zaznaczenie row
-        tabelkii po kliknieciu na słupek
+        tableka z danymi do podatności na rok + zaznaczenie row tabelkii po
+        kliknieciu na słupek
       </div>
     </div>
   </div>
@@ -68,11 +71,17 @@ const Visualizations = () => {
           <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--full-width">
-                <WorldMapApp />
+                <FilteringVisuallyApp />
               </div>
             </div>
           </div>
-
+          {/* <div className="visualizations__row">
+            <div className="visualizations_col">
+              <div className="visualizations__card  visualizations_col--full-width">
+                <WorldMapApp />
+              </div>
+            </div>
+          </div> */}
           {/* <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--full-width">
@@ -80,7 +89,6 @@ const Visualizations = () => {
               </div>
             </div>
           </div> */}
-
           {/* <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--full-width">
