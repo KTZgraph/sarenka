@@ -20,7 +20,7 @@ import {
   axisLeft,
   brushX,
 } from "d3";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import useResizeObserver from "../../../../hooks/useResizeObserver";
 
 import "./FilteringVisually.scss";
@@ -29,6 +29,10 @@ const FilteringVisually = ({ data }) => {
   const svgRef = useRef();
   const wrapperRef = useRef();
   const dimensions = useResizeObserver(wrapperRef);
+
+  //   wybrana pozycja brusha
+  // WARNING defaultowo brush JAKO INDEX wartości, NIE PIKSELE - default index selection
+  const [selection, seteSelection] = useState([0, 1.5]);
 
   //   will be called initially and on every dta change
   useEffect(() => {
@@ -92,10 +96,26 @@ const FilteringVisually = ({ data }) => {
     // initializacaj brusha
     // extent pozwala na poruszanie się brush - pole od lewego gónego wierzchołka, do prawgo dolnego
     // BUG extent przyjmuje listę zagnieżdżoną jako argument [!]
-    const brush = brushX().extent([
-      [0, 0],
-      [width, height],
-    ]);
+    const brush = brushX()
+      .extent([
+        [0, 0],
+        [width, height],
+      ])
+      // eventy na który reaguje brush
+      // start od początku
+      // move kiedy się rusza
+      // end kiedy przestaje się ruszać bruch
+      .on("start brush end", (event) => {
+        // jak brush jest nullem np odkilkaliśmy z boku to event nie ma takiego atrybutu i rzuca błedem
+        if (!event.selection) return;
+
+        // skal xScale jest w stanie z pikseli odwórić wartosc na index
+        const indexSelection = event.selection.map(xScale.invert);
+        // trę wartosc chcę zapisać w useState żeby potem użyć w .call(brush.move, [0,100])
+        // bez tego za każdym razem jak wykres się zrerenderuje (np po zmianie rozmiaru okna przeglądartki) to brush jest na początku 0, 100 pikseli
+        // dodatkowo jajk moje kółka sa zaznaczone brushem to chce żeby wyglądały te zaznaczone inaczej
+        console.log(indexSelection);
+      });
 
     // renderowanie brusha w svg
     // svg.select(".brush").call(brush);
