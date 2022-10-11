@@ -4,9 +4,10 @@ https://www.youtube.com/watch?v=dxUyI2wfYSI&list=PLDZ4p-ENjbiPo4WH7KdHjh_EMI7Ic8
 ten zoom ma zastosowanie do każdego liniowego wykresu, cyz też wykresu któy używa linear or continuous scales
 na podstawie plkiu client\src\core\visualizations\components\filtering-visually\FilteringVisuallyChild.jsx
 
+
+Najlepiej się powiększa przez zmianę skali xScale i yScale
 */
 
-import { height } from "@mui/system";
 import {
   select,
   scaleLinear,
@@ -17,8 +18,9 @@ import {
   axisLeft,
   //   zoom z d3.js do powiększania wykresów
   zoom,
+  zoomTransform,
 } from "d3";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 
 import useResizeObserver from "../../../../hooks/useResizeObserver";
 
@@ -28,6 +30,7 @@ const ZoomableLineChart = ({ data, clipPathId = "myZoomableLineChart-id" }) => {
   const svgRef = useRef();
   const wrapperRef = useRef();
   const dimensions = useResizeObserver(wrapperRef);
+  const [currentZoomState, setCurrentZoomState] = useState();
 
   useEffect(() => {
     const svg = select(svgRef.current);
@@ -39,6 +42,18 @@ const ZoomableLineChart = ({ data, clipPathId = "myZoomableLineChart-id" }) => {
     const xScale = scaleLinear()
       .domain([0, data.length - 1])
       .range([10, width - 10]);
+
+    if (currentZoomState) {
+      // WARNING nadpisywanie domeny osi X
+      // rescaleX funckja na obiekcie
+      const newXScale = currentZoomState.rescaleX(xScale);
+      console.log("xScale | newXScale");
+      console.log(xScale.domain());
+      console.log(newXScale.domain());
+      //WARNING   trrzeba teraz nadpisac xScale jego domain
+      //   teraz pwoiększanie i przesuwanie działa
+      xScale.domain(newXScale.domain());
+    }
 
     const yScale = scaleLinear()
       .domain([0, max(data)])
@@ -85,22 +100,29 @@ const ZoomableLineChart = ({ data, clipPathId = "myZoomableLineChart-id" }) => {
     // funckaj zoom zwraca funckję, trzeba zdefiniować trzy różne rzeczy
     // 1) scaleExtend - jak daleko mozemy zoom in and zoom out w svg - zmiejnszyć 2 razy (max zoom out), maskzymalnie powiekszyć 5 razy (max zoom in) w naszym środku svg
     // 2) translateExtent basically limits our zoom behaviour when we click and hold the mouse to drag or navigate inside of our line chart
+    // -> jest po to by dodwać limit do całego zachowania zoom
     //  -> od punkut ).) góra lewo do prawo dów szerokosc,wyokość
     // 3) .on("zoom",  -  zoomhandler - the place where we want to handle what actually happens when a zoom event is triggered
     const zoomBehaviour = zoom()
       .scaleExtent([0.5, 5])
+      //   BUG jak nie ma w ogóle translateExtent to można wykres przesuwać prawo/lewo w nieskońcoznosć i zoomowac też można w nieskońcoznosć!
       .translateExtent([
-        [0, 0],
-        [width, height],
+        [-100, 0],
+        [width + 100, height],
       ])
       .on("zoom", () => {
-        console.log("zoomed!");
+        // zoomTransform funckja zd3.js wymaga jakieś elementu DOM
+        // const zoomState = zoomTransform(svgRef.current); //alternatywnie
+        const zoomState = zoomTransform(svg.node());
+        // zapisanie danych o zoomie k-współczynnik, x, y koordynaty
+        setCurrentZoomState(zoomState);
+        console.log("zoomed!", zoomState);
       });
 
     //   połączenie zooma z svg, zoomBehaviour to funckja któa przyjmuje selekcje
     svg.call(zoomBehaviour);
     // zoomBehaviour(svg); //alternatywnie
-  }, [data, dimensions]);
+  }, [data, dimensions, currentZoomState]);
 
   return (
     <>
