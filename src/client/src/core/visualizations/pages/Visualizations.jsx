@@ -52,6 +52,9 @@ import StackedAreaChartApp from "../components/stacked-area-chart/StackedAreaCha
 // wykres liniowy z opcją zoom
 import ZoomableLineChartApp from "../components/zoomable-line-chart/ZoomableLineChartApp";
 
+// rozwiązanie toolipów
+import BasicFourTooltip from "../components/basic-four/BasicFourTooltip";
+
 import "./Visualizations.scss";
 
 const VisualizationsRowTrendsChart = () => (
@@ -80,71 +83,79 @@ const Visualizations = () => {
           <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--full-width">
+                <BasicFourTooltip />
+              </div>
+            </div>
+          </div>
+
+          <div className="visualizations__row">
+            <div className="visualizations_col">
+              <div className="visualizations__card  visualizations_col--full-width">
                 <ZoomableLineChartApp />
               </div>
             </div>
           </div>
-          {/* 
+
           <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--full-width">
                 <StackedAreaChartApp />
               </div>
             </div>
-          </div> */}
+          </div>
 
-          {/* <div className="visualizations__row">
+          <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--full-width">
                 <StackedBarChartApp />
               </div>
             </div>
-          </div> */}
+          </div>
 
-          {/* <div className="visualizations__row">
+          <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--full-width">
                 <FilteringVisuallyApp />
               </div>
             </div>
-          </div> */}
+          </div>
 
-          {/* <div className="visualizations__row">
+          <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--full-width">
                 <WorldMapApp />
               </div>
             </div>
-          </div> */}
-          {/* <div className="visualizations__row">
+          </div>
+          <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--full-width">
                 <PhysicsBasedForceLayoutApp />
               </div>
             </div>
-          </div> */}
-          {/* <div className="visualizations__row">
+          </div>
+          <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--full-width">
                 <PhysicsBasedForceLayoutApp />
               </div>
             </div>
-          </div> */}
-          {/* <div className="visualizations__row">
+          </div>
+          <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--full-width">
                 <AnimatedTreeChartApp />
               </div>
             </div>
-          </div> */}
-          {/* <div className="visualizations__row">
+          </div>
+          <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--full-width">
                 <RacingBarChartApp />
               </div>
             </div>
-          </div> */}
-          {/* <div className="visualizations__row">
+          </div>
+          <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--double-width">
                 <BreakingBadTimelineApp />
@@ -155,8 +166,8 @@ const Visualizations = () => {
                 <BasicFive />
               </div>
             </div>
-          </div> */}
-          {/* <div className="visualizations__row">
+          </div>
+          <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--double-width">
                 <BasicFour />
@@ -167,8 +178,8 @@ const Visualizations = () => {
                 <BasicThree />
               </div>
             </div>
-          </div> */}
-          {/* <div className="visualizations__row">
+          </div>
+          <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--double-width">
                 <BasicTwo />
@@ -179,9 +190,9 @@ const Visualizations = () => {
                 <BasicOne />
               </div>
             </div>
-          </div> */}
+          </div>
           {/* row */}
-          {/* <div className="visualizations__row">
+          <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card">
                 <CalendarHeatmap />
@@ -192,9 +203,9 @@ const Visualizations = () => {
                 <BasicOneRemastered />
               </div>
             </div>
-          </div> */}
+          </div>
           {/* row */}
-          {/* <div className="visualizations__row">
+          <div className="visualizations__row">
             <div className="visualizations_col visualizations_col--double-width">
               <div className="visualizations__card">
                 <BasicAreaChart />
@@ -205,9 +216,9 @@ const Visualizations = () => {
                 <PieChartLabels />
               </div>
             </div>
-          </div> */}
+          </div>
           {/* row */}
-          {/* <div className="visualizations__row">
+          <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card">
                 <PieChartInteractive />
@@ -223,8 +234,8 @@ const Visualizations = () => {
                 <BarplotThreeBars />
               </div>
             </div>
-          </div> */}
-          {/* <VisualizationsRowTrendsChart /> */}
+          </div>
+          <VisualizationsRowTrendsChart />
         </div>
       </main>
     </>

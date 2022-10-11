@@ -1,5 +1,10 @@
 <!-- FIXME - mirage dummy server podłączać przed wrzuceniem na serwer -->
 
+# TODO
+
+- https://www.youtube.com/watch?v=MGRuvlXzZHs&list=PLDZ4p-ENjbiPo4WH7KdHjh_EMI7Ic8b2B&index=19
+- https://www.youtube.com/watch?v=sp4HMJdfnPU&list=PLDZ4p-ENjbiPo4WH7KdHjh_EMI7Ic8b2B&index=20
+
 # chart.js
 
 - https://react-chartjs-2.js.org/examples/radar-chart/
