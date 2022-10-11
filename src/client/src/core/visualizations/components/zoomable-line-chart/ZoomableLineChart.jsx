@@ -18,6 +18,7 @@ import {
   axisLeft,
   //   zoom z d3.js do powiększania wykresów
   zoom,
+  //         const zoomState = event.transform; - w wersji v6 D3.js nie jest potrzebna zoomTransform
   zoomTransform,
 } from "d3";
 import { useRef, useEffect, useState } from "react";
@@ -110,13 +111,19 @@ const ZoomableLineChart = ({ data, clipPathId = "myZoomableLineChart-id" }) => {
         [-100, 0],
         [width + 100, height],
       ])
-      .on("zoom", () => {
+      // BUG - sposób jak w wersji 5 ale w 6 też działa
+      /*.on("zoom", () => {
         // zoomTransform funckja zd3.js wymaga jakieś elementu DOM
         // const zoomState = zoomTransform(svgRef.current); //alternatywnie
         const zoomState = zoomTransform(svg.node());
         // zapisanie danych o zoomie k-współczynnik, x, y koordynaty
         setCurrentZoomState(zoomState);
         console.log("zoomed!", zoomState);
+      });*/
+      // BUG - sposób jak w wersji 6 nowszej
+      .on("zoom", (event) => {
+        const zoomState = event.transform;
+        setCurrentZoomState(zoomState);
       });
 
     //   połączenie zooma z svg, zoomBehaviour to funckja któa przyjmuje selekcje

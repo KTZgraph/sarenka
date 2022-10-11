@@ -3,7 +3,23 @@
 # TODO
 
 - https://www.youtube.com/watch?v=MGRuvlXzZHs&list=PLDZ4p-ENjbiPo4WH7KdHjh_EMI7Ic8b2B&index=19
-- https://www.youtube.com/watch?v=sp4HMJdfnPU&list=PLDZ4p-ENjbiPo4WH7KdHjh_EMI7Ic8b2B&index=20
+- ładne https://cybersecurityworks.com/blog/vulnerabilities/how-safe-is-your-vpn.html (długie)
+- https://www.youtube.com/watch?v=d1r0aK5awWk
+- pdf viewer https://www.youtube.com/watch?v=GtGmqVyBNVg
+- excel, docx viewer code https://codesandbox.io/s/zvk4j?file=/src/App.js:30-39
+- https://codesandbox.io/examples/package/react-doc-viewer
+- https://codesandbox.io/s/i5v08
+- https://www.youtube.com/watch?v=xPuYbmmPdEM&list=PL4cUxeGkcC9hk02lFb6EkdXF2DYGl4Gg4 CSS grid
+- https://github.com/muratkemaldar/periodic-table-css peridoc table
+
+# tabelki
+
+- https://www.youtube.com/watch?v=qDTAWSg41ag
+- javascirpt filter table https://www.youtube.com/watch?v=uivA8qmwe0U
+
+# Machine Learning for Everybody – Full Course
+
+- https://www.youtube.com/watch?v=i_LwzRVP7bg
 
 # chart.js
 
