@@ -21,7 +21,10 @@ import {
   brushX,
 } from "d3";
 import { useRef, useEffect, useState } from "react";
+
 import useResizeObserver from "../../../../hooks/useResizeObserver";
+//BUG custom hook usePrevious żeby w nieskońcozść nie renderowało się tutaj w useEffect po zmianie pozycji selection brusha
+import usePrevious from "../../../../hooks/usePrevious";
 
 import "./FilteringVisually.scss";
 
@@ -32,9 +35,10 @@ const FilteringVisually = ({ data }) => {
 
   //   wybrana pozycja brusha
   // WARNING defaultowo brush JAKO INDEX wartości, NIE PIKSELE - default index selection
-  //   BUG - u mnie brush działa tylko z wartościami pikselowymi
-  //   const [selection, setSelection] = useState([0, 1.5]); // BUG
-  const [selection, setSelection] = useState([0, 100]);
+  const [selection, setSelection] = useState([0, 1.5]); 
+
+  // BUG  usePrevious - custom hook
+  const previousSelection = usePrevious(selection);
 
   //   will be called initially and on every dta change
   useEffect(() => {
@@ -46,7 +50,7 @@ const FilteringVisually = ({ data }) => {
     //   scales + line generator
     const xScale = scaleLinear()
       .domain([0, data.length - 1])
-      .range([height, 0]);
+      .range([0, width]);
 
     // do  mapowanie wartości na osi OY
     const yScale = scaleLinear()
@@ -117,21 +121,28 @@ const FilteringVisually = ({ data }) => {
         // bez tego za każdym razem jak wykres się zrerenderuje (np po zmianie rozmiaru okna przeglądartki) to brush jest na początku 0, 100 pikseli
         // dodatkowo jajk moje kółka sa zaznaczone brushem to chce żeby wyglądały te zaznaczone inaczej
         console.log(indexSelection);
-        // seteSelection(indexSelection);
+        // BUG - jeśli tak zostawimy to ten callback się wykonuje w nieskońcozsć i rerenderujemy nieskończenie w useEffect
+        // BUG - trzeba upeniwć się, że  svg.select(".brush")... jest wywoływane tylko gdy setSelection sie nie zmienia
+        setSelection(indexSelection);
       });
 
     // renderowanie brusha w svg
     // svg.select(".brush").call(brush);
 
-    svg
+    // BUG to zawsze zmienia pozycję na początkujacą - trzeba użyć kolejnego cutomowego hooka usePrevious
+    /*svg
       .select(".brush")
       .call(brush)
       // brush.move, [0, 100] wprowadza zakres brush na samym początku od zera o 100
       //   .call(brush.move, [0, 100]);
       //   WARNING defaultowa pozycja brusha - z index value mapuję na piksele
       //   brush.move wymaga wartości pikselowej jako arumentu
-      //   .call(brush.move, selection.map(xScale.invert));
-      .call(brush.move, selection);
+      //   .call(brush.move, selection.map(xScale));
+      .call(brush.move, selection);*/
+    //   BUG - rozwiązanie svg.select(".brush").call(brush)...
+    if (previousSelection === selection) {
+      svg.select(".brush").call(brush).call(brush.move, selection.map(xScale));
+    }
 
     // koniec useEffect
   }, [data, dimensions, selection]);
