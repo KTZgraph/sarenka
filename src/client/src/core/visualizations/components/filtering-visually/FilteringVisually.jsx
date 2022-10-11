@@ -6,6 +6,8 @@ pozwala na wybranie podzzbioru (subportion of my chart) I can then extract and d
 będzie responsywne
 można dodać nowe dane i wybrac za pomocą bruch nowe dane
 
+`brushX` funckja z d3.js
+
 */
 
 import {
@@ -16,6 +18,7 @@ import {
   curveCardinal,
   axisBottom,
   axisLeft,
+  brushX,
 } from "d3";
 import { useRef, useEffect } from "react";
 import useResizeObserver from "../../../../hooks/useResizeObserver";
@@ -84,13 +87,35 @@ const FilteringVisually = ({ data }) => {
 
     // do elem,entu html dodaję os OY
     svg.select(".y-axis").call(yAxis);
+
+    // WARNING - brush logic
+    // initializacaj brusha
+    // extent pozwala na poruszanie się brush - pole od lewego gónego wierzchołka, do prawgo dolnego
+    // BUG extent przyjmuje listę zagnieżdżoną jako argument [!]
+    const brush = brushX().extent([
+      [0, 0],
+      [width, height],
+    ]);
+
+    // renderowanie brusha w svg
+    // svg.select(".brush").call(brush);
+
+    svg
+      .select(".brush")
+      .call(brush)
+      // brush.move, [0, 100] wprowadza zakres brush na samym początku od zera o 100
+      .call(brush.move, [0, 100]);
+
+    // koniec useEffect
   }, [data, dimensions]);
 
   return (
     <div ref={wrapperRef} className="filtering-visually-chart">
       <svg ref={svgRef}>
+        {/* WARNING grupy są ważne, bo brush też będzie renderowany jako element HTML */}
         <g className="x-axis" />
         <g className="y-axis" />
+        <g className="brush" />
       </svg>
     </div>
   );
