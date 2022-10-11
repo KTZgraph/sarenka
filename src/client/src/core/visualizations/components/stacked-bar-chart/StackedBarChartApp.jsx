@@ -9,7 +9,9 @@ import StackedBarChart from "./StackedBarChart";
 const data = [
   {
     year: 1980,
+    // ttuaj każda wartośc np awokado 10 reprezentuje 10pikseli na osi OY wartości
     "🥑": 10,
+    // od 10 px dodaje wyskosć 20px dla bbanaów i cały słupek teraz ma 30 wyokosć
     "🍌": 20,
     "🍆": 30,
   },
