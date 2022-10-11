@@ -50,7 +50,7 @@ const colors = {
 const StackedBarChartApp = () => {
   const [keys, setKeys] = useState(allKeys);
   return (
-    <>
+    <div style={{ display: "flex", flexDirection: "column" }}>
       <h2>Stacked Bar Chart with D3 </h2>
       <StackedBarChart data={data} keys={keys} colors={colors} />
 
@@ -75,7 +75,7 @@ const StackedBarChartApp = () => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
