@@ -46,6 +46,9 @@ import FilteringVisuallyApp from "../components/filtering-visually/FilteringVisu
 // wykresy słupkowe z podziałem kolorystycznym na wysokości
 import StackedBarChartApp from "../components/stacked-bar-chart/StackedBarChartApp";
 
+// wykres słupkowy z seriami danych i area chart razem
+import StackedAreaChartApp from "../components/stacked-area-chart/StackedAreaChartApp";
+
 import "./Visualizations.scss";
 
 const VisualizationsRowTrendsChart = () => (
@@ -74,10 +77,18 @@ const Visualizations = () => {
           <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--full-width">
-                <StackedBarChartApp />
+                <StackedAreaChartApp />
               </div>
             </div>
           </div>
+
+          {/* <div className="visualizations__row">
+            <div className="visualizations_col">
+              <div className="visualizations__card  visualizations_col--full-width">
+                <StackedBarChartApp />
+              </div>
+            </div>
+          </div> */}
 
           {/* <div className="visualizations__row">
             <div className="visualizations_col">
