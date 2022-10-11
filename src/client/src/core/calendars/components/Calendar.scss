@@ -122,3 +122,201 @@ $calendar-font-family: consolas;
   transition: all 0.2s ease-in-out;
   transform: scale(1.12);
 }
+
+.year-change:hover pre {
+  color: red;
+}
+
+.calendar-footer {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#year:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: all 0.2s ease-in-out;
+}
+
+.calendar-days div span {
+  position: absolute;
+}
+
+.calendar-days div:hover {
+  transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+  background-color: #fbc7d4;
+  border-radius: 20%;
+  color: $calendar-dark-text;
+}
+
+.month-list {
+  position: relative;
+  left: 0;
+  top: -50px;
+  background-color: #ebebeb;
+  color: $calendar-light-text;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 5px;
+  border-radius: 20px;
+}
+
+.month-list > div {
+  display: grid;
+  place-content: center;
+  margin: 5px 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.month-list > div > div {
+  border-radius: 15px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.month-list > div > div:hover {
+  background-color: $calendar-light-btn;
+  color: $calendar-dark-text;
+  transform: scale(0.9);
+  transition: all 0.2s ease-in-out;
+}
+
+.month-list .show {
+  // WARNING CSS https://developer.mozilla.org/en-US/docs/Web/CSS/visibility
+  visibility: visible;
+  //   WARNING CSS https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events
+  pointer-events: visible;
+  transition: 0.6 ease-in-out;
+  animation: to-left 0.71s forwards;
+}
+
+.month-list.hideonce {
+  visibility: hidden;
+}
+
+.month-list.hide {
+  animation: to-right 1s forwards;
+  visibility: none;
+  pointer-events: none;
+}
+
+.date-time-formate {
+  width: max-content;
+  height: max-content;
+  font-family: Dubai Light, Century Gothic;
+  position: relative;
+  //WARNING   bez tego nachodzą na siebie today i data/godizna
+  display: inline;
+  top: 140px;
+  justify-content: center;
+}
+
+.day-text-formate {
+  font-family: Microsoft JhengHei UI;
+  font-size: 1.8rem;
+  padding-right: 5%;
+  border-right: 3px solid #9796f0;
+  position: absolute;
+  left: -1rem;
+}
+
+.date-time-value {
+  display: block;
+  height: max-content;
+  width: max-content;
+  position: relative;
+  left: 40%;
+  top: -18px;
+  text-align: center;
+}
+
+.time-formate {
+  font-size: 1.8rem;
+}
+
+.time-formate.hideTime {
+  animation: hidetime 1.5s forwards;
+}
+
+.day-text-formate.hideTime {
+  animation: hidetime 1.5s forwards;
+}
+
+.date-formate.hideTime {
+  animation: hidetime 1.5s forwards;
+}
+
+.day-text-formate.showTime {
+  animation: showtime 1s forwards;
+}
+
+.time-formate.showTime {
+  animation: showtime 1s forwards;
+}
+
+.date-formate.showTime {
+  animation: showtime 1s forwards;
+}
+
+@keyframes to-top {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 1;
+  }
+}
+
+@keyframes to-left {
+  0% {
+    transform: translateX(230%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(230%);
+    opacity: 1;
+  }
+}
+
+@keyframes to-right {
+  10% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-150%);
+    opacity: 1;
+  }
+}
+
+@keyframes showtime {
+  0% {
+    transform: translateX(250%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes hidetime {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-370%);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 375px) {
+  .month-list > div {
+    margin: 5px 0px;
+  }
+}

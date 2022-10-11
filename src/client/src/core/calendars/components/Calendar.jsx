@@ -18,7 +18,7 @@ const Calendar = () => {
             <span className="year-change" id="next-year">
               {/* WARNING ma problem ze strzłeczkami w html */}
               {/* WARNING HTML pre tag https://www.w3schools.com/tags/tag_pre.asp */}
-              <span>{`>`}</span>
+              <pre>{`>`}</pre>
             </span>
           </div>
         </div>
