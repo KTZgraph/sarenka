@@ -110,3 +110,59 @@ month_names.forEach((e, index) => {
     dateFormate.classList.add("showtime");
   };
 });
+
+(function () {
+  month_list.classList.add("hideonce");
+})();
+document.querySelector("#pre-year").onClick = () => {
+  --currentYear.value;
+  generateCalendar(currentMonth.value, currentYear.value);
+};
+
+document.querySelector("#next-year").onClick = () => {
+  ++currentYear.value;
+  generateCalendar(currentMonth.value, currentYear.value);
+};
+
+let currentDate = new Date();
+let currentMonth = { value: currentDate.getMonth() };
+let currentYear = { value: currentDate.getFullYear() };
+
+generateCalendar(currentMonth.value, currentYear.value);
+
+const todayShowTime = document.querySelector(".time-formate");
+const todayShowDate = document.querySelector(".date-formate");
+
+const currshowDate = new Date();
+const showCurrentDateOption = {
+  year: "numeric",
+  month: "month",
+  day: "numeric",
+  weekday: "long",
+};
+
+const currentDateFormate = new Intl.DateTimeFormat(
+  "en-US",
+  showCurrentDateOption
+).format(currshowDate);
+
+todayShowDate.textContent = currentDateFormate;
+
+setInterval(() => {
+  const timer = new Date();
+  const option = {
+    hour: "numeric",
+    minute: "numberic",
+    second: "numeric",
+  };
+
+  const formateTimer = new Intl.DateTimeFormat("en-us", option).format(timer);
+  let time = `${`${timer.getHours()}`.padStart(
+    2,
+    "0"
+  )}:${`${timer.getMinutes()}`.padStart(
+    2,
+    "0"
+  )}: ${`${timer.getSeconds()}`.padStart(2, "0")}`;
+  todayShowTime.textContent = formateTimer;
+}, 1000);
