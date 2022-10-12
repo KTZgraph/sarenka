@@ -3,21 +3,17 @@ const MARGIN = { TOP: 50, BOTTOM: 50, LEFT: 70, RIGHT: 50 };
 
 export default class D3ChartVulnerabilitiesYears {
   constructor(svgElement, data, yearSelected, width, height) {
-    // select("#vulnerabilities-year-chart-id").remove();
-
     let vis = this;
-    console.log("drawChart konstruktor");
-
-    vis.svg = select(svgElement)
+    // select("#vulnerabilities-year-chart-id").remove();    console.log("drawChart konstruktor");
+    vis.update(svgElement, data, yearSelected, width, height);
+  }
+  // svgRef.current, data, yearSelected, width, height
+  update(svgElement, data, yearSelected, width, height) {
+    const svg = select(svgElement)
       //   .append("svg")
       .attr("width", width)
       .attr("height", height)
       .attr("id", "vulnerabilities-year-chart-id");
-    // vis.update(data, yearSelected, width, height);
-  }
-  // svgRef.current, data, yearSelected, width, height
-  update(data, yearSelected, width, height) {
-    let vis = this;
 
     console.log("drawChart update");
 
@@ -42,11 +38,8 @@ export default class D3ChartVulnerabilitiesYears {
     const yAxis = axisLeft(yScaleBar);
 
     //   dodanie osi X do wykresu
-    vis.svg
-      .append("g")
-      .call(xAxis)
-      .attr("transform", `translate(0, ${height})`);
+    svg.append("g").call(xAxis).attr("transform", `translate(0, ${height})`);
     //   dodanie osi Y
-    vis.svg.append("g").call(yAxis);
+    svg.append("g").call(yAxis);
   }
 }
