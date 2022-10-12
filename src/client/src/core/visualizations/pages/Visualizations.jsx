@@ -57,6 +57,7 @@ import BasicFourTooltip from "../components/basic-four/BasicFourTooltip";
 
 // kołowy wykres
 import PieChartNoProblem from "../components/pie-chart-no-problem/PieChartNoProblem";
+import DonutChartGroupLabel from "../components/donut-chart-group-label/DonutChartGroupLabel";
 
 import "./Visualizations.scss";
 
@@ -83,6 +84,19 @@ const Visualizations = () => {
       <main>
         <Navbar />
         <div className="visualizations">
+          <div className="visualizations__row">
+            <div className="visualizations_col">
+              <div className="visualizations__card  visualizations_col--double-width">
+                {/* <PieChartNoProblem /> */}
+              </div>
+            </div>
+            <div className="visualizations_col">
+              <div className="visualizations__card">
+                <DonutChartGroupLabel />
+              </div>
+            </div>
+          </div>
+
           <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--double-width">
