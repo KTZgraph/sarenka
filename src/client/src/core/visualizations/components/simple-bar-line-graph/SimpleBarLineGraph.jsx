@@ -19,6 +19,7 @@ import useResizeObserver from "../../../../hooks/useResizeObserver";
 
 const SimpleBarLineGraph = () => {
   const [data, setData] = useState([200, 250, 60, 150, 100, 175]);
+  const [dataLine, setDataLine] = useState([100, 125, 30, 75, 50, 87]);
   const wrapperRef = useRef();
 
   const svgRef = useRef();
@@ -79,7 +80,9 @@ const SimpleBarLineGraph = () => {
 
     svg
       .selectAll(".line")
-      .data([data])
+      //   BUG trzeba listę z list yzrobić, żeby był jedne elemnt do path
+      //   .data([data])
+      .data([dataLine])
       .join("path")
       .attr("d", (d) => generateScaledLine(d))
       .attr("fill", "none")
