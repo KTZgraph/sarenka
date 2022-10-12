@@ -92,5 +92,40 @@ export default class D3ChartVulnerabilitiesYears {
       .attr("width", vis.xScale.bandwidth)
       .attr("height", (d) => vis.HEIGHT - vis.yScale(d.vulnerabilities))
       .attr("fill", "lightblue");
+
+    // WARNING - komninowanie z liniowymi wykresami
+    // 1. wyciągniecie danych po kategorii
+    const vulnerabilitiesCritical = dataCategory.map((v) => v.critical);
+    console.log("vulnerabilitiesCritical: ", vulnerabilitiesCritical);
+
+    const xScaleLine = d3
+      .scaleLinear()
+      .domain([0, vulnerabilitiesCritical.length - 1])
+      .range([0, width]);
+
+    const yScaleLine = d3
+      .scaleLinear()
+      // BUG - uważać na marginesy!
+      .domain([0, height - MARGIN.BOTTOM - MARGIN.TOP])
+      .range([height - MARGIN.BOTTOM - MARGIN.TOP - 50, 0]);
+
+    const generateScaledLine = d3
+      .line()
+      .x((d, idx) => xScaleLine(idx))
+      .y(yScaleLine)
+      .curve(d3.curveCardinal);
+
+    // dorysowywanie
+    // BUG trzeba usuwać linie
+
+    vis.g
+      .selectAll(".lineCritical")
+      //   BUG trzeba listę z list yzrobić, żeby był jedne elemnt do path
+      //   .data([data])
+      .data([vulnerabilitiesCritical])
+      .join("path")
+      .attr("d", (d) => generateScaledLine(d))
+      .attr("fill", "none")
+      .attr("stroke", "red");
   }
 }

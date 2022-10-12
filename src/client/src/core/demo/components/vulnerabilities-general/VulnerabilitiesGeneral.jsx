@@ -10,7 +10,7 @@ const VulnerabilitiesGeneral = () => {
       </div>
       <div className="vulnerabilities-general__right">
         {/* duży chart z latami */}
-        jakieś widgety z danymi
+        jakieś widgety z danymi po prawej
       </div>
     </section>
   );
