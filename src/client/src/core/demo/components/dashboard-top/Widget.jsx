@@ -1,4 +1,5 @@
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import styles from "./Widget.module.scss";
 
 const Widget = ({ data }) => {
@@ -15,7 +16,11 @@ const Widget = ({ data }) => {
             data.percentage >= 0 ? styles.positive : styles.negative
           }`}
         >
-          <KeyboardArrowUpIcon />
+          {data.percentage >= 0 ? (
+            <KeyboardArrowUpIcon />
+          ) : (
+            <KeyboardArrowDownIcon />
+          )}
           {data.percentage} %
         </div>
         {data.icon}
