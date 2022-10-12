@@ -118,14 +118,35 @@ export default class D3ChartVulnerabilitiesYears {
     // dorysowywanie
     // BUG trzeba usuwać linie
 
-    vis.g
+    const linesCritical = vis.g
       .selectAll(".lineCritical")
-      //   BUG trzeba listę z list yzrobić, żeby był jedne elemnt do path
-      //   .data([data])
-      .data([vulnerabilitiesCritical])
-      .join("path")
+      .data([vulnerabilitiesCritical]);
+
+    linesCritical.exit().remove();
+
+    linesCritical
+      .transition()
+      .duration(500)
       .attr("d", (d) => generateScaledLine(d))
       .attr("fill", "none")
       .attr("stroke", "red");
+
+    linesCritical
+      .enter()
+      .append("path")
+      .attr("class", "lineCritical")
+      .attr("d", (d) => generateScaledLine(d))
+      .attr("fill", "none")
+      .attr("stroke", "red");
+
+    // vis.g
+    //   .selectAll(".lineCritical")
+    //   //   BUG trzeba listę z list yzrobić, żeby był jedne elemnt do path
+    //   //   .data([data])
+    //   .data([vulnerabilitiesCritical])
+    //   .join("path")
+    //   .attr("d", (d) => generateScaledLine(d))
+    //   .attr("fill", "none")
+    //   .attr("stroke", "red");
   }
 }
