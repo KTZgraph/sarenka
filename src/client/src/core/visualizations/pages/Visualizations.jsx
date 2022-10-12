@@ -65,6 +65,9 @@ import MultiLineGraphToggle from "../components/multi-line-graph-toggle/MultiLin
 // SimpleBarLineGraph.
 import SimpleBarLineGraph from "../components/simple-bar-line-graph/SimpleBarLineGraph";
 
+// hetmapa z tooltipami
+import HeatmapTooltip from "../components/heatmap-tooltip/HeatmapTooltip";
+
 import "./Visualizations.scss";
 
 const VisualizationsRowTrendsChart = () => (
@@ -92,12 +95,13 @@ const Visualizations = () => {
         <div className="visualizations">
           <div className="visualizations__row">
             <div className="visualizations_col">
-              <div className="visualizations__card  visualizations_col--double-width">
-                <SimpleBarLineGraph />
-              </div>
+              <div className="visualizations__card  visualizations_col--double-width"></div>
+              <HeatmapTooltip />
             </div>
             <div className="visualizations_col">
-              <div className="visualizations__card">{/* tu wykres */}</div>
+              <div className="visualizations__card">
+                <SimpleBarLineGraph />
+              </div>
             </div>
           </div>
 

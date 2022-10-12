@@ -22,6 +22,9 @@ import PeriodicTablePage from "./core/periodic-table/pages/PeriodicTablePage";
 // kelndarz mój, bo temte z react sa płatne
 import CalendarPage from "./core/calendars/pages/CalendarPage";
 
+// demo
+import Demo from "./core/demo/pages/Demo";
+
 import "./App.scss";
 
 function App() {
@@ -35,6 +38,7 @@ function App() {
           <Route path="/">
             <Route index element={<Dashboard />} />
             <Route path="login" element={<Login />} />
+            <Route path="demo" element={<Demo />} />
             <Route path="vulnerabilities" element={<VulnerabilityList />} />
             <Route path="statistics" element={<Statistics />} />
             <Route path="statistics-two" element={<StatisticsTwo />} />

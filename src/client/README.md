@@ -31,6 +31,9 @@
 - https://bl.ocks.org/d3noob
 - bar char with line chart https://codepen.io/Samih/pen/nRXaOG
 
+
+# dane
+- kurs za darmoszkę https://www.coursera.org/learn/google-data-analytics-capstone
 # TODO
 
 - https://www.youtube.com/watch?v=MGRuvlXzZHs&list=PLDZ4p-ENjbiPo4WH7KdHjh_EMI7Ic8b2B&index=19

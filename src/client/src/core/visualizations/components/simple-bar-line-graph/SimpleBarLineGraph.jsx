@@ -20,6 +20,7 @@ import useResizeObserver from "../../../../hooks/useResizeObserver";
 const SimpleBarLineGraph = () => {
   const [data, setData] = useState([200, 250, 60, 150, 100, 175]);
   const [dataLine, setDataLine] = useState([100, 125, 30, 75, 50, 87]);
+  const [dataLine2, setDataLine2] = useState([50, 125, 60, 180, 50, 180]);
   const wrapperRef = useRef();
 
   const svgRef = useRef();
@@ -79,7 +80,7 @@ const SimpleBarLineGraph = () => {
       .curve(curveCardinal);
 
     svg
-      .selectAll(".line")
+      .selectAll(".lineCritical")
       //   BUG trzeba listę z list yzrobić, żeby był jedne elemnt do path
       //   .data([data])
       .data([dataLine])
@@ -87,6 +88,16 @@ const SimpleBarLineGraph = () => {
       .attr("d", (d) => generateScaledLine(d))
       .attr("fill", "none")
       .attr("stroke", "red");
+
+    svg
+      .selectAll(".lineLow")
+      //   BUG trzeba listę z list yzrobić, żeby był jedne elemnt do path
+      //   .data([data])
+      .data([dataLine2])
+      .join("path")
+      .attr("d", (d) => generateScaledLine(d))
+      .attr("fill", "none")
+      .attr("stroke", "blue");
 
     //   konie useEffect
   }, [data, dimensions]);
