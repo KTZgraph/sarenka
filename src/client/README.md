@@ -4,6 +4,9 @@
 
 - https://www.youtube.com/watch?v=NqzdVN2tyvQ
 
+# KALENNDARz
+- https://www.youtube.com/watch?v=9U0uTNfY1UA&list=PLNIn9uF_2Il5xOLikexgi_yuG2f-LjInP
+
 ## alternatywa dla postmana
 
 - https://www.youtube.com/watch?v=MTrj3tNf9jA

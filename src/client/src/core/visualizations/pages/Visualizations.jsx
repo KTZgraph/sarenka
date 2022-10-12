@@ -55,6 +55,9 @@ import ZoomableLineChartApp from "../components/zoomable-line-chart/ZoomableLine
 // rozwiązanie toolipów
 import BasicFourTooltip from "../components/basic-four/BasicFourTooltip";
 
+// kołowy wykres
+import PieChartNoProblem from "../components/pie-chart-no-problem/PieChartNoProblem";
+
 import "./Visualizations.scss";
 
 const VisualizationsRowTrendsChart = () => (
@@ -82,7 +85,12 @@ const Visualizations = () => {
         <div className="visualizations">
           <div className="visualizations__row">
             <div className="visualizations_col">
-              <div className="visualizations__card  visualizations_col--full-width">
+              <div className="visualizations__card  visualizations_col--double-width">
+                <PieChartNoProblem />
+              </div>
+            </div>
+            <div className="visualizations_col">
+              <div className="visualizations__card">
                 <BasicFourTooltip />
               </div>
             </div>
