@@ -5,7 +5,6 @@ import "./VulnerabilitiesGeneral.scss";
 const VulnerabilitiesGeneral = () => {
   return (
     <section className="vulnerabilities-general">
-      VulnerabilitiesGeneral
       <div className="vulnerabilities-general__left">
         <ChartVulnerabilitiesYears />
       </div>
