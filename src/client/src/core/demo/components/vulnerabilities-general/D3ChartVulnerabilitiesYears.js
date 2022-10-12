@@ -52,7 +52,12 @@ export default class D3ChartVulnerabilitiesYears {
     console.log("dataArray: ", dataArray);
     console.log("dataCategory: ", dataCategory);
     let vis = this;
-    vis.data = dataArray;
+    // WARNING teraz myk, żeby z sumy sobie brało z sumy
+    // vis.data = dataArray;
+    vis.data = dataCategory.map((d) => ({
+      month: d.month,
+      vulnerabilities: d.critical + d.high + d.medium + d.low,
+    }));
 
     vis.xScale.domain(vis.data.map((d) => d.month));
     const xAxisCall = d3.axisBottom(vis.xScale);
@@ -110,8 +115,10 @@ export default class D3ChartVulnerabilitiesYears {
     const yScaleLine = d3
       .scaleLinear()
       // BUG - uważać na marginesy!
-      .domain([0, height - MARGIN.BOTTOM - MARGIN.TOP])
-      .range([height - MARGIN.BOTTOM - MARGIN.TOP - 50, 0]);
+      // .domain([0, height - MARGIN.BOTTOM - MARGIN.TOP])
+      .domain([0, maxVulnerabilities])
+      // .range([height, 0]);
+      .range([height - MARGIN.BOTTOM - MARGIN.TOP, 0]);
 
     const generateScaledLine = d3
       .line()
