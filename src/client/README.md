@@ -18,7 +18,7 @@
 - https://www.youtube.com/watch?v=MTrj3tNf9jA
 
 # D3.js ZŁOTO <3
-
+- heatmap tooltip https://d3-graph-gallery.com/graph/heatmap_tooltip.html
 - https://bl.ocks.org/d3noob/635735a3de2909ae06669096fbadc0ed Multi-line graph 4 with v7: Toggle
 - https://bl.ocks.org/d3noob/f89cd4891c6e67991e06c9a249ae3048 Formatted time labels for an axis with v7
 - https://bl.ocks.org/d3noob/1cdce25b22e85e2b71dc291e2b4f2b39 v7 curve interpolation comparison
@@ -29,6 +29,7 @@
 - https://bl.ocks.org/d3noob/bdaf9d5abc467a4895fb115330be35b2
 - https://bl.ocks.org/d3noob/3ebbe3009e3d74825a2509ef54115528
 - https://bl.ocks.org/d3noob
+- bar char with line chart https://codepen.io/Samih/pen/nRXaOG
 
 # TODO
 

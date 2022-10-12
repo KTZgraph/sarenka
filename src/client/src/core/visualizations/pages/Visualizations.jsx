@@ -59,6 +59,12 @@ import BasicFourTooltip from "../components/basic-four/BasicFourTooltip";
 import PieChartNoProblem from "../components/pie-chart-no-problem/PieChartNoProblem";
 import DonutChartGroupLabel from "../components/donut-chart-group-label/DonutChartGroupLabel";
 
+// TODO wykres wiele linii
+import MultiLineGraphToggle from "../components/multi-line-graph-toggle/MultiLineGraphToggle";
+
+// SimpleBarLineGraph.
+import SimpleBarLineGraph from "../components/simple-bar-line-graph/SimpleBarLineGraph";
+
 import "./Visualizations.scss";
 
 const VisualizationsRowTrendsChart = () => (
@@ -87,7 +93,18 @@ const Visualizations = () => {
           <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--double-width">
-                {/* <PieChartNoProblem /> */}
+                <SimpleBarLineGraph />
+              </div>
+            </div>
+            <div className="visualizations_col">
+              <div className="visualizations__card">{/* tu wykres */}</div>
+            </div>
+          </div>
+
+          <div className="visualizations__row">
+            <div className="visualizations_col">
+              <div className="visualizations__card  visualizations_col--double-width">
+                <MultiLineGraphToggle />
               </div>
             </div>
             <div className="visualizations_col">

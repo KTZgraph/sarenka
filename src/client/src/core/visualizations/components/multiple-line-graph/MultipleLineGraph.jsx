@@ -6,7 +6,7 @@ https://d3-graph-gallery.com/graph/line_several_group.html
 import React from "react";
 
 const MultipleLineGraph = () => {
-  return <div></div>;
+  return <div style={{ marginLeft: "200px" }}>MultiLineGraphToggle</div>;
 };
 
 export default MultipleLineGraph;
