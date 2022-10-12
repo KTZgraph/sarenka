@@ -39,12 +39,21 @@ const DonutChartGroupLabel = () => {
 
     // set the color scale
     // WARNING - alerantywny zapis
-    const color = scaleOrdinal().range(schemeDark2);
+    // const color = scaleOrdinal().range(schemeDark2);
     // BUG - jak się wpisze scale ręcznie to lubi zakolorować na ciemniej w środku
-    // const color = scaleOrdinal()
-    //   // WARNING - tu można dac swój zakres kolorów
-    //   .domain(["a", "b", "c", "d", "e", "f", "g", "h"])
-    //   .range(schemeDark2);
+    const color = scaleOrdinal()
+      //   // WARNING - tu można dac swój zakres kolorów
+      //   .domain(["a", "b", "c", "d", "e", "f", "g", "h"])
+      .range([
+        "blue",
+        "yellow",
+        "pink",
+        "red",
+        "green",
+        "orange",
+        "brown",
+        "black",
+      ]);
 
     // Compute the position of each group on the pie:
     const formattedData = pie()
