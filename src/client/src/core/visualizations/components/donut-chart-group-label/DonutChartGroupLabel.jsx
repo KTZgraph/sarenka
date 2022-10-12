@@ -1,5 +1,6 @@
 /*
 https://d3-graph-gallery.com/graph/donut_label.html
+https://stackoverflow.com/questions/28097184/adding-text-to-the-center-of-a-d3-donut-graph
 */
 
 import { select, schemeDark2, scaleOrdinal, pie, arc } from "d3";
@@ -35,14 +36,19 @@ const DonutChartGroupLabel = () => {
       .attr("width", widthPie)
       .attr("height", heightPie)
       .append("g")
+      //   centrowanie wykresu
       .attr("transform", `translate(${widthPie / 2},${heightPie / 2})`);
+
+    // dodawanie tekstu na środku wykresu któy już ejst wycentrowany
+    // https://stackoverflow.com/questions/28097184/adding-text-to-the-center-of-a-d3-donut-graph
+    svg.append("text").attr("text-anchor", "middle").text("tekst na środku");
 
     // set the color scale
     // WARNING - alerantywny zapis
     // const color = scaleOrdinal().range(schemeDark2);
     // BUG - jak się wpisze scale ręcznie to lubi zakolorować na ciemniej w środku
     const color = scaleOrdinal()
-      //   // WARNING - tu można dac swój zakres kolorów
+      //   // WARNING - tu można dac swój zakres kolorów - nei trzeb apodawać domain
       //   .domain(["a", "b", "c", "d", "e", "f", "g", "h"])
       .range([
         "blue",
@@ -127,18 +133,6 @@ const DonutChartGroupLabel = () => {
         const midangle = d.startAngle + (d.endAngle - d.startAngle) / 2;
         return midangle < Math.PI ? "start" : "end";
       });
-
-    // 4.setting up annotation
-    svg
-      .selectAll()
-      .data(formattedData)
-      .join("text")
-      //WARNING   formattedData są trochę inne, dlatego, żeby dostać się do prorperty trzeba tak zrović  d.data.property
-      //   .text((d) => d.data.property)
-      .text((d) => "Jeden napis na środku")
-      //   bez trnsalte wszystkie napisy na samym środku kółka
-      //   .attr("transform", (d) => `translate(${arcGenerator.centroid(d)})`)
-      .style("text-anchor", "middle");
 
     //   ----------------------------------
   }, [data]);
