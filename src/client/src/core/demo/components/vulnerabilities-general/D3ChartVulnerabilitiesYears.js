@@ -96,12 +96,16 @@ export default class D3ChartVulnerabilitiesYears {
     // WARNING - komninowanie z liniowymi wykresami
     // 1. wyciągniecie danych po kategorii
     const vulnerabilitiesCritical = dataCategory.map((v) => v.critical);
+    const vulnerabilitiesHigh = dataCategory.map((v) => v.high);
+    const vulnerabilitiesMedium = dataCategory.map((v) => v.medium);
+    const vulnerabilitiesLow = dataCategory.map((v) => v.low);
     console.log("vulnerabilitiesCritical: ", vulnerabilitiesCritical);
 
     const xScaleLine = d3
       .scaleLinear()
       .domain([0, vulnerabilitiesCritical.length - 1])
-      .range([0, width]);
+      // BUG - uważać na marginesy przy osi x tylko z prawej, bo od 0 wykres
+      .range([0, width - MARGIN.RIGHT - MARGIN.LEFT]);
 
     const yScaleLine = d3
       .scaleLinear()
@@ -118,6 +122,7 @@ export default class D3ChartVulnerabilitiesYears {
     // dorysowywanie
     // BUG trzeba usuwać linie
 
+    // ------------ critical
     const linesCritical = vis.g
       .selectAll(".lineCritical")
       .data([vulnerabilitiesCritical])
@@ -140,5 +145,74 @@ export default class D3ChartVulnerabilitiesYears {
       .attr("d", (d) => generateScaledLine(d))
       .attr("fill", "none")
       .attr("stroke", "red");
+
+    // ------------ high
+    const linesHigh = vis.g
+      .selectAll(".lineHigh")
+      .data([vulnerabilitiesHigh])
+      // https://stackoverflow.com/questions/49137943/how-to-bring-the-selected-node-front-in-d3-js
+      .raise();
+
+    linesHigh.exit().remove();
+
+    linesHigh
+      .transition()
+      .duration(500)
+      .attr("d", (d) => generateScaledLine(d))
+      .attr("fill", "none")
+      .attr("stroke", "orange");
+
+    linesHigh
+      .enter()
+      .append("path")
+      .attr("class", "lineHigh")
+      .attr("d", (d) => generateScaledLine(d))
+      .attr("fill", "none")
+      .attr("stroke", "orange");
+
+    // ------------ medium
+    const linesMedium = vis.g
+      .selectAll(".lineMedium")
+      .data([vulnerabilitiesMedium])
+      .raise();
+
+    linesMedium.exit().remove();
+
+    linesMedium
+      .transition()
+      .duration(500)
+      .attr("d", (d) => generateScaledLine(d))
+      .attr("fill", "none")
+      .attr("stroke", "yellow");
+
+    linesMedium
+      .enter()
+      .append("path")
+      .attr("class", "lineMedium")
+      .attr("d", (d) => generateScaledLine(d))
+      .attr("fill", "none")
+      .attr("stroke", "yellow");
+    // ------------ low
+    const linesLow = vis.g
+      .selectAll(".lineLow")
+      .data([vulnerabilitiesLow])
+      .raise();
+
+    linesLow.exit().remove();
+
+    linesLow
+      .transition()
+      .duration(500)
+      .attr("d", (d) => generateScaledLine(d))
+      .attr("fill", "none")
+      .attr("stroke", "gray");
+
+    linesLow
+      .enter()
+      .append("path")
+      .attr("class", "lineLow")
+      .attr("d", (d) => generateScaledLine(d))
+      .attr("fill", "none")
+      .attr("stroke", "gray");
   }
 }
