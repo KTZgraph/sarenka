@@ -1,8 +1,19 @@
 /*
 https://codepen.io/Samih/pen/nRXaOG
 https://www.youtube.com/watch?v=hOzKr8H_438
+
+line chart
+https://www.youtube.com/watch?v=SnkpNCxHSkc&t=723s
 */
-import { axisBottom, axisLeft, scaleBand, scaleLinear, select } from "d3";
+import {
+  axisBottom,
+  axisLeft,
+  scaleBand,
+  scaleLinear,
+  select,
+  line,
+  curveCardinal,
+} from "d3";
 import { useEffect, useState, useRef } from "react";
 import useResizeObserver from "../../../../hooks/useResizeObserver";
 
@@ -23,8 +34,8 @@ const SimpleBarLineGraph = () => {
     const svg = select(svgRef.current)
       .attr("width", width)
       .attr("height", height)
-      .style("overflow", "visible")
-      .style("margin-top", "75px");
+      .style("overflow", "visible");
+    //   .style("margin-top", "75px");
 
     //2) setting the scaling
     const xScale = scaleBand()
@@ -51,6 +62,30 @@ const SimpleBarLineGraph = () => {
       .attr("y", yScale)
       .attr("width", xScale.bandwidth())
       .attr("height", (d) => height - yScale(d));
+
+    //   WARNING - kombinowanie
+    // WARNING https://www.youtube.com/watch?v=SnkpNCxHSkc&t=723s
+    // kombinowanie
+    const xScaleLine = scaleLinear()
+      .domain([0, data.length - 1])
+      .range([0, width]);
+
+    const yScaleLine = scaleLinear().domain([0, height]).range([height, 0]);
+
+    const generateScaledLine = line()
+      .x((d, idx) => xScaleLine(idx))
+      .y(yScaleLine)
+      .curve(curveCardinal);
+
+    svg
+      .selectAll(".line")
+      .data([data])
+      .join("path")
+      .attr("d", (d) => generateScaledLine(d))
+      .attr("fill", "none")
+      .attr("stroke", "red");
+
+    //   konie useEffect
   }, [data, dimensions]);
 
   return (
