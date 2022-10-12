@@ -54,16 +54,19 @@ export default class D3ChartVulnerabilitiesYears {
     let vis = this;
     // WARNING teraz myk, żeby z sumy sobie brało z sumy
     // vis.data = dataArray;
-    vis.data = dataCategory.map((d) => ({
+    vis.dataBarchar = dataCategory.map((d) => ({
       month: d.month,
       vulnerabilities: d.critical + d.high + d.medium + d.low,
     }));
 
-    vis.xScale.domain(vis.data.map((d) => d.month));
+    vis.xScale.domain(vis.dataBarchar.map((d) => d.month));
     const xAxisCall = d3.axisBottom(vis.xScale);
     vis.xAxisGroup.call(xAxisCall);
 
-    const maxVulnerabilities = d3.max(vis.data, (d) => d.vulnerabilities);
+    const maxVulnerabilities = d3.max(
+      vis.dataBarchar,
+      (d) => d.vulnerabilities
+    );
     vis.yScale.domain([0, maxVulnerabilities]);
 
     const yAxisCall = d3.axisLeft(vis.yScale);
@@ -71,7 +74,7 @@ export default class D3ChartVulnerabilitiesYears {
 
     vis.xLabel.text(yearSelected);
 
-    const rects = vis.g.selectAll("rect").data(vis.data);
+    const rects = vis.g.selectAll("rect").data(vis.dataBarchar);
 
     rects
       .exit()
