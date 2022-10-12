@@ -1,43 +1,95 @@
-import { select, scaleLinear, scaleBand, axisBottom, max, axisLeft } from "d3";
-const MARGIN = { TOP: 50, BOTTOM: 50, LEFT: 70, RIGHT: 50 };
+import * as d3 from "d3";
+const MARGIN = { TOP: 5, BOTTOM: 40, LEFT: 70, RIGHT: 50 };
 
-export function drawChart(svgElement, data, yearSelected, width, height) {
-  console.log("draw chart");
+export default class D3ChartVulnerabilitiesYears {
+  constructor(element, dataArray, yearSelected, width, height) {
+    let vis = this;
 
-  const svg = select(svgElement)
-    //   .append("svg")
-    .attr("width", width)
-    .attr("height", height)
-    .attr("padding", "50px");
+    d3.select("#trends-chart-id").remove();
 
-  console.log("data", data);
+    vis.HEIGHT = height - MARGIN.TOP - MARGIN.BOTTOM;
+    vis.WIDTH = width - MARGIN.LEFT - MARGIN.RIGHT;
 
-  const vulnerabilitiesAll = data.map(
-    (d) => d.critical + d.high + d.medium + d.low
-  );
-  const vulnerabilitiesCritical = data.map((d) => d.critical);
-  const vulnerabilitiesHigh = data.map((d) => d.high);
-  const vulnerabilitiesMedium = data.map((d) => d.medium);
-  const vulnerabilitiesLow = data.map((d) => d.low);
+    vis.g = d3
+      .select(element)
+      .append("svg")
+      .attr("class", "trends-chart__svg")
+      .attr("id", "trends-chart-id")
+      .attr("width", vis.WIDTH)
+      .attr("height", vis.HEIGHT)
+      .style("background", "white")
+      .append("g")
+      .attr("transform", `translate(${MARGIN.LEFT}, ${MARGIN.TOP})`);
 
-  // WARNING  wykres słupkowy
-  const xScaleBar = scaleBand()
-    .domain(vulnerabilitiesAll.map((val, idx) => idx))
-    .range([0, width])
-    .padding(0.5);
+    vis.g
+      .append("text")
+      .attr("x", -(vis.HEIGHT / 2))
+      .attr("y", -50)
+      .attr("text-anchor", "middle")
+      .text("Vulnerabilities")
+      .attr("transform", "rotate(-90)");
 
-  const yScaleBar = scaleLinear().domain([0, height]).range([height, 0]);
+    vis.xLabel = vis.g
+      .append("text")
+      .attr("x", vis.WIDTH / 2)
+      .attr("y", vis.HEIGHT + 50)
+      .attr("text-anchor", "middle")
+      .text(yearSelected);
 
-  //   osie
-  const xAxis = axisBottom(xScaleBar).ticks(vulnerabilitiesAll.length);
-  const yAxis = axisLeft(yScaleBar);
+    vis.yScale = d3.scaleLinear().range([vis.HEIGHT, 0]);
+    vis.yAxisGroup = vis.g.append("g");
 
-  //   dodanie osi X do wykresu
-  svg
-    .append("g")
-    .call(xAxis)
-    .attr("transform", `translate(0, ${height})`)
-    .attr("class", "x-axis");
-  //   dodanie osi Y
-  svg.append("g").call(yAxis).attr("class", "y-axis");
+    vis.xScale = d3.scaleBand().range([0, vis.WIDTH]).padding(0.2);
+    vis.xAxisGroup = vis.g
+      .append("g")
+      .attr("transform", `translate(0, ${vis.HEIGHT})`);
+
+    vis.update(dataArray);
+  }
+
+  update(dataArray, yearSelected, width, height) {
+    console.log("update method");
+    console.log("dataArray: ", dataArray);
+    let vis = this;
+    vis.data = dataArray;
+
+    vis.xScale.domain(vis.data.map((d) => d.month));
+    const xAxisCall = d3.axisBottom(vis.xScale);
+    vis.xAxisGroup.call(xAxisCall);
+
+    const maxVulnerabilities = d3.max(vis.data, (d) => d.vulnerabilities);
+    vis.yScale.domain([0, maxVulnerabilities]);
+
+    const yAxisCall = d3.axisLeft(vis.yScale);
+    vis.yAxisGroup.transition().duration(500).call(yAxisCall);
+
+    vis.xLabel.text(yearSelected);
+
+    const rects = vis.g.selectAll("rect").data(vis.data);
+
+    rects
+      .exit()
+      .transition()
+      .duration(500)
+      .attr("height", 0)
+      .attr("y", vis.HEIGHT - MARGIN.TOP - MARGIN.BOTTOM)
+      .remove();
+
+    rects
+      .transition()
+      .duration(500)
+      .attr("x", (d) => vis.xScale(d.month))
+      .attr("y", (d) => vis.yScale(d.vulnerabilities))
+      .attr("width", vis.xScale.bandwidth)
+      .attr("height", (d) => vis.HEIGHT - vis.yScale(d.vulnerabilities));
+
+    rects
+      .enter()
+      .append("rect")
+      .attr("x", (d) => vis.xScale(d.month))
+      .attr("y", (d) => vis.yScale(d.vulnerabilities))
+      .attr("width", vis.xScale.bandwidth)
+      .attr("height", (d) => vis.HEIGHT - vis.yScale(d.vulnerabilities))
+      .attr("fill", "lightblue");
+  }
 }
