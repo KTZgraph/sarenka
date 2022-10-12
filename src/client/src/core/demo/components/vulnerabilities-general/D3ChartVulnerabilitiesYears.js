@@ -120,7 +120,9 @@ export default class D3ChartVulnerabilitiesYears {
 
     const linesCritical = vis.g
       .selectAll(".lineCritical")
-      .data([vulnerabilitiesCritical]);
+      .data([vulnerabilitiesCritical])
+      // https://stackoverflow.com/questions/49137943/how-to-bring-the-selected-node-front-in-d3-js
+      .raise();
 
     linesCritical.exit().remove();
 
@@ -138,15 +140,5 @@ export default class D3ChartVulnerabilitiesYears {
       .attr("d", (d) => generateScaledLine(d))
       .attr("fill", "none")
       .attr("stroke", "red");
-
-    // vis.g
-    //   .selectAll(".lineCritical")
-    //   //   BUG trzeba listę z list yzrobić, żeby był jedne elemnt do path
-    //   //   .data([data])
-    //   .data([vulnerabilitiesCritical])
-    //   .join("path")
-    //   .attr("d", (d) => generateScaledLine(d))
-    //   .attr("fill", "none")
-    //   .attr("stroke", "red");
   }
 }
