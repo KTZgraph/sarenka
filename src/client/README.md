@@ -1,15 +1,34 @@
 <!-- FIXME - mirage dummy server podłączać przed wrzuceniem na serwer -->
 
+# Książka - wyróżnić w readme
+
+- https://leanpub.com/d3-t-and-t-v7
+- https://bl.ocks.org/d3noob kody chyba autora
+
 # REDUX - priorytet
 
 - https://www.youtube.com/watch?v=NqzdVN2tyvQ
 
 # KALENNDARz
+
 - https://www.youtube.com/watch?v=9U0uTNfY1UA&list=PLNIn9uF_2Il5xOLikexgi_yuG2f-LjInP
 
 ## alternatywa dla postmana
 
 - https://www.youtube.com/watch?v=MTrj3tNf9jA
+
+# D3.js ZŁOTO <3
+
+- https://bl.ocks.org/d3noob/635735a3de2909ae06669096fbadc0ed Multi-line graph 4 with v7: Toggle
+- https://bl.ocks.org/d3noob/f89cd4891c6e67991e06c9a249ae3048 Formatted time labels for an axis with v7
+- https://bl.ocks.org/d3noob/1cdce25b22e85e2b71dc291e2b4f2b39 v7 curve interpolation comparison
+- https://bl.ocks.org/d3noob/918a64abe4c3682cac3b4c3c852a698d collapse tree diagram
+- http://bl.ocks.org/d3noob/f880ef98671b626ac78c35fe66819db5 multip line tooltip i jeszcze linki!
+- https://bl.ocks.org/d3noob/bc49e36bdd5c097e0b5be8a4f9cfb043 multi line tooltip
+- http://bl.ocks.org/d3noob/3e0e50c971b4bc52a377c8b66740f347 dodawanie linków od obiektów
+- https://bl.ocks.org/d3noob/bdaf9d5abc467a4895fb115330be35b2
+- https://bl.ocks.org/d3noob/3ebbe3009e3d74825a2509ef54115528
+- https://bl.ocks.org/d3noob
 
 # TODO
 
