@@ -23,7 +23,7 @@ const Widget = ({ data }) => {
           )}
           {data.percentage} %
         </div>
-        {data.icon}
+        <div className={styles.icon}>{data.icon}</div>
       </div>
     </div>
   );

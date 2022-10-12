@@ -44,7 +44,11 @@ const DashboardTop = () => {
   return (
     <section className={styles.dashboardTop}>
       {widgetsData.map((data) => (
-        <Widget data={data} className={styles.dashboardTop__widget} />
+        <Widget
+          key={data.title}
+          data={data}
+          className={styles.dashboardTop__widget}
+        />
       ))}
     </section>
   );
