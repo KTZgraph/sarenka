@@ -3,20 +3,50 @@ import { select, scaleLinear, scaleBand, axisBottom, max, axisLeft } from "d3";
 import { useEffect, useRef, useState } from "react";
 import { vulnerabitilitesYearsDummy } from "./vulnerabilities-years-dummy";
 import Dropdown from "../../../../UI/Dropdown";
+// z tym hookiem jakieś problemy
 import useResizeObserver from "../../../../hooks/useResizeObserver";
 
 import D3ChartVulnerabilitiesYears from "./D3ChartVulnerabilitiesYears";
 
+const DUMMY_DATA = {
+  2022: [
+    { month: 1, critical: 32, high: 129, medium: 228, low: 304 },
+    { month: 2, critical: 74, high: 163, medium: 259, low: 192 },
+    { month: 3, critical: 29, high: 197, medium: 170, low: 395 },
+    { month: 4, critical: 100, high: 107, medium: 273, low: 316 },
+    { month: 5, critical: 22, high: 100, medium: 273, low: 485 },
+    { month: 6, critical: 53, high: 118, medium: 183, low: 485 },
+    { month: 7, critical: 53, high: 178, medium: 274, low: 269 },
+    { month: 8, critical: 50, high: 193, medium: 192, low: 252 },
+    { month: 9, critical: 89, high: 116, medium: 244, low: 199 },
+  ],
+  2021: [
+    { month: 1, critical: 32, high: 129, medium: 228, low: 304 },
+    { month: 2, critical: 74, high: 163, medium: 259, low: 192 },
+    { month: 3, critical: 29, high: 197, medium: 170, low: 395 },
+    { month: 4, critical: 100, high: 107, medium: 273, low: 316 },
+    { month: 5, critical: 22, high: 100, medium: 273, low: 485 },
+    { month: 6, critical: 53, high: 118, medium: 183, low: 485 },
+    { month: 7, critical: 53, high: 178, medium: 274, low: 269 },
+    { month: 8, critical: 50, high: 193, medium: 192, low: 252 },
+    { month: 9, critical: 89, high: 116, medium: 244, low: 199 },
+    { month: 10, critical: 80, high: 125, medium: 190, low: 393 },
+    { month: 11, critical: 46, high: 115, medium: 122, low: 309 },
+    { month: 12, critical: 28, high: 149, medium: 246, low: 484 },
+  ],
+};
+
 const currentYear = new Date().getFullYear().toString();
 
-const yearOptions = Object.keys(vulnerabitilitesYearsDummy).map((k) => ({
+// const yearOptions = Object.keys(vulnerabitilitesYearsDummy).map((k) => ({
+const yearOptions = Object.keys(DUMMY_DATA).map((k) => ({
   label: k.toString(),
   value: k,
 }));
 
 const ChartVulnerabilitiesYears = () => {
-  const svgRef = useRef();
   const wrapperRef = useRef();
+  const svgRef = useRef();
   const dimensions = useResizeObserver(wrapperRef);
   const [chartState, setChartState] = useState(null);
 
@@ -29,12 +59,9 @@ const ChartVulnerabilitiesYears = () => {
     const { width, height } =
       dimensions || wrapperRef.current.getBoundingClientRect();
 
-    console.log("dimensions: ", dimensions);
-    console.log("width: ", width);
-    console.log("height: ", height);
+    setData(vulnerabitilitesYearsDummy[parseInt(yearSelected)]);
 
     if (!chartState) {
-      setData(vulnerabitilitesYearsDummy[parseInt(yearSelected)]);
       setChartState(
         new D3ChartVulnerabilitiesYears(
           svgRef.current,
@@ -45,12 +72,11 @@ const ChartVulnerabilitiesYears = () => {
         )
       );
     } else {
-      setData(vulnerabitilitesYearsDummy[parseInt(yearSelected)]);
       chartState.update(data, yearSelected, width, height);
     }
 
     // *------------------------------------------------
-  }, [data, yearSelected, dimensions]);
+  }, [data, yearSelected, chartState, dimensions]);
 
   return (
     <>
@@ -62,10 +88,11 @@ const ChartVulnerabilitiesYears = () => {
           value={yearSelected}
           onChange={(e) => setYearSelected(e.target.value)}
         />
-        <svg ref={svgRef} className="svg-chart">
-          <g className="x-axis" />
-          <g className="y-axis" />
-        </svg>
+        <svg
+          ref={svgRef}
+          className="svg-chart"
+          id="vulnerabilities-year-chart-id"
+        ></svg>
       </div>
     </>
   );
