@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { vulnerabitilitesYearsDummy } from "./vulnerabilities-years-dummy";
+import {
+  vulnerabitilitesYearsDummy,
+  vulnerabitilitesYearsCategoryDummy,
+} from "./vulnerabilities-years-dummy";
 import Dropdown from "../../../../UI/Dropdown";
-// z tym hookiem jakieś problemy
+// BUG trzeba w CSS ustawić wysokosć
 import useResizeObserver from "../../../../hooks/useResizeObserver";
 
 import D3ChartVulnerabilitiesYears from "./D3ChartVulnerabilitiesYears";
@@ -13,39 +16,40 @@ const yearOptions = Object.keys(vulnerabitilitesYearsDummy).map((k) => ({
   value: k,
 }));
 
-const getDataByYear = (selectedYear) => {
-  const year = parseInt(selectedYear);
-  return vulnerabitilitesYearsDummy[year];
-};
-
 const ChartVulnerabilitiesYears = () => {
+  const [yearSelected, setYearSelected] = useState(currentYear);
   const [data, setData] = useState([]);
+  //   dane do wykresów liniowych
+  const [dataCategory, setDataCategory] = useState([]);
+
   const chartRef = useRef(null);
   const [chartState, setChartState] = useState(null);
-  const [yearSelected, setYearSelected] = useState(currentYear);
 
   const dimensions = useResizeObserver(chartRef);
 
   useEffect(() => {
+    // ustawianie danych
+    setData(vulnerabitilitesYearsDummy[parseInt(yearSelected)]);
+    setDataCategory(vulnerabitilitesYearsCategoryDummy[parseInt(yearSelected)]);
+
     const { width, height } =
       dimensions || chartRef.current.getBoundingClientRect();
 
     if (!chartState) {
-      setData(getDataByYear(yearSelected));
       setChartState(
         new D3ChartVulnerabilitiesYears(
           chartRef.current,
           data,
           yearSelected,
           width,
-          height
+          height,
+          dataCategory
         )
       );
     } else {
-      setData(getDataByYear(yearSelected));
-      chartState.update(data, yearSelected, width, height);
+      chartState.update(data, yearSelected, width, height, dataCategory);
     }
-  }, [data, yearSelected, chartState]);
+  }, [data, yearSelected, chartState, dataCategory]);
 
   return (
     <>

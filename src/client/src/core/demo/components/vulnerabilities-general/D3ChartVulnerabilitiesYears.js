@@ -2,7 +2,7 @@ import * as d3 from "d3";
 const MARGIN = { TOP: 5, BOTTOM: 40, LEFT: 70, RIGHT: 50 };
 
 export default class D3ChartVulnerabilitiesYears {
-  constructor(element, dataArray, yearSelected, width, height) {
+  constructor(element, dataArray, yearSelected, width, height, dataCategory) {
     let vis = this;
 
     d3.select("#trends-chart-id").remove();
@@ -44,12 +44,13 @@ export default class D3ChartVulnerabilitiesYears {
       .append("g")
       .attr("transform", `translate(0, ${vis.HEIGHT})`);
 
-    vis.update(dataArray);
+    vis.update(dataArray, yearSelected, width, height, dataCategory);
   }
 
-  update(dataArray, yearSelected, width, height) {
+  update(dataArray, yearSelected, width, height, dataCategory) {
     console.log("update method");
     console.log("dataArray: ", dataArray);
+    console.log("dataCategory: ", dataCategory);
     let vis = this;
     vis.data = dataArray;
 
