@@ -28,3 +28,11 @@ class UserCreateSerializer(serializers.ModelSerializer):
         )
 
         return user
+
+
+class UserSerializer(serializers.ModelSerializer):
+    """Seriaslizer gdize nie zwraacam hasła do zwrotki API REST"""
+
+    class Meta:
+        model = User
+        fields = ("first_name", "last_name", "email")

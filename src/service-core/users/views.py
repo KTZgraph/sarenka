@@ -10,7 +10,7 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 # import mojego serializera
-from .serializers import UserCreateSerializer
+from .serializers import UserCreateSerializer, UserSerializer
 
 
 class RegisterView(APIView):
@@ -37,6 +37,13 @@ class RegisterView(APIView):
             "groups": [],
             "user_permissions": []
         }
+
+        zwrotka gdy prosztrzy seriazlizer UserSerializer
+        {
+            "first_name": "John",
+            "last_name": "Doe",
+            "email": "johndoe3@gmail.com"
+        }
         """
 
         data = request.data
@@ -59,7 +66,9 @@ class RegisterView(APIView):
         # .validated_data to atrybut obiektu serializatora
         user = serializer.create(serializer.validated_data)
         # teraz dopiero user ma atrybuty .data potrzebny do zwrotki
-        user = UserCreateSerializer(user)
+        # user = UserCreateSerializer(user)
+        # do zwrotki uzwyam prostszego serializera żeby nei zwracał hasła
+        user = UserSerializer(user)
 
         # zwraca usera dane jako zwrotkę
         return Response(user.data, status=status.HTTP_201_CREATED)
