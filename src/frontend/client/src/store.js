@@ -28,8 +28,14 @@ switch (action.type) {
   case "LOGIN_SUCCES":
     return {
       // tutja jest kopia stanu - jak używam reduxa nie manipuluję stanem bezpośrednio
-      //   BUG - to źle it goes against Redux desgin  pattern
+      //   BUG - to źle it goes against Redux desgin  pattern; jeśli to  robię samemu
       //   state.first.second.third.isAuthenticated = true //nie manipulujemy bezpośrednio stanem
+
+
+    //   jeśli robię to z paczką / narzędziem to mogę w ten sposób zrobić
+    // bo pod maską robi całe te zagnieżdżenia
+    state.first.second.third.isAuthenticated = true;
+    // które są poniżej
       ...state,
       first: {
         ...state.first,
