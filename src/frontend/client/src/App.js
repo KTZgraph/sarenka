@@ -25,6 +25,9 @@ import CalendarPage from "./core/calendars/pages/CalendarPage";
 // demo
 import Demo from "./core/demo/pages/Demo";
 
+// https://www.youtube.com/watch?v=DGmX1FDdLZE 17:42
+import Register from "./core/register/pages/Register";
+
 import "./App.scss";
 
 function App() {
@@ -37,6 +40,7 @@ function App() {
         <Routes>
           <Route path="/">
             <Route index element={<Dashboard />} />
+            <Route path="register" element={<Register />} />
             <Route path="login" element={<Login />} />
             <Route path="demo" element={<Demo />} />
             <Route path="vulnerabilities" element={<VulnerabilityList />} />
