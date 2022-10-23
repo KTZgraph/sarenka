@@ -27,8 +27,14 @@ const userSlice = createSlice({
 
   So with this reduces whatever's inside of here it's generating actions creators, but now we're gonna have action creators that are defined outside of here
   */
+
+    // synchroniczne reset na stronie login
+    resetRegistered: (state) => {
+      // po prawidłowej rejestracji i zalogowaniu
+      state.registered = false;
+    },
   },
 });
 
-export const { increment, decrement, incrementByAmount } = counterSlice.actions;
-export default counterSlice.reducer;
+export const { resetRegistered } = userSlice.actions;
+export default userSlice.reducer;
