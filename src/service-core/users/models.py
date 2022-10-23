@@ -54,6 +54,7 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
 
     # defaultowo aktywny user
     is_active = models.BooleanField(default=True)
+    # żeby defaultowo nie był adminem ani moderatorem
     is_staff = models.BooleanField(default=False)
 
     # nasz customowy manager

@@ -15,13 +15,27 @@ from .serializers import UserCreateSerializer
 
 class RegisterView(APIView):
     def post(self, request):
-        """
-        http://localhost:8000/api/users/register
+        """http://localhost:8000/api/users/register
         {
             "first_name": "John",
             "last_name": "Doe",
             "email": "johndoe@gmail.com",
             "password": "password"
+        }
+
+        zwrotka
+        {
+            "id": 2,
+            "password": "pbkdf2_sha256$390000$Koyy4P5zDR65Flfb3gOtSp$IjKH1SjwLbhRclJ7TjRd/ukS/RrXRl4WYrp5+VB7DCQ=",
+            "last_login": null,
+            "is_superuser": false,
+            "first_name": "John",
+            "last_name": "Doe",
+            "email": "johndoe@gmail.com",
+            "is_active": true,
+            "is_staff": false,
+            "groups": [],
+            "user_permissions": []
         }
         """
 
