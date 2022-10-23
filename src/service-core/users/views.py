@@ -49,8 +49,18 @@ class RegisterView(APIView):
         # pola jak do service-core\users\models.py klasy UserAccountManager
         # metoda .create_user zwraca Usera jest         return user
         #  w linii 27
-        user = User.objects.create_user(first_name, last_name, email, password)
-        user = UserCreateSerializer(user)
+        # usuwam tę linię, bo serializatorem będe tworzyć obiekt
+        # user = User.objects.create_user(first_name, last_name, email, password)
+
+        serializer = UserCreateSerializer(
+            data={
+                # sposób na przekazanie danych do serializatora
+                "first_name": first_name,
+                "last_name": last_name,
+                "email": email,
+                "password": password,
+            }
+        )
 
         # zwraca usera dane jako zwrotkę
         return Response(user.data, status=status.HTTP_201_CREATED)
