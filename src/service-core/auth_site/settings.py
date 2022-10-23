@@ -91,10 +91,9 @@ DATABASES = {
     }
 }
 
-
-# Password validation
-# https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
-
+# ----- hasła
+# walidatory hasła - dizałaja jak używam super usera ale jak przez REST API zwykłego usera ot już nie
+# https://youtu.be/rxRYEXBmM88?t=3021
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
