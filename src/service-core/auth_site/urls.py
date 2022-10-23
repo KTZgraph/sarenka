@@ -19,3 +19,10 @@ urlpatterns = [
     path("api/users/", include("users.urls")),
     path("admin/", admin.site.urls),
 ]
+
+
+# http://localhost:8000/api/token/
+# {
+#     "email": "johndoe@gmail.com",
+#     "password": "password"
+# }

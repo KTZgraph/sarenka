@@ -9,6 +9,7 @@ from django.contrib.auth.models import (
 )
 
 
+#User Manager
 class UserAccountManager(BaseUserManager):
     """Custom User Manager - pamiętać o dziedziczeniu"""
 
@@ -46,7 +47,7 @@ class UserAccountManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-
+#User Model
 class UserAccount(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)

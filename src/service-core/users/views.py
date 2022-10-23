@@ -80,6 +80,10 @@ class RetrieveUserView(APIView):
 
     def get(self, request):
         """http://localhost:8000/api/users/me
+
+        w Posstmanie
+        Headers
+        Authorization Bearer wartoscTokenaPoScapcjiZEndpointa http://localhost:8000/api/token/
         pobieranie danych aktualnie zalogowanrgo już  usera"""
         # django - obiekt request ma user atrybuty, nie trzeba brac z data
         user = request.user

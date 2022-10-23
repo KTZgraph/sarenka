@@ -51,6 +51,9 @@ class UserCreateSerializer(serializers.ModelSerializer):
                 {"password": serializers_errors["non_field_errors"]}
             )
 
+        # WARNING - waldiator powinien zwracać dane na końcu!
+        return data
+
     def create(self, validated_data):
         """Nadpisanie istneijącej metody"""
         # tworzenie obiektu Usera ze zwaliddowanych danych
