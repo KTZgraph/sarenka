@@ -1,5 +1,14 @@
 <!-- FIXME - mirage dummy server podłączać przed wrzuceniem na serwer -->
 
+# Redux toolkit (abstrackaj nad reduxem)
+
+- https://youtu.be/DGmX1FDdLZE?t=2152
+- https://www.npmjs.com/package/@reduxjs/toolkit
+- npm install --save @reduxjs/toolkit react-redux
+- https://redux-toolkit.js.org/introduction/getting-started
+- https://redux-toolkit.js.org/rtk-query/overview to podobno handy - jeszcze wiecej abstrakcji dookoła redux toolkit
+- https://redux-toolkit.js.org/api/createReducer
+- https://redux-toolkit.js.org/api/createSlice wygeneruje the action creator and reducers
 # Podatności z devDependencies "react-scripts": "5.0.1",
 
 ```sh
