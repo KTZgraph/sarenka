@@ -1,4 +1,25 @@
 // https://youtu.be/DGmX1FDdLZE?t=157
+/*
+Dlaczego seriwsujemy apkę Reacta z serverem Node.js express
+- it's because we want to store our access and refresh tokens inside of the HTTP only cookies
+so with the cookies you're gonna have your React Client and the you're gonna have your bakckend api which in this case is gonna be express that's serving the app and 
+then we're gonna have cookies 
+Now the cookies, the behaviour of then is on your request they get sent into requests automatically but the domains have to be the exact same unsless you 
+do some differeny changes to the options of the cookies like let's say set the same site property or the same site option rather to sopmething like None and then do some
+other things inside of your fetch requests so you can sort get around that but for the most part of the default behaviour is that browser will not send along the cookies if 
+the domain is different at the desctination 
+-> So that we have the express server serving the React Client and then that way the cookies can go back and forth and then the express server it;s going to be able to parse the
+values of those cookies
+The browser won't be able to because we're gonna have the HTTP only flag set to true - meaning that javascript can't read the value on the browser
+--> but of course on the server on our express server it will be able to we'll be able to parse those cvalues and then send any authorized requests that we need to because we're 
+using JSON WEB TOKEN AUTHENTICATION the way that we make authorized requests is we use the authorization header where then we pass in the auth header type do  things like
+BEARER and the your access token
+So that's how we do the authorized requests which is something that we saw in the last video  https://www.youtube.com/watch?v=rxRYEXBmM88&t=8s
+
+So that is kinf of how we manage these values and how we keep them nice and secure
+*/
+
+
 // w folderze sarenka\src\frontend>
 // npm install --save express
 // npm install --save path
