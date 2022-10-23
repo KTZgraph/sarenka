@@ -1,5 +1,18 @@
 <!-- FIXME - mirage dummy server podłączać przed wrzuceniem na serwer -->
 
+# REACT - zmienne środowiskowe
+
+- .env nazwa pliku która jest dostępna publicznie w repo (.gitignore jej nie posiada), ja chcę żeby ten plik był w repo
+- .env.local plik nie dodawany do repozytorum publicznie
+  sarenka\src\frontend\client\src\.env
+
+```js
+REACT_APP_API_URL = "http://localhost:5000";
+```
+
+- https://youtu.be/DGmX1FDdLZE?t=727
+- ważne, żeby publicznie dostępnezmienne środowiskowa globalne nazwy zmiennych zaczynały się od `REACT_APP`
+
 # Książka - wyróżnić w readme
 
 - https://leanpub.com/d3-t-and-t-v7
@@ -18,6 +31,7 @@
 - https://www.youtube.com/watch?v=MTrj3tNf9jA
 
 # D3.js ZŁOTO <3
+
 - heatmap tooltip https://d3-graph-gallery.com/graph/heatmap_tooltip.html
 - https://bl.ocks.org/d3noob/635735a3de2909ae06669096fbadc0ed Multi-line graph 4 with v7: Toggle
 - https://bl.ocks.org/d3noob/f89cd4891c6e67991e06c9a249ae3048 Formatted time labels for an axis with v7
@@ -31,9 +45,10 @@
 - https://bl.ocks.org/d3noob
 - bar char with line chart https://codepen.io/Samih/pen/nRXaOG
 
-
 # dane
+
 - kurs za darmoszkę https://www.coursera.org/learn/google-data-analytics-capstone
+
 # TODO
 
 - https://www.youtube.com/watch?v=MGRuvlXzZHs&list=PLDZ4p-ENjbiPo4WH7KdHjh_EMI7Ic8b2B&index=19
