@@ -75,7 +75,15 @@ class RegisterView(APIView):
 
 
 class RetrieveUserView(APIView):
+    # ważne - tutaj tlko dla zalogowanego usera widok
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request):
-        pass
+        """http://localhost:8000/api/users/me
+        pobieranie danych aktualnie zalogowanrgo już  usera"""
+        # django - obiekt request ma user atrybuty, nie trzeba brac z data
+        user = request.user
+        # obiekt do serializatora - tego prostrszego bez hasła
+        user = UserSerializer(user)
+
+        return Response(user.data, status=status.HTTP_200_OK)

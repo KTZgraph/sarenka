@@ -8,7 +8,8 @@ from rest_framework_simplejwt.views import (
     TokenVerifyView,
 )
 
-
+# WARNING Django na końcu endpointa oczekuje slashy
+# https://docs.djangoproject.com/en/4.1/ref/settings/#append-slash
 urlpatterns = [
     # https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html
     path("api/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
