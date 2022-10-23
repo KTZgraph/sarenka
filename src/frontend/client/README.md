@@ -1,5 +1,11 @@
 <!-- FIXME - mirage dummy server podłączać przed wrzuceniem na serwer -->
 
+# Podatności z devDependencies "react-scripts": "5.0.1",
+
+```sh
+npm audit --production
+```
+
 # REACT - zmienne środowiskowe
 
 - .env nazwa pliku która jest dostępna publicznie w repo (.gitignore jej nie posiada), ja chcę żeby ten plik był w repo
