@@ -20,6 +20,9 @@ class UserCreateSerializer(serializers.ModelSerializer):
         user = User.objects.create_user(
             first_name=validated_data["first_name"],
             last_name=validated_data["last_name"],
+            # serializer wie jak zwalidowac email , bo w modelach ma typ emailField
+            # trzeba by vcoś takiego pisać, jakbyś nie mieli modelu
+            # serializers.EmailField()
             email=validated_data["email"],
             password=validated_data["password"],
         )

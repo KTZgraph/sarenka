@@ -40,10 +40,6 @@ class RegisterView(APIView):
         """
 
         data = request.data
-        first_name = data["first_name"]
-        last_name = data["last_name"]
-        email = data["email"]
-        password = data["password"]
 
         # nadpisujemy Managera z modelu User z Django
         # pola jak do service-core\users\models.py klasy UserAccountManager
@@ -52,15 +48,18 @@ class RegisterView(APIView):
         # usuwam tę linię, bo serializatorem będe tworzyć obiekt
         # user = User.objects.create_user(first_name, last_name, email, password)
 
-        serializer = UserCreateSerializer(
-            data={
-                # sposób na przekazanie danych do serializatora
-                "first_name": first_name,
-                "last_name": last_name,
-                "email": email,
-                "password": password,
-            }
-        )
+        serializer = UserCreateSerializer(data=data)
+        # dprawdzam, czy te pola są valid
+        if not serializer.is_valid():
+            # jak dane nieprawidłowe to zwrotka 400
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        # jak dane prawidłowe to tworze usera
+        # metoda create na tym obiekcie serializator to nasza przeciążona  metoda
+        # .validated_data to atrybut obiektu serializatora
+        user = serializer.create(serializer.validated_data)
+        # teraz dopiero user ma atrybuty .data potrzebny do zwrotki
+        user = UserCreateSerializer(user)
 
         # zwraca usera dane jako zwrotkę
         return Response(user.data, status=status.HTTP_201_CREATED)
