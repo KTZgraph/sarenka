@@ -68,6 +68,12 @@ import SimpleBarLineGraph from "../components/simple-bar-line-graph/SimpleBarLin
 // hetmapa z tooltipami
 import HeatmapTooltip from "../components/heatmap-tooltip/HeatmapTooltip";
 
+// spider radar chart z blogu
+import SpiderChart from "../components/spider-radar-chart/SpiderChart";
+
+// wstępna wersja do wizualizacji podatnosci jak cve.raport
+import VectorChart from "../components/spider-radar-chart/VectorChart";
+
 import "./Visualizations.scss";
 
 const VisualizationsRowTrendsChart = () => (
@@ -93,6 +99,18 @@ const Visualizations = () => {
       <main>
         <Navbar />
         <div className="visualizations">
+          <div className="visualizations__row">
+            <div className="visualizations_col">
+              <div className="visualizations__card  visualizations_col--double-width"></div>
+              <VectorChart />
+            </div>
+            <div className="visualizations_col">
+              <div className="visualizations__card">
+                <SpiderChart />
+              </div>
+            </div>
+          </div>
+
           <div className="visualizations__row">
             <div className="visualizations_col">
               <div className="visualizations__card  visualizations_col--double-width"></div>
