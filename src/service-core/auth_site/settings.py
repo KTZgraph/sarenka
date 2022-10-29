@@ -146,6 +146,8 @@ REST_FRAMEWORK = {
 
 
 # https://django-rest-framework-simplejwt.readthedocs.io/en/latest/settings.html
+# WARNING korzystam z tego w sarenka\src\frontend\routes\auth\login.js
+#   https://youtu.be/oa_YvzYDyR8?t=1051
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=30),
 }

@@ -1,5 +1,10 @@
 <!-- FIXME - mirage dummy server podłączać przed wrzuceniem na serwer -->
 
+# Cookie
+- https://youtu.be/oa_YvzYDyR8?t=889
+- https://www.npmjs.com/package/cookie
+- npm install --save cookie
+
 # CORS w express
 
 - https://youtu.be/cvu6a3P9S0M?t=2490

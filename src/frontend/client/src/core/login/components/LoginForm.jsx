@@ -2,7 +2,7 @@
 https://www.youtube.com/watch?v=tIdNeoHniEY
 */
 
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { AuthContext } from "../../../context/AuthContext";
@@ -10,9 +10,20 @@ import { signInWithEmailAndPassword } from "../../../lib/auth";
 
 import FormInput from "../../../UI/FormInput";
 import Subtitle from "../../../components/atoms/subtitle";
+
+// redux
+import { useDispatch, useSelector } from "react-redux";
+import { resetRegistered } from "../../../features/user";
+
 import "./LoginForm.scss";
 
 const LoginForm = ({ className }) => {
+  // WARNING https://www.youtube.com/watch?v=cvu6a3P9S0M&t=1365s 48:30
+  const userDispatch = useDispatch();
+  // https://youtu.be/oa_YvzYDyR8?t=500
+  const { loading } = useSelector((state) => state.user);
+
+
   const { dispatch } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -62,6 +73,10 @@ const LoginForm = ({ className }) => {
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
+
+  useEffect(() => {
+    userDispatch(resetRegistered);
+  }, []);
 
   return (
     <form className={`login-form ${className}`} onSubmit={handleSubmit}>
