@@ -17,6 +17,8 @@ const initialState = {
   registered: false,
   // FIXME można dodać błąd
   error: null,
+  // FIXME - można dodać message np po porwanym zalgoowaniu się
+  message: "",
 };
 
 // https://redux-toolkit.js.org/api/createAsyncThunk
@@ -67,6 +69,7 @@ export const register = createAsyncThunk(
       if (res.status === 201) {
         // WARNING https://youtu.be/cvu6a3P9S0M?t=1164
         // tu też możnaby aktualizaowac user z initialState, ale osobny handler będzie lepszy
+        // FIXME można zmienić stan wartosci message
         return data;
       } else {
         // WARNING /api/users/register/rejected z dokumentacji
@@ -74,6 +77,41 @@ export const register = createAsyncThunk(
       }
     } catch (err) {
       // ttuaj nie mam data
+      return thunkAPI.rejectWithValue(err.response.data);
+    }
+  }
+);
+
+export const login = createAsyncThunk(
+  "users/login", // type
+  async ({ email, password }, thunkAPI) => {
+    const body = JSON.stringify({
+      email,
+      password,
+    });
+
+    try {
+      const res = await fetch("api/users/login", {
+        // sarenka\src\frontend\routes\auth\login.js enpoint z expressa
+        method: "POST",
+        headers: {
+          accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (res.status === 200) {
+        return data;
+      } else {
+        return thunkAPI.rejectWithValue(data);
+      }
+    } catch (err) {
       return thunkAPI.rejectWithValue(err.response.data);
     }
   }
@@ -119,6 +157,19 @@ const userSlice = createSlice({
         // NIE udało się
         state.loading = false;
         // FIXME można dodac błąd i zapisac go do state
+      })
+      // dodatkowy reducer dla logowania
+      // .addCase(login.pending, (state, payload))
+      // WARNING - nie uzywam payload to go nie biorę jako argumentu
+      .addCase(login.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(login.fulfilled, (state) => {
+        state.loading = false;
+        state.isAuthenticated = true;
+      })
+      .addCase(login.rejected, (state) => {
+        state.loading = false;
       });
   },
 });
