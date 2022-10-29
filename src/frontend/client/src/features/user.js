@@ -154,6 +154,39 @@ export const login = createAsyncThunk(
   }
 );
 
+// weryfikacja tokenu
+// WARNING https://youtu.be/GaKGYo2jQ2Y?t=1051
+export const checkAuth = createAsyncThunk(
+  "users/verify",
+  async (_, thunkAPI) => {
+    // potrzben do isAuthenticated i loading z state
+    try {
+      const res = await fetch("/api/users/verify", {
+        // sarenka\src\frontend\routes\auth\login.js enpoint z expressa
+        method: "GET",
+        headers: {
+          accept: "application/json",
+        },
+      });
+
+      const data = await res.json(); //jak wszystko się uda to dane {} pochodzące z endpointu  path("api/token/verify/ z sarenka\src\service-core\auth_site\urls.py
+
+      if (res.status === 200) {
+        const { dispatch } = thunkAPI;
+
+        dispatch(getUser());
+
+        // FIXME - można wykorzystać te dane
+        return data;
+      } else {
+        return thunkAPI.rejectWithValue(data);
+      }
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.response.data);
+    }
+  }
+);
+
 export const logout = createAsyncThunk(
   // akcje do wylogowywania
   // https://youtu.be/oa_YvzYDyR8?t=2791
@@ -249,6 +282,19 @@ const userSlice = createSlice({
         state.user = action.payload;
       })
       .addCase(getUser.rejected, (state) => {
+        state.loading = false;
+      })
+      // do werfyikacji tokenu
+      .addCase(checkAuth.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(checkAuth.fulfilled, (state) => {
+        // WARNING nie ustiawiam żadnych danych to tez nie aktualizuję state.user
+        // https://youtu.be/GaKGYo2jQ2Y?t=1229
+        state.loading = false;
+        state.isAuthenticated = true;
+      })
+      .addCase(checkAuth.rejected, (state) => {
         state.loading = false;
       })
       // do wylogowywania

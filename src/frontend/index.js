@@ -49,6 +49,7 @@ const registerRoute = require("./routes/auth/register");
 const loginRoute = require("./routes/auth/login");
 const meRoute = require("./routes/auth/me");
 const logoutRoute = require("./routes/auth/logout");
+const verifyTokenRoute = require("./routes/auth/verify");
 
 const app = express();
 
@@ -62,6 +63,7 @@ app.use(registerRoute);
 app.use(loginRoute);
 app.use(meRoute);
 app.use(logoutRoute);
+app.use(verifyTokenRoute);
 
 // dodanie plików statycznych
 app.use(express.static("client/build"));
