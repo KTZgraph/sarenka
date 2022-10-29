@@ -3,7 +3,7 @@ https://www.youtube.com/watch?v=tIdNeoHniEY
 */
 
 import { useContext, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 import { AuthContext } from "../../../context/AuthContext";
 import { signInWithEmailAndPassword } from "../../../lib/auth";
@@ -22,10 +22,10 @@ const LoginForm = ({ className }) => {
   // WARNING https://www.youtube.com/watch?v=cvu6a3P9S0M&t=1365s 48:30
   const userDispatch = useDispatch();
   // https://youtu.be/oa_YvzYDyR8?t=500
-  const { loading } = useSelector((state) => state.user);
+  // https://youtu.be/GaKGYo2jQ2Y?t=111 isAuthenticated
+  const { loading, isAuthenticated } = useSelector((state) => state.user);
 
   const { dispatch } = useContext(AuthContext);
-  const navigate = useNavigate();
 
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -62,8 +62,6 @@ const LoginForm = ({ className }) => {
 
     // https://youtu.be/oa_YvzYDyR8?t=2325 pamietać żeby robić to jako obiekt
     userDispatch(login({ email, password }));
-    navigate("/");
-
     // FIXME
     // signInWithEmailAndPassword(values.email, values.password)
     //   .then((userCredentials) => {
@@ -85,6 +83,10 @@ const LoginForm = ({ className }) => {
   useEffect(() => {
     userDispatch(resetRegistered);
   }, []);
+
+  // BUG https://github.com/linkedweb/auth-site/blob/main/frontend/client/src/containers/LoginPage.js
+  // BUG jak używa się zwykłego navigate to nie moze wyrenderować komponentów
+  if (isAuthenticated) return <Navigate to="/" />;
 
   return (
     <form className={`login-form ${className}`} onSubmit={handleSubmit}>

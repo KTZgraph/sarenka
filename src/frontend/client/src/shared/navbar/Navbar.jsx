@@ -39,7 +39,7 @@ const Navbar = (props) => {
           )}
           {isAuthenticated ? (
             <a
-              href="/login"
+              href="#!"
               className="navbar__item"
               onClick={() => userDispatch(logout())}
             >
