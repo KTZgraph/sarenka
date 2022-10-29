@@ -88,6 +88,9 @@ const userSlice = createSlice({
       state.registered = false;
     },
   },
+
+  // WARNING https://redux-toolkit.js.org/api/createSlice#parameters
+  
 });
 
 export const { resetRegistered } = userSlice.actions;
