@@ -23,7 +23,10 @@ const LoginForm = ({ className }) => {
   const userDispatch = useDispatch();
   // https://youtu.be/oa_YvzYDyR8?t=500
   // https://youtu.be/GaKGYo2jQ2Y?t=111 isAuthenticated
-  const { loading, isAuthenticated } = useSelector((state) => state.user);
+  // https://youtu.be/GaKGYo2jQ2Y?t=1434 registered
+  const { loading, isAuthenticated, registered } = useSelector(
+    (state) => state.user
+  );
 
   const { dispatch } = useContext(AuthContext);
 
@@ -81,8 +84,8 @@ const LoginForm = ({ className }) => {
   };
 
   useEffect(() => {
-    userDispatch(resetRegistered);
-  }, []);
+    if (registered) userDispatch(resetRegistered);
+  }, [registered]);
 
   // BUG https://github.com/linkedweb/auth-site/blob/main/frontend/client/src/containers/LoginPage.js
   // BUG jak używa się zwykłego navigate to nie moze wyrenderować komponentów
