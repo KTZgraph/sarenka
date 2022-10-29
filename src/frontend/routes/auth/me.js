@@ -11,12 +11,12 @@ router.get("/api/users/me", async (req, res) => {
   // tutaj potrzebuję cookie
   // https://youtu.be/oa_YvzYDyR8?t=1674
   //   npm install --save cookie-parser nie trzeba ale jest ładniej - import w index.js
+
   const { access } = req.cookies;
 
   //   mogę zrobić authorized request do backendu
-
   try {
-    const apiRes = await fetch(`${env.process.API_URL}/api/users/me`, {
+    const apiRes = await fetch(`${process.env.API_URL}/api/users/me`, {
       method: "GET",
       headers: {
         accept: "application/json",
@@ -26,8 +26,6 @@ router.get("/api/users/me", async (req, res) => {
     });
 
     const data = await apiRes.json();
-
-    // zwrócić dane jak się udało porbrać dane, jak i wtedy gdy 401 not authorized
     return res.status(apiRes.status).json(data);
   } catch (err) {
     return res.status(500).json({

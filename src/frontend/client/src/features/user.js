@@ -49,7 +49,7 @@ export const register = createAsyncThunk(
       // BUG CORS
       // const res = await fetch(`${API_URL}/api/users/register`, {
       // WARNIGN - teraz używam proxy z develmpnetu, ale na priodukcji i tak to będzi ena localhost 5000
-      const res = await fetch("api/users/register", {
+      const res = await fetch("/api/users/register", {
         method: "POST",
         headers: {
           accept: "application/json",
@@ -85,10 +85,11 @@ export const register = createAsyncThunk(
 // do pobierania dancyh usera, nie przyjmuje żadnych argumentów więc używam podłogi _
 const getUser = createAsyncThunk("users/me", async (_, thunkAPI) => {
   // trzeba pamietać, zeby dodać user/me/pending user/me/fullfiled user/me/rejected z dokumentacji redux toolkit
+
   try {
     // url do express servera
     // cookies powinny być send along with this request
-    const res = await fetch("api/users/me", {
+    const res = await fetch("/api/users/me", {
       // ttuaj nie trzeba być authorized żeby dostać się do tego route handler
       method: "GET",
       headers: {
@@ -121,7 +122,7 @@ export const login = createAsyncThunk(
     });
 
     try {
-      const res = await fetch("api/users/login", {
+      const res = await fetch("/api/users/login", {
         // sarenka\src\frontend\routes\auth\login.js enpoint z expressa
         method: "POST",
         headers: {
@@ -137,9 +138,10 @@ export const login = createAsyncThunk(
       const data = await res.json();
 
       if (res.status === 200) {
-        const { dispach } = thunkAPI;
-        // getUser to moja metoda z wyżej
-        dispach(getUser());
+        // BUG przez literówkę z destrukturyzacji NIE działało
+        const { dispatch } = thunkAPI;
+
+        dispatch(getUser());
 
         return data;
       } else {
@@ -147,6 +149,7 @@ export const login = createAsyncThunk(
       }
     } catch (err) {
       return thunkAPI.rejectWithValue(err.response.data);
+      // return thunkAPI.rejectWithValue("tutaj w loginie coś nie pykło");
     }
   }
 );

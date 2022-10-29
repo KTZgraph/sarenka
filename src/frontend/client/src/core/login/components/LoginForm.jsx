@@ -10,10 +10,11 @@ import { signInWithEmailAndPassword } from "../../../lib/auth";
 
 import FormInput from "../../../UI/FormInput";
 import Subtitle from "../../../components/atoms/subtitle";
+import Spinner from "../../../UI/Spinner";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
-import { resetRegistered } from "../../../features/user";
+import { resetRegistered, login } from "../../../features/user";
 
 import "./LoginForm.scss";
 
@@ -22,7 +23,6 @@ const LoginForm = ({ className }) => {
   const userDispatch = useDispatch();
   // https://youtu.be/oa_YvzYDyR8?t=500
   const { loading } = useSelector((state) => state.user);
-
 
   const { dispatch } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -34,6 +34,8 @@ const LoginForm = ({ className }) => {
     email: "",
     password: "",
   });
+
+  const { email, password } = values;
 
   const inputs = [
     {
@@ -57,17 +59,22 @@ const LoginForm = ({ className }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(values.email, values.password)
-      .then((userCredentials) => {
-        setError(false);
-        setErrorMessage("");
-        dispatch({ type: "LOGIN", payload: userCredentials.user });
-        navigate("/");
-      })
-      .catch((error) => {
-        setErrorMessage(error.message);
-        setError(true);
-      });
+
+    // https://youtu.be/oa_YvzYDyR8?t=2325 pamietać żeby robić to jako obiekt
+    userDispatch(login({ email, password }));
+
+    // FIXME
+    // signInWithEmailAndPassword(values.email, values.password)
+    //   .then((userCredentials) => {
+    //     setError(false);
+    //     setErrorMessage("");
+    //     dispatch({ type: "LOGIN", payload: userCredentials.user });
+    //     navigate("/");
+    //   })
+    //   .catch((error) => {
+    //     setErrorMessage(error.message);
+    //     setError(true);
+    //   });
   };
 
   const handleChange = (e) => {
@@ -91,9 +98,14 @@ const LoginForm = ({ className }) => {
           nameFocus="password"
         />
       ))}
-      <button className="login-form__button" type="submit">
-        Login
-      </button>
+      {loading ? (
+        <Spinner />
+      ) : (
+        <button className="login-form__button" type="submit">
+          Login
+        </button>
+      )}
+
       {error && (
         <span className="login-form__error-messsage">{errorMessage}</span>
       )}
