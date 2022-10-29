@@ -107,6 +107,8 @@ export const login = createAsyncThunk(
       const data = await res.json();
 
       if (res.status === 200) {
+        const { dispach } = thunkAPI;
+        // dispach(getMyUser)
         return data;
       } else {
         return thunkAPI.rejectWithValue(data);

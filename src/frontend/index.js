@@ -34,6 +34,10 @@ So that is kinf of how we manage these values and how we keep them nice and secu
 // npm i --save dotenv # do zmiennych środowiskowych
 
 const express = require("express");
+
+// npm install --save cookie-parser do łądneijszego parsowanie cookie
+const cookieParser = require("cookie-parser");
+
 // moduł żeby łatwiej zarządzac ścieżkami - ja os.join w pythonie
 const path = require("path");
 
@@ -42,14 +46,20 @@ require("dotenv").config();
 
 // pobieram swoje routery, po imporcie dotenv żeby mieć pewnosć, że nie ma problemu z pobieaniem wartości zmiennych środkowiskowcyh
 const registerRoute = require("./routes/auth/register");
+const loginRoute = require("./routes/auth/login");
+const meRoute = require("./routes/auth/me");
 
 const app = express();
 
 // dodanie tego middlewara pozwala na działanie  router.post("/api/users/register" z sarenka\src\frontend\routes\auth\register.js
 app.use(express.json());
+// npm install --save cookie-parser
+app.use(cookieParser());
 
-// include mojego routera
+// include rejestracja moich routes
 app.use(registerRoute);
+app.use(loginRoute);
+app.use(meRoute);
 
 // dodanie plików statycznych
 app.use(express.static("client/build"));

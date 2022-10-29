@@ -29,30 +29,27 @@ router.post("/api/users/register", async (req, res) => {
   // const body = JSON.stringify(req.body)
 
   try {
-    const registerRes = await fetch(
-      `${process.env.API_URL}/api/users/register`,
-      {
-        method: "POST",
-        headers: {
-          accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          first_name,
-          last_name,
-          email,
-          password,
-        }),
-      }
-    );
+    const apiRes = await fetch(`${process.env.API_URL}/api/users/register`, {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        first_name,
+        last_name,
+        email,
+        password,
+      }),
+    });
 
     console.log("register express");
-    const data = await registerRes.json();
+    const data = await apiRes.json();
     console.log("data");
     console.log(data);
 
     // nei sprawdzam statusy, po prostu wypycham go na zewnatrz
-    return res.status(registerRes.status).json(data);
+    return res.status(apiRes.status).json(data);
   } catch (err) {
     return res
       .status(500)
