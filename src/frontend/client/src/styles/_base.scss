@@ -1,0 +1,145 @@
+@import "./variables";
+@import "./mixin";
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+$font-main: "Roboto", sans-serif;
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap");
+$font-second: "Nunito", sans-serif;
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+$font-monospace: "Roboto Mono", monospace;
+
+:root {
+  font-family: $font-main;
+  font-size: 10px;
+}
+
+* {
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.html {
+  background-color: white;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid (225, 225, 225);
+}
+
+img {
+  max-width: 100%;
+}
+
+.link {
+  font-weight: bold;
+  text-decoration: underline;
+  color: $color-main-medium;
+  font-family: $font-second;
+  text-decoration-style: solid;
+  text-decoration-thickness: 0.15rem;
+  text-underline-position: under;
+}
+
+.input {
+  padding: 3px;
+  font-size: 1.3rem;
+}
+.input__label {
+  color: grey;
+  font-weight: bold;
+  padding-right: 5px;
+}
+.input__value {
+  color: black;
+  font-weight: normal;
+}
+
+.dropdown {
+  padding: 3px;
+  font-size: 1.3rem;
+}
+
+.dropdown__label {
+  color: grey;
+  font-weight: bold;
+  padding-right: 5px;
+}
+
+.dropdown__title {
+  color: grey;
+  font-weight: bold;
+  padding-right: 5px;
+}
+
+.dropdown__list-option {
+  color: black;
+  font-weight: normal;
+}
+
+.dropdown__option {
+  color: black;
+  font-weight: normal;
+}
+
+.radio-button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.radio-button__input {
+  font-size: 1.2rem;
+}
+
+.radio-button__label {
+  font-size: 1.2rem;
+  font-family: $font-second;
+  font-weight: bold;
+  margin-left: 2px;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+}
+
+.form-input__label {
+  font-size: 1.2rem;
+  color: gray;
+}
+
+.form-input__input {
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.form-input__input:invalid[focused="true"] ~ .form-input__error-message {
+  display: block;
+}
+.form-input__input:invalid[focused="true"] {
+  border: 1px solid red;
+}
+
+.form-input__error-message {
+  font-size: 1.2rem;
+  padding: 3px;
+  color: red;
+  display: none;
+}
