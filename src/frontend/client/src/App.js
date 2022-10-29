@@ -1,3 +1,10 @@
+// https://youtu.be/GaKGYo2jQ2Y?t=1390
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+
+// WARNING Redux
+import { checkAuth } from "./features/user";
+
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useContext } from "react";
 import { v4 as uuidV4 } from "uuid";
@@ -6,10 +13,6 @@ import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/AuthContext";
 
 import Toast from "./UI/Toast";
-
-// Redux provider z biblioteki żeby iopakowac moja cała apkę i dać jej dostęp do sarenka\src\frontend\client\src\store.js
-import { Provider } from "react-redux";
-import { store } from "./store";
 
 // -------------- NOWE SCIEZKI DO PLIKOW
 import Dashboard from "./core/dashboard/pages/Dashboard";
@@ -38,36 +41,41 @@ function App() {
   const { darkMode } = useContext(DarkModeContext);
   const { currentUser } = useContext(AuthContext);
 
+  // redux
+  const userDispatch = useDispatch();
+
+  useEffect(() => {
+    userDispatch(checkAuth());
+  }, []);
+
   return (
     // https://youtu.be/DGmX1FDdLZE?t=3036 opakowaywanie reduxem
-    <Provider store={store}>
-      <div className={darkMode ? "App dark" : "App"}>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/">
-              <Route index element={<Dashboard />} />
-              <Route path="register" element={<Register />} />
-              <Route path="login" element={<Login />} />
-              <Route path="demo" element={<Demo />} />
-              <Route path="vulnerabilities" element={<VulnerabilityList />} />
-              <Route path="statistics" element={<Statistics />} />
-              <Route path="statistics-two" element={<StatisticsTwo />} />
-              <Route path="statistics-two" element={<StatisticsTwo />} />
-              <Route path="diagrams" element={<Diagrams />} />
-              <Route path="visualizations" element={<Visualizations />} />
-              <Route path="periodic-table" element={<PeriodicTablePage />} />
-              <Route path="calendar" element={<CalendarPage />} />
+    <div className={darkMode ? "App dark" : "App"}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/">
+            <Route index element={<Dashboard />} />
+            <Route path="register" element={<Register />} />
+            <Route path="login" element={<Login />} />
+            <Route path="demo" element={<Demo />} />
+            <Route path="vulnerabilities" element={<VulnerabilityList />} />
+            <Route path="statistics" element={<Statistics />} />
+            <Route path="statistics-two" element={<StatisticsTwo />} />
+            <Route path="statistics-two" element={<StatisticsTwo />} />
+            <Route path="diagrams" element={<Diagrams />} />
+            <Route path="visualizations" element={<Visualizations />} />
+            <Route path="periodic-table" element={<PeriodicTablePage />} />
+            <Route path="calendar" element={<CalendarPage />} />
 
-              {/* <Route path="register" element={<Register />} /> */}
-            </Route>
-          </Routes>
-          <Toast
-            position="notification-position__bottom-right"
-            autoDeleteInterval={4000}
-          />
-        </BrowserRouter>
-      </div>
-    </Provider>
+            {/* <Route path="register" element={<Register />} /> */}
+          </Route>
+        </Routes>
+        <Toast
+          position="notification-position__bottom-right"
+          autoDeleteInterval={4000}
+        />
+      </BrowserRouter>
+    </div>
   );
 }
 
