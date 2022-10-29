@@ -26,7 +26,8 @@ const initialState = {
 // export bo chcę tę funkcję do registerPage
 export const register = createAsyncThunk(
   // https://redux-toolkit.js.org/api/createAsyncThunk#type
-  "user/register",
+  // WARNING liczba mnoga "users/register"
+  "users/register",
   // https://redux-toolkit.js.org/api/createAsyncThunk#payloadcreator
   // If you need to pass in multiple values, pass them together in an object when you dispatch the thunk, like dispatch(fetchUsers({status: 'active', sortBy: 'name'})).
   async ({ first_name, last_name, email, password }, thunkAPI) => {
@@ -46,13 +47,18 @@ export const register = createAsyncThunk(
       // BUG CORS
       // const res = await fetch(`${API_URL}/api/users/register`, {
       // WARNIGN - teraz używam proxy z develmpnetu, ale na priodukcji i tak to będzi ena localhost 5000
-      const res = await fetch(`api/users/register`, {
+      const res = await fetch("api/users/register", {
         method: "POST",
         headers: {
-          Accept: "application/json",
+          accept: "application/json",
           "Content-Type": "application/json",
         },
-        body,
+        body: JSON.stringify({
+          first_name,
+          last_name,
+          email,
+          password,
+        }),
       });
 
       // dane z RegisterView z sarenka\src\service-core\users\views.py

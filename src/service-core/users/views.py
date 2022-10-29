@@ -46,7 +46,11 @@ class RegisterView(APIView):
         }
         """
 
+        print("DJANGO")
+
         data = request.data
+        print("data")
+        print(data)
 
         # nadpisujemy Managera z modelu User z Django
         # pola jak do service-core\users\models.py klasy UserAccountManager

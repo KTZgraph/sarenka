@@ -18,7 +18,7 @@ export const store = configureStore({
   /*  dodatkowe middleware on top of the default
      https://redux-toolkit.js.org/api/configureStore#devtools
      można dac też inne rzeczy - teraz możn aużyć dev tools extensions from Chrome/ Firefox*/
-  devTools: true,
+  // devTools: true,
   /*   WARNING - to można dac też LOGGER
   /  https://redux-toolkit.js.org/api/configureStore#full-example
   /  import logger from 'redux-logger'

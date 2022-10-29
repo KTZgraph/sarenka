@@ -33,16 +33,23 @@ router.post("/api/users/register", async (req, res) => {
       `${process.env.API_URL}/api/users/register`,
       {
         method: "POST",
-        header: {
-          Accept: "application/json",
+        headers: {
+          accept: "application/json",
           "Content-Type": "application/json",
         },
-        // body:body
-        body,
+        body: JSON.stringify({
+          first_name,
+          last_name,
+          email,
+          password,
+        }),
       }
     );
 
+    console.log("register express");
     const data = await registerRes.json();
+    console.log("data");
+    console.log(data);
 
     // nei sprawdzam statusy, po prostu wypycham go na zewnatrz
     return res.status(registerRes.status).json(data);
