@@ -1,6 +1,7 @@
 <!-- FIXME - mirage dummy server podłączać przed wrzuceniem na serwer -->
 
 # Cookie
+
 - https://youtu.be/oa_YvzYDyR8?t=889
 - https://www.npmjs.com/package/cookie
 - npm install --save cookie
@@ -13,6 +14,10 @@
 ## proxy tylko dla developmnetu
 
 - https://create-react-app.dev/docs/proxying-api-requests-in-development/
+
+# Comparing Redux & Context API
+
+- https://dev.to/ruppysuppy/redux-vs-context-api-when-to-use-them-4k3p
 
 # Redux toolkit (abstrackaj nad reduxem)
 

@@ -64,14 +64,30 @@ router.post("/api/users/login", async (req, res) => {
           //   secure odnosi się do https, na produkcji ma być wałsnie https
           secure: process.env.NODE_ENV === "production",
         }),
-
         // to wszytko można zapisac w jednym stringu zamiast uzywać cookie biblioteki
         // `access=${access}; HttpOnly; MAx-Age: 1800; Path: /api/; SameSite:Strict; secure:false`
+
+        cookie.serialize("refresh", data.refresh, {
+          // cookie do tokena rrefresh
+          httpOnly: true,
+          // jedne dzień jest token aktywny, bo simple-token z Django domyślnie expired after a day
+          maxAge: 60 * 60 * 24,
+          path: "/api/",
+          sameSite: "strict",
+          secure: process.env.NODE_ENV === "production",
+        }),
       ]);
 
       return res.status(200).json({ success: "Logged in succesfully" });
+    } else {
+      // status i dane ze zworkti
+      return res.status(apiRes.status).json(data);
     }
-  } catch (err) {}
+  } catch (err) {
+    return res.status(500).json({
+      error: "Somethin when wrong whne logging in",
+    });
+  }
 });
 
 module.exports = router;
