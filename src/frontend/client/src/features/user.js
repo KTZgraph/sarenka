@@ -17,13 +17,16 @@ const initialState = {
   loading: false,
   //   będzie true jak prawidłowo zarejestrujemy konto
   registered: false,
+  // FIXME można dodać błąd
+  error: null,
 };
 
 // https://redux-toolkit.js.org/api/createAsyncThunk
 // udeżam do endpoint a z sarenka\src\frontend\routes\auth\register.js
 // awsync jeden parametr któy jest obiektem
 // WARNING register is actionCreator
-const register = createAsyncThunk(
+// export bo chcę tę funkcję do registerPage
+export const register = createAsyncThunk(
   // https://redux-toolkit.js.org/api/createAsyncThunk#type
   "user/register",
   // https://redux-toolkit.js.org/api/createAsyncThunk#payloadcreator
@@ -90,7 +93,27 @@ const userSlice = createSlice({
   },
 
   // WARNING https://redux-toolkit.js.org/api/createSlice#parameters
-  
+  extraReducers: (builder) => {
+    // ddoanie actionCreator pending, fulfilled, rejected z  dokumendacji
+    builder
+      // .addCase(register.pending, (state, action) => {
+      //WARNING  nie uzywam action to nie muszę brać argumentu
+      .addCase(register.pending, (state) => {
+        // można bezpośrednio zmieniać stan, nie koniecznei przez return i spread operator
+        state.loading = true;
+      })
+      // .addCase(register.fulfilled, (state, action) => {
+      .addCase(register.fulfilled, (state) => {
+        // wszystko się udało, zmieniam wartośc- na podstawie jej będe przekierowywać usera to srony logowania
+        state.loading = false;
+        state.registered = true;
+      })
+      .addCase(register.rejected, (state, action) => {
+        // NIE udało się
+        state.loading = false;
+        // FIXME można dodac błąd i zapisac go do state
+      });
+  },
 });
 
 export const { resetRegistered } = userSlice.actions;
