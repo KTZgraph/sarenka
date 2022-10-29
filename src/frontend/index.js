@@ -48,6 +48,7 @@ require("dotenv").config();
 const registerRoute = require("./routes/auth/register");
 const loginRoute = require("./routes/auth/login");
 const meRoute = require("./routes/auth/me");
+const logoutRoute = require("./routes/auth/logout");
 
 const app = express();
 
@@ -60,6 +61,7 @@ app.use(cookieParser());
 app.use(registerRoute);
 app.use(loginRoute);
 app.use(meRoute);
+app.use(logoutRoute);
 
 // dodanie plików statycznych
 app.use(express.static("client/build"));
