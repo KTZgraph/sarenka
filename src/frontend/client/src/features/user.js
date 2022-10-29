@@ -4,7 +4,10 @@
  */
 
 //  https://redux-toolkit.js.org/api/createSlice kopia kodu JS
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+
+// https://redux-toolkit.js.org/api/createAsyncThunk
+import { userAPI } from "./userAPI";
 
 const initialState = {
   isAuthenticated: false,
@@ -14,6 +17,17 @@ const initialState = {
   //   będzie true jak prawidłowo zarejestrujemy konto
   registered: false,
 };
+
+// https://redux-toolkit.js.org/api/createAsyncThunk
+// udeżam do endpoint a z sarenka\src\frontend\routes\auth\register.js
+// awsync jeden parametr któy jest obiektem
+const register = createAsyncThunk(
+  // https://redux-toolkit.js.org/api/createAsyncThunk#type
+  "user/register",
+  // https://redux-toolkit.js.org/api/createAsyncThunk#payloadcreator
+  // If you need to pass in multiple values, pass them together in an object when you dispatch the thunk, like dispatch(fetchUsers({status: 'active', sortBy: 'name'})).
+  async ({ first_name, last_name, email, password }) => {}
+);
 
 const userSlice = createSlice({
   name: "user",

@@ -37,10 +37,19 @@ const express = require("express");
 // moduł żeby łatwiej zarządzac ścieżkami - ja os.join w pythonie
 const path = require("path");
 
+// dodanie biblioteki, zeby zmiene srodkowiskowe działały
+require("dotenv").config();
+
+// pobieram swoje routery, po imporcie dotenv żeby mieć pewnosć, że nie ma problemu z pobieaniem wartości zmiennych środkowiskowcyh
+const registerRoute = require("./routes/auth/register");
+
 const app = express();
 
 // dodanie tego middlewara pozwala na działanie  router.post("/api/users/register" z sarenka\src\frontend\routes\auth\register.js
 app.use(express.json());
+
+// include mojego routera
+app.use(registerRoute);
 
 // dodanie plików statycznych
 app.use(express.static("client/build"));
