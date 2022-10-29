@@ -16,6 +16,12 @@ const router = express.Router();
 router.post("/api/users/register", (req, res) => {
   // dobicie się do Django
   const { first_name, last_name, email, password } = req.body;
+  try{
+
+    const registerRes = await fetch('api/users/register')
+  }catch(err){
+
+  }
 
   
 });

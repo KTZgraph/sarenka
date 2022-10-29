@@ -19,7 +19,6 @@ So that's how we do the authorized requests which is something that we saw in th
 So that is kinf of how we manage these values and how we keep them nice and secure
 */
 
-
 // w folderze sarenka\src\frontend>
 // npm install --save express
 // npm install --save path
@@ -31,6 +30,8 @@ So that is kinf of how we manage these values and how we keep them nice and secu
 // npm start
 
 // bo clinet ma folder produkcyjny build i portrzebujemy serwrera expressa do serwisowania wlaśnie tego produkcyjnego folderu
+
+// npm i --save dotenv # do zmiennych środowiskowych
 
 const express = require("express");
 // moduł żeby łatwiej zarządzac ścieżkami - ja os.join w pythonie
