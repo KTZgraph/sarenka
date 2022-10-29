@@ -38,6 +38,9 @@ const path = require("path");
 
 const app = express();
 
+// dodanie tego middlewara pozwala na działanie  router.post("/api/users/register" z sarenka\src\frontend\routes\auth\register.js
+app.use(express.json());
+
 // dodanie plików statycznych
 app.use(express.static("client/build"));
 
