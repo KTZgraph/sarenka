@@ -7,7 +7,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 // moja zmienna
-import { API_URL } from "../config/index";
+// import { API_URL } from "../config/index";
+// FIXME API_URL
+const API_URL = "http://localhost:5000";
 // https://redux-toolkit.js.org/api/createAsyncThunk
 
 const initialState = {

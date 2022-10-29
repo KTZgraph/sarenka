@@ -7,7 +7,7 @@ z dokumentacji
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 */
-const express = requires("express");
+const express = require("express");
 const fetch = (...args) =>
   import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
