@@ -1,5 +1,14 @@
 <!-- FIXME - mirage dummy server podłączać przed wrzuceniem na serwer -->
 
+# CORS w express
+
+- https://youtu.be/cvu6a3P9S0M?t=2490
+- npm install --save http-proxy-middleware
+
+## proxy tylko dla developmnetu
+
+- https://create-react-app.dev/docs/proxying-api-requests-in-development/
+
 # Redux toolkit (abstrackaj nad reduxem)
 
 - https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd

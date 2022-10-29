@@ -6,10 +6,6 @@
 //  https://redux-toolkit.js.org/api/createSlice kopia kodu JS
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-// moja zmienna
-// import { API_URL } from "../config/index";
-// FIXME API_URL
-const API_URL = "http://localhost:5000";
 // https://redux-toolkit.js.org/api/createAsyncThunk
 
 const initialState = {
@@ -47,7 +43,10 @@ export const register = createAsyncThunk(
     });
 
     try {
-      const res = await fetch(`${API_URL}/api/users/register`, {
+      // BUG CORS
+      // const res = await fetch(`${API_URL}/api/users/register`, {
+      // WARNIGN - teraz używam proxy z develmpnetu, ale na priodukcji i tak to będzi ena localhost 5000
+      const res = await fetch(`api/users/register`, {
         method: "POST",
         headers: {
           Accept: "application/json",
