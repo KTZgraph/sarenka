@@ -5,6 +5,7 @@ import Featured from "../components/Featured";
 import Chart from "../components/Chart";
 import Hometable from "../components/Hometable";
 
+import { Navigate } from "react-router-dom";
 // do danych usera
 // https://youtu.be/GaKGYo2jQ2Y?t=211
 import { useSelector } from "react-redux";
@@ -13,9 +14,13 @@ import "./Dashboard.scss";
 import Spinner from "../../../UI/Spinner";
 const Dashboard = () => {
   // sarenka\src\frontend\client\src\store.js do reducera odnoszę się przez słowo `user`
-  const { user, loading } = useSelector((state) => state.user);
+  const { user, loading, isAuthenticated } = useSelector((state) => state.user);
   console.log("dashboard user");
   console.log(user);
+
+  if (!isAuthenticated && !loading && user === null) {
+    return <Navigate to="/login" />;
+  }
 
   if (loading) {
     return <Spinner />;
