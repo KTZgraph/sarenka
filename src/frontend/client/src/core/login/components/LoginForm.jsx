@@ -62,6 +62,7 @@ const LoginForm = ({ className }) => {
 
     // https://youtu.be/oa_YvzYDyR8?t=2325 pamietać żeby robić to jako obiekt
     userDispatch(login({ email, password }));
+    navigate("/");
 
     // FIXME
     // signInWithEmailAndPassword(values.email, values.password)

@@ -154,6 +154,35 @@ export const login = createAsyncThunk(
   }
 );
 
+export const logout = createAsyncThunk(
+  // akcje do wylogowywania
+  // https://youtu.be/oa_YvzYDyR8?t=2791
+  "users/logout", // type
+  async (_, thunkAPI) => {
+    try {
+      const res = await fetch("/api/users/logout", {
+        // sarenka\src\frontend\routes\auth\login.js enpoint z expressa
+        method: "GET",
+        headers: {
+          accept: "application/json",
+        },
+      });
+
+      const data = await res.json();
+
+      if (res.status === 200) {
+        // sprawdzam czy jest wylogowany prawdiłowo zwrotka z sarenka\src\frontend\routes\auth\logout.js
+        // FIXME - można użyć do alertu
+        return data;
+      } else {
+        return thunkAPI.rejectWithValue(data);
+      }
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.response.data);
+    }
+  }
+);
+
 const userSlice = createSlice({
   name: "user",
   initialState,
@@ -220,6 +249,19 @@ const userSlice = createSlice({
         state.user = action.payload;
       })
       .addCase(getUser.rejected, (state) => {
+        state.loading = false;
+      })
+      // do wylogowywania
+      .addCase(logout.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(logout.fulfilled, (state) => {
+        state.loading = false;
+        // tu pozmienkć stan, user dane na null i nieuatoryzowany
+        state.user = null;
+        state.isAuthenticated = false;
+      })
+      .addCase(logout.rejected, (state) => {
         state.loading = false;
       });
   },

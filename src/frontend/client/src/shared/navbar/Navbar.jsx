@@ -3,48 +3,22 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import LoginIcon from "@mui/icons-material/Login";
 
 // użycie Reduxa https://youtu.be/DGmX1FDdLZE?t=3180
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+// https://youtu.be/oa_YvzYDyR8?t=2983
+import { logout } from "../../features/user";
 
 import Navigation from "../../components/atoms/navigation";
 import "./Navbar.scss";
-
-// FIXME - NavbarDefault już nie potrzebny
-const NavbarDefault = ({ userEmail }) => {
-  return (
-    <div className="navbar">
-      <div className="navbar__container">
-        <div className="navbar__items">
-          {userEmail && (
-            <div className="navbar__item">
-              <span style={{ color: "black" }}>{userEmail}</span>
-            </div>
-          )}
-          {userEmail ? (
-            <Navigation to="/logout" type="logout" className="navbar__item">
-              <LogoutIcon className="navbar__icon" />
-              <span className="navbar__text">logout</span>
-            </Navigation>
-          ) : (
-            <Navigation to="/login" type="login" className="navbar__item">
-              <LoginIcon className="navbar__icon" />
-              <span className="navbar__text">login</span>
-            </Navigation>
-          )}
-        </div>
-        <hr />
-      </div>
-    </div>
-  );
-};
 
 const Navbar = (props) => {
   // redux
   const { isAuthenticated } = useSelector((state) => state.user);
 
   const { navbarType, userEmail } = props;
-  // if (navbarType === "default" || navbarType == null) {
-  //   return <NavbarDefault userEmail={userEmail} />;
-  // }
+
+  // do wylogowywania
+  // https://youtu.be/oa_YvzYDyR8?t=2983
+  const userDispatch = useDispatch();
 
   return (
     <div className="navbar">
@@ -64,10 +38,14 @@ const Navbar = (props) => {
             </div>
           )}
           {isAuthenticated ? (
-            <Navigation to="/logout" type="logout" className="navbar__item">
+            <a
+              href="/login"
+              className="navbar__item"
+              onClick={() => userDispatch(logout())}
+            >
               <LogoutIcon className="navbar__icon" />
               <span className="navbar__text">logout</span>
-            </Navigation>
+            </a>
           ) : (
             <Navigation to="/login" type="login" className="navbar__item">
               <LoginIcon className="navbar__icon" />
