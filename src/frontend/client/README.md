@@ -1,5 +1,10 @@
 <!-- FIXME - mirage dummy server podłączać przed wrzuceniem na serwer -->
+# Po reduxie mozna dołożyć
+- RTK Query https://redux-toolkit.js.org/rtk-query/overview
+- Customizing queries https://redux-toolkit.js.org/rtk-query/usage/customizing-queries
 
+- Automatic re-authorization by extending fetchBaseQuery
+ https://redux-toolkit.js.org/rtk-query/usage/customizing-queries
 # Cookie
 
 - https://youtu.be/oa_YvzYDyR8?t=889
