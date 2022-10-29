@@ -82,6 +82,36 @@ export const register = createAsyncThunk(
   }
 );
 
+// do pobierania dancyh usera, nie przyjmuje żadnych argumentów więc używam podłogi _
+const getUser = createAsyncThunk("users/me", async (_, thunkAPI) => {
+  // trzeba pamietać, zeby dodać user/me/pending user/me/fullfiled user/me/rejected z dokumentacji redux toolkit
+  try {
+    // url do express servera
+    // cookies powinny być send along with this request
+    const res = await fetch("api/users/me", {
+      // ttuaj nie trzeba być authorized żeby dostać się do tego route handler
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        // tui nei dam Atugorization Beare bo po prostu nie mam do niego dostępu, bo to httpOnly cookie czego chcemy
+        // WARNING NIE chcemy żeby klient miał dostęp do cookie
+      },
+    });
+
+    const data = await res.json();
+
+    if (res.status === 200) {
+      // zwraca data jako payload
+      return data;
+    } else {
+      return thunkAPI.rejectWithValue(data);
+    }
+  } catch (err) {
+    // err.response.data bo w catch nie mam dostępu do data
+    return thunkAPI.rejectWithValue(err.response.data);
+  }
+});
+
 export const login = createAsyncThunk(
   "users/login", // type
   async ({ email, password }, thunkAPI) => {
@@ -108,7 +138,9 @@ export const login = createAsyncThunk(
 
       if (res.status === 200) {
         const { dispach } = thunkAPI;
-        // dispach(getMyUser)
+        // getUser to moja metoda z wyżej
+        dispach(getUser());
+
         return data;
       } else {
         return thunkAPI.rejectWithValue(data);
@@ -171,6 +203,20 @@ const userSlice = createSlice({
         state.isAuthenticated = true;
       })
       .addCase(login.rejected, (state) => {
+        state.loading = false;
+      })
+
+      // do pobierani dancyh users/me
+      .addCase(getUser.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(getUser.fulfilled, (state, action) => {
+        state.loading = false;
+        // WARNING - zapisuje dane usera z payload
+        // https://youtu.be/oa_YvzYDyR8?t=2228
+        state.user = action.payload;
+      })
+      .addCase(getUser.rejected, (state) => {
         state.loading = false;
       });
   },

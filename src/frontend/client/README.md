@@ -5,6 +5,12 @@
 - https://youtu.be/oa_YvzYDyR8?t=889
 - https://www.npmjs.com/package/cookie
 - npm install --save cookie
+- sarenka\src\frontend\client\src\features\user.js metoda getUser
+
+```js
+//tui nei dam Atugorization Beare bo po prostu nie mam do niego dostępu, bo to httpOnly cookie czego chcemy
+// WARNING NIE chcemy żeby klient miał dostęp do cookie
+```
 
 # CORS w express
 
