@@ -29,7 +29,10 @@ router.post("/api/users/register", async (req, res) => {
   // const body = JSON.stringify(req.body)
 
   try {
-    const apiRes = await fetch(`${process.env.API_URL}/api/users/register`, {
+    // dobicie się do Django
+    // http://localhost:8000/api/users/register
+    // const apiRes = await fetch(`${process.env.API_URL}/api/users/register/`, {
+    const apiRes = await fetch(`http://localhost:8000/api/users/register/`, {
       method: "POST",
       headers: {
         accept: "application/json",

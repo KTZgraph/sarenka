@@ -46,36 +46,52 @@ class RegisterView(APIView):
         }
         """
 
-        print("DJANGO")
+        try:
+            print("DJANGO")
 
-        data = request.data
-        print("data")
-        print(data)
+            data = request.data
+            print("data")
+            print(data)
 
-        # nadpisujemy Managera z modelu User z Django
-        # pola jak do service-core\users\models.py klasy UserAccountManager
-        # metoda .create_user zwraca Usera jest         return user
-        #  w linii 27
-        # usuwam tę linię, bo serializatorem będe tworzyć obiekt
-        # user = User.objects.create_user(first_name, last_name, email, password)
+            # nadpisujemy Managera z modelu User z Django
+            # pola jak do service-core\users\models.py klasy UserAccountManager
+            # metoda .create_user zwraca Usera jest         return user
+            #  w linii 27
+            # usuwam tę linię, bo serializatorem będe tworzyć obiekt
+            # user = User.objects.create_user(first_name, last_name, email, password)
 
-        serializer = UserCreateSerializer(data=data)
-        # dprawdzam, czy te pola są valid
-        if not serializer.is_valid():
-            # jak dane nieprawidłowe to zwrotka 400
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            serializer = UserCreateSerializer(data=data)
+            # dprawdzam, czy te pola są valid
+            if not serializer.is_valid():
+                # jak dane nieprawidłowe to zwrotka 400
+                return Response(
+                    {
+                        "error": "Can't save new user in database",
+                        "details": serializer.errors,
+                    },
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
 
-        # jak dane prawidłowe to tworze usera
-        # metoda create na tym obiekcie serializator to nasza przeciążona  metoda
-        # .validated_data to atrybut obiektu serializatora
-        user = serializer.create(serializer.validated_data)
-        # teraz dopiero user ma atrybuty .data potrzebny do zwrotki
-        # user = UserCreateSerializer(user)
-        # do zwrotki uzwyam prostszego serializera żeby nei zwracał hasła
-        user = UserSerializer(user)
+            # jak dane prawidłowe to tworze usera
+            # metoda create na tym obiekcie serializator to nasza przeciążona  metoda
+            # .validated_data to atrybut obiektu serializatora
+            user = serializer.create(serializer.validated_data)
+            # teraz dopiero user ma atrybuty .data potrzebny do zwrotki
+            # user = UserCreateSerializer(user)
+            # do zwrotki uzwyam prostszego serializera żeby nei zwracał hasła
+            user = UserSerializer(user)
 
-        # zwraca usera dane jako zwrotkę
-        return Response(user.data, status=status.HTTP_201_CREATED)
+            # zwraca usera dane jako zwrotkę
+            return Response(user.data, status=status.HTTP_201_CREATED)
+        except BaseException as e:
+            print("RegisterView: ", str(e))
+            return Response(
+                {
+                    "error": "Nie można zarejestrować nowego uzytkownika",
+                    "details": str(e),
+                },
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            )
 
 
 class RetrieveUserView(APIView):

@@ -66,17 +66,17 @@ const LoginForm = ({ className }) => {
     // https://youtu.be/oa_YvzYDyR8?t=2325 pamietać żeby robić to jako obiekt
     userDispatch(login({ email, password }));
     // FIXME
-    // signInWithEmailAndPassword(values.email, values.password)
-    //   .then((userCredentials) => {
-    //     setError(false);
-    //     setErrorMessage("");
-    //     dispatch({ type: "LOGIN", payload: userCredentials.user });
-    //     navigate("/");
-    //   })
-    //   .catch((error) => {
-    //     setErrorMessage(error.message);
-    //     setError(true);
-    //   });
+    signInWithEmailAndPassword(values.email, values.password)
+      .then((userCredentials) => {
+        setError(false);
+        setErrorMessage("");
+        dispatch({ type: "LOGIN", payload: userCredentials.user });
+        // navigate("/");
+      })
+      .catch((error) => {
+        setErrorMessage(error.message);
+        setError(true);
+      });
   };
 
   const handleChange = (e) => {

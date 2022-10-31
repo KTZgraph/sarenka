@@ -52,7 +52,7 @@ export const register = createAsyncThunk(
       const res = await fetch("/api/users/register", {
         method: "POST",
         headers: {
-          accept: "application/json",
+          Accept: "application/json",
           "Content-Type": "application/json",
         },
         body: JSON.stringify({

@@ -1,10 +1,18 @@
 <!-- FIXME - mirage dummy server podłączać przed wrzuceniem na serwer -->
+
+# React Query Tutorial for Beginners vs Redux, Axios with CRUD Example
+
+- https://www.youtube.com/watch?v=lLWfZL-Y8lM
+- npm i react-query axios
+
 # Po reduxie mozna dołożyć
+
 - RTK Query https://redux-toolkit.js.org/rtk-query/overview
 - Customizing queries https://redux-toolkit.js.org/rtk-query/usage/customizing-queries
 
 - Automatic re-authorization by extending fetchBaseQuery
- https://redux-toolkit.js.org/rtk-query/usage/customizing-queries
+  https://redux-toolkit.js.org/rtk-query/usage/customizing-queries
+
 # Cookie
 
 - https://youtu.be/oa_YvzYDyR8?t=889
